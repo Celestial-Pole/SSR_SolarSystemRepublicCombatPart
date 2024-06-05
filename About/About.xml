@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ModMetaData>
+	<name>[SSR]Solar System Republic Combat Part 太阳系共和国战斗拓展</name>
+	<packageId>SSR.Faction</packageId>
+	<author>Celestial Pole,Nesi,mo,Fleurety,3HST有限公司,FelixT,世故绮罗</author>
+	<url></url>
+	<supportedVersions>
+		<li>1.5</li>
+	</supportedVersions>
+	<loadAfter>
+	</loadAfter>
+	<description>太阳系共和国战斗拓展</description>
+</ModMetaData>
