@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingCategoryDef>
+    <defName>AmmoSmallPlasma</defName>
+    <label>Small Plasma</label>
+    <parent>AmmoAdvanced</parent>
+    <iconPath>UI/Icons/ThingCategories/CaliberCharge</iconPath>
+  </ThingCategoryDef>
+
+  <!-- ==================== AmmoSet ========================== -->
+
+  <CombatExtended.AmmoSetDef>
+    <defName>AmmoSet_SmallPlasma</defName>
+    <label>Small Plasma</label>
+    <ammoTypes>
+      <Ammo_SmallPlasma>Bullet_SmallPlasma</Ammo_SmallPlasma>
+    </ammoTypes>
+    <similarTo>AmmoSet_ChargedRifle</similarTo>
+  </CombatExtended.AmmoSetDef>
+
+  <!-- ==================== Ammo ========================== -->
+
+  <ThingDef Class="CombatExtended.AmmoDef" Name="SmallPlasmaBase" ParentName="SpacerSmallAmmoBase" Abstract="True">
+    <description>Charged shot ammo used by advanced assault rifle designs.</description>
+    <statBases>
+      <Mass>0.01</Mass>
+      <Bulk>0.01</Bulk>
+    </statBases>
+    <tradeTags>
+      <li>CE_AutoEnableTrade</li>
+      <li>CE_AutoEnableCrafting_FabricationBench</li>
+    </tradeTags>
+    <thingCategories>
+      <li>AmmoSmallPlasma</li>
+    </thingCategories>
+    <stackLimit>5000</stackLimit>		
+  </ThingDef>
+
+  <ThingDef Class="CombatExtended.AmmoDef" ParentName="SmallPlasmaBase">
+    <defName>Ammo_SmallPlasma</defName>
+    <label>Small Plasma cartridge</label>
+    <graphicData>
+      <texPath>Things/Ammo/Charged/MediumRegular</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>1</MarketValue>
+    </statBases>
+    <ammoClass>RocketHEAT</ammoClass>
+  </ThingDef>
+
+  <!-- ================== Projectiles ================== -->
+
+  <ThingDef Name="BaseSmallPlasma" ParentName="BaseExplosiveBullet" Abstract="true">
+    <graphicData>
+      <shaderType>TransparentPostLight</shaderType>
+    </graphicData>
+    <projectile Class="CombatExtended.ProjectilePropertiesCE">
+      <speed>120</speed>
+      <soundAmbient>RocketPropelledLoop_Small</soundAmbient>
+    </projectile>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseSmallPlasma">
+    <defName>Bullet_SmallPlasma</defName>
+	<thingClass>CombatExtended.ProjectileCE_Explosive</thingClass>
+    <label>Small Plasma</label>
+    <graphicData>
+      <texPath>Things/Projectile/Plasma_HG_rt</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+	<projectile Class="CombatExtended.ProjectilePropertiesCE">
+      <explosionRadius>1.5</explosionRadius>
+      <damageDef>Bomb</damageDef>
+	  <damageAmountBase>24</damageAmountBase>
+      <armorPenetrationSharp>60</armorPenetrationSharp>
+      <armorPenetrationBlunt>240</armorPenetrationBlunt>
+      <applyDamageToExplosionCellsNeighbors>true</applyDamageToExplosionCellsNeighbors>
+    </projectile>
+	<comps>
+	  <li Class="CombatExtended.CompProperties_ExplosiveCE">
+		<damageAmountBase>45</damageAmountBase>
+		<explosiveDamageType>Flame</explosiveDamageType>
+		<explosiveRadius>1.5</explosiveRadius>
+		<explosionSound>MortarBomb_Explode</explosionSound>
+		<applyDamageToExplosionCellsNeighbors>true</applyDamageToExplosionCellsNeighbors>
+	  </li>
+    </comps>
+  </ThingDef>
+
+  <!-- ==================== Recipes ========================== -->
+
+  <RecipeDef ParentName="ChargeAmmoRecipeBase">
+    <defName>MakeAmmo_SmallPlasma</defName>
+    <label>make Small Plasma cartridge x500</label>
+    <description>Craft 500 Small Plasma cartridges.</description>
+    <jobString>Making Small Plasma cartridges.</jobString>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Plasteel</li>
+          </thingDefs>
+        </filter>
+        <count>15</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Chemfuel</li>
+          </thingDefs>
+        </filter>
+        <count>10</count>
+      </li>	  
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentIndustrial</li>
+          </thingDefs>
+        </filter>
+        <count>10</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>Plasteel</li>
+        <li>Chemfuel</li>		
+        <li>ComponentIndustrial</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <Ammo_SmallPlasma>500</Ammo_SmallPlasma>
+    </products>
+    <workAmount>8600</workAmount>		
+  </RecipeDef>
+
+</Defs>

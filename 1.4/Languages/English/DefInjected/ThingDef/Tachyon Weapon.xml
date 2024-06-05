@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <Tachyon_AR.label>Tachyon AR</Tachyon_AR.label>
+  <Tachyon_AR.description>Tachyon AR
+Damage: 80
+Armor penetration: 10000%
+Damage interval: 1tick
+Laser duration: 1s
+Range: 75
+Ranged cooldown: 0.15s
+Aiming time: 0</Tachyon_AR.description>
+  <Tachyon_AR.tools.0.label>stock</Tachyon_AR.tools.0.label>
+  <Tachyon_AR.tools.1.label>barrel</Tachyon_AR.tools.1.label>
+
+  <Tachyon_HG.label>Tachyon HG</Tachyon_HG.label>
+  <Tachyon_HG.description>Tachyon HG
+Damage: 15
+Armor penetration: 5000%
+Damage interval: 1tick
+Laser duration: 1s
+Range: 45
+Ranged cooldown: 0.15s
+Aiming time: 0</Tachyon_HG.description>
+  <Tachyon_HG.tools.0.label>stock</Tachyon_HG.tools.0.label>
+  <Tachyon_HG.tools.1.label>barrel</Tachyon_HG.tools.1.label>
+
+  <Tachyon_SR.label>Tachyon SR</Tachyon_SR.label>
+  <Tachyon_SR.description>Tachyon SR
+Damage: 160
+Armor penetration: 20000%
+Damage interval: 1tick
+Laser duration: 1s
+Range: 500
+Ranged cooldown: 0.15s
+Aiming time: 0</Tachyon_SR.description>
+  <Tachyon_SR.tools.0.label>stock</Tachyon_SR.tools.0.label>
+  <Tachyon_SR.tools.1.label>barrel</Tachyon_SR.tools.1.label>
+
+  <Tachyon_AMR.label>Tachyon AMR</Tachyon_AMR.label>
+  <Tachyon_AMR.description>Tachyon AMR
+Damage: 1000
+Armor penetration: 50000%
+Damage interval: 1tick
+Laser duration: 1s
+Range: 500
+Ranged cooldown: 0.15s
+Aiming time: 0</Tachyon_AMR.description>
+  <Tachyon_AMR.tools.0.label>stock</Tachyon_AMR.tools.0.label>
+  <Tachyon_AMR.tools.1.label>barrel</Tachyon_AMR.tools.1.label>
+
+
+</LanguageData>

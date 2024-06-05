@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Mini-turret -->
+
+  <Turret_SentryGun.label>sentry gun</Turret_SentryGun.label>
+  <Turret_SentryGun.description>sentry gun</Turret_SentryGun.description>
+
+  <Bullet_SentryGun.label>sentry gun bullet</Bullet_SentryGun.label>
+
+  <Gun_SentryGun.label>sentry gun</Gun_SentryGun.label>
+  <Gun_SentryGun.description>sentry gun</Gun_SentryGun.description>
+
+
+  <!-- Phalanx Close-in Weapon System -->
+
+  <Turret_RailCIWS.label>rail CIWS</Turret_RailCIWS.label>
+  <Turret_RailCIWS.description>rail CIWS</Turret_RailCIWS.description>
+
+  <Bullet_RailCIWS.label>rail CIWS bullet</Bullet_RailCIWS.label>
+
+  <Gun_RailCIWS.label>rail CIWS gun</Gun_RailCIWS.label>
+  <Gun_RailCIWS.description>rail CIWS gun</Gun_RailCIWS.description>
+
+
+  <!-- Auto mortar -->
+
+  <Turret_LtRailMortar.label>light electromagnetic gun</Turret_LtRailMortar.label>
+  <Turret_LtRailMortar.description>light electromagnetic gun</Turret_LtRailMortar.description>
+
+  <Artillery_LtRailMortar.label>light electromagnetic gun</Artillery_LtRailMortar.label>
+
+
+</LanguageData>

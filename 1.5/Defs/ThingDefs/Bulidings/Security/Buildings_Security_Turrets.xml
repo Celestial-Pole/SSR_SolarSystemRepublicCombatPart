@@ -1,0 +1,450 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!--=============== Mini-turret ===============-->
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>Turret_SentryGun</defName>
+    <label>哨戒机枪</label>
+    <description>哨戒机枪是一种轻便高效的防御设施，可卸载的底座使其能够被快速拆解和安装在必要的位置，不过便携的特性让哨戒机枪无法拥有充沛的载弹量。</description>
+    <thingClass>Building_TurretGun</thingClass>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <graphicData>
+      <texPath>Things/Building/Security/SentryGun_Base</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1,1)</drawSize>
+      <shaderType>CutoutComplex</shaderType>
+      <damageData>
+        <rect>(0.2,0.2,0.6,0.6)</rect>
+      </damageData>
+      <shadowData>
+        <volume>(0.27,0.25,0.27)</volume>
+        <offset>(0,0,0)</offset>
+      </shadowData>
+    </graphicData>
+    <uiIconPath>Things/Building/Security/SentryGun_MenuIcon</uiIconPath>
+    <uiIconScale>0.90</uiIconScale>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <altitudeLayer>Building</altitudeLayer>
+    <stealable>false</stealable>
+    <rotatable>false</rotatable>
+    <thingCategories>
+      <li>BuildingsSecurity</li>
+    </thingCategories>
+    <statBases>
+      <MaxHitPoints>300</MaxHitPoints>
+      <Flammability>0</Flammability>
+      <WorkToBuild>1800</WorkToBuild>
+      <Mass>8</Mass>
+      <Beauty>0</Beauty>
+      <ShootingAccuracyTurret>0.96</ShootingAccuracyTurret>
+    </statBases>
+    <tickerType>Normal</tickerType>
+    <comps>
+      <li>
+        <compClass>SSRCP_Libs.AntiAirComp</compClass>
+      </li>
+      <li Class="CompProperties_Forbiddable"/>
+      <li Class="CompProperties_Flickable"/>
+      <li Class="CompProperties_Breakdownable"/>
+      <li Class="CompProperties_Refuelable">
+        <fuelLabel>Shots until barrel change</fuelLabel>
+        <fuelGizmoLabel>Barrel durability</fuelGizmoLabel>
+        <outOfFuelMessage>Needs new barrel</outOfFuelMessage>
+        <fuelFilter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </fuelFilter>
+        <fuelCapacity>360</fuelCapacity>        <!-- 30 bursts -->
+        <fuelMultiplier>0.75</fuelMultiplier>        <!-- 1.333 steel per burst, 80 per full rearm -->
+        <initialFuelPercent>1</initialFuelPercent>
+        <autoRefuelPercent>0.5</autoRefuelPercent>
+        <showFuelGizmo>true</showFuelGizmo>
+        <minimumFueledThreshold>1</minimumFueledThreshold>
+        <factorByDifficulty>true</factorByDifficulty>
+        <consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+        <fuelIconPath>UI/Overlays/Barrel</fuelIconPath>
+      </li>
+    </comps>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+    <fillPercent>0.4</fillPercent>
+    <hasTooltip>true</hasTooltip>
+    <stuffCategories>
+      <li>Metallic</li>
+    </stuffCategories>
+    <costStuffCount>30</costStuffCount>
+    <costList>
+      <Steel>210</Steel>
+      <ComponentIndustrial>6</ComponentIndustrial>
+    </costList>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <designationCategory>Security</designationCategory>
+    <constructionSkillPrerequisite>5</constructionSkillPrerequisite>
+    <building>
+      <combatPower>45</combatPower>      <!-- same as a scavenger -->
+      <ai_combatDangerous>true</ai_combatDangerous>
+      <turretGunDef>Gun_SentryGun</turretGunDef>
+      <turretBurstWarmupTime>0.01</turretBurstWarmupTime>
+      <turretBurstCooldownTime>0</turretBurstCooldownTime>
+    </building>
+    <placeWorkers>
+      <li>PlaceWorker_TurretTop</li>
+      <li>PlaceWorker_ShowTurretRadius</li>
+    </placeWorkers>
+    <designationHotKey>Misc2</designationHotKey>
+    <researchPrerequisites>
+      <li>GunTurrets</li>
+      <li>MultibarrelWeapons</li>
+    </researchPrerequisites>
+    <modExtensions>
+      <li Class="SolarSystemRepublicFramework.DefModExtension_TurretMannable">
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseBullet">
+    <defName>Bullet_SentryGun</defName>
+    <label>Sentry-Gun bullet</label>
+    <graphicData>
+      <texPath>Things/Projectile/Bullet_Small</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>Bullet</damageDef>
+      <damageAmountBase>15</damageAmountBase>
+      <speed>120</speed>
+    </projectile>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseWeaponTurret">
+    <defName>Gun_SentryGun</defName>
+    <label>Sentry-Gun</label>
+    <description>A simple automatic gun made to be mounted on a turret.</description>
+    <graphicData>
+      <texPath>Things/Building/Security/SentryGun_Top</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <AccuracyTouch>0.80</AccuracyTouch>
+      <AccuracyShort>1.00</AccuracyShort>
+      <AccuracyMedium>0.95</AccuracyMedium>
+      <AccuracyLong>0.65</AccuracyLong>
+      <RangedWeapon_Cooldown>1</RangedWeapon_Cooldown>
+      <DeteriorationRate>0</DeteriorationRate>
+      <Mass>5</Mass>
+      <Flammability>0</Flammability>
+    </statBases>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <defaultProjectile>Bullet_SentryGun</defaultProjectile>
+        <warmupTime>0</warmupTime>
+        <range>38.9</range>
+        <ticksBetweenBurstShots>5</ticksBetweenBurstShots>
+        <burstShotCount>12</burstShotCount>
+        <soundCast>GunShotA</soundCast>
+        <soundCastTail>GunTail_Light</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+        <consumeFuelPerShot>1</consumeFuelPerShot>
+      </li>
+    </verbs>
+  </ThingDef>
+
+  <!--=============== Phalanx Close-in Weapon System ===============-->
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>Turret_RailCIWS</defName>
+    <label>电磁密集阵</label>
+    <description>电磁密集阵是一款地球联邦时代早期密集阵系统，曾被广泛用在海军和太空军舰艇以及地面军事设施上。</description>
+    <thingClass>Building_TurretGun</thingClass>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <graphicData>
+      <texPath>Things/Building/Security/2x2_Base</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(2,2)</drawSize>
+      <shaderType>CutoutComplex</shaderType>
+      <damageData>
+        <rect>(0.2,0.2,0.6,0.6)</rect>
+      </damageData>
+      <shadowData>
+        <volume>(0.27,0.25,0.27)</volume>
+        <offset>(0,0,0)</offset>
+      </shadowData>
+    </graphicData>
+    <uiIconPath>Things/Building/Security/RailCIWS_MenuIcon</uiIconPath>
+    <uiIconScale>0.90</uiIconScale>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <altitudeLayer>Building</altitudeLayer>
+    <stealable>false</stealable>
+    <rotatable>false</rotatable>
+    <thingCategories>
+      <li>BuildingsSecurity</li>
+    </thingCategories>
+    <size>(2,2)</size>
+    <statBases>
+      <MaxHitPoints>500</MaxHitPoints>
+      <Flammability>0</Flammability>
+      <WorkToBuild>5000</WorkToBuild>
+      <Mass>50</Mass>
+      <Beauty>0</Beauty>
+      <ShootingAccuracyTurret>0.96</ShootingAccuracyTurret>
+    </statBases>
+    <tickerType>Normal</tickerType>
+    <comps>
+      <li>
+        <compClass>SSRCP_Libs.AntiAirComp</compClass>
+      </li>
+      <li Class="CompProperties_Explosive">
+        <wickTicks>240</wickTicks>
+        <explosiveRadius>3.9</explosiveRadius>
+        <explosiveDamageType>Bomb</explosiveDamageType>
+        <chanceNeverExplodeFromDamage>0.5</chanceNeverExplodeFromDamage>
+      </li>
+      <li Class="CompProperties_Forbiddable"/>
+      <li Class="CompProperties_Flickable"/>
+      <li Class="CompProperties_Breakdownable"/>
+      <li Class="CompProperties_Refuelable">
+        <fuelLabel>Shots until barrel change</fuelLabel>
+        <fuelGizmoLabel>Barrel durability</fuelGizmoLabel>
+        <outOfFuelMessage>Needs new barrel</outOfFuelMessage>
+        <fuelFilter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </fuelFilter>
+        <fuelCapacity>1440</fuelCapacity>        <!-- 30 bursts -->
+        <fuelMultiplier>0.75</fuelMultiplier>        <!-- 1.333 steel per burst, 80 per full rearm -->
+        <initialFuelPercent>1</initialFuelPercent>
+        <autoRefuelPercent>0.5</autoRefuelPercent>
+        <showFuelGizmo>true</showFuelGizmo>
+        <minimumFueledThreshold>1</minimumFueledThreshold>
+        <factorByDifficulty>true</factorByDifficulty>
+        <consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+        <fuelIconPath>UI/Overlays/Barrel</fuelIconPath>
+      </li>
+    </comps>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+    <fillPercent>0.4</fillPercent>
+    <hasTooltip>true</hasTooltip>
+    <stuffCategories>
+      <li>Metallic</li>
+    </stuffCategories>
+    <costStuffCount>30</costStuffCount>
+    <costList>
+      <Steel>700</Steel>
+      <Plasteel>150</Plasteel>
+      <ComponentIndustrial>10</ComponentIndustrial>
+      <ComponentSpacer>5</ComponentSpacer>
+      <ReinforcedBarrel>3</ReinforcedBarrel>
+    </costList>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <designationCategory>Security</designationCategory>
+    <constructionSkillPrerequisite>6</constructionSkillPrerequisite>
+    <building>
+      <ai_combatDangerous>true</ai_combatDangerous>
+      <turretGunDef>Gun_RailCIWS</turretGunDef>
+      <turretBurstWarmupTime>0.01</turretBurstWarmupTime>
+      <turretBurstCooldownTime>0</turretBurstCooldownTime>
+      <turretTopDrawSize>4</turretTopDrawSize>
+    </building>
+    <placeWorkers>
+      <li>PlaceWorker_TurretTop</li>
+      <li>PlaceWorker_ShowTurretRadius</li>
+    </placeWorkers>
+    <designationHotKey>Misc2</designationHotKey>
+    <researchPrerequisites>
+      <li>HeavyTurrets</li>
+      <li>MultibarrelWeapons</li>
+      <li>ChargedShot</li>
+    </researchPrerequisites>
+    <modExtensions>
+      <li Class="SolarSystemRepublicFramework.DefModExtension_TurretMannable">
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseBullet">
+    <defName>Bullet_RailCIWS</defName>
+    <label>Sentry-Gun bullet</label>
+    <thingClass>BillDoorsFramework.penetratingBullet</thingClass>
+    <graphicData>
+      <texPath>Things/Projectile/Electromagnetic_SR_rt</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>Bullet</damageDef>
+      <damageAmountBase>20</damageAmountBase>
+      <speed>500</speed>
+    </projectile>
+    <modExtensions>
+      <li Class="BillDoorsFramework.ModExtension_PenetratingProjectile">
+        <overpenDamageMulti>1</overpenDamageMulti>
+        <stopperDamageMulti>1.5</stopperDamageMulti>
+        <penetrationPotentialMultiplier>3</penetrationPotentialMultiplier>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseWeaponTurret">
+    <defName>Gun_RailCIWS</defName>
+    <label>RailCIWS gun</label>
+    <description>A simple automatic gun made to be mounted on a turret.</description>
+    <graphicData>
+      <texPath>Things/Building/Security/RailCIWS_Top</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <AccuracyTouch>1.00</AccuracyTouch>
+      <AccuracyShort>0.72</AccuracyShort>
+      <AccuracyMedium>0.66</AccuracyMedium>
+      <AccuracyLong>0.50</AccuracyLong>
+      <RangedWeapon_Cooldown>0</RangedWeapon_Cooldown>
+      <DeteriorationRate>0</DeteriorationRate>
+      <Mass>5</Mass>
+      <Flammability>0</Flammability>
+    </statBases>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <defaultProjectile>Bullet_RailCIWS</defaultProjectile>
+        <warmupTime>0</warmupTime>
+        <range>58.9</range>
+        <ticksBetweenBurstShots>1</ticksBetweenBurstShots>
+        <burstShotCount>12</burstShotCount>
+        <soundCast>ElectromagneticLtII</soundCast>
+        <soundCastTail>GunTail_Medium</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+        <consumeFuelPerShot>1</consumeFuelPerShot>
+      </li>
+    </verbs>
+  </ThingDef>
+
+  <!-- Auto mortar -->
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>Turret_LtRailMortar</defName>
+    <label>轻型电磁炮</label>
+    <description>这种轻型电磁加榴炮及其变种型号，曾在地球联邦时代早期的海陆太空三军中服役并发挥着重要的作用。</description>
+    <thingClass>Building_TurretGun</thingClass>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <graphicData>
+      <texPath>Things/Building/Security/2x2_Base</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(2,2)</drawSize>
+      <damageData>
+        <rect>(0.3,0.3,1.4,1.4)</rect>
+      </damageData>
+      <shadowData>
+        <offset>(-0.13,-0.87,-0.1)</offset>
+        <volume>(0.5,0.4,1.05)</volume>
+      </shadowData>
+    </graphicData>
+    <receivesSignals>true</receivesSignals>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <altitudeLayer>Building</altitudeLayer>
+    <stealable>false</stealable>
+    <thingCategories>
+      <li>BuildingsSecurity</li>
+    </thingCategories>
+    <size>(2,2)</size>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+    <fillPercent>0.4</fillPercent>
+    <tickerType>Normal</tickerType>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <designationCategory>Security</designationCategory>
+    <comps>
+      <li Class="CompProperties_Forbiddable"/>
+      <li Class="CompProperties_Explosive">
+        <wickTicks>240</wickTicks>
+        <explosiveRadius>4.9</explosiveRadius>
+        <explosiveDamageType>Bomb</explosiveDamageType>
+      </li>
+      <li Class="CompProperties_Initiatable" />
+      <li>
+        <compClass>SolarSystemRepublicFramework.CompCompGunsProjectileChangable_Turret</compClass>
+      </li>
+    </comps>
+    <statBases>
+      <MaxHitPoints>10000</MaxHitPoints>
+      <Flammability>0</Flammability>
+      <Mass>30</Mass>
+      <WorkToBuild>25000</WorkToBuild>
+      <ShootingAccuracyTurret>0.9</ShootingAccuracyTurret>
+      <Beauty>0</Beauty>
+    </statBases>
+    <costList>
+      <Steel>2000</Steel>
+      <Plasteel>2000</Plasteel>
+      <ComponentIndustrial>300</ComponentIndustrial>
+      <ComponentSpacer>50</ComponentSpacer>
+    </costList>
+    <damageMultipliers>
+      <li>
+        <damageDef>Flame</damageDef>
+        <multiplier>0</multiplier>
+      </li>
+    </damageMultipliers>
+    <building>
+      <combatPower>220</combatPower>
+      <turretGunDef>Artillery_LtRailMortar</turretGunDef>
+      <turretTopDrawSize>5</turretTopDrawSize>
+      <turretBurstWarmupTime>5</turretBurstWarmupTime>
+      <turretBurstCooldownTime>0</turretBurstCooldownTime>
+      <soundAmbient>MechTurretBig_Call</soundAmbient>
+    </building>
+    <placeWorkers>
+      <li>PlaceWorker_TurretTop</li>
+      <li>SolarSystemRepublicFramework.PlaceWorker_ShowTurretRadius</li>
+    </placeWorkers>
+    <uiIconPath>Things/Building/Security/LtRail_MenuIcon</uiIconPath>
+    <researchPrerequisites>
+      <li>Mortars</li>
+      <li>ChargedShot</li>
+    </researchPrerequisites>
+    <modExtensions>
+      <li Class="SolarSystemRepublicFramework.DefModExtension_TurretMannable">
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseArtilleryWeapon">
+    <defName>Artillery_LtRailMortar</defName>
+    <label>LtRail-mortar</label>
+    <graphicData>
+      <texPath>Things/Building/Security/LtRail_Top</texPath>
+    </graphicData>
+    <uiIconScale>1.25</uiIconScale>
+    <verbs>
+      <li>
+        <verbClass>SolarSystemRepublicFramework.Verb_Shoot_Changable</verbClass>
+        <defaultProjectile>SSR_Bullet_Shell_ElectromagneticHighExplosive</defaultProjectile>
+        <forcedMissRadius>0.01</forcedMissRadius>
+        <ai_AvoidFriendlyFireRadius>3</ai_AvoidFriendlyFireRadius>
+        <warmupTime>2</warmupTime>
+        <range>500</range>
+        <minRange>5.9</minRange>
+        <burstShotCount>1</burstShotCount>
+        <soundCast>ElectromagneticMd</soundCast>
+        <soundCastTail>GunTail_Light</soundCastTail>
+        <muzzleFlashScale>16</muzzleFlashScale>
+        <requireLineOfSight>false</requireLineOfSight>
+        <targetParams>
+          <canTargetLocations>true</canTargetLocations>
+        </targetParams>
+      </li>
+    </verbs>
+    <comps>
+      <li Class="SolarSystemRepublicFramework.CompProperties_GunsProjectileChangable">
+        <projectiles>
+          <li>SSR_Bullet_Shell_ElectromagneticHighExplosive</li>
+          <li>SSR_Bullet_Shell_ElectromagneticHighExplosiveII</li>
+        </projectiles>
+      </li>
+    </comps>
+  </ThingDef>
+
+</Defs>

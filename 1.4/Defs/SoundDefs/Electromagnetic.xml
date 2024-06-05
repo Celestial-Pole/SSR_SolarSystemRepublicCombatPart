@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Defs>
+
+  <SoundDef>
+    <defName>ElectromagneticLt</defName>  
+    <context>MapOnly</context>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>ElectromagneticLt</clipPath>
+          </li>
+        </grains>
+        <volumeRange>25~25</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>ElectromagneticLtII</defName>  
+    <context>MapOnly</context>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>ElectromagneticLt</clipPath>
+          </li>
+        </grains>
+        <volumeRange>75~75</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>ElectromagneticMd</defName>  
+    <context>MapOnly</context>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>ElectromagneticMd</clipPath>
+          </li>
+        </grains>
+        <volumeRange>100~100</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>ElectromagneticMdII</defName>  
+    <context>MapOnly</context>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>ElectromagneticMd</clipPath>
+          </li>
+        </grains>
+        <volumeRange>50~50</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>ElectromagneticHv</defName>  
+    <context>MapOnly</context>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>ElectromagneticHv</clipPath>
+          </li>
+        </grains>
+        <volumeRange>350~350</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  
+</Defs>

@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef ParentName="SSR_BaseWeapon">
+    <defName>SSR_SignalInterceptGun</defName>
+    <label>信号阻断枪</label>
+    <description>信号阻断枪</description>
+    <graphicData>
+      <texPath>Things/Weapons/Non-lethal Weapon/SignalInterceptGun</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Interact_ChargeRifle</soundInteract>
+    <statBases>
+      <WorkToMake>75000</WorkToMake>
+      <Mass>3.5</Mass>
+      <AccuracyTouch>1.00</AccuracyTouch>
+      <AccuracyShort>1.00</AccuracyShort>
+      <AccuracyMedium>1.00</AccuracyMedium>
+      <AccuracyLong>1.00</AccuracyLong>
+      <RangedWeapon_Cooldown>3</RangedWeapon_Cooldown>
+    </statBases>
+    <recipeMaker>
+      <researchPrerequisite>AdvancedFabrication</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>9</Crafting>
+      </skillRequirements>
+    </recipeMaker>
+    <costList>
+      <Plasteel>70</Plasteel>
+      <ComponentSpacer>3</ComponentSpacer>
+    </costList>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>SSR_SignalInterceptGun_rt</defaultProjectile>
+        <warmupTime>0.25</warmupTime>
+        <range>35</range>
+        <ticksBetweenBurstShots>10</ticksBetweenBurstShots>
+        <burstShotCount>1</burstShotCount>
+        <soundCast>ElectromagneticLt</soundCast>
+        <soundCastTail>GunTail_Medium</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>stock</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseBullet">
+    <defName>SSR_SignalInterceptGun_rt</defName>
+    <label>信号阻断枪子弹</label>
+    <graphicData>
+      <texPath>Things/Projectile/SignalInterceptGun_rt</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>SSR_SignalInterceptDamage</damageDef>
+      <damageAmountBase>1</damageAmountBase>
+      <armorPenetrationBase>99999</armorPenetrationBase>
+      <speed>120</speed>
+    </projectile>
+  </ThingDef>
+
+  <!--<ThingDef ParentName="SSR_BaseWeapon">
+    <defName>SSR_VertigotStick</defName>
+    <label>眩晕棍</label>
+    <description>眩晕棍</description>
+    <graphicData>
+      <texPath>Things/Weapons/Non-lethal Weapon/VertigotStick</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <WorkToMake>55000</WorkToMake>
+      <Mass>1.5</Mass>
+    </statBases>
+    <equippedAngleOffset>-65</equippedAngleOffset>
+    <recipeMaker>
+      <researchPrerequisite>AdvancedFabrication</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>9</Crafting>
+      </skillRequirements>
+      <unfinishedThingDef>UnfinishedWeapon</unfinishedThingDef>
+    </recipeMaker>
+    <costList>
+      <Plasteel>50</Plasteel>
+      <ComponentSpacer>1</ComponentSpacer>
+    </costList>
+    <tools>
+      <li>
+        <label>head</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>1</power>
+        <cooldownTime>1</cooldownTime>
+        <extraMeleeDamages>
+          <li>
+            <def>SSR_SignalInterceptDamage</def>
+          </li>
+        </extraMeleeDamages>
+      </li>
+    </tools>
+  </ThingDef>-->
+  
+</Defs>

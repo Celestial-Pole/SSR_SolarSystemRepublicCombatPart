@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef ParentName="SSR_BaseWeapon_Mech">
+    <defName>SSR_MechanoidGun</defName>
+    <label>轻型机炮</label>
+    <description>轻型机炮</description>
+    <graphicData>
+      <texPath>Things/Empty</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Interact_ChargeRifle</soundInteract>
+    <statBases>
+      <WorkToMake>45000</WorkToMake>
+      <Mass>3.5</Mass>
+      <AccuracyTouch>1.00</AccuracyTouch>
+      <AccuracyShort>1.00</AccuracyShort>
+      <AccuracyMedium>1.00</AccuracyMedium>
+      <AccuracyLong>0.85</AccuracyLong>
+      <RangedWeapon_Cooldown>1.50</RangedWeapon_Cooldown>
+    </statBases>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>SSR_MechanoidGun_rt</defaultProjectile>
+        <warmupTime>0.5</warmupTime>
+        <range>55</range>
+        <ticksBetweenBurstShots>10</ticksBetweenBurstShots>
+        <burstShotCount>12</burstShotCount>
+        <soundCast>ElectromagneticLt</soundCast>
+        <soundCastTail>GunTail_Medium</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+      </li>
+    </verbs>
+    <weaponTags>
+      <li>SSR_MechanoidGun</li>
+    </weaponTags>
+    <tools>
+      <li>
+        <label>stock</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>15</power>
+        <cooldownTime>1.25</cooldownTime>
+      </li>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>15</power>
+        <cooldownTime>1.25</cooldownTime>
+      </li>
+    </tools>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseBullet">
+    <defName>SSR_MechanoidGun_rt</defName>
+    <label>电磁步枪子弹</label>
+	  <thingClass>BillDoorsFramework.penetratingBullet</thingClass>
+    <graphicData>
+      <texPath>Things/Projectile/Electromagnetic_AMR_rt</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>Bullet</damageDef>
+      <damageAmountBase>35</damageAmountBase>
+      <armorPenetrationBase>1.0</armorPenetrationBase>
+      <speed>120</speed>
+    </projectile>
+	  <modExtensions>
+	  	<li Class="BillDoorsFramework.ModExtension_PenetratingProjectile">
+	  		<overpenDamageMulti>0.8</overpenDamageMulti>
+	  		<stopperDamageMulti>1.225</stopperDamageMulti>
+	  		<penetrationPotentialMultiplier>3</penetrationPotentialMultiplier>
+	  	</li>
+	  </modExtensions>
+  </ThingDef>
+  
+</Defs>

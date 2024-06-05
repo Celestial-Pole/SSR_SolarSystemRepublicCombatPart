@@ -1,0 +1,662 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Militor -->    
+    <ThingDef ParentName="LightMechanoid">
+      <defName>SSR_CombatRobot_SMG</defName>
+      <label>作战机器人（冲锋枪）</label>
+      <description>作战机器人（冲锋枪）</description>
+      <statBases>
+		    <MarketValue>1500</MarketValue>
+        <MoveSpeed>6</MoveSpeed>
+		    <ArmorRating_Blunt>0.5</ArmorRating_Blunt>
+        <ArmorRating_Sharp>1.0</ArmorRating_Sharp>
+		    <BandwidthCost>0</BandwidthCost>
+      </statBases>
+      <race>
+	      <body>Mech_Military</body>
+        <lifeStageAges>
+          <li>
+            <def>MechanoidFullyFormed</def>
+            <minAge>0</minAge>
+            <soundWounded>Pawn_Mech_Militor_Wounded</soundWounded>
+            <soundDeath>Pawn_Mech_Militor_Death</soundDeath>
+            <soundCall>Pawn_Mech_Militor_Call</soundCall>
+          </li>
+          <li>
+            <def>MechanoidFullyFormed</def>
+            <minAge>100</minAge>
+            <soundWounded>Pawn_Mech_Militor_Wounded</soundWounded>
+            <soundDeath>Pawn_Mech_Militor_Death</soundDeath>
+            <soundCall>Pawn_Mech_Militor_Call</soundCall>
+          </li>
+        </lifeStageAges>
+		    <mechEnabledWorkTypes>
+			    <li>Hauling</li>
+        </mechEnabledWorkTypes>
+      </race>
+      <modExtensions>
+		    <li Class="SolarSystemRepublicFramework.DefModExtension_DefendHediff">
+  			  <hediffs>
+       			<li>Heatstroke</li>
+	  			  <li>Hypothermia</li>
+  				  <li>ToxicBuildup</li>
+				    <li>FibrousMechanites</li>
+			  	  <li>Malaria</li>
+		  		  <li>SensoryMechanites</li>
+	  			  <li>Burn</li>
+  				  <li>Frostbite</li>
+				    <li MayRequire="Ayameduki.HARIdearn">HAR_IA_Skill_Hediff_a</li>
+				<li MayRequire="Ayameduki.HARIdearn">HAR_IA_Skill_Hediff_c</li>
+				<li MayRequire="Ayameduki.HARIdearn">HAR_IA_Skill_Hediff_d</li>
+				<li MayRequire="Ayameduki.HARIdearn">HAR_IA_Skill_Hediff_e</li>
+				<li MayRequire="Ayameduki.HARIdearn">HAR_IA_Gunshot</li>
+				<li MayRequire="Ayameduki.HARIdearn">HAR_IA_Skill_Hediff_f</li>
+				<li MayRequire="Ayameduki.HARIdearn">HAR_IA_Skill_Hediff_g</li>
+				<li MayRequire="Ayameduki.HARIdearn">HAR_IA_Skill_Hediff_h</li>
+				<li MayRequire="Ayameduki.HARIdearn">HAR_IA_Skill_Hediff_z</li>
+				<li MayRequire="Ayameduki.HARIdhale">HAR_IH_Hediff_ZZZ</li>
+				<li MayRequire="Ayameduki.HARNearmare">Hediff_Geist</li>
+				<li MayRequire="Ayameduki.HARNearmare">Hediff_Larva</li>
+				<li MayRequire="Ayameduki.HARNearmare">Hediff_Rugeiyu</li>
+				<li MayRequire="Ayameduki.HARNearmare">Hediff_Genocide</li>
+				<li MayRequire="Ayameduki.HARNearmare">HAR_NM_Hediff_a</li>
+				<li MayRequire="Ayameduki.HARNearmare">HAR_NM_XXX_Hediff</li>
+				<li MayRequire="Ayameduki.HARNearmare">HAR_NM_Skill_Hediff_b</li>
+				<li MayRequire="Ayameduki.HARNearmare">HAR_NM_Skill_Hediff_c</li>
+				<li MayRequire="Ayameduki.HARNearmare">HAR_NM_Skill_Hediff_e</li>
+				<li MayRequire="Ayameduki.HARNeclose">HAR_NC_Hediff_a</li>
+				<li MayRequire="Ayameduki.HARNeclose">HAR_NC_Hediff_b</li>
+				<li MayRequire="Ayameduki.HARXenoorca">HAR_XO_Hediff_a</li>
+				<li MayRequire="Ayameduki.HARXenoorca">HAR_XO_Hediff_b</li>
+				<li MayRequire="Ayameduki.HARXenoorca">HAR_XO_Hediff_d</li>
+				<li MayRequire="Ayameduki.HARXenoorca">HAR_XO_Hediff_e</li>
+				<li MayRequire="Ayameduki.BOSSRequeen">BOSS_RQ_Hediff_b</li>
+				<li MayRequire="Ayameduki.BOSSRequeen">BOSS_RQ_Hediff_Z_a</li>
+				<li MayRequire="Ayameduki.BOSSRequeen">BOSS_RQ_Hediff_Z_b</li>
+				<li MayRequire="Ayameduki.BOSSRequeen">BOSS_RQ_Hediff_Z_c</li>
+				<li MayRequire="Ayameduki.BOSSRequeen">BOSS_RQ_Hediff_Z_d</li>
+				<li MayRequire="Ayameduki.BOSSRequeen">BOSS_RQ_Hediff_Z_e</li>
+				<li MayRequire="Ayameduki.BOSSRequeen">BOSS_RQ_Hediff_Gone_Error_a</li>
+				<li MayRequire="Ayameduki.BOSSEnforcer">BOSS_EF_Hediff_a</li>
+				<li MayRequire="Ayameduki.BOSSEnforcer">BOSS_EF_Hediff_b</li>
+				<li MayRequire="Ayameduki.BOSSEnforcer">BOSS_EF_Hediff_c</li>
+				<li MayRequire="Ayameduki.BOSSEnforcer">BOSS_EF_Hediff_d</li>
+				<li MayRequire="Ayameduki.BOSSEnforcer">BOSS_EF_Hediff_e</li>
+				<li MayRequire="Ayameduki.HARChaoura">HAR_CO_Hediff_c</li>
+				<li MayRequire="Ayameduki.HARChaoura">HAR_CO_Hediff_d</li>
+				<li MayRequire="Ayameduki.HARChaoura">HAR_CO_Hediff_f</li>
+				<li MayRequire="Ayameduki.HARChaoura">HAR_CO_Hediff_h</li>
+				<li MayRequire="Ayameduki.HARLittluna">HAR_LL_Hediff_c</li>
+				<li MayRequire="Ayameduki.HARQualeela">HAR_QL_Hediff_c</li>
+				<li MayRequire="Ayameduki.HARQualeela">HAR_QL_Hediff_d</li>
+				<li MayRequire="Ayameduki.HARQualeela">HAR_QL_Hediff_e</li>
+				<li MayRequire="miho.fortifiedoutremer">Miho_AbomiSeen_Hediff</li>
+				<li MayRequire="miho.fortifiedoutremer">Miho_Hawk_Hediff</li>
+				<li MayRequire="miho.fortifiedoutremer">Miho_Thunder_Hediff</li>
+				<li MayRequire="miho.fortifiedoutremer">Miho_Plasma_Hediff</li>
+        		<li MayRequire="Seioch.Naki.HAR">Naki_Distortion</li>
+				<li MayRequire="Seioch.Naki.HAR">Naki_Stall</li>
+				<li MayRequire="Seioch.Naki.HAR">Naki_Darkness</li>
+				<li MayRequire="Seioch.Naki.HAR">DMConfusion</li>
+				<li MayRequire="Seioch.Naki.HAR">DMDecay</li>
+				<li MayRequire="Seioch.Naki.HAR">DMDisintegration</li>
+				<li MayRequire="Seioch.Naki.HAR">DMAnnihilation</li>
+				<li MayRequire="Seioch.Naki.HAR">DMHealingPenalty</li>
+				<li MayRequire="VanillaExpanded.VPsycastsE">VPE_MindControlled</li>
+				<li MayRequire="VanillaExpanded.VPsycastsE">VPE_UnLucky</li>
+				<li MayRequire="VanillaExpanded.VPsycastsE">VPE_AgeSickness</li>
+				<li MayRequire="VanillaExpanded.VPsycastsE">VPE_Blizzard</li>
+				<li MayRequire="VanillaExpanded.VPsycastsE">VPE_FrostRay</li>
+				<li MayRequire="VanillaExpanded.VPsycastsE">VPE_Hurricane</li>
+				<li MayRequire="VanillaExpanded.VPsycastsE">VPE_IceBlock</li>
+				<li MayRequire="VanillaExpanded.VPsycastsE">VPE_LostVitality</li>
+				<li MayRequire="VanillaExpanded.VPsycastsE">VPE_PsychicPain</li>
+				<li MayRequire="VanillaExpanded.VPsycastsE">VPE_Rot</li>
+				<li MayRequire="VanillaExpanded.VPsycastsE">VPE_Vortex</li>
+				<li MayRequire="VanillaExpanded.VPsycastsE">VPEH_Bloodmist</li>
+        		<li MayRequire="Edern.ArchotechWeaponry">VoidToxin</li>
+				<li MayRequire="Edern.ArchotechWeaponry">VoidNecrosisPerm</li>
+				<li MayRequire="Edern.ArchotechWeaponry">VoidNecrosisTemp</li>
+        		<li MayRequire="BlackMarket420.KraltechIndustries">SeverePsychicDrone</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">Bleed</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">ShockPain</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">HealthBlight</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">CorpseExplosionDisease</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">Inflammable</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">IncendiaryBody</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">VitalityDrain</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">ArmorBreaker</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">Instantkill</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">Frostbitez</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">BerserkBullet</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">ConfusionBullet</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">HealthBlight1</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">IronLung</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">ArmorBreakerEX</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">NaniteAssault</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">MagnesiumBurn</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">RadiationPoisoning</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">NeuroToxin</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">HeatNullNanites</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">ColdNullNanites</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">AntiOrganicDisease</li>
+				<li MayRequire="ninedaylongbow.RedSunTechnologyIndustry">AngerOfTheBlackDragon</li>
+				<li MayRequire="ninedaylongbow.RedSunTechnologyIndustry">Windytalk</li>
+				<li MayRequire="ninedaylongbow.RedSunTechnologyIndustry">ArmorBreakingAssault</li>
+				<li MayRequire="ninedaylongbow.RedSunTechnologyIndustry">Sealofpoisonoussnake</li>
+				<li MayRequire="ninedaylongbow.RedSunTechnologyIndustry">FZHypothermic</li>
+  		    </hediffs>
+		    </li>
+	    </modExtensions>
+    </ThingDef>
+  
+    <PawnKindDef ParentName="LightMechanoidKind">
+      <defName>SSR_CombatRobot_SMG</defName>
+      <label>作战机器人（冲锋枪）</label>
+      <race>SSR_CombatRobot_SMG</race>
+      <combatPower>45</combatPower>
+      <allowInMechClusters>false</allowInMechClusters>
+      <lifeStages>
+        <li>
+          <bodyGraphicData>
+            <texPath>Things/Pawn/Mechanoid/CombatRobot</texPath>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <drawSize>1.75</drawSize>
+            <shadowData>
+              <volume>(0.3, 0.4, 0.3)</volume>
+              <offset>(0,0,-0.25)</offset>
+            </shadowData>
+          </bodyGraphicData>
+        </li>
+        <li>
+          <bodyGraphicData>
+            <texPath>Things/Pawn/Mechanoid/CombatRobot</texPath>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <drawSize>1.75</drawSize>
+            <shadowData>
+              <volume>(0.3, 0.4, 0.3)</volume>
+              <offset>(0,0,-0.25)</offset>
+            </shadowData>
+          </bodyGraphicData>
+        </li>
+      </lifeStages>
+      <weaponTags>
+        <li>SSR_MechanoidGunSMG</li>
+      </weaponTags>
+	    <abilities>
+		    <li>X_LongjumpMech</li>
+      </abilities>
+    </PawnKindDef>
+
+    <ThingDef ParentName="LightMechanoid">
+      	<defName>SSR_CombatRobot_AR</defName>
+      	<label>作战机器人（突击步枪）</label>
+      	<description>作战机器人（突击步枪）</description>
+      	<statBases>
+		    <MarketValue>1750</MarketValue>
+        	<MoveSpeed>6</MoveSpeed>
+		    <ArmorRating_Blunt>0.5</ArmorRating_Blunt>
+        	<ArmorRating_Sharp>1.0</ArmorRating_Sharp>
+		    <BandwidthCost>0</BandwidthCost>
+      	</statBases>
+      	<race>
+	      	<body>Mech_Military</body>
+        	<lifeStageAges>
+          		<li>
+            		<def>MechanoidFullyFormed</def>
+            		<minAge>0</minAge>
+            		<soundWounded>Pawn_Mech_Militor_Wounded</soundWounded>
+            		<soundDeath>Pawn_Mech_Militor_Death</soundDeath>
+            		<soundCall>Pawn_Mech_Militor_Call</soundCall>
+          		</li>
+          		<li>
+            		<def>MechanoidFullyFormed</def>
+            		<minAge>100</minAge>
+            		<soundWounded>Pawn_Mech_Militor_Wounded</soundWounded>
+            		<soundDeath>Pawn_Mech_Militor_Death</soundDeath>
+            		<soundCall>Pawn_Mech_Militor_Call</soundCall>
+          		</li>
+        	</lifeStageAges>
+		    <mechEnabledWorkTypes>
+			    <li>Hauling</li>
+        	</mechEnabledWorkTypes>
+      	</race>
+      	<modExtensions>
+		    <li Class="SolarSystemRepublicFramework.DefModExtension_DefendHediff">
+  			  	<hediffs>
+       				<li>Heatstroke</li>
+	  				<li>Hypothermia</li>
+  					<li>ToxicBuildup</li>
+					<li>FibrousMechanites</li>
+			  		<li>Malaria</li>
+		  			<li>SensoryMechanites</li>
+	  				<li>Burn</li>
+  					<li>Frostbite</li>
+					<li MayRequire="Ayameduki.HARIdearn">HAR_IA_Skill_Hediff_a</li>
+					<li MayRequire="Ayameduki.HARIdearn">HAR_IA_Skill_Hediff_c</li>
+					<li MayRequire="Ayameduki.HARIdearn">HAR_IA_Skill_Hediff_d</li>
+					<li MayRequire="Ayameduki.HARIdearn">HAR_IA_Skill_Hediff_e</li>
+					<li MayRequire="Ayameduki.HARIdearn">HAR_IA_Gunshot</li>
+					<li MayRequire="Ayameduki.HARIdearn">HAR_IA_Skill_Hediff_f</li>
+					<li MayRequire="Ayameduki.HARIdearn">HAR_IA_Skill_Hediff_g</li>
+					<li MayRequire="Ayameduki.HARIdearn">HAR_IA_Skill_Hediff_h</li>
+					<li MayRequire="Ayameduki.HARIdearn">HAR_IA_Skill_Hediff_z</li>
+					<li MayRequire="Ayameduki.HARIdhale">HAR_IH_Hediff_ZZZ</li>
+					<li MayRequire="Ayameduki.HARNearmare">Hediff_Geist</li>
+					<li MayRequire="Ayameduki.HARNearmare">Hediff_Larva</li>
+					<li MayRequire="Ayameduki.HARNearmare">Hediff_Rugeiyu</li>
+					<li MayRequire="Ayameduki.HARNearmare">Hediff_Genocide</li>
+					<li MayRequire="Ayameduki.HARNearmare">HAR_NM_Hediff_a</li>
+					<li MayRequire="Ayameduki.HARNearmare">HAR_NM_XXX_Hediff</li>
+					<li MayRequire="Ayameduki.HARNearmare">HAR_NM_Skill_Hediff_b</li>
+					<li MayRequire="Ayameduki.HARNearmare">HAR_NM_Skill_Hediff_c</li>
+					<li MayRequire="Ayameduki.HARNearmare">HAR_NM_Skill_Hediff_e</li>
+					<li MayRequire="Ayameduki.HARNeclose">HAR_NC_Hediff_a</li>
+					<li MayRequire="Ayameduki.HARNeclose">HAR_NC_Hediff_b</li>
+					<li MayRequire="Ayameduki.HARXenoorca">HAR_XO_Hediff_a</li>
+					<li MayRequire="Ayameduki.HARXenoorca">HAR_XO_Hediff_b</li>
+					<li MayRequire="Ayameduki.HARXenoorca">HAR_XO_Hediff_d</li>
+					<li MayRequire="Ayameduki.HARXenoorca">HAR_XO_Hediff_e</li>
+					<li MayRequire="Ayameduki.BOSSRequeen">BOSS_RQ_Hediff_b</li>
+					<li MayRequire="Ayameduki.BOSSRequeen">BOSS_RQ_Hediff_Z_a</li>
+					<li MayRequire="Ayameduki.BOSSRequeen">BOSS_RQ_Hediff_Z_b</li>
+					<li MayRequire="Ayameduki.BOSSRequeen">BOSS_RQ_Hediff_Z_c</li>
+					<li MayRequire="Ayameduki.BOSSRequeen">BOSS_RQ_Hediff_Z_d</li>
+					<li MayRequire="Ayameduki.BOSSRequeen">BOSS_RQ_Hediff_Z_e</li>
+					<li MayRequire="Ayameduki.BOSSRequeen">BOSS_RQ_Hediff_Gone_Error_a</li>
+					<li MayRequire="Ayameduki.BOSSEnforcer">BOSS_EF_Hediff_a</li>
+					<li MayRequire="Ayameduki.BOSSEnforcer">BOSS_EF_Hediff_b</li>
+					<li MayRequire="Ayameduki.BOSSEnforcer">BOSS_EF_Hediff_c</li>
+					<li MayRequire="Ayameduki.BOSSEnforcer">BOSS_EF_Hediff_d</li>
+					<li MayRequire="Ayameduki.BOSSEnforcer">BOSS_EF_Hediff_e</li>
+					<li MayRequire="Ayameduki.HARChaoura">HAR_CO_Hediff_c</li>
+					<li MayRequire="Ayameduki.HARChaoura">HAR_CO_Hediff_d</li>
+					<li MayRequire="Ayameduki.HARChaoura">HAR_CO_Hediff_f</li>
+					<li MayRequire="Ayameduki.HARChaoura">HAR_CO_Hediff_h</li>
+					<li MayRequire="Ayameduki.HARLittluna">HAR_LL_Hediff_c</li>
+					<li MayRequire="Ayameduki.HARQualeela">HAR_QL_Hediff_c</li>
+					<li MayRequire="Ayameduki.HARQualeela">HAR_QL_Hediff_d</li>
+					<li MayRequire="Ayameduki.HARQualeela">HAR_QL_Hediff_e</li>
+					<li MayRequire="miho.fortifiedoutremer">Miho_AbomiSeen_Hediff</li>
+					<li MayRequire="miho.fortifiedoutremer">Miho_Hawk_Hediff</li>
+					<li MayRequire="miho.fortifiedoutremer">Miho_Thunder_Hediff</li>
+					<li MayRequire="miho.fortifiedoutremer">Miho_Plasma_Hediff</li>
+        			<li MayRequire="Seioch.Naki.HAR">Naki_Distortion</li>
+					<li MayRequire="Seioch.Naki.HAR">Naki_Stall</li>
+					<li MayRequire="Seioch.Naki.HAR">Naki_Darkness</li>
+					<li MayRequire="Seioch.Naki.HAR">DMConfusion</li>
+					<li MayRequire="Seioch.Naki.HAR">DMDecay</li>
+					<li MayRequire="Seioch.Naki.HAR">DMDisintegration</li>
+					<li MayRequire="Seioch.Naki.HAR">DMAnnihilation</li>
+					<li MayRequire="Seioch.Naki.HAR">DMHealingPenalty</li>
+					<li MayRequire="VanillaExpanded.VPsycastsE">VPE_MindControlled</li>
+					<li MayRequire="VanillaExpanded.VPsycastsE">VPE_UnLucky</li>
+					<li MayRequire="VanillaExpanded.VPsycastsE">VPE_AgeSickness</li>
+					<li MayRequire="VanillaExpanded.VPsycastsE">VPE_Blizzard</li>
+					<li MayRequire="VanillaExpanded.VPsycastsE">VPE_FrostRay</li>
+					<li MayRequire="VanillaExpanded.VPsycastsE">VPE_Hurricane</li>
+					<li MayRequire="VanillaExpanded.VPsycastsE">VPE_IceBlock</li>
+					<li MayRequire="VanillaExpanded.VPsycastsE">VPE_LostVitality</li>
+					<li MayRequire="VanillaExpanded.VPsycastsE">VPE_PsychicPain</li>
+					<li MayRequire="VanillaExpanded.VPsycastsE">VPE_Rot</li>
+					<li MayRequire="VanillaExpanded.VPsycastsE">VPE_Vortex</li>
+					<li MayRequire="VanillaExpanded.VPsycastsE">VPEH_Bloodmist</li>
+        			<li MayRequire="Edern.ArchotechWeaponry">VoidToxin</li>
+					<li MayRequire="Edern.ArchotechWeaponry">VoidNecrosisPerm</li>
+					<li MayRequire="Edern.ArchotechWeaponry">VoidNecrosisTemp</li>
+       				<li MayRequire="BlackMarket420.KraltechIndustries">SeverePsychicDrone</li>
+					<li MayRequire="BlackMarket420.KraltechIndustries">Bleed</li>
+					<li MayRequire="BlackMarket420.KraltechIndustries">ShockPain</li>
+					<li MayRequire="BlackMarket420.KraltechIndustries">HealthBlight</li>
+					<li MayRequire="BlackMarket420.KraltechIndustries">CorpseExplosionDisease</li>
+					<li MayRequire="BlackMarket420.KraltechIndustries">Inflammable</li>
+					<li MayRequire="BlackMarket420.KraltechIndustries">IncendiaryBody</li>
+					<li MayRequire="BlackMarket420.KraltechIndustries">VitalityDrain</li>
+					<li MayRequire="BlackMarket420.KraltechIndustries">ArmorBreaker</li>
+					<li MayRequire="BlackMarket420.KraltechIndustries">Instantkill</li>
+					<li MayRequire="BlackMarket420.KraltechIndustries">Frostbitez</li>
+					<li MayRequire="BlackMarket420.KraltechIndustries">BerserkBullet</li>
+					<li MayRequire="BlackMarket420.KraltechIndustries">ConfusionBullet</li>
+					<li MayRequire="BlackMarket420.KraltechIndustries">HealthBlight1</li>
+					<li MayRequire="BlackMarket420.KraltechIndustries">IronLung</li>
+					<li MayRequire="BlackMarket420.KraltechIndustries">ArmorBreakerEX</li>
+					<li MayRequire="BlackMarket420.KraltechIndustries">NaniteAssault</li>
+					<li MayRequire="BlackMarket420.KraltechIndustries">MagnesiumBurn</li>
+					<li MayRequire="BlackMarket420.KraltechIndustries">RadiationPoisoning</li>
+					<li MayRequire="BlackMarket420.KraltechIndustries">NeuroToxin</li>
+					<li MayRequire="BlackMarket420.KraltechIndustries">HeatNullNanites</li>
+					<li MayRequire="BlackMarket420.KraltechIndustries">ColdNullNanites</li>
+					<li MayRequire="BlackMarket420.KraltechIndustries">AntiOrganicDisease</li>
+					<li MayRequire="ninedaylongbow.RedSunTechnologyIndustry">AngerOfTheBlackDragon</li>
+					<li MayRequire="ninedaylongbow.RedSunTechnologyIndustry">Windytalk</li>
+					<li MayRequire="ninedaylongbow.RedSunTechnologyIndustry">ArmorBreakingAssault</li>
+					<li MayRequire="ninedaylongbow.RedSunTechnologyIndustry">Sealofpoisonoussnake</li>
+					<li MayRequire="ninedaylongbow.RedSunTechnologyIndustry">FZHypothermic</li>
+  		    	</hediffs>
+		    </li>
+	    </modExtensions>
+    </ThingDef>
+
+    <PawnKindDef ParentName="LightMechanoidKind">
+      <defName>SSR_CombatRobot_AR</defName>
+      <label>作战机器人（突击步枪）</label>
+      <race>SSR_CombatRobot_AR</race>
+      <combatPower>45</combatPower>
+      <allowInMechClusters>false</allowInMechClusters>
+      <lifeStages>
+        <li>
+          <bodyGraphicData>
+            <texPath>Things/Pawn/Mechanoid/CombatRobot</texPath>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <drawSize>1.75</drawSize>
+            <shadowData>
+              <volume>(0.3, 0.4, 0.3)</volume>
+              <offset>(0,0,-0.25)</offset>
+            </shadowData>
+          </bodyGraphicData>
+        </li>
+        <li>
+          <bodyGraphicData>
+            <texPath>Things/Pawn/Mechanoid/CombatRobot</texPath>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <drawSize>1.75</drawSize>
+            <shadowData>
+              <volume>(0.3, 0.4, 0.3)</volume>
+              <offset>(0,0,-0.25)</offset>
+            </shadowData>
+          </bodyGraphicData>
+        </li>
+      </lifeStages>
+      <weaponTags>
+        <li>SSR_MechanoidGunAR</li>
+      </weaponTags>
+	    <abilities>
+		    <li>X_LongjumpMech</li>
+      </abilities>
+    </PawnKindDef>
+
+    <!--<ThingDef ParentName="LightMechanoid">
+      <defName>SSR_CombatRobot_SG</defName>
+      <label>作战机器人（霰弹枪）</label>
+      <description>作战机器人（霰弹枪）</description>
+      <statBases>
+		    <MarketValue>1750</MarketValue>
+        <MoveSpeed>6</MoveSpeed>
+		    <ArmorRating_Blunt>0.7</ArmorRating_Blunt>
+        <ArmorRating_Sharp>1.4</ArmorRating_Sharp>
+		    <BandwidthCost>0</BandwidthCost>
+      </statBases>
+      <race>
+	    <body>Mech_Military</body>
+        <lifeStageAges>
+          <li>
+            <def>MechanoidFullyFormed</def>
+            <minAge>0</minAge>
+            <soundWounded>Pawn_Mech_Militor_Wounded</soundWounded>
+            <soundDeath>Pawn_Mech_Militor_Death</soundDeath>
+            <soundCall>Pawn_Mech_Militor_Call</soundCall>
+          </li>
+          <li>
+            <def>MechanoidFullyFormed</def>
+            <minAge>100</minAge>
+            <soundWounded>Pawn_Mech_Militor_Wounded</soundWounded>
+            <soundDeath>Pawn_Mech_Militor_Death</soundDeath>
+            <soundCall>Pawn_Mech_Militor_Call</soundCall>
+          </li>
+        </lifeStageAges>
+		    <mechEnabledWorkTypes>
+			    <li>Hauling</li>
+        </mechEnabledWorkTypes>
+      </race>
+    </ThingDef>
+
+    <PawnKindDef ParentName="LightMechanoidKind">
+      <defName>SSR_CombatRobot_SG</defName>
+      <label>作战机器人（霰弹枪）</label>
+      <race>SSR_CombatRobot_SG</race>
+      <combatPower>45</combatPower>
+      <allowInMechClusters>false</allowInMechClusters>
+      <lifeStages>
+        <li>
+          <bodyGraphicData>
+            <texPath>Things/Pawn/Mechanoid/CombatRobot</texPath>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <drawSize>1.75</drawSize>
+            <shadowData>
+              <volume>(0.3, 0.4, 0.3)</volume>
+              <offset>(0,0,-0.25)</offset>
+            </shadowData>
+          </bodyGraphicData>
+        </li>
+        <li>
+          <bodyGraphicData>
+            <texPath>Things/Pawn/Mechanoid/CombatRobot</texPath>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <drawSize>1.75</drawSize>
+            <shadowData>
+              <volume>(0.3, 0.4, 0.3)</volume>
+              <offset>(0,0,-0.25)</offset>
+            </shadowData>
+          </bodyGraphicData>
+        </li>
+      </lifeStages>
+      <weaponTags>
+        <li>SSR_MechanoidGunSG</li>
+      </weaponTags>
+	    <abilities>
+		    <li>X_LongjumpMech</li>
+      </abilities>
+    </PawnKindDef>-->
+
+	<ThingDef ParentName="HeavyMechanoid">
+      	<defName>SSR_HeavyCombatRobot</defName>
+      	<label>重型作战机器人</label>
+      	<description>重型作战机器人</description>
+      	<statBases>
+		    <MarketValue>7500</MarketValue>
+        	<MoveSpeed>5</MoveSpeed>
+		    <ArmorRating_Blunt>1.0</ArmorRating_Blunt>
+        	<ArmorRating_Sharp>2.0</ArmorRating_Sharp>
+		    <BandwidthCost>0</BandwidthCost>
+      	</statBases>
+      	<race>
+	      <body>Mech_HeavyMilitary</body>
+        	<lifeStageAges>
+        		<li>
+            		<def>MechanoidFullyFormed</def>
+            		<minAge>0</minAge>
+            	<soundWounded>Pawn_Mech_Militor_Wounded</soundWounded>
+            	<soundDeath>Pawn_Mech_Militor_Death</soundDeath>
+            	<soundCall>Pawn_Mech_Militor_Call</soundCall>
+          		</li>
+          		<li>
+            		<def>MechanoidFullyFormed</def>
+            		<minAge>100</minAge>
+            		<soundWounded>Pawn_Mech_Militor_Wounded</soundWounded>
+            		<soundDeath>Pawn_Mech_Militor_Death</soundDeath>
+            		<soundCall>Pawn_Mech_Militor_Call</soundCall>
+          		</li>
+        	</lifeStageAges>
+		    <mechEnabledWorkTypes>
+			    <li>Hauling</li>
+        	</mechEnabledWorkTypes>
+      	</race>
+      	<modExtensions>
+		    <li Class="SolarSystemRepublicFramework.DefModExtension_DefendHediff">
+  				<hediffs>
+       				<li>Heatstroke</li>
+	  				<li>Hypothermia</li>
+  					<li>ToxicBuildup</li>
+					<li>FibrousMechanites</li>
+			  		<li>Malaria</li>
+		  			<li>SensoryMechanites</li>
+	  				<li>Burn</li>
+  					<li>Frostbite</li>
+				    <li MayRequire="Ayameduki.HARIdearn">HAR_IA_Skill_Hediff_a</li>
+					<li MayRequire="Ayameduki.HARIdearn">HAR_IA_Skill_Hediff_c</li>
+					<li MayRequire="Ayameduki.HARIdearn">HAR_IA_Skill_Hediff_d</li>
+					<li MayRequire="Ayameduki.HARIdearn">HAR_IA_Skill_Hediff_e</li>
+					<li MayRequire="Ayameduki.HARIdearn">HAR_IA_Gunshot</li>
+					<li MayRequire="Ayameduki.HARIdearn">HAR_IA_Skill_Hediff_f</li>
+					<li MayRequire="Ayameduki.HARIdearn">HAR_IA_Skill_Hediff_g</li>
+					<li MayRequire="Ayameduki.HARIdearn">HAR_IA_Skill_Hediff_h</li>
+					<li MayRequire="Ayameduki.HARIdearn">HAR_IA_Skill_Hediff_z</li>
+					<li MayRequire="Ayameduki.HARIdhale">HAR_IH_Hediff_ZZZ</li>
+					<li MayRequire="Ayameduki.HARNearmare">Hediff_Geist</li>
+					<li MayRequire="Ayameduki.HARNearmare">Hediff_Larva</li>
+					<li MayRequire="Ayameduki.HARNearmare">Hediff_Rugeiyu</li>
+					<li MayRequire="Ayameduki.HARNearmare">Hediff_Genocide</li>
+					<li MayRequire="Ayameduki.HARNearmare">HAR_NM_Hediff_a</li>
+					<li MayRequire="Ayameduki.HARNearmare">HAR_NM_XXX_Hediff</li>
+					<li MayRequire="Ayameduki.HARNearmare">HAR_NM_Skill_Hediff_b</li>
+					<li MayRequire="Ayameduki.HARNearmare">HAR_NM_Skill_Hediff_c</li>
+					<li MayRequire="Ayameduki.HARNearmare">HAR_NM_Skill_Hediff_e</li>
+					<li MayRequire="Ayameduki.HARNeclose">HAR_NC_Hediff_a</li>
+					<li MayRequire="Ayameduki.HARNeclose">HAR_NC_Hediff_b</li>
+					<li MayRequire="Ayameduki.HARXenoorca">HAR_XO_Hediff_a</li>
+					<li MayRequire="Ayameduki.HARXenoorca">HAR_XO_Hediff_b</li>
+					<li MayRequire="Ayameduki.HARXenoorca">HAR_XO_Hediff_d</li>
+					<li MayRequire="Ayameduki.HARXenoorca">HAR_XO_Hediff_e</li>
+					<li MayRequire="Ayameduki.BOSSRequeen">BOSS_RQ_Hediff_b</li>
+					<li MayRequire="Ayameduki.BOSSRequeen">BOSS_RQ_Hediff_Z_a</li>
+					<li MayRequire="Ayameduki.BOSSRequeen">BOSS_RQ_Hediff_Z_b</li>
+					<li MayRequire="Ayameduki.BOSSRequeen">BOSS_RQ_Hediff_Z_c</li>
+					<li MayRequire="Ayameduki.BOSSRequeen">BOSS_RQ_Hediff_Z_d</li>
+					<li MayRequire="Ayameduki.BOSSRequeen">BOSS_RQ_Hediff_Z_e</li>
+					<li MayRequire="Ayameduki.BOSSRequeen">BOSS_RQ_Hediff_Gone_Error_a</li>
+					<li MayRequire="Ayameduki.BOSSEnforcer">BOSS_EF_Hediff_a</li>
+					<li MayRequire="Ayameduki.BOSSEnforcer">BOSS_EF_Hediff_b</li>
+					<li MayRequire="Ayameduki.BOSSEnforcer">BOSS_EF_Hediff_c</li>
+					<li MayRequire="Ayameduki.BOSSEnforcer">BOSS_EF_Hediff_d</li>
+					<li MayRequire="Ayameduki.BOSSEnforcer">BOSS_EF_Hediff_e</li>
+					<li MayRequire="Ayameduki.HARChaoura">HAR_CO_Hediff_c</li>
+					<li MayRequire="Ayameduki.HARChaoura">HAR_CO_Hediff_d</li>
+					<li MayRequire="Ayameduki.HARChaoura">HAR_CO_Hediff_f</li>
+					<li MayRequire="Ayameduki.HARChaoura">HAR_CO_Hediff_h</li>
+					<li MayRequire="Ayameduki.HARLittluna">HAR_LL_Hediff_c</li>
+					<li MayRequire="Ayameduki.HARQualeela">HAR_QL_Hediff_c</li>
+					<li MayRequire="Ayameduki.HARQualeela">HAR_QL_Hediff_d</li>
+					<li MayRequire="Ayameduki.HARQualeela">HAR_QL_Hediff_e</li>
+					<li MayRequire="miho.fortifiedoutremer">Miho_AbomiSeen_Hediff</li>
+					<li MayRequire="miho.fortifiedoutremer">Miho_Hawk_Hediff</li>
+					<li MayRequire="miho.fortifiedoutremer">Miho_Thunder_Hediff</li>
+					<li MayRequire="miho.fortifiedoutremer">Miho_Plasma_Hediff</li>
+       	 			<li MayRequire="Seioch.Naki.HAR">Naki_Distortion</li>
+					<li MayRequire="Seioch.Naki.HAR">Naki_Stall</li>
+					<li MayRequire="Seioch.Naki.HAR">Naki_Darkness</li>
+					<li MayRequire="Seioch.Naki.HAR">DMConfusion</li>
+					<li MayRequire="Seioch.Naki.HAR">DMDecay</li>
+					<li MayRequire="Seioch.Naki.HAR">DMDisintegration</li>
+					<li MayRequire="Seioch.Naki.HAR">DMAnnihilation</li>
+					<li MayRequire="Seioch.Naki.HAR">DMHealingPenalty</li>
+					<li MayRequire="VanillaExpanded.VPsycastsE">VPE_MindControlled</li>
+					<li MayRequire="VanillaExpanded.VPsycastsE">VPE_UnLucky</li>
+					<li MayRequire="VanillaExpanded.VPsycastsE">VPE_AgeSickness</li>
+					<li MayRequire="VanillaExpanded.VPsycastsE">VPE_Blizzard</li>
+					<li MayRequire="VanillaExpanded.VPsycastsE">VPE_FrostRay</li>
+					<li MayRequire="VanillaExpanded.VPsycastsE">VPE_Hurricane</li>
+					<li MayRequire="VanillaExpanded.VPsycastsE">VPE_IceBlock</li>
+					<li MayRequire="VanillaExpanded.VPsycastsE">VPE_LostVitality</li>
+					<li MayRequire="VanillaExpanded.VPsycastsE">VPE_PsychicPain</li>
+					<li MayRequire="VanillaExpanded.VPsycastsE">VPE_Rot</li>
+					<li MayRequire="VanillaExpanded.VPsycastsE">VPE_Vortex</li>
+					<li MayRequire="VanillaExpanded.VPsycastsE">VPEH_Bloodmist</li>
+       		 		<li MayRequire="Edern.ArchotechWeaponry">VoidToxin</li>
+					<li MayRequire="Edern.ArchotechWeaponry">VoidNecrosisPerm</li>
+					<li MayRequire="Edern.ArchotechWeaponry">VoidNecrosisTemp</li>
+   		     		<li MayRequire="BlackMarket420.KraltechIndustries">SeverePsychicDrone</li>
+					<li MayRequire="BlackMarket420.KraltechIndustries">Bleed</li>
+					<li MayRequire="BlackMarket420.KraltechIndustries">ShockPain</li>
+					<li MayRequire="BlackMarket420.KraltechIndustries">HealthBlight</li>
+					<li MayRequire="BlackMarket420.KraltechIndustries">CorpseExplosionDisease</li>
+					<li MayRequire="BlackMarket420.KraltechIndustries">Inflammable</li>
+					<li MayRequire="BlackMarket420.KraltechIndustries">IncendiaryBody</li>
+					<li MayRequire="BlackMarket420.KraltechIndustries">VitalityDrain</li>
+					<li MayRequire="BlackMarket420.KraltechIndustries">ArmorBreaker</li>
+					<li MayRequire="BlackMarket420.KraltechIndustries">Instantkill</li>
+					<li MayRequire="BlackMarket420.KraltechIndustries">Frostbitez</li>
+					<li MayRequire="BlackMarket420.KraltechIndustries">BerserkBullet</li>
+					<li MayRequire="BlackMarket420.KraltechIndustries">ConfusionBullet</li>
+					<li MayRequire="BlackMarket420.KraltechIndustries">HealthBlight1</li>
+					<li MayRequire="BlackMarket420.KraltechIndustries">IronLung</li>
+					<li MayRequire="BlackMarket420.KraltechIndustries">ArmorBreakerEX</li>
+					<li MayRequire="BlackMarket420.KraltechIndustries">NaniteAssault</li>
+					<li MayRequire="BlackMarket420.KraltechIndustries">MagnesiumBurn</li>
+					<li MayRequire="BlackMarket420.KraltechIndustries">RadiationPoisoning</li>
+					<li MayRequire="BlackMarket420.KraltechIndustries">NeuroToxin</li>
+					<li MayRequire="BlackMarket420.KraltechIndustries">HeatNullNanites</li>
+					<li MayRequire="BlackMarket420.KraltechIndustries">ColdNullNanites</li>
+					<li MayRequire="BlackMarket420.KraltechIndustries">AntiOrganicDisease</li>
+					<li MayRequire="ninedaylongbow.RedSunTechnologyIndustry">AngerOfTheBlackDragon</li>
+					<li MayRequire="ninedaylongbow.RedSunTechnologyIndustry">Windytalk</li>
+					<li MayRequire="ninedaylongbow.RedSunTechnologyIndustry">ArmorBreakingAssault</li>
+					<li MayRequire="ninedaylongbow.RedSunTechnologyIndustry">Sealofpoisonoussnake</li>
+					<li MayRequire="ninedaylongbow.RedSunTechnologyIndustry">FZHypothermic</li>
+  		    	</hediffs>
+		    </li>
+	    </modExtensions>
+    </ThingDef>
+
+    <PawnKindDef ParentName="HeavyMechanoidKind">
+      <defName>SSR_HeavyCombatRobot</defName>
+      <label>重型作战机器人</label>
+      <race>SSR_HeavyCombatRobot</race>
+      <combatPower>400</combatPower>
+      <allowInMechClusters>false</allowInMechClusters>
+      <lifeStages>
+        <li>
+          <bodyGraphicData>
+            <texPath>Things/Pawn/Mechanoid/HeavyCombatRobot</texPath>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <drawSize>4</drawSize>
+            <shadowData>
+              <volume>(0.3, 0.4, 0.3)</volume>
+              <offset>(0,0,-0.25)</offset>
+            </shadowData>
+          </bodyGraphicData>
+        </li>
+        <li>
+          	<bodyGraphicData>
+            	<texPath>Things/Pawn/Mechanoid/HeavyCombatRobot</texPath>
+            	<graphicClass>Graphic_Multi</graphicClass>
+            	<drawSize>4</drawSize>
+           		<shadowData>
+              		<volume>(0.3, 0.4, 0.3)</volume>
+              		<offset>(0,0,-0.25)</offset>
+            	</shadowData>
+          	</bodyGraphicData>
+        </li>
+      	</lifeStages>
+      	<weaponTags>
+        	<li>SSR_MechanoidGun</li>
+      	</weaponTags>
+    </PawnKindDef>
+
+	<AbilityDef Name="LongJumpMech">
+    <defName>X_LongjumpMech</defName>
+    <label>机动跳跃</label>
+    <description>机动跳跃</description>
+    <iconPath>UI/Abilities/MechLongJump</iconPath>
+    <cooldownTicksRange>180</cooldownTicksRange>
+    <verbProperties>
+      <verbClass>SolarSystemRepublicFramework.Verb_JumpOverWall</verbClass>
+      <label>jump</label>
+      <violent>false</violent>
+      <forceNormalTimeSpeed>false</forceNormalTimeSpeed>
+      <warmupTime>0.0</warmupTime>
+      <minRange>5.9</minRange>
+      <range>19.9</range>
+      <requireLineOfSight>true</requireLineOfSight>
+      <soundCast>Pawn_Muffalo_Angry</soundCast>
+      <soundLanding>Longjump_Land</soundLanding>
+      <flyWithCarriedThing>false</flyWithCarriedThing>
+      <targetParams>
+        <canTargetLocations>true</canTargetLocations>
+        <canTargetPawns>false</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+	
+</Defs>

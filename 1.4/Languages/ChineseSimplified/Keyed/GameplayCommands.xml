@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <SSRCP_Libs.FireAtPods>攻击空投仓</SSRCP_Libs.FireAtPods>
+  <SSRCP_Libs.FireAtPodsDesc>攻击空投仓</SSRCP_Libs.FireAtPodsDesc>
+
+  <SSRCP_Libs.FireAtProjectiles>攻击投射物</SSRCP_Libs.FireAtProjectiles>
+  <SSRCP_Libs.FireAtProjectilesDesc>攻击投射物</SSRCP_Libs.FireAtProjectilesDesc>
+
+  <SSRCP_Libs.FireAtPawns>攻击敌人</SSRCP_Libs.FireAtPawns>
+  <SSRCP_Libs.FireAtPawnsDesc>攻击敌人</SSRCP_Libs.FireAtPawnsDesc>
+
+</LanguageData>

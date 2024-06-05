@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <RecipeDef ParentName="LightMechanoidRecipe">
+    <defName>SSR_BuildCombatRobot_SMG</defName>
+    <label>培育作战机器人（冲锋枪）</label>
+    <description>培育一台作战机器人（冲锋枪）。</description>
+    <gestationCycles>1</gestationCycles>
+    <researchPrerequisite>BasicMechtech</researchPrerequisite>
+    <ingredients Inherit="False">
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>120</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Plasteel</li>
+          </thingDefs>
+        </filter>
+        <count>30</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentIndustrial</li>
+          </thingDefs>
+        </filter>
+        <count>5</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>SubcoreBasic</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <products>
+      <SSR_CombatRobot_SMG>1</SSR_CombatRobot_SMG>
+    </products>
+    <descriptionHyperlinks>
+      <ThingDef>SSR_CombatRobot_SMG</ThingDef>
+    </descriptionHyperlinks>
+  </RecipeDef> 
+
+  <RecipeDef ParentName="LightMechanoidRecipe">
+    <defName>SSR_BuildCombatRobot_AR</defName>
+    <label>培育作战机器人（突击步枪）</label>
+    <description>培育一台作战机器人（突击步枪）。</description>
+    <gestationCycles>1</gestationCycles>
+    <researchPrerequisite>BasicMechtech</researchPrerequisite>
+    <ingredients Inherit="False">
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>120</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Plasteel</li>
+          </thingDefs>
+        </filter>
+        <count>30</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentIndustrial</li>
+          </thingDefs>
+        </filter>
+        <count>5</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>SubcoreBasic</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <products>
+      <SSR_CombatRobot_AR>1</SSR_CombatRobot_AR>
+    </products>
+    <descriptionHyperlinks>
+      <ThingDef>SSR_CombatRobot_AR</ThingDef>
+    </descriptionHyperlinks>
+  </RecipeDef> 
+
+  <!--<RecipeDef ParentName="LightMechanoidRecipe">
+    <defName>SSR_BuildCombatRobot_SG</defName>
+    <label>培育作战机器人（霰弹枪）</label>
+    <description>培育一台作战机器人（霰弹枪）。</description>
+    <gestationCycles>1</gestationCycles>
+    <researchPrerequisite>BasicMechtech</researchPrerequisite>
+    <ingredients Inherit="False">
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>120</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Plasteel</li>
+          </thingDefs>
+        </filter>
+        <count>30</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentIndustrial</li>
+          </thingDefs>
+        </filter>
+        <count>5</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>SubcoreBasic</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <products>
+      <SSR_CombatRobot_SG>1</SSR_CombatRobot_SG>
+    </products>
+    <descriptionHyperlinks>
+      <ThingDef>SSR_CombatRobot_SG</ThingDef>
+    </descriptionHyperlinks>
+  </RecipeDef> -->
+
+</Defs>

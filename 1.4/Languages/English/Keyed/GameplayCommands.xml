@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <SSRCP_Libs.FireAtPods>fire at pods</SSRCP_Libs.FireAtPods>
+  <SSRCP_Libs.FireAtPodsDesc>fire at pods</SSRCP_Libs.FireAtPodsDesc>
+
+  <SSRCP_Libs.FireAtProjectiles>fire at projectiles</SSRCP_Libs.FireAtProjectiles>
+  <SSRCP_Libs.FireAtProjectilesDesc>fire at projectiles</SSRCP_Libs.FireAtProjectilesDesc>
+
+  <SSRCP_Libs.FireAtPawns>fire at enemies</SSRCP_Libs.FireAtPawns>
+  <SSRCP_Libs.FireAtPawnsDesc>fire at enemies</SSRCP_Libs.FireAtPawnsDesc>
+
+</LanguageData>

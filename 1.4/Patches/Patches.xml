@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+	<Operation Class="PatchOperationAdd">
+  		<xpath>Defs/ThingDef[defName="MechGestator"]/recipes</xpath>
+  		<value>
+      		<li>SSR_BuildCombatRobot_SMG</li>
+	  		<li>SSR_BuildCombatRobot_AR</li>
+			<!--<li>SSR_BuildCombatRobot_SG</li>-->
+  		</value>
+	</Operation>
+
+<!-- Light Mech Ressurection Recipe Patches -->
+
+	<Operation Class="PatchOperationInsert">
+		<xpath>Defs/RecipeDef[defName="ResurrectLightMech"]/fixedIngredientFilter/thingDefs/li</xpath>
+		<value>
+			<li>Corpse_SSR_CombatRobot_SMG</li>
+			<li>Corpse_SSR_CombatRobot_AR</li>
+			<!--<li>Corpse_SSR_CombatRobot_SG</li>-->
+		</value>
+	</Operation>
+</Patch>

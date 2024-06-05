@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <Plasma_AR.label>Plasma AR</Plasma_AR.label>
+  <Plasma_AR.description>The standard assault rifle used in the early Solar System Republic used to kill targets by firing ultra-hot plasma.</Plasma_AR.description>
+  <Plasma_AR.tools.0.label>stock</Plasma_AR.tools.0.label>
+  <Plasma_AR.tools.1.label>barrel</Plasma_AR.tools.1.label>
+
+  <Plasma_AR_rt.label>Plasma AR Bullet</Plasma_AR_rt.label>
+
+  <Plasma_SMG.label>Plasma SMG</Plasma_SMG.label>
+  <Plasma_SMG.description>Although the power and range of the Plasma SMG are somewhat reduced compared with the Plasma AR, the shorter body and higher fire density make the plasma submachine gun very suitable for the combat in complex terrain.</Plasma_SMG.description>
+  <Plasma_SMG.tools.0.label>stock</Plasma_SMG.tools.0.label>
+  <Plasma_SMG.tools.1.label>barrel</Plasma_SMG.tools.1.label>
+
+  <Plasma_SMG_rt.label>Plasma SMG Bullet</Plasma_SMG_rt.label>
+
+  <Plasma_HG.label>Plasma HG</Plasma_HG.label>
+  <Plasma_HG.description>In the early days of the Solar System Republic, Plasma HG were rarely used as a weapon in combat, but for centuries, the Republic continued to use them as a self-defense weapon for soldiers and as a status symbol for officers.</Plasma_HG.description>
+  <Plasma_HG.tools.0.label>stock</Plasma_HG.tools.0.label>
+  <Plasma_HG.tools.1.label>barrel</Plasma_HG.tools.1.label>
+
+  <Plasma_HG_rt.label>Plasma HG Bullet</Plasma_HG_rt.label>
+
+  <Plasma_SG.label>Plasma SG</Plasma_SG.label>
+  <Plasma_SG.description>The Plasma SG has a large attack surface by firing the plasma in a relatively discrete form. This allows the Plasma SG to have a short range, but it can suppress a large number of targets in close combat.</Plasma_SG.description>
+  <Plasma_SG.tools.0.label>stock</Plasma_SG.tools.0.label>
+  <Plasma_SG.tools.1.label>barrel</Plasma_SG.tools.1.label>
+
+  <Plasma_SG_rt.label>Plasma SG Bullet</Plasma_SG_rt.label>
+
+  <Plasma_SR.label>Plasma SR</Plasma_SR.label>
+  <Plasma_SR.description>The particle beam plasma gives the Plasma SR a longer range and greater armor penetration, which is enough to pose a threat to heavily armored individual units and even lightly armored vehicles.</Plasma_SR.description>
+  <Plasma_SR.tools.0.label>stock</Plasma_SR.tools.0.label>
+  <Plasma_SR.tools.1.label>barrel</Plasma_SR.tools.1.label>
+
+  <Plasma_SR_rt.label>Plasma SR Bullet</Plasma_SR_rt.label>
+
+  <Plasma_AMR.label>Plasma AMR</Plasma_AMR.label>
+  <Plasma_AMR.description>In the plasma of the sniper rifle technology on the basis of further enlarge the output power of individual vehicle weapons, can cause effective damage to armored vehicles.</Plasma_AMR.description>
+  <Plasma_AMR.tools.0.label>stock</Plasma_AMR.tools.0.label>
+  <Plasma_AMR.tools.1.label>barrel</Plasma_AMR.tools.1.label>
+
+  <Plasma_AMR_rt.label>Plasma AMR Bullet</Plasma_AMR_rt.label>
+
+
+</LanguageData>

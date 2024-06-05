@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <MYDE_AF_RotorCraft_H11ArmedHelicopter_Base.label>H11 armed helicopter</MYDE_AF_RotorCraft_H11ArmedHelicopter_Base.label>
+  <MYDE_AF_RotorCraft_H11ArmedHelicopter_Base.description>Like the H9 armed transport aircraft, the H11 gunship was designed as an efficient and powerful air-to-ground fire attack platform before the start of World War III, and its subsequent variants continued to be used until the Earth Federation era.
+  Maximum crew: 2
+Maximum load: 5000kg
+Maximum fuel: 800
+World map Fuel consumption per cell: 4
+Airborne armament: 2 airborne machine guns, 2 rocket launchers, 2 missile launcher</MYDE_AF_RotorCraft_H11ArmedHelicopter_Base.description>
+
+
+  <!-- 跨地图 -->
+
+  <MYDE_AF_Skyfalller_RotorCraft_H11ArmedHelicopter_CrossMapThing.label>H11 armed helicopter(Leaving)</MYDE_AF_Skyfalller_RotorCraft_H11ArmedHelicopter_CrossMapThing.label>
+  <MYDE_AF_RotorCraft_H11ArmedHelicopter_Base.comps.CompRefuelable.outOfFuelMessage>Needs Fuel</MYDE_AF_RotorCraft_H11ArmedHelicopter_Base.comps.CompRefuelable.outOfFuelMessage>
+  <MYDE_AF_RotorCraft_H11ArmedHelicopter_Base.comps.Comp_MoveToTargetAndHover.Hover_Icon_On_Label>Hover：On</MYDE_AF_RotorCraft_H11ArmedHelicopter_Base.comps.Comp_MoveToTargetAndHover.Hover_Icon_On_Label>
+  <MYDE_AF_RotorCraft_H11ArmedHelicopter_Base.comps.Comp_MoveToTargetAndHover.Hover_Icon_Off_Label>Hover：Off</MYDE_AF_RotorCraft_H11ArmedHelicopter_Base.comps.Comp_MoveToTargetAndHover.Hover_Icon_Off_Label>
+  <MYDE_AF_RotorCraft_H11ArmedHelicopter_Base.comps.Comp_MoveToTargetAndHover.Hover_Icon_Description>Whether to turn on or off the hovering of the aerocraft</MYDE_AF_RotorCraft_H11ArmedHelicopter_Base.comps.Comp_MoveToTargetAndHover.Hover_Icon_Description>
+  <MYDE_AF_RotorCraft_H11ArmedHelicopter_Base.comps.Comp_MoveToTargetAndHover.TakeOffAndLanding_Icon_On_Label>Take off</MYDE_AF_RotorCraft_H11ArmedHelicopter_Base.comps.Comp_MoveToTargetAndHover.TakeOffAndLanding_Icon_On_Label>
+  <MYDE_AF_RotorCraft_H11ArmedHelicopter_Base.comps.Comp_MoveToTargetAndHover.TakeOffAndLanding_Icon_Off_Label>Landing</MYDE_AF_RotorCraft_H11ArmedHelicopter_Base.comps.Comp_MoveToTargetAndHover.TakeOffAndLanding_Icon_Off_Label>
+  <MYDE_AF_RotorCraft_H11ArmedHelicopter_Base.comps.Comp_MoveToTargetAndHover.TakeOffAndLanding_Icon_Description>Switch between takeoff and landing.</MYDE_AF_RotorCraft_H11ArmedHelicopter_Base.comps.Comp_MoveToTargetAndHover.TakeOffAndLanding_Icon_Description>
+  <MYDE_AF_RotorCraft_H11ArmedHelicopter_Base.comps.Comp_CarryPawn.Gizmos_CarryPawn_Label>Fast loading</MYDE_AF_RotorCraft_H11ArmedHelicopter_Base.comps.Comp_CarryPawn.Gizmos_CarryPawn_Label>
+  <MYDE_AF_RotorCraft_H11ArmedHelicopter_Base.comps.Comp_CarryPawn.Gizmos_CarryPawn_Description>Fast loading colonizers within the surrounding 5x5 range</MYDE_AF_RotorCraft_H11ArmedHelicopter_Base.comps.Comp_CarryPawn.Gizmos_CarryPawn_Description>
+  <MYDE_AF_RotorCraft_H11ArmedHelicopter_Base.comps.Comp_CanCrossMap.CrossMap_Label>Cross Map</MYDE_AF_RotorCraft_H11ArmedHelicopter_Base.comps.Comp_CanCrossMap.CrossMap_Label>
+  <MYDE_AF_RotorCraft_H11ArmedHelicopter_Base.comps.Comp_CanCrossMap.CrossMap_Description>Cross map, no open space can be selected as the target location. To avoid situations where it is impossible to return, please ensure that there is sufficient fuel for round-trip travel</MYDE_AF_RotorCraft_H11ArmedHelicopter_Base.comps.Comp_CanCrossMap.CrossMap_Description>
+
+
+</LanguageData>

@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Defs>
+
+  <SoundDef>
+    <defName>Plasma</defName>  
+    <context>MapOnly</context>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Plasma</clipPath>
+          </li>
+        </grains>
+        <volumeRange>25~25</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  
+</Defs>

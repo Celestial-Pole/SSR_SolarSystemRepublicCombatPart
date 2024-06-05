@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <LaserCutting.label>cut</LaserCutting.label>
+  <LaserCutting.deathMessage>{0} has been cut to death.</LaserCutting.deathMessage>
+
+
+</LanguageData>

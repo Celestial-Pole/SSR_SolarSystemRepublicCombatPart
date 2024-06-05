@@ -1,0 +1,3455 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  
+  <!-- ==================================== Armor =====================================-->
+  
+  <ThingDef ParentName="SSR_ApparelArmorBase">
+    <defName>SSR_Suppresser</defName>
+    <label>镇暴装甲</label>
+    <description>镇暴装甲</description>
+    <graphicData>
+		<texPath>Things/Apparel/Suppresser/Suppresser</texPath>
+		<shaderType>CutoutComplex</shaderType>
+		<graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <costList>
+		<SSR_Graphene>5</SSR_Graphene>
+		<SSR_ArmourSteel>20</SSR_ArmourSteel>
+		<ComponentIndustrial>10</ComponentIndustrial>
+		<SSR_QuantumComputingCore>1</SSR_QuantumComputingCore>
+    </costList>
+    <statBases>
+		<WorkToMake>4500</WorkToMake>
+		<ArmorRating_Sharp>0.8</ArmorRating_Sharp>
+		<ArmorRating_Blunt>1.6</ArmorRating_Blunt>
+		<ArmorRating_Heat>1.5</ArmorRating_Heat>
+		<Insulation_Cold>30</Insulation_Cold>
+		<Insulation_Heat>30</Insulation_Heat>
+		<Mass>6</Mass>
+		<EquipDelay>3</EquipDelay>
+    </statBases>
+    <generateCommonality>0.01</generateCommonality>
+    <apparel>
+		<countsAsClothingForNudity>false</countsAsClothingForNudity>
+		<bodyPartGroups>
+			<li>Torso</li>
+			<li>Shoulders</li>
+			<li>Waist</li>
+			<li>Arms</li>
+			<li>Legs</li>
+			<li>Feet</li>
+		</bodyPartGroups>
+		<wornGraphicPath>Things/Apparel/Suppresser/Suppresser</wornGraphicPath>
+		<useWornGraphicMask>true</useWornGraphicMask>
+		<layers>
+			<li>Middle</li>
+			<li>Shell</li>
+		</layers>
+		<canBeDesiredForIdeo>false</canBeDesiredForIdeo>
+    </apparel>
+	<recipeMaker>
+		<researchPrerequisite>EFClothing</researchPrerequisite>
+		<skillRequirements>
+			<Crafting>4</Crafting>
+		</skillRequirements>
+		<recipeUsers Inherit="false">
+			<li>TableMachining</li>
+		</recipeUsers>
+    </recipeMaker>
+	<equippedStatOffsets>
+		<MoveSpeed>3</MoveSpeed>
+		<MeleeHitChance>2</MeleeHitChance>
+		<MeleeDodgeChance>1</MeleeDodgeChance>
+		<IncomingDamageFactor>-0.05</IncomingDamageFactor>
+		<SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology">0.5</SlaveSuppressionOffset>
+    </equippedStatOffsets>
+	<comps>
+		<li Class="SolarSystemRepublicFramework.CompProperties_InvalidDamage">
+			<damageDefs>
+				<li>EMP</li>
+				<li>Stun</li>
+				<li>Blunt</li>
+				<li>Arrow</li>
+			</damageDefs>
+		</li>
+	</comps>
+  </ThingDef>
+  
+  <ThingDef ParentName="SSR_ApparelArmorBase">
+    <defName>SSR_PoweredExoskeletonLeotard</defName>
+    <label>机械助动框架防护紧身衣</label>
+    <description>机械助动框架防护紧身衣</description>
+    <graphicData>
+		<texPath>Things/Apparel/PoweredExoskeletonLeotard/PoweredExoskeletonLeotard</texPath>
+		<shaderType>CutoutComplex</shaderType>
+		<graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <costList>
+		<SSR_Graphene>3</SSR_Graphene>
+	</costList>
+    <statBases>
+		<WorkToMake>1000</WorkToMake>
+		<ArmorRating_Sharp>0.3</ArmorRating_Sharp>
+		<ArmorRating_Blunt>0.3</ArmorRating_Blunt>
+		<ArmorRating_Heat>2</ArmorRating_Heat>
+		<Insulation_Cold>30</Insulation_Cold>
+		<Insulation_Heat>30</Insulation_Heat>
+		<Mass>0.1</Mass>
+		<EquipDelay>0.5</EquipDelay>
+    </statBases>
+	<tickerType>Normal</tickerType>
+    <generateCommonality>0.01</generateCommonality>
+    <apparel>
+		<countsAsClothingForNudity>false</countsAsClothingForNudity>
+		<bodyPartGroups>
+			<li>Torso</li>
+			<li>Neck</li>
+			<li>Shoulders</li>
+			<li>Waist</li>
+			<li>Arms</li>
+			<li>Hands</li>
+			<li>Legs</li>
+			<li>Feet</li>
+		</bodyPartGroups>
+		<wornGraphicPath>Things/Apparel/PoweredExoskeletonLeotard/PoweredExoskeletonLeotard</wornGraphicPath>
+		<useWornGraphicMask>true</useWornGraphicMask>
+		<layers>
+			<li>OnSkin</li>
+		</layers>
+		<tags>
+			<li>Royal</li>
+			<li>RoyalTier2</li>
+			<li>RoyalTier3</li>
+		</tags>
+		<canBeDesiredForIdeo>false</canBeDesiredForIdeo>
+    </apparel>
+	<recipeMaker>
+		<researchPrerequisite>SSRBasicSpecialGarments</researchPrerequisite>
+		<skillRequirements>
+			<Crafting>4</Crafting>
+		</skillRequirements>
+		<recipeUsers Inherit="false">
+			<li>ElectricTailoringBench</li>
+			<li>HandTailoringBench</li>
+		</recipeUsers>
+    </recipeMaker>
+	<equippedStatOffsets>
+		<WorkSpeedGlobal>0.5</WorkSpeedGlobal>
+		<MoveSpeed>1</MoveSpeed>
+		<IncomingDamageFactor>-0.03</IncomingDamageFactor>
+		<ToxicEnvironmentResistance>1</ToxicEnvironmentResistance>
+		<SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology">0.5</SlaveSuppressionOffset>
+    </equippedStatOffsets>
+	<comps>
+		<li Class="SolarSystemRepublicFramework.CompProperties_InvalidDamage">
+			<damageDefs>
+				<li>Scratch</li>
+				<li>ScratchToxic</li>
+				<li>ToxicBite</li>
+			</damageDefs>
+		</li>
+	</comps>
+  </ThingDef>
+  
+  <ThingDef ParentName="SSR_ApparelArmorBase">
+    <defName>SSR_Powered_Exoskeleton</defName>
+    <label>动力外骨骼</label>
+    <description>一件标准的地球联邦时代的外骨骼装甲，在提供可观防护的同时，还有着优秀的机动性</description>
+    <graphicData>
+		<texPath>Things/Apparel/PoweredExoskeleton/Powered-Exoskeleton</texPath>
+		<shaderType>CutoutComplex</shaderType>
+		<graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <costList>
+		<SSR_Graphene>5</SSR_Graphene>
+		<SSR_ArmourSteel>30</SSR_ArmourSteel>
+		<ComponentIndustrial>15</ComponentIndustrial>
+		<SSR_QuantumComputingCore>1</SSR_QuantumComputingCore>
+    </costList>
+    <statBases>
+		<WorkToMake>5000</WorkToMake>
+		<ArmorRating_Sharp>1.2</ArmorRating_Sharp>
+		<ArmorRating_Blunt>1.2</ArmorRating_Blunt>
+		<ArmorRating_Heat>1.5</ArmorRating_Heat>
+		<Insulation_Cold>30</Insulation_Cold>
+		<Insulation_Heat>30</Insulation_Heat>
+		<Mass>7</Mass>
+		<EquipDelay>5</EquipDelay>
+		<JumpRange>23.9</JumpRange>
+    </statBases>
+    <generateCommonality>0.01</generateCommonality>
+    <apparel>
+		<countsAsClothingForNudity>false</countsAsClothingForNudity>
+		<bodyPartGroups>
+			<li>Torso</li>
+			<li>Shoulders</li>
+			<li>Waist</li>
+			<li>Arms</li>
+			<li>Legs</li>
+			<li>Feet</li>
+		</bodyPartGroups>
+		<wornGraphicPath>Things/Apparel/PoweredExoskeleton/Powered-Exoskeleton</wornGraphicPath>
+		<useWornGraphicMask>true</useWornGraphicMask>
+		<layers>
+			<li>Middle</li>
+			<li>Shell</li>
+		</layers>
+		<canBeDesiredForIdeo>false</canBeDesiredForIdeo>
+    </apparel>
+	<recipeMaker>
+		<researchPrerequisite>SSRMechanicallyAssistedFrame</researchPrerequisite>
+		<skillRequirements>
+			<Crafting>4</Crafting>
+		</skillRequirements>
+		<recipeUsers Inherit="false">
+			<li>TableMachining</li>
+		</recipeUsers>
+    </recipeMaker>
+	<equippedStatOffsets>
+		<MoveSpeed>3</MoveSpeed>
+		<WorkSpeedGlobal>0.25</WorkSpeedGlobal>
+		<MeleeHitChance>2</MeleeHitChance>
+		<MeleeDodgeChance>1</MeleeDodgeChance>
+		<MeleeDamageFactor>3</MeleeDamageFactor>
+		<CarryingCapacity>300</CarryingCapacity>
+		<IncomingDamageFactor>-0.05</IncomingDamageFactor>
+		<SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology">0.5</SlaveSuppressionOffset>
+    </equippedStatOffsets>
+	<comps>
+		<!-- <li Class="CompProperties_Reloadable">
+			<maxCharges>12</maxCharges>
+			<ammoDef>Chemfuel</ammoDef>
+			<ammoCountPerCharge>20</ammoCountPerCharge>
+			<baseReloadTicks>60</baseReloadTicks>
+			<soundReload>Standard_Reload</soundReload>
+			<hotKey>Misc4</hotKey>
+			<chargeNoun>charge</chargeNoun>
+			<displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+		</li> -->
+		<li Class="MVCF.Comps.CompProperties_VerbGiver">
+			<verbProps>
+				<li MayRequire="Ludeon.RimWorld.Royalty">
+					<label>机动跳跃</label>						
+					<visualLabel>机动跳跃</visualLabel>
+					<description>机动跳跃</description>
+					<canBeToggled>false</canBeToggled>
+					<comps>
+						<li Class="MVCF.VerbComps.VerbCompProperties_Cooldown">
+							<compClass>MVCF.VerbComps.VerbComp_Cooldown</compClass>
+							<cooldownTime>5</cooldownTime>
+						</li>
+					</comps>
+				</li>
+			</verbProps>
+		</li>
+		<li Class="SolarSystemRepublicFramework.CompProperties_InvalidDamage">
+			<damageDefs>
+				<li>EMP</li>
+				<li>Arrow</li>
+			</damageDefs>
+		</li>
+	</comps>
+    <verbs>
+      <li MayRequire="Ludeon.RimWorld.Royalty">
+			<verbClass>SolarSystemRepublicFramework.Verb_JumpOverWall</verbClass>
+			<label>机动跳跃</label>
+			<violent>false</violent>
+			<hasStandardCommand>false</hasStandardCommand>
+			<onlyManualCast>false</onlyManualCast>
+			<forceNormalTimeSpeed>false</forceNormalTimeSpeed>
+			<warmupTime>0.05</warmupTime>
+			<warmupEffecter>JumpWarmupEffect</warmupEffecter>
+			<requireLineOfSight>false</requireLineOfSight>
+			<flightEffecterDef>JumpFlightEffect</flightEffecterDef>
+			<soundLanding>JumpPackLand</soundLanding>
+			<targetParams>
+				<canTargetLocations>true</canTargetLocations>
+				<canTargetPawns>false</canTargetPawns>
+				<canTargetBuildings>false</canTargetBuildings>
+			</targetParams>
+		</li>
+    </verbs>
+  </ThingDef>
+  
+  <ThingDef ParentName="SSR_ApparelArmorBase">
+    <defName>SSR_Armoured_Support_Transport</defName>
+    <label>单兵装甲支援载具</label>
+    <description>单兵装甲支援载具</description>
+    <graphicData>
+		<texPath>Things/Apparel/AST/AST</texPath>
+		<shaderType>CutoutComplex</shaderType>
+		<graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <costList>
+		<SSR_Graphene>7</SSR_Graphene>
+		<SSR_ArmourSteel>55</SSR_ArmourSteel>
+		<ComponentIndustrial>25</ComponentIndustrial>
+		<SSR_QuantumComputingCore>3</SSR_QuantumComputingCore>
+    </costList>
+    <statBases>
+		<WorkToMake>6500</WorkToMake>
+		<ArmorRating_Sharp>1.35</ArmorRating_Sharp>
+		<ArmorRating_Blunt>1.35</ArmorRating_Blunt>
+		<ArmorRating_Heat>2</ArmorRating_Heat>
+		<Insulation_Cold>50</Insulation_Cold>
+		<Insulation_Heat>50</Insulation_Heat>
+		<Mass>20</Mass>
+		<EquipDelay>5</EquipDelay>
+    </statBases>
+    <generateCommonality>0.01</generateCommonality>
+    <apparel>
+		<countsAsClothingForNudity>false</countsAsClothingForNudity>
+		<bodyPartGroups>
+			<li>FullHead</li>
+			<li>Torso</li>
+			<li>Neck</li>
+			<li>Shoulders</li>
+			<li>Waist</li>
+			<li>Arms</li>
+			<li>Hands</li>
+			<li>Legs</li>
+			<li>Feet</li>
+		</bodyPartGroups>
+		<wornGraphicPath>Things/Apparel/AST/AST</wornGraphicPath>
+		<useWornGraphicMask>true</useWornGraphicMask>
+		<shellCoversHead>true</shellCoversHead>
+		<blocksAddedPartWoundGraphics>true</blocksAddedPartWoundGraphics>
+		<layers>
+			<li>Overhead</li>
+			<li>Middle</li>
+			<li>Shell</li>
+		</layers>
+		<canBeDesiredForIdeo>false</canBeDesiredForIdeo>
+    </apparel>
+	<recipeMaker>
+		<researchPrerequisite>SSRMechanicallyAssistedFrame</researchPrerequisite>
+		<skillRequirements>
+			<Crafting>5</Crafting>
+		</skillRequirements>
+		<recipeUsers Inherit="false">
+			<li>TableMachining</li>
+		</recipeUsers>
+    </recipeMaker>
+	<equippedStatOffsets>
+		<MoveSpeed>1.5</MoveSpeed>
+		<WorkSpeedGlobal>0.25</WorkSpeedGlobal>
+		<MeleeHitChance>6.75</MeleeHitChance>
+		<MeleeDodgeChance>3.75</MeleeDodgeChance>
+		<MeleeDamageFactor>5</MeleeDamageFactor>
+		<CarryingCapacity>500</CarryingCapacity>
+		<MechBandwidth>15</MechBandwidth>
+		<ShootingAccuracyPawn>5</ShootingAccuracyPawn>
+		<IncomingDamageFactor>-0.05</IncomingDamageFactor>
+		<ToxicEnvironmentResistance>1</ToxicEnvironmentResistance>
+		<SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology">0.5</SlaveSuppressionOffset>
+    </equippedStatOffsets>
+	<comps>
+		<li Class="MVCF.Comps.CompProperties_VerbGiver">
+			<verbProps>
+				<li>
+					<label>发射火箭弹</label>						
+					<visualLabel>发射火箭弹</visualLabel>
+					<description>发射火箭弹</description>
+					<canBeToggled>true</canBeToggled>
+					<comps>
+						<li Class="MVCF.VerbComps.VerbCompProperties_Cooldown">
+							<compClass>MVCF.VerbComps.VerbComp_Cooldown</compClass>
+							<cooldownTime>0</cooldownTime>
+						</li>
+						<li Class="MVCF.Reloading.Comps.VerbCompProperties_Reloadable">
+							<compClass>MVCF.Reloading.Comps.VerbComp_Reloadable</compClass>
+							<AmmoFilter>
+								<thingDefs>
+									<li>Shell_HighExplosive</li>
+								</thingDefs>
+							</AmmoFilter>
+							<ItemsPerShot>1</ItemsPerShot>
+							<MaxShots>2</MaxShots>
+							<ReloadSound>Reload_Standard</ReloadSound>
+							<ReloadTimePerShot>10</ReloadTimePerShot>
+						</li>
+					</comps>
+				</li>
+			</verbProps>
+		</li>
+		<li Class="SolarSystemRepublicFramework.CompProperties_InvalidDamage">
+			<damageDefs>
+				<li>EMP</li>
+				<li>Arrow</li>
+				<li>Blunt</li>
+				<li>Cut</li>
+				<li>Stab</li>
+			</damageDefs>
+		</li>
+	</comps>
+	<verbs>
+		<li>
+			<label>发射火箭弹</label>
+			<verbClass>Verb_LaunchProjectileStatic</verbClass>
+			<hasStandardCommand>true</hasStandardCommand>
+			<onlyManualCast>True</onlyManualCast>
+			<range>85.9</range>
+			<forcedMissRadius>0.9</forcedMissRadius>
+			<commandIcon>Things/Icon/Test</commandIcon>
+			<burstShotCount>1</burstShotCount>
+			<warmupTime>1.5</warmupTime>
+			<noiseRadius>4</noiseRadius>
+			<soundCast>Shot_IncendiaryLauncher</soundCast>
+			<soundCastTail>GunTail_Medium</soundCastTail>
+			<muzzleFlashScale>14</muzzleFlashScale>
+			<drawHighlightWithLineOfSight>true</drawHighlightWithLineOfSight>
+			<targetParams>
+				<canTargetLocations>true</canTargetLocations>
+			</targetParams>
+			<defaultProjectile>Bullet_Rocket</defaultProjectile>
+			<rangedFireRulepack>Combat_RangedFire_Thrown</rangedFireRulepack>
+		</li>
+	</verbs>
+  </ThingDef>
+  
+  <ThingDef ParentName="SSR_ApparelArmorBase">
+    <defName>SSR_BasicPowerArmorLeotard</defName>
+    <label>基础防护紧身衣</label>
+    <description>基础防护紧身衣</description>
+	<techLevel>Spacer</techLevel>
+    <graphicData>
+		<texPath>Things/Apparel/BasicPowerArmorLeotard/BasicPowerArmorLeotard</texPath>
+		<shaderType>CutoutComplex</shaderType>
+		<graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <costList>
+		<Cloth>200</Cloth>
+		<ComponentSpacer>1</ComponentSpacer>
+	</costList>
+    <statBases>
+		<WorkToMake>3500</WorkToMake>
+		<ArmorRating_Sharp>0.5</ArmorRating_Sharp>
+		<ArmorRating_Blunt>0.5</ArmorRating_Blunt>
+		<ArmorRating_Heat>2</ArmorRating_Heat>
+		<Insulation_Cold>50</Insulation_Cold>
+		<Insulation_Heat>50</Insulation_Heat>
+		<Mass>0.3</Mass>
+		<EquipDelay>0.5</EquipDelay>
+    </statBases>
+	<tickerType>Normal</tickerType>
+    <apparel>
+		<countsAsClothingForNudity>false</countsAsClothingForNudity>
+		<bodyPartGroups>
+			<li>Torso</li>
+			<li>Neck</li>
+			<li>Shoulders</li>
+			<li>Waist</li>
+			<li>Arms</li>
+			<li>Hands</li>
+			<li>Legs</li>
+			<li>Feet</li>
+		</bodyPartGroups>
+		<wornGraphicPath>Things/Apparel/BasicPowerArmorLeotard/BasicPowerArmorLeotard</wornGraphicPath>
+		<useWornGraphicMask>true</useWornGraphicMask>
+		<layers>
+			<li>OnSkin</li>
+		</layers>
+		<canBeDesiredForIdeo>false</canBeDesiredForIdeo>
+    </apparel>
+	<recipeMaker>
+		<researchPrerequisite>SSRIntermediateSpecialGarments</researchPrerequisite>
+		<recipeUsers Inherit="false">
+			<li>ElectricTailoringBench</li>
+			<li>HandTailoringBench</li>
+		</recipeUsers>
+    </recipeMaker>
+	<modExtensions>
+		<li Class="SolarSystemRepublicFramework.DefModExtension_DefendHediff">
+  			<hediffs>
+     			<li>Heatstroke</li>
+				<li>Hypothermia</li>
+				<li>ToxicBuildup</li>
+				<li>Malaria</li>
+				<li>Burn</li>
+				<li>Frostbite</li>
+  			</hediffs>
+		</li>
+	</modExtensions>
+	<equippedStatOffsets>
+		<MoveSpeed>3</MoveSpeed>
+		<WorkSpeedGlobal>0.75</WorkSpeedGlobal>
+		<MentalBreakThreshold>-0.05</MentalBreakThreshold>
+		<MeleeHitChance>1</MeleeHitChance> 
+		<MeleeDodgeChance>0.75</MeleeDodgeChance>
+		<PainShockThreshold>0.25</PainShockThreshold>
+		<InjuryHealingFactor>0.25</InjuryHealingFactor>
+		<IncomingDamageFactor>-0.06</IncomingDamageFactor>
+		<CarryingCapacity>15</CarryingCapacity>
+		<ToxicEnvironmentResistance>1</ToxicEnvironmentResistance>
+		<SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology">0.5</SlaveSuppressionOffset>
+    </equippedStatOffsets>
+	<comps>
+		<li Class="SolarSystemRepublicFramework.CompProperties_InvalidDamage">
+			<damageDefs>
+				<li>Scratch</li>
+				<li>ScratchToxic</li>
+				<li>ToxicBite</li>
+			</damageDefs>
+		</li>
+	</comps>
+  </ThingDef>
+  
+  <ThingDef ParentName="SSR_ApparelArmorBase">
+    <defName>SSR_BasicPowerArmor</defName>
+    <label>基础动力装甲</label>
+    <description>基础动力装甲</description>
+	<techLevel>Spacer</techLevel>
+    <graphicData>
+		<texPath>Things/Apparel/BasicPowerArmor/BasicPowerArmor</texPath>
+		<shaderType>CutoutComplex</shaderType>
+		<graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <costList>
+		<Plasteel>200</Plasteel>
+		<ComponentSpacer>3</ComponentSpacer>
+	</costList>
+    <statBases>
+		<WorkToMake>7500</WorkToMake>
+		<ArmorRating_Sharp>1.5</ArmorRating_Sharp>
+		<ArmorRating_Blunt>1.5</ArmorRating_Blunt>
+		<ArmorRating_Heat>2</ArmorRating_Heat>
+		<Insulation_Cold>70</Insulation_Cold>
+		<Insulation_Heat>70</Insulation_Heat>
+		<Mass>5</Mass>
+		<EquipDelay>0.5</EquipDelay>
+		<JumpRange>33.9</JumpRange>
+    </statBases>
+	<tickerType>Normal</tickerType>
+    <generateCommonality>0.01</generateCommonality>
+    <apparel>
+		<countsAsClothingForNudity>false</countsAsClothingForNudity>
+		<bodyPartGroups>
+			<li>Torso</li>
+			<li>Neck</li>
+			<li>Shoulders</li>
+			<li>Waist</li>
+			<li>Arms</li>
+			<li>Hands</li>
+			<li>Legs</li>
+			<li>Feet</li>
+		</bodyPartGroups>
+		<wornGraphicPath>Things/Apparel/BasicPowerArmor/BasicPowerArmor</wornGraphicPath>
+		<useWornGraphicMask>true</useWornGraphicMask>
+		<layers>
+			<li>Middle</li>
+			<li>Shell</li>
+		</layers>
+		<canBeDesiredForIdeo>false</canBeDesiredForIdeo>
+    </apparel>
+	<recipeMaker>
+		<researchPrerequisite>SSRBasicPowerArmor</researchPrerequisite>
+    </recipeMaker>
+	<modExtensions>
+		<li Class="SolarSystemRepublicFramework.DefModExtension_DefendHediff">
+  			<hediffs>
+     			<li>Heatstroke</li>
+				<li>Hypothermia</li>
+				<li>ToxicBuildup</li>
+				<li>Malaria</li>
+				<li>Burn</li>
+				<li>Frostbite</li>
+				<li MayRequire="Ayameduki.HARIdearn">HAR_IA_Skill_Hediff_a</li>
+				<li MayRequire="Ayameduki.HARIdearn">HAR_IA_Skill_Hediff_c</li>
+				<li MayRequire="Ayameduki.HARIdearn">HAR_IA_Skill_Hediff_d</li>
+				<li MayRequire="Ayameduki.HARIdearn">HAR_IA_Skill_Hediff_e</li>
+				<li MayRequire="Ayameduki.HARIdearn">HAR_IA_Gunshot</li>
+				<li MayRequire="Ayameduki.HARIdearn">HAR_IA_Skill_Hediff_f</li>
+				<li MayRequire="Ayameduki.HARIdearn">HAR_IA_Skill_Hediff_g</li>
+				<li MayRequire="Ayameduki.HARIdearn">HAR_IA_Skill_Hediff_h</li>
+				<li MayRequire="Ayameduki.HARIdearn">HAR_IA_Skill_Hediff_z</li>
+				<li MayRequire="Ayameduki.HARIdhale">HAR_IH_Hediff_ZZZ</li>
+				<li MayRequire="Ayameduki.HARNearmare">Hediff_Geist</li>
+				<li MayRequire="Ayameduki.HARNearmare">Hediff_Larva</li>
+				<li MayRequire="Ayameduki.HARNearmare">Hediff_Rugeiyu</li>
+				<li MayRequire="Ayameduki.HARNearmare">Hediff_Genocide</li>
+				<li MayRequire="Ayameduki.HARNearmare">HAR_NM_Hediff_a</li>
+				<li MayRequire="Ayameduki.HARNearmare">HAR_NM_XXX_Hediff</li>
+				<li MayRequire="Ayameduki.HARNearmare">HAR_NM_Skill_Hediff_b</li>
+				<li MayRequire="Ayameduki.HARNearmare">HAR_NM_Skill_Hediff_c</li>
+				<li MayRequire="Ayameduki.HARNearmare">HAR_NM_Skill_Hediff_e</li>
+				<li MayRequire="Ayameduki.HARNeclose">HAR_NC_Hediff_a</li>
+				<li MayRequire="Ayameduki.HARNeclose">HAR_NC_Hediff_b</li>
+				<li MayRequire="Ayameduki.HARXenoorca">HAR_XO_Hediff_a</li>
+				<li MayRequire="Ayameduki.HARXenoorca">HAR_XO_Hediff_b</li>
+				<li MayRequire="Ayameduki.HARXenoorca">HAR_XO_Hediff_d</li>
+				<li MayRequire="Ayameduki.HARXenoorca">HAR_XO_Hediff_e</li>
+				<li MayRequire="Ayameduki.BOSSRequeen">BOSS_RQ_Hediff_b</li>
+				<li MayRequire="Ayameduki.BOSSRequeen">BOSS_RQ_Hediff_Z_a</li>
+				<li MayRequire="Ayameduki.BOSSRequeen">BOSS_RQ_Hediff_Z_b</li>
+				<li MayRequire="Ayameduki.BOSSRequeen">BOSS_RQ_Hediff_Z_c</li>
+				<li MayRequire="Ayameduki.BOSSRequeen">BOSS_RQ_Hediff_Z_d</li>
+				<li MayRequire="Ayameduki.BOSSRequeen">BOSS_RQ_Hediff_Z_e</li>
+				<li MayRequire="Ayameduki.BOSSRequeen">BOSS_RQ_Hediff_Gone_Error_a</li>
+				<li MayRequire="Ayameduki.BOSSEnforcer">BOSS_EF_Hediff_a</li>
+				<li MayRequire="Ayameduki.BOSSEnforcer">BOSS_EF_Hediff_b</li>
+				<li MayRequire="Ayameduki.BOSSEnforcer">BOSS_EF_Hediff_c</li>
+				<li MayRequire="Ayameduki.BOSSEnforcer">BOSS_EF_Hediff_d</li>
+				<li MayRequire="Ayameduki.BOSSEnforcer">BOSS_EF_Hediff_e</li>
+				<li MayRequire="Ayameduki.HARChaoura">HAR_CO_Hediff_c</li>
+				<li MayRequire="Ayameduki.HARChaoura">HAR_CO_Hediff_d</li>
+				<li MayRequire="Ayameduki.HARChaoura">HAR_CO_Hediff_f</li>
+				<li MayRequire="Ayameduki.HARChaoura">HAR_CO_Hediff_h</li>
+				<li MayRequire="Ayameduki.HARLittluna">HAR_LL_Hediff_c</li>
+				<li MayRequire="Ayameduki.HARQualeela">HAR_QL_Hediff_c</li>
+				<li MayRequire="Ayameduki.HARQualeela">HAR_QL_Hediff_d</li>
+				<li MayRequire="Ayameduki.HARQualeela">HAR_QL_Hediff_e</li>
+				<li MayRequire="miho.fortifiedoutremer">Miho_AbomiSeen_Hediff</li>
+				<li MayRequire="miho.fortifiedoutremer">Miho_Hawk_Hediff</li>
+				<li MayRequire="miho.fortifiedoutremer">Miho_Thunder_Hediff</li>
+				<li MayRequire="miho.fortifiedoutremer">Miho_Plasma_Hediff</li>
+				<li MayRequire="Seioch.Naki.HAR">Naki_Distortion</li>
+				<li MayRequire="Seioch.Naki.HAR">Naki_Stall</li>
+				<li MayRequire="Seioch.Naki.HAR">Naki_Darkness</li>
+				<li MayRequire="Seioch.Naki.HAR">DMConfusion</li>
+				<li MayRequire="Seioch.Naki.HAR">DMDecay</li>
+				<li MayRequire="Seioch.Naki.HAR">DMDisintegration</li>
+				<li MayRequire="Seioch.Naki.HAR">DMAnnihilation</li>
+				<li MayRequire="Seioch.Naki.HAR">DMHealingPenalty</li>
+				<li MayRequire="VanillaExpanded.VPsycastsE">VPE_MindControlled</li>
+				<li MayRequire="VanillaExpanded.VPsycastsE">VPE_UnLucky</li>
+				<li MayRequire="VanillaExpanded.VPsycastsE">VPE_AgeSickness</li>
+				<li MayRequire="VanillaExpanded.VPsycastsE">VPE_Blizzard</li>
+				<li MayRequire="VanillaExpanded.VPsycastsE">VPE_FrostRay</li>
+				<li MayRequire="VanillaExpanded.VPsycastsE">VPE_Hurricane</li>
+				<li MayRequire="VanillaExpanded.VPsycastsE">VPE_IceBlock</li>
+				<li MayRequire="VanillaExpanded.VPsycastsE">VPE_LostVitality</li>
+				<li MayRequire="VanillaExpanded.VPsycastsE">VPE_PsychicPain</li>
+				<li MayRequire="VanillaExpanded.VPsycastsE">VPE_Rot</li>
+				<li MayRequire="VanillaExpanded.VPsycastsE">VPE_Vortex</li>
+				<li MayRequire="VanillaExpanded.VPsycastsE">VPEH_Bloodmist</li>
+				<li MayRequire="Edern.ArchotechWeaponry">VoidToxin</li>
+				<li MayRequire="Edern.ArchotechWeaponry">VoidNecrosisPerm</li>
+				<li MayRequire="Edern.ArchotechWeaponry">VoidNecrosisTemp</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">SeverePsychicDrone</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">Bleed</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">ShockPain</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">HealthBlight</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">CorpseExplosionDisease</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">Inflammable</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">IncendiaryBody</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">VitalityDrain</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">ArmorBreaker</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">Instantkill</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">Frostbitez</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">BerserkBullet</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">ConfusionBullet</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">HealthBlight1</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">IronLung</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">ArmorBreakerEX</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">NaniteAssault</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">MagnesiumBurn</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">RadiationPoisoning</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">NeuroToxin</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">HeatNullNanites</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">ColdNullNanites</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">AntiOrganicDisease</li>
+				<li MayRequire="ninedaylongbow.RedSunTechnologyIndustry">AngerOfTheBlackDragon</li>
+				<li MayRequire="ninedaylongbow.RedSunTechnologyIndustry">Windytalk</li>
+				<li MayRequire="ninedaylongbow.RedSunTechnologyIndustry">ArmorBreakingAssault</li>
+				<li MayRequire="ninedaylongbow.RedSunTechnologyIndustry">Sealofpoisonoussnake</li>
+				<li MayRequire="ninedaylongbow.RedSunTechnologyIndustry">FZHypothermic</li>
+				<li MayRequire="BlackMarket420.TAOFC">Necronoid_Infection</li>
+				<li MayRequire="BlackMarket420.TAOFC">Necronoid_Incubation</li>
+				<li MayRequire="BlackMarket420.TAOFC">Necronoid_InfectionOne</li>
+				<li MayRequire="BlackMarket420.TAOFC">BrainParasites</li>
+				<li MayRequire="Create.AncientCelestial">Mech_Die</li>
+				<li MayRequire="Chocorofuru.Thaumoking.LobotomyCorporation">LC_Fragile</li>
+				<li MayRequire="Chocorofuru.Thaumoking.LobotomyCorporation">LC_Slow</li>
+				<li MayRequire="Chocorofuru.Thaumoking.LobotomyCorporation">Paledamagehediff</li>
+				<li MayRequire="Chocorofuru.Thaumoking.LobotomyCorporation">Sanitydamage</li>
+				<li MayRequire="Chocorofuru.Thaumoking.LobotomyCorporation">Whitewound</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphAlpacaTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphAlpacaTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphBearTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphBearTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphBisonTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphBisonTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphBoarTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphBoarTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphBoomalopeTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphBoomalopeTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphBoomratTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphBoomratTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphCapybaraTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphCapybaraTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphCaribouTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphCaribouTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphCassowaryTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphCassowaryTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphCatTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphCatTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphChaoTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphChaoTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphChickenTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphChickenTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphChinchillaTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphChinchillaTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphCobraTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphCobraTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphCougarTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphCougarTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphCowTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphCowTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphDeerTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphDeerTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">FoxFlu</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">Chookflu</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">Swineflu</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">Cowflu</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">Chaoflu</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">HuskyFlu</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphDonkeyTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphDonkeyTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphDromedaryTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphDromedaryTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphDuckTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphDuckTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphElephantTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphElephantTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphElkTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphElkTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphEmuTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphEmuTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphFennecFoxTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphFennecFoxTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphFoxTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphFoxTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphGazelleTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphGazelleTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphGoatTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphGoatTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphGooseTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphGooseTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphGrizzlyBearTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphGrizzlyBearTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphGuineaPigTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphGuineaPigTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphHareTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphHareTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphHorseTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphHorseTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphHuskyTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphHuskyTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphIbexTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphIbexTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphIguanaTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphIguanaTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphLabradorRetrieverTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphLabradorRetrieverTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphLynxTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphLynxTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphMegaslothTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphMegaslothTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphMonkeyTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphMonkeyTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphMuffaloTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphMuffaloTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphOstrichTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphOstrichTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphPantherTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphPantherTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphPigTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphPigTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphPolarBearTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphPolarBearTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphRaccoonTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphRaccoonTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphRatTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphRatTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphRedFoxTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphRedFoxTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphRhinocerosTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphRhinocerosTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphSheepTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphSheepTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphSnowhareTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphSnowhareTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphSquirrelTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphSquirrelTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphTerrierTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphTerrierTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphThrumboTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphThrumboTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphTimberWolfTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphTimberWolfTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphTortoiseTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphTortoiseTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphTurkeyTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphTurkeyTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphWargTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphWargTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphWolfTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphWolfTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphYakTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphYakTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">SyringeRifleHediff</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphGunshotTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PM_ExperimentalInjector</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">Bullrush</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">TransformationParalysis</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">MutagenicBuildup_Weapon</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">MutagenicBuildup_SmallExplosion</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">MutagenicBuildup_LargeExplosion</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">MutagenicBuildup</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">FeralPillSapienceDrop</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">Animalistic</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PermanentlyFeral</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">WasAnimal</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">WasMerged</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">MutagenicDisease</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PM_MutagenicInfection</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">TFPlantAddiction</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">TFDirtInEyes</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">OozeInEyes</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">StabiliserLow</li>
+  			</hediffs>
+		</li>
+	</modExtensions>
+	<equippedStatOffsets>
+		<MoveSpeed>5</MoveSpeed>
+		<WorkSpeedGlobal>0.5</WorkSpeedGlobal>
+		<MentalBreakThreshold>-0.25</MentalBreakThreshold>
+		<MeleeHitChance>10</MeleeHitChance>
+		<MeleeDodgeChance>10</MeleeDodgeChance>
+		<MeleeDamageFactor>6</MeleeDamageFactor>
+		<ShootingAccuracyPawn>7</ShootingAccuracyPawn>
+		<PainShockThreshold>0.3</PainShockThreshold>
+		<InjuryHealingFactor>1.5</InjuryHealingFactor>
+		<IncomingDamageFactor>-0.1</IncomingDamageFactor>
+		<CarryingCapacity>700</CarryingCapacity>
+		<ToxicEnvironmentResistance>1</ToxicEnvironmentResistance>
+		<SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology">0.5</SlaveSuppressionOffset>
+    </equippedStatOffsets>
+	<comps>
+		<li Class="MVCF.Comps.CompProperties_VerbGiver">
+			<verbProps>
+				<li MayRequire="Ludeon.RimWorld.Royalty">
+					<label>机动跳跃</label>						
+					<visualLabel>机动跳跃</visualLabel>
+					<description>机动跳跃</description>
+					<canBeToggled>false</canBeToggled>
+					<comps>
+						<li Class="MVCF.VerbComps.VerbCompProperties_Cooldown">
+							<compClass>MVCF.VerbComps.VerbComp_Cooldown</compClass>
+							<cooldownTime>0.5</cooldownTime>
+						</li>
+					</comps>
+				</li>
+			</verbProps>
+		</li>
+		<li Class="SolarSystemRepublicFramework.CompProperties_InvalidDamage">
+			<damageDefs>
+				<li>EMP</li>
+				<li>Arrow</li>
+				<li>Blunt</li>
+				<li>Cut</li>
+				<li>Stab</li>
+			</damageDefs>
+		</li>
+	</comps>
+    <verbs>
+		<li>
+			<verbClass>SolarSystemRepublicFramework.Verb_JumpOverWall</verbClass>
+			<label>机动跳跃</label>
+			<commandIcon>Things/Apparel/BasicPowerArmor/BasicPowerArmor</commandIcon>
+			<violent>false</violent>
+			<hasStandardCommand>true</hasStandardCommand>
+			<onlyManualCast>false</onlyManualCast>
+			<forceNormalTimeSpeed>false</forceNormalTimeSpeed>
+			<warmupTime>0</warmupTime>
+			<warmupEffecter>JumpWarmupEffect</warmupEffecter>
+			<flightEffecterDef>JumpFlightEffect</flightEffecterDef>
+			<requireLineOfSight>false</requireLineOfSight>
+			<targetParams>
+				<canTargetLocations>true</canTargetLocations>
+				<canTargetPawns>false</canTargetPawns>
+				<canTargetBuildings>false</canTargetBuildings>
+			</targetParams>
+		</li>
+	</verbs>
+  </ThingDef>
+  
+  <ThingDef ParentName="SSR_ApparelArmorBase">
+    <defName>SSR_AdvancedPowerArmorLeotard</defName>
+    <label>高级防护紧身衣</label>
+    <description>高级防护紧身衣</description>
+	<techLevel>Spacer</techLevel>
+    <graphicData>
+		<texPath>Things/Apparel/AdvancedPowerArmorLeotard/AdvancedPowerArmorLeotard</texPath>
+		<shaderType>CutoutComplex</shaderType>
+		<graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <costList>
+		<Cloth>325</Cloth>
+		<ComponentSpacer>3</ComponentSpacer>
+	</costList>
+    <statBases>
+		<WorkToMake>5500</WorkToMake>
+		<ArmorRating_Sharp>1</ArmorRating_Sharp>
+		<ArmorRating_Blunt>1</ArmorRating_Blunt>
+		<ArmorRating_Heat>2</ArmorRating_Heat>
+		<Insulation_Cold>150</Insulation_Cold>
+		<Insulation_Heat>150</Insulation_Heat>
+		<Mass>0.3</Mass>
+		<EquipDelay>0.5</EquipDelay>
+    </statBases>
+	<tickerType>Normal</tickerType>
+    <generateCommonality>0.01</generateCommonality>
+    <apparel>
+		<countsAsClothingForNudity>false</countsAsClothingForNudity>
+		<bodyPartGroups>
+			<li>Torso</li>
+			<li>Neck</li>
+			<li>Shoulders</li>
+			<li>Waist</li>
+			<li>Arms</li>
+			<li>Hands</li>
+			<li>Legs</li>
+			<li>Feet</li>
+		</bodyPartGroups>
+		<wornGraphicPath>Things/Apparel/AdvancedPowerArmorLeotard/AdvancedPowerArmorLeotard</wornGraphicPath>
+		<useWornGraphicMask>true</useWornGraphicMask>
+		<layers>
+			<li>OnSkin</li>
+		</layers>
+		<canBeDesiredForIdeo>false</canBeDesiredForIdeo>
+    </apparel>
+	<recipeMaker>
+		<researchPrerequisite>SSRAdvancedSpecialGarments</researchPrerequisite>
+		<recipeUsers Inherit="false">
+			<li>ElectricTailoringBench</li>
+			<li>HandTailoringBench</li>
+		</recipeUsers>
+    </recipeMaker>
+	<modExtensions>
+		<li Class="SolarSystemRepublicFramework.DefModExtension_DefendHediff">
+  			<hediffs>
+     			<li>Heatstroke</li>
+				<li>Hypothermia</li>
+				<li>ToxicBuildup</li>
+				<li>FibrousMechanites</li>
+				<li>Malaria</li>
+				<li>SensoryMechanites</li>
+				<li>Burn</li>
+				<li>Frostbite</li>
+  			</hediffs>
+		</li>
+	</modExtensions>
+	<equippedStatOffsets>
+		<MoveSpeed>5</MoveSpeed>
+		<WorkSpeedGlobal>1</WorkSpeedGlobal>
+		<MentalBreakThreshold>-0.1</MentalBreakThreshold>
+		<MeleeHitChance>1.5</MeleeHitChance> 
+		<MeleeDodgeChance>1</MeleeDodgeChance>
+		<MeleeDamageFactor>1</MeleeDamageFactor>
+		<PainShockThreshold>0.5</PainShockThreshold>
+		<InjuryHealingFactor>0.5</InjuryHealingFactor>
+		<IncomingDamageFactor>-0.15</IncomingDamageFactor>
+		<CarryingCapacity>60</CarryingCapacity>
+		<ToxicEnvironmentResistance>1</ToxicEnvironmentResistance>
+		<SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology">0.5</SlaveSuppressionOffset>
+    </equippedStatOffsets>
+	<comps>
+		<li>
+			<compClass>SolarSystemRepublicFramework.CompAutoHealer</compClass>
+		</li>
+		<li Class="SolarSystemRepublicFramework.CompProperties_InvalidDamage">
+			<damageDefs>
+				<li>Scratch</li>
+				<li>ScratchToxic</li>
+				<li>ToxicBite</li>
+			</damageDefs>
+		</li>
+	</comps>
+  </ThingDef>
+  
+  <ThingDef ParentName="SSR_ApparelArmorBase">
+    <defName>SSR_AdvancedPowerArmor</defName>
+    <label>高级动力装甲</label>
+    <description>高级动力装甲</description>
+	<techLevel>Spacer</techLevel>
+    <graphicData>
+		<texPath>Things/Apparel/AdvancedPowerArmor/AdvancedPowerArmor</texPath>
+		<shaderType>CutoutComplex</shaderType>
+		<graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <costList>
+		<Plasteel>500</Plasteel>
+		<ComponentSpacer>5</ComponentSpacer>
+	</costList>
+    <statBases>
+		<WorkToMake>12000</WorkToMake>
+		<ArmorRating_Sharp>1.75</ArmorRating_Sharp>
+		<ArmorRating_Blunt>1.75</ArmorRating_Blunt>
+		<ArmorRating_Heat>2</ArmorRating_Heat>
+		<Insulation_Cold>200</Insulation_Cold>
+		<Insulation_Heat>200</Insulation_Heat>
+		<Mass>5</Mass>
+		<EquipDelay>0.5</EquipDelay>
+		<JumpRange>43.9</JumpRange>
+		<EnergyShieldRechargeRate>2</EnergyShieldRechargeRate>
+		<EnergyShieldEnergyMax>10</EnergyShieldEnergyMax>
+    </statBases>
+	<tickerType>Normal</tickerType>
+    <generateCommonality>0.01</generateCommonality>
+    <apparel>
+		<countsAsClothingForNudity>false</countsAsClothingForNudity>
+		<bodyPartGroups>
+			<li>Torso</li>
+			<li>Neck</li>
+			<li>Shoulders</li>
+			<li>Waist</li>
+			<li>Arms</li>
+			<li>Hands</li>
+			<li>Legs</li>
+			<li>Feet</li>
+		</bodyPartGroups>
+		<wornGraphicPath>Things/Apparel/AdvancedPowerArmor/AdvancedPowerArmor</wornGraphicPath>
+		<useWornGraphicMask>true</useWornGraphicMask>
+		<layers>
+			<li>Middle</li>
+			<li>Shell</li>
+		</layers>
+		<canBeDesiredForIdeo>false</canBeDesiredForIdeo>
+    </apparel>
+	<recipeMaker>
+		<researchPrerequisite>SSRAdvancedPowerArmor</researchPrerequisite>
+    </recipeMaker>
+	<modExtensions>
+		<li Class="SolarSystemRepublicFramework.DefModExtension_DefendRoof">
+		</li>
+		<li Class="SolarSystemRepublicFramework.DefModExtension_DefendHediff">
+  			<hediffs>
+     			<li>Heatstroke</li>
+				<li>Hypothermia</li>
+				<li>ToxicBuildup</li>
+				<li>FibrousMechanites</li>
+				<li>Malaria</li>
+				<li>SensoryMechanites</li>
+				<li>Burn</li>
+				<li>Frostbite</li>
+				<li MayRequire="Ayameduki.HARIdearn">HAR_IA_Skill_Hediff_a</li>
+				<li MayRequire="Ayameduki.HARIdearn">HAR_IA_Skill_Hediff_c</li>
+				<li MayRequire="Ayameduki.HARIdearn">HAR_IA_Skill_Hediff_d</li>
+				<li MayRequire="Ayameduki.HARIdearn">HAR_IA_Skill_Hediff_e</li>
+				<li MayRequire="Ayameduki.HARIdearn">HAR_IA_Gunshot</li>
+				<li MayRequire="Ayameduki.HARIdearn">HAR_IA_Skill_Hediff_f</li>
+				<li MayRequire="Ayameduki.HARIdearn">HAR_IA_Skill_Hediff_g</li>
+				<li MayRequire="Ayameduki.HARIdearn">HAR_IA_Skill_Hediff_h</li>
+				<li MayRequire="Ayameduki.HARIdearn">HAR_IA_Skill_Hediff_z</li>
+				<li MayRequire="Ayameduki.HARIdhale">HAR_IH_Hediff_ZZZ</li>
+				<li MayRequire="Ayameduki.HARNearmare">Hediff_Geist</li>
+				<li MayRequire="Ayameduki.HARNearmare">Hediff_Larva</li>
+				<li MayRequire="Ayameduki.HARNearmare">Hediff_Rugeiyu</li>
+				<li MayRequire="Ayameduki.HARNearmare">Hediff_Genocide</li>
+				<li MayRequire="Ayameduki.HARNearmare">HAR_NM_Hediff_a</li>
+				<li MayRequire="Ayameduki.HARNearmare">HAR_NM_XXX_Hediff</li>
+				<li MayRequire="Ayameduki.HARNearmare">HAR_NM_Skill_Hediff_b</li>
+				<li MayRequire="Ayameduki.HARNearmare">HAR_NM_Skill_Hediff_c</li>
+				<li MayRequire="Ayameduki.HARNearmare">HAR_NM_Skill_Hediff_e</li>
+				<li MayRequire="Ayameduki.HARNeclose">HAR_NC_Hediff_a</li>
+				<li MayRequire="Ayameduki.HARNeclose">HAR_NC_Hediff_b</li>
+				<li MayRequire="Ayameduki.HARXenoorca">HAR_XO_Hediff_a</li>
+				<li MayRequire="Ayameduki.HARXenoorca">HAR_XO_Hediff_b</li>
+				<li MayRequire="Ayameduki.HARXenoorca">HAR_XO_Hediff_d</li>
+				<li MayRequire="Ayameduki.HARXenoorca">HAR_XO_Hediff_e</li>
+				<li MayRequire="Ayameduki.BOSSRequeen">BOSS_RQ_Hediff_b</li>
+				<li MayRequire="Ayameduki.BOSSRequeen">BOSS_RQ_Hediff_Z_a</li>
+				<li MayRequire="Ayameduki.BOSSRequeen">BOSS_RQ_Hediff_Z_b</li>
+				<li MayRequire="Ayameduki.BOSSRequeen">BOSS_RQ_Hediff_Z_c</li>
+				<li MayRequire="Ayameduki.BOSSRequeen">BOSS_RQ_Hediff_Z_d</li>
+				<li MayRequire="Ayameduki.BOSSRequeen">BOSS_RQ_Hediff_Z_e</li>
+				<li MayRequire="Ayameduki.BOSSRequeen">BOSS_RQ_Hediff_Gone_Error_a</li>
+				<li MayRequire="Ayameduki.BOSSEnforcer">BOSS_EF_Hediff_a</li>
+				<li MayRequire="Ayameduki.BOSSEnforcer">BOSS_EF_Hediff_b</li>
+				<li MayRequire="Ayameduki.BOSSEnforcer">BOSS_EF_Hediff_c</li>
+				<li MayRequire="Ayameduki.BOSSEnforcer">BOSS_EF_Hediff_d</li>
+				<li MayRequire="Ayameduki.BOSSEnforcer">BOSS_EF_Hediff_e</li>
+				<li MayRequire="Ayameduki.HARChaoura">HAR_CO_Hediff_c</li>
+				<li MayRequire="Ayameduki.HARChaoura">HAR_CO_Hediff_d</li>
+				<li MayRequire="Ayameduki.HARChaoura">HAR_CO_Hediff_f</li>
+				<li MayRequire="Ayameduki.HARChaoura">HAR_CO_Hediff_h</li>
+				<li MayRequire="Ayameduki.HARLittluna">HAR_LL_Hediff_c</li>
+				<li MayRequire="Ayameduki.HARQualeela">HAR_QL_Hediff_c</li>
+				<li MayRequire="Ayameduki.HARQualeela">HAR_QL_Hediff_d</li>
+				<li MayRequire="Ayameduki.HARQualeela">HAR_QL_Hediff_e</li>
+				<li MayRequire="miho.fortifiedoutremer">Miho_AbomiSeen_Hediff</li>
+				<li MayRequire="miho.fortifiedoutremer">Miho_Hawk_Hediff</li>
+				<li MayRequire="miho.fortifiedoutremer">Miho_Thunder_Hediff</li>
+				<li MayRequire="miho.fortifiedoutremer">Miho_Plasma_Hediff</li>
+				<li MayRequire="Seioch.Naki.HAR">Naki_Distortion</li>
+				<li MayRequire="Seioch.Naki.HAR">Naki_Stall</li>
+				<li MayRequire="Seioch.Naki.HAR">Naki_Darkness</li>
+				<li MayRequire="Seioch.Naki.HAR">DMConfusion</li>
+				<li MayRequire="Seioch.Naki.HAR">DMDecay</li>
+				<li MayRequire="Seioch.Naki.HAR">DMDisintegration</li>
+				<li MayRequire="Seioch.Naki.HAR">DMAnnihilation</li>
+				<li MayRequire="Seioch.Naki.HAR">DMHealingPenalty</li>
+				<li MayRequire="VanillaExpanded.VPsycastsE">VPE_MindControlled</li>
+				<li MayRequire="VanillaExpanded.VPsycastsE">VPE_UnLucky</li>
+				<li MayRequire="VanillaExpanded.VPsycastsE">VPE_AgeSickness</li>
+				<li MayRequire="VanillaExpanded.VPsycastsE">VPE_Blizzard</li>
+				<li MayRequire="VanillaExpanded.VPsycastsE">VPE_FrostRay</li>
+				<li MayRequire="VanillaExpanded.VPsycastsE">VPE_Hurricane</li>
+				<li MayRequire="VanillaExpanded.VPsycastsE">VPE_IceBlock</li>
+				<li MayRequire="VanillaExpanded.VPsycastsE">VPE_LostVitality</li>
+				<li MayRequire="VanillaExpanded.VPsycastsE">VPE_PsychicPain</li>
+				<li MayRequire="VanillaExpanded.VPsycastsE">VPE_Rot</li>
+				<li MayRequire="VanillaExpanded.VPsycastsE">VPE_Vortex</li>
+				<li MayRequire="VanillaExpanded.VPsycastsE">VPEH_Bloodmist</li>
+				<li MayRequire="Edern.ArchotechWeaponry">VoidToxin</li>
+				<li MayRequire="Edern.ArchotechWeaponry">VoidNecrosisPerm</li>
+				<li MayRequire="Edern.ArchotechWeaponry">VoidNecrosisTemp</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">SeverePsychicDrone</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">Bleed</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">ShockPain</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">HealthBlight</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">CorpseExplosionDisease</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">Inflammable</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">IncendiaryBody</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">VitalityDrain</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">ArmorBreaker</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">Instantkill</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">Frostbitez</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">BerserkBullet</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">ConfusionBullet</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">HealthBlight1</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">IronLung</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">ArmorBreakerEX</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">NaniteAssault</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">MagnesiumBurn</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">RadiationPoisoning</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">NeuroToxin</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">HeatNullNanites</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">ColdNullNanites</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">AntiOrganicDisease</li>
+				<li MayRequire="ninedaylongbow.RedSunTechnologyIndustry">AngerOfTheBlackDragon</li>
+				<li MayRequire="ninedaylongbow.RedSunTechnologyIndustry">Windytalk</li>
+				<li MayRequire="ninedaylongbow.RedSunTechnologyIndustry">ArmorBreakingAssault</li>
+				<li MayRequire="ninedaylongbow.RedSunTechnologyIndustry">Sealofpoisonoussnake</li>
+				<li MayRequire="ninedaylongbow.RedSunTechnologyIndustry">FZHypothermic</li>
+				<li MayRequire="BlackMarket420.TAOFC">Necronoid_Infection</li>
+				<li MayRequire="BlackMarket420.TAOFC">Necronoid_Incubation</li>
+				<li MayRequire="BlackMarket420.TAOFC">Necronoid_InfectionOne</li>
+				<li MayRequire="BlackMarket420.TAOFC">BrainParasites</li>
+				<li MayRequire="Create.AncientCelestial">Mech_Die</li>
+				<li MayRequire="Chocorofuru.Thaumoking.LobotomyCorporation">LC_Fragile</li>
+				<li MayRequire="Chocorofuru.Thaumoking.LobotomyCorporation">LC_Slow</li>
+				<li MayRequire="Chocorofuru.Thaumoking.LobotomyCorporation">Paledamagehediff</li>
+				<li MayRequire="Chocorofuru.Thaumoking.LobotomyCorporation">Sanitydamage</li>
+				<li MayRequire="Chocorofuru.Thaumoking.LobotomyCorporation">Whitewound</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphAlpacaTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphAlpacaTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphBearTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphBearTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphBisonTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphBisonTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphBoarTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphBoarTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphBoomalopeTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphBoomalopeTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphBoomratTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphBoomratTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphCapybaraTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphCapybaraTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphCaribouTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphCaribouTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphCassowaryTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphCassowaryTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphCatTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphCatTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphChaoTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphChaoTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphChickenTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphChickenTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphChinchillaTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphChinchillaTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphCobraTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphCobraTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphCougarTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphCougarTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphCowTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphCowTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphDeerTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphDeerTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">FoxFlu</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">Chookflu</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">Swineflu</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">Cowflu</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">Chaoflu</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">HuskyFlu</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphDonkeyTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphDonkeyTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphDromedaryTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphDromedaryTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphDuckTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphDuckTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphElephantTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphElephantTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphElkTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphElkTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphEmuTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphEmuTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphFennecFoxTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphFennecFoxTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphFoxTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphFoxTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphGazelleTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphGazelleTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphGoatTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphGoatTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphGooseTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphGooseTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphGrizzlyBearTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphGrizzlyBearTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphGuineaPigTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphGuineaPigTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphHareTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphHareTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphHorseTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphHorseTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphHuskyTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphHuskyTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphIbexTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphIbexTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphIguanaTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphIguanaTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphLabradorRetrieverTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphLabradorRetrieverTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphLynxTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphLynxTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphMegaslothTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphMegaslothTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphMonkeyTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphMonkeyTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphMuffaloTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphMuffaloTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphOstrichTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphOstrichTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphPantherTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphPantherTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphPigTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphPigTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphPolarBearTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphPolarBearTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphRaccoonTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphRaccoonTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphRatTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphRatTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphRedFoxTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphRedFoxTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphRhinocerosTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphRhinocerosTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphSheepTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphSheepTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphSnowhareTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphSnowhareTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphSquirrelTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphSquirrelTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphTerrierTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphTerrierTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphThrumboTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphThrumboTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphTimberWolfTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphTimberWolfTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphTortoiseTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphTortoiseTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphTurkeyTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphTurkeyTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphWargTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphWargTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphWolfTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphWolfTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphYakTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphYakTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">SyringeRifleHediff</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphGunshotTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PM_ExperimentalInjector</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">Bullrush</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">TransformationParalysis</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">MutagenicBuildup_Weapon</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">MutagenicBuildup_SmallExplosion</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">MutagenicBuildup_LargeExplosion</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">MutagenicBuildup</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">FeralPillSapienceDrop</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">Animalistic</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PermanentlyFeral</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">WasAnimal</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">WasMerged</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">MutagenicDisease</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PM_MutagenicInfection</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">TFPlantAddiction</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">TFDirtInEyes</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">OozeInEyes</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">StabiliserLow</li>
+  			</hediffs>
+		</li>
+	</modExtensions>
+	<equippedStatOffsets>
+		<MoveSpeed>7</MoveSpeed>
+		<WorkSpeedGlobal>0.75</WorkSpeedGlobal>
+		<MentalBreakThreshold>-0.5</MentalBreakThreshold>
+		<MeleeHitChance>15</MeleeHitChance>
+		<MeleeDodgeChance>15</MeleeDodgeChance>
+		<MeleeDamageFactor>7</MeleeDamageFactor>
+		<ShootingAccuracyPawn>10</ShootingAccuracyPawn>
+		<PainShockThreshold>0.5</PainShockThreshold>
+		<InjuryHealingFactor>3</InjuryHealingFactor>
+		<IncomingDamageFactor>-0.25</IncomingDamageFactor>
+		<CarryingCapacity>900</CarryingCapacity>
+		<ToxicEnvironmentResistance>1</ToxicEnvironmentResistance>
+		<SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology">0.5</SlaveSuppressionOffset>
+    </equippedStatOffsets>
+	<comps>
+		<li Class="CompProperties_Shield" >
+			<blocksRangedWeapons>false</blocksRangedWeapons>
+			<energyLossPerDamage>0.001</energyLossPerDamage>
+			<startingTicksToReset>600</startingTicksToReset>
+			<compClass>SolarSystemRepublicFramework.CompShieldMelee</compClass>
+		</li>
+		<li Class="CompProperties_CauseHediff_Apparel" >
+			<hediff>SSR_Invisibility</hediff>
+			<compClass>SolarSystemRepublicFramework.CompCauseHediff_ApparelSwitchable</compClass>
+		</li>
+		<li Class="MVCF.Comps.CompProperties_VerbGiver">
+			<verbProps>
+				<li MayRequire="Ludeon.RimWorld.Royalty">
+					<label>机动跳跃</label>						
+					<visualLabel>机动跳跃</visualLabel>
+					<description>机动跳跃</description>
+					<canBeToggled>false</canBeToggled>
+					<comps>
+						<li Class="MVCF.VerbComps.VerbCompProperties_Cooldown">
+							<compClass>MVCF.VerbComps.VerbComp_Cooldown</compClass>
+							<cooldownTime>0.5</cooldownTime>
+						</li>
+					</comps>
+				</li>
+			</verbProps>
+		</li>
+		<li Class="SolarSystemRepublicFramework.CompProperties_InvalidDamage">
+			<damageDefs>
+				<li>EMP</li>
+				<li>Arrow</li>
+				<li>Blunt</li>
+				<li>Cut</li>
+				<li>Stab</li>
+				<li>Crush</li>
+			</damageDefs>
+		</li>
+	</comps>
+    <verbs>
+		<li>
+			<verbClass>SolarSystemRepublicFramework.Verb_JumpOverWall</verbClass>
+			<label>机动跳跃</label>
+			<commandIcon>Things/Apparel/AdvancedPowerArmor/AdvancedPowerArmor</commandIcon>
+			<violent>false</violent>
+			<hasStandardCommand>true</hasStandardCommand>
+			<onlyManualCast>false</onlyManualCast>
+			<forceNormalTimeSpeed>false</forceNormalTimeSpeed>
+			<warmupTime>0</warmupTime>
+			<warmupEffecter>JumpWarmupEffect</warmupEffecter>
+			<flightEffecterDef>JumpFlightEffect</flightEffecterDef>
+			<requireLineOfSight>false</requireLineOfSight>
+			<targetParams>
+				<canTargetLocations>true</canTargetLocations>
+				<canTargetPawns>false</canTargetPawns>
+				<canTargetBuildings>false</canTargetBuildings>
+			</targetParams>
+		</li>
+	</verbs>
+  </ThingDef>
+  
+  <ThingDef ParentName="SSR_ApparelArmorBase">
+    <defName>SSR_DefenderPowerArmorLeotard</defName>
+    <label>防卫者防护紧身衣</label>
+    <description>防卫者防护紧身衣</description>
+	<techLevel>Archotech</techLevel>
+    <graphicData>
+		<texPath>Things/Apparel/DefenderPowerArmorLeotard/DefenderPowerArmorLeotard</texPath>
+		<shaderType>CutoutComplex</shaderType>
+		<graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <costList>
+		<Cloth>500</Cloth>
+		<ComponentSpacer>5</ComponentSpacer>
+	</costList>
+    <statBases>
+		<WorkToMake>8500</WorkToMake>
+		<ArmorRating_Sharp>2</ArmorRating_Sharp>
+		<ArmorRating_Blunt>2</ArmorRating_Blunt>
+		<ArmorRating_Heat>2</ArmorRating_Heat>
+		<Insulation_Cold>300</Insulation_Cold>
+		<Insulation_Heat>300</Insulation_Heat>
+		<Mass>0.01</Mass>
+		<EquipDelay>0.05</EquipDelay>
+    </statBases>
+	<tickerType>Normal</tickerType>
+    <generateCommonality>0.01</generateCommonality>
+    <apparel>
+		<countsAsClothingForNudity>false</countsAsClothingForNudity>
+		<bodyPartGroups>
+			<li>Torso</li>
+			<li>Neck</li>
+			<li>Shoulders</li>
+			<li>Waist</li>
+			<li>Arms</li>
+			<li>Hands</li>
+			<li>Legs</li>
+			<li>Feet</li>
+		</bodyPartGroups>
+		<wornGraphicPath>Things/Apparel/DefenderPowerArmorLeotard/DefenderPowerArmorLeotard</wornGraphicPath>
+		<useWornGraphicMask>true</useWornGraphicMask>
+		<layers>
+			<li>OnSkin</li>
+		</layers>
+		<canBeDesiredForIdeo>false</canBeDesiredForIdeo>
+    </apparel>
+	<recipeMaker>
+		<researchPrerequisite>CataphractArmor</researchPrerequisite>
+		<recipeUsers Inherit="false">
+			<li>ElectricTailoringBench</li>
+			<li>HandTailoringBench</li>
+		</recipeUsers>
+    </recipeMaker>
+	<modExtensions>
+		<li Class="SolarSystemRepublicFramework.DefModExtension_DefendHediff">
+  			<hediffs>
+     			<li>Heatstroke</li>
+				<li>Hypothermia</li>
+				<li>ToxicBuildup</li>
+				<li>FibrousMechanites</li>
+				<li>Malaria</li>
+				<li>SensoryMechanites</li>
+				<li>Burn</li>
+				<li>Frostbite</li>
+  			</hediffs>
+		</li>
+	</modExtensions>
+	<equippedStatOffsets>
+		<MoveSpeed>10</MoveSpeed>
+		<WorkSpeedGlobal>2</WorkSpeedGlobal>
+		<MentalBreakThreshold>-0.5</MentalBreakThreshold>
+		<MeleeHitChance>2</MeleeHitChance>
+		<MeleeDodgeChance>2</MeleeDodgeChance>
+		<MeleeDamageFactor>2</MeleeDamageFactor>
+		<PainShockThreshold>0.75</PainShockThreshold>
+		<InjuryHealingFactor>5</InjuryHealingFactor>
+		<IncomingDamageFactor>-0.2</IncomingDamageFactor>
+		<CarryingCapacity>90</CarryingCapacity>
+		<ToxicEnvironmentResistance>1</ToxicEnvironmentResistance>
+		<SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology">0.5</SlaveSuppressionOffset>
+    </equippedStatOffsets>
+	<comps>
+		<li>
+			<compClass>SolarSystemRepublicFramework.CompAutoHealer</compClass>
+		</li>
+		<li Class="SolarSystemRepublicFramework.CompProperties_InvalidDamage">
+			<damageDefs>
+				<li>Scratch</li>
+				<li>ScratchToxic</li>
+				<li>ToxicBite</li>
+				<li>Crush</li>
+			</damageDefs>
+		</li>
+	</comps>
+  </ThingDef>
+  
+  <ThingDef ParentName="SSR_ApparelArmorBase">
+    <defName>SSR_Defender_PowerArmor</defName>
+    <label>防卫者动力装甲</label>
+    <description>防卫者动力装甲是太阳系共和国时代的标准动力装甲型号，拥有极佳防护力的同时还搭载着单兵护盾系统，在战场上能有效提高士兵存活率并为士兵提供各种战斗辅助。</description>
+	<techLevel>Archotech</techLevel>
+    <graphicData>
+		<texPath>Things/Apparel/DefenderPowerArmor-1/Defender-1</texPath>
+		<shaderType>CutoutComplex</shaderType>
+		<graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <costList>
+		<Plasteel>700</Plasteel>
+		<ComponentSpacer>7</ComponentSpacer>
+	</costList>
+    <statBases>
+		<WorkToMake>15000</WorkToMake>
+		<ArmorRating_Sharp>50</ArmorRating_Sharp>
+		<ArmorRating_Blunt>100</ArmorRating_Blunt>
+		<ArmorRating_Heat>50</ArmorRating_Heat>
+		<Insulation_Cold>500</Insulation_Cold>
+		<Insulation_Heat>500</Insulation_Heat>
+		<Mass>0.5</Mass>
+		<EquipDelay>0.5</EquipDelay>
+		<JumpRange>53.9</JumpRange>
+		<EnergyShieldRechargeRate>5</EnergyShieldRechargeRate>
+		<EnergyShieldEnergyMax>50</EnergyShieldEnergyMax>
+    </statBases>
+	<tickerType>Normal</tickerType>
+    <generateCommonality>0.01</generateCommonality>
+    <apparel>
+		<countsAsClothingForNudity>false</countsAsClothingForNudity>
+		<bodyPartGroups>
+			<li>Torso</li>
+			<li>Neck</li>
+			<li>Shoulders</li>
+			<li>Waist</li>
+			<li>Arms</li>
+			<li>Hands</li>
+			<li>Legs</li>
+			<li>Feet</li>
+		</bodyPartGroups>
+		<wornGraphicPath>Things/Apparel/DefenderPowerArmor-1/Defender-1</wornGraphicPath>
+		<useWornGraphicMask>true</useWornGraphicMask>
+		<layers>
+			<li>Middle</li>
+			<li>Shell</li>
+		</layers>
+		<canBeDesiredForIdeo>false</canBeDesiredForIdeo>
+    </apparel>
+	<recipeMaker>
+		<researchPrerequisite>CataphractArmor</researchPrerequisite>
+    </recipeMaker>
+	<modExtensions>
+		<li Class="SolarSystemRepublicFramework.DefModExtension_DefendRoof">
+		</li>
+		<li Class="SolarSystemRepublicFramework.DefModExtension_DefendHediff">
+  			<hediffs>
+     			<li>Heatstroke</li>
+				<li>Hypothermia</li>
+				<li>ToxicBuildup</li>
+				<li>FibrousMechanites</li>
+				<li>Malaria</li>
+				<li>SensoryMechanites</li>
+				<li>Burn</li>
+				<li>Frostbite</li>
+				<li>Bruise</li>
+				<li>Crack</li>
+				<li>Crush</li>
+				<li>Cut</li>
+				<li>ExecutionCut</li>
+				<li MayRequire="Ayameduki.HARIdearn">HAR_IA_Skill_Hediff_a</li>
+				<li MayRequire="Ayameduki.HARIdearn">HAR_IA_Skill_Hediff_c</li>
+				<li MayRequire="Ayameduki.HARIdearn">HAR_IA_Skill_Hediff_d</li>
+				<li MayRequire="Ayameduki.HARIdearn">HAR_IA_Skill_Hediff_e</li>
+				<li MayRequire="Ayameduki.HARIdearn">HAR_IA_Gunshot</li>
+				<li MayRequire="Ayameduki.HARIdearn">HAR_IA_Skill_Hediff_f</li>
+				<li MayRequire="Ayameduki.HARIdearn">HAR_IA_Skill_Hediff_g</li>
+				<li MayRequire="Ayameduki.HARIdearn">HAR_IA_Skill_Hediff_h</li>
+				<li MayRequire="Ayameduki.HARIdearn">HAR_IA_Skill_Hediff_z</li>
+				<li MayRequire="Ayameduki.HARIdhale">HAR_IH_Hediff_ZZZ</li>
+				<li MayRequire="Ayameduki.HARNearmare">Hediff_Geist</li>
+				<li MayRequire="Ayameduki.HARNearmare">Hediff_Larva</li>
+				<li MayRequire="Ayameduki.HARNearmare">Hediff_Rugeiyu</li>
+				<li MayRequire="Ayameduki.HARNearmare">Hediff_Genocide</li>
+				<li MayRequire="Ayameduki.HARNearmare">HAR_NM_Hediff_a</li>
+				<li MayRequire="Ayameduki.HARNearmare">HAR_NM_XXX_Hediff</li>
+				<li MayRequire="Ayameduki.HARNearmare">HAR_NM_Skill_Hediff_b</li>
+				<li MayRequire="Ayameduki.HARNearmare">HAR_NM_Skill_Hediff_c</li>
+				<li MayRequire="Ayameduki.HARNearmare">HAR_NM_Skill_Hediff_e</li>
+				<li MayRequire="Ayameduki.HARNeclose">HAR_NC_Hediff_a</li>
+				<li MayRequire="Ayameduki.HARNeclose">HAR_NC_Hediff_b</li>
+				<li MayRequire="Ayameduki.HARXenoorca">HAR_XO_Hediff_a</li>
+				<li MayRequire="Ayameduki.HARXenoorca">HAR_XO_Hediff_b</li>
+				<li MayRequire="Ayameduki.HARXenoorca">HAR_XO_Hediff_d</li>
+				<li MayRequire="Ayameduki.HARXenoorca">HAR_XO_Hediff_e</li>
+				<li MayRequire="Ayameduki.BOSSRequeen">BOSS_RQ_Hediff_b</li>
+				<li MayRequire="Ayameduki.BOSSRequeen">BOSS_RQ_Hediff_Z_a</li>
+				<li MayRequire="Ayameduki.BOSSRequeen">BOSS_RQ_Hediff_Z_b</li>
+				<li MayRequire="Ayameduki.BOSSRequeen">BOSS_RQ_Hediff_Z_c</li>
+				<li MayRequire="Ayameduki.BOSSRequeen">BOSS_RQ_Hediff_Z_d</li>
+				<li MayRequire="Ayameduki.BOSSRequeen">BOSS_RQ_Hediff_Z_e</li>
+				<li MayRequire="Ayameduki.BOSSRequeen">BOSS_RQ_Hediff_Gone_Error_a</li>
+				<li MayRequire="Ayameduki.BOSSEnforcer">BOSS_EF_Hediff_a</li>
+				<li MayRequire="Ayameduki.BOSSEnforcer">BOSS_EF_Hediff_b</li>
+				<li MayRequire="Ayameduki.BOSSEnforcer">BOSS_EF_Hediff_c</li>
+				<li MayRequire="Ayameduki.BOSSEnforcer">BOSS_EF_Hediff_d</li>
+				<li MayRequire="Ayameduki.BOSSEnforcer">BOSS_EF_Hediff_e</li>
+				<li MayRequire="Ayameduki.HARChaoura">HAR_CO_Hediff_c</li>
+				<li MayRequire="Ayameduki.HARChaoura">HAR_CO_Hediff_d</li>
+				<li MayRequire="Ayameduki.HARChaoura">HAR_CO_Hediff_f</li>
+				<li MayRequire="Ayameduki.HARChaoura">HAR_CO_Hediff_h</li>
+				<li MayRequire="Ayameduki.HARLittluna">HAR_LL_Hediff_c</li>
+				<li MayRequire="Ayameduki.HARQualeela">HAR_QL_Hediff_c</li>
+				<li MayRequire="Ayameduki.HARQualeela">HAR_QL_Hediff_d</li>
+				<li MayRequire="Ayameduki.HARQualeela">HAR_QL_Hediff_e</li>
+				<li MayRequire="miho.fortifiedoutremer">Miho_AbomiSeen_Hediff</li>
+				<li MayRequire="miho.fortifiedoutremer">Miho_Hawk_Hediff</li>
+				<li MayRequire="miho.fortifiedoutremer">Miho_Thunder_Hediff</li>
+				<li MayRequire="miho.fortifiedoutremer">Miho_Plasma_Hediff</li>
+				<li MayRequire="Seioch.Naki.HAR">Naki_Distortion</li>
+				<li MayRequire="Seioch.Naki.HAR">Naki_Stall</li>
+				<li MayRequire="Seioch.Naki.HAR">Naki_Darkness</li>
+				<li MayRequire="Seioch.Naki.HAR">DMConfusion</li>
+				<li MayRequire="Seioch.Naki.HAR">DMDecay</li>
+				<li MayRequire="Seioch.Naki.HAR">DMDisintegration</li>
+				<li MayRequire="Seioch.Naki.HAR">DMAnnihilation</li>
+				<li MayRequire="Seioch.Naki.HAR">DMHealingPenalty</li>
+				<li MayRequire="VanillaExpanded.VPsycastsE">VPE_MindControlled</li>
+				<li MayRequire="VanillaExpanded.VPsycastsE">VPE_UnLucky</li>
+				<li MayRequire="VanillaExpanded.VPsycastsE">VPE_AgeSickness</li>
+				<li MayRequire="VanillaExpanded.VPsycastsE">VPE_Blizzard</li>
+				<li MayRequire="VanillaExpanded.VPsycastsE">VPE_FrostRay</li>
+				<li MayRequire="VanillaExpanded.VPsycastsE">VPE_Hurricane</li>
+				<li MayRequire="VanillaExpanded.VPsycastsE">VPE_IceBlock</li>
+				<li MayRequire="VanillaExpanded.VPsycastsE">VPE_LostVitality</li>
+				<li MayRequire="VanillaExpanded.VPsycastsE">VPE_PsychicPain</li>
+				<li MayRequire="VanillaExpanded.VPsycastsE">VPE_Rot</li>
+				<li MayRequire="VanillaExpanded.VPsycastsE">VPE_Vortex</li>
+				<li MayRequire="VanillaExpanded.VPsycastsE">VPEH_Bloodmist</li>
+				<li MayRequire="Edern.ArchotechWeaponry">VoidToxin</li>
+				<li MayRequire="Edern.ArchotechWeaponry">VoidNecrosisPerm</li>
+				<li MayRequire="Edern.ArchotechWeaponry">VoidNecrosisTemp</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">SeverePsychicDrone</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">Bleed</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">ShockPain</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">HealthBlight</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">CorpseExplosionDisease</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">Inflammable</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">IncendiaryBody</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">VitalityDrain</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">ArmorBreaker</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">Instantkill</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">Frostbitez</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">BerserkBullet</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">ConfusionBullet</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">HealthBlight1</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">IronLung</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">ArmorBreakerEX</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">NaniteAssault</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">MagnesiumBurn</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">RadiationPoisoning</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">NeuroToxin</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">HeatNullNanites</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">ColdNullNanites</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">AntiOrganicDisease</li>
+				<li MayRequire="ninedaylongbow.RedSunTechnologyIndustry">AngerOfTheBlackDragon</li>
+				<li MayRequire="ninedaylongbow.RedSunTechnologyIndustry">Windytalk</li>
+				<li MayRequire="ninedaylongbow.RedSunTechnologyIndustry">ArmorBreakingAssault</li>
+				<li MayRequire="ninedaylongbow.RedSunTechnologyIndustry">Sealofpoisonoussnake</li>
+				<li MayRequire="ninedaylongbow.RedSunTechnologyIndustry">FZHypothermic</li>
+				<li MayRequire="BlackMarket420.TAOFC">Necronoid_Infection</li>
+				<li MayRequire="BlackMarket420.TAOFC">Necronoid_Incubation</li>
+				<li MayRequire="BlackMarket420.TAOFC">Necronoid_InfectionOne</li>
+				<li MayRequire="BlackMarket420.TAOFC">BrainParasites</li>
+				<li MayRequire="Create.AncientCelestial">Mech_Die</li>
+				<li MayRequire="Chocorofuru.Thaumoking.LobotomyCorporation">LC_Fragile</li>
+				<li MayRequire="Chocorofuru.Thaumoking.LobotomyCorporation">LC_Slow</li>
+				<li MayRequire="Chocorofuru.Thaumoking.LobotomyCorporation">Paledamagehediff</li>
+				<li MayRequire="Chocorofuru.Thaumoking.LobotomyCorporation">Sanitydamage</li>
+				<li MayRequire="Chocorofuru.Thaumoking.LobotomyCorporation">Whitewound</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphAlpacaTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphAlpacaTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphBearTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphBearTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphBisonTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphBisonTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphBoarTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphBoarTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphBoomalopeTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphBoomalopeTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphBoomratTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphBoomratTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphCapybaraTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphCapybaraTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphCaribouTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphCaribouTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphCassowaryTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphCassowaryTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphCatTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphCatTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphChaoTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphChaoTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphChickenTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphChickenTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphChinchillaTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphChinchillaTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphCobraTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphCobraTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphCougarTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphCougarTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphCowTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphCowTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphDeerTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphDeerTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">FoxFlu</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">Chookflu</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">Swineflu</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">Cowflu</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">Chaoflu</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">HuskyFlu</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphDonkeyTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphDonkeyTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphDromedaryTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphDromedaryTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphDuckTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphDuckTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphElephantTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphElephantTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphElkTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphElkTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphEmuTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphEmuTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphFennecFoxTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphFennecFoxTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphFoxTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphFoxTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphGazelleTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphGazelleTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphGoatTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphGoatTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphGooseTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphGooseTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphGrizzlyBearTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphGrizzlyBearTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphGuineaPigTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphGuineaPigTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphHareTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphHareTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphHorseTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphHorseTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphHuskyTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphHuskyTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphIbexTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphIbexTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphIguanaTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphIguanaTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphLabradorRetrieverTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphLabradorRetrieverTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphLynxTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphLynxTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphMegaslothTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphMegaslothTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphMonkeyTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphMonkeyTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphMuffaloTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphMuffaloTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphOstrichTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphOstrichTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphPantherTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphPantherTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphPigTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphPigTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphPolarBearTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphPolarBearTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphRaccoonTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphRaccoonTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphRatTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphRatTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphRedFoxTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphRedFoxTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphRhinocerosTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphRhinocerosTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphSheepTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphSheepTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphSnowhareTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphSnowhareTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphSquirrelTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphSquirrelTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphTerrierTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphTerrierTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphThrumboTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphThrumboTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphTimberWolfTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphTimberWolfTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphTortoiseTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphTortoiseTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphTurkeyTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphTurkeyTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphWargTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphWargTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphWolfTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphWolfTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphYakTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphYakTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">SyringeRifleHediff</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphGunshotTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PM_ExperimentalInjector</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">Bullrush</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">TransformationParalysis</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">MutagenicBuildup_Weapon</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">MutagenicBuildup_SmallExplosion</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">MutagenicBuildup_LargeExplosion</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">MutagenicBuildup</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">FeralPillSapienceDrop</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">Animalistic</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PermanentlyFeral</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">WasAnimal</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">WasMerged</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">MutagenicDisease</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PM_MutagenicInfection</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">TFPlantAddiction</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">TFDirtInEyes</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">OozeInEyes</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">StabiliserLow</li>
+  			</hediffs>
+		</li>
+	</modExtensions>
+	<equippedStatOffsets>
+		<MoveSpeed>10</MoveSpeed>
+		<WorkSpeedGlobal>1</WorkSpeedGlobal>
+		<MentalBreakThreshold>-0.75</MentalBreakThreshold>
+		<MeleeHitChance>30</MeleeHitChance>
+		<MeleeDodgeChance>30</MeleeDodgeChance>
+		<MeleeDamageFactor>10</MeleeDamageFactor>
+		<ShootingAccuracyPawn>15</ShootingAccuracyPawn>
+		<PainShockThreshold>1</PainShockThreshold>
+		<InjuryHealingFactor>8</InjuryHealingFactor>
+		<IncomingDamageFactor>-0.5</IncomingDamageFactor>
+		<CarryingCapacity>1200</CarryingCapacity>
+		<ToxicEnvironmentResistance>1</ToxicEnvironmentResistance>
+		<SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology">0.5</SlaveSuppressionOffset>
+    </equippedStatOffsets>
+	<comps>
+		<li Class="CompProperties_Shield" >
+			<blocksRangedWeapons>false</blocksRangedWeapons>
+			<energyLossPerDamage>0.0001</energyLossPerDamage>
+			<startingTicksToReset>300</startingTicksToReset>
+			<compClass>SolarSystemRepublicFramework.CompShieldMelee</compClass>
+		</li>
+		<li Class="CompProperties_CauseHediff_Apparel" >
+			<hediff>SSR_Invisibility</hediff>
+			<compClass>SolarSystemRepublicFramework.CompCauseHediff_ApparelSwitchable</compClass>
+		</li>
+		<li Class="AKA_Ability.TCP_AKATracker">
+			<AKAbilities>
+				<li>SSR_Teleport</li>
+			</AKAbilities>
+		</li>
+		<li Class="SolarSystemRepublicFramework.CompProperties_InvalidDamage">
+			<whiteList>true</whiteList>
+			<!--<damageDefs>
+				<li>EMP</li>
+				<li>Arrow</li>
+				<li>Blunt</li>
+				<li>Cut</li>
+				<li>Stab</li>
+				<li>Crush</li>
+			</damageDefs>-->
+		</li>
+	</comps>
+  </ThingDef>
+  
+  <ThingDef ParentName="SSR_ApparelArmorBase">
+    <defName>SSR_Defender_PowerArmor_HeavyType</defName>
+    <label>重型防卫者动力装甲</label>
+    <description>重型防卫者动力装甲是标准型号防卫者动力装甲的火力与防护的增强型号，该型动力装甲搭载着可以摧毁敌方装甲目标或者步兵集群的重型武器。</description>
+	<techLevel>Archotech</techLevel>
+    <graphicData>
+		<texPath>Things/Apparel/DefenderPowerArmor-2/Defender-2-plus</texPath>
+		<shaderType>CutoutComplex</shaderType>
+		<graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <costList>
+		<Plasteel>600</Plasteel>
+		<ComponentSpacer>20</ComponentSpacer>
+	</costList>
+    <statBases>
+		<WorkToMake>40000</WorkToMake>
+		<ArmorRating_Sharp>70</ArmorRating_Sharp>
+		<ArmorRating_Blunt>140</ArmorRating_Blunt>
+		<ArmorRating_Heat>70</ArmorRating_Heat>
+		<Insulation_Cold>500</Insulation_Cold>
+		<Insulation_Heat>500</Insulation_Heat>
+		<Mass>5</Mass>
+		<EquipDelay>0.5</EquipDelay>
+		<JumpRange>53.9</JumpRange>
+		<EnergyShieldRechargeRate>5</EnergyShieldRechargeRate>
+		<EnergyShieldEnergyMax>50</EnergyShieldEnergyMax>
+    </statBases>
+	<tickerType>Normal</tickerType>
+    <generateCommonality>0.01</generateCommonality>
+    <apparel>
+		<countsAsClothingForNudity>false</countsAsClothingForNudity>
+		<bodyPartGroups>
+			<li>FullHead</li>
+			<li>Torso</li>
+			<li>Neck</li>
+			<li>Shoulders</li>
+			<li>Waist</li>
+			<li>Arms</li>
+			<li>Hands</li>
+			<li>Legs</li>
+			<li>Feet</li>
+		</bodyPartGroups>
+		<wornGraphicPath>Things/Apparel/DefenderPowerArmor-2/Defender-2-plus</wornGraphicPath>
+		<useWornGraphicMask>true</useWornGraphicMask>
+		<shellCoversHead>true</shellCoversHead>
+		<layers>
+			<li>Overhead</li>
+			<li>Middle</li>
+			<li>Shell</li>
+		</layers>
+		<canBeDesiredForIdeo>false</canBeDesiredForIdeo>
+    </apparel>
+	<recipeMaker>
+		<researchPrerequisite>CataphractArmor</researchPrerequisite>
+    </recipeMaker>
+	<modExtensions>
+       	<li Class="SolarSystemRepublicFramework.DefModExtension_DefendBerserk">
+      	</li>
+	  	<li Class="SolarSystemRepublicFramework.DefModExtension_DefendRoof">
+      	</li>
+		<li Class="SolarSystemRepublicFramework.DefModExtension_DefendHediff">
+  			<hediffs>
+				<li>PsychicShock</li>
+				<li>Heatstroke</li>
+				<li>Hypothermia</li>
+				<li>BrainShock</li>
+				<li>CatatonicBreakdown</li>
+				<li>PsychicComa</li>
+				<li>ToxicBuildup</li>
+				<li>Flu</li>
+				<li>Plague</li>
+				<li>DirtInEyes</li>
+				<li>GravelInEyes</li>
+				<li>MudInEyes</li>
+				<li>SandInEyes</li>
+				<li>WaterInEyes</li>
+				<li>FibrousMechanites</li>
+				<li>Malaria</li>
+				<li>SensoryMechanites</li>
+				<li>Burn</li>
+				<li>Frostbite</li>
+				<li>Bruise</li>
+				<li>Crack</li>
+				<li>Crush</li>
+				<li>Cut</li>
+				<li>ExecutionCut</li>
+				<li MayRequire="Ayameduki.HARIdearn">HAR_IA_Skill_Hediff_a</li>
+				<li MayRequire="Ayameduki.HARIdearn">HAR_IA_Skill_Hediff_c</li>
+				<li MayRequire="Ayameduki.HARIdearn">HAR_IA_Skill_Hediff_d</li>
+				<li MayRequire="Ayameduki.HARIdearn">HAR_IA_Skill_Hediff_e</li>
+				<li MayRequire="Ayameduki.HARIdearn">HAR_IA_Gunshot</li>
+				<li MayRequire="Ayameduki.HARIdearn">HAR_IA_Skill_Hediff_f</li>
+				<li MayRequire="Ayameduki.HARIdearn">HAR_IA_Skill_Hediff_g</li>
+				<li MayRequire="Ayameduki.HARIdearn">HAR_IA_Skill_Hediff_h</li>
+				<li MayRequire="Ayameduki.HARIdearn">HAR_IA_Skill_Hediff_z</li>
+				<li MayRequire="Ayameduki.HARIdhale">HAR_IH_Hediff_ZZZ</li>
+				<li MayRequire="Ayameduki.HARNearmare">Hediff_Geist</li>
+				<li MayRequire="Ayameduki.HARNearmare">Hediff_Larva</li>
+				<li MayRequire="Ayameduki.HARNearmare">Hediff_Rugeiyu</li>
+				<li MayRequire="Ayameduki.HARNearmare">Hediff_Genocide</li>
+				<li MayRequire="Ayameduki.HARNearmare">HAR_NM_Hediff_a</li>
+				<li MayRequire="Ayameduki.HARNearmare">HAR_NM_XXX_Hediff</li>
+				<li MayRequire="Ayameduki.HARNearmare">HAR_NM_Skill_Hediff_b</li>
+				<li MayRequire="Ayameduki.HARNearmare">HAR_NM_Skill_Hediff_c</li>
+				<li MayRequire="Ayameduki.HARNearmare">HAR_NM_Skill_Hediff_e</li>
+				<li MayRequire="Ayameduki.HARNeclose">HAR_NC_Hediff_a</li>
+				<li MayRequire="Ayameduki.HARNeclose">HAR_NC_Hediff_b</li>
+				<li MayRequire="Ayameduki.HARXenoorca">HAR_XO_Hediff_a</li>
+				<li MayRequire="Ayameduki.HARXenoorca">HAR_XO_Hediff_b</li>
+				<li MayRequire="Ayameduki.HARXenoorca">HAR_XO_Hediff_d</li>
+				<li MayRequire="Ayameduki.HARXenoorca">HAR_XO_Hediff_e</li>
+				<li MayRequire="Ayameduki.BOSSRequeen">BOSS_RQ_Hediff_b</li>
+				<li MayRequire="Ayameduki.BOSSRequeen">BOSS_RQ_Hediff_Z_a</li>
+				<li MayRequire="Ayameduki.BOSSRequeen">BOSS_RQ_Hediff_Z_b</li>
+				<li MayRequire="Ayameduki.BOSSRequeen">BOSS_RQ_Hediff_Z_c</li>
+				<li MayRequire="Ayameduki.BOSSRequeen">BOSS_RQ_Hediff_Z_d</li>
+				<li MayRequire="Ayameduki.BOSSRequeen">BOSS_RQ_Hediff_Z_e</li>
+				<li MayRequire="Ayameduki.BOSSRequeen">BOSS_RQ_Hediff_Gone_Error_a</li>
+				<li MayRequire="Ayameduki.BOSSEnforcer">BOSS_EF_Hediff_a</li>
+				<li MayRequire="Ayameduki.BOSSEnforcer">BOSS_EF_Hediff_b</li>
+				<li MayRequire="Ayameduki.BOSSEnforcer">BOSS_EF_Hediff_c</li>
+				<li MayRequire="Ayameduki.BOSSEnforcer">BOSS_EF_Hediff_d</li>
+				<li MayRequire="Ayameduki.BOSSEnforcer">BOSS_EF_Hediff_e</li>
+				<li MayRequire="Ayameduki.HARChaoura">HAR_CO_Hediff_c</li>
+				<li MayRequire="Ayameduki.HARChaoura">HAR_CO_Hediff_d</li>
+				<li MayRequire="Ayameduki.HARChaoura">HAR_CO_Hediff_f</li>
+				<li MayRequire="Ayameduki.HARChaoura">HAR_CO_Hediff_h</li>
+				<li MayRequire="Ayameduki.HARLittluna">HAR_LL_Hediff_c</li>
+				<li MayRequire="Ayameduki.HARQualeela">HAR_QL_Hediff_c</li>
+				<li MayRequire="Ayameduki.HARQualeela">HAR_QL_Hediff_d</li>
+				<li MayRequire="Ayameduki.HARQualeela">HAR_QL_Hediff_e</li>
+				<li MayRequire="miho.fortifiedoutremer">Miho_AbomiSeen_Hediff</li>
+				<li MayRequire="miho.fortifiedoutremer">Miho_Hawk_Hediff</li>
+				<li MayRequire="miho.fortifiedoutremer">Miho_Thunder_Hediff</li>
+				<li MayRequire="miho.fortifiedoutremer">Miho_Plasma_Hediff</li>
+				<li MayRequire="Seioch.Naki.HAR">Naki_Distortion</li>
+				<li MayRequire="Seioch.Naki.HAR">Naki_Stall</li>
+				<li MayRequire="Seioch.Naki.HAR">Naki_Darkness</li>
+				<li MayRequire="Seioch.Naki.HAR">DMConfusion</li>
+				<li MayRequire="Seioch.Naki.HAR">DMDecay</li>
+				<li MayRequire="Seioch.Naki.HAR">DMDisintegration</li>
+				<li MayRequire="Seioch.Naki.HAR">DMAnnihilation</li>
+				<li MayRequire="Seioch.Naki.HAR">DMHealingPenalty</li>
+				<li MayRequire="VanillaExpanded.VPsycastsE">VPE_MindControlled</li>
+				<li MayRequire="VanillaExpanded.VPsycastsE">VPE_UnLucky</li>
+				<li MayRequire="VanillaExpanded.VPsycastsE">VPE_AgeSickness</li>
+				<li MayRequire="VanillaExpanded.VPsycastsE">VPE_Blizzard</li>
+				<li MayRequire="VanillaExpanded.VPsycastsE">VPE_FrostRay</li>
+				<li MayRequire="VanillaExpanded.VPsycastsE">VPE_Hurricane</li>
+				<li MayRequire="VanillaExpanded.VPsycastsE">VPE_IceBlock</li>
+				<li MayRequire="VanillaExpanded.VPsycastsE">VPE_LostVitality</li>
+				<li MayRequire="VanillaExpanded.VPsycastsE">VPE_PsychicPain</li>
+				<li MayRequire="VanillaExpanded.VPsycastsE">VPE_Rot</li>
+				<li MayRequire="VanillaExpanded.VPsycastsE">VPE_Vortex</li>
+				<li MayRequire="VanillaExpanded.VPsycastsE">VPEH_Bloodmist</li>
+				<li MayRequire="Edern.ArchotechWeaponry">VoidToxin</li>
+				<li MayRequire="Edern.ArchotechWeaponry">VoidNecrosisPerm</li>
+				<li MayRequire="Edern.ArchotechWeaponry">VoidNecrosisTemp</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">SeverePsychicDrone</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">Bleed</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">ShockPain</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">HealthBlight</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">CorpseExplosionDisease</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">Inflammable</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">IncendiaryBody</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">VitalityDrain</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">ArmorBreaker</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">Instantkill</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">Frostbitez</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">BerserkBullet</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">ConfusionBullet</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">HealthBlight1</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">IronLung</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">ArmorBreakerEX</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">NaniteAssault</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">MagnesiumBurn</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">RadiationPoisoning</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">NeuroToxin</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">HeatNullNanites</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">ColdNullNanites</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">AntiOrganicDisease</li>
+				<li MayRequire="ninedaylongbow.RedSunTechnologyIndustry">AngerOfTheBlackDragon</li>
+				<li MayRequire="ninedaylongbow.RedSunTechnologyIndustry">Windytalk</li>
+				<li MayRequire="ninedaylongbow.RedSunTechnologyIndustry">ArmorBreakingAssault</li>
+				<li MayRequire="ninedaylongbow.RedSunTechnologyIndustry">Sealofpoisonoussnake</li>
+				<li MayRequire="ninedaylongbow.RedSunTechnologyIndustry">FZHypothermic</li>
+				<li MayRequire="BlackMarket420.TAOFC">Necronoid_Infection</li>
+				<li MayRequire="BlackMarket420.TAOFC">Necronoid_Incubation</li>
+				<li MayRequire="BlackMarket420.TAOFC">Necronoid_InfectionOne</li>
+				<li MayRequire="BlackMarket420.TAOFC">BrainParasites</li>
+				<li MayRequire="Create.AncientCelestial">Mech_Die</li>
+				<li MayRequire="Chocorofuru.Thaumoking.LobotomyCorporation">LC_Fragile</li>
+				<li MayRequire="Chocorofuru.Thaumoking.LobotomyCorporation">LC_Slow</li>
+				<li MayRequire="Chocorofuru.Thaumoking.LobotomyCorporation">Paledamagehediff</li>
+				<li MayRequire="Chocorofuru.Thaumoking.LobotomyCorporation">Sanitydamage</li>
+				<li MayRequire="Chocorofuru.Thaumoking.LobotomyCorporation">Whitewound</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphAlpacaTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphAlpacaTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphBearTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphBearTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphBisonTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphBisonTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphBoarTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphBoarTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphBoomalopeTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphBoomalopeTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphBoomratTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphBoomratTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphCapybaraTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphCapybaraTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphCaribouTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphCaribouTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphCassowaryTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphCassowaryTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphCatTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphCatTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphChaoTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphChaoTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphChickenTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphChickenTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphChinchillaTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphChinchillaTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphCobraTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphCobraTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphCougarTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphCougarTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphCowTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphCowTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphDeerTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphDeerTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">FoxFlu</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">Chookflu</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">Swineflu</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">Cowflu</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">Chaoflu</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">HuskyFlu</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphDonkeyTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphDonkeyTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphDromedaryTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphDromedaryTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphDuckTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphDuckTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphElephantTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphElephantTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphElkTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphElkTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphEmuTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphEmuTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphFennecFoxTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphFennecFoxTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphFoxTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphFoxTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphGazelleTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphGazelleTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphGoatTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphGoatTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphGooseTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphGooseTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphGrizzlyBearTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphGrizzlyBearTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphGuineaPigTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphGuineaPigTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphHareTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphHareTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphHorseTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphHorseTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphHuskyTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphHuskyTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphIbexTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphIbexTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphIguanaTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphIguanaTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphLabradorRetrieverTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphLabradorRetrieverTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphLynxTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphLynxTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphMegaslothTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphMegaslothTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphMonkeyTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphMonkeyTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphMuffaloTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphMuffaloTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphOstrichTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphOstrichTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphPantherTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphPantherTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphPigTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphPigTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphPolarBearTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphPolarBearTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphRaccoonTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphRaccoonTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphRatTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphRatTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphRedFoxTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphRedFoxTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphRhinocerosTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphRhinocerosTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphSheepTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphSheepTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphSnowhareTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphSnowhareTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphSquirrelTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphSquirrelTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphTerrierTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphTerrierTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphThrumboTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphThrumboTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphTimberWolfTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphTimberWolfTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphTortoiseTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphTortoiseTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphTurkeyTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphTurkeyTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphWargTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphWargTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphWolfTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphWolfTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphYakTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphYakTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">SyringeRifleHediff</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphGunshotTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PM_ExperimentalInjector</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">Bullrush</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">TransformationParalysis</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">MutagenicBuildup_Weapon</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">MutagenicBuildup_SmallExplosion</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">MutagenicBuildup_LargeExplosion</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">MutagenicBuildup</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">FeralPillSapienceDrop</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">Animalistic</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PermanentlyFeral</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">WasAnimal</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">WasMerged</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">MutagenicDisease</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PM_MutagenicInfection</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">TFPlantAddiction</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">TFDirtInEyes</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">OozeInEyes</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">StabiliserLow</li>
+  			</hediffs>
+		</li>
+    </modExtensions>
+	<equippedStatOffsets>
+		<MoveSpeed>10</MoveSpeed>
+		<MechBandwidth>90</MechBandwidth>
+		<WorkSpeedGlobal>1</WorkSpeedGlobal>
+		<MentalBreakThreshold>-0.75</MentalBreakThreshold>
+		<MeleeHitChance>60</MeleeHitChance>
+		<MeleeDodgeChance>60</MeleeDodgeChance>
+		<MeleeDamageFactor>10</MeleeDamageFactor>
+		<ShootingAccuracyPawn>45</ShootingAccuracyPawn>
+		<AimingDelayFactor>-1</AimingDelayFactor>
+		<PainShockThreshold>1</PainShockThreshold>
+		<InjuryHealingFactor>10</InjuryHealingFactor>
+		<IncomingDamageFactor>-0.6</IncomingDamageFactor>
+		<CarryingCapacity>1500</CarryingCapacity>
+		<ToxicEnvironmentResistance>1</ToxicEnvironmentResistance>
+		<SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology">0.5</SlaveSuppressionOffset>
+    </equippedStatOffsets>
+	<comps>
+		<li Class="CompProperties_Shield" >
+			<blocksRangedWeapons>false</blocksRangedWeapons>
+			<energyLossPerDamage>0.0001</energyLossPerDamage>
+			<startingTicksToReset>300</startingTicksToReset>
+			<compClass>SolarSystemRepublicFramework.CompShieldMelee</compClass>
+		</li>
+		<li Class="CompProperties_CauseHediff_Apparel" >
+			<hediff>SSR_Invisibility</hediff>
+			<compClass>SolarSystemRepublicFramework.CompCauseHediff_ApparelSwitchable</compClass>
+		</li>
+		<li Class="AKA_Ability.TCP_AKATracker">
+			<AKAbilities>
+				<li>SSR_Teleport</li>
+			</AKAbilities>
+		</li>
+		<li Class="MVCF.Comps.CompProperties_VerbGiver">
+			<verbProps>
+				<li>
+					<label>发射反物质炮</label>						
+					<visualLabel>发射反物质炮</visualLabel>
+					<description>发射反物质炮</description>
+					<canBeToggled>true</canBeToggled>
+					<comps>
+						<li Class="MVCF.VerbComps.VerbCompProperties_Cooldown">
+							<compClass>MVCF.VerbComps.VerbComp_Cooldown</compClass>
+							<cooldownTime>2</cooldownTime>
+						</li>
+					</comps>
+				</li>
+			</verbProps>
+		</li>
+		<li Class="SolarSystemRepublicFramework.CompProperties_InvalidDamage">
+			<whiteList>true</whiteList>
+			<!--<damageDefs>
+				<li>Stun</li>
+				<li>EMP</li>
+				<li>Arrow</li>
+				<li>Blunt</li>
+				<li>Cut</li>
+				<li>Stab</li>
+				<li>Crush</li>
+			</damageDefs>-->
+		</li>
+	</comps>
+    <verbs>
+		<li>
+			<label>发射反物质炮</label>
+			<verbClass>Verb_LaunchProjectileStatic</verbClass>
+			<hasStandardCommand>true</hasStandardCommand>
+			<onlyManualCast>false</onlyManualCast>
+			<range>85.9</range>
+			<forcedMissRadius>0.9</forcedMissRadius>
+			<commandIcon>Things/Icon/Test</commandIcon>
+			<burstShotCount>2</burstShotCount>
+			<warmupTime>0.5</warmupTime>
+			<noiseRadius>4</noiseRadius>
+			<soundCast>Shot_IncendiaryLauncher</soundCast>
+			<soundCastTail>GunTail_Medium</soundCastTail>
+			<muzzleFlashScale>14</muzzleFlashScale>
+			<drawHighlightWithLineOfSight>true</drawHighlightWithLineOfSight>
+			<targetParams>
+				<canTargetLocations>true</canTargetLocations>
+			</targetParams>
+			<defaultProjectile>Bullet_Shell_AntigrainWarhead</defaultProjectile>
+			<rangedFireRulepack>Combat_RangedFire_Thrown</rangedFireRulepack>
+		</li>
+	</verbs>
+  </ThingDef>
+  <AKA_Ability.AKAbilityDef>
+		<defName>SSR_Teleport</defName>
+		<grouped>false</grouped>
+		<label>传送</label>
+		<description>传送</description>
+		<icon>UI/Teleport</icon>
+		<CD>180</CD>
+		<CDUnit>tick</CDUnit>
+		<targetMode>VerbSingle</targetMode>
+		<verb>
+			<verbClass>AKA_Ability.Verb_AbilityTargeting</verbClass>
+			<defaultProjectile>Bullet_MiniTurret</defaultProjectile>
+			<warmupTime>0</warmupTime>
+			<range>500</range>
+			<soundCast>GunShotA</soundCast>
+			<soundCastTail>GunTail_Light</soundCastTail>
+			<muzzleFlashScale>9</muzzleFlashScale>
+			<requireLineOfSight>false</requireLineOfSight>
+			<targetParams>
+				<canTargetPawns>false</canTargetPawns>
+				<canTargetLocations>true</canTargetLocations>
+				<canTargetMechs>false</canTargetMechs>
+				<canTargetBuildings>false</canTargetBuildings>
+				<canTargetItems>false</canTargetItems>
+			</targetParams>
+		</verb>
+		<compEffectList>
+			<li Class="AKA_Ability.AE_TeleportSelfToTarget" />
+		</compEffectList>
+		<typeSFX>heal</typeSFX>
+	</AKA_Ability.AKAbilityDef>
+  
+  <!-- ==================================== Helmet =====================================-->
+
+  <ThingDef ParentName="SSR_HelmetBase">
+    <defName>SSR_Suppresser_Helmet</defName>
+    <label>镇暴装甲头盔</label>
+    <description>镇暴装甲头盔</description>
+    <graphicData>
+      <texPath>Things/Apparel/Suppresser_helmet/Suppresser_helmet</texPath>
+      <shaderType>CutoutComplex</shaderType>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <costList>
+	<Steel>50</Steel>
+	<ComponentIndustrial>1</ComponentIndustrial>
+	</costList>
+    <statBases>
+      <WorkToMake>3500</WorkToMake>
+	  <ArmorRating_Sharp>0.8</ArmorRating_Sharp>
+      <ArmorRating_Blunt>1.6</ArmorRating_Blunt>
+      <ArmorRating_Heat>2</ArmorRating_Heat>
+      <Insulation_Cold>10</Insulation_Cold>
+	  <Insulation_Heat>10</Insulation_Heat>
+      <Mass>2</Mass>
+      <EquipDelay>1.5</EquipDelay>
+    </statBases>
+	<tickerType>Normal</tickerType>
+    <apparel>
+      <countsAsClothingForNudity>false</countsAsClothingForNudity>
+      <bodyPartGroups>
+        <li>FullHead</li>
+      </bodyPartGroups>
+      <wornGraphicPath>Things/Apparel/Suppresser_helmet/Suppresser_helmet</wornGraphicPath>
+      <useWornGraphicMask>true</useWornGraphicMask>
+      <canBeDesiredForIdeo>false</canBeDesiredForIdeo>
+	  <layers>
+        <li>Overhead</li>
+      </layers>
+    </apparel>
+	<recipeMaker>
+	  	<researchPrerequisite>EFClothing</researchPrerequisite>
+		<skillRequirements>
+			<Crafting>4</Crafting>
+		</skillRequirements>
+		<recipeUsers Inherit="false">
+			<li>TableMachining</li>
+		</recipeUsers>
+    </recipeMaker>
+	<modExtensions>
+		<li Class="SolarSystemRepublicFramework.DefModExtension_DefendHediff">
+  			<hediffs>
+				<li>DirtInEyes</li>
+				<li>GravelInEyes</li>
+				<li>MudInEyes</li>
+				<li>SandInEyes</li>
+				<li>WaterInEyes</li>
+  			</hediffs>
+		</li>
+    </modExtensions>
+	<equippedStatOffsets>
+	  <MeleeHitChance>5</MeleeHitChance>
+	  <MeleeDodgeChance>5</MeleeDodgeChance>
+	  <ShootingAccuracyPawn>5</ShootingAccuracyPawn>
+	  <AimingDelayFactor>-0.5</AimingDelayFactor>
+	  <IncomingDamageFactor>-0.01</IncomingDamageFactor>
+	  <ToxicEnvironmentResistance>1</ToxicEnvironmentResistance>
+      <SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology">0.5</SlaveSuppressionOffset>
+    </equippedStatOffsets>
+	<comps>
+		<li Class="SolarSystemRepublicFramework.CompProperties_InvalidDamage">
+			<damageDefs>
+				<li>Arrow</li>
+			</damageDefs>
+		</li>
+	</comps>
+  </ThingDef>
+  
+  <ThingDef ParentName="SSR_HelmetBase">
+    <defName>SSR_Powered_Exoskeleton_Helmet</defName>
+    <label>动力外骨骼头盔</label>
+    <description>动力外骨骼头盔</description>
+    <graphicData>
+      <texPath>Things/Apparel/PoweredExoskeleton_helmet/PoweredExoskeleton_helmet</texPath>
+      <shaderType>CutoutComplex</shaderType>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <costList>
+	<SSR_Graphene>5</SSR_Graphene>
+	<SSR_ArmourSteel>7</SSR_ArmourSteel>
+	<SSR_QuantumComputingCore>1</SSR_QuantumComputingCore>
+	</costList>
+    <statBases>
+      <WorkToMake>3500</WorkToMake>
+	  <ArmorRating_Sharp>1.2</ArmorRating_Sharp>
+      <ArmorRating_Blunt>1.2</ArmorRating_Blunt>
+      <ArmorRating_Heat>2</ArmorRating_Heat>
+      <Insulation_Cold>10</Insulation_Cold>
+	  <Insulation_Heat>10</Insulation_Heat>
+      <Mass>2</Mass>
+      <EquipDelay>1.5</EquipDelay>
+    </statBases>
+	<tickerType>Normal</tickerType>
+    <apparel>
+      <countsAsClothingForNudity>false</countsAsClothingForNudity>
+      <bodyPartGroups>
+        <li>FullHead</li>
+      </bodyPartGroups>
+      <wornGraphicPath>Things/Apparel/PoweredExoskeleton_helmet/PoweredExoskeleton_helmet</wornGraphicPath>
+      <useWornGraphicMask>true</useWornGraphicMask>
+      <canBeDesiredForIdeo>false</canBeDesiredForIdeo>
+	  <layers>
+        <li>Overhead</li>
+      </layers>
+    </apparel>
+	<recipeMaker>
+	  	<researchPrerequisite>SSRMechanicallyAssistedFrame</researchPrerequisite>
+		<skillRequirements>
+			<Crafting>4</Crafting>
+		</skillRequirements>
+		<recipeUsers Inherit="false">
+			<li>TableMachining</li>
+		</recipeUsers>
+    </recipeMaker>
+	<modExtensions>
+		<li Class="SolarSystemRepublicFramework.DefModExtension_DefendHediff">
+  			<hediffs>
+				<li>DirtInEyes</li>
+				<li>GravelInEyes</li>
+				<li>MudInEyes</li>
+				<li>SandInEyes</li>
+				<li>WaterInEyes</li>
+  			</hediffs>
+		</li>
+    </modExtensions>
+	<equippedStatOffsets>
+	  <MechBandwidth>15</MechBandwidth>
+	  <MeleeHitChance>5</MeleeHitChance>
+	  <MeleeDodgeChance>5</MeleeDodgeChance>
+	  <ShootingAccuracyPawn>5</ShootingAccuracyPawn>
+	  <AimingDelayFactor>-0.5</AimingDelayFactor>
+	  <IncomingDamageFactor>-0.02</IncomingDamageFactor>
+	  <ToxicEnvironmentResistance>1</ToxicEnvironmentResistance>
+      <SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology">0.5</SlaveSuppressionOffset>
+    </equippedStatOffsets>
+	<comps>
+		<li Class="SolarSystemRepublicFramework.CompProperties_InvalidDamage">
+			<damageDefs>
+				<li>Arrow</li>
+			</damageDefs>
+		</li>
+	</comps>
+  </ThingDef>
+  
+  <ThingDef ParentName="SSR_HelmetBase">
+    <defName>SSR_BasicPowerArmor_Helmet</defName>
+    <label>基础动力装甲头盔</label>
+    <description>基础动力装甲头盔</description>
+	<techLevel>Spacer</techLevel>
+    <graphicData>
+      <texPath>Things/Apparel/BasicPowerArmor_helmet/BasicPowerArmor_helmet</texPath>
+      <shaderType>CutoutComplex</shaderType>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <costList>
+	<Plasteel>90</Plasteel>
+	<ComponentSpacer>3</ComponentSpacer>
+	</costList>
+    <statBases>
+      <WorkToMake>6000</WorkToMake>
+	  <ArmorRating_Sharp>1.3</ArmorRating_Sharp>
+      <ArmorRating_Blunt>1.8</ArmorRating_Blunt>
+      <ArmorRating_Heat>2</ArmorRating_Heat>
+      <Insulation_Cold>30</Insulation_Cold>
+	  <Insulation_Heat>30</Insulation_Heat>
+      <Mass>2</Mass>
+      <EquipDelay>0.5</EquipDelay>
+    </statBases>
+	<tickerType>Normal</tickerType>
+    <apparel>
+      <countsAsClothingForNudity>false</countsAsClothingForNudity>
+      <bodyPartGroups>
+        <li>FullHead</li>
+      </bodyPartGroups>
+      <wornGraphicPath>Things/Apparel/BasicPowerArmor_helmet/BasicPowerArmor_helmet</wornGraphicPath>
+      <useWornGraphicMask>true</useWornGraphicMask>
+      <canBeDesiredForIdeo>false</canBeDesiredForIdeo>
+	  <layers>
+        <li>Overhead</li>
+      </layers>
+    </apparel>
+	<recipeMaker>
+	  <researchPrerequisite>SSRBasicPowerArmor</researchPrerequisite>
+    </recipeMaker>
+	<modExtensions>
+		<li Class="SolarSystemRepublicFramework.DefModExtension_DefendHediff">
+  			<hediffs>
+				<li>Heatstroke</li>
+				<li>Hypothermia</li>
+				<li>BrainShock</li>
+				<li>CatatonicBreakdown</li>
+				<li>ToxicBuildup</li>
+				<li>Flu</li>
+				<li>Plague</li>
+				<li>DirtInEyes</li>
+				<li>GravelInEyes</li>
+				<li>MudInEyes</li>
+				<li>SandInEyes</li>
+				<li>WaterInEyes</li>
+				<li MayRequire="Ayameduki.HARIdearn">HAR_IA_Skill_Hediff_a</li>
+				<li MayRequire="Ayameduki.HARIdearn">HAR_IA_Skill_Hediff_c</li>
+				<li MayRequire="Ayameduki.HARIdearn">HAR_IA_Skill_Hediff_d</li>
+				<li MayRequire="Ayameduki.HARIdearn">HAR_IA_Skill_Hediff_e</li>
+				<li MayRequire="Ayameduki.HARIdearn">HAR_IA_Gunshot</li>
+				<li MayRequire="Ayameduki.HARIdearn">HAR_IA_Skill_Hediff_f</li>
+				<li MayRequire="Ayameduki.HARIdearn">HAR_IA_Skill_Hediff_g</li>
+				<li MayRequire="Ayameduki.HARIdearn">HAR_IA_Skill_Hediff_h</li>
+				<li MayRequire="Ayameduki.HARIdearn">HAR_IA_Skill_Hediff_z</li>
+				<li MayRequire="Ayameduki.HARIdhale">HAR_IH_Hediff_ZZZ</li>
+				<li MayRequire="Ayameduki.HARNearmare">Hediff_Geist</li>
+				<li MayRequire="Ayameduki.HARNearmare">Hediff_Larva</li>
+				<li MayRequire="Ayameduki.HARNearmare">Hediff_Rugeiyu</li>
+				<li MayRequire="Ayameduki.HARNearmare">Hediff_Genocide</li>
+				<li MayRequire="Ayameduki.HARNearmare">HAR_NM_Hediff_a</li>
+				<li MayRequire="Ayameduki.HARNearmare">HAR_NM_XXX_Hediff</li>
+				<li MayRequire="Ayameduki.HARNearmare">HAR_NM_Skill_Hediff_b</li>
+				<li MayRequire="Ayameduki.HARNearmare">HAR_NM_Skill_Hediff_c</li>
+				<li MayRequire="Ayameduki.HARNearmare">HAR_NM_Skill_Hediff_e</li>
+				<li MayRequire="Ayameduki.HARNeclose">HAR_NC_Hediff_a</li>
+				<li MayRequire="Ayameduki.HARNeclose">HAR_NC_Hediff_b</li>
+				<li MayRequire="Ayameduki.HARXenoorca">HAR_XO_Hediff_a</li>
+				<li MayRequire="Ayameduki.HARXenoorca">HAR_XO_Hediff_b</li>
+				<li MayRequire="Ayameduki.HARXenoorca">HAR_XO_Hediff_d</li>
+				<li MayRequire="Ayameduki.HARXenoorca">HAR_XO_Hediff_e</li>
+				<li MayRequire="Ayameduki.BOSSRequeen">BOSS_RQ_Hediff_b</li>
+				<li MayRequire="Ayameduki.BOSSRequeen">BOSS_RQ_Hediff_Z_a</li>
+				<li MayRequire="Ayameduki.BOSSRequeen">BOSS_RQ_Hediff_Z_b</li>
+				<li MayRequire="Ayameduki.BOSSRequeen">BOSS_RQ_Hediff_Z_c</li>
+				<li MayRequire="Ayameduki.BOSSRequeen">BOSS_RQ_Hediff_Z_d</li>
+				<li MayRequire="Ayameduki.BOSSRequeen">BOSS_RQ_Hediff_Z_e</li>
+				<li MayRequire="Ayameduki.BOSSRequeen">BOSS_RQ_Hediff_Gone_Error_a</li>
+				<li MayRequire="Ayameduki.BOSSEnforcer">BOSS_EF_Hediff_a</li>
+				<li MayRequire="Ayameduki.BOSSEnforcer">BOSS_EF_Hediff_b</li>
+				<li MayRequire="Ayameduki.BOSSEnforcer">BOSS_EF_Hediff_c</li>
+				<li MayRequire="Ayameduki.BOSSEnforcer">BOSS_EF_Hediff_d</li>
+				<li MayRequire="Ayameduki.BOSSEnforcer">BOSS_EF_Hediff_e</li>
+				<li MayRequire="Ayameduki.HARChaoura">HAR_CO_Hediff_c</li>
+				<li MayRequire="Ayameduki.HARChaoura">HAR_CO_Hediff_d</li>
+				<li MayRequire="Ayameduki.HARChaoura">HAR_CO_Hediff_f</li>
+				<li MayRequire="Ayameduki.HARChaoura">HAR_CO_Hediff_h</li>
+				<li MayRequire="Ayameduki.HARLittluna">HAR_LL_Hediff_c</li>
+				<li MayRequire="Ayameduki.HARQualeela">HAR_QL_Hediff_c</li>
+				<li MayRequire="Ayameduki.HARQualeela">HAR_QL_Hediff_d</li>
+				<li MayRequire="Ayameduki.HARQualeela">HAR_QL_Hediff_e</li>
+				<li MayRequire="miho.fortifiedoutremer">Miho_AbomiSeen_Hediff</li>
+				<li MayRequire="miho.fortifiedoutremer">Miho_Hawk_Hediff</li>
+				<li MayRequire="miho.fortifiedoutremer">Miho_Thunder_Hediff</li>
+				<li MayRequire="miho.fortifiedoutremer">Miho_Plasma_Hediff</li>
+				<li MayRequire="Seioch.Naki.HAR">Naki_Distortion</li>
+				<li MayRequire="Seioch.Naki.HAR">Naki_Stall</li>
+				<li MayRequire="Seioch.Naki.HAR">Naki_Darkness</li>
+				<li MayRequire="Seioch.Naki.HAR">DMConfusion</li>
+				<li MayRequire="Seioch.Naki.HAR">DMDecay</li>
+				<li MayRequire="Seioch.Naki.HAR">DMDisintegration</li>
+				<li MayRequire="Seioch.Naki.HAR">DMAnnihilation</li>
+				<li MayRequire="Seioch.Naki.HAR">DMHealingPenalty</li>
+				<li MayRequire="VanillaExpanded.VPsycastsE">VPE_MindControlled</li>
+				<li MayRequire="VanillaExpanded.VPsycastsE">VPE_UnLucky</li>
+				<li MayRequire="VanillaExpanded.VPsycastsE">VPE_AgeSickness</li>
+				<li MayRequire="VanillaExpanded.VPsycastsE">VPE_Blizzard</li>
+				<li MayRequire="VanillaExpanded.VPsycastsE">VPE_FrostRay</li>
+				<li MayRequire="VanillaExpanded.VPsycastsE">VPE_Hurricane</li>
+				<li MayRequire="VanillaExpanded.VPsycastsE">VPE_IceBlock</li>
+				<li MayRequire="VanillaExpanded.VPsycastsE">VPE_LostVitality</li>
+				<li MayRequire="VanillaExpanded.VPsycastsE">VPE_PsychicPain</li>
+				<li MayRequire="VanillaExpanded.VPsycastsE">VPE_Rot</li>
+				<li MayRequire="VanillaExpanded.VPsycastsE">VPE_Vortex</li>
+				<li MayRequire="VanillaExpanded.VPsycastsE">VPEH_Bloodmist</li>
+				<li MayRequire="Edern.ArchotechWeaponry">VoidToxin</li>
+				<li MayRequire="Edern.ArchotechWeaponry">VoidNecrosisPerm</li>
+				<li MayRequire="Edern.ArchotechWeaponry">VoidNecrosisTemp</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">SeverePsychicDrone</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">Bleed</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">ShockPain</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">HealthBlight</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">CorpseExplosionDisease</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">Inflammable</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">IncendiaryBody</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">VitalityDrain</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">ArmorBreaker</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">Instantkill</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">Frostbitez</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">BerserkBullet</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">ConfusionBullet</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">HealthBlight1</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">IronLung</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">ArmorBreakerEX</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">NaniteAssault</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">MagnesiumBurn</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">RadiationPoisoning</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">NeuroToxin</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">HeatNullNanites</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">ColdNullNanites</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">AntiOrganicDisease</li>
+				<li MayRequire="ninedaylongbow.RedSunTechnologyIndustry">AngerOfTheBlackDragon</li>
+				<li MayRequire="ninedaylongbow.RedSunTechnologyIndustry">Windytalk</li>
+				<li MayRequire="ninedaylongbow.RedSunTechnologyIndustry">ArmorBreakingAssault</li>
+				<li MayRequire="ninedaylongbow.RedSunTechnologyIndustry">Sealofpoisonoussnake</li>
+				<li MayRequire="ninedaylongbow.RedSunTechnologyIndustry">FZHypothermic</li>
+				<li MayRequire="BlackMarket420.TAOFC">Necronoid_Infection</li>
+				<li MayRequire="BlackMarket420.TAOFC">Necronoid_Incubation</li>
+				<li MayRequire="BlackMarket420.TAOFC">Necronoid_InfectionOne</li>
+				<li MayRequire="BlackMarket420.TAOFC">BrainParasites</li>
+				<li MayRequire="Create.AncientCelestial">Mech_Die</li>
+				<li MayRequire="Chocorofuru.Thaumoking.LobotomyCorporation">LC_Fragile</li>
+				<li MayRequire="Chocorofuru.Thaumoking.LobotomyCorporation">LC_Slow</li>
+				<li MayRequire="Chocorofuru.Thaumoking.LobotomyCorporation">Paledamagehediff</li>
+				<li MayRequire="Chocorofuru.Thaumoking.LobotomyCorporation">Sanitydamage</li>
+				<li MayRequire="Chocorofuru.Thaumoking.LobotomyCorporation">Whitewound</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphAlpacaTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphAlpacaTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphBearTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphBearTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphBisonTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphBisonTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphBoarTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphBoarTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphBoomalopeTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphBoomalopeTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphBoomratTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphBoomratTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphCapybaraTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphCapybaraTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphCaribouTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphCaribouTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphCassowaryTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphCassowaryTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphCatTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphCatTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphChaoTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphChaoTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphChickenTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphChickenTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphChinchillaTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphChinchillaTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphCobraTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphCobraTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphCougarTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphCougarTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphCowTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphCowTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphDeerTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphDeerTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">FoxFlu</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">Chookflu</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">Swineflu</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">Cowflu</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">Chaoflu</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">HuskyFlu</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphDonkeyTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphDonkeyTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphDromedaryTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphDromedaryTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphDuckTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphDuckTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphElephantTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphElephantTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphElkTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphElkTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphEmuTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphEmuTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphFennecFoxTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphFennecFoxTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphFoxTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphFoxTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphGazelleTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphGazelleTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphGoatTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphGoatTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphGooseTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphGooseTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphGrizzlyBearTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphGrizzlyBearTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphGuineaPigTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphGuineaPigTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphHareTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphHareTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphHorseTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphHorseTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphHuskyTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphHuskyTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphIbexTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphIbexTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphIguanaTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphIguanaTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphLabradorRetrieverTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphLabradorRetrieverTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphLynxTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphLynxTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphMegaslothTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphMegaslothTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphMonkeyTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphMonkeyTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphMuffaloTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphMuffaloTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphOstrichTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphOstrichTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphPantherTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphPantherTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphPigTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphPigTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphPolarBearTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphPolarBearTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphRaccoonTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphRaccoonTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphRatTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphRatTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphRedFoxTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphRedFoxTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphRhinocerosTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphRhinocerosTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphSheepTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphSheepTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphSnowhareTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphSnowhareTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphSquirrelTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphSquirrelTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphTerrierTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphTerrierTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphThrumboTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphThrumboTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphTimberWolfTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphTimberWolfTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphTortoiseTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphTortoiseTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphTurkeyTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphTurkeyTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphWargTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphWargTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphWolfTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphWolfTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphYakTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphYakTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">SyringeRifleHediff</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphGunshotTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PM_ExperimentalInjector</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">Bullrush</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">TransformationParalysis</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">MutagenicBuildup_Weapon</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">MutagenicBuildup_SmallExplosion</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">MutagenicBuildup_LargeExplosion</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">MutagenicBuildup</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">FeralPillSapienceDrop</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">Animalistic</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PermanentlyFeral</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">WasAnimal</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">WasMerged</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">MutagenicDisease</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PM_MutagenicInfection</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">TFPlantAddiction</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">TFDirtInEyes</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">OozeInEyes</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">StabiliserLow</li>
+  			</hediffs>
+		</li>
+    </modExtensions>
+	<equippedStatOffsets>
+	  <MechBandwidth>30</MechBandwidth>
+	  <MeleeHitChance>10</MeleeHitChance>
+	  <MeleeDodgeChance>10</MeleeDodgeChance>
+	  <ShootingAccuracyPawn>10</ShootingAccuracyPawn>
+	  <AimingDelayFactor>-0.75</AimingDelayFactor>
+	  <InjuryHealingFactor>0.5</InjuryHealingFactor>
+	  <IncomingDamageFactor>-0.04</IncomingDamageFactor>
+	  <ToxicEnvironmentResistance>1</ToxicEnvironmentResistance>
+      <SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology">0.5</SlaveSuppressionOffset>
+    </equippedStatOffsets>
+	<comps>
+		<li Class="SolarSystemRepublicFramework.CompProperties_InvalidDamage">
+			<damageDefs>
+				<li>Stun</li>
+				<li>Arrow</li>
+			</damageDefs>
+		</li>
+	</comps>
+  </ThingDef>
+  
+  <ThingDef ParentName="SSR_HelmetBase">
+    <defName>SSR_AdvancedPowerArmor_Helmet</defName>
+    <label>高级动力装甲头盔</label>
+    <description>高级动力装甲头盔</description>
+	<techLevel>Spacer</techLevel>
+    <graphicData>
+      <texPath>Things/Apparel/AdvancedPowerArmor_helmet/AdvancedPowerArmor_helmet</texPath>
+      <shaderType>CutoutComplex</shaderType>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <costList>
+		<Plasteel>120</Plasteel>
+		<ComponentSpacer>5</ComponentSpacer>
+	</costList>
+    <statBases>
+      <WorkToMake>10000</WorkToMake>
+	  <ArmorRating_Sharp>1.7</ArmorRating_Sharp>
+      <ArmorRating_Blunt>2</ArmorRating_Blunt>
+      <ArmorRating_Heat>2</ArmorRating_Heat>
+      <Insulation_Cold>50</Insulation_Cold>
+	  <Insulation_Heat>50</Insulation_Heat>
+      <Mass>2</Mass>
+      <EquipDelay>0.5</EquipDelay>
+    </statBases>
+	<tickerType>Normal</tickerType>
+    <apparel>
+      <countsAsClothingForNudity>false</countsAsClothingForNudity>
+      <bodyPartGroups>
+        <li>FullHead</li>
+      </bodyPartGroups>
+      <wornGraphicPath>Things/Apparel/AdvancedPowerArmor_helmet/AdvancedPowerArmor_helmet</wornGraphicPath>
+      <useWornGraphicMask>true</useWornGraphicMask>
+      <canBeDesiredForIdeo>false</canBeDesiredForIdeo>
+	  <layers>
+        <li>Overhead</li>
+      </layers>
+    </apparel>
+	<recipeMaker>
+	  <researchPrerequisite>SSRAdvancedPowerArmor</researchPrerequisite>
+    </recipeMaker>
+	<modExtensions>
+       	<li Class="SolarSystemRepublicFramework.DefModExtension_DefendBerserk">
+      	</li>
+		<li Class="SolarSystemRepublicFramework.DefModExtension_DefendHediff">
+  			<hediffs>
+     			<li>PsychicShock</li>
+				<li>Heatstroke</li>
+				<li>Hypothermia</li>
+				<li>BrainShock</li>
+				<li>CatatonicBreakdown</li>
+				<li>PsychicComa</li>
+				<li>ToxicBuildup</li>
+				<li>Flu</li>
+				<li>Plague</li>
+				<li>DirtInEyes</li>
+				<li>GravelInEyes</li>
+				<li>MudInEyes</li>
+				<li>SandInEyes</li>
+				<li>WaterInEyes</li>
+				<li MayRequire="Ayameduki.HARIdearn">HAR_IA_Skill_Hediff_a</li>
+				<li MayRequire="Ayameduki.HARIdearn">HAR_IA_Skill_Hediff_c</li>
+				<li MayRequire="Ayameduki.HARIdearn">HAR_IA_Skill_Hediff_d</li>
+				<li MayRequire="Ayameduki.HARIdearn">HAR_IA_Skill_Hediff_e</li>
+				<li MayRequire="Ayameduki.HARIdearn">HAR_IA_Gunshot</li>
+				<li MayRequire="Ayameduki.HARIdearn">HAR_IA_Skill_Hediff_f</li>
+				<li MayRequire="Ayameduki.HARIdearn">HAR_IA_Skill_Hediff_g</li>
+				<li MayRequire="Ayameduki.HARIdearn">HAR_IA_Skill_Hediff_h</li>
+				<li MayRequire="Ayameduki.HARIdearn">HAR_IA_Skill_Hediff_z</li>
+				<li MayRequire="Ayameduki.HARIdhale">HAR_IH_Hediff_ZZZ</li>
+				<li MayRequire="Ayameduki.HARNearmare">Hediff_Geist</li>
+				<li MayRequire="Ayameduki.HARNearmare">Hediff_Larva</li>
+				<li MayRequire="Ayameduki.HARNearmare">Hediff_Rugeiyu</li>
+				<li MayRequire="Ayameduki.HARNearmare">Hediff_Genocide</li>
+				<li MayRequire="Ayameduki.HARNearmare">HAR_NM_Hediff_a</li>
+				<li MayRequire="Ayameduki.HARNearmare">HAR_NM_XXX_Hediff</li>
+				<li MayRequire="Ayameduki.HARNearmare">HAR_NM_Skill_Hediff_b</li>
+				<li MayRequire="Ayameduki.HARNearmare">HAR_NM_Skill_Hediff_c</li>
+				<li MayRequire="Ayameduki.HARNearmare">HAR_NM_Skill_Hediff_e</li>
+				<li MayRequire="Ayameduki.HARNeclose">HAR_NC_Hediff_a</li>
+				<li MayRequire="Ayameduki.HARNeclose">HAR_NC_Hediff_b</li>
+				<li MayRequire="Ayameduki.HARXenoorca">HAR_XO_Hediff_a</li>
+				<li MayRequire="Ayameduki.HARXenoorca">HAR_XO_Hediff_b</li>
+				<li MayRequire="Ayameduki.HARXenoorca">HAR_XO_Hediff_d</li>
+				<li MayRequire="Ayameduki.HARXenoorca">HAR_XO_Hediff_e</li>
+				<li MayRequire="Ayameduki.BOSSRequeen">BOSS_RQ_Hediff_b</li>
+				<li MayRequire="Ayameduki.BOSSRequeen">BOSS_RQ_Hediff_Z_a</li>
+				<li MayRequire="Ayameduki.BOSSRequeen">BOSS_RQ_Hediff_Z_b</li>
+				<li MayRequire="Ayameduki.BOSSRequeen">BOSS_RQ_Hediff_Z_c</li>
+				<li MayRequire="Ayameduki.BOSSRequeen">BOSS_RQ_Hediff_Z_d</li>
+				<li MayRequire="Ayameduki.BOSSRequeen">BOSS_RQ_Hediff_Z_e</li>
+				<li MayRequire="Ayameduki.BOSSRequeen">BOSS_RQ_Hediff_Gone_Error_a</li>
+				<li MayRequire="Ayameduki.BOSSEnforcer">BOSS_EF_Hediff_a</li>
+				<li MayRequire="Ayameduki.BOSSEnforcer">BOSS_EF_Hediff_b</li>
+				<li MayRequire="Ayameduki.BOSSEnforcer">BOSS_EF_Hediff_c</li>
+				<li MayRequire="Ayameduki.BOSSEnforcer">BOSS_EF_Hediff_d</li>
+				<li MayRequire="Ayameduki.BOSSEnforcer">BOSS_EF_Hediff_e</li>
+				<li MayRequire="Ayameduki.HARChaoura">HAR_CO_Hediff_c</li>
+				<li MayRequire="Ayameduki.HARChaoura">HAR_CO_Hediff_d</li>
+				<li MayRequire="Ayameduki.HARChaoura">HAR_CO_Hediff_f</li>
+				<li MayRequire="Ayameduki.HARChaoura">HAR_CO_Hediff_h</li>
+				<li MayRequire="Ayameduki.HARLittluna">HAR_LL_Hediff_c</li>
+				<li MayRequire="Ayameduki.HARQualeela">HAR_QL_Hediff_c</li>
+				<li MayRequire="Ayameduki.HARQualeela">HAR_QL_Hediff_d</li>
+				<li MayRequire="Ayameduki.HARQualeela">HAR_QL_Hediff_e</li>
+				<li MayRequire="miho.fortifiedoutremer">Miho_AbomiSeen_Hediff</li>
+				<li MayRequire="miho.fortifiedoutremer">Miho_Hawk_Hediff</li>
+				<li MayRequire="miho.fortifiedoutremer">Miho_Thunder_Hediff</li>
+				<li MayRequire="miho.fortifiedoutremer">Miho_Plasma_Hediff</li>
+				<li MayRequire="Seioch.Naki.HAR">Naki_Distortion</li>
+				<li MayRequire="Seioch.Naki.HAR">Naki_Stall</li>
+				<li MayRequire="Seioch.Naki.HAR">Naki_Darkness</li>
+				<li MayRequire="Seioch.Naki.HAR">DMConfusion</li>
+				<li MayRequire="Seioch.Naki.HAR">DMDecay</li>
+				<li MayRequire="Seioch.Naki.HAR">DMDisintegration</li>
+				<li MayRequire="Seioch.Naki.HAR">DMAnnihilation</li>
+				<li MayRequire="Seioch.Naki.HAR">DMHealingPenalty</li>
+				<li MayRequire="VanillaExpanded.VPsycastsE">VPE_MindControlled</li>
+				<li MayRequire="VanillaExpanded.VPsycastsE">VPE_UnLucky</li>
+				<li MayRequire="VanillaExpanded.VPsycastsE">VPE_AgeSickness</li>
+				<li MayRequire="VanillaExpanded.VPsycastsE">VPE_Blizzard</li>
+				<li MayRequire="VanillaExpanded.VPsycastsE">VPE_FrostRay</li>
+				<li MayRequire="VanillaExpanded.VPsycastsE">VPE_Hurricane</li>
+				<li MayRequire="VanillaExpanded.VPsycastsE">VPE_IceBlock</li>
+				<li MayRequire="VanillaExpanded.VPsycastsE">VPE_LostVitality</li>
+				<li MayRequire="VanillaExpanded.VPsycastsE">VPE_PsychicPain</li>
+				<li MayRequire="VanillaExpanded.VPsycastsE">VPE_Rot</li>
+				<li MayRequire="VanillaExpanded.VPsycastsE">VPE_Vortex</li>
+				<li MayRequire="VanillaExpanded.VPsycastsE">VPEH_Bloodmist</li>
+				<li MayRequire="Edern.ArchotechWeaponry">VoidToxin</li>
+				<li MayRequire="Edern.ArchotechWeaponry">VoidNecrosisPerm</li>
+				<li MayRequire="Edern.ArchotechWeaponry">VoidNecrosisTemp</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">SeverePsychicDrone</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">Bleed</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">ShockPain</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">HealthBlight</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">CorpseExplosionDisease</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">Inflammable</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">IncendiaryBody</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">VitalityDrain</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">ArmorBreaker</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">Instantkill</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">Frostbitez</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">BerserkBullet</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">ConfusionBullet</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">HealthBlight1</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">IronLung</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">ArmorBreakerEX</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">NaniteAssault</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">MagnesiumBurn</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">RadiationPoisoning</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">NeuroToxin</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">HeatNullNanites</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">ColdNullNanites</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">AntiOrganicDisease</li>
+				<li MayRequire="ninedaylongbow.RedSunTechnologyIndustry">AngerOfTheBlackDragon</li>
+				<li MayRequire="ninedaylongbow.RedSunTechnologyIndustry">Windytalk</li>
+				<li MayRequire="ninedaylongbow.RedSunTechnologyIndustry">ArmorBreakingAssault</li>
+				<li MayRequire="ninedaylongbow.RedSunTechnologyIndustry">Sealofpoisonoussnake</li>
+				<li MayRequire="ninedaylongbow.RedSunTechnologyIndustry">FZHypothermic</li>
+				<li MayRequire="BlackMarket420.TAOFC">Necronoid_Infection</li>
+				<li MayRequire="BlackMarket420.TAOFC">Necronoid_Incubation</li>
+				<li MayRequire="BlackMarket420.TAOFC">Necronoid_InfectionOne</li>
+				<li MayRequire="BlackMarket420.TAOFC">BrainParasites</li>
+				<li MayRequire="Create.AncientCelestial">Mech_Die</li>
+				<li MayRequire="Chocorofuru.Thaumoking.LobotomyCorporation">LC_Fragile</li>
+				<li MayRequire="Chocorofuru.Thaumoking.LobotomyCorporation">LC_Slow</li>
+				<li MayRequire="Chocorofuru.Thaumoking.LobotomyCorporation">Paledamagehediff</li>
+				<li MayRequire="Chocorofuru.Thaumoking.LobotomyCorporation">Sanitydamage</li>
+				<li MayRequire="Chocorofuru.Thaumoking.LobotomyCorporation">Whitewound</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphAlpacaTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphAlpacaTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphBearTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphBearTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphBisonTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphBisonTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphBoarTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphBoarTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphBoomalopeTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphBoomalopeTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphBoomratTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphBoomratTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphCapybaraTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphCapybaraTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphCaribouTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphCaribouTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphCassowaryTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphCassowaryTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphCatTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphCatTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphChaoTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphChaoTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphChickenTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphChickenTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphChinchillaTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphChinchillaTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphCobraTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphCobraTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphCougarTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphCougarTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphCowTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphCowTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphDeerTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphDeerTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">FoxFlu</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">Chookflu</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">Swineflu</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">Cowflu</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">Chaoflu</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">HuskyFlu</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphDonkeyTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphDonkeyTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphDromedaryTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphDromedaryTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphDuckTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphDuckTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphElephantTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphElephantTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphElkTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphElkTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphEmuTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphEmuTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphFennecFoxTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphFennecFoxTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphFoxTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphFoxTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphGazelleTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphGazelleTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphGoatTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphGoatTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphGooseTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphGooseTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphGrizzlyBearTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphGrizzlyBearTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphGuineaPigTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphGuineaPigTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphHareTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphHareTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphHorseTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphHorseTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphHuskyTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphHuskyTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphIbexTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphIbexTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphIguanaTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphIguanaTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphLabradorRetrieverTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphLabradorRetrieverTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphLynxTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphLynxTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphMegaslothTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphMegaslothTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphMonkeyTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphMonkeyTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphMuffaloTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphMuffaloTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphOstrichTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphOstrichTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphPantherTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphPantherTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphPigTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphPigTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphPolarBearTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphPolarBearTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphRaccoonTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphRaccoonTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphRatTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphRatTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphRedFoxTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphRedFoxTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphRhinocerosTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphRhinocerosTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphSheepTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphSheepTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphSnowhareTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphSnowhareTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphSquirrelTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphSquirrelTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphTerrierTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphTerrierTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphThrumboTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphThrumboTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphTimberWolfTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphTimberWolfTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphTortoiseTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphTortoiseTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphTurkeyTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphTurkeyTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphWargTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphWargTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphWolfTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphWolfTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphYakTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphYakTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">SyringeRifleHediff</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphGunshotTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PM_ExperimentalInjector</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">Bullrush</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">TransformationParalysis</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">MutagenicBuildup_Weapon</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">MutagenicBuildup_SmallExplosion</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">MutagenicBuildup_LargeExplosion</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">MutagenicBuildup</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">FeralPillSapienceDrop</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">Animalistic</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PermanentlyFeral</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">WasAnimal</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">WasMerged</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">MutagenicDisease</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PM_MutagenicInfection</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">TFPlantAddiction</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">TFDirtInEyes</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">OozeInEyes</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">StabiliserLow</li>
+  			</hediffs>
+		</li>
+    </modExtensions>
+	<equippedStatOffsets>
+	  <MechBandwidth>45</MechBandwidth>
+	  <MeleeHitChance>15</MeleeHitChance>
+	  <MeleeDodgeChance>15</MeleeDodgeChance>
+	  <ShootingAccuracyPawn>15</ShootingAccuracyPawn>
+	  <AimingDelayFactor>-1</AimingDelayFactor>
+	  <InjuryHealingFactor>0.75</InjuryHealingFactor>
+	  <IncomingDamageFactor>-0.1</IncomingDamageFactor>
+	  <ToxicEnvironmentResistance>1</ToxicEnvironmentResistance>
+      <SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology">0.5</SlaveSuppressionOffset>
+    </equippedStatOffsets>
+	<comps>
+		<li Class="SolarSystemRepublicFramework.CompProperties_InvalidDamage">
+			<damageDefs>
+				<li>Stun</li>
+				<li>Arrow</li>
+			</damageDefs>
+		</li>
+	</comps>
+  </ThingDef>
+  
+  <ThingDef ParentName="SSR_HelmetBase">
+    <defName>SSR_Defender_PowerArmor_Helmet</defName>
+    <label>防卫者动力装甲头盔</label>
+    <description>防卫者动力装甲头盔</description>
+	<techLevel>Archotech</techLevel>
+    <graphicData>
+      <texPath>Things/Apparel/DefenderPowerArmorHelmet-1/Defender-1_helmet</texPath>
+      <shaderType>CutoutComplex</shaderType>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <costList>
+	<Plasteel>150</Plasteel>
+	<ComponentSpacer>7</ComponentSpacer>
+	</costList>
+    <statBases>
+      <WorkToMake>15000</WorkToMake>
+	  <ArmorRating_Sharp>10</ArmorRating_Sharp>
+      <ArmorRating_Blunt>10</ArmorRating_Blunt>
+      <ArmorRating_Heat>10</ArmorRating_Heat>
+      <Insulation_Cold>100</Insulation_Cold>
+	  <Insulation_Heat>100</Insulation_Heat>
+      <Mass>0.2</Mass>
+      <EquipDelay>0.5</EquipDelay>
+    </statBases>
+	<tickerType>Normal</tickerType>
+    <apparel>
+      <countsAsClothingForNudity>false</countsAsClothingForNudity>
+      <bodyPartGroups>
+        <li>FullHead</li>
+      </bodyPartGroups>
+      <wornGraphicPath>Things/Apparel/DefenderPowerArmorHelmet-1/Defender-1_helmet</wornGraphicPath>
+      <useWornGraphicMask>true</useWornGraphicMask>
+      <canBeDesiredForIdeo>false</canBeDesiredForIdeo>
+	  <layers>
+        <li>Overhead</li>
+      </layers>
+    </apparel>
+	<recipeMaker>
+	  <researchPrerequisite>CataphractArmor</researchPrerequisite>
+    </recipeMaker>
+	<modExtensions>
+       	<li Class="SolarSystemRepublicFramework.DefModExtension_DefendBerserk">
+    	</li>
+	  	<li Class="SolarSystemRepublicFramework.DefModExtension_DefendHediff">
+  			<hediffs>
+     			<li>PsychicShock</li>
+				<li>Heatstroke</li>
+				<li>Hypothermia</li>
+				<li>BrainShock</li>
+				<li>CatatonicBreakdown</li>
+				<li>PsychicComa</li>
+				<li>ToxicBuildup</li>
+				<li>Flu</li>
+				<li>Plague</li>
+				<li>DirtInEyes</li>
+				<li>GravelInEyes</li>
+				<li>MudInEyes</li>
+				<li>SandInEyes</li>
+				<li>WaterInEyes</li>
+				<li MayRequire="Ayameduki.HARIdearn">HAR_IA_Skill_Hediff_a</li>
+				<li MayRequire="Ayameduki.HARIdearn">HAR_IA_Skill_Hediff_c</li>
+				<li MayRequire="Ayameduki.HARIdearn">HAR_IA_Skill_Hediff_d</li>
+				<li MayRequire="Ayameduki.HARIdearn">HAR_IA_Skill_Hediff_e</li>
+				<li MayRequire="Ayameduki.HARIdearn">HAR_IA_Gunshot</li>
+				<li MayRequire="Ayameduki.HARIdearn">HAR_IA_Skill_Hediff_f</li>
+				<li MayRequire="Ayameduki.HARIdearn">HAR_IA_Skill_Hediff_g</li>
+				<li MayRequire="Ayameduki.HARIdearn">HAR_IA_Skill_Hediff_h</li>
+				<li MayRequire="Ayameduki.HARIdearn">HAR_IA_Skill_Hediff_z</li>
+				<li MayRequire="Ayameduki.HARIdhale">HAR_IH_Hediff_ZZZ</li>
+				<li MayRequire="Ayameduki.HARNearmare">Hediff_Geist</li>
+				<li MayRequire="Ayameduki.HARNearmare">Hediff_Larva</li>
+				<li MayRequire="Ayameduki.HARNearmare">Hediff_Rugeiyu</li>
+				<li MayRequire="Ayameduki.HARNearmare">Hediff_Genocide</li>
+				<li MayRequire="Ayameduki.HARNearmare">HAR_NM_Hediff_a</li>
+				<li MayRequire="Ayameduki.HARNearmare">HAR_NM_XXX_Hediff</li>
+				<li MayRequire="Ayameduki.HARNearmare">HAR_NM_Skill_Hediff_b</li>
+				<li MayRequire="Ayameduki.HARNearmare">HAR_NM_Skill_Hediff_c</li>
+				<li MayRequire="Ayameduki.HARNearmare">HAR_NM_Skill_Hediff_e</li>
+				<li MayRequire="Ayameduki.HARNeclose">HAR_NC_Hediff_a</li>
+				<li MayRequire="Ayameduki.HARNeclose">HAR_NC_Hediff_b</li>
+				<li MayRequire="Ayameduki.HARXenoorca">HAR_XO_Hediff_a</li>
+				<li MayRequire="Ayameduki.HARXenoorca">HAR_XO_Hediff_b</li>
+				<li MayRequire="Ayameduki.HARXenoorca">HAR_XO_Hediff_d</li>
+				<li MayRequire="Ayameduki.HARXenoorca">HAR_XO_Hediff_e</li>
+				<li MayRequire="Ayameduki.BOSSRequeen">BOSS_RQ_Hediff_b</li>
+				<li MayRequire="Ayameduki.BOSSRequeen">BOSS_RQ_Hediff_Z_a</li>
+				<li MayRequire="Ayameduki.BOSSRequeen">BOSS_RQ_Hediff_Z_b</li>
+				<li MayRequire="Ayameduki.BOSSRequeen">BOSS_RQ_Hediff_Z_c</li>
+				<li MayRequire="Ayameduki.BOSSRequeen">BOSS_RQ_Hediff_Z_d</li>
+				<li MayRequire="Ayameduki.BOSSRequeen">BOSS_RQ_Hediff_Z_e</li>
+				<li MayRequire="Ayameduki.BOSSRequeen">BOSS_RQ_Hediff_Gone_Error_a</li>
+				<li MayRequire="Ayameduki.BOSSEnforcer">BOSS_EF_Hediff_a</li>
+				<li MayRequire="Ayameduki.BOSSEnforcer">BOSS_EF_Hediff_b</li>
+				<li MayRequire="Ayameduki.BOSSEnforcer">BOSS_EF_Hediff_c</li>
+				<li MayRequire="Ayameduki.BOSSEnforcer">BOSS_EF_Hediff_d</li>
+				<li MayRequire="Ayameduki.BOSSEnforcer">BOSS_EF_Hediff_e</li>
+				<li MayRequire="Ayameduki.HARChaoura">HAR_CO_Hediff_c</li>
+				<li MayRequire="Ayameduki.HARChaoura">HAR_CO_Hediff_d</li>
+				<li MayRequire="Ayameduki.HARChaoura">HAR_CO_Hediff_f</li>
+				<li MayRequire="Ayameduki.HARChaoura">HAR_CO_Hediff_h</li>
+				<li MayRequire="Ayameduki.HARLittluna">HAR_LL_Hediff_c</li>
+				<li MayRequire="Ayameduki.HARQualeela">HAR_QL_Hediff_c</li>
+				<li MayRequire="Ayameduki.HARQualeela">HAR_QL_Hediff_d</li>
+				<li MayRequire="Ayameduki.HARQualeela">HAR_QL_Hediff_e</li>
+				<li MayRequire="miho.fortifiedoutremer">Miho_AbomiSeen_Hediff</li>
+				<li MayRequire="miho.fortifiedoutremer">Miho_Hawk_Hediff</li>
+				<li MayRequire="miho.fortifiedoutremer">Miho_Thunder_Hediff</li>
+				<li MayRequire="miho.fortifiedoutremer">Miho_Plasma_Hediff</li>
+				<li MayRequire="Seioch.Naki.HAR">Naki_Distortion</li>
+				<li MayRequire="Seioch.Naki.HAR">Naki_Stall</li>
+				<li MayRequire="Seioch.Naki.HAR">Naki_Darkness</li>
+				<li MayRequire="Seioch.Naki.HAR">DMConfusion</li>
+				<li MayRequire="Seioch.Naki.HAR">DMDecay</li>
+				<li MayRequire="Seioch.Naki.HAR">DMDisintegration</li>
+				<li MayRequire="Seioch.Naki.HAR">DMAnnihilation</li>
+				<li MayRequire="Seioch.Naki.HAR">DMHealingPenalty</li>
+				<li MayRequire="VanillaExpanded.VPsycastsE">VPE_MindControlled</li>
+				<li MayRequire="VanillaExpanded.VPsycastsE">VPE_UnLucky</li>
+				<li MayRequire="VanillaExpanded.VPsycastsE">VPE_AgeSickness</li>
+				<li MayRequire="VanillaExpanded.VPsycastsE">VPE_Blizzard</li>
+				<li MayRequire="VanillaExpanded.VPsycastsE">VPE_FrostRay</li>
+				<li MayRequire="VanillaExpanded.VPsycastsE">VPE_Hurricane</li>
+				<li MayRequire="VanillaExpanded.VPsycastsE">VPE_IceBlock</li>
+				<li MayRequire="VanillaExpanded.VPsycastsE">VPE_LostVitality</li>
+				<li MayRequire="VanillaExpanded.VPsycastsE">VPE_PsychicPain</li>
+				<li MayRequire="VanillaExpanded.VPsycastsE">VPE_Rot</li>
+				<li MayRequire="VanillaExpanded.VPsycastsE">VPE_Vortex</li>
+				<li MayRequire="VanillaExpanded.VPsycastsE">VPEH_Bloodmist</li>
+				<li MayRequire="Edern.ArchotechWeaponry">VoidToxin</li>
+				<li MayRequire="Edern.ArchotechWeaponry">VoidNecrosisPerm</li>
+				<li MayRequire="Edern.ArchotechWeaponry">VoidNecrosisTemp</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">SeverePsychicDrone</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">Bleed</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">ShockPain</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">HealthBlight</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">CorpseExplosionDisease</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">Inflammable</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">IncendiaryBody</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">VitalityDrain</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">ArmorBreaker</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">Instantkill</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">Frostbitez</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">BerserkBullet</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">ConfusionBullet</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">HealthBlight1</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">IronLung</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">ArmorBreakerEX</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">NaniteAssault</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">MagnesiumBurn</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">RadiationPoisoning</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">NeuroToxin</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">HeatNullNanites</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">ColdNullNanites</li>
+				<li MayRequire="BlackMarket420.KraltechIndustries">AntiOrganicDisease</li>
+				<li MayRequire="ninedaylongbow.RedSunTechnologyIndustry">AngerOfTheBlackDragon</li>
+				<li MayRequire="ninedaylongbow.RedSunTechnologyIndustry">Windytalk</li>
+				<li MayRequire="ninedaylongbow.RedSunTechnologyIndustry">ArmorBreakingAssault</li>
+				<li MayRequire="ninedaylongbow.RedSunTechnologyIndustry">Sealofpoisonoussnake</li>
+				<li MayRequire="ninedaylongbow.RedSunTechnologyIndustry">FZHypothermic</li>
+				<li MayRequire="BlackMarket420.TAOFC">Necronoid_Infection</li>
+				<li MayRequire="BlackMarket420.TAOFC">Necronoid_Incubation</li>
+				<li MayRequire="BlackMarket420.TAOFC">Necronoid_InfectionOne</li>
+				<li MayRequire="BlackMarket420.TAOFC">BrainParasites</li>
+				<li MayRequire="Create.AncientCelestial">Mech_Die</li>
+				<li MayRequire="Chocorofuru.Thaumoking.LobotomyCorporation">LC_Fragile</li>
+				<li MayRequire="Chocorofuru.Thaumoking.LobotomyCorporation">LC_Slow</li>
+				<li MayRequire="Chocorofuru.Thaumoking.LobotomyCorporation">Paledamagehediff</li>
+				<li MayRequire="Chocorofuru.Thaumoking.LobotomyCorporation">Sanitydamage</li>
+				<li MayRequire="Chocorofuru.Thaumoking.LobotomyCorporation">Whitewound</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphAlpacaTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphAlpacaTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphBearTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphBearTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphBisonTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphBisonTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphBoarTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphBoarTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphBoomalopeTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphBoomalopeTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphBoomratTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphBoomratTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphCapybaraTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphCapybaraTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphCaribouTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphCaribouTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphCassowaryTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphCassowaryTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphCatTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphCatTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphChaoTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphChaoTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphChickenTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphChickenTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphChinchillaTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphChinchillaTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphCobraTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphCobraTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphCougarTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphCougarTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphCowTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphCowTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphDeerTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphDeerTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">FoxFlu</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">Chookflu</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">Swineflu</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">Cowflu</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">Chaoflu</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">HuskyFlu</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphDonkeyTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphDonkeyTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphDromedaryTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphDromedaryTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphDuckTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphDuckTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphElephantTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphElephantTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphElkTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphElkTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphEmuTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphEmuTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphFennecFoxTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphFennecFoxTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphFoxTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphFoxTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphGazelleTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphGazelleTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphGoatTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphGoatTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphGooseTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphGooseTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphGrizzlyBearTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphGrizzlyBearTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphGuineaPigTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphGuineaPigTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphHareTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphHareTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphHorseTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphHorseTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphHuskyTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphHuskyTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphIbexTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphIbexTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphIguanaTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphIguanaTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphLabradorRetrieverTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphLabradorRetrieverTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphLynxTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphLynxTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphMegaslothTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphMegaslothTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphMonkeyTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphMonkeyTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphMuffaloTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphMuffaloTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphOstrichTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphOstrichTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphPantherTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphPantherTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphPigTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphPigTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphPolarBearTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphPolarBearTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphRaccoonTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphRaccoonTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphRatTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphRatTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphRedFoxTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphRedFoxTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphRhinocerosTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphRhinocerosTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphSheepTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphSheepTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphSnowhareTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphSnowhareTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphSquirrelTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphSquirrelTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphTerrierTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphTerrierTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphThrumboTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphThrumboTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphTimberWolfTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphTimberWolfTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphTortoiseTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphTortoiseTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphTurkeyTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphTurkeyTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphWargTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphWargTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphWolfTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphWolfTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphYakTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphYakTFPartial</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">SyringeRifleHediff</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PawnmorphGunshotTF</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PM_ExperimentalInjector</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">Bullrush</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">TransformationParalysis</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">MutagenicBuildup_Weapon</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">MutagenicBuildup_SmallExplosion</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">MutagenicBuildup_LargeExplosion</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">MutagenicBuildup</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">FeralPillSapienceDrop</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">Animalistic</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PermanentlyFeral</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">WasAnimal</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">WasMerged</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">MutagenicDisease</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">PM_MutagenicInfection</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">TFPlantAddiction</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">TFDirtInEyes</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">OozeInEyes</li>
+				<li MayRequire="tachyonite.pawnmorpherpublic">StabiliserLow</li>
+  			</hediffs>
+		</li>
+    </modExtensions>
+	<equippedStatOffsets>
+	  <MechBandwidth>90</MechBandwidth>
+	  <MeleeHitChance>30</MeleeHitChance>
+	  <MeleeDodgeChance>30</MeleeDodgeChance>
+	  <ShootingAccuracyPawn>30</ShootingAccuracyPawn>
+	  <AimingDelayFactor>-1</AimingDelayFactor>
+	  <InjuryHealingFactor>2</InjuryHealingFactor>
+	  <IncomingDamageFactor>-0.1</IncomingDamageFactor>
+	  <ToxicEnvironmentResistance>1</ToxicEnvironmentResistance>
+      <SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology">0.5</SlaveSuppressionOffset>
+    </equippedStatOffsets>
+	<comps>
+		<li Class="SolarSystemRepublicFramework.CompProperties_InvalidDamage">
+			<damageDefs>
+				<li>Stun</li>
+				<li>Arrow</li>
+			</damageDefs>
+		</li>
+	</comps>
+  </ThingDef>
+  
+</Defs>

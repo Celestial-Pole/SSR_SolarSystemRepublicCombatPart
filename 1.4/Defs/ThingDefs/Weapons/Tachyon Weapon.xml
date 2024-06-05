@@ -1,0 +1,320 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+<ThingDef ParentName="SSR_BaseWeapon">
+    <defName>Tachyon_AR</defName>
+    <label>快子步枪</label>
+    <description>快子步枪
+伤害：80
+护甲穿透：10000%
+伤害间隔：1tick
+攻击持续时间：1s
+射程：75
+远程冷却时间：0.15s
+瞄准时间：0</description>
+    <graphicData>
+      <texPath>Things/Weapons/Tachyon Weapon/Tachyon_AR</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1</drawSize>
+    </graphicData>
+    <uiIconScale>2</uiIconScale>
+    <soundInteract>Interact_Rifle</soundInteract>
+	<costList>
+	  <Plasteel>170</Plasteel>
+	  <ComponentSpacer>7</ComponentSpacer>
+	</costList>
+    <statBases>
+	  <WorkToMake>85000</WorkToMake>
+      <!--这个是RGB的R-->
+      <AccuracyShort>1</AccuracyShort>
+      <!--这个是RGB的G-->
+      <AccuracyMedium>0.54</AccuracyMedium>
+      <!--这个是RGB的B-->
+      <AccuracyLong>0</AccuracyLong>
+      <Mass>1.5</Mass>
+      <RangedWeapon_Cooldown>0.15</RangedWeapon_Cooldown>
+    </statBases>
+	<recipeMaker>
+	  <researchPrerequisite>ShipEngine</researchPrerequisite>
+	  <skillRequirements>
+      <Crafting>10</Crafting>
+    </skillRequirements>
+  </recipeMaker>
+    <verbs>
+      <li>
+        <verbClass>MYDE_Share_L.Verb_Laser_Stay</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <range>75</range>
+        <!--这个是持续时间-->
+        <warmupTime>1</warmupTime>
+        <!--这个是造成伤害的间隔-->
+        <ticksBetweenBurstShots>1</ticksBetweenBurstShots>
+        <!--这个是造成伤害的数值-->
+        <burstShotCount>80</burstShotCount>
+        <!--这个是造成伤害类型-->
+        <meleeDamageDef>SSR_TachyonCutting</meleeDamageDef>
+        <!--这个是穿甲-->
+        <muzzleFlashScale>100</muzzleFlashScale>
+        <!--这个是音效-->
+        <soundCast>Bow_Large</soundCast>
+      </li>
+    </verbs>
+	<tools>
+      <li>
+        <label>stock</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+  </ThingDef>
+
+  <ThingDef ParentName="SSR_BaseWeapon">
+    <defName>Tachyon_HG</defName>
+    <label>快子手枪</label>
+    <description>快子手枪
+伤害：15
+护甲穿透：5000%
+伤害间隔：1tick
+激光持续时间：1s
+射程：45
+远程冷却时间：0.15s
+瞄准时间：0</description>
+    <graphicData>
+      <texPath>Things/Weapons/Tachyon Weapon/Tachyon_HG</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1</drawSize>
+    </graphicData>
+    <uiIconScale>2</uiIconScale>
+    <soundInteract>Interact_Rifle</soundInteract>
+	<costList>
+	  <Plasteel>75</Plasteel>
+	  <ComponentSpacer>3</ComponentSpacer>
+	</costList>
+    <statBases>
+	  <WorkToMake>55000</WorkToMake>
+      <!--这个是RGB的R-->
+      <AccuracyShort>1</AccuracyShort>
+      <!--这个是RGB的G-->
+      <AccuracyMedium>0.54</AccuracyMedium>
+      <!--这个是RGB的B-->
+      <AccuracyLong>0</AccuracyLong>
+      <Mass>0.25</Mass>
+      <RangedWeapon_Cooldown>0.15</RangedWeapon_Cooldown>
+    </statBases>
+	<recipeMaker>
+	  <researchPrerequisite>ShipEngine</researchPrerequisite>
+	  <skillRequirements>
+      <Crafting>10</Crafting>
+    </skillRequirements>
+  </recipeMaker>
+  <verbs>
+      <li>
+        <verbClass>MYDE_Share_L.Verb_Laser_Stay</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <range>45</range>
+        <!--这个是持续时间-->
+        <warmupTime>1</warmupTime>
+        <!--这个是造成伤害的间隔-->
+        <ticksBetweenBurstShots>1</ticksBetweenBurstShots>
+        <!--这个是造成伤害的数值-->
+        <burstShotCount>15</burstShotCount>
+        <!--这个是造成伤害类型-->
+        <meleeDamageDef>SSR_TachyonCutting</meleeDamageDef>
+        <!--这个是穿甲-->
+        <muzzleFlashScale>50</muzzleFlashScale>
+        <!--这个是音效-->
+        <soundCast>Bow_Small</soundCast>
+      </li>
+    </verbs>
+	<tools>
+      <li>
+        <label>stock</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>5</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>5</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+  </ThingDef>
+  
+  <ThingDef ParentName="SSR_BaseWeapon">
+    <defName>Tachyon_SR</defName>
+    <label>快子狙击枪</label>
+    <description>快子狙击枪
+伤害：160
+护甲穿透：20000%
+伤害间隔：1tick
+激光持续时间：1s
+射程：500
+远程冷却时间：0.15s
+瞄准时间：0</description>
+    <graphicData>
+      <texPath>Things/Weapons/Tachyon Weapon/Tachyon_SR</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1</drawSize>
+    </graphicData>
+    <uiIconScale>2</uiIconScale>
+    <soundInteract>Interact_Rifle</soundInteract>
+	<costList>
+	  <Plasteel>200</Plasteel>
+	  <ComponentSpacer>7</ComponentSpacer>
+	</costList>
+    <statBases>
+	  <WorkToMake>95000</WorkToMake>
+      <!--这个是RGB的R-->
+      <AccuracyShort>1</AccuracyShort>
+      <!--这个是RGB的G-->
+      <AccuracyMedium>0.54</AccuracyMedium>
+      <!--这个是RGB的B-->
+      <AccuracyLong>0</AccuracyLong>
+      <Mass>1.75</Mass>
+      <RangedWeapon_Cooldown>0.15</RangedWeapon_Cooldown>
+    </statBases>
+	<recipeMaker>
+	  <researchPrerequisite>ShipEngine</researchPrerequisite>
+	  <skillRequirements>
+      <Crafting>10</Crafting>
+    </skillRequirements>
+  </recipeMaker>
+  <verbs>
+      <li>
+        <verbClass>MYDE_Share_L.Verb_Laser_Stay</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <range>500</range>
+        <!--这个是持续时间-->
+        <warmupTime>1</warmupTime>
+        <!--这个是造成伤害的间隔-->
+        <ticksBetweenBurstShots>1</ticksBetweenBurstShots>
+        <!--这个是造成伤害的数值-->
+        <burstShotCount>160</burstShotCount>
+        <!--这个是造成伤害类型-->
+        <meleeDamageDef>SSR_TachyonCutting</meleeDamageDef>
+        <!--这个是穿甲-->
+        <muzzleFlashScale>200</muzzleFlashScale>
+        <!--这个是音效-->
+        <soundCast>Bow_Small</soundCast>
+      </li>
+    </verbs>
+	<tools>
+      <li>
+        <label>stock</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>11</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>11</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+  </ThingDef>
+  
+  <ThingDef ParentName="SSR_BaseWeapon">
+    <defName>Tachyon_AMR</defName>
+    <label>快子光矛</label>
+    <description>快子光矛
+伤害：1000
+护甲穿透：50000%
+伤害间隔：1tick
+激光持续时间：1s
+射程：500
+远程冷却时间：0.15s
+瞄准时间：0</description>
+    <graphicData>
+      <texPath>Things/Weapons/Tachyon Weapon/Tachyon_AMR</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1</drawSize>
+    </graphicData>
+    <uiIconScale>2</uiIconScale>
+    <soundInteract>Interact_Rifle</soundInteract>
+	<costList>
+	  <Plasteel>450</Plasteel>
+	  <ComponentSpacer>15</ComponentSpacer>
+	</costList>
+    <statBases>
+	  <WorkToMake>125000</WorkToMake>
+      <!--这个是RGB的R-->
+      <AccuracyShort>1</AccuracyShort>
+      <!--这个是RGB的G-->
+      <AccuracyMedium>0.54</AccuracyMedium>
+      <!--这个是RGB的B-->
+      <AccuracyLong>0</AccuracyLong>
+      <Mass>5.5</Mass>
+      <RangedWeapon_Cooldown>0.15</RangedWeapon_Cooldown>
+    </statBases>
+	<recipeMaker>
+	  <researchPrerequisite>ShipEngine</researchPrerequisite>
+	  <skillRequirements>
+      <Crafting>10</Crafting>
+    </skillRequirements>
+  </recipeMaker>
+  <verbs>
+      <li>
+        <verbClass>MYDE_Share_L.Verb_Laser_Stay</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <range>500</range>
+        <!--这个是持续时间-->
+        <warmupTime>1</warmupTime>
+        <!--这个是造成伤害的间隔-->
+        <ticksBetweenBurstShots>1</ticksBetweenBurstShots>
+        <!--这个是造成伤害的数值-->
+        <burstShotCount>2000</burstShotCount>
+        <!--这个是造成伤害类型-->
+        <meleeDamageDef>SSR_TachyonCutting</meleeDamageDef>
+        <!--这个是穿甲-->
+        <muzzleFlashScale>500</muzzleFlashScale>
+        <!--这个是音效-->
+        <soundCast>Bow_Small</soundCast>
+      </li>
+    </verbs>
+	<tools>
+      <li>
+        <label>stock</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>11</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>11</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+  </ThingDef>
+  
+</Defs>

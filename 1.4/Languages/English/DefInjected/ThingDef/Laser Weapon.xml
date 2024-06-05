@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <Laser_AR.label>Laser AR</Laser_AR.label>
+  <Laser_AR.description>A lightweight and efficient laser rifle, a standard weapon for infantry in the mid-Earth Federation era, capable of sustained fire at targets and penetrating enemy armor and bodies with high-energy lasers.
+Damage: 12
+Armor penetration: 80%
+Damage interval: 20tick
+Laser duration: 3s
+Range: 50
+Ranged cooldown: 0.5s
+Aiming time: 0</Laser_AR.description>
+
+  <Laser_HG.label>Laser HG</Laser_HG.label>
+  <Laser_HG.description>Laser HG, issued to soldiers as secondary weapons or officers as self-defense weapons, are slightly less powerful than Laser AR, but they are very easy to use and can save your life in a critical moment.
+Damage: 5
+Armor penetration: 55%
+Damage interval: 15tick
+Laser duration: 2s
+Range: 30
+Ranged cooldown: 0.5s
+Aiming time: 0</Laser_HG.description>
+
+  <Laser_SR.label>Laser SR</Laser_SR.label>
+  <Laser_SR.description>The Laser SR is an extremely long range anti-light armor weapon that can effectively deal damage to powered armor wearing human or combat robot units at a long range.
+Damage: 20
+Armor penetration: 150%
+Damage interval: 30tick
+Laser duration: 1s
+Range: 60
+Ranged cooldown: 0.75s
+Aiming time: 0</Laser_SR.description>
+
+  <Laser_AMR.label>Laser AMR</Laser_AMR.label>
+  <Laser_AMR.description>Laser AMR is the favorite weapon of light infantry units when they encounter enemy armor. This powerful weapon can melt the armor of the enemy and destroy the enemy that other weapons are difficult to destroy.
+Damage: 25
+Armor penetration: 200%
+Damage interval: 30tick
+Laser duration: 2s
+Range: 70
+Ranged cooldown: 2s
+Aiming time: 0</Laser_AMR.description>
+
+
+</LanguageData>

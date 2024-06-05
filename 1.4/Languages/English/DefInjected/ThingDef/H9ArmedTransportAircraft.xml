@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <MYDE_AF_RotorCraft_H9ArmedTransportAircraft_Base.label>H9 armed transport aircraft</MYDE_AF_RotorCraft_H9ArmedTransportAircraft_Base.label>
+  <MYDE_AF_RotorCraft_H9ArmedTransportAircraft_Base.description>H9 armed transport aircraft is a transport helicopter designed before the Third World War. Thanks to the development of flight control technology, its special twin rotor design has been popularized in the military helicopter design at that time. The excellent mobility and carrying ability of H9 armed transport aircraft makes its subsequent models still in service in the Earth Federation era after the end of the Third World War.
+  Maximum crew: 10
+Maximum load: 60,00kg
+Maximum fuel: 800
+World map Fuel consumption per cell: 4
+Airborne armament: 2 airborne machine guns, 1 grenade launcher</MYDE_AF_RotorCraft_H9ArmedTransportAircraft_Base.description>
+
+
+  <!-- 跨地图 -->
+
+  <MYDE_AF_Skyfalller_RotorCraft_H9ArmedTransportAircraft_CrossMapThing.label>H9 armed transport aircraft(Leaving)</MYDE_AF_Skyfalller_RotorCraft_H9ArmedTransportAircraft_CrossMapThing.label>
+  <MYDE_AF_RotorCraft_H9ArmedTransportAircraft_Base.comps.CompRefuelable.outOfFuelMessage>Needs Fuel</MYDE_AF_RotorCraft_H9ArmedTransportAircraft_Base.comps.CompRefuelable.outOfFuelMessage>
+  <MYDE_AF_RotorCraft_H9ArmedTransportAircraft_Base.comps.Comp_MoveToTargetAndHover.Hover_Icon_On_Label>Hover：On</MYDE_AF_RotorCraft_H9ArmedTransportAircraft_Base.comps.Comp_MoveToTargetAndHover.Hover_Icon_On_Label>
+  <MYDE_AF_RotorCraft_H9ArmedTransportAircraft_Base.comps.Comp_MoveToTargetAndHover.Hover_Icon_Off_Label>Hover：Off</MYDE_AF_RotorCraft_H9ArmedTransportAircraft_Base.comps.Comp_MoveToTargetAndHover.Hover_Icon_Off_Label>
+  <MYDE_AF_RotorCraft_H9ArmedTransportAircraft_Base.comps.Comp_MoveToTargetAndHover.Hover_Icon_Description>Whether to turn on or off the hovering of the aerocraft</MYDE_AF_RotorCraft_H9ArmedTransportAircraft_Base.comps.Comp_MoveToTargetAndHover.Hover_Icon_Description>
+  <MYDE_AF_RotorCraft_H9ArmedTransportAircraft_Base.comps.Comp_MoveToTargetAndHover.TakeOffAndLanding_Icon_On_Label>Take off</MYDE_AF_RotorCraft_H9ArmedTransportAircraft_Base.comps.Comp_MoveToTargetAndHover.TakeOffAndLanding_Icon_On_Label>
+  <MYDE_AF_RotorCraft_H9ArmedTransportAircraft_Base.comps.Comp_MoveToTargetAndHover.TakeOffAndLanding_Icon_Off_Label>Landing</MYDE_AF_RotorCraft_H9ArmedTransportAircraft_Base.comps.Comp_MoveToTargetAndHover.TakeOffAndLanding_Icon_Off_Label>
+  <MYDE_AF_RotorCraft_H9ArmedTransportAircraft_Base.comps.Comp_MoveToTargetAndHover.TakeOffAndLanding_Icon_Description>Switch between takeoff and landing.</MYDE_AF_RotorCraft_H9ArmedTransportAircraft_Base.comps.Comp_MoveToTargetAndHover.TakeOffAndLanding_Icon_Description>
+  <MYDE_AF_RotorCraft_H9ArmedTransportAircraft_Base.comps.Comp_CarryPawn.Gizmos_CarryPawn_Label>Fast loading</MYDE_AF_RotorCraft_H9ArmedTransportAircraft_Base.comps.Comp_CarryPawn.Gizmos_CarryPawn_Label>
+  <MYDE_AF_RotorCraft_H9ArmedTransportAircraft_Base.comps.Comp_CarryPawn.Gizmos_CarryPawn_Description>Fast loading colonizers within the surrounding 5x5 range</MYDE_AF_RotorCraft_H9ArmedTransportAircraft_Base.comps.Comp_CarryPawn.Gizmos_CarryPawn_Description>
+  <MYDE_AF_RotorCraft_H9ArmedTransportAircraft_Base.comps.Comp_CanCrossMap.CrossMap_Label>Cross Map</MYDE_AF_RotorCraft_H9ArmedTransportAircraft_Base.comps.Comp_CanCrossMap.CrossMap_Label>
+  <MYDE_AF_RotorCraft_H9ArmedTransportAircraft_Base.comps.Comp_CanCrossMap.CrossMap_Description>Cross map, no open space can be selected as the target location. To avoid situations where it is impossible to return, please ensure that there is sufficient fuel for round-trip travel</MYDE_AF_RotorCraft_H9ArmedTransportAircraft_Base.comps.Comp_CanCrossMap.CrossMap_Description>
+
+
+</LanguageData>

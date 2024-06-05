@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+<!-- ========== SentryGun ========== -->
+    <Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="Turret_SentryGun"]/thingClass</xpath>
+		<value>
+			<thingClass>CombatExtended.Building_TurretGunCE</thingClass>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="Turret_SentryGun"]/statBases</xpath>
+		<value>
+			<AimingAccuracy>0.95</AimingAccuracy>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="Turret_SentryGun"]/statBases/ShootingAccuracyTurret</xpath>
+		<value>
+			<ShootingAccuracyTurret>0.96</ShootingAccuracyTurret>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="Turret_SentryGun"]/statBases/Mass</xpath>
+		<value>
+			<Mass>25</Mass>
+			<Bulk>15</Bulk>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationRemove">
+		<xpath>Defs/ThingDef[defName="Turret_SentryGun"]/comps/li[@Class="CompProperties_Refuelable"]</xpath>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="Turret_SentryGun"]/fillPercent</xpath>
+		<value>
+			<fillPercent>0.85</fillPercent>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="Turret_SentryGun"]/building/turretBurstCooldownTime</xpath>
+		<value>
+			<turretBurstCooldownTime>1.0</turretBurstCooldownTime>
+		</value>
+	</Operation>
+
+  <Operation Class="CombatExtended.PatchOperationMakeGunCECompatible">
+    <defName>Gun_SentryGun</defName>
+    <statBases>
+      <RangedWeapon_Cooldown>0.36</RangedWeapon_Cooldown>
+      <SightsEfficiency>1.5</SightsEfficiency>
+      <ShotSpread>0.07</ShotSpread>
+      <SwayFactor>0.69</SwayFactor>
+    </statBases>
+    <Properties>
+      <recoilAmount>0.91</recoilAmount>
+      <verbClass>CombatExtended.Verb_ShootCE</verbClass>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>Bullet_9x30mmElectromagnetic</defaultProjectile>
+      <warmupTime>1.3</warmupTime>
+      <range>48</range>
+      <ticksBetweenBurstShots>5</ticksBetweenBurstShots>
+      <burstShotCount>10</burstShotCount>
+      <soundCast>GunShotA</soundCast>
+      <soundCastTail>GunTail_Light</soundCastTail>
+      <muzzleFlashScale>9</muzzleFlashScale>
+      <recoilPattern>Mounted</recoilPattern>
+    </Properties>
+    <AmmoUser>
+      <magazineSize>100</magazineSize>
+      <reloadTime>7.8</reloadTime>
+      <ammoSet>AmmoSet_9x30mmElectromagnetic</ammoSet>
+    </AmmoUser>
+    <FireModes>
+      <aiAimMode>AimedShot</aiAimMode>
+      <noSnapshot>true</noSnapshot>
+      <noSingleShot>true</noSingleShot>
+    </FireModes>
+  </Operation>
+
+  <!-- ========== RailCIWS ========== -->
+    <Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="Turret_RailCIWS"]/thingClass</xpath>
+		<value>
+			<thingClass>CombatExtended.Building_TurretGunCE</thingClass>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="Turret_RailCIWS"]/statBases</xpath>
+		<value>
+			<AimingAccuracy>1.5</AimingAccuracy>
+		</value>
+	</Operation>
+
+    <Operation Class="PatchOperationRemove">
+		<xpath>Defs/ThingDef[defName="Turret_RailCIWS"]/comps/li[@Class="CompProperties_Refuelable"]</xpath>
+	</Operation>
+
+    <Operation Class="PatchOperationRemove">
+		<xpath>Defs/ThingDef[defName="Turret_RailCIWS"]/comps/li[@Class="CompProperties_Explosive"]</xpath>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="Turret_RailCIWS"]/statBases/ShootingAccuracyTurret</xpath>
+		<value>
+			<ShootingAccuracyTurret>1.5</ShootingAccuracyTurret>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="Turret_RailCIWS"]/statBases/Mass</xpath>
+		<value>
+			<Mass>25</Mass>
+			<Bulk>15</Bulk>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="Turret_RailCIWS"]/fillPercent</xpath>
+		<value>
+			<fillPercent>0.85</fillPercent>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="Turret_RailCIWS"]/building/turretBurstCooldownTime</xpath>
+		<value>
+			<turretBurstCooldownTime>1.0</turretBurstCooldownTime>
+		</value>
+	</Operation>
+
+  <Operation Class="CombatExtended.PatchOperationMakeGunCECompatible">
+    <defName>Gun_RailCIWS</defName>
+    <statBases>
+      <RangedWeapon_Cooldown>0.36</RangedWeapon_Cooldown>
+      <SightsEfficiency>1.5</SightsEfficiency>
+      <ShotSpread>0.07</ShotSpread>
+      <SwayFactor>0.69</SwayFactor>
+    </statBases>
+    <Properties>
+      <recoilAmount>0.91</recoilAmount>
+      <verbClass>CombatExtended.Verb_ShootCE</verbClass>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>Bullet_15x65mmElectromagnetic</defaultProjectile>
+      <warmupTime>1.3</warmupTime>
+      <range>69</range>
+      <ticksBetweenBurstShots>1</ticksBetweenBurstShots>
+      <burstShotCount>36</burstShotCount>
+      <soundCast>GunShotA</soundCast>
+      <soundCastTail>GunTail_Light</soundCastTail>
+      <muzzleFlashScale>9</muzzleFlashScale>
+      <recoilPattern>Mounted</recoilPattern>
+    </Properties>
+    <AmmoUser>
+      <magazineSize>1080</magazineSize>
+      <reloadTime>25</reloadTime>
+      <ammoSet>AmmoSet_15x65mmElectromagnetic</ammoSet>
+    </AmmoUser>
+    <FireModes>
+      <aiAimMode>AimedShot</aiAimMode>
+      <noSnapshot>true</noSnapshot>
+      <noSingleShot>true</noSingleShot>
+    </FireModes>
+  </Operation>
+    <!-- Auto mortar -->
+    <Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="Turret_LtRailMortar"]/thingClass</xpath>
+		<value>
+			<thingClass>CombatExtended.Building_TurretGunCE</thingClass>
+		</value>
+	</Operation>
+    <Operation Class="PatchOperationRemove">
+		<xpath>Defs/ThingDef[defName="Turret_LtRailMortar"]/comps/li[@Class="CompProperties_Explosive"]</xpath>
+	</Operation>
+    <Operation Class="PatchOperationRemove">
+		<xpath>Defs/ThingDef[defName="Turret_LtRailMortar"]/comps/li[@Class="CompProperties_Initiatable"]</xpath>
+	</Operation>
+
+    <Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="Turret_LtRailMortar"]/statBases</xpath>
+		<value>
+			<statBases>
+				<SightsEfficiency>0.75</SightsEfficiency>
+			</statBases>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="Artillery_LtRailMortar"]/comps</xpath>
+		<value>
+			  <li Class="CombatExtended.CompProperties_Charges">
+			    <chargeSpeeds>
+			      <li>30</li>
+			      <li>50</li>
+			      <li>70</li>
+			      <li>90</li>
+			    </chargeSpeeds>
+			  </li>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="Artillery_LtRailMortar"]/comps</xpath>
+		<value>
+			<li Class="CombatExtended.CompProperties_AmmoUser">
+				<magazineSize>12</magazineSize>
+				<reloadTime>5</reloadTime>
+				<ammoSet>AmmoSet_155mmHowitzerShell</ammoSet>
+			</li>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="Artillery_LtRailMortar"]/verbs</xpath>
+		<value>
+			<verbs>
+			  <li Class="CombatExtended.VerbPropertiesCE">
+			    <verbClass>CombatExtended.Verb_ShootMortarCE</verbClass>
+			    <forceNormalTimeSpeed>false</forceNormalTimeSpeed>
+			    <hasStandardCommand>true</hasStandardCommand>
+			    <defaultProjectile>Bullet_155mmHowitzerShell_HE</defaultProjectile>
+			    <warmupTime>2</warmupTime>
+			    <minRange>32</minRange>
+			    <range>500</range>
+			    <burstShotCount>1</burstShotCount>
+			    <soundCast>Mortar_LaunchA</soundCast>
+			    <muzzleFlashScale>16</muzzleFlashScale>
+			    <circularError>0.5</circularError>
+			    <indirectFirePenalty>0.1</indirectFirePenalty>
+			    <targetParams>
+			      <canTargetLocations>true</canTargetLocations>
+			    </targetParams>
+			  </li>
+			</verbs>
+		</value>
+	</Operation>
+
+    
+
+</Patch>

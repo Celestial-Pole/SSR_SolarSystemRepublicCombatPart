@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingCategoryDef>
+    <defName>Ammo12GaugeElectromagnetic</defName>
+    <label>12 gauge electromagnetic</label>
+    <parent>AmmoShotguns</parent>
+    <iconPath>UI/Icons/ThingCategories/CaliberShotgun</iconPath>
+  </ThingCategoryDef>
+
+  <!-- ==================== AmmoSet ========================== -->
+
+  <CombatExtended.AmmoSetDef>
+    <defName>AmmoSet_12GaugeElectromagnetic</defName>
+    <label>12 Gauge Electromagnetic</label>
+    <ammoTypes>
+      <Ammo_12GaugeElectromagnetic_Buck>Bullet_12GaugeElectromagnetic_Buck</Ammo_12GaugeElectromagnetic_Buck>
+      <Ammo_12GaugeElectromagnetic_Slug>Bullet_12GaugeElectromagnetic_Slug</Ammo_12GaugeElectromagnetic_Slug>
+      <Ammo_12GaugeElectromagnetic_ElectroSlug>Bullet_12GaugeElectromagnetic_ElectroSlug</Ammo_12GaugeElectromagnetic_ElectroSlug>
+    </ammoTypes>
+    <similarTo>AmmoSet_Shotgun</similarTo>
+  </CombatExtended.AmmoSetDef>
+
+  <!-- ==================== Ammo ========================== -->
+
+  <ThingDef Class="CombatExtended.AmmoDef" Name="12GaugeElectromagneticBase" ParentName="AmmoBase" Abstract="True">
+    <description>Extremely common shotgun caliber used in almost every application, from hunting over riot control to military firearms.</description>
+    <statBases>
+      <Mass>0.051</Mass>
+      <Bulk>0.06</Bulk>
+    </statBases>
+    <tradeTags>
+      <li>CE_AutoEnableTrade</li>
+      <li>CE_AutoEnableCrafting</li>
+    </tradeTags>
+    <thingCategories>
+      <li>Ammo12GaugeElectromagnetic</li>
+    </thingCategories>
+    <stackLimit>5000</stackLimit>
+  </ThingDef>
+
+  <ThingDef Class="CombatExtended.AmmoDef" ParentName="12GaugeElectromagneticBase">
+    <defName>Ammo_12GaugeElectromagnetic_Buck</defName>
+    <label>12 gauge electromagnetic shell (Buck)</label>
+    <graphicData>
+      <texPath>Things/Ammo/Shotgun/Shot</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>0.22</MarketValue>
+    </statBases>
+    <ammoClass>BuckShot</ammoClass>
+    <cookOffProjectile>Bullet_12GaugeElectromagnetic_Buck</cookOffProjectile>
+  </ThingDef>
+
+  <ThingDef Class="CombatExtended.AmmoDef" ParentName="12GaugeElectromagneticBase">
+    <defName>Ammo_12GaugeElectromagnetic_Slug</defName>
+    <label>12 gauge electromagnetic shell (Slug)</label>
+    <graphicData>
+      <texPath>Things/Ammo/Shotgun/Slug</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <statBases>
+      <Mass>0.048</Mass>
+      <MarketValue>0.2</MarketValue>
+    </statBases>
+    <ammoClass>Slug</ammoClass>
+    <cookOffProjectile>Bullet_12GaugeElectromagnetic_Slug</cookOffProjectile>
+  </ThingDef>
+
+  <ThingDef Class="CombatExtended.AmmoDef" ParentName="12GaugeElectromagneticBase">
+    <defName>Ammo_12GaugeElectromagnetic_ElectroSlug</defName>
+    <label>12 gauge electromagnetic shell (EMP)</label>
+    <graphicData>
+      <texPath>Things/Ammo/Shotgun/EMP</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <statBases>
+      <Mass>0.054</Mass>
+      <MarketValue>0.87</MarketValue>
+    </statBases>
+    <ammoClass>ElectroSlug</ammoClass>
+    <generateAllowChance>0.5</generateAllowChance>
+    <cookOffProjectile>Bullet_12GaugeElectromagnetic_ElectroSlug</cookOffProjectile>
+  </ThingDef>
+
+  <!-- ================== Projectiles ================== -->
+
+  <ThingDef Name="Base12GaugeElectromagneticBullet" ParentName="BaseBulletCE" Abstract="true">
+    <projectile Class="CombatExtended.ProjectilePropertiesCE">
+      <damageDef>Bullet</damageDef>
+      <speed>80</speed>
+    </projectile>
+  </ThingDef>
+
+  <ThingDef ParentName="Base12GaugeElectromagneticBullet">
+    <defName>Bullet_12GaugeElectromagnetic_Buck</defName>
+    <label>buckshot pellet</label>
+	<thingClass>BillDoorsFramework.PenetratingBulletCE</thingClass>
+    <graphicData>
+      <texPath>Things/Projectile/Electromagnetic_SG_rt</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile Class="CombatExtended.ProjectilePropertiesCE">
+      <damageAmountBase>9</damageAmountBase>
+      <pelletCount>12</pelletCount>
+      <armorPenetrationSharp>6</armorPenetrationSharp>
+      <armorPenetrationBlunt>7</armorPenetrationBlunt>
+      <spreadMult>8.9</spreadMult>
+    </projectile>
+	<modExtensions>
+		<li Class="BillDoorsFramework.ModExtension_PenetratingProjectile">
+			<overpenDamageMulti>0.8</overpenDamageMulti>
+			<stopperDamageMulti>1.225</stopperDamageMulti>
+			<penetrationPotentialMultiplier>1</penetrationPotentialMultiplier>
+		</li>
+	</modExtensions>
+  </ThingDef>
+
+  <ThingDef ParentName="Base12GaugeElectromagneticBullet">
+    <defName>Bullet_12GaugeElectromagnetic_Slug</defName>
+    <label>shotgun slug</label>
+	<thingClass>BillDoorsFramework.PenetratingBulletCE</thingClass>
+    <graphicData>
+      <texPath>Things/Projectile/Electromagnetic_SG_rt</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile Class="CombatExtended.ProjectilePropertiesCE">
+      <speed>110</speed>
+      <damageAmountBase>37</damageAmountBase>
+      <armorPenetrationSharp>9</armorPenetrationSharp>
+      <armorPenetrationBlunt>144.8</armorPenetrationBlunt>
+    </projectile>
+	<modExtensions>
+		<li Class="BillDoorsFramework.ModExtension_PenetratingProjectile">
+			<overpenDamageMulti>0.8</overpenDamageMulti>
+			<stopperDamageMulti>1.225</stopperDamageMulti>
+			<penetrationPotentialMultiplier>3</penetrationPotentialMultiplier>
+		</li>
+	</modExtensions>
+  </ThingDef>
+
+  <ThingDef ParentName="Base12GaugeElectromagneticBullet">
+    <defName>Bullet_12GaugeElectromagnetic_ElectroSlug</defName>
+    <label>EMP slug</label>
+	<thingClass>BillDoorsFramework.PenetratingBulletCE</thingClass>
+    <graphicData>
+      <texPath>Things/Projectile/Electromagnetic_SG_rt</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile Class="CombatExtended.ProjectilePropertiesCE">
+      <speed>80</speed>
+      <damageDef>EMP</damageDef>
+      <damageAmountBase>22</damageAmountBase>
+      <armorPenetrationSharp>0</armorPenetrationSharp>
+      <armorPenetrationBlunt>0</armorPenetrationBlunt>
+      <empShieldBreakChance>0.2</empShieldBreakChance>
+    </projectile>
+	<modExtensions>
+		<li Class="BillDoorsFramework.ModExtension_PenetratingProjectile">
+			<overpenDamageMulti>0.8</overpenDamageMulti>
+			<stopperDamageMulti>1.225</stopperDamageMulti>
+			<penetrationPotentialMultiplier>1</penetrationPotentialMultiplier>
+		</li>
+	</modExtensions>
+  </ThingDef>
+
+  <!-- ==================== Recipes ========================== -->
+
+  <RecipeDef ParentName="AmmoRecipeBase">
+    <defName>MakeAmmo_12GaugeElectromagnetic_Buck</defName>
+    <label>make 12 gauge (Buck) shell x200</label>
+    <description>Craft 200 12 gauge (Buck) shells.</description>
+    <jobString>Making 12 gauge (Buck) shells.</jobString>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>22</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>Steel</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <Ammo_12GaugeElectromagnetic_Buck>200</Ammo_12GaugeElectromagnetic_Buck>
+    </products>
+    <workAmount>2200</workAmount>
+  </RecipeDef>
+
+  <RecipeDef ParentName="AmmoRecipeBase">
+    <defName>MakeAmmo_12GaugeElectromagnetic_Slug</defName>
+    <label>make 12 gauge (Slug) shell x200</label>
+    <description>Craft 200 12 gauge (Slug) shells.</description>
+    <jobString>Making 12 gauge (Slug) shells.</jobString>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>20</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>Steel</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <Ammo_12GaugeElectromagnetic_Slug>200</Ammo_12GaugeElectromagnetic_Slug>
+    </products>
+    <workAmount>2000</workAmount>
+  </RecipeDef>
+
+  <RecipeDef ParentName="AmmoRecipeBase">
+    <defName>MakeAmmo_12GaugeElectromagnetic_ElectroSlug</defName>
+    <label>make 12 gauge (EMP) shell x200</label>
+    <description>Craft 200 12 gauge (EMP) shells.</description>
+    <jobString>Making 12 gauge (EMP) shells.</jobString>
+    <researchPrerequisite>MicroelectronicsBasics</researchPrerequisite>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>22</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentIndustrial</li>
+          </thingDefs>
+        </filter>
+        <count>4</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>Steel</li>
+        <li>ComponentIndustrial</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <Ammo_12GaugeElectromagnetic_ElectroSlug>200</Ammo_12GaugeElectromagnetic_ElectroSlug>
+    </products>
+    <workAmount>4600</workAmount>
+  </RecipeDef>
+
+</Defs>

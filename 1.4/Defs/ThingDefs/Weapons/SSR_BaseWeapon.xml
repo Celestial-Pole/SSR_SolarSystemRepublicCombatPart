@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+<ThingCategoryDef>
+		<defName>SSR_Weapons</defName>
+		<label>太阳系共和国武器</label>
+		<parent>Weapons</parent>
+  </ThingCategoryDef>
+
+  <ThingDef Abstract="True" Name="SSR_BaseWeapon">
+    <thingClass>ThingWithComps</thingClass>
+    <category>Item</category>
+    <drawerType>MapMeshOnly</drawerType>
+    <drawGUIOverlay>true</drawGUIOverlay>
+    <altitudeLayer>Item</altitudeLayer>
+    <alwaysHaulable>true</alwaysHaulable>
+    <tickerType>Never</tickerType>
+    <equipmentType>Primary</equipmentType>
+    <useHitPoints>false</useHitPoints>
+    <pathCost>14</pathCost>
+    <selectable>true</selectable>
+	  <techLevel>Spacer</techLevel>
+    <statBases>
+      <Flammability>0</Flammability>
+      <DeteriorationRate>0</DeteriorationRate>
+      <Beauty>0</Beauty>
+      <SellPriceFactor>1</SellPriceFactor>
+    </statBases>
+	  <thingCategories>
+      <li>SSR_Weapons</li>
+    </thingCategories>
+	  <recipeMaker>
+	    <researchPrerequisite>AdvancedFabrication</researchPrerequisite>
+	    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Machining</soundWorking>
+	    <recipeUsers>
+        <li>FabricationBench</li>
+      </recipeUsers>
+	    <unfinishedThingDef>UnfinishedGun</unfinishedThingDef>
+    </recipeMaker>
+    <comps>
+      <li Class="CompProperties_Forbiddable"/>      
+      <li>
+        <compClass>CompEquippable</compClass>
+      </li>
+	    <li>
+        <compClass>CompQuality</compClass>
+      </li>
+      <li Class="CompProperties_Styleable"></li>
+    </comps>
+    <graphicData>
+      <onGroundRandomRotateAngle>35</onGroundRandomRotateAngle>
+    </graphicData>
+    <allowedArchonexusCount>1</allowedArchonexusCount>
+  </ThingDef>
+
+  <ThingDef Abstract="True" Name="SSR_BaseWeapon_Mech">
+    <thingClass>ThingWithComps</thingClass>
+    <category>Item</category>
+    <drawerType>MapMeshOnly</drawerType>
+    <drawGUIOverlay>true</drawGUIOverlay>
+    <altitudeLayer>Item</altitudeLayer>
+    <alwaysHaulable>true</alwaysHaulable>
+    <tickerType>Never</tickerType>
+    <equipmentType>Primary</equipmentType>
+    <useHitPoints>false</useHitPoints>
+    <pathCost>14</pathCost>
+    <selectable>true</selectable>
+	  <techLevel>Spacer</techLevel>
+    <statBases>
+      <Flammability>0</Flammability>
+      <DeteriorationRate>0</DeteriorationRate>
+      <Beauty>0</Beauty>
+      <SellPriceFactor>1</SellPriceFactor>
+    </statBases>
+	  <thingCategories>
+      <li>SSR_Weapons</li>
+    </thingCategories>
+    <comps>
+      <li Class="CompProperties_Forbiddable"/>      
+      <li>
+        <compClass>CompEquippable</compClass>
+      </li>
+	    <li>
+        <compClass>CompQuality</compClass>
+      </li>
+      <li Class="CompProperties_Styleable"></li>
+    </comps>
+    <graphicData>
+      <onGroundRandomRotateAngle>35</onGroundRandomRotateAngle>
+    </graphicData>
+    <allowedArchonexusCount>1</allowedArchonexusCount>
+  </ThingDef>
+
+</Defs>

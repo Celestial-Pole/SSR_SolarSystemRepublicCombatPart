@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <SSR_BuildCombatRobot_SMG.label>build combat robot(SMG)</SSR_BuildCombatRobot_SMG.label>
+  <SSR_BuildCombatRobot_SMG.description>Build a combat robot(SMG).</SSR_BuildCombatRobot_SMG.description>
+  <SSR_BuildCombatRobot_AR.label>build combat robot(AR)</SSR_BuildCombatRobot_AR.label>
+  <SSR_BuildCombatRobot_AR.description>Build a combat robot(AR).</SSR_BuildCombatRobot_AR.description>
+  <SSR_BuildCombatRobot_SG.label>build combat robot(SG)</SSR_BuildCombatRobot_SG.label>
+  <SSR_BuildCombatRobot_SG.description>Build a combat robot(SG).</SSR_BuildCombatRobot_SG.description>
+
+
+</LanguageData>

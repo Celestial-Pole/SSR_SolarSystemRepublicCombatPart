@@ -1,0 +1,14 @@
+E:\SteamLibrary\steamapps\common\RimWorld\Mods\Template-master\1.4\Assemblies\Template.dll
+E:\SteamLibrary\steamapps\common\RimWorld\Mods\Template-master\.vscode\obj\Debug\mod.csproj.AssemblyReference.cache
+E:\SteamLibrary\steamapps\common\RimWorld\Mods\Template-master\.vscode\obj\Debug\mod.GeneratedMSBuildEditorConfig.editorconfig
+E:\SteamLibrary\steamapps\common\RimWorld\Mods\Template-master\.vscode\obj\Debug\mod.AssemblyInfoInputs.cache
+E:\SteamLibrary\steamapps\common\RimWorld\Mods\Template-master\.vscode\obj\Debug\mod.AssemblyInfo.cs
+E:\SteamLibrary\steamapps\common\RimWorld\Mods\Template-master\.vscode\obj\Debug\mod.csproj.CoreCompileInputs.cache
+E:\SteamLibrary\steamapps\common\RimWorld\Mods\Template-master\.vscode\obj\Debug\Template.dll
+E:\SteamLibrary\steamapps\common\RimWorld\Mods\SolarSystemRepublicCombatPart\1.4\Assemblies\SSRCP_Libs.dll
+E:\SteamLibrary\steamapps\common\RimWorld\Mods\SolarSystemRepublicCombatPart\.vscode\obj\Debug\mod.csproj.AssemblyReference.cache
+E:\SteamLibrary\steamapps\common\RimWorld\Mods\SolarSystemRepublicCombatPart\.vscode\obj\Debug\mod.GeneratedMSBuildEditorConfig.editorconfig
+E:\SteamLibrary\steamapps\common\RimWorld\Mods\SolarSystemRepublicCombatPart\.vscode\obj\Debug\mod.AssemblyInfoInputs.cache
+E:\SteamLibrary\steamapps\common\RimWorld\Mods\SolarSystemRepublicCombatPart\.vscode\obj\Debug\mod.AssemblyInfo.cs
+E:\SteamLibrary\steamapps\common\RimWorld\Mods\SolarSystemRepublicCombatPart\.vscode\obj\Debug\mod.csproj.CoreCompileInputs.cache
+E:\SteamLibrary\steamapps\common\RimWorld\Mods\SolarSystemRepublicCombatPart\.vscode\obj\Debug\SSRCP_Libs.dll

@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <Electromagnetic_AR.label>Electromagnetic AR</Electromagnetic_AR.label>
+  <Electromagnetic_AR.description>The standard assault rifles of the early Earth Federation era had a longer range and could do more damage to their targets than conventional gunpowder rifles, which used projectiles accelerated by electromagnetic tracks.</Electromagnetic_AR.description>
+  <Electromagnetic_AR.tools.0.label>stock</Electromagnetic_AR.tools.0.label>
+  <Electromagnetic_AR.tools.1.label>barrel</Electromagnetic_AR.tools.1.label>
+
+  <Electromagnetic_AR_rt.label>Electromagnetic AR Bullet</Electromagnetic_AR_rt.label>
+
+  <Electromagnetic_SMG.label>Electromagnetic SMG</Electromagnetic_SMG.label>
+  <Electromagnetic_SMG.description>The universal submachine gun of the early Earth Federation era, the high-rate electromagnetic submachine gun has a good suppressive power in close combat. Although the penetration is somewhat diminished compared to the assault rifle, it is sufficient in close combat and reduces the possibility of friendly fire.</Electromagnetic_SMG.description>
+  <Electromagnetic_SMG.tools.0.label>stock</Electromagnetic_SMG.tools.0.label>
+  <Electromagnetic_SMG.tools.1.label>barrel</Electromagnetic_SMG.tools.1.label>
+
+  <Electromagnetic_SMG_rt.label>Electromagnetic SMG Bullet</Electromagnetic_SMG_rt.label>
+
+  <Electromagnetic_HG.label>Electromagnetic HG</Electromagnetic_HG.label>
+  <Electromagnetic_HG.description>Electromagnetic HG were generally used as the sidearm of officers or secondary weapons of soldiers in the early Earth Federation era, mainly for self-defense in emergency situations.</Electromagnetic_HG.description>
+  <Electromagnetic_HG.tools.0.label>stock</Electromagnetic_HG.tools.0.label>
+  <Electromagnetic_HG.tools.1.label>barrel</Electromagnetic_HG.tools.1.label>
+
+  <Electromagnetic_HG_rt.label>Electromagnetic HG Bullet</Electromagnetic_HG_rt.label>
+
+  <Electromagnetic_SG.label>Electromagnetic SG</Electromagnetic_SG.label>
+  <Electromagnetic_SG.description>Shotguns of the early Earth Federation era were widely praised by the military and police for their performance in street and indoor combat. The electromagnetic orbit enhanced the penetration of shotguns, making them effective against light armor such as body armor.</Electromagnetic_SG.description>
+  <Electromagnetic_SG.tools.0.label>stock</Electromagnetic_SG.tools.0.label>
+  <Electromagnetic_SG.tools.1.label>barrel</Electromagnetic_SG.tools.1.label>
+
+  <Electromagnetic_SG_rt.label>Electromagnetic SG Bullet</Electromagnetic_SG_rt.label>
+
+  <Electromagnetic_SR.label>Electromagnetic SR</Electromagnetic_SR.label>
+  <Electromagnetic_SR.description>The long magnetic track and advanced smart sight allow the user of this sniper rifle to accurately hit the target at a distance without the assistance of the observer. The high penetration brought by the high speed of the projectile allows the electromagnetic sniper rifle to penetrate the thick armor relatively easily.</Electromagnetic_SR.description>
+  <Electromagnetic_SR.tools.0.label>stock</Electromagnetic_SR.tools.0.label>
+  <Electromagnetic_SR.tools.1.label>barrel</Electromagnetic_SR.tools.1.label>
+
+  <Electromagnetic_SR_rt.label>Electromagnetic SR Bullet</Electromagnetic_SR_rt.label>
+
+  <Electromagnetic_AMR.label>Electromagnetic AMR</Electromagnetic_AMR.label>
+  <Electromagnetic_AMR.description>The weapon was originally designed to break through APS with heavier armor, a longer track and larger diameter are in order to achieve this goal and make a design. Although counted as individual weapons, Electromagnetic AMR often require an exoskeleton or AST armor to work properly.</Electromagnetic_AMR.description>
+  <Electromagnetic_AMR.tools.0.label>stock</Electromagnetic_AMR.tools.0.label>
+  <Electromagnetic_AMR.tools.1.label>barrel</Electromagnetic_AMR.tools.1.label>
+
+  <Electromagnetic_AMR_rt.label>Electromagnetic AMR Bullet</Electromagnetic_AMR_rt.label>
+
+
+</LanguageData>

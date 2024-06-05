@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- High-explosive -->
+
+  <SSR_Shell_ElectromagneticHighExplosive.label>electromagnetic high-explosive shell</SSR_Shell_ElectromagneticHighExplosive.label>
+  <SSR_Shell_ElectromagneticHighExplosive.description>electromagnetic high-explosive shell</SSR_Shell_ElectromagneticHighExplosive.description>
+
+  <SSR_Bullet_Shell_ElectromagneticHighExplosive.label>electromagnetic high-explosive shell(curved fire)</SSR_Bullet_Shell_ElectromagneticHighExplosive.label>
+  <SSR_Bullet_Shell_ElectromagneticHighExplosiveII.label>electromagnetic high-explosive shell(flat fire)</SSR_Bullet_Shell_ElectromagneticHighExplosiveII.label>
+
+</LanguageData>

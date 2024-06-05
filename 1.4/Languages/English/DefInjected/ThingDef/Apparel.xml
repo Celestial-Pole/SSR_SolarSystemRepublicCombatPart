@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Armor -->
+
+  <SSR_PoweredExoskeletonLeotard.label>mechanically assisted frame protective leotard</SSR_PoweredExoskeletonLeotard.label>
+  <SSR_PoweredExoskeletonLeotard.description>mechanically assisted frame protective leotard</SSR_PoweredExoskeletonLeotard.description>
+
+  <SSR_Powered_Exoskeleton.label>powered exoskeleton</SSR_Powered_Exoskeleton.label>
+  <SSR_Powered_Exoskeleton.description>powered exoskeleton</SSR_Powered_Exoskeleton.description>
+  <SSR_Powered_Exoskeleton.comps.2.verbProps.0.label>maneuver jump</SSR_Powered_Exoskeleton.comps.2.verbProps.0.label>
+  <SSR_Powered_Exoskeleton.comps.2.verbProps.0.description>maneuver jump</SSR_Powered_Exoskeleton.comps.2.verbProps.0.description>
+  <SSR_Powered_Exoskeleton.verbs.0.label>maneuver jump</SSR_Powered_Exoskeleton.verbs.0.label>
+
+  <SSR_Armoured_Support_Transport.label>armoured support transport</SSR_Armoured_Support_Transport.label>
+  <SSR_Armoured_Support_Transport.description>armoured support transport</SSR_Armoured_Support_Transport.description>
+  <SSR_Armoured_Support_Transport.comps.2.verbProps.0.label>launch a rocket</SSR_Armoured_Support_Transport.comps.2.verbProps.0.label>
+  <SSR_Armoured_Support_Transport.comps.2.verbProps.0.description>launch a rocket</SSR_Armoured_Support_Transport.comps.2.verbProps.0.description>
+  <SSR_Armoured_Support_Transport.verbs.0.label>launch a rocket</SSR_Armoured_Support_Transport.verbs.0.label>
+
+  <SSR_BasicPowerArmorLeotard.label>basic power armor leotard</SSR_BasicPowerArmorLeotard.label>
+  <SSR_BasicPowerArmorLeotard.description>basic power armor leotard</SSR_BasicPowerArmorLeotard.description>
+
+  <SSR_BasicPowerArmor.label>basic power armor</SSR_BasicPowerArmor.label>
+  <SSR_BasicPowerArmor.description>basic power armor</SSR_BasicPowerArmor.description>
+  <SSR_BasicPowerArmor.comps.2.verbProps.0.label>maneuver jump</SSR_BasicPowerArmor.comps.2.verbProps.0.label>
+  <SSR_BasicPowerArmor.comps.2.verbProps.0.description>maneuver jump</SSR_BasicPowerArmor.comps.2.verbProps.0.description>
+  <SSR_BasicPowerArmor.verbs.0.label>maneuver jump</SSR_BasicPowerArmor.verbs.0.label>
+
+  <SSR_AdvancedPowerArmorLeotard.label>advanced power armor leotard</SSR_AdvancedPowerArmorLeotard.label>
+  <SSR_AdvancedPowerArmorLeotard.description>advanced power armor leotard</SSR_AdvancedPowerArmorLeotard.description>
+
+  <SSR_AdvancedPowerArmor.label>advanced power armor</SSR_AdvancedPowerArmor.label>
+  <SSR_AdvancedPowerArmor.description>advanced power armor</SSR_AdvancedPowerArmor.description>
+  <SSR_AdvancedPowerArmor.comps.4.verbProps.0.label>maneuver jump</SSR_AdvancedPowerArmor.comps.4.verbProps.0.label>
+  <SSR_AdvancedPowerArmor.comps.4.verbProps.0.description>maneuver jump</SSR_AdvancedPowerArmor.comps.4.verbProps.0.description>
+  <SSR_AdvancedPowerArmor.verbs.0.label>maneuver jump</SSR_AdvancedPowerArmor.verbs.0.label>
+
+  <SSR_DefenderPowerArmorLeotard.label>defender power armor leotard</SSR_DefenderPowerArmorLeotard.label>
+  <SSR_DefenderPowerArmorLeotard.description>defender power armor leotard</SSR_DefenderPowerArmorLeotard.description>
+
+  <SSR_Defender_PowerArmor.label>defender power armor</SSR_Defender_PowerArmor.label>
+  <SSR_Defender_PowerArmor.description>defender power armor</SSR_Defender_PowerArmor.description>
+  <SSR_Defender_PowerArmor.comps.4.verbProps.0.label>maneuver jump</SSR_Defender_PowerArmor.comps.4.verbProps.0.label>
+  <SSR_Defender_PowerArmor.comps.4.verbProps.0.description>maneuver jump</SSR_Defender_PowerArmor.comps.4.verbProps.0.description>
+  <SSR_Defender_PowerArmor.verbs.0.label>maneuver jump</SSR_Defender_PowerArmor.verbs.0.label>
+
+  <SSR_Defender_PowerArmor_HeavyType.label>heavy type defender power armor</SSR_Defender_PowerArmor_HeavyType.label>
+  <SSR_Defender_PowerArmor_HeavyType.description>heavy type defender power armor</SSR_Defender_PowerArmor_HeavyType.description>
+  <SSR_Defender_PowerArmor_HeavyType.comps.4.verbProps.0.label>maneuver jump</SSR_Defender_PowerArmor_HeavyType.comps.4.verbProps.0.label>
+  <SSR_Defender_PowerArmor_HeavyType.comps.4.verbProps.0.description>maneuver jump</SSR_Defender_PowerArmor_HeavyType.comps.4.verbProps.0.description>
+  <SSR_Defender_PowerArmor_HeavyType.comps.4.verbProps.1.label>launch the antimatter gun</SSR_Defender_PowerArmor_HeavyType.comps.4.verbProps.1.label>
+  <SSR_Defender_PowerArmor_HeavyType.comps.4.verbProps.1.description>launch the antimatter gun</SSR_Defender_PowerArmor_HeavyType.comps.4.verbProps.1.description>
+  <SSR_Defender_PowerArmor_HeavyType.verbs.0.label>launch the antimatter gun</SSR_Defender_PowerArmor_HeavyType.verbs.0.label>
+  <SSR_Defender_PowerArmor_HeavyType.verbs.1.label>maneuver jump</SSR_Defender_PowerArmor_HeavyType.verbs.1.label>
+
+
+  <!-- Helmet -->
+
+  <SSR_Powered_Exoskeleton_Helmet.label>powered exoskeleton helmet</SSR_Powered_Exoskeleton_Helmet.label>
+  <SSR_Powered_Exoskeleton_Helmet.description>powered exoskeleton helmet</SSR_Powered_Exoskeleton_Helmet.description>
+
+  <SSR_BasicPowerArmor_Helmet.label>basic power armor helmet</SSR_BasicPowerArmor_Helmet.label>
+  <SSR_BasicPowerArmor_Helmet.description>basic power armor helmet</SSR_BasicPowerArmor_Helmet.description>
+
+  <SSR_AdvancedPowerArmor_Helmet.label>advanced power armor helmet</SSR_AdvancedPowerArmor_Helmet.label>
+  <SSR_AdvancedPowerArmor_Helmet.description>advanced power armor helmet</SSR_AdvancedPowerArmor_Helmet.description>
+
+  <SSR_Defender_PowerArmor_Helmet.label>defender power armor helmet</SSR_Defender_PowerArmor_Helmet.label>
+  <SSR_Defender_PowerArmor_Helmet.description>defender power armor helmet</SSR_Defender_PowerArmor_Helmet.description>
+
+
+</LanguageData>

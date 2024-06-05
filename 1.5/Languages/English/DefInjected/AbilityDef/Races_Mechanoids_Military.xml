@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Militor -->
+
+  <X_LongjumpMech.label>maneuver jump</X_LongjumpMech.label>
+  <X_LongjumpMech.description>maneuver jump</X_LongjumpMech.description>
+  <X_LongjumpMech.verbProperties.label>jump</X_LongjumpMech.verbProperties.label>
+
+
+</LanguageData>

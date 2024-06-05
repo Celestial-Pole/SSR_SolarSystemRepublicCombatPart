@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- High-explosive -->
+
+  <ThingDef ParentName="MakeableShellBase">
+    <defName>SSR_Shell_ElectromagneticHighExplosive</defName>
+    <label>电磁高爆弹</label>
+    <description>电磁高爆弹</description>
+    <possessionCount>1</possessionCount>
+    <graphicData>
+      <texPath>Things/Item/Resource/Shell/Shell_HighExplosive</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <comps>
+      <li Class="CompProperties_Explosive">
+        <explosiveRadius>2.9</explosiveRadius>
+        <explosiveDamageType>BombSuper</explosiveDamageType>
+        <explosiveExpandPerStackcount>0.4</explosiveExpandPerStackcount>
+        <startWickHitPointsPercent>0.7</startWickHitPointsPercent>
+        <wickTicks>30~60</wickTicks>
+      </li>
+    </comps>
+    <projectileWhenLoaded>SSR_Bullet_Shell_ElectromagneticHighExplosive</projectileWhenLoaded>
+    <costList>
+	  <Plasteel>20</Plasteel>
+      <Steel>20</Steel>
+      <Chemfuel>15</Chemfuel>
+    </costList>
+    <costListForDifficulty>
+      <difficultyVar>classicMortars</difficultyVar>
+      <costList>
+        <Plasteel>20</Plasteel>
+        <Steel>20</Steel>
+        <Chemfuel>15</Chemfuel>
+      </costList>
+    </costListForDifficulty>
+    <recipeMaker>
+		<researchPrerequisites>
+			<li>Mortars</li>
+			<li>ChargedShot</li>
+		</researchPrerequisites>
+    </recipeMaker>
+  </ThingDef>
+  
+  <ThingDef ParentName="BaseBullet">
+    <defName>SSR_Bullet_Shell_ElectromagneticHighExplosive</defName>
+    <label>电磁高爆弹（跨射）</label>
+    <graphicData>
+      <texPath>Things/Projectile/ShellHighExplosive</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>TransparentPostLight</shaderType>
+    </graphicData>
+    <thingClass>Projectile_Explosive</thingClass>
+    <projectile>
+      <damageDef>BombSuper</damageDef>
+      <!-- damage amount is the damage def default -->
+      <speed>300</speed>
+      <explosionRadius>2.9</explosionRadius>
+      <extraDamages>
+			  <li>
+				  <def>EMP</def>
+          <amount>20</amount>
+			  </li>
+		  </extraDamages>
+      <flyOverhead>true</flyOverhead>
+      <soundHitThickRoof>Artillery_HitThickRoof</soundHitThickRoof>
+      <soundExplode>MortarBomb_Explode</soundExplode>
+      <soundImpactAnticipate>MortarRound_PreImpact</soundImpactAnticipate>
+      <soundAmbient>MortarRound_Ambient</soundAmbient>
+    </projectile>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseBullet">
+    <defName>SSR_Bullet_Shell_ElectromagneticHighExplosiveII</defName>
+    <label>电磁高爆弹（平射）</label>
+    <graphicData>
+      <texPath>Things/Projectile/ShellHighExplosive</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>TransparentPostLight</shaderType>
+    </graphicData>
+    <thingClass>Projectile_Explosive</thingClass>
+    <projectile>
+      <damageDef>BombSuper</damageDef>
+      <!-- damage amount is the damage def default -->
+      <speed>300</speed>
+      <explosionRadius>2.9</explosionRadius>
+      <extraDamages>
+			  <li>
+				  <def>EMP</def>
+          <amount>20</amount>
+			  </li>
+		  </extraDamages>
+      <flyOverhead>false</flyOverhead>
+      <soundHitThickRoof>Artillery_HitThickRoof</soundHitThickRoof>
+      <soundExplode>MortarBomb_Explode</soundExplode>
+      <soundImpactAnticipate>MortarRound_PreImpact</soundImpactAnticipate>
+      <soundAmbient>MortarRound_Ambient</soundAmbient>
+    </projectile>
+  </ThingDef>
+
+</Defs>

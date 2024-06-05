@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <MYDE_AF_RotorCraft_Retribution_Base.label>Retribution-class destroyer</MYDE_AF_RotorCraft_Retribution_Base.label>
+  <MYDE_AF_RotorCraft_Retribution_Base.description>Retribution-class destroyer.
+  Maximum crew: 300
+Maximum load: 1000000kg
+Maximum fuel: 8000
+World map Fuel consumption per cell: 1
+Airborne armament: 3 naval gun, 12 CIWS</MYDE_AF_RotorCraft_Retribution_Base.description>
+
+
+  <!-- 跨地图 -->
+
+  <MYDE_AF_Skyfalller_RotorCraft_H9ArmedTransportAircraft_CrossMapThing.label>H9 armed transport aircraft(Leaving)</MYDE_AF_Skyfalller_RotorCraft_H9ArmedTransportAircraft_CrossMapThing.label>
+  <MYDE_AF_RotorCraft_Retribution_Base.comps.CompRefuelable.outOfFuelMessage>Needs Fuel</MYDE_AF_RotorCraft_Retribution_Base.comps.CompRefuelable.outOfFuelMessage>
+  <MYDE_AF_RotorCraft_Retribution_Base.comps.Comp_MoveToTargetAndHover.Hover_Icon_On_Label>Hover：On</MYDE_AF_RotorCraft_Retribution_Base.comps.Comp_MoveToTargetAndHover.Hover_Icon_On_Label>
+  <MYDE_AF_RotorCraft_Retribution_Base.comps.Comp_MoveToTargetAndHover.Hover_Icon_Off_Label>Hover：Off</MYDE_AF_RotorCraft_Retribution_Base.comps.Comp_MoveToTargetAndHover.Hover_Icon_Off_Label>
+  <MYDE_AF_RotorCraft_Retribution_Base.comps.Comp_MoveToTargetAndHover.Hover_Icon_Description>Whether to turn on or off the hovering of the aerocraft</MYDE_AF_RotorCraft_Retribution_Base.comps.Comp_MoveToTargetAndHover.Hover_Icon_Description>
+  <MYDE_AF_RotorCraft_Retribution_Base.comps.Comp_MoveToTargetAndHover.TakeOffAndLanding_Icon_On_Label>Take off</MYDE_AF_RotorCraft_Retribution_Base.comps.Comp_MoveToTargetAndHover.TakeOffAndLanding_Icon_On_Label>
+  <MYDE_AF_RotorCraft_Retribution_Base.comps.Comp_MoveToTargetAndHover.TakeOffAndLanding_Icon_Off_Label>Landing</MYDE_AF_RotorCraft_Retribution_Base.comps.Comp_MoveToTargetAndHover.TakeOffAndLanding_Icon_Off_Label>
+  <MYDE_AF_RotorCraft_Retribution_Base.comps.Comp_MoveToTargetAndHover.TakeOffAndLanding_Icon_Description>Switch between takeoff and landing.</MYDE_AF_RotorCraft_Retribution_Base.comps.Comp_MoveToTargetAndHover.TakeOffAndLanding_Icon_Description>
+  <MYDE_AF_RotorCraft_Retribution_Base.comps.Comp_CarryPawn.Gizmos_CarryPawn_Label>Fast loading</MYDE_AF_RotorCraft_Retribution_Base.comps.Comp_CarryPawn.Gizmos_CarryPawn_Label>
+  <MYDE_AF_RotorCraft_Retribution_Base.comps.Comp_CarryPawn.Gizmos_CarryPawn_Description>Fast loading colonizers within the surrounding 5x5 range</MYDE_AF_RotorCraft_Retribution_Base.comps.Comp_CarryPawn.Gizmos_CarryPawn_Description>
+  <MYDE_AF_RotorCraft_Retribution_Base.comps.Comp_CanCrossMap.CrossMap_Label>Cross Map</MYDE_AF_RotorCraft_Retribution_Base.comps.Comp_CanCrossMap.CrossMap_Label>
+  <MYDE_AF_RotorCraft_Retribution_Base.comps.Comp_CanCrossMap.CrossMap_Description>Cross map, no open space can be selected as the target location. To avoid situations where it is impossible to return, please ensure that there is sufficient fuel for round-trip travel</MYDE_AF_RotorCraft_Retribution_Base.comps.Comp_CanCrossMap.CrossMap_Description>
+
+
+</LanguageData>
