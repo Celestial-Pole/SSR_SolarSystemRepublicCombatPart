@@ -17,11 +17,11 @@
 			<downloadUrl>https://github.com/pardeike/HarmonyRimWorld</downloadUrl>
 			<steamWorkshopUrl/>
 		</li>
-		<li>
+		<!--<li>
 			<packageId>3HSTltd.Framework</packageId>
 			<displayName>Bill Doors' Framework</displayName>
 			<steamWorkshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2897160312</steamWorkshopUrl>
-		</li>
+		</li>-->
 		<!--<li>
 			<packageId>OskarPotocki.VanillaFactionsExpanded.Core</packageId>
 			<displayName>Vanilla Expanded Framework</displayName>
