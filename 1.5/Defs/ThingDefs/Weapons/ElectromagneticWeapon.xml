@@ -26,7 +26,7 @@
 			</skillRequirements>
 		</recipeMaker>
 		<costList>
-			<SSR_SpecialSteel>15</SSR_SpecialSteel>
+			<SSR_SpecialSteel>20</SSR_SpecialSteel>
 			<SSR_StrongElectromagnet>3</SSR_StrongElectromagnet>
 			<SSR_SuperconductingMaterial>1</SSR_SuperconductingMaterial>
 			<ComponentIndustrial>10</ComponentIndustrial>
@@ -109,7 +109,7 @@
 			</skillRequirements>
 		</recipeMaker>
 		<costList>
-			<SSR_SpecialSteel>10</SSR_SpecialSteel>
+			<SSR_SpecialSteel>15</SSR_SpecialSteel>
 			<SSR_StrongElectromagnet>2</SSR_StrongElectromagnet>
 			<SSR_SuperconductingMaterial>1</SSR_SuperconductingMaterial>
 			<ComponentIndustrial>10</ComponentIndustrial>
@@ -191,7 +191,7 @@
 			</skillRequirements>
 		</recipeMaker>
 		<costList>
-			<SSR_SpecialSteel>7</SSR_SpecialSteel>
+			<SSR_SpecialSteel>10</SSR_SpecialSteel>
 			<SSR_StrongElectromagnet>1</SSR_StrongElectromagnet>
 			<SSR_SuperconductingMaterial>1</SSR_SuperconductingMaterial>
 			<ComponentIndustrial>10</ComponentIndustrial>
@@ -358,7 +358,7 @@
 			</skillRequirements>
 		</recipeMaker>
 		<costList>
-			<SSR_SpecialSteel>15</SSR_SpecialSteel>
+			<SSR_SpecialSteel>25</SSR_SpecialSteel>
 			<SSR_StrongElectromagnet>4</SSR_StrongElectromagnet>
 			<SSR_SuperconductingMaterial>1</SSR_SuperconductingMaterial>
 			<ComponentIndustrial>10</ComponentIndustrial>
@@ -442,7 +442,7 @@
 			</skillRequirements>
 		</recipeMaker>
 		<costList>
-			<SSR_SpecialSteel>25</SSR_SpecialSteel>
+			<SSR_SpecialSteel>30</SSR_SpecialSteel>
 			<SSR_StrongElectromagnet>5</SSR_StrongElectromagnet>
 			<SSR_SuperconductingMaterial>3</SSR_SuperconductingMaterial>
 			<ComponentIndustrial>15</ComponentIndustrial>
@@ -526,8 +526,8 @@
 			</skillRequirements>
 		</recipeMaker>
 		<costList>
-			<SSR_SpecialSteel>17</SSR_SpecialSteel>
-			<SSR_StrongElectromagnet>5</SSR_StrongElectromagnet>
+			<SSR_SpecialSteel>45</SSR_SpecialSteel>
+			<SSR_StrongElectromagnet>7</SSR_StrongElectromagnet>
 			<SSR_SuperconductingMaterial>2</SSR_SuperconductingMaterial>
 			<ComponentIndustrial>15</ComponentIndustrial>
 		</costList>
