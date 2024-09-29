@@ -4,7 +4,7 @@
 	<!--=============== Mini-turret ===============-->
 
 	<ThingDef ParentName="BuildingBase">
-		<defName>Turret_SentryGun</defName>
+		<defName>SSR_Turret_SentryGun</defName>
 		<label>哨戒机枪</label>
 		<description>哨戒机枪是一种轻便高效的防御设施，可卸载的底座使其能够被快速拆解和安装在必要的位置，不过便携的特性让哨戒机枪无法拥有充沛的载弹量。</description>
 		<thingClass>Building_TurretGun</thingClass>
@@ -50,7 +50,7 @@
 				<outOfFuelMessage>Needs new barrel</outOfFuelMessage>
 				<fuelFilter>
 					<thingDefs>
-						<li>Steel</li>
+						<li>SSR_SpecialSteel</li>
 					</thingDefs>
 				</fuelFilter>
 				<fuelCapacity>360</fuelCapacity><!-- 30 bursts -->
@@ -104,8 +104,8 @@
 	</ThingDef>
 
 	<ThingDef ParentName="BaseBullet">
-		<defName>Bullet_SentryGun</defName>
-		<label>Sentry-Gun bullet</label>
+		<defName>SSR_Bullet_SentryGun</defName>
+		<label>哨戒机枪子弹</label>
 		<graphicData>
 			<texPath>Things/Projectile/Bullet_Small</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -118,8 +118,8 @@
 	</ThingDef>
 
 	<ThingDef ParentName="BaseWeaponTurret">
-		<defName>Gun_SentryGun</defName>
-		<label>Sentry-Gun</label>
+		<defName>SSR_Gun_SentryGun</defName>
+		<label>哨戒机枪</label>
 		<description>A simple automatic gun made to be mounted on a turret.</description>
 		<graphicData>
 			<texPath>Things/Building/Security/SentryGun_Top</texPath>
