@@ -121,7 +121,7 @@
 				<defaultProjectile>SSR_Electromagnetic_SMG_rt</defaultProjectile>
 				<warmupTime>0.5</warmupTime>
 				<range>30</range>
-				<ticksBetweenBurstShots>10</ticksBetweenBurstShots>
+				<ticksBetweenBurstShots>5</ticksBetweenBurstShots>
 				<burstShotCount>6</burstShotCount>
 				<soundCast>ElectromagneticLt</soundCast>
 				<soundCastTail>GunTail_Medium</soundCastTail>
@@ -442,9 +442,9 @@
 			</skillRequirements>
 		</recipeMaker>
 		<costList>
-			<SSR_SpecialSteel>30</SSR_SpecialSteel>
-			<SSR_StrongElectromagnet>5</SSR_StrongElectromagnet>
-			<SSR_SuperconductingMaterial>3</SSR_SuperconductingMaterial>
+			<SSR_SpecialSteel>60</SSR_SpecialSteel>
+			<SSR_StrongElectromagnet>10</SSR_StrongElectromagnet>
+			<SSR_SuperconductingMaterial>5</SSR_SuperconductingMaterial>
 			<ComponentIndustrial>15</ComponentIndustrial>
 		</costList>
 		<verbs>
@@ -454,7 +454,7 @@
 				<defaultProjectile>SSR_Electromagnetic_MG_rt</defaultProjectile>
 				<warmupTime>1.75</warmupTime>
 				<range>50</range>
-				<ticksBetweenBurstShots>3</ticksBetweenBurstShots>
+				<ticksBetweenBurstShots>5</ticksBetweenBurstShots>
 				<burstShotCount>15</burstShotCount>
 				<soundCast>ElectromagneticLt</soundCast>
 				<soundCastTail>GunTail_Medium</soundCastTail>
