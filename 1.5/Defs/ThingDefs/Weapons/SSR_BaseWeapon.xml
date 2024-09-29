@@ -35,7 +35,6 @@
 			<effectWorking>Smith</effectWorking>
 			<soundWorking>Recipe_Machining</soundWorking>
 			<recipeUsers>
-				<li>FabricationBench</li>
 				<li>SSR_NumericalControlledMachineTool</li>
 			</recipeUsers>
 			<unfinishedThingDef>UnfinishedGun</unfinishedThingDef>
