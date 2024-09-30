@@ -45,9 +45,9 @@
 			<li Class="CompProperties_Flickable"/>
 			<li Class="CompProperties_Breakdownable"/>
 			<li Class="CompProperties_Refuelable">
-				<fuelLabel>Shots until barrel change</fuelLabel>
-				<fuelGizmoLabel>Barrel durability</fuelGizmoLabel>
-				<outOfFuelMessage>Needs new barrel</outOfFuelMessage>
+				<fuelLabel>射击直到炮管报废</fuelLabel>
+				<fuelGizmoLabel>炮管耐久度</fuelGizmoLabel>
+				<outOfFuelMessage>需要新炮管</outOfFuelMessage>
 				<fuelFilter>
 					<thingDefs>
 						<li>SSR_SpecialSteel</li>
@@ -84,7 +84,7 @@
 		<building>
 			<combatPower>45</combatPower><!-- same as a scavenger -->
 			<ai_combatDangerous>true</ai_combatDangerous>
-			<turretGunDef>Gun_SentryGun</turretGunDef>
+			<turretGunDef>SSR_Gun_SentryGun</turretGunDef>
 			<turretBurstWarmupTime>0.01</turretBurstWarmupTime>
 			<turretBurstCooldownTime>0</turretBurstCooldownTime>
 		</building>
@@ -138,7 +138,7 @@
 		<verbs>
 			<li>
 				<verbClass>Verb_Shoot</verbClass>
-				<defaultProjectile>Bullet_SentryGun</defaultProjectile>
+				<defaultProjectile>SSR_Bullet_SentryGun</defaultProjectile>
 				<warmupTime>0</warmupTime>
 				<range>38.9</range>
 				<ticksBetweenBurstShots>5</ticksBetweenBurstShots>

@@ -32,7 +32,7 @@
         <baseCost>3000</baseCost>
         <researchViewX>4</researchViewX>
         <researchViewY>2</researchViewY>
-    </ResearchProjectDef>
+    </ResearchProjectDef>-->
 
     <ResearchProjectDef ParentName="SSR_ResearchProjectIndustrial">
         <defName>SSRBasicTurret</defName>
@@ -49,7 +49,7 @@
         <baseCost>3000</baseCost>
         <researchViewX>5</researchViewX>
         <researchViewY>1.5</researchViewY>
-    </ResearchProjectDef>-->
+    </ResearchProjectDef>
 
 	<!--<ResearchProjectDef ParentName="SSR_ResearchProjectSpacer">
         <defName>SSRLaserWeapon</defName>
