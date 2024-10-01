@@ -16,11 +16,12 @@
 		<alwaysHaulable>true</alwaysHaulable>
 		<tickerType>Never</tickerType>
 		<equipmentType>Primary</equipmentType>
-		<useHitPoints>false</useHitPoints>
+		<useHitPoints>true</useHitPoints>
 		<pathCost>14</pathCost>
 		<selectable>true</selectable>
 		<statBases>
 			<Flammability>0</Flammability>
+			<MaxHitPoints>500</MaxHitPoints>
 			<DeteriorationRate>0</DeteriorationRate>
 			<Beauty>0</Beauty>
 			<SellPriceFactor>1</SellPriceFactor>

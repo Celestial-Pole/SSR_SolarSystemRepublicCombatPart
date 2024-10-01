@@ -102,21 +102,7 @@
 			</li>
 		</modExtensions>
 	</ThingDef>
-
-	<ThingDef ParentName="BaseBullet">
-		<defName>SSR_Bullet_SentryGun</defName>
-		<label>哨戒机枪子弹</label>
-		<graphicData>
-			<texPath>Things/Projectile/Bullet_Small</texPath>
-			<graphicClass>Graphic_Single</graphicClass>
-		</graphicData>
-		<projectile>
-			<damageDef>Bullet</damageDef>
-			<damageAmountBase>15</damageAmountBase>
-			<speed>120</speed>
-		</projectile>
-	</ThingDef>
-
+	
 	<ThingDef ParentName="BaseWeaponTurret">
 		<defName>SSR_Gun_SentryGun</defName>
 		<label>哨戒机枪</label>
@@ -149,6 +135,20 @@
 				<consumeFuelPerShot>1</consumeFuelPerShot>
 			</li>
 		</verbs>
+	</ThingDef>
+
+	<ThingDef ParentName="BaseBullet">
+		<defName>SSR_Bullet_SentryGun</defName>
+		<label>哨戒机枪子弹</label>
+		<graphicData>
+			<texPath>Things/Projectile/Bullet_Small</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<projectile>
+			<damageDef>Bullet</damageDef>
+			<damageAmountBase>15</damageAmountBase>
+			<speed>120</speed>
+		</projectile>
 	</ThingDef>
 
 </Defs>

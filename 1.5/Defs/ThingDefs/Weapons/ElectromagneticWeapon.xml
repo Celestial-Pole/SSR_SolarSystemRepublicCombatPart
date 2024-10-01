@@ -17,7 +17,7 @@
 			<AccuracyShort>1.00</AccuracyShort>
 			<AccuracyMedium>1.00</AccuracyMedium>
 			<AccuracyLong>0.85</AccuracyLong>
-			<RangedWeapon_Cooldown>1.50</RangedWeapon_Cooldown>
+			<RangedWeapon_Cooldown>1</RangedWeapon_Cooldown>
 		</statBases>
 		<recipeMaker>
 			<researchPrerequisite>SSRElectromagneticWeapon</researchPrerequisite>
@@ -38,7 +38,7 @@
 				<defaultProjectile>SSR_Electromagnetic_AR_rt</defaultProjectile>
 				<warmupTime>0.5</warmupTime>
 				<range>45</range>
-				<ticksBetweenBurstShots>10</ticksBetweenBurstShots>
+				<ticksBetweenBurstShots>7</ticksBetweenBurstShots>
 				<burstShotCount>3</burstShotCount>
 				<soundCast>ElectromagneticLt</soundCast>
 				<soundCastTail>GunTail_Medium</soundCastTail>
@@ -97,7 +97,7 @@
 			<AccuracyShort>1.00</AccuracyShort>
 			<AccuracyMedium>0.90</AccuracyMedium>
 			<AccuracyLong>0.65</AccuracyLong>
-			<RangedWeapon_Cooldown>1.50</RangedWeapon_Cooldown>
+			<RangedWeapon_Cooldown>0.85</RangedWeapon_Cooldown>
 		</statBases>
 		<recipeMaker>
 			<researchPrerequisite>SSRElectromagneticWeapon</researchPrerequisite>
@@ -179,7 +179,7 @@
 			<AccuracyShort>0.90</AccuracyShort>
 			<AccuracyMedium>0.75</AccuracyMedium>
 			<AccuracyLong>0.55</AccuracyLong>
-			<RangedWeapon_Cooldown>1.50</RangedWeapon_Cooldown>
+			<RangedWeapon_Cooldown>0.85</RangedWeapon_Cooldown>
 		</statBases>
 		<recipeMaker>
 			<researchPrerequisite>SSRElectromagneticWeapon</researchPrerequisite>
@@ -346,7 +346,7 @@
 			<AccuracyShort>0.85</AccuracyShort>
 			<AccuracyMedium>2.00</AccuracyMedium>
 			<AccuracyLong>2.00</AccuracyLong>
-			<RangedWeapon_Cooldown>1.50</RangedWeapon_Cooldown>
+			<RangedWeapon_Cooldown>1.25</RangedWeapon_Cooldown>
 		</statBases>
 		<recipeMaker>
 			<researchPrerequisite>SSRElectromagneticWeapon</researchPrerequisite>
@@ -369,7 +369,7 @@
 				<hasStandardCommand>true</hasStandardCommand>
 				<defaultProjectile>SSR_Electromagnetic_SR_rt</defaultProjectile>
 				<warmupTime>1.25</warmupTime>
-				<range>55</range>
+				<range>60</range>
 				<ticksBetweenBurstShots>10</ticksBetweenBurstShots>
 				<burstShotCount>1</burstShotCount>
 				<soundCast>ElectromagneticLt</soundCast>
@@ -407,7 +407,7 @@
 		</graphicData>
 		<projectile>
 			<damageDef>Bullet</damageDef>
-			<damageAmountBase>40</damageAmountBase>
+			<damageAmountBase>50</damageAmountBase>
 			<armorPenetrationBase>1.25</armorPenetrationBase>
 			<speed>150</speed>
 		</projectile>
@@ -453,7 +453,7 @@
 				<hasStandardCommand>true</hasStandardCommand>
 				<defaultProjectile>SSR_Electromagnetic_MG_rt</defaultProjectile>
 				<warmupTime>1.75</warmupTime>
-				<range>50</range>
+				<range>45</range>
 				<ticksBetweenBurstShots>5</ticksBetweenBurstShots>
 				<burstShotCount>15</burstShotCount>
 				<soundCast>ElectromagneticLt</soundCast>
@@ -491,7 +491,7 @@
 		</graphicData>
 		<projectile>
 			<damageDef>Bullet</damageDef>
-			<damageAmountBase>30</damageAmountBase>
+			<damageAmountBase>20</damageAmountBase>
 			<armorPenetrationBase>1</armorPenetrationBase>
 			<speed>150</speed>
 		</projectile>
