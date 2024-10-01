@@ -94,8 +94,7 @@
 		</placeWorkers>
 		<designationHotKey>Misc2</designationHotKey>
 		<researchPrerequisites>
-			<li>GunTurrets</li>
-			<li>MultibarrelWeapons</li>
+			<li>SSRBasicTurret</li>
 		</researchPrerequisites>
 		<modExtensions>
 			<li Class="SolarSystemRepublicFramework.DefModExtension_TurretMannable">

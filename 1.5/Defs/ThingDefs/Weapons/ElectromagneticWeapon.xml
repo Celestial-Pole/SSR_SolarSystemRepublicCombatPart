@@ -26,9 +26,9 @@
 			</skillRequirements>
 		</recipeMaker>
 		<costList>
-			<SSR_SpecialSteel>20</SSR_SpecialSteel>
-			<SSR_StrongElectromagnet>3</SSR_StrongElectromagnet>
-			<SSR_SuperconductingMaterial>1</SSR_SuperconductingMaterial>
+			<SSR_SpecialSteel>30</SSR_SpecialSteel>
+			<SSR_StrongElectromagnet>9</SSR_StrongElectromagnet>
+			<SSR_SuperconductingMaterial>3</SSR_SuperconductingMaterial>
 			<ComponentIndustrial>10</ComponentIndustrial>
 		</costList>
 		<verbs>
@@ -109,9 +109,9 @@
 			</skillRequirements>
 		</recipeMaker>
 		<costList>
-			<SSR_SpecialSteel>15</SSR_SpecialSteel>
-			<SSR_StrongElectromagnet>2</SSR_StrongElectromagnet>
-			<SSR_SuperconductingMaterial>1</SSR_SuperconductingMaterial>
+			<SSR_SpecialSteel>25</SSR_SpecialSteel>
+			<SSR_StrongElectromagnet>6</SSR_StrongElectromagnet>
+			<SSR_SuperconductingMaterial>3</SSR_SuperconductingMaterial>
 			<ComponentIndustrial>10</ComponentIndustrial>
 		</costList>
 		<verbs>
@@ -122,7 +122,7 @@
 				<warmupTime>0.5</warmupTime>
 				<range>30</range>
 				<ticksBetweenBurstShots>5</ticksBetweenBurstShots>
-				<burstShotCount>6</burstShotCount>
+				<burstShotCount>8</burstShotCount>
 				<soundCast>ElectromagneticLt</soundCast>
 				<soundCastTail>GunTail_Medium</soundCastTail>
 				<muzzleFlashScale>9</muzzleFlashScale>
@@ -191,9 +191,9 @@
 			</skillRequirements>
 		</recipeMaker>
 		<costList>
-			<SSR_SpecialSteel>10</SSR_SpecialSteel>
-			<SSR_StrongElectromagnet>1</SSR_StrongElectromagnet>
-			<SSR_SuperconductingMaterial>1</SSR_SuperconductingMaterial>
+			<SSR_SpecialSteel>20</SSR_SpecialSteel>
+			<SSR_StrongElectromagnet>3</SSR_StrongElectromagnet>
+			<SSR_SuperconductingMaterial>3</SSR_SuperconductingMaterial>
 			<ComponentIndustrial>10</ComponentIndustrial>
 		</costList>
 		<verbs>
@@ -358,10 +358,10 @@
 			</skillRequirements>
 		</recipeMaker>
 		<costList>
-			<SSR_SpecialSteel>25</SSR_SpecialSteel>
-			<SSR_StrongElectromagnet>4</SSR_StrongElectromagnet>
-			<SSR_SuperconductingMaterial>1</SSR_SuperconductingMaterial>
-			<ComponentIndustrial>10</ComponentIndustrial>
+			<SSR_SpecialSteel>35</SSR_SpecialSteel>
+			<SSR_StrongElectromagnet>12</SSR_StrongElectromagnet>
+			<SSR_SuperconductingMaterial>3</SSR_SuperconductingMaterial>
+			<ComponentIndustrial>15</ComponentIndustrial>
 		</costList>
 		<verbs>
 			<li>
@@ -443,10 +443,10 @@
 			</skillRequirements>
 		</recipeMaker>
 		<costList>
-			<SSR_SpecialSteel>60</SSR_SpecialSteel>
-			<SSR_StrongElectromagnet>10</SSR_StrongElectromagnet>
-			<SSR_SuperconductingMaterial>5</SSR_SuperconductingMaterial>
-			<ComponentIndustrial>15</ComponentIndustrial>
+			<SSR_SpecialSteel>70</SSR_SpecialSteel>
+			<SSR_StrongElectromagnet>30</SSR_StrongElectromagnet>
+			<SSR_SuperconductingMaterial>15</SSR_SuperconductingMaterial>
+			<ComponentIndustrial>20</ComponentIndustrial>
 		</costList>
 		<verbs>
 			<li>
@@ -528,10 +528,10 @@
 			</skillRequirements>
 		</recipeMaker>
 		<costList>
-			<SSR_SpecialSteel>45</SSR_SpecialSteel>
-			<SSR_StrongElectromagnet>7</SSR_StrongElectromagnet>
-			<SSR_SuperconductingMaterial>2</SSR_SuperconductingMaterial>
-			<ComponentIndustrial>15</ComponentIndustrial>
+			<SSR_SpecialSteel>55</SSR_SpecialSteel>
+			<SSR_StrongElectromagnet>21</SSR_StrongElectromagnet>
+			<SSR_SuperconductingMaterial>6</SSR_SuperconductingMaterial>
+			<ComponentIndustrial>20</ComponentIndustrial>
 		</costList>
 		<verbs>
 			<li>

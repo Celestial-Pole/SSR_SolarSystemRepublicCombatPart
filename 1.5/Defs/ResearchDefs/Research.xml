@@ -13,7 +13,7 @@
 			<li>SSRPrecisionMagneticFieldControl</li>
 			<li>SSRBasicPowerTechnology</li>
         </prerequisites>
-        <baseCost>3000</baseCost>
+        <baseCost>5000</baseCost>
         <researchViewX>4</researchViewX>
         <researchViewY>1</researchViewY>
     </ResearchProjectDef>
@@ -46,7 +46,7 @@
 			<li>SSRElectromagneticWeapon</li>
             <li>SSRBasicArmoredSafetyDoor</li>
         </prerequisites>
-        <baseCost>3000</baseCost>
+        <baseCost>5000</baseCost>
         <researchViewX>5</researchViewX>
         <researchViewY>1.5</researchViewY>
     </ResearchProjectDef>
