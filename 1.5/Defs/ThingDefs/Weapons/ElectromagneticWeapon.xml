@@ -455,7 +455,7 @@
 				<defaultProjectile>SSR_Electromagnetic_MG_rt</defaultProjectile>
 				<warmupTime>1.75</warmupTime>
 				<range>45</range>
-				<ticksBetweenBurstShots>5</ticksBetweenBurstShots>
+				<ticksBetweenBurstShots>3</ticksBetweenBurstShots>
 				<burstShotCount>15</burstShotCount>
 				<soundCast>ElectromagneticLt</soundCast>
 				<soundCastTail>GunTail_Medium</soundCastTail>
