@@ -76,7 +76,7 @@
 			<SSR_SpecialSteel>90</SSR_SpecialSteel>
 			<SSR_StrongElectromagnet>10</SSR_StrongElectromagnet>
 			<SSR_SuperconductingMaterial>5</SSR_SuperconductingMaterial>
-			<ComponentIndustrial>15</ComponentIndustrial>
+			<ComponentIndustrial>20</ComponentIndustrial>
 		</costList>
 		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
 		<designationCategory>Security</designationCategory>
