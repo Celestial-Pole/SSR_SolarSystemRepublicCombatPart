@@ -105,7 +105,7 @@
 	<ThingDef ParentName="BaseWeaponTurret">
 		<defName>SSR_Gun_SentryGun</defName>
 		<label>哨戒机枪</label>
-		<description>A simple automatic gun made to be mounted on a turret.</description>
+		<description>哨戒机枪。</description>
 		<graphicData>
 			<texPath>Things/Building/Security/SentryGun_Top</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -145,7 +145,7 @@
 		</graphicData>
 		<projectile>
 			<damageDef>Bullet</damageDef>
-			<damageAmountBase>15</damageAmountBase>
+			<damageAmountBase>10</damageAmountBase>
 			<stoppingPower>1.25</stoppingPower>
 			<speed>120</speed>
 		</projectile>
