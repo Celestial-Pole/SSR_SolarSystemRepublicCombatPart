@@ -76,7 +76,7 @@
 		<projectile>
 			<damageDef>Bullet</damageDef>
 			<damageAmountBase>20</damageAmountBase>
-			<armorPenetrationBase>0.75</armorPenetrationBase>
+			<armorPenetrationBase>0.55</armorPenetrationBase>
 			<speed>120</speed>
 		</projectile>
 	</ThingDef>
@@ -95,7 +95,7 @@
 			<Mass>2</Mass>
 			<AccuracyTouch>1.00</AccuracyTouch>
 			<AccuracyShort>1.00</AccuracyShort>
-			<AccuracyMedium>0.90</AccuracyMedium>
+			<AccuracyMedium>0.80</AccuracyMedium>
 			<AccuracyLong>0.65</AccuracyLong>
 			<RangedWeapon_Cooldown>0.85</RangedWeapon_Cooldown>
 		</statBases>
@@ -120,7 +120,7 @@
 				<hasStandardCommand>true</hasStandardCommand>
 				<defaultProjectile>SSR_Electromagnetic_SMG_rt</defaultProjectile>
 				<warmupTime>0.35</warmupTime>
-				<range>30</range>
+				<range>25</range>
 				<ticksBetweenBurstShots>5</ticksBetweenBurstShots>
 				<burstShotCount>8</burstShotCount>
 				<soundCast>ElectromagneticLt</soundCast>
@@ -158,7 +158,7 @@
 		<projectile>
 			<damageDef>Bullet</damageDef>
 			<damageAmountBase>10</damageAmountBase>
-			<armorPenetrationBase>0.55</armorPenetrationBase>
+			<armorPenetrationBase>0.5</armorPenetrationBase>
 			<speed>100</speed>
 		</projectile>
 	</ThingDef>
@@ -202,7 +202,7 @@
 				<hasStandardCommand>true</hasStandardCommand>
 				<defaultProjectile>SSR_Electromagnetic_HG_rt</defaultProjectile>
 				<warmupTime>0.35</warmupTime>
-				<range>25</range>
+				<range>20</range>
 				<ticksBetweenBurstShots>10</ticksBetweenBurstShots>
 				<burstShotCount>3</burstShotCount>
 				<soundCast>ElectromagneticLt</soundCast>
@@ -369,7 +369,7 @@
 				<hasStandardCommand>true</hasStandardCommand>
 				<defaultProjectile>SSR_Electromagnetic_SR_rt</defaultProjectile>
 				<warmupTime>1.25</warmupTime>
-				<range>60</range>
+				<range>55</range>
 				<ticksBetweenBurstShots>10</ticksBetweenBurstShots>
 				<burstShotCount>1</burstShotCount>
 				<soundCast>ElectromagneticLt</soundCast>
@@ -429,9 +429,9 @@
 			<Mass>4</Mass>
 			<AccuracyTouch>0.85</AccuracyTouch>
 			<AccuracyShort>0.85</AccuracyShort>
-			<AccuracyMedium>1.25</AccuracyMedium>
-			<AccuracyLong>1.25</AccuracyLong>
-			<RangedWeapon_Cooldown>1.75</RangedWeapon_Cooldown>
+			<AccuracyMedium>0.85</AccuracyMedium>
+			<AccuracyLong>0.75</AccuracyLong>
+			<RangedWeapon_Cooldown>2</RangedWeapon_Cooldown>
 		</statBases>
 		<recipeMaker>
 			<researchPrerequisite>SSRElectromagneticWeapon</researchPrerequisite>
@@ -494,7 +494,7 @@
 			<damageDef>Bullet</damageDef>
 			<damageAmountBase>20</damageAmountBase>
 			<armorPenetrationBase>1</armorPenetrationBase>
-			<stoppingPower>1.25</stoppingPower>
+			<stoppingPower>0.55</stoppingPower>
 			<speed>150</speed>
 		</projectile>
 	</ThingDef>
