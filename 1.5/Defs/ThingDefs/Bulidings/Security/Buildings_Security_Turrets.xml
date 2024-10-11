@@ -79,7 +79,7 @@
 			<ComponentIndustrial>20</ComponentIndustrial>
 		</costList>
 		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
-		<designationCategory>Security</designationCategory>
+		<designationCategory>SSR_DesignationCategory</designationCategory>
 		<constructionSkillPrerequisite>5</constructionSkillPrerequisite>
 		<building>
 			<combatPower>45</combatPower><!-- same as a scavenger -->
@@ -98,6 +98,10 @@
 		</researchPrerequisites>
 		<modExtensions>
 			<li Class="SolarSystemRepublicFramework.DefModExtension_TurretMannable">
+			</li>
+			<li Class="FS_SSR.UI.Ext_DesignationCategoryInner">
+				<!-- SSR_DesignationCategory分类的必须带此ext注明子分类 -->
+				<innerCategory>SSR_DesignationInnerCategory_Security</innerCategory>
 			</li>
 		</modExtensions>
 	</ThingDef>

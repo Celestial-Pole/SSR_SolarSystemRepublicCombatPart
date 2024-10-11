@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	
+	<Def Class="FS_SSR.UI.DesignationCategoryInnerDef">
+		<defName>SSR_DesignationInnerCategory_Security</defName>
+		<label>防卫</label>
+		<description>防卫</description>
+		<sortOrder>5</sortOrder>
+		<iconPath>UI/DesignationInnerCategory/Security</iconPath>
+	</Def>
+	
+</Defs>
