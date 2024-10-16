@@ -17,6 +17,12 @@
 			<downloadUrl>https://github.com/pardeike/HarmonyRimWorld</downloadUrl>
 			<steamWorkshopUrl/>
 		</li>
+		<li>
+			<packageId>SSR.Core</packageId>
+			<displayName>[SSR]Solar System Republic Core 太阳系共和国核心包</displayName>
+			<downloadUrl></downloadUrl>
+			<steamWorkshopUrl/>
+		</li>
 		<!--<li>
 			<packageId>3HSTltd.Framework</packageId>
 			<displayName>Bill Doors' Framework</displayName>
@@ -34,6 +40,7 @@
 		<li>MYDE.AerocraftFramework</li>
 		<li>OskarPotocki.VanillaFactionsExpanded.Core</li>
 		<li>SSR.Body</li>
+		<li>SSR.Core</li>
 		<li>ceteam.combatextended</li>
 	</loadAfter>
 </ModMetaData>
