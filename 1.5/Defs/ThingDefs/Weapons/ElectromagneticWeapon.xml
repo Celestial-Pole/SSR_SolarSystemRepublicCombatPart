@@ -431,7 +431,7 @@
 			<AccuracyShort>0.85</AccuracyShort>
 			<AccuracyMedium>0.85</AccuracyMedium>
 			<AccuracyLong>0.75</AccuracyLong>
-			<RangedWeapon_Cooldown>2</RangedWeapon_Cooldown>
+			<RangedWeapon_Cooldown>2.25</RangedWeapon_Cooldown>
 		</statBases>
 		<recipeMaker>
 			<researchPrerequisite>SSRElectromagneticWeapon</researchPrerequisite>
