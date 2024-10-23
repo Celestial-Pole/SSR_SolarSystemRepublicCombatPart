@@ -65,21 +65,9 @@
         <baseCost>7000</baseCost>
         <researchViewX>12</researchViewX>
         <researchViewY>0.5</researchViewY>
-		<modExtensions>
-			<li Class="FS_SSR.Research.Ext_AlterRequireLinked">
-				<alternativeRequires>
-					<li>
-						<requireAnyFacilityOf>
-							<li>SSR_QuantumComputingCluster</li>
-							<li>SSR_PhotonicComputingCluster</li>
-						</requireAnyFacilityOf>
-					</li>
-				</alternativeRequires>
-			</li>
-		</modExtensions>
     </ResearchProjectDef>-->
 
-	<!--<ResearchProjectDef ParentName="SSR_ResearchProjectSpacer">
+	<ResearchProjectDef ParentName="SSR_ResearchProjectSpacer">
         <defName>SSRAdvancedElectromagneticWeapon</defName>
         <label>高级电磁武器</label>
         <description>高级电磁武器。</description>
@@ -89,23 +77,12 @@
 		</requiredResearchFacilities>
 		<prerequisites>
 			<li>SSRHighDensityBattery</li>
+			<li>SSRElectromagneticWeapon</li>
         </prerequisites>
         <baseCost>7000</baseCost>
         <researchViewX>11</researchViewX>
         <researchViewY>1</researchViewY>
-		<modExtensions>
-			<li Class="FS_SSR.Research.Ext_AlterRequireLinked">
-				<alternativeRequires>
-					<li>
-						<requireAnyFacilityOf>
-							<li>SSR_QuantumComputingCluster</li>
-							<li>SSR_PhotonicComputingCluster</li>
-						</requireAnyFacilityOf>
-					</li>
-				</alternativeRequires>
-			</li>
-		</modExtensions>
-    </ResearchProjectDef>-->
+    </ResearchProjectDef>
 
 	<!--<ResearchProjectDef ParentName="SSR_ResearchProjectSpacer">
         <defName>SSRIntelligenceBullet</defName>
@@ -121,18 +98,6 @@
         <baseCost>4000</baseCost>
         <researchViewX>12</researchViewX>
         <researchViewY>1</researchViewY>
-		<modExtensions>
-			<li Class="FS_SSR.Research.Ext_AlterRequireLinked">
-				<alternativeRequires>
-					<li>
-						<requireAnyFacilityOf>
-							<li>SSR_QuantumComputingCluster</li>
-							<li>SSR_PhotonicComputingCluster</li>
-						</requireAnyFacilityOf>
-					</li>
-				</alternativeRequires>
-			</li>
-		</modExtensions>
     </ResearchProjectDef>-->
 
 	<!--<ResearchProjectDef ParentName="SSR_ResearchProjectSpacer">
@@ -150,18 +115,6 @@
         <baseCost>12000</baseCost>
         <researchViewX>11</researchViewX>
         <researchViewY>2</researchViewY>
-		<modExtensions>
-			<li Class="FS_SSR.Research.Ext_AlterRequireLinked">
-				<alternativeRequires>
-					<li>
-						<requireAnyFacilityOf>
-							<li>SSR_QuantumComputingCluster</li>
-							<li>SSR_PhotonicComputingCluster</li>
-						</requireAnyFacilityOf>
-					</li>
-				</alternativeRequires>
-			</li>
-		</modExtensions>
     </ResearchProjectDef>-->
 
 	<!--<ResearchProjectDef ParentName="SSR_ResearchProjectSpacer">
@@ -180,18 +133,6 @@
         <baseCost>9000</baseCost>
         <researchViewX>12</researchViewX>
         <researchViewY>1.5</researchViewY>
-		<modExtensions>
-			<li Class="FS_SSR.Research.Ext_AlterRequireLinked">
-				<alternativeRequires>
-					<li>
-						<requireAnyFacilityOf>
-							<li>SSR_QuantumComputingCluster</li>
-							<li>SSR_PhotonicComputingCluster</li>
-						</requireAnyFacilityOf>
-					</li>
-				</alternativeRequires>
-			</li>
-		</modExtensions>
     </ResearchProjectDef>-->
 
 	<!--<ResearchProjectDef ParentName="SSR_ResearchProjectSpacer">
@@ -210,18 +151,6 @@
         <baseCost>9000</baseCost>
         <researchViewX>12</researchViewX>
         <researchViewY>2</researchViewY>
-		<modExtensions>
-			<li Class="FS_SSR.Research.Ext_AlterRequireLinked">
-				<alternativeRequires>
-					<li>
-						<requireAnyFacilityOf>
-							<li>SSR_QuantumComputingCluster</li>
-							<li>SSR_PhotonicComputingCluster</li>
-						</requireAnyFacilityOf>
-					</li>
-				</alternativeRequires>
-			</li>
-		</modExtensions>
     </ResearchProjectDef>-->
 
 	<!--<ResearchProjectDef ParentName="SSR_ResearchProjectSpacer">
@@ -239,18 +168,6 @@
         <baseCost>13000</baseCost>
         <researchViewX>10</researchViewX>
         <researchViewY>2.5</researchViewY>
-		<modExtensions>
-			<li Class="FS_SSR.Research.Ext_AlterRequireLinked">
-				<alternativeRequires>
-					<li>
-						<requireAnyFacilityOf>
-							<li>SSR_QuantumComputingCluster</li>
-							<li>SSR_PhotonicComputingCluster</li>
-						</requireAnyFacilityOf>
-					</li>
-				</alternativeRequires>
-			</li>
-		</modExtensions>
     </ResearchProjectDef>-->
 	
 	<!--<ResearchProjectDef ParentName="SSR_ResearchProjectUltra">
@@ -268,7 +185,6 @@
         <baseCost>20000</baseCost>
         <researchViewX>15</researchViewX>
         <researchViewY>0.5</researchViewY>
-		
     </ResearchProjectDef>
 
 	<ResearchProjectDef ParentName="SSR_ResearchProjectUltra">

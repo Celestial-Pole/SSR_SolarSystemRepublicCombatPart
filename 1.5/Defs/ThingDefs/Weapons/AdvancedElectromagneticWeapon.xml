@@ -1,26 +1,26 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-	<ThingDef ParentName="SSR_Weapons_Industrial">
-		<defName>SSR_Electromagnetic_AR</defName>
-		<label>电磁步枪</label>
-		<description>地球联邦时代早期的制式突击步枪，相比于传统的火药步枪，使用电磁轨道加速弹丸的电磁步枪拥有更远的射程，也能对目标造成更大的伤害。</description>
+	<ThingDef ParentName="SSR_Weapons_Spacer">
+		<defName>SSR_AdvancedElectromagnetic_AR</defName>
+		<label>高级电磁步枪</label>
+		<description>。</description>
 		<graphicData>
-			<texPath>Things/Weapons/ElectromagneticWeapon/Electromagnetic_AR</texPath>
+			<texPath>Things/Weapons/AdvancedElectromagneticWeapon/AdvancedElectromagnetic_AR</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
 		<soundInteract>Interact_ChargeRifle</soundInteract>
 		<statBases>
-			<WorkToMake>45000</WorkToMake>
-			<Mass>3.5</Mass>
+			<WorkToMake>65000</WorkToMake>
+			<Mass>2.75</Mass>
 			<AccuracyTouch>1.00</AccuracyTouch>
 			<AccuracyShort>1.00</AccuracyShort>
 			<AccuracyMedium>1.00</AccuracyMedium>
-			<AccuracyLong>0.85</AccuracyLong>
+			<AccuracyLong>1.00</AccuracyLong>
 			<RangedWeapon_Cooldown>1</RangedWeapon_Cooldown>
 		</statBases>
 		<recipeMaker>
-			<researchPrerequisite>SSRElectromagneticWeapon</researchPrerequisite>
+			<researchPrerequisite>SSRAdvancedElectromagneticWeapon</researchPrerequisite>
 		</recipeMaker>
 		<costList>
 			<SSR_SpecialSteel>30</SSR_SpecialSteel>
@@ -32,9 +32,9 @@
 			<li>
 				<verbClass>Verb_Shoot</verbClass>
 				<hasStandardCommand>true</hasStandardCommand>
-				<defaultProjectile>SSR_Electromagnetic_AR_rt</defaultProjectile>
+				<defaultProjectile>SSR_AdvancedElectromagnetic_AR_rt</defaultProjectile>
 				<warmupTime>0.4</warmupTime>
-				<range>45</range>
+				<range>50</range>
 				<ticksBetweenBurstShots>7</ticksBetweenBurstShots>
 				<burstShotCount>5</burstShotCount>
 				<soundCast>ElectromagneticLt</soundCast>
@@ -64,40 +64,40 @@
 	</ThingDef>
 
 	<ThingDef ParentName="BaseBullet">
-		<defName>SSR_Electromagnetic_AR_rt</defName>
-		<label>电磁步枪子弹</label>
+		<defName>SSR_AdvancedElectromagnetic_AR_rt</defName>
+		<label>高级电磁步枪子弹</label>
 		<graphicData>
 			<texPath>Things/Projectile/Electromagnetic_AR_rt</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
 		<projectile>
 			<damageDef>Bullet</damageDef>
-			<damageAmountBase>20</damageAmountBase>
-			<armorPenetrationBase>0.55</armorPenetrationBase>
+			<damageAmountBase>35</damageAmountBase>
+			<armorPenetrationBase>0.75</armorPenetrationBase>
 			<speed>120</speed>
 		</projectile>
 	</ThingDef>
 
-	<ThingDef ParentName="SSR_Weapons_Industrial">
-		<defName>SSR_Electromagnetic_SMG</defName>
-		<label>电磁冲锋枪</label>
-		<description>地球联邦时代早期的通用冲锋枪，高射速的电磁冲锋枪在近距离战斗中有着不俗的压制力，虽然穿透力相对于突击步枪有所衰减，但是在近距离战斗中已经足够了，并且降低了误伤的可能性。</description>
+	<ThingDef ParentName="SSR_Weapons_Spacer">
+		<defName>SSR_AdvancedElectromagnetic_SMG</defName>
+		<label>高级电磁冲锋枪</label>
+		<description>。</description>
 		<graphicData>
-			<texPath>Things/Weapons/ElectromagneticWeapon/Electromagnetic_SMG</texPath>
+			<texPath>Things/Weapons/AdvancedElectromagneticWeapon/AdvancedElectromagnetic_SMG</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
 		<soundInteract>Interact_ChargeRifle</soundInteract>
 		<statBases>
-			<WorkToMake>30000</WorkToMake>
-			<Mass>2</Mass>
+			<WorkToMake>50000</WorkToMake>
+			<Mass>1.5</Mass>
 			<AccuracyTouch>1.00</AccuracyTouch>
 			<AccuracyShort>1.00</AccuracyShort>
-			<AccuracyMedium>0.80</AccuracyMedium>
-			<AccuracyLong>0.65</AccuracyLong>
+			<AccuracyMedium>0.95</AccuracyMedium>
+			<AccuracyLong>0.80</AccuracyLong>
 			<RangedWeapon_Cooldown>0.85</RangedWeapon_Cooldown>
 		</statBases>
 		<recipeMaker>
-			<researchPrerequisite>SSRElectromagneticWeapon</researchPrerequisite>
+			<researchPrerequisite>SSRAdvancedElectromagneticWeapon</researchPrerequisite>
 		</recipeMaker>
 		<costList>
 			<SSR_SpecialSteel>25</SSR_SpecialSteel>
@@ -109,9 +109,9 @@
 			<li>
 				<verbClass>Verb_Shoot</verbClass>
 				<hasStandardCommand>true</hasStandardCommand>
-				<defaultProjectile>SSR_Electromagnetic_SMG_rt</defaultProjectile>
+				<defaultProjectile>SSR_AdvancedElectromagnetic_SMG_rt</defaultProjectile>
 				<warmupTime>0.35</warmupTime>
-				<range>25</range>
+				<range>30</range>
 				<ticksBetweenBurstShots>5</ticksBetweenBurstShots>
 				<burstShotCount>8</burstShotCount>
 				<soundCast>ElectromagneticLt</soundCast>
@@ -140,40 +140,40 @@
 		</tools>
 	</ThingDef>
 	<ThingDef ParentName="BaseBullet">
-		<defName>SSR_Electromagnetic_SMG_rt</defName>
-		<label>电磁冲锋枪子弹</label>
+		<defName>SSR_AdvancedElectromagnetic_SMG_rt</defName>
+		<label>高级电磁冲锋枪子弹</label>
 		<graphicData>
 			<texPath>Things/Projectile/Electromagnetic_SMG_rt</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
 		<projectile>
 			<damageDef>Bullet</damageDef>
-			<damageAmountBase>10</damageAmountBase>
-			<armorPenetrationBase>0.5</armorPenetrationBase>
+			<damageAmountBase>20</damageAmountBase>
+			<armorPenetrationBase>0.7</armorPenetrationBase>
 			<speed>100</speed>
 		</projectile>
 	</ThingDef>
 
-	<ThingDef ParentName="SSR_Weapons_Industrial">
-		<defName>SSR_Electromagnetic_HG</defName>
-		<label>电磁手枪</label>
-		<description>电磁手枪一般作为地球联邦时代早期的军官配枪或者士兵的副武器使用，主要为紧急情况下的防身之用。</description>
+	<ThingDef ParentName="SSR_Weapons_Spacer">
+		<defName>SSR_AdvancedElectromagnetic_HG</defName>
+		<label>高级电磁手枪</label>
+		<description>。</description>
 		<graphicData>
-			<texPath>Things/Weapons/ElectromagneticWeapon/Electromagnetic_HG</texPath>
+			<texPath>Things/Weapons/AdvancedElectromagneticWeapon/AdvancedElectromagnetic_HG</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
 		<soundInteract>Interact_ChargeRifle</soundInteract>
 		<statBases>
-			<WorkToMake>25000</WorkToMake>
-			<Mass>0.5</Mass>
+			<WorkToMake>45000</WorkToMake>
+			<Mass>0.25</Mass>
 			<AccuracyTouch>1.00</AccuracyTouch>
-			<AccuracyShort>0.90</AccuracyShort>
-			<AccuracyMedium>0.75</AccuracyMedium>
-			<AccuracyLong>0.55</AccuracyLong>
+			<AccuracyShort>1.00</AccuracyShort>
+			<AccuracyMedium>0.85</AccuracyMedium>
+			<AccuracyLong>0.75</AccuracyLong>
 			<RangedWeapon_Cooldown>0.85</RangedWeapon_Cooldown>
 		</statBases>
 		<recipeMaker>
-			<researchPrerequisite>SSRElectromagneticWeapon</researchPrerequisite>
+			<researchPrerequisite>SSRAdvancedElectromagneticWeapon</researchPrerequisite>
 		</recipeMaker>
 		<costList>
 			<SSR_SpecialSteel>20</SSR_SpecialSteel>
@@ -185,9 +185,9 @@
 			<li>
 				<verbClass>Verb_Shoot</verbClass>
 				<hasStandardCommand>true</hasStandardCommand>
-				<defaultProjectile>SSR_Electromagnetic_HG_rt</defaultProjectile>
+				<defaultProjectile>SSR_AdvancedElectromagnetic_HG_rt</defaultProjectile>
 				<warmupTime>0.35</warmupTime>
-				<range>20</range>
+				<range>25</range>
 				<ticksBetweenBurstShots>10</ticksBetweenBurstShots>
 				<burstShotCount>3</burstShotCount>
 				<soundCast>ElectromagneticLt</soundCast>
@@ -217,40 +217,46 @@
 	</ThingDef>
 
 	<ThingDef ParentName="BaseBullet">
-		<defName>SSR_Electromagnetic_HG_rt</defName>
-		<label>电磁手枪子弹</label>
+		<defName>SSR_AdvancedElectromagnetic_HG_rt</defName>
+		<label>高级电磁手枪子弹</label>
 		<graphicData>
 			<texPath>Things/Projectile/Electromagnetic_HG_rt</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
 		<projectile>
 			<damageDef>Bullet</damageDef>
-			<damageAmountBase>10</damageAmountBase>
-			<armorPenetrationBase>0.45</armorPenetrationBase>
+			<damageAmountBase>20</damageAmountBase>
+			<armorPenetrationBase>0.65</armorPenetrationBase>
 			<speed>90</speed>
 		</projectile>
 	</ThingDef>
 
-	<!--<ThingDef ParentName="SSR_Weapons_Industrial">
-		<defName>SSR_Electromagnetic_SG</defName>
-		<label>电磁霰弹枪</label>
-		<description>地球联邦时代早期列装的霰弹枪，在巷战与室内战斗中展现的性能广受军警好评，电磁轨道强化了霰弹枪子弹的穿透效果，使其在面对防弹衣等轻型护甲的时候也能有效造成杀伤。</description>
+	<!--<ThingDef ParentName="SSR_Weapons_Spacer">
+		<defName>SSR_AdvancedElectromagnetic_SG</defName>
+		<label>高级电磁霰弹枪</label>
+		<description>。</description>
 		<graphicData>
-			<texPath>Things/Weapons/ElectromagneticWeapon/Electromagnetic_SG</texPath>
+			<texPath>Things/Weapons/AdvancedElectromagneticWeapon/AdvancedElectromagnetic_SG</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
 		<soundInteract>Interact_ChargeRifle</soundInteract>
 		<statBases>
 			<WorkToMake>43000</WorkToMake>
-			<Mass>3.5</Mass>
+			<Mass>2.75</Mass>
 			<AccuracyTouch>1.00</AccuracyTouch>
 			<AccuracyShort>1.00</AccuracyShort>
-			<AccuracyMedium>0.85</AccuracyMedium>
-			<AccuracyLong>0.65</AccuracyLong>
+			<AccuracyMedium>0.9</AccuracyMedium>
+			<AccuracyLong>0.85</AccuracyLong>
 			<RangedWeapon_Cooldown>1.50</RangedWeapon_Cooldown>
 		</statBases>
 		<recipeMaker>
-			<researchPrerequisite>SSRElectromagneticWeapon</researchPrerequisite>
+			<researchPrerequisite>SSRAdvancedElectromagneticWeapon</researchPrerequisite>
+			<recipeUsers>
+				<li>SSR_NumericalControlledMachineTool</li>
+			</recipeUsers>
+			<skillRequirements>
+				<Crafting>7</Crafting>
+			</skillRequirements>
 		</recipeMaker>
 		<costList>
 			<SSR_SpecialSteel>11</SSR_SpecialSteel>
@@ -262,9 +268,9 @@
 			<li>
 				<verbClass>BillDoorsFramework.Verb_ShootCustom</verbClass>
 				<hasStandardCommand>true</hasStandardCommand>
-				<defaultProjectile>SSR_Electromagnetic_SG_rt</defaultProjectile>
+				<defaultProjectile>SSR_AdvancedElectromagnetic_SG_rt</defaultProjectile>
 				<warmupTime>0.5</warmupTime>
-				<range>20</range>
+				<range>25</range>
 				<ticksBetweenBurstShots>10</ticksBetweenBurstShots>
 				<burstShotCount>1</burstShotCount>
 				<soundCast>ElectromagneticLt</soundCast>
@@ -294,41 +300,41 @@
 	</ThingDef>
 
 	<ThingDef ParentName="BaseBullet">
-		<defName>SSR_Electromagnetic_SG_rt</defName>
-		<label>电磁霰弹枪子弹</label>
+		<defName>SSR_AdvancedElectromagnetic_SG_rt</defName>
+		<label>高级电磁霰弹枪子弹</label>
 		<graphicData>
 			<texPath>Things/Projectile/Electromagnetic_SG_rt</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
 		<projectile>
 			<damageDef>Bullet</damageDef>
-			<damageAmountBase>5</damageAmountBase>
-			<armorPenetrationBase>0.55</armorPenetrationBase>
+			<damageAmountBase>10</damageAmountBase>
+			<armorPenetrationBase>0.75</armorPenetrationBase>
 			<speed>120</speed>
 		</projectile>
 	</ThingDef>-->
 	
-	<ThingDef ParentName="SSR_Weapons_Industrial">
-		<defName>SSR_Electromagnetic_SR</defName>
-		<label>电磁狙击枪</label>
-		<description>长磁轨加上先进的智能瞄具让这款狙击枪的使用者不需要观察手配合就能在远距离上精确命中目标，高弹速带来的高穿透力让电磁狙击枪可以较为轻松地击穿不厚重的护甲。</description>
+	<ThingDef ParentName="SSR_Weapons_Spacer">
+		<defName>SSR_AdvancedElectromagnetic_SR</defName>
+		<label>高级电磁狙击枪</label>
+		<description>。</description>
 		<graphicData>
-			<texPath>Things/Weapons/ElectromagneticWeapon/Electromagnetic_SR</texPath>
+			<texPath>Things/Weapons/AdvancedElectromagneticWeapon/AdvancedElectromagnetic_SR</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 			<drawSize>1.25</drawSize>
 		</graphicData>
 		<soundInteract>Interact_ChargeRifle</soundInteract>
 		<statBases>
-			<WorkToMake>70000</WorkToMake>
-			<Mass>3.75</Mass>
-			<AccuracyTouch>0.85</AccuracyTouch>
-			<AccuracyShort>0.85</AccuracyShort>
+			<WorkToMake>90000</WorkToMake>
+			<Mass>3</Mass>
+			<AccuracyTouch>0.95</AccuracyTouch>
+			<AccuracyShort>1.00</AccuracyShort>
 			<AccuracyMedium>2.00</AccuracyMedium>
 			<AccuracyLong>2.00</AccuracyLong>
 			<RangedWeapon_Cooldown>1.25</RangedWeapon_Cooldown>
 		</statBases>
 		<recipeMaker>
-			<researchPrerequisite>SSRElectromagneticWeapon</researchPrerequisite>
+			<researchPrerequisite>SSRAdvancedElectromagneticWeapon</researchPrerequisite>
 		</recipeMaker>
 		<costList>
 			<SSR_SpecialSteel>35</SSR_SpecialSteel>
@@ -340,9 +346,9 @@
 			<li>
 				<verbClass>Verb_Shoot</verbClass>
 				<hasStandardCommand>true</hasStandardCommand>
-				<defaultProjectile>SSR_Electromagnetic_SR_rt</defaultProjectile>
+				<defaultProjectile>SSR_AdvancedElectromagnetic_SR_rt</defaultProjectile>
 				<warmupTime>1.25</warmupTime>
-				<range>55</range>
+				<range>60</range>
 				<ticksBetweenBurstShots>10</ticksBetweenBurstShots>
 				<burstShotCount>1</burstShotCount>
 				<soundCast>ElectromagneticLt</soundCast>
@@ -372,42 +378,42 @@
 	</ThingDef>
 
 	<ThingDef ParentName="BaseBullet">
-		<defName>SSR_Electromagnetic_SR_rt</defName>
-		<label>电磁狙击枪子弹</label>
+		<defName>SSR_AdvancedElectromagnetic_SR_rt</defName>
+		<label>高级电磁狙击枪子弹</label>
 		<graphicData>
 			<texPath>Things/Projectile/Electromagnetic_SR_rt</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
 		<projectile>
 			<damageDef>Bullet</damageDef>
-			<damageAmountBase>50</damageAmountBase>
-			<armorPenetrationBase>1.25</armorPenetrationBase>
+			<damageAmountBase>80</damageAmountBase>
+			<armorPenetrationBase>1.45</armorPenetrationBase>
 			<stoppingPower>1.5</stoppingPower>
 			<speed>150</speed>
 		</projectile>
 	</ThingDef>
 
-	<ThingDef ParentName="SSR_Weapons_Industrial">
-		<defName>SSR_Electromagnetic_MG</defName>
-		<label>电磁机枪</label>
-		<description>地球联邦时代早期列装的轻机枪，电磁化带来的子弹重量降低与射击精度大幅提高使其在拥有较为轻便的携行重量的同时还拥有卓越的火力持续性。</description>
+	<ThingDef ParentName="SSR_Weapons_Spacer">
+		<defName>SSR_AdvancedElectromagnetic_MG</defName>
+		<label>高级电磁机枪</label>
+		<description>。</description>
 		<graphicData>
-			<texPath>Things/Weapons/ElectromagneticWeapon/Electromagnetic_MG</texPath>
+			<texPath>Things/Weapons/AdvancedElectromagneticWeapon/AdvancedElectromagnetic_MG</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 			<drawSize>1.25</drawSize>
 		</graphicData>
 		<soundInteract>Interact_ChargeRifle</soundInteract>
 		<statBases>
 			<WorkToMake>75000</WorkToMake>
-			<Mass>4</Mass>
+			<Mass>3.25</Mass>
 			<AccuracyTouch>0.85</AccuracyTouch>
-			<AccuracyShort>0.85</AccuracyShort>
-			<AccuracyMedium>0.85</AccuracyMedium>
-			<AccuracyLong>0.75</AccuracyLong>
+			<AccuracyShort>0.95</AccuracyShort>
+			<AccuracyMedium>1.00</AccuracyMedium>
+			<AccuracyLong>0.85</AccuracyLong>
 			<RangedWeapon_Cooldown>2.25</RangedWeapon_Cooldown>
 		</statBases>
 		<recipeMaker>
-			<researchPrerequisite>SSRElectromagneticWeapon</researchPrerequisite>
+			<researchPrerequisite>SSRAdvancedElectromagneticWeapon</researchPrerequisite>
 		</recipeMaker>
 		<costList>
 			<SSR_SpecialSteel>70</SSR_SpecialSteel>
@@ -419,9 +425,9 @@
 			<li>
 				<verbClass>Verb_Shoot</verbClass>
 				<hasStandardCommand>true</hasStandardCommand>
-				<defaultProjectile>SSR_Electromagnetic_MG_rt</defaultProjectile>
+				<defaultProjectile>SSR_AdvancedElectromagnetic_MG_rt</defaultProjectile>
 				<warmupTime>1.75</warmupTime>
-				<range>45</range>
+				<range>50</range>
 				<ticksBetweenBurstShots>3</ticksBetweenBurstShots>
 				<burstShotCount>15</burstShotCount>
 				<soundCast>ElectromagneticLt</soundCast>
@@ -451,42 +457,42 @@
 	</ThingDef>
 
 	<ThingDef ParentName="BaseBullet">
-		<defName>SSR_Electromagnetic_MG_rt</defName>
-		<label>电磁机枪子弹</label>
+		<defName>SSR_AdvancedElectromagnetic_MG_rt</defName>
+		<label>高级电磁机枪子弹</label>
 		<graphicData>
 			<texPath>Things/Projectile/Electromagnetic_MG_rt</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
 		<projectile>
 			<damageDef>Bullet</damageDef>
-			<damageAmountBase>20</damageAmountBase>
+			<damageAmountBase>35</damageAmountBase>
 			<armorPenetrationBase>1</armorPenetrationBase>
-			<stoppingPower>0.55</stoppingPower>
+			<stoppingPower>0.75</stoppingPower>
 			<speed>150</speed>
 		</projectile>
 	</ThingDef>
 
-	<ThingDef ParentName="SSR_Weapons_Industrial">
-		<defName>SSR_Electromagnetic_AMR</defName>
-		<label>反载具电磁炮</label>
-		<description>这种武器在诞生之初的目标就是为了突破主动防御系统，击穿载具厚重的装甲，更长的磁轨和更大的口径都是为了达成这一目标而做出的设计。虽然被算作单兵武器，但是反载具电磁炮往往需要装备外骨骼或者AST装甲才能正常使用。</description>
+	<ThingDef ParentName="SSR_Weapons_Spacer">
+		<defName>SSR_AdvancedElectromagnetic_AMR</defName>
+		<label>高级反载具电磁炮</label>
+		<description>。</description>
 		<graphicData>
-			<texPath>Things/Weapons/ElectromagneticWeapon/Electromagnetic_AMR</texPath>
+			<texPath>Things/Weapons/AdvancedElectromagneticWeapon/AdvancedElectromagnetic_AMR</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 			<drawSize>1.75</drawSize>
 		</graphicData>
 		<soundInteract>Interact_ChargeRifle</soundInteract>
 		<statBases>
 			<WorkToMake>85000</WorkToMake>
-			<Mass>25</Mass>
-			<AccuracyTouch>0.85</AccuracyTouch>
-			<AccuracyShort>0.90</AccuracyShort>
+			<Mass>20</Mass>
+			<AccuracyTouch>0.90</AccuracyTouch>
+			<AccuracyShort>0.95</AccuracyShort>
 			<AccuracyMedium>2.00</AccuracyMedium>
 			<AccuracyLong>2.00</AccuracyLong>
 			<RangedWeapon_Cooldown>1.50</RangedWeapon_Cooldown>
 		</statBases>
 		<recipeMaker>
-			<researchPrerequisite>SSRElectromagneticWeapon</researchPrerequisite>
+			<researchPrerequisite>SSRAdvancedElectromagneticWeapon</researchPrerequisite>
 		</recipeMaker>
 		<costList>
 			<SSR_SpecialSteel>55</SSR_SpecialSteel>
@@ -498,9 +504,9 @@
 			<li>
 				<verbClass>Verb_Shoot</verbClass>
 				<hasStandardCommand>true</hasStandardCommand>
-				<defaultProjectile>SSR_Electromagnetic_AMR_rt</defaultProjectile>
+				<defaultProjectile>SSR_AdvancedElectromagnetic_AMR_rt</defaultProjectile>
 				<warmupTime>2.0</warmupTime>
-				<range>65</range>
+				<range>70</range>
 				<ticksBetweenBurstShots>10</ticksBetweenBurstShots>
 				<burstShotCount>1</burstShotCount>
 				<soundCast>ElectromagneticLtII</soundCast>
@@ -530,16 +536,16 @@
 	</ThingDef>
 
 	<ThingDef ParentName="BaseBullet">
-		<defName>SSR_Electromagnetic_AMR_rt</defName>
-		<label>反载具电磁炮炮弹</label>
+		<defName>SSR_AdvancedElectromagnetic_AMR_rt</defName>
+		<label>高级反载具电磁炮炮弹</label>
 		<graphicData>
 			<texPath>Things/Projectile/Electromagnetic_AMR_rt</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
 		<projectile>
 			<damageDef>Bullet</damageDef>
-			<damageAmountBase>80</damageAmountBase>
-			<armorPenetrationBase>2.55</armorPenetrationBase>
+			<damageAmountBase>130</damageAmountBase>
+			<armorPenetrationBase>2.75</armorPenetrationBase>
 			<stoppingPower>3</stoppingPower>
 			<speed>200</speed>
 		</projectile>

@@ -59,5 +59,9 @@
 	<ThingDef Abstract="True" ParentName="SSR_Weapons" Name="SSR_Weapons_Industrial">
 		<techLevel>Industrial</techLevel>
 	</ThingDef>
+
+	<ThingDef Abstract="True" ParentName="SSR_Weapons" Name="SSR_Weapons_Spacer">
+		<techLevel>Spacer</techLevel>
+	</ThingDef>
 	
 </Defs>
