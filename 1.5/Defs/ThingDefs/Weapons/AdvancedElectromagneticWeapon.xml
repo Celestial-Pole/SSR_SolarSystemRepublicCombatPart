@@ -23,11 +23,13 @@
 			<researchPrerequisite>SSRAdvancedElectromagneticWeapon</researchPrerequisite>
 		</recipeMaker>
 		<costList>
-			<SSR_SpecialSteel>30</SSR_SpecialSteel>
-			<SSR_StrongElectromagnet>9</SSR_StrongElectromagnet>
-			<SSR_SuperconductingMaterial>3</SSR_SuperconductingMaterial>
-			<ComponentIndustrial>10</ComponentIndustrial>
-		</costList>
+			<SSR_NanoandMicroMechanicalComposite>480</SSR_NanoandMicroMechanicalComposite>
+			<SSR_StrongElectromagnet>15</SSR_StrongElectromagnet>
+			<SSR_SuperconductingMaterial>5</SSR_SuperconductingMaterial>
+			<SSR_HighDensityBattery>1</SSR_HighDensityBattery>
+			<ComponentSpacer>10</ComponentSpacer>
+		
+	</costList>
 		<verbs>
 			<li>
 				<verbClass>Verb_Shoot</verbClass>
@@ -100,10 +102,11 @@
 			<researchPrerequisite>SSRAdvancedElectromagneticWeapon</researchPrerequisite>
 		</recipeMaker>
 		<costList>
-			<SSR_SpecialSteel>25</SSR_SpecialSteel>
-			<SSR_StrongElectromagnet>6</SSR_StrongElectromagnet>
-			<SSR_SuperconductingMaterial>3</SSR_SuperconductingMaterial>
-			<ComponentIndustrial>10</ComponentIndustrial>
+			<SSR_NanoandMicroMechanicalComposite>400</SSR_NanoandMicroMechanicalComposite>
+			<SSR_StrongElectromagnet>10</SSR_StrongElectromagnet>
+			<SSR_SuperconductingMaterial>5</SSR_SuperconductingMaterial>
+			<SSR_HighDensityBattery>1</SSR_HighDensityBattery>
+			<ComponentSpacer>10</ComponentSpacer>
 		</costList>
 		<verbs>
 			<li>
@@ -176,10 +179,11 @@
 			<researchPrerequisite>SSRAdvancedElectromagneticWeapon</researchPrerequisite>
 		</recipeMaker>
 		<costList>
-			<SSR_SpecialSteel>20</SSR_SpecialSteel>
-			<SSR_StrongElectromagnet>3</SSR_StrongElectromagnet>
-			<SSR_SuperconductingMaterial>3</SSR_SuperconductingMaterial>
-			<ComponentIndustrial>10</ComponentIndustrial>
+			<SSR_NanoandMicroMechanicalComposite>320</SSR_NanoandMicroMechanicalComposite>
+			<SSR_StrongElectromagnet>5</SSR_StrongElectromagnet>
+			<SSR_SuperconductingMaterial>5</SSR_SuperconductingMaterial>
+			<SSR_HighDensityBattery>1</SSR_HighDensityBattery>
+			<ComponentSpacer>10</ComponentSpacer>
 		</costList>
 		<verbs>
 			<li>
@@ -259,10 +263,11 @@
 			</skillRequirements>
 		</recipeMaker>
 		<costList>
-			<SSR_SpecialSteel>11</SSR_SpecialSteel>
-			<SSR_StrongElectromagnet>3</SSR_StrongElectromagnet>
-			<SSR_SuperconductingMaterial>1</SSR_SuperconductingMaterial>
-			<ComponentIndustrial>10</ComponentIndustrial>
+			<SSR_NanoandMicroMechanicalComposite>450</SSR_NanoandMicroMechanicalComposite>
+			<SSR_StrongElectromagnet>5</SSR_StrongElectromagnet>
+			<SSR_SuperconductingMaterial>5</SSR_SuperconductingMaterial>
+			<SSR_HighDensityBattery>1</SSR_HighDensityBattery>
+			<ComponentSpacer>10</ComponentSpacer>
 		</costList>
 		<verbs>
 			<li>
@@ -337,10 +342,11 @@
 			<researchPrerequisite>SSRAdvancedElectromagneticWeapon</researchPrerequisite>
 		</recipeMaker>
 		<costList>
-			<SSR_SpecialSteel>35</SSR_SpecialSteel>
-			<SSR_StrongElectromagnet>12</SSR_StrongElectromagnet>
-			<SSR_SuperconductingMaterial>3</SSR_SuperconductingMaterial>
-			<ComponentIndustrial>20</ComponentIndustrial>
+			<SSR_NanoandMicroMechanicalComposite>560</SSR_NanoandMicroMechanicalComposite>
+			<SSR_StrongElectromagnet>15</SSR_StrongElectromagnet>
+			<SSR_SuperconductingMaterial>5</SSR_SuperconductingMaterial>
+			<SSR_HighDensityBattery>1</SSR_HighDensityBattery>
+			<ComponentSpacer>20</ComponentSpacer>
 		</costList>
 		<verbs>
 			<li>
@@ -416,10 +422,11 @@
 			<researchPrerequisite>SSRAdvancedElectromagneticWeapon</researchPrerequisite>
 		</recipeMaker>
 		<costList>
-			<SSR_SpecialSteel>70</SSR_SpecialSteel>
+			<SSR_NanoandMicroMechanicalComposite>1120</SSR_NanoandMicroMechanicalComposite>
 			<SSR_StrongElectromagnet>30</SSR_StrongElectromagnet>
 			<SSR_SuperconductingMaterial>15</SSR_SuperconductingMaterial>
-			<ComponentIndustrial>20</ComponentIndustrial>
+			<SSR_HighDensityBattery>1</SSR_HighDensityBattery>
+			<ComponentSpacer>20</ComponentSpacer>
 		</costList>
 		<verbs>
 			<li>
@@ -495,10 +502,11 @@
 			<researchPrerequisite>SSRAdvancedElectromagneticWeapon</researchPrerequisite>
 		</recipeMaker>
 		<costList>
-			<SSR_SpecialSteel>55</SSR_SpecialSteel>
-			<SSR_StrongElectromagnet>21</SSR_StrongElectromagnet>
-			<SSR_SuperconductingMaterial>6</SSR_SuperconductingMaterial>
-			<ComponentIndustrial>20</ComponentIndustrial>
+			<SSR_NanoandMicroMechanicalComposite>880</SSR_NanoandMicroMechanicalComposite>
+			<SSR_StrongElectromagnet>25</SSR_StrongElectromagnet>
+			<SSR_SuperconductingMaterial>10</SSR_SuperconductingMaterial>
+			<SSR_HighDensityBattery>1</SSR_HighDensityBattery>
+			<ComponentSpacer>20</ComponentSpacer>
 		</costList>
 		<verbs>
 			<li>
