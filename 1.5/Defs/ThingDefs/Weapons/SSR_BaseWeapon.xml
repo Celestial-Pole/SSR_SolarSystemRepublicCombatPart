@@ -19,6 +19,7 @@
 		<useHitPoints>true</useHitPoints>
 		<pathCost>14</pathCost>
 		<selectable>true</selectable>
+		<relicChance>0</relicChance>
 		<statBases>
 			<Flammability>0</Flammability>
 			<MaxHitPoints>500</MaxHitPoints>
@@ -45,9 +46,6 @@
 			<li>
 				<compClass>CompEquippable</compClass>
 			</li>
-			<li>
-				<compClass>CompQuality</compClass>
-			</li>
 			<li Class="CompProperties_Styleable"></li>
 		</comps>
 		<graphicData>
@@ -57,6 +55,15 @@
 	</ThingDef>
 
 	<ThingDef Abstract="True" ParentName="SSR_Weapons" Name="SSR_Weapons_Industrial">
+		<techLevel>Industrial</techLevel>
+		<comps>
+			<li>
+				<compClass>CompQuality</compClass>
+			</li>
+		</comps>
+	</ThingDef>
+
+	<ThingDef Abstract="True" ParentName="SSR_Weapons" Name="SSR_Weapons_Industrial_Anti-vehicle">
 		<techLevel>Industrial</techLevel>
 	</ThingDef>
 
