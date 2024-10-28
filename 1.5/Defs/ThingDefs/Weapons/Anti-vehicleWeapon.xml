@@ -21,10 +21,9 @@
 			<researchPrerequisite>SSRElectromagneticWeapon</researchPrerequisite>
 		</recipeMaker>
 		<costList>
-			<SSR_SpecialSteel>85</SSR_SpecialSteel>
-			<SSR_StrongElectromagnet>30</SSR_StrongElectromagnet>
-			<SSR_SuperconductingMaterial>15</SSR_SuperconductingMaterial>
-			<ComponentIndustrial>20</ComponentIndustrial>
+			<SSR_SpecialSteel>45</SSR_SpecialSteel>
+			<SSR_SuperconductingMaterial>5</SSR_SuperconductingMaterial>
+			<ComponentIndustrial>5</ComponentIndustrial>
 		</costList>
 		<verbs>
 			<li>
