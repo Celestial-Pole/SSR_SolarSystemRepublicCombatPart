@@ -4,7 +4,7 @@
 	<ThingDef ParentName="SSR_Weapons_Industrial_Anti-vehicle">
 		<defName>SSR_T1Anti-tankRocketLauncher</defName>
 		<label>反坦克火箭筒</label>
-		<description>反坦克火箭筒</description>
+		<description>反坦克火箭筒这一古老武器直到地球联邦时代仍在使用，这种一次性反装甲武器简单便携，能够有效对付多种装甲目标。</description>
 		<tickerType>Normal</tickerType>
 		<smeltable>false</smeltable>
 		<graphicData>
