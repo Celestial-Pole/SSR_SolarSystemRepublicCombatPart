@@ -18,7 +18,7 @@
 			<RangedWeapon_Cooldown>3</RangedWeapon_Cooldown>
 		</statBases>
 		<recipeMaker>
-			<researchPrerequisite>SSRElectromagneticWeapon</researchPrerequisite>
+			<researchPrerequisite>SSRAnti-vehicleWeapon</researchPrerequisite>
 		</recipeMaker>
 		<costList>
 			<SSR_SpecialSteel>45</SSR_SpecialSteel>
@@ -65,7 +65,7 @@
 	
 	<ThingDef ParentName="BaseBullet">
 		<defName>SSR_T1Anti-tankRocketLauncher_rt</defName>
-		<label>doomsday rocket</label>
+		<label>反坦克火箭弹</label>
 		<graphicData>
 			<texPath>Things/Projectile/Rocket_Big</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -75,7 +75,7 @@
 		<projectile>
 			<damageDef>SSR_BombAnti-vehicle_Industrial</damageDef>
 			<!-- Use default damage from explosion def -->
-			<explosionRadius>3.5</explosionRadius>
+			<explosionRadius>1</explosionRadius>
 			<speed>200</speed>
 		</projectile>
 	</ThingDef>

@@ -12,11 +12,11 @@
     <hediffSolid>Crack</hediffSolid>
     <harmAllLayersUntilOutside>true</harmAllLayersUntilOutside>
     <impactSoundType>Blunt</impactSoundType>
-    <armorCategory>Sharp</armorCategory>
+    <armorCategory>Blunt</armorCategory>
     <minDamageToFragment>15</minDamageToFragment>
     <defaultDamage>50</defaultDamage>
-    <defaultStoppingPower>0.5</defaultStoppingPower>
-    <defaultArmorPenetration>0.10</defaultArmorPenetration>
+    <defaultStoppingPower>1.0</defaultStoppingPower>
+    <defaultArmorPenetration>0.5</defaultArmorPenetration>
     <buildingDamageFactorImpassable>4</buildingDamageFactorImpassable>
     <buildingDamageFactorPassable>2</buildingDamageFactorPassable>
     <plantDamageFactor>4</plantDamageFactor>

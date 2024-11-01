@@ -1,5 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Defs>
+
+	<ResearchProjectDef ParentName="SSR_ResearchProjectIndustrial">
+		<defName>SSRAnti-vehicleWeapon</defName>
+		<label>反装甲武器</label>
+		<description>这些拥有悠久服役历史的或直射或制导的单兵反装甲武器在地球联邦时代依旧在战场上发光发热。</description>
+		<requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+		<requiredResearchFacilities>
+			<li>SSR_DataTerminal</li>
+		</requiredResearchFacilities>
+		<prerequisites>
+			<li>SSRBasicManufacturingTechnology</li>
+		</prerequisites>
+		<baseCost>3000</baseCost>
+		<researchViewX>2</researchViewX>
+		<researchViewY>1</researchViewY>
+	</ResearchProjectDef>
 	
 	<ResearchProjectDef ParentName="SSR_ResearchProjectIndustrial">
         <defName>SSRElectromagneticWeapon</defName>

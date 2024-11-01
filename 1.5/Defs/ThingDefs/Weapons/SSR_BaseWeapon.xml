@@ -69,6 +69,11 @@
 
 	<ThingDef Abstract="True" ParentName="SSR_Weapons" Name="SSR_Weapons_Spacer">
 		<techLevel>Spacer</techLevel>
+		<comps>
+			<li>
+				<compClass>CompQuality</compClass>
+			</li>
+		</comps>
 	</ThingDef>
 	
 </Defs>
