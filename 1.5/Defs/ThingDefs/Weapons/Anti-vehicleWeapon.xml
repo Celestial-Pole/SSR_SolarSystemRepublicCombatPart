@@ -61,6 +61,9 @@
 			</li>
 			<li Class="CompProperties_Biocodable"/>
 		</comps>
+		<equippedStatOffsets>
+			<ShootingAccuracyPawn>30</ShootingAccuracyPawn>
+		</equippedStatOffsets>
 	</ThingDef>
 	
 	<ThingDef ParentName="BaseBullet">
@@ -71,7 +74,7 @@
 			<graphicClass>Graphic_Single</graphicClass>
 			<shaderType>TransparentPostLight</shaderType>
 		</graphicData>
-		<thingClass>Projectile_DoomsdayRocket</thingClass>
+		<thingClass>Projectile_Explosive</thingClass>
 		<projectile>
 			<damageDef>SSR_BombAnti-vehicle_Industrial</damageDef>
 			<!-- Use default damage from explosion def -->
