@@ -157,7 +157,7 @@
 	<ThingDef ParentName="SSR_Weapons_Industrial">
 		<defName>SSR_Electromagnetic_HG</defName>
 		<label>电磁手枪</label>
-		<description>电磁手枪一般作为地球联邦时代早期的军官配枪或者士兵的副武器使用，主要为紧急情况下的防身之用。</description>
+		<description>电磁手枪一般作为地球联邦时代早期的军官配枪或者士兵的副武器，主要为紧急情况下的防身之用。</description>
 		<graphicData>
 			<texPath>Things/Weapons/ElectromagneticWeapon/Electromagnetic_HG</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -390,7 +390,7 @@
 	<ThingDef ParentName="SSR_Weapons_Industrial">
 		<defName>SSR_Electromagnetic_MG</defName>
 		<label>电磁机枪</label>
-		<description>地球联邦时代早期列装的轻机枪，电磁化带来的子弹重量降低与射击精度大幅提高使其在拥有较为轻便的携行重量的同时还拥有卓越的火力持续性。</description>
+		<description>地球联邦时代早期列装的轻机枪，电磁化带来的子弹重量降低与智能瞄具的普及使其在拥有较为轻便的携行重量的同时还拥有卓越的精度和火力持续性。</description>
 		<graphicData>
 			<texPath>Things/Weapons/ElectromagneticWeapon/Electromagnetic_MG</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
