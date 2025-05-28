@@ -34,6 +34,39 @@
         <researchViewY>1</researchViewY>
     </ResearchProjectDef>
 
+	<ResearchProjectDef ParentName="SSR_ResearchProjectIndustrial">
+		<defName>SSRBasicDefenseStructure</defName>
+		<label>基础防御结构</label>
+		<description>基础防御结构。</description>
+		<requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+		<requiredResearchFacilities>
+			<li>SSR_DataTerminal</li>
+		</requiredResearchFacilities>
+		<prerequisites>
+			<li>SSRBasicManufacturingTechnology</li>
+		</prerequisites>
+		<baseCost>700</baseCost>
+		<researchViewX>3</researchViewX>
+		<researchViewY>1.5</researchViewY>
+	</ResearchProjectDef>
+
+	<ResearchProjectDef ParentName="SSR_ResearchProjectIndustrial">
+		<defName>SSRBasicArmoredSafetyDoor</defName>
+		<label>基础装甲安全门</label>
+		<description>基础装甲安全门。</description>
+		<requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+		<requiredResearchFacilities>
+			<li>SSR_DataTerminal</li>
+		</requiredResearchFacilities>
+		<prerequisites>
+			<li>SSRBasicDefenseStructure</li>
+			<li>SSRBasicPowerTechnology</li>
+		</prerequisites>
+		<baseCost>700</baseCost>
+		<researchViewX>4</researchViewX>
+		<researchViewY>1.5</researchViewY>
+	</ResearchProjectDef>
+
 	<!--<ResearchProjectDef ParentName="SSR_ResearchProjectIndustrial">
         <defName>SSRBasicAutomaticGunCharger</defName>
         <label>基础自动装弹机</label>
@@ -117,6 +150,42 @@
     </ResearchProjectDef>-->
 
 	<!--<ResearchProjectDef ParentName="SSR_ResearchProjectSpacer">
+		<defName>SSRMedium-levelDefenseStructure</defName>
+		<label>中级防御结构</label>
+		<description>中级防御结构。</description>
+		<requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+		<requiredResearchFacilities>
+			<li>SSR_DataTerminal</li>
+		</requiredResearchFacilities>
+		<prerequisites>
+			<li>SSRMedium-levelManufacturingTechnology</li>
+			<li>SSRBasicDefenseStructure</li>
+		</prerequisites>
+		<baseCost>1000</baseCost>
+		<researchViewX>10</researchViewX>
+		<researchViewY>1.5</researchViewY>
+	</ResearchProjectDef>
+
+	<ResearchProjectDef ParentName="SSR_ResearchProjectSpacer">
+		<defName>SSRMedium-levelArmoredSafetyDoor</defName>
+		<label>中级装甲安全门</label>
+		<description>中级装甲安全门。</description>
+		<requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+		<requiredResearchFacilities>
+			<li>SSR_DataTerminal</li>
+		</requiredResearchFacilities>
+		<prerequisites>
+			<li>SSRMedium-levelPowerTechnology</li>
+			<li>SSRMedium-levelDefenseStructure</li>
+			<li>SSRBasicArmoredSafetyDoor</li>
+			<li>SSRStandardizedArtificialIntelligence</li>
+		</prerequisites>
+		<baseCost>1000</baseCost>
+		<researchViewX>11</researchViewX>
+		<researchViewY>1.5</researchViewY>
+	</ResearchProjectDef>-->
+
+	<!--<ResearchProjectDef ParentName="SSR_ResearchProjectSpacer">
         <defName>SSRMedium-levelAutomaticGunCharger</defName>
         <label>中级自动装弹机</label>
         <description>中级自动装弹机。</description>
@@ -131,6 +200,18 @@
         <baseCost>12000</baseCost>
         <researchViewX>11</researchViewX>
         <researchViewY>2</researchViewY>
+		<modExtensions>
+			<li Class="FS_SSR.Research.Ext_AlterRequireLinked">
+				<alternativeRequires>
+					<li>
+						<requireAnyFacilityOf>
+							<li>SSR_QuantumComputingCluster</li>
+							<li>SSR_PhotonicComputingCluster</li>
+						</requireAnyFacilityOf>
+					</li>
+				</alternativeRequires>
+			</li>
+		</modExtensions>
     </ResearchProjectDef>-->
 
 	<!--<ResearchProjectDef ParentName="SSR_ResearchProjectSpacer">
@@ -234,6 +315,42 @@
         <researchViewX>18</researchViewX>
         <researchViewY>0.5</researchViewY>
     </ResearchProjectDef>-->
+
+	<!--<ResearchProjectDef ParentName="SSR_ResearchProjectUltra">
+		<defName>SSRAdvancedDefenseStructure</defName>
+		<label>高级防御结构</label>
+		<description>高级防御结构。</description>
+		<requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+		<requiredResearchFacilities>
+			<li>SSR_DataTerminal</li>
+		</requiredResearchFacilities>
+		<prerequisites>
+			<li>SSRAdvancedMaterialsScience</li>
+			<li>SSRMedium-levelDefenseStructure</li>
+		</prerequisites>
+		<baseCost>7000</baseCost>
+		<researchViewX>15</researchViewX>
+		<researchViewY>1.5</researchViewY>
+	</ResearchProjectDef>
+
+	<ResearchProjectDef ParentName="SSR_ResearchProjectUltra">
+		<defName>SSRAdvancedArmoredSafetyDoor</defName>
+		<label>高级装甲安全门</label>
+		<description>高级装甲安全门。</description>
+		<requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+		<requiredResearchFacilities>
+			<li>SSR_DataTerminal</li>
+		</requiredResearchFacilities>
+		<prerequisites>
+			<li>SSRAdvancedEnergyTechnology</li>
+			<li>SSRAdvancedDefenseStructure</li>
+			<li>SSRMedium-levelArmoredSafetyDoor</li>
+			<li>SSRAdvancedArtificialIntelligence</li>
+		</prerequisites>
+		<baseCost>5000</baseCost>
+		<researchViewX>16</researchViewX>
+		<researchViewY>1.5</researchViewY>
+	</ResearchProjectDef>-->
 
 	<!--<ResearchProjectDef ParentName="SSR_ResearchProjectUltra">
         <defName>SSRAdvancedAutomaticGunCharger</defName>
