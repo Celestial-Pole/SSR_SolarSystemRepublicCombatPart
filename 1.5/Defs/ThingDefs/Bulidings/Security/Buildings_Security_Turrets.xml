@@ -395,7 +395,7 @@
 				<range>50</range>
 				<ticksBetweenBurstShots>1</ticksBetweenBurstShots>
 				<burstShotCount>50</burstShotCount>
-				<soundCast>ElectromagneticLtII</soundCast>
+				<soundCast>Electromagnetic_MG</soundCast>
 				<soundCastTail>GunTail_Medium</soundCastTail>
 				<muzzleFlashScale>9</muzzleFlashScale>
 				<consumeFuelPerShot>1</consumeFuelPerShot>

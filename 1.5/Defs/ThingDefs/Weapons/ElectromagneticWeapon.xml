@@ -37,7 +37,7 @@
 				<range>45</range>
 				<ticksBetweenBurstShots>7</ticksBetweenBurstShots>
 				<burstShotCount>5</burstShotCount>
-				<soundCast>ElectromagneticLt</soundCast>
+				<soundCast>Electromagnetic_AR</soundCast>
 				<soundCastTail>GunTail_Medium</soundCastTail>
 				<muzzleFlashScale>9</muzzleFlashScale>
 			</li>
@@ -73,8 +73,8 @@
 		<thingClass>HJ_SSR.Weapons.PenetratingBullet</thingClass>
 		<projectile>
 			<damageDef>Bullet</damageDef>
-			<damageAmountBase>20</damageAmountBase>
-			<armorPenetrationBase>0.55</armorPenetrationBase>
+			<damageAmountBase>18</damageAmountBase>
+			<armorPenetrationBase>0.4</armorPenetrationBase>
 			<speed>120</speed>
 		</projectile>
 		<modExtensions>
@@ -160,7 +160,7 @@
 				<range>25</range>
 				<ticksBetweenBurstShots>5</ticksBetweenBurstShots>
 				<burstShotCount>8</burstShotCount>
-				<soundCast>ElectromagneticLt</soundCast>
+				<soundCast>Electromagnetic_SMG</soundCast>
 				<soundCastTail>GunTail_Medium</soundCastTail>
 				<muzzleFlashScale>9</muzzleFlashScale>
 			</li>
@@ -196,7 +196,7 @@
 		<projectile>
 			<damageDef>Bullet</damageDef>
 			<damageAmountBase>10</damageAmountBase>
-			<armorPenetrationBase>0.5</armorPenetrationBase>
+			<armorPenetrationBase>0.35</armorPenetrationBase>
 			<speed>100</speed>
 		</projectile>
 		<modExtensions>
@@ -282,7 +282,7 @@
 				<range>20</range>
 				<ticksBetweenBurstShots>10</ticksBetweenBurstShots>
 				<burstShotCount>3</burstShotCount>
-				<soundCast>ElectromagneticLt</soundCast>
+				<soundCast>Electromagnetic_HG</soundCast>
 				<soundCastTail>GunTail_Medium</soundCastTail>
 				<muzzleFlashScale>9</muzzleFlashScale>
 			</li>
@@ -319,7 +319,7 @@
 		<projectile>
 			<damageDef>Bullet</damageDef>
 			<damageAmountBase>10</damageAmountBase>
-			<armorPenetrationBase>0.45</armorPenetrationBase>
+			<armorPenetrationBase>0.35</armorPenetrationBase>
 			<speed>90</speed>
 		</projectile>
 		<modExtensions>
@@ -484,7 +484,7 @@
 				<range>55</range>
 				<ticksBetweenBurstShots>10</ticksBetweenBurstShots>
 				<burstShotCount>1</burstShotCount>
-				<soundCast>ElectromagneticLt</soundCast>
+				<soundCast>Electromagnetic_SR</soundCast>
 				<soundCastTail>GunTail_Medium</soundCastTail>
 				<muzzleFlashScale>9</muzzleFlashScale>
 			</li>
@@ -520,8 +520,8 @@
 		<thingClass>HJ_SSR.Weapons.PenetratingBullet</thingClass>
 		<projectile>
 			<damageDef>Bullet</damageDef>
-			<damageAmountBase>50</damageAmountBase>
-			<armorPenetrationBase>0.7</armorPenetrationBase>
+			<damageAmountBase>25</damageAmountBase>
+			<armorPenetrationBase>0.55</armorPenetrationBase>
 			<stoppingPower>1.5</stoppingPower>
 			<speed>150</speed>
 		</projectile>
@@ -609,7 +609,7 @@
 				<range>45</range>
 				<ticksBetweenBurstShots>3</ticksBetweenBurstShots>
 				<burstShotCount>15</burstShotCount>
-				<soundCast>ElectromagneticLt</soundCast>
+				<soundCast>Electromagnetic_MG</soundCast>
 				<soundCastTail>GunTail_Medium</soundCastTail>
 				<muzzleFlashScale>9</muzzleFlashScale>
 			</li>
@@ -645,8 +645,8 @@
 		<thingClass>HJ_SSR.Weapons.PenetratingBullet</thingClass>
 		<projectile>
 			<damageDef>Bullet</damageDef>
-			<damageAmountBase>20</damageAmountBase>
-			<armorPenetrationBase>1</armorPenetrationBase>
+			<damageAmountBase>18</damageAmountBase>
+			<armorPenetrationBase>0.4</armorPenetrationBase>
 			<stoppingPower>0.55</stoppingPower>
 			<speed>150</speed>
 		</projectile>
@@ -734,7 +734,7 @@
 				<range>65</range>
 				<ticksBetweenBurstShots>10</ticksBetweenBurstShots>
 				<burstShotCount>1</burstShotCount>
-				<soundCast>ElectromagneticLtII</soundCast>
+				<soundCast>Electromagnetic_AMR</soundCast>
 				<soundCastTail>GunTail_Medium</soundCastTail>
 				<muzzleFlashScale>9</muzzleFlashScale>
 			</li>
@@ -770,7 +770,7 @@
 		<thingClass>HJ_SSR.Weapons.PenetratingBullet</thingClass>
 		<projectile>
 			<damageDef>Bullet</damageDef>
-			<damageAmountBase>80</damageAmountBase>
+			<damageAmountBase>40</damageAmountBase>
 			<armorPenetrationBase>0.9</armorPenetrationBase>
 			<stoppingPower>3</stoppingPower>
 			<speed>200</speed>
