@@ -56,7 +56,7 @@
 		<comps>
 			<li Class="CompProperties_Explosive">
 				<explosiveRadius>7.8</explosiveRadius>
-				<explosiveDamageType>Bomb</explosiveDamageType>
+				<explosiveDamageType>SSR_Bomb</explosiveDamageType>
 				<requiredDamageTypeToExplode>Flame</requiredDamageTypeToExplode>
 			</li>
 			<li Class="CompProperties_Biocodable"/>
