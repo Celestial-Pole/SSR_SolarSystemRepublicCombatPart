@@ -18,7 +18,7 @@
 			<RangedWeapon_Cooldown>3</RangedWeapon_Cooldown>
 		</statBases>
 		<recipeMaker>
-			<researchPrerequisite>SSRAnti-vehicleWeapon</researchPrerequisite>
+			<researchPrerequisite>SSRResearchAnti-vehicleWeapon</researchPrerequisite>
 		</recipeMaker>
 		<costList>
 			<SSR_SpecialSteel>45</SSR_SpecialSteel>

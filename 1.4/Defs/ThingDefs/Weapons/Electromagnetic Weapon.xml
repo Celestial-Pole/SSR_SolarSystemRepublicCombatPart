@@ -20,7 +20,7 @@
       <RangedWeapon_Cooldown>1.50</RangedWeapon_Cooldown>
     </statBases>
     <recipeMaker>
-      <researchPrerequisite>SSRElectromagneticWeapon</researchPrerequisite>
+      <researchPrerequisite>SSRResearchElectromagneticWeapon</researchPrerequisite>
       <recipeUsers>
         <li>SSR_NumericalControlledMachineTool</li>
       </recipeUsers>
@@ -52,7 +52,7 @@
 			<li Class="FS_SSR.TCP_AbsoluteDamageAddon">
 				<forceHit>true</forceHit>
 				<absDmgAmt>-1</absDmgAmt>
-        <researchReq>SSRIntelligenceBullet</researchReq>
+        <researchReq>SSRResearchIntelligenceBullet</researchReq>
 				<damageType>Bullet</damageType>
 			</li>
 		</modExtensions>
@@ -122,7 +122,7 @@
       <RangedWeapon_Cooldown>1.50</RangedWeapon_Cooldown>
     </statBases>
     <recipeMaker>
-      <researchPrerequisite>SSRElectromagneticWeapon</researchPrerequisite>
+      <researchPrerequisite>SSRResearchElectromagneticWeapon</researchPrerequisite>
       <recipeUsers>
         <li>SSR_NumericalControlledMachineTool</li>
       </recipeUsers>
@@ -154,7 +154,7 @@
 			<li Class="FS_SSR.TCP_AbsoluteDamageAddon">
 				<forceHit>true</forceHit>
 				<absDmgAmt>-1</absDmgAmt>
-        <researchReq>SSRIntelligenceBullet</researchReq>
+        <researchReq>SSRResearchIntelligenceBullet</researchReq>
 				<damageType>Bullet</damageType>
 			</li>
 		</modExtensions>
@@ -223,7 +223,7 @@
       <RangedWeapon_Cooldown>1.50</RangedWeapon_Cooldown>
     </statBases>
     <recipeMaker>
-      <researchPrerequisite>SSRElectromagneticWeapon</researchPrerequisite>
+      <researchPrerequisite>SSRResearchElectromagneticWeapon</researchPrerequisite>
       <recipeUsers>
         <li>SSR_NumericalControlledMachineTool</li>
       </recipeUsers>
@@ -255,7 +255,7 @@
 			<li Class="FS_SSR.TCP_AbsoluteDamageAddon">
 				<forceHit>true</forceHit>
 				<absDmgAmt>-1</absDmgAmt>
-        <researchReq>SSRIntelligenceBullet</researchReq>
+        <researchReq>SSRResearchIntelligenceBullet</researchReq>
 				<damageType>Bullet</damageType>
 			</li>
 		</modExtensions>
@@ -322,7 +322,7 @@
       <RangedWeapon_Cooldown>1.50</RangedWeapon_Cooldown>
     </statBases>
     <recipeMaker>
-      <researchPrerequisite>SSRElectromagneticWeapon</researchPrerequisite>
+      <researchPrerequisite>SSRResearchElectromagneticWeapon</researchPrerequisite>
       <recipeUsers>
         <li>SSR_NumericalControlledMachineTool</li>
       </recipeUsers>
@@ -354,7 +354,7 @@
 			<li Class="FS_SSR.TCP_AbsoluteDamageAddon">
 				<forceHit>true</forceHit>
 				<absDmgAmt>-1</absDmgAmt>
-        <researchReq>SSRIntelligenceBullet</researchReq>
+        <researchReq>SSRResearchIntelligenceBullet</researchReq>
 				<damageType>Bullet</damageType>
 			</li>
       <li Class="BillDoorsFramework.ModExtension_Verb_Shotgun">
@@ -495,7 +495,7 @@
       <RangedWeapon_Cooldown>1.50</RangedWeapon_Cooldown>
     </statBases>
     <recipeMaker>
-      <researchPrerequisite>SSRElectromagneticWeapon</researchPrerequisite>
+      <researchPrerequisite>SSRResearchElectromagneticWeapon</researchPrerequisite>
       <recipeUsers>
         <li>SSR_NumericalControlledMachineTool</li>
       </recipeUsers>
@@ -527,7 +527,7 @@
 			<li Class="FS_SSR.TCP_AbsoluteDamageAddon">
 				<forceHit>true</forceHit>
 				<absDmgAmt>-1</absDmgAmt>
-        <researchReq>SSRIntelligenceBullet</researchReq>
+        <researchReq>SSRResearchIntelligenceBullet</researchReq>
 				<damageType>Bullet</damageType>
 			</li>
 		</modExtensions>
@@ -595,7 +595,7 @@
       <RangedWeapon_Cooldown>1.50</RangedWeapon_Cooldown>
     </statBases>
     <recipeMaker>
-      <researchPrerequisite>SSRElectromagneticWeapon</researchPrerequisite>
+      <researchPrerequisite>SSRResearchElectromagneticWeapon</researchPrerequisite>
       <recipeUsers>
         <li>SSR_NumericalControlledMachineTool</li>
       </recipeUsers>
@@ -627,7 +627,7 @@
 			<li Class="FS_SSR.TCP_AbsoluteDamageAddon">
 				<forceHit>true</forceHit>
 				<absDmgAmt>-1</absDmgAmt>
-        <researchReq>SSRIntelligenceBullet</researchReq>
+        <researchReq>SSRResearchIntelligenceBullet</researchReq>
 				<damageType>Bullet</damageType>
 			</li>
 		</modExtensions>
