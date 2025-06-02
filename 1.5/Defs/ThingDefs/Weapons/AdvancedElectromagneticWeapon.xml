@@ -20,7 +20,7 @@
 			<RangedWeapon_Cooldown>1</RangedWeapon_Cooldown>
 		</statBases>
 		<recipeMaker>
-			<researchPrerequisite>SSRResearchAdvancedElectromagneticWeapon</researchPrerequisite>
+			<researchPrerequisite>SSR_Research_AdvancedElectromagneticWeapon</researchPrerequisite>
 		</recipeMaker>
 		<costList>
 			<SSR_NanoandMicroMechanicalComposite>480</SSR_NanoandMicroMechanicalComposite>
@@ -145,7 +145,7 @@
 			<RangedWeapon_Cooldown>0.85</RangedWeapon_Cooldown>
 		</statBases>
 		<recipeMaker>
-			<researchPrerequisite>SSRResearchAdvancedElectromagneticWeapon</researchPrerequisite>
+			<researchPrerequisite>SSR_Research_AdvancedElectromagneticWeapon</researchPrerequisite>
 		</recipeMaker>
 		<costList>
 			<SSR_NanoandMicroMechanicalComposite>400</SSR_NanoandMicroMechanicalComposite>
@@ -268,7 +268,7 @@
 			<RangedWeapon_Cooldown>0.85</RangedWeapon_Cooldown>
 		</statBases>
 		<recipeMaker>
-			<researchPrerequisite>SSRResearchAdvancedElectromagneticWeapon</researchPrerequisite>
+			<researchPrerequisite>SSR_Research_AdvancedElectromagneticWeapon</researchPrerequisite>
 		</recipeMaker>
 		<costList>
 			<SSR_NanoandMicroMechanicalComposite>320</SSR_NanoandMicroMechanicalComposite>
@@ -392,7 +392,7 @@
 			<RangedWeapon_Cooldown>1.50</RangedWeapon_Cooldown>
 		</statBases>
 		<recipeMaker>
-			<researchPrerequisite>SSRResearchAdvancedElectromagneticWeapon</researchPrerequisite>
+			<researchPrerequisite>SSR_Research_AdvancedElectromagneticWeapon</researchPrerequisite>
 			<recipeUsers>
 				<li>SSR_NumericalControlledMachineTool</li>
 			</recipeUsers>
@@ -478,7 +478,7 @@
 			<RangedWeapon_Cooldown>1.25</RangedWeapon_Cooldown>
 		</statBases>
 		<recipeMaker>
-			<researchPrerequisite>SSRResearchAdvancedElectromagneticWeapon</researchPrerequisite>
+			<researchPrerequisite>SSR_Research_AdvancedElectromagneticWeapon</researchPrerequisite>
 		</recipeMaker>
 		<costList>
 			<SSR_NanoandMicroMechanicalComposite>560</SSR_NanoandMicroMechanicalComposite>
@@ -604,7 +604,7 @@
 			<RangedWeapon_Cooldown>2.25</RangedWeapon_Cooldown>
 		</statBases>
 		<recipeMaker>
-			<researchPrerequisite>SSRResearchAdvancedElectromagneticWeapon</researchPrerequisite>
+			<researchPrerequisite>SSR_Research_AdvancedElectromagneticWeapon</researchPrerequisite>
 		</recipeMaker>
 		<costList>
 			<SSR_NanoandMicroMechanicalComposite>1120</SSR_NanoandMicroMechanicalComposite>
@@ -730,7 +730,7 @@
 			<RangedWeapon_Cooldown>1.50</RangedWeapon_Cooldown>
 		</statBases>
 		<recipeMaker>
-			<researchPrerequisite>SSRResearchAdvancedElectromagneticWeapon</researchPrerequisite>
+			<researchPrerequisite>SSR_Research_AdvancedElectromagneticWeapon</researchPrerequisite>
 		</recipeMaker>
 		<costList>
 			<SSR_NanoandMicroMechanicalComposite>880</SSR_NanoandMicroMechanicalComposite>

@@ -36,7 +36,7 @@
       <RangedWeapon_Cooldown>0.5</RangedWeapon_Cooldown>
     </statBases>
 	<recipeMaker>
-	  <researchPrerequisite>SSRResearchLaserWeapon</researchPrerequisite>
+	  <researchPrerequisite>SSR_Research_LaserWeapon</researchPrerequisite>
 	  <skillRequirements>
         <Crafting>7</Crafting>
       </skillRequirements>
@@ -116,7 +116,7 @@
       <RangedWeapon_Cooldown>0.5</RangedWeapon_Cooldown>
     </statBases>
 	<recipeMaker>
-	  <researchPrerequisite>SSRResearchLaserWeapon</researchPrerequisite>
+	  <researchPrerequisite>SSR_Research_LaserWeapon</researchPrerequisite>
 	  <skillRequirements>
         <Crafting>7</Crafting>
       </skillRequirements>
@@ -196,7 +196,7 @@
       <RangedWeapon_Cooldown>0.75</RangedWeapon_Cooldown>
     </statBases>
 	<recipeMaker>
-	  <researchPrerequisite>SSRResearchLaserWeapon</researchPrerequisite>
+	  <researchPrerequisite>SSR_Research_LaserWeapon</researchPrerequisite>
 	  <skillRequirements>
         <Crafting>7</Crafting>
       </skillRequirements>
@@ -276,7 +276,7 @@
       <RangedWeapon_Cooldown>2</RangedWeapon_Cooldown>
     </statBases>
 	<recipeMaker>
-	  <researchPrerequisite>SSRResearchLaserWeapon</researchPrerequisite>
+	  <researchPrerequisite>SSR_Research_LaserWeapon</researchPrerequisite>
 	  <skillRequirements>
         <Crafting>7</Crafting>
       </skillRequirements>

@@ -94,7 +94,7 @@
 		</placeWorkers>
 		<designationHotKey>Misc2</designationHotKey>
 		<researchPrerequisites>
-			<li>SSRResearchBasicTurret</li>
+			<li>SSR_Research_BasicTurret</li>
 		</researchPrerequisites>
 		<modExtensions>
 			<li Class="SolarSystemRepublicFramework.DefModExtension_TurretMannable">
@@ -199,7 +199,7 @@
 		</placeWorkers>
 		<designationHotKey>Misc2</designationHotKey>
 		<researchPrerequisites>
-			<li>SSRResearchBasicTurret</li>
+			<li>SSR_Research_BasicTurret</li>
 		</researchPrerequisites>
 		<modExtensions>
 			<li Class="SolarSystemRepublicFramework.DefModExtension_TurretMannable">
@@ -362,7 +362,7 @@
 		</placeWorkers>
 		<designationHotKey>Misc2</designationHotKey>
 		<researchPrerequisites>
-			<li>SSRResearchBasicTurret</li>
+			<li>SSR_Research_BasicTurret</li>
 		</researchPrerequisites>
 		<modExtensions>
 			<li Class="SolarSystemRepublicFramework.DefModExtension_TurretMannable">

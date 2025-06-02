@@ -20,7 +20,7 @@
 			<RangedWeapon_Cooldown>1</RangedWeapon_Cooldown>
 		</statBases>
 		<recipeMaker>
-			<researchPrerequisite>SSRResearchElectromagneticWeapon</researchPrerequisite>
+			<researchPrerequisite>SSR_Research_ElectromagneticWeapon</researchPrerequisite>
 		</recipeMaker>
 		<costList>
 			<SSR_SpecialSteel>30</SSR_SpecialSteel>
@@ -143,7 +143,7 @@
 			<RangedWeapon_Cooldown>0.85</RangedWeapon_Cooldown>
 		</statBases>
 		<recipeMaker>
-			<researchPrerequisite>SSRResearchElectromagneticWeapon</researchPrerequisite>
+			<researchPrerequisite>SSR_Research_ElectromagneticWeapon</researchPrerequisite>
 		</recipeMaker>
 		<costList>
 			<SSR_SpecialSteel>25</SSR_SpecialSteel>
@@ -265,7 +265,7 @@
 			<RangedWeapon_Cooldown>0.85</RangedWeapon_Cooldown>
 		</statBases>
 		<recipeMaker>
-			<researchPrerequisite>SSRResearchElectromagneticWeapon</researchPrerequisite>
+			<researchPrerequisite>SSR_Research_ElectromagneticWeapon</researchPrerequisite>
 		</recipeMaker>
 		<costList>
 			<SSR_SpecialSteel>20</SSR_SpecialSteel>
@@ -388,7 +388,7 @@
 			<RangedWeapon_Cooldown>1.50</RangedWeapon_Cooldown>
 		</statBases>
 		<recipeMaker>
-			<researchPrerequisite>SSRResearchElectromagneticWeapon</researchPrerequisite>
+			<researchPrerequisite>SSR_Research_ElectromagneticWeapon</researchPrerequisite>
 		</recipeMaker>
 		<costList>
 			<SSR_SpecialSteel>11</SSR_SpecialSteel>
@@ -467,7 +467,7 @@
 			<RangedWeapon_Cooldown>1.25</RangedWeapon_Cooldown>
 		</statBases>
 		<recipeMaker>
-			<researchPrerequisite>SSRResearchElectromagneticWeapon</researchPrerequisite>
+			<researchPrerequisite>SSR_Research_ElectromagneticWeapon</researchPrerequisite>
 		</recipeMaker>
 		<costList>
 			<SSR_SpecialSteel>35</SSR_SpecialSteel>
@@ -592,7 +592,7 @@
 			<RangedWeapon_Cooldown>2.25</RangedWeapon_Cooldown>
 		</statBases>
 		<recipeMaker>
-			<researchPrerequisite>SSRResearchElectromagneticWeapon</researchPrerequisite>
+			<researchPrerequisite>SSR_Research_ElectromagneticWeapon</researchPrerequisite>
 		</recipeMaker>
 		<costList>
 			<SSR_SpecialSteel>70</SSR_SpecialSteel>
@@ -717,7 +717,7 @@
 			<RangedWeapon_Cooldown>1.50</RangedWeapon_Cooldown>
 		</statBases>
 		<recipeMaker>
-			<researchPrerequisite>SSRResearchElectromagneticWeapon</researchPrerequisite>
+			<researchPrerequisite>SSR_Research_ElectromagneticWeapon</researchPrerequisite>
 		</recipeMaker>
 		<costList>
 			<SSR_SpecialSteel>55</SSR_SpecialSteel>

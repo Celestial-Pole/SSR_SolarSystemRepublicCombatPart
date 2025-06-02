@@ -2,7 +2,7 @@
 <Defs>
 
 	<ResearchProjectDef ParentName="SSR_ResearchProjectIndustrial">
-		<defName>SSRResearchAnti-vehicleWeapon</defName>
+		<defName>SSR_Research_Anti-vehicleWeapon</defName>
 		<label>反装甲武器</label>
 		<description>这些拥有悠久服役历史的或直射或制导的单兵反装甲武器在地球联邦时代依旧在战场上发光发热。</description>
 		<requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
@@ -10,7 +10,7 @@
 			<li>SSR_DataTerminal</li>
 		</requiredResearchFacilities>
 		<prerequisites>
-			<li>SSRResearchBasicManufacturingTechnology</li>
+			<li>SSR_Research_BasicManufacturingTechnology</li>
 		</prerequisites>
 		<baseCost>3000</baseCost>
 		<researchViewX>2</researchViewX>
@@ -18,7 +18,7 @@
 	</ResearchProjectDef>
 	
 	<ResearchProjectDef ParentName="SSR_ResearchProjectIndustrial">
-        <defName>SSRResearchElectromagneticWeapon</defName>
+        <defName>SSR_Research_ElectromagneticWeapon</defName>
         <label>电磁武器</label>
         <description>第三次世界大战之前就已经在各国列装的武器类型，完全取代了传统的火药武器与过度时期所使用的电热化学武器，该类型武器在地球联邦时代同样被列装于军队并被进一步改进。</description>
 		<requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
@@ -26,8 +26,8 @@
 			<li>SSR_DataTerminal</li>
 		</requiredResearchFacilities>
 		<prerequisites>
-			<li>SSRResearchPrecisionMagneticFieldControl</li>
-			<li>SSRResearchBasicPowerTechnology</li>
+			<li>SSR_Research_PrecisionMagneticFieldControl</li>
+			<li>SSR_Research_BasicPowerTechnology</li>
         </prerequisites>
         <baseCost>5000</baseCost>
         <researchViewX>4</researchViewX>
@@ -35,7 +35,7 @@
     </ResearchProjectDef>
 
 	<ResearchProjectDef ParentName="SSR_ResearchProjectIndustrial">
-		<defName>SSRResearchBasicDefenseStructure</defName>
+		<defName>SSR_Research_BasicDefenseStructure</defName>
 		<label>基础防御结构</label>
 		<description>基础防御结构。</description>
 		<requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
@@ -43,7 +43,7 @@
 			<li>SSR_DataTerminal</li>
 		</requiredResearchFacilities>
 		<prerequisites>
-			<li>SSRResearchBasicManufacturingTechnology</li>
+			<li>SSR_Research_BasicManufacturingTechnology</li>
 		</prerequisites>
 		<baseCost>700</baseCost>
 		<researchViewX>3</researchViewX>
@@ -51,7 +51,7 @@
 	</ResearchProjectDef>
 
 	<ResearchProjectDef ParentName="SSR_ResearchProjectIndustrial">
-		<defName>SSRResearchBasicArmoredSafetyDoor</defName>
+		<defName>SSR_Research_BasicArmoredSafetyDoor</defName>
 		<label>基础装甲安全门</label>
 		<description>基础装甲安全门。</description>
 		<requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
@@ -59,8 +59,8 @@
 			<li>SSR_DataTerminal</li>
 		</requiredResearchFacilities>
 		<prerequisites>
-			<li>SSRResearchBasicDefenseStructure</li>
-			<li>SSRResearchBasicPowerTechnology</li>
+			<li>SSR_Research_BasicDefenseStructure</li>
+			<li>SSR_Research_BasicPowerTechnology</li>
 		</prerequisites>
 		<baseCost>700</baseCost>
 		<researchViewX>4</researchViewX>
@@ -68,7 +68,7 @@
 	</ResearchProjectDef>
 
 	<!--<ResearchProjectDef ParentName="SSR_ResearchProjectIndustrial">
-        <defName>SSRResearchBasicAutomaticGunCharger</defName>
+        <defName>SSR_Research_BasicAutomaticGunCharger</defName>
         <label>基础自动装弹机</label>
         <description>基础自动装弹机。</description>
 		<requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
@@ -76,7 +76,7 @@
 			<li>SSR_DataTerminal</li>
 		</requiredResearchFacilities>
 		<prerequisites>
-            <li>SSRResearchBasicPowerTechnology</li>
+            <li>SSR_Research_BasicPowerTechnology</li>
         </prerequisites>
         <baseCost>3000</baseCost>
         <researchViewX>4</researchViewX>
@@ -84,7 +84,7 @@
     </ResearchProjectDef>-->
 
     <ResearchProjectDef ParentName="SSR_ResearchProjectIndustrial">
-        <defName>SSRResearchBasicTurret</defName>
+        <defName>SSR_Research_BasicTurret</defName>
         <label>基础防御设施</label>
         <description>基础防御设施。</description>
 		<requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
@@ -92,8 +92,8 @@
 			<li>SSR_DataTerminal</li>
 		</requiredResearchFacilities>
 		<prerequisites>
-			<li>SSRResearchElectromagneticWeapon</li>
-            <li>SSRResearchBasicArmoredSafetyDoor</li>
+			<li>SSR_Research_ElectromagneticWeapon</li>
+            <li>SSR_Research_BasicArmoredSafetyDoor</li>
         </prerequisites>
         <baseCost>5000</baseCost>
         <researchViewX>5</researchViewX>
@@ -101,7 +101,7 @@
     </ResearchProjectDef>
 
 	<!--<ResearchProjectDef ParentName="SSR_ResearchProjectSpacer">
-        <defName>SSRResearchLaserWeapon</defName>
+        <defName>SSR_Research_LaserWeapon</defName>
         <label>激光武器</label>
         <description>激光武器。</description>
 		<requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
@@ -109,7 +109,7 @@
 			<li>SSR_DataTerminal</li>
 		</requiredResearchFacilities>
 		<prerequisites>
-			<li>SSRResearchHighEnergyLaserArray</li>
+			<li>SSR_Research_HighEnergyLaserArray</li>
         </prerequisites>
         <baseCost>7000</baseCost>
         <researchViewX>12</researchViewX>
@@ -117,7 +117,7 @@
     </ResearchProjectDef>-->
 
 	<ResearchProjectDef ParentName="SSR_ResearchProjectSpacer">
-        <defName>SSRResearchAdvancedElectromagneticWeapon</defName>
+        <defName>SSR_Research_AdvancedElectromagneticWeapon</defName>
         <label>高级电磁武器</label>
         <description>高级电磁武器。</description>
 		<requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
@@ -125,8 +125,8 @@
 			<li>SSR_DataTerminal</li>
 		</requiredResearchFacilities>
 		<prerequisites>
-			<li>SSRResearchHighDensityBattery</li>
-			<li>SSRResearchElectromagneticWeapon</li>
+			<li>SSR_Research_HighDensityBattery</li>
+			<li>SSR_Research_ElectromagneticWeapon</li>
         </prerequisites>
         <baseCost>7000</baseCost>
         <researchViewX>11</researchViewX>
@@ -134,7 +134,7 @@
     </ResearchProjectDef>
 
 	<!--<ResearchProjectDef ParentName="SSR_ResearchProjectSpacer">
-        <defName>SSRResearchIntelligenceBullet</defName>
+        <defName>SSR_Research_IntelligenceBullet</defName>
         <label>智能子弹</label>
         <description>智能子弹。</description>
 		<requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
@@ -142,7 +142,7 @@
 			<li>SSR_DataTerminal</li>
 		</requiredResearchFacilities>
 		<prerequisites>
-			<li>SSRResearchStandardizedArtificialIntelligence</li>
+			<li>SSR_Research_StandardizedArtificialIntelligence</li>
         </prerequisites>
         <baseCost>4000</baseCost>
         <researchViewX>12</researchViewX>
@@ -150,7 +150,7 @@
     </ResearchProjectDef>-->
 
 	<!--<ResearchProjectDef ParentName="SSR_ResearchProjectSpacer">
-		<defName>SSRResearchMedium-levelDefenseStructure</defName>
+		<defName>SSR_Research_Medium-levelDefenseStructure</defName>
 		<label>中级防御结构</label>
 		<description>中级防御结构。</description>
 		<requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
@@ -158,8 +158,8 @@
 			<li>SSR_DataTerminal</li>
 		</requiredResearchFacilities>
 		<prerequisites>
-			<li>SSRResearchMedium-levelManufacturingTechnology</li>
-			<li>SSRResearchBasicDefenseStructure</li>
+			<li>SSR_Research_Medium-levelManufacturingTechnology</li>
+			<li>SSR_Research_BasicDefenseStructure</li>
 		</prerequisites>
 		<baseCost>1000</baseCost>
 		<researchViewX>10</researchViewX>
@@ -167,7 +167,7 @@
 	</ResearchProjectDef>
 
 	<ResearchProjectDef ParentName="SSR_ResearchProjectSpacer">
-		<defName>SSRResearchMedium-levelArmoredSafetyDoor</defName>
+		<defName>SSR_Research_Medium-levelArmoredSafetyDoor</defName>
 		<label>中级装甲安全门</label>
 		<description>中级装甲安全门。</description>
 		<requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
@@ -175,10 +175,10 @@
 			<li>SSR_DataTerminal</li>
 		</requiredResearchFacilities>
 		<prerequisites>
-			<li>SSRResearchMedium-levelPowerTechnology</li>
-			<li>SSRResearchMedium-levelDefenseStructure</li>
-			<li>SSRResearchBasicArmoredSafetyDoor</li>
-			<li>SSRResearchStandardizedArtificialIntelligence</li>
+			<li>SSR_Research_Medium-levelPowerTechnology</li>
+			<li>SSR_Research_Medium-levelDefenseStructure</li>
+			<li>SSR_Research_BasicArmoredSafetyDoor</li>
+			<li>SSR_Research_StandardizedArtificialIntelligence</li>
 		</prerequisites>
 		<baseCost>1000</baseCost>
 		<researchViewX>11</researchViewX>
@@ -186,7 +186,7 @@
 	</ResearchProjectDef>-->
 
 	<!--<ResearchProjectDef ParentName="SSR_ResearchProjectSpacer">
-        <defName>SSRResearchMedium-levelAutomaticGunCharger</defName>
+        <defName>SSR_Research_Medium-levelAutomaticGunCharger</defName>
         <label>中级自动装弹机</label>
         <description>中级自动装弹机。</description>
 		<requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
@@ -194,8 +194,8 @@
 			<li>SSR_DataTerminal</li>
 		</requiredResearchFacilities>
 		<prerequisites>
-            <li>SSRResearchBasicAutomaticGunCharger</li>
-            <li>SSRResearchMedium-levelPowerTechnology</li>
+            <li>SSR_Research_BasicAutomaticGunCharger</li>
+            <li>SSR_Research_Medium-levelPowerTechnology</li>
         </prerequisites>
         <baseCost>12000</baseCost>
         <researchViewX>11</researchViewX>
@@ -215,7 +215,7 @@
     </ResearchProjectDef>-->
 
 	<!--<ResearchProjectDef ParentName="SSR_ResearchProjectSpacer">
-        <defName>SSRResearchMedium-levelLaserTurret</defName>
+        <defName>SSR_Research_Medium-levelLaserTurret</defName>
         <label>中级激光防御设施</label>
         <description>中级激光防御设施。</description>
 		<requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
@@ -223,9 +223,9 @@
 			<li>SSR_DataTerminal</li>
 		</requiredResearchFacilities>
 		<prerequisites>
-			<li>SSRResearchLaserWeapon</li>
-            <li>SSRResearchMedium-levelArmoredSafetyDoor</li>
-			<li>SSRResearchBasicTurret</li>
+			<li>SSR_Research_LaserWeapon</li>
+            <li>SSR_Research_Medium-levelArmoredSafetyDoor</li>
+			<li>SSR_Research_BasicTurret</li>
         </prerequisites>
         <baseCost>9000</baseCost>
         <researchViewX>12</researchViewX>
@@ -233,7 +233,7 @@
     </ResearchProjectDef>-->
 
 	<!--<ResearchProjectDef ParentName="SSR_ResearchProjectSpacer">
-        <defName>SSRResearchMedium-levelElectromagneticTurret</defName>
+        <defName>SSR_Research_Medium-levelElectromagneticTurret</defName>
         <label>中级电磁防御设施</label>
         <description>中级电磁防御设施。</description>
 		<requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
@@ -241,9 +241,9 @@
 			<li>SSR_DataTerminal</li>
 		</requiredResearchFacilities>
 		<prerequisites>
-			<li>SSRResearchAdvancedElectromagneticWeapon</li>
-            <li>SSRResearchMedium-levelArmoredSafetyDoor</li>
-			<li>SSRResearchBasicTurret</li>
+			<li>SSR_Research_AdvancedElectromagneticWeapon</li>
+            <li>SSR_Research_Medium-levelArmoredSafetyDoor</li>
+			<li>SSR_Research_BasicTurret</li>
         </prerequisites>
         <baseCost>9000</baseCost>
         <researchViewX>12</researchViewX>
@@ -251,7 +251,7 @@
     </ResearchProjectDef>-->
 
 	<!--<ResearchProjectDef ParentName="SSR_ResearchProjectSpacer">
-        <defName>SSRResearchBasicPowerArmor</defName>
+        <defName>SSR_Research_BasicPowerArmor</defName>
         <label>基础动力装甲</label>
         <description>基础动力装甲。</description>
 		<requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
@@ -259,8 +259,8 @@
 			<li>SSR_DataTerminal</li>
 		</requiredResearchFacilities>
 		<prerequisites>
-			<li>SSRResearchMedium-levelSpecialGarments</li>
-			<li>SSRResearchMedium-levelPowerTechnology</li>
+			<li>SSR_Research_Medium-levelSpecialGarments</li>
+			<li>SSR_Research_Medium-levelPowerTechnology</li>
         </prerequisites>
         <baseCost>13000</baseCost>
         <researchViewX>10</researchViewX>
@@ -268,7 +268,7 @@
     </ResearchProjectDef>-->
 	
 	<!--<ResearchProjectDef ParentName="SSR_ResearchProjectUltra">
-        <defName>SSRResearchHighEnergyLaserWeapon</defName>
+        <defName>SSR_Research_HighEnergyLaserWeapon</defName>
         <label>高能激光武器</label>
         <description>高能激光武器。</description>
 		<requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
@@ -276,8 +276,8 @@
 			<li>SSR_DataTerminal</li>
 		</requiredResearchFacilities>
 		<prerequisites>
-			<li>SSRResearchAdvancedEnergyTechnology</li>
-            <li>SSRResearchLaserWeapon</li>
+			<li>SSR_Research_AdvancedEnergyTechnology</li>
+            <li>SSR_Research_LaserWeapon</li>
         </prerequisites>
         <baseCost>20000</baseCost>
         <researchViewX>15</researchViewX>
@@ -285,7 +285,7 @@
     </ResearchProjectDef>
 
 	<ResearchProjectDef ParentName="SSR_ResearchProjectUltra">
-		<defName>SSRResearchBallLightningWeapon</defName>
+		<defName>SSR_Research_BallLightningWeapon</defName>
 		<label>球形闪电武器</label>
 		<description>球形闪电武器。</description>
 		<requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
@@ -293,7 +293,7 @@
 			<li>SSR_DataTerminal</li>
 		</requiredResearchFacilities>
 		<prerequisites>
-			<li>SSRResearchAdvancedEnergyTechnology</li>
+			<li>SSR_Research_AdvancedEnergyTechnology</li>
 		</prerequisites>
 		<baseCost>20000</baseCost>
 		<researchViewX>15</researchViewX>
@@ -301,7 +301,7 @@
 	</ResearchProjectDef>
 
 	<ResearchProjectDef ParentName="SSR_ResearchProjectUltra">
-        <defName>SSRResearchParticleBeamWeapon</defName>
+        <defName>SSR_Research_ParticleBeamWeapon</defName>
         <label>粒子束武器</label>
         <description>粒子束武器。</description>
 		<requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
@@ -309,7 +309,7 @@
 			<li>SSR_DataTerminal</li>
 		</requiredResearchFacilities>
 		<prerequisites>
-			<li>SSRResearchParticleConfinementTechnology</li>
+			<li>SSR_Research_ParticleConfinementTechnology</li>
         </prerequisites>
         <baseCost>17000</baseCost>
         <researchViewX>18</researchViewX>
@@ -317,7 +317,7 @@
     </ResearchProjectDef>-->
 
 	<!--<ResearchProjectDef ParentName="SSR_ResearchProjectUltra">
-		<defName>SSRResearchAdvancedDefenseStructure</defName>
+		<defName>SSR_Research_AdvancedDefenseStructure</defName>
 		<label>高级防御结构</label>
 		<description>高级防御结构。</description>
 		<requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
@@ -325,8 +325,8 @@
 			<li>SSR_DataTerminal</li>
 		</requiredResearchFacilities>
 		<prerequisites>
-			<li>SSRResearchAdvancedMaterialsScience</li>
-			<li>SSRResearchMedium-levelDefenseStructure</li>
+			<li>SSR_Research_AdvancedMaterialsScience</li>
+			<li>SSR_Research_Medium-levelDefenseStructure</li>
 		</prerequisites>
 		<baseCost>7000</baseCost>
 		<researchViewX>15</researchViewX>
@@ -334,7 +334,7 @@
 	</ResearchProjectDef>
 
 	<ResearchProjectDef ParentName="SSR_ResearchProjectUltra">
-		<defName>SSRResearchAdvancedArmoredSafetyDoor</defName>
+		<defName>SSR_Research_AdvancedArmoredSafetyDoor</defName>
 		<label>高级装甲安全门</label>
 		<description>高级装甲安全门。</description>
 		<requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
@@ -342,10 +342,10 @@
 			<li>SSR_DataTerminal</li>
 		</requiredResearchFacilities>
 		<prerequisites>
-			<li>SSRResearchAdvancedEnergyTechnology</li>
-			<li>SSRResearchAdvancedDefenseStructure</li>
-			<li>SSRResearchMedium-levelArmoredSafetyDoor</li>
-			<li>SSRResearchAdvancedArtificialIntelligence</li>
+			<li>SSR_Research_AdvancedEnergyTechnology</li>
+			<li>SSR_Research_AdvancedDefenseStructure</li>
+			<li>SSR_Research_Medium-levelArmoredSafetyDoor</li>
+			<li>SSR_Research_AdvancedArtificialIntelligence</li>
 		</prerequisites>
 		<baseCost>5000</baseCost>
 		<researchViewX>16</researchViewX>
@@ -353,7 +353,7 @@
 	</ResearchProjectDef>-->
 
 	<!--<ResearchProjectDef ParentName="SSR_ResearchProjectUltra">
-        <defName>SSRResearchAdvancedAutomaticGunCharger</defName>
+        <defName>SSR_Research_AdvancedAutomaticGunCharger</defName>
         <label>高级自动装弹机</label>
         <description>高级自动装弹机。</description>
 		<requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
@@ -361,8 +361,8 @@
 			<li>SSR_DataTerminal</li>
 		</requiredResearchFacilities>
 		<prerequisites>
-            <li>SSRResearchMedium-levelAutomaticGunCharger</li>
-            <li>SSRResearchAdvancedEnergyTechnology</li>
+            <li>SSR_Research_Medium-levelAutomaticGunCharger</li>
+            <li>SSR_Research_AdvancedEnergyTechnology</li>
         </prerequisites>
         <baseCost>12000</baseCost>
         <researchViewX>16</researchViewX>
@@ -370,7 +370,7 @@
     </ResearchProjectDef>
 
     <ResearchProjectDef ParentName="SSR_ResearchProjectUltra">
-        <defName>SSRResearchHighEnergyLaserTurret</defName>
+        <defName>SSR_Research_HighEnergyLaserTurret</defName>
         <label>高级激光防御设施</label>
         <description>高级激光防御设施。</description>
 		<requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
@@ -378,7 +378,7 @@
 			<li>SSR_DataTerminal</li>
 		</requiredResearchFacilities>
 		<prerequisites>
-			<li>SSRResearchHighEnergyLaserWeapon</li>
+			<li>SSR_Research_HighEnergyLaserWeapon</li>
 			<li>SSRMedium-levelTurret</li>
         </prerequisites>
         <baseCost>13000</baseCost>
@@ -387,7 +387,7 @@
     </ResearchProjectDef>
 
     <ResearchProjectDef ParentName="SSR_ResearchProjectUltra">
-        <defName>SSRResearchParticleBeamTurret</defName>
+        <defName>SSR_Research_ParticleBeamTurret</defName>
         <label>高级粒子束防御设施</label>
         <description>高级粒子束防御设施。</description>
 		<requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
@@ -395,7 +395,7 @@
 			<li>SSR_DataTerminal</li>
 		</requiredResearchFacilities>
 		<prerequisites>
-			<li>SSRResearchParticleBeamWeapon</li>
+			<li>SSR_Research_ParticleBeamWeapon</li>
 			<li>SSRMedium-levelTurret</li>
         </prerequisites>
         <baseCost>13000</baseCost>
@@ -404,7 +404,7 @@
     </ResearchProjectDef>
 
     <ResearchProjectDef ParentName="SSR_ResearchProjectUltra">
-        <defName>SSRResearchBallLightningTurret</defName>
+        <defName>SSR_Research_BallLightningTurret</defName>
         <label>高级球闪防御设施</label>
         <description>高级球闪防御设施。</description>
 		<requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
@@ -412,7 +412,7 @@
 			<li>SSR_DataTerminal</li>
 		</requiredResearchFacilities>
 		<prerequisites>
-			<li>SSRResearchBallLightningWeapon</li>
+			<li>SSR_Research_BallLightningWeapon</li>
 			<li>SSRMedium-levelTurret</li>
         </prerequisites>
         <baseCost>13000</baseCost>
@@ -421,7 +421,7 @@
     </ResearchProjectDef>-->
 
 	<!--<ResearchProjectDef ParentName="SSR_ResearchProjectUltra">
-        <defName>SSRResearchAdvancedPowerArmor</defName>
+        <defName>SSR_Research_AdvancedPowerArmor</defName>
         <label>高级动力装甲</label>
         <description>高级动力装甲。</description>
 		<requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
@@ -429,9 +429,9 @@
 			<li>SSR_DataTerminal</li>
 		</requiredResearchFacilities>
 		<prerequisites>
-            <li>SSRResearchAdvancedEnergyTechnology</li>
-			<li>SSRResearchAdvancedSpecialGarments</li>
-			<li>SSRResearchBasicPowerArmor</li>
+            <li>SSR_Research_AdvancedEnergyTechnology</li>
+			<li>SSR_Research_AdvancedSpecialGarments</li>
+			<li>SSR_Research_BasicPowerArmor</li>
         </prerequisites>
         <baseCost>15000</baseCost>
         <researchViewX>16</researchViewX>

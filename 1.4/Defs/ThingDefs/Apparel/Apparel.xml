@@ -124,7 +124,7 @@
 		<canBeDesiredForIdeo>false</canBeDesiredForIdeo>
     </apparel>
 	<recipeMaker>
-		<researchPrerequisite>SSRResearchBasicSpecialGarments</researchPrerequisite>
+		<researchPrerequisite>SSR_Research_BasicSpecialGarments</researchPrerequisite>
 		<skillRequirements>
 			<Crafting>4</Crafting>
 		</skillRequirements>
@@ -197,7 +197,7 @@
 		<canBeDesiredForIdeo>false</canBeDesiredForIdeo>
     </apparel>
 	<recipeMaker>
-		<researchPrerequisite>SSRResearchMechanicallyAssistedFrame</researchPrerequisite>
+		<researchPrerequisite>SSR_Research_MechanicallyAssistedFrame</researchPrerequisite>
 		<skillRequirements>
 			<Crafting>4</Crafting>
 		</skillRequirements>
@@ -322,7 +322,7 @@
 		<canBeDesiredForIdeo>false</canBeDesiredForIdeo>
     </apparel>
 	<recipeMaker>
-		<researchPrerequisite>SSRResearchMechanicallyAssistedFrame</researchPrerequisite>
+		<researchPrerequisite>SSR_Research_MechanicallyAssistedFrame</researchPrerequisite>
 		<skillRequirements>
 			<Crafting>5</Crafting>
 		</skillRequirements>
@@ -542,7 +542,7 @@
 		<canBeDesiredForIdeo>false</canBeDesiredForIdeo>
     </apparel>
 	<recipeMaker>
-		<researchPrerequisite>SSRResearchBasicPowerArmor</researchPrerequisite>
+		<researchPrerequisite>SSR_Research_BasicPowerArmor</researchPrerequisite>
     </recipeMaker>
 	<modExtensions>
 		<li Class="SolarSystemRepublicFramework.DefModExtension_DefendHediff">
@@ -920,7 +920,7 @@
 		<canBeDesiredForIdeo>false</canBeDesiredForIdeo>
     </apparel>
 	<recipeMaker>
-		<researchPrerequisite>SSRResearchAdvancedSpecialGarments</researchPrerequisite>
+		<researchPrerequisite>SSR_Research_AdvancedSpecialGarments</researchPrerequisite>
 		<recipeUsers Inherit="false">
 			<li>ElectricTailoringBench</li>
 			<li>HandTailoringBench</li>
@@ -1018,7 +1018,7 @@
 		<canBeDesiredForIdeo>false</canBeDesiredForIdeo>
     </apparel>
 	<recipeMaker>
-		<researchPrerequisite>SSRResearchAdvancedPowerArmor</researchPrerequisite>
+		<researchPrerequisite>SSR_Research_AdvancedPowerArmor</researchPrerequisite>
     </recipeMaker>
 	<modExtensions>
 		<li Class="SolarSystemRepublicFramework.DefModExtension_DefendRoof">
@@ -2407,7 +2407,7 @@
       </layers>
     </apparel>
 	<recipeMaker>
-	  	<researchPrerequisite>SSRResearchMechanicallyAssistedFrame</researchPrerequisite>
+	  	<researchPrerequisite>SSR_Research_MechanicallyAssistedFrame</researchPrerequisite>
 		<skillRequirements>
 			<Crafting>4</Crafting>
 		</skillRequirements>
@@ -2483,7 +2483,7 @@
       </layers>
     </apparel>
 	<recipeMaker>
-	  <researchPrerequisite>SSRResearchBasicPowerArmor</researchPrerequisite>
+	  <researchPrerequisite>SSR_Research_BasicPowerArmor</researchPrerequisite>
     </recipeMaker>
 	<modExtensions>
 		<li Class="SolarSystemRepublicFramework.DefModExtension_DefendHediff">
@@ -2816,7 +2816,7 @@
       </layers>
     </apparel>
 	<recipeMaker>
-	  <researchPrerequisite>SSRResearchAdvancedPowerArmor</researchPrerequisite>
+	  <researchPrerequisite>SSR_Research_AdvancedPowerArmor</researchPrerequisite>
     </recipeMaker>
 	<modExtensions>
        	<li Class="SolarSystemRepublicFramework.DefModExtension_DefendBerserk">
