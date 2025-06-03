@@ -35,7 +35,7 @@
 				<ai_AvoidFriendlyFireRadius>8</ai_AvoidFriendlyFireRadius>
 				<range>50</range>
 				<burstShotCount>1</burstShotCount>
-				<soundCast>InfernoCannon_Fire</soundCast>
+				<soundCast>T1Anti-tankRocketLauncher</soundCast>
 				<soundCastTail>GunTail_Heavy</soundCastTail>
 				<targetParams>
 					<canTargetLocations>true</canTargetLocations>

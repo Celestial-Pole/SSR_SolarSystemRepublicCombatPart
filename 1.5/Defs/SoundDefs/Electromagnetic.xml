@@ -91,6 +91,21 @@
 	</SoundDef>
 
 	<SoundDef>
+		<defName>Electromagnetic_CIWS</defName>
+		<context>MapOnly</context>
+		<subSounds>
+			<li>
+				<grains>
+					<li Class="AudioGrain_Clip">
+						<clipPath>Electromagnetic_CIWS</clipPath>
+					</li>
+				</grains>
+				<volumeRange>75~75</volumeRange>
+			</li>
+		</subSounds>
+	</SoundDef>
+
+	<SoundDef>
 		<defName>ElectromagneticMd</defName>
 		<context>MapOnly</context>
 		<subSounds>
