@@ -37,7 +37,7 @@
 				<range>45</range>
 				<ticksBetweenBurstShots>7</ticksBetweenBurstShots>
 				<burstShotCount>5</burstShotCount>
-				<soundCast>Electromagnetic_AR</soundCast>
+				<soundCast>SSR_Sound_Electromagnetic_AR</soundCast>
 				<soundCastTail>GunTail_Medium</soundCastTail>
 				<muzzleFlashScale>9</muzzleFlashScale>
 			</li>
@@ -160,7 +160,7 @@
 				<range>25</range>
 				<ticksBetweenBurstShots>5</ticksBetweenBurstShots>
 				<burstShotCount>8</burstShotCount>
-				<soundCast>Electromagnetic_SMG</soundCast>
+				<soundCast>SSR_Sound_Electromagnetic_SMG</soundCast>
 				<soundCastTail>GunTail_Medium</soundCastTail>
 				<muzzleFlashScale>9</muzzleFlashScale>
 			</li>
@@ -282,7 +282,7 @@
 				<range>20</range>
 				<ticksBetweenBurstShots>10</ticksBetweenBurstShots>
 				<burstShotCount>3</burstShotCount>
-				<soundCast>Electromagnetic_HG</soundCast>
+				<soundCast>SSR_Sound_Electromagnetic_HG</soundCast>
 				<soundCastTail>GunTail_Medium</soundCastTail>
 				<muzzleFlashScale>9</muzzleFlashScale>
 			</li>
@@ -484,7 +484,7 @@
 				<range>55</range>
 				<ticksBetweenBurstShots>10</ticksBetweenBurstShots>
 				<burstShotCount>1</burstShotCount>
-				<soundCast>Electromagnetic_SR</soundCast>
+				<soundCast>SSR_Sound_Electromagnetic_SR</soundCast>
 				<soundCastTail>GunTail_Medium</soundCastTail>
 				<muzzleFlashScale>9</muzzleFlashScale>
 			</li>
@@ -609,7 +609,7 @@
 				<range>45</range>
 				<ticksBetweenBurstShots>3</ticksBetweenBurstShots>
 				<burstShotCount>15</burstShotCount>
-				<soundCast>Electromagnetic_MG</soundCast>
+				<soundCast>SSR_Sound_Electromagnetic_MG</soundCast>
 				<soundCastTail>GunTail_Medium</soundCastTail>
 				<muzzleFlashScale>9</muzzleFlashScale>
 			</li>
@@ -734,7 +734,7 @@
 				<range>65</range>
 				<ticksBetweenBurstShots>10</ticksBetweenBurstShots>
 				<burstShotCount>1</burstShotCount>
-				<soundCast>Electromagnetic_AMR</soundCast>
+				<soundCast>SSR_Sound_Electromagnetic_AMR</soundCast>
 				<soundCastTail>GunTail_Medium</soundCastTail>
 				<muzzleFlashScale>9</muzzleFlashScale>
 			</li>

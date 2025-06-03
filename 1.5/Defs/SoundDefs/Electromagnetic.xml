@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Defs>
 
     <SoundDef>
-        <defName>Electromagnetic_AR</defName>  
+        <defName>SSR_Sound_Electromagnetic_AR</defName>  
         <context>MapOnly</context>
         <subSounds>
             <li>
                 <grains>
                     <li Class="AudioGrain_Clip">
-                        <clipPath>Electromagnetic_AR</clipPath>
+                        <clipPath>SSR_Sound_Electromagnetic_AR</clipPath>
                     </li>
                 </grains>
                 <volumeRange>25~25</volumeRange>
@@ -16,13 +16,13 @@
     </SoundDef>
 
 	<SoundDef>
-		<defName>Electromagnetic_SMG</defName>
+		<defName>SSR_Sound_Electromagnetic_SMG</defName>
 		<context>MapOnly</context>
 		<subSounds>
 			<li>
 				<grains>
 					<li Class="AudioGrain_Clip">
-						<clipPath>Electromagnetic_SMG</clipPath>
+						<clipPath>SSR_Sound_Electromagnetic_SMG</clipPath>
 					</li>
 				</grains>
 				<volumeRange>25~25</volumeRange>
@@ -31,13 +31,13 @@
 	</SoundDef>
 
 	<SoundDef>
-		<defName>Electromagnetic_HG</defName>
+		<defName>SSR_Sound_Electromagnetic_HG</defName>
 		<context>MapOnly</context>
 		<subSounds>
 			<li>
 				<grains>
 					<li Class="AudioGrain_Clip">
-						<clipPath>Electromagnetic_HG</clipPath>
+						<clipPath>SSR_Sound_Electromagnetic_HG</clipPath>
 					</li>
 				</grains>
 				<volumeRange>25~25</volumeRange>
@@ -46,13 +46,13 @@
 	</SoundDef>
 
 	<SoundDef>
-		<defName>Electromagnetic_SR</defName>
+		<defName>SSR_Sound_Electromagnetic_SR</defName>
 		<context>MapOnly</context>
 		<subSounds>
 			<li>
 				<grains>
 					<li Class="AudioGrain_Clip">
-						<clipPath>Electromagnetic_SR</clipPath>
+						<clipPath>SSR_Sound_Electromagnetic_SR</clipPath>
 					</li>
 				</grains>
 				<volumeRange>75~75</volumeRange>
@@ -61,13 +61,13 @@
 	</SoundDef>
 
 	<SoundDef>
-		<defName>Electromagnetic_MG</defName>
+		<defName>SSR_Sound_Electromagnetic_MG</defName>
 		<context>MapOnly</context>
 		<subSounds>
 			<li>
 				<grains>
 					<li Class="AudioGrain_Clip">
-						<clipPath>Electromagnetic_MG</clipPath>
+						<clipPath>SSR_Sound_Electromagnetic_MG</clipPath>
 					</li>
 				</grains>
 				<volumeRange>75~75</volumeRange>
@@ -76,13 +76,13 @@
 	</SoundDef>
 
 	<SoundDef>
-		<defName>Electromagnetic_AMR</defName>
+		<defName>SSR_Sound_Electromagnetic_AMR</defName>
 		<context>MapOnly</context>
 		<subSounds>
 			<li>
 				<grains>
 					<li Class="AudioGrain_Clip">
-						<clipPath>Electromagnetic_AMR</clipPath>
+						<clipPath>SSR_Sound_Electromagnetic_AMR</clipPath>
 					</li>
 				</grains>
 				<volumeRange>75~75</volumeRange>
@@ -91,13 +91,13 @@
 	</SoundDef>
 
 	<SoundDef>
-		<defName>Electromagnetic_CIWS</defName>
+		<defName>SSR_Sound_Electromagnetic_CIWS</defName>
 		<context>MapOnly</context>
 		<subSounds>
 			<li>
 				<grains>
 					<li Class="AudioGrain_Clip">
-						<clipPath>Electromagnetic_CIWS</clipPath>
+						<clipPath>SSR_Sound_Electromagnetic_CIWS</clipPath>
 					</li>
 				</grains>
 				<volumeRange>75~75</volumeRange>
