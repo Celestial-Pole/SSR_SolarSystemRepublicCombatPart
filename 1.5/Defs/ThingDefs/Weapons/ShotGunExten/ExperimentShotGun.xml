@@ -6,7 +6,7 @@
     <label>战术霰弹枪</label>
     <description>可发射多发弹丸的自定义霰弹枪</description>
     <graphicData>
-      <texPath>Things/Weapons/Penertrating Weapon/QBUthreeoneE</texPath>
+      <texPath>Things/Weapons/ElectromagneticWeapon/Electromagnetic_SG</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <drawSize>(1.5,1.5)</drawSize>
     </graphicData>
@@ -20,6 +20,12 @@
       <AccuracyLong>0.88</AccuracyLong>
       <RangedWeapon_Cooldown>1.4</RangedWeapon_Cooldown>
     </statBases>
+	  <costList>
+		  <SSR_SpecialSteel>11</SSR_SpecialSteel>
+		  <SSR_StrongElectromagnet>3</SSR_StrongElectromagnet>
+		  <SSR_SuperconductingMaterial>1</SSR_SuperconductingMaterial>
+		  <ComponentIndustrial>10</ComponentIndustrial>
+	  </costList>
 	  <weaponClasses>
       <li>RangedHeavy</li>
       <li>LongShots</li>
@@ -47,7 +53,7 @@
         <ShotgunPellets>4</ShotgunPellets>               <!-- 每次射击发射x颗弹丸  ,穿透子弹搞太多会叠在一起 -->
        <!-- <extraProjectile>Bullet_Slug</extraProjectile>    发射独头弹  -->
        <!-- <extraProjectileCount>1</extraProjectileCount>     射击发射1颗独头弹 -->
-       <spreadAngle>30f</spreadAngle>  <!-- 散射角 ，需要小于180 大于0-->
+       <spreadAngle>30</spreadAngle>  <!-- 散射角 ，需要小于180 大于0-->
       </li>
     </modExtensions>
     
@@ -103,7 +109,6 @@
         <speed>80</speed>
         <damageAmountBase>4</damageAmountBase>
         <armorPenetrationBase>0.83</armorPenetrationBase>
-        <preventFriendlyFire>true</preventFriendlyFire>
       </projectile>
 
       <!-- <comps>

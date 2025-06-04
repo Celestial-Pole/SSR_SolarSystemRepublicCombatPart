@@ -46,6 +46,21 @@
 	</SoundDef>
 
 	<SoundDef>
+		<defName>SSR_Sound_Electromagnetic_SG</defName>
+		<context>MapOnly</context>
+		<subSounds>
+			<li>
+				<grains>
+					<li Class="AudioGrain_Clip">
+						<clipPath>SSR_Sound_Electromagnetic_SG</clipPath>
+					</li>
+				</grains>
+				<volumeRange>25~25</volumeRange>
+			</li>
+		</subSounds>
+	</SoundDef>
+
+	<SoundDef>
 		<defName>SSR_Sound_Electromagnetic_SR</defName>
 		<context>MapOnly</context>
 		<subSounds>
