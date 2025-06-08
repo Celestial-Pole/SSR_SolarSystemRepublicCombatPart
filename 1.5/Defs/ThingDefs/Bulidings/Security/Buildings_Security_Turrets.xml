@@ -411,27 +411,12 @@
 			</li>
 		</verbs>
 	</ThingDef>
-<!-- 
-	<ThingDef ParentName="BaseBullet">
-		<defName>SSR_Bullet_RailCIWS</defName>
-		<label>电磁密集阵子弹</label>
-		<graphicData>
-			<texPath>Things/Projectile/Bullet_Small</texPath>
-			<graphicClass>Graphic_Single</graphicClass>
-		</graphicData>
-		<projectile>
-			<damageDef>Bullet</damageDef>
-			<damageAmountBase>20</damageAmountBase>
-			<stoppingPower>2.5</stoppingPower>
-			<speed>500</speed>
-		</projectile>
-	</ThingDef> -->
 
 	<ThingDef ParentName="BaseBullet">
 		<defName>SSR_Bullet_RailCIWS</defName>
 		<label>电磁密集阵子弹</label>
 		<graphicData>
-			<texPath>Things/Projectile/Bullet_Small</texPath>
+			<texPath>Things/Projectile/Electromagnetic_AR_rt</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
 		<thingClass>HJ_SSR.Weapons.PenetratingBullet</thingClass>
