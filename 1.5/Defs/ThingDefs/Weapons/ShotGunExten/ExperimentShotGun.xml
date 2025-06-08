@@ -44,6 +44,8 @@
         <range>53</range>
         <muzzleFlashScale>19</muzzleFlashScale>
         <requireLineOfSight>false</requireLineOfSight>
+        <soundCast>SSR_Sound_Electromagnetic_AR</soundCast>
+				<soundCastTail>GunTail_Medium</soundCastTail>
       </li>
     </verbs>
     
