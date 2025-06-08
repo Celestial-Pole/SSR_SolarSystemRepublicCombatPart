@@ -330,6 +330,9 @@
 				<shortCircuitInRain>false</shortCircuitInRain>
 				<basePowerConsumption>2000</basePowerConsumption>
 			</li>
+			<li>
+				<compClass>FS_SSR.TC_SolarFlareLocalShield</compClass>
+			</li>
 		</comps>
 		<passability>PassThroughOnly</passability>
 		<pathCost>50</pathCost>
