@@ -419,6 +419,7 @@
 				<soundCast>SSR_Sound_Electromagnetic_SG</soundCast>
 				<soundCastTail>GunTail_Medium</soundCastTail>
 				<muzzleFlashScale>9</muzzleFlashScale>
+				<canGoWild>false</canGoWild>
 			</li>
 		</verbs>
 		<tools>
