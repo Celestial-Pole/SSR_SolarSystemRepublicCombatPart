@@ -433,7 +433,7 @@
 		<!-- 霰弹枪效果扩展 -->
 		<modExtensions>
 			<li Class="HJ_SSR.Weapons.ModExtension_Verb_Shotgun">
-				<ShotgunPellets>12</ShotgunPellets>
+				<ShotgunPellets>5</ShotgunPellets>
 				<!-- 每次射击发射x颗弹丸  ,穿透子弹搞太多会叠在一起 -->
 				<!-- <extraProjectile>Bullet_Slug</extraProjectile>    发射独头弹  -->
 				<!-- <extraProjectileCount>1</extraProjectileCount>     射击发射1颗独头弹 -->
