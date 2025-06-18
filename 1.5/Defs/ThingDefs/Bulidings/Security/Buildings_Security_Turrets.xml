@@ -256,12 +256,12 @@
 		</projectile>
 	</ThingDef>
 
-	<!--=============== 电磁密集阵 ===============-->
+	<!--=============== 电磁近防炮 ===============-->
 
 	<ThingDef ParentName="BuildingBase">
 		<defName>SSR_Turret_RailCIWS</defName>
-		<label>电磁密集阵</label>
-		<description>电磁密集阵是一款地球联邦时代早期密集阵系统，曾被广泛用在海军和太空军舰艇以及地面军事设施上。</description>
+		<label>电磁近防炮</label>
+		<description>电磁近防炮是一款地球联邦时代早期近防炮系统，曾被广泛用在海军和太空军舰艇以及地面军事设施上。</description>
 		<thingClass>Building_TurretGun</thingClass>
 		<drawerType>MapMeshAndRealTime</drawerType>
 		<graphicData>
@@ -371,8 +371,8 @@
 
 	<ThingDef ParentName="BaseWeaponTurret">
 		<defName>SSR_Gun_RailCIWS</defName>
-		<label>电磁密集阵</label>
-		<description>电磁密集阵。</description>
+		<label>电磁近防炮</label>
+		<description>电磁近防炮。</description>
 		<graphicData>
 			<texPath>Things/Building/Security/RailCIWS_Top</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -406,7 +406,7 @@
 
 	<ThingDef ParentName="BaseBullet">
 		<defName>SSR_Bullet_RailCIWS</defName>
-		<label>电磁密集阵子弹</label>
+		<label>电磁近防炮子弹</label>
 		<graphicData>
 			<texPath>Things/Projectile/Electromagnetic_AR_rt</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
