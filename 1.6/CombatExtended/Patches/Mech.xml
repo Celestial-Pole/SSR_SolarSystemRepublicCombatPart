@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/BodyDef[defName="Mech_Military"]/corePart/groups</xpath>
+    <value>
+      <li>CoveredByNaturalArmor</li>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/BodyDef[defName="Mech_Military"]/corePart/parts/li[def="MilitaryMechanicalNeck"]</xpath>
+    <value>
+      <groups>
+         <li>CoveredByNaturalArmor</li>
+      </groups>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/BodyDef[defName="Mech_Military"]/corePart/parts/li[def="MilitaryMechanicalNeck"]/parts/li[def="MilitaryMechanicalHead"]/groups</xpath>
+    <value>
+      <li>CoveredByNaturalArmor</li>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/BodyDef[defName="Mech_Military"]/corePart/parts/li[def="MilitaryMechanicalShoulder"]</xpath>
+    <value>
+      <groups>
+         <li>CoveredByNaturalArmor</li>
+      </groups>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/BodyDef[defName="Mech_Military"]/corePart/parts/li[def="MilitaryMechanicalShoulder"]/parts/li[def="MilitaryMechanicalArm"]</xpath>
+    <value>
+      <groups>
+         <li>CoveredByNaturalArmor</li>
+      </groups>
+    </value>
+  </Operation>
+
+  	<Operation Class="PatchOperationAddModExtension">
+		<xpath>Defs/PawnKindDef[defName="SSR_CombatRobot_SMG"]</xpath>
+		<value>
+			<li Class="CombatExtended.LoadoutPropertiesExtension">
+				<primaryMagazineCount>
+					<min>5</min>
+					<max>6</max>
+				</primaryMagazineCount>
+			</li>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="SSR_CombatRobot_SMG"]/statBases/ArmorRating_Blunt</xpath>
+		<value>
+			<ArmorRating_Blunt>15</ArmorRating_Blunt>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="SSR_CombatRobot_SMG"]/statBases/ArmorRating_Sharp</xpath>
+		<value>
+			<ArmorRating_Sharp>10</ArmorRating_Sharp>
+		</value>
+	</Operation>
+
+  <Operation Class="PatchOperationAddModExtension">
+		<xpath>Defs/PawnKindDef[defName="SSR_CombatRobot_AR"]</xpath>
+		<value>
+			<li Class="CombatExtended.LoadoutPropertiesExtension">
+				<primaryMagazineCount>
+					<min>5</min>
+					<max>6</max>
+				</primaryMagazineCount>
+			</li>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="SSR_CombatRobot_AR"]/statBases/ArmorRating_Blunt</xpath>
+		<value>
+			<ArmorRating_Blunt>15</ArmorRating_Blunt>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="SSR_CombatRobot_AR"]/statBases/ArmorRating_Sharp</xpath>
+		<value>
+			<ArmorRating_Sharp>10</ArmorRating_Sharp>
+		</value>
+	</Operation>
+
+  </Patch>

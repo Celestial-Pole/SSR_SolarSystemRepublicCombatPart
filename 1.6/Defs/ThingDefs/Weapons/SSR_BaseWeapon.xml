@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ThingCategoryDef>
+		<defName>SSR_Weapons</defName>
+		<label>太阳系共和国武器</label>
+		<parent>Weapons</parent>
+	</ThingCategoryDef>
+
+	<ThingDef Abstract="True" Name="SSR_Weapons">
+		<thingClass>ThingWithComps</thingClass>
+		<category>Item</category>
+		<drawerType>MapMeshOnly</drawerType>
+		<drawGUIOverlay>true</drawGUIOverlay>
+		<altitudeLayer>Item</altitudeLayer>
+		<alwaysHaulable>true</alwaysHaulable>
+		<tickerType>Never</tickerType>
+		<equipmentType>Primary</equipmentType>
+		<useHitPoints>true</useHitPoints>
+		<pathCost>14</pathCost>
+		<selectable>true</selectable>
+		<relicChance>0</relicChance>
+		<statBases>
+			<Flammability>0</Flammability>
+			<MaxHitPoints>500</MaxHitPoints>
+			<DeteriorationRate>0</DeteriorationRate>
+			<Beauty>0</Beauty>
+			<SellPriceFactor>1</SellPriceFactor>
+		</statBases>
+		<thingCategories>
+			<li>SSR_Weapons</li>
+		</thingCategories>
+		<recipeMaker>
+			<researchPrerequisite>AdvancedFabrication</researchPrerequisite>
+			<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+			<workSkill>Crafting</workSkill>
+			<effectWorking>Smith</effectWorking>
+			<soundWorking>Recipe_Machining</soundWorking>
+			<recipeUsers>
+				<li>SSR_NumericalControlledMachineTool</li>
+			</recipeUsers>
+			<unfinishedThingDef>UnfinishedGun</unfinishedThingDef>
+		</recipeMaker>
+		<comps>
+			<li Class="CompProperties_Forbiddable"/>
+			<li>
+				<compClass>CompEquippable</compClass>
+			</li>
+			<li Class="CompProperties_Styleable"></li>
+		</comps>
+		<graphicData>
+			<onGroundRandomRotateAngle>35</onGroundRandomRotateAngle>
+		</graphicData>
+		<allowedArchonexusCount>1</allowedArchonexusCount>
+	</ThingDef>
+
+	<ThingDef Abstract="True" ParentName="SSR_Weapons" Name="SSR_Weapons_Industrial">
+		<techLevel>Industrial</techLevel>
+		<comps>
+			<li>
+				<compClass>CompQuality</compClass>
+			</li>
+		</comps>
+	</ThingDef>
+
+	<ThingDef Abstract="True" ParentName="SSR_Weapons" Name="SSR_Weapons_Industrial_Anti-vehicle">
+		<techLevel>Industrial</techLevel>
+	</ThingDef>
+
+	<ThingDef Abstract="True" ParentName="SSR_Weapons" Name="SSR_Weapons_Spacer">
+		<techLevel>Spacer</techLevel>
+		<comps>
+			<li>
+				<compClass>CompQuality</compClass>
+			</li>
+		</comps>
+	</ThingDef>
+	
+</Defs>

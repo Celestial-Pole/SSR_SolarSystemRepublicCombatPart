@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingCategoryDef>
+    <defName>Ammo170mmMissile</defName>
+    <label>170mm missile</label>
+    <parent>AmmoAdvanced</parent>
+    <iconPath>UI/Icons/ThingCategories/CaliberCharge</iconPath>
+  </ThingCategoryDef>
+	
+	<!-- ==================== AmmoSet ========================== -->
+
+  <CombatExtended.AmmoSetDef>
+    <defName>AmmoSet_170mmMissile</defName>
+    <label>170mm missile</label>
+	<ammoTypes>
+	  <Ammo_170mmMissile_HE>Bullet_170mmMissile_HE</Ammo_170mmMissile_HE>
+	</ammoTypes>
+  </CombatExtended.AmmoSetDef>
+	
+	<!-- ==================== Ammo ========================== -->
+
+  <ThingDef Class="CombatExtended.AmmoDef" Name="170mmMissileBase" ParentName="MediumAmmoBase" Abstract="True">
+    <description>An guided rocket equipped with an explosive warhead and a contact fuse.</description>
+    <statBases>
+      <MaxHitPoints>200</MaxHitPoints>
+    </statBases>
+    <tradeTags>
+      <li>CE_AutoEnableTrade</li>
+      <li>CE_AutoEnableCrafting_TableMachining</li>
+    </tradeTags>
+    <thingCategories>
+      <li>Ammo170mmMissile</li>
+    </thingCategories>
+    <stackLimit>25</stackLimit>
+    <cookOffFlashScale>25</cookOffFlashScale>
+    <cookOffSound>MortarBomb_Explode</cookOffSound>
+  </ThingDef>
+
+  <ThingDef Class="CombatExtended.AmmoDef" ParentName="170mmMissileBase">
+    <defName>Ammo_170mmMissile_HE</defName>
+    <label>170mm missile (HE)</label>
+    <graphicData>
+      <texPath>Things/Projectile/Missile</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+    <statBases>
+      <MarketValue>14.83</MarketValue>
+      <Mass>7.5</Mass>
+      <Bulk>7.07</Bulk>
+    </statBases>
+    <ammoClass>GrenadeHE</ammoClass>
+	<detonateProjectile>Bullet_170mmMissile_HE</detonateProjectile>
+  </ThingDef>
+	
+	<!-- ================== Projectiles ================== -->
+	<ThingDef Name="Base170mmMissile" ParentName="BaseExplosiveBullet" Abstract="true">
+		<graphicData>
+			<shaderType>TransparentPostLight</shaderType>
+		</graphicData>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+			<speed>0</speed>
+			<soundAmbient>RocketPropelledLoop_Small</soundAmbient>
+			<dropsCasings>false</dropsCasings>
+			<flyOverhead>true</flyOverhead>
+			<gravityFactor>5</gravityFactor>      
+		</projectile>
+	</ThingDef>	
+
+	<ThingDef ParentName="Base170mmMissile">
+		<defName>Bullet_170mmMissile_HE</defName>
+		<thingClass>CombatExtended.ProjectileCE_Explosive</thingClass>
+		<label>170mm missile (HE)</label>
+		<graphicData>
+			<texPath>Things/Projectile/Missile</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>1.0</drawSize>
+		</graphicData>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+			<damageDef>Bomb</damageDef>
+			<damageAmountBase>400</damageAmountBase>
+			<explosionRadius>5.9</explosionRadius>
+			<armorPenetrationSharp>97</armorPenetrationSharp>
+            <armorPenetrationBlunt>420</armorPenetrationBlunt>
+      <flyOverhead>false</flyOverhead>
+      <speed>200</speed>
+		</projectile>
+		<comps>
+			<li Class="CombatExtended.CompProperties_Fragments">
+				<fragments>
+					<Fragment_Small>23</Fragment_Small>
+				</fragments>
+			</li>
+		</comps>
+	</ThingDef>
+  
+  <!-- ==================== Recipes ========================== -->
+
+  <RecipeDef ParentName="ChargeAmmoRecipeBase">
+    <defName>MakeAmmo_170mmMissile_HE</defName>
+    <label>make 170mm Missile x20</label>
+    <description>Craft 20 170mm Missiles.</description>
+    <jobString>Making 20x105mm Electromagnetic cartridges.</jobString>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Plasteel</li>
+          </thingDefs>
+        </filter>
+        <count>30</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>50</count>
+      </li>	  
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentIndustrial</li>
+          </thingDefs>
+        </filter>
+        <count>15</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>Plasteel</li>
+        <li>Steel</li>		
+        <li>ComponentIndustrial</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <Ammo_170mmMissile_HE>20</Ammo_170mmMissile_HE>
+    </products>
+    <workAmount>15000</workAmount>		
+  </RecipeDef>
+	
+</Defs>

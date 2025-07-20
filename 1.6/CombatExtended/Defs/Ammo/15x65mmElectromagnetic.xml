@@ -1,0 +1,220 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingCategoryDef>
+    <defName>Ammo15x65mmElectromagnetic</defName>
+    <label>15x65mm Electromagnetic</label>
+    <parent>AmmoAdvanced</parent>
+    <iconPath>UI/Icons/ThingCategories/CaliberCharge</iconPath>
+  </ThingCategoryDef>
+
+  <!-- ==================== AmmoSet ========================== -->
+
+  <CombatExtended.AmmoSetDef>
+    <defName>AmmoSet_15x65mmElectromagnetic</defName>
+    <label>15x65mm Electromagnetic</label>
+    <ammoTypes>
+      <Ammo_15x65mmElectromagnetic>Bullet_15x65mmElectromagnetic</Ammo_15x65mmElectromagnetic>
+      <Ammo_15x65mmElectromagnetic_Ion>Bullet_15x65mmElectromagnetic_Ion</Ammo_15x65mmElectromagnetic_Ion>
+    </ammoTypes>
+    <similarTo>AmmoSet_ChargedRifle</similarTo>
+  </CombatExtended.AmmoSetDef>
+
+  <!-- ==================== Ammo ========================== -->
+
+  <ThingDef Class="CombatExtended.AmmoDef" Name="15x65mmElectromagneticBase" ParentName="SpacerSmallAmmoBase" Abstract="True">
+    <description>Charged shot ammo used by advanced assault rifle designs.</description>
+    <statBases>
+      <Mass>0.01</Mass>
+      <Bulk>0.01</Bulk>
+    </statBases>
+    <tradeTags>
+      <li>CE_AutoEnableTrade</li>
+      <li>CE_AutoEnableCrafting_FabricationBench</li>
+    </tradeTags>
+    <thingCategories>
+      <li>Ammo15x65mmElectromagnetic</li>
+    </thingCategories>
+    <stackLimit>5000</stackLimit>		
+  </ThingDef>
+
+  <ThingDef Class="CombatExtended.AmmoDef" ParentName="15x65mmElectromagneticBase">
+    <defName>Ammo_15x65mmElectromagnetic</defName>
+    <label>15x65mm Electromagnetic cartridge</label>
+    <graphicData>
+      <texPath>Things/Ammo/Charged/MediumRegular</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>1</MarketValue>
+    </statBases>
+    <ammoClass>RailgunSabot</ammoClass>
+  </ThingDef>
+  
+  <ThingDef Class="CombatExtended.AmmoDef" ParentName="15x65mmElectromagneticBase">
+    <defName>Ammo_15x65mmElectromagnetic_Ion</defName>
+    <label>15x65mm Electromagnetic cartridge (Ion)</label>
+    <graphicData>
+      <texPath>Things/Ammo/Charged/MediumIon</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>1</MarketValue>
+    </statBases>
+    <ammoClass>Ionized</ammoClass>
+    <generateAllowChance>0.5</generateAllowChance>
+  </ThingDef>
+
+  <!-- ================== Projectiles ================== -->
+
+  <ThingDef Name="Base15x65mmElectromagneticBullet" ParentName="BaseBulletCE" Abstract="true">
+    <graphicData>
+      <texPath>Things/Projectile/Electromagnetic_SR_rt</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile Class="CombatExtended.ProjectilePropertiesCE">
+      <damageDef>Bullet</damageDef>
+      <speed>180</speed>
+    </projectile>
+  </ThingDef>
+
+  <ThingDef ParentName="Base15x65mmElectromagneticBullet">
+    <defName>Bullet_15x65mmElectromagnetic</defName>
+    <label>15x65mm Electromagnetic bullet</label>
+	<thingClass>BillDoorsFramework.PenetratingBulletCE</thingClass>
+    <projectile Class="CombatExtended.ProjectilePropertiesCE">
+      <damageAmountBase>60</damageAmountBase>
+      <secondaryDamage>
+        <li>
+          <def>Bomb_Secondary</def>
+          <amount>32</amount>
+        </li>
+      </secondaryDamage>
+      <armorPenetrationSharp>67.5</armorPenetrationSharp>
+      <armorPenetrationBlunt>135</armorPenetrationBlunt>
+    </projectile>
+	<modExtensions>
+		<li Class="BillDoorsFramework.ModExtension_PenetratingProjectile">
+			<overpenDamageMulti>0.8</overpenDamageMulti>
+			<stopperDamageMulti>1.225</stopperDamageMulti>
+			<penetrationPotentialMultiplier>4</penetrationPotentialMultiplier>
+		</li>
+	</modExtensions>
+  </ThingDef>
+  
+  <ThingDef ParentName="Base15x65mmElectromagneticBullet">
+    <defName>Bullet_15x65mmElectromagnetic_Ion</defName>
+    <label>15x65mm Electromagnetic bullet (Ion)</label>
+	<thingClass>BillDoorsFramework.PenetratingBulletCE</thingClass>
+    <projectile Class="CombatExtended.ProjectilePropertiesCE">
+      <damageAmountBase>57</damageAmountBase>
+      <secondaryDamage>
+        <li>
+          <def>EMP</def>
+          <amount>6</amount>
+        </li>
+      </secondaryDamage>
+		<armorPenetrationSharp>67.5</armorPenetrationSharp>
+		<armorPenetrationBlunt>135</armorPenetrationBlunt>
+      <empShieldBreakChance>0.2</empShieldBreakChance>
+    </projectile>
+	<modExtensions>
+		<li Class="BillDoorsFramework.ModExtension_PenetratingProjectile">
+			<overpenDamageMulti>0.8</overpenDamageMulti>
+			<stopperDamageMulti>1.225</stopperDamageMulti>
+			<penetrationPotentialMultiplier>4</penetrationPotentialMultiplier>
+		</li>
+	</modExtensions>
+  </ThingDef>
+
+  <!-- ==================== Recipes ========================== -->
+
+  <RecipeDef ParentName="ChargeAmmoRecipeBase">
+    <defName>MakeAmmo_15x65mmElectromagnetic</defName>
+    <label>make 15x65mm Electromagnetic cartridge x500</label>
+    <description>Craft 500 15x65mm Charged cartridges.</description>
+    <jobString>Making 15x65mm Electromagnetic cartridges.</jobString>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Plasteel</li>
+          </thingDefs>
+        </filter>
+        <count>8</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>6</count>
+      </li>	  
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentIndustrial</li>
+          </thingDefs>
+        </filter>
+        <count>8</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>Plasteel</li>
+        <li>Steel</li>		
+        <li>ComponentIndustrial</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <Ammo_15x65mmElectromagnetic>500</Ammo_15x65mmElectromagnetic>
+    </products>
+    <workAmount>8600</workAmount>		
+  </RecipeDef>
+  
+  <RecipeDef ParentName="ChargeAmmoRecipeBase">
+    <defName>MakeAmmo_15x65mmElectromagnetic_Ion</defName>
+    <label>make 15x65mm Electromagnetic (Ion) cartridge x500</label>
+    <description>Craft 500 15x65mm Electromagnetic (Ion) cartridges.</description>
+    <jobString>Making 15x65mm Charged (Ion) cartridges.</jobString>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Plasteel</li>
+          </thingDefs>
+        </filter>
+        <count>8</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>6</count>
+      </li>	  
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentIndustrial</li>
+          </thingDefs>
+        </filter>
+        <count>8</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>Plasteel</li>
+        <li>Steel</li>		
+        <li>ComponentIndustrial</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <Ammo_15x65mmElectromagnetic_Ion>500</Ammo_15x65mmElectromagnetic_Ion>
+    </products>
+    <workAmount>8600</workAmount>	
+  </RecipeDef>
+
+</Defs>

@@ -1,0 +1,469 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<!--=============== 哨戒机枪 ===============-->
+
+	<ThingDef ParentName="BuildingBase">
+		<defName>SSR_Turret_SentryGun</defName>
+		<label>哨戒机枪</label>
+		<description>哨戒机枪是一种高效的防御设施，固定的底座使其更加坚固的同时拥有了更多的备弹量。</description>
+		<thingClass>Building_TurretGun</thingClass>
+		<drawerType>MapMeshAndRealTime</drawerType>
+		<graphicData>
+			<texPath>Things/Building/Security/SentryGun_Base</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(1,1)</drawSize>
+			<shaderType>CutoutComplex</shaderType>
+			<damageData>
+				<rect>(0.2,0.2,0.6,0.6)</rect>
+			</damageData>
+			<shadowData>
+				<volume>(0.27,0.25,0.27)</volume>
+				<offset>(0,0,0)</offset>
+			</shadowData>
+		</graphicData>
+		<uiIconPath>Things/Building/Security/SentryGun_MenuIcon</uiIconPath>
+		<uiIconScale>0.90</uiIconScale>
+		<altitudeLayer>Building</altitudeLayer>
+		<stealable>false</stealable>
+		<rotatable>false</rotatable>
+		<statBases>
+			<MaxHitPoints>800</MaxHitPoints>
+			<Flammability>0</Flammability>
+			<WorkToBuild>1800</WorkToBuild>
+			<Mass>8</Mass>
+			<Beauty>0</Beauty>
+			<ShootingAccuracyTurret>0.96</ShootingAccuracyTurret>
+		</statBases>
+		<tickerType>Normal</tickerType>
+		<comps>
+			<li Class="CompProperties_Forbiddable"/>
+			<li Class="CompProperties_Flickable"/>
+			<li Class="CompProperties_Breakdownable"/>
+			<li Class="CompProperties_Refuelable">
+				<fuelLabel>射击直到弹药耗尽</fuelLabel>
+				<fuelGizmoLabel>剩余弹药量</fuelGizmoLabel>
+				<outOfFuelMessage>需要重新装填</outOfFuelMessage>
+				<fuelFilter>
+					<thingDefs>
+						<li>SSR_SpecialSteel</li>
+					</thingDefs>
+				</fuelFilter>
+				<fuelCapacity>720</fuelCapacity><!-- 30 bursts -->
+				<fuelMultiplier>4</fuelMultiplier><!-- 1.333 steel per burst, 80 per full rearm -->
+				<initialFuelPercent>1</initialFuelPercent>
+				<autoRefuelPercent>1</autoRefuelPercent>
+				<showFuelGizmo>true</showFuelGizmo>
+				<minimumFueledThreshold>1</minimumFueledThreshold>
+				<factorByDifficulty>true</factorByDifficulty>
+				<consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+				<fuelIconPath>UI/Overlays/Barrel</fuelIconPath>
+			</li>
+		</comps>
+		<passability>PassThroughOnly</passability>
+		<pathCost>50</pathCost>
+		<fillPercent>0.4</fillPercent>
+		<hasTooltip>true</hasTooltip>
+		<stuffCategories>
+			<li>Metallic</li>
+		</stuffCategories>
+		<costStuffCount>30</costStuffCount>
+		<costList>
+			<SSR_SpecialSteel>120</SSR_SpecialSteel>
+			<SSR_StrongElectromagnet>10</SSR_StrongElectromagnet>
+			<SSR_SuperconductingMaterial>5</SSR_SuperconductingMaterial>
+			<ComponentIndustrial>25</ComponentIndustrial>
+		</costList>
+		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+		<designationCategory>SSR_DesignationCategory</designationCategory>
+		<constructionSkillPrerequisite>5</constructionSkillPrerequisite>
+		<building>
+			<combatPower>45</combatPower><!-- same as a scavenger -->
+			<ai_combatDangerous>true</ai_combatDangerous>
+			<turretGunDef>SSR_Gun_SentryGun</turretGunDef>
+			<turretBurstWarmupTime>0.01</turretBurstWarmupTime>
+			<turretBurstCooldownTime>0</turretBurstCooldownTime>
+		</building>
+		<placeWorkers>
+			<li>PlaceWorker_TurretTop</li>
+			<li>PlaceWorker_ShowTurretRadius</li>
+		</placeWorkers>
+		<designationHotKey>Misc2</designationHotKey>
+		<researchPrerequisites>
+			<li>SSR_Research_BasicTurret</li>
+		</researchPrerequisites>
+		<modExtensions>
+			<li Class="SolarSystemRepublicFramework.DefModExtension_TurretMannable">
+			</li>
+			<li Class="FS_SSR.UI.Ext_DesignationCategoryInner">
+				<!-- SSR_DesignationCategory分类的必须带此ext注明子分类 -->
+				<innerCategory>SSR_DesignationInnerCategory_Security</innerCategory>
+			</li>
+		</modExtensions>
+	</ThingDef>
+
+	<ThingDef ParentName="BuildingBase">
+		<defName>SSR_Turret_PortableSentryGun</defName>
+		<label>便携式哨戒机枪</label>
+		<description>便携式哨戒机枪是一种轻便高效的防御设施，可卸载的底座使其能够被快速拆解和安装在必要的位置，不过便携的特性让哨戒机枪无法拥有充沛的备弹量。</description>
+		<thingClass>Building_TurretGun</thingClass>
+		<drawerType>MapMeshAndRealTime</drawerType>
+		<graphicData>
+			<texPath>Things/Building/Security/PortableSentryGun_Base</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(1.5,1.5)</drawSize>
+			<shaderType>CutoutComplex</shaderType>
+			<damageData>
+				<rect>(0.2,0.2,0.6,0.6)</rect>
+			</damageData>
+			<shadowData>
+				<volume>(0.27,0.25,0.27)</volume>
+				<offset>(0,0,0)</offset>
+			</shadowData>
+		</graphicData>
+		<uiIconPath>Things/Building/Security/PortableSentryGun_MenuIcon</uiIconPath>
+		<uiIconScale>0.90</uiIconScale>
+		<minifiedDef>MinifiedThing</minifiedDef>
+		<altitudeLayer>Building</altitudeLayer>
+		<stealable>false</stealable>
+		<rotatable>false</rotatable>
+		<thingCategories>
+			<li>BuildingsSecurity</li>
+		</thingCategories>
+		<statBases>
+			<MaxHitPoints>300</MaxHitPoints>
+			<Flammability>0</Flammability>
+			<WorkToBuild>1800</WorkToBuild>
+			<Mass>8</Mass>
+			<Beauty>0</Beauty>
+			<ShootingAccuracyTurret>0.96</ShootingAccuracyTurret>
+		</statBases>
+		<tickerType>Normal</tickerType>
+		<comps>
+			<li Class="CompProperties_Forbiddable"/>
+			<li Class="CompProperties_Flickable"/>
+			<li Class="CompProperties_Breakdownable"/>
+			<li Class="CompProperties_Refuelable">
+				<fuelLabel>射击直到弹药耗尽</fuelLabel>
+				<fuelGizmoLabel>剩余弹药量</fuelGizmoLabel>
+				<outOfFuelMessage>需要重新装填</outOfFuelMessage>
+				<fuelFilter>
+					<thingDefs>
+						<li>SSR_SpecialSteel</li>
+					</thingDefs>
+				</fuelFilter>
+				<fuelCapacity>360</fuelCapacity>
+				<!-- 30 bursts -->
+				<fuelMultiplier>4</fuelMultiplier>
+				<!-- 1.333 steel per burst, 80 per full rearm -->
+				<initialFuelPercent>1</initialFuelPercent>
+				<autoRefuelPercent>1</autoRefuelPercent>
+				<showFuelGizmo>true</showFuelGizmo>
+				<minimumFueledThreshold>1</minimumFueledThreshold>
+				<factorByDifficulty>true</factorByDifficulty>
+				<consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+				<fuelIconPath>UI/Overlays/Barrel</fuelIconPath>
+			</li>
+		</comps>
+		<passability>PassThroughOnly</passability>
+		<pathCost>50</pathCost>
+		<fillPercent>0.4</fillPercent>
+		<hasTooltip>true</hasTooltip>
+		<stuffCategories>
+			<li>Metallic</li>
+		</stuffCategories>
+		<costStuffCount>30</costStuffCount>
+		<costList>
+			<SSR_SpecialSteel>90</SSR_SpecialSteel>
+			<SSR_StrongElectromagnet>10</SSR_StrongElectromagnet>
+			<SSR_SuperconductingMaterial>5</SSR_SuperconductingMaterial>
+			<ComponentIndustrial>20</ComponentIndustrial>
+		</costList>
+		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+		<designationCategory>SSR_DesignationCategory</designationCategory>
+		<constructionSkillPrerequisite>5</constructionSkillPrerequisite>
+		<building>
+			<combatPower>45</combatPower><!-- same as a scavenger -->
+			<ai_combatDangerous>true</ai_combatDangerous>
+			<turretGunDef>SSR_Gun_SentryGun</turretGunDef>
+			<turretBurstWarmupTime>0.01</turretBurstWarmupTime>
+			<turretBurstCooldownTime>0</turretBurstCooldownTime>
+		</building>
+		<placeWorkers>
+			<li>PlaceWorker_TurretTop</li>
+			<li>PlaceWorker_ShowTurretRadius</li>
+		</placeWorkers>
+		<designationHotKey>Misc2</designationHotKey>
+		<researchPrerequisites>
+			<li>SSR_Research_BasicTurret</li>
+		</researchPrerequisites>
+		<modExtensions>
+			<li Class="SolarSystemRepublicFramework.DefModExtension_TurretMannable">
+			</li>
+			<li Class="FS_SSR.UI.Ext_DesignationCategoryInner">
+				<!-- SSR_DesignationCategory分类的必须带此ext注明子分类 -->
+				<innerCategory>SSR_DesignationInnerCategory_Security</innerCategory>
+			</li>
+		</modExtensions>
+	</ThingDef>
+	
+	<ThingDef ParentName="BaseWeaponTurret">
+		<defName>SSR_Gun_SentryGun</defName>
+		<label>哨戒机枪</label>
+		<description>哨戒机枪。</description>
+		<graphicData>
+			<texPath>Things/Building/Security/SentryGun_Top</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<statBases>
+			<AccuracyTouch>0.80</AccuracyTouch>
+			<AccuracyShort>1.00</AccuracyShort>
+			<AccuracyMedium>0.95</AccuracyMedium>
+			<AccuracyLong>0.65</AccuracyLong>
+			<RangedWeapon_Cooldown>1</RangedWeapon_Cooldown>
+			<DeteriorationRate>0</DeteriorationRate>
+			<Mass>5</Mass>
+			<Flammability>0</Flammability>
+		</statBases>
+		<verbs>
+			<li>
+				<verbClass>Verb_Shoot</verbClass>
+				<defaultProjectile>SSR_Bullet_SentryGun</defaultProjectile>
+				<warmupTime>0</warmupTime>
+				<range>38.9</range>
+				<ticksBetweenBurstShots>5</ticksBetweenBurstShots>
+				<burstShotCount>12</burstShotCount>
+				<soundCast>GunShotA</soundCast>
+				<soundCastTail>GunTail_Light</soundCastTail>
+				<muzzleFlashScale>9</muzzleFlashScale>
+				<consumeFuelPerShot>1</consumeFuelPerShot>
+			</li>
+		</verbs>
+	</ThingDef>
+
+	<ThingDef ParentName="BaseBullet">
+		<defName>SSR_Bullet_SentryGun</defName>
+		<label>哨戒机枪子弹</label>
+		<graphicData>
+			<texPath>Things/Projectile/Bullet_Small</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<projectile>
+			<damageDef>Bullet</damageDef>
+			<damageAmountBase>10</damageAmountBase>
+			<stoppingPower>1.25</stoppingPower>
+			<speed>120</speed>
+		</projectile>
+	</ThingDef>
+
+	<!--=============== 电磁近防炮 ===============-->
+
+	<ThingDef ParentName="BuildingBase">
+		<defName>SSR_Turret_RailCIWS</defName>
+		<label>电磁近防炮</label>
+		<description>电磁近防炮是一款地球联邦时代早期近防炮系统，曾被广泛用在海军和太空军舰艇以及地面军事设施上。</description>
+		<thingClass>Building_TurretGun</thingClass>
+		<drawerType>MapMeshAndRealTime</drawerType>
+		<graphicData>
+			<texPath>Things/Building/Security/2x2_Base</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(2,2)</drawSize>
+			<shaderType>CutoutComplex</shaderType>
+			<damageData>
+				<rect>(0.2,0.2,0.6,0.6)</rect>
+			</damageData>
+			<shadowData>
+				<volume>(0.27,0.25,0.27)</volume>
+				<offset>(0,0,0)</offset>
+			</shadowData>
+		</graphicData>
+		<uiIconPath>Things/Building/Security/RailCIWS_MenuIcon</uiIconPath>
+		<uiIconScale>0.90</uiIconScale>
+		<altitudeLayer>Building</altitudeLayer>
+		<stealable>false</stealable>
+		<rotatable>false</rotatable>
+		<statBases>
+			<MaxHitPoints>800</MaxHitPoints>
+			<Flammability>0</Flammability>
+			<WorkToBuild>1800</WorkToBuild>
+			<Mass>8</Mass>
+			<Beauty>0</Beauty>
+			<ShootingAccuracyTurret>0.96</ShootingAccuracyTurret>
+		</statBases>
+		<size>(2,2)</size>
+		<tickerType>Normal</tickerType>
+		<comps>
+			<li Class="CompProperties_Forbiddable"/>
+			<li Class="CompProperties_Flickable"/>
+			<li Class="CompProperties_Breakdownable"/>
+			<li Class="CompProperties_Refuelable">
+				<fuelLabel>射击直到弹药耗尽</fuelLabel>
+				<fuelGizmoLabel>剩余弹药量</fuelGizmoLabel>
+				<outOfFuelMessage>需要重新装填</outOfFuelMessage>
+				<fuelFilter>
+					<thingDefs>
+						<li>SSR_SpecialSteel</li>
+					</thingDefs>
+				</fuelFilter>
+				<fuelCapacity>1200</fuelCapacity>
+				<!-- 30 bursts -->
+				<fuelMultiplier>5</fuelMultiplier>
+				<!-- 1.333 steel per burst, 80 per full rearm -->
+				<initialFuelPercent>1</initialFuelPercent>
+				<autoRefuelPercent>1</autoRefuelPercent>
+				<showFuelGizmo>true</showFuelGizmo>
+				<minimumFueledThreshold>1</minimumFueledThreshold>
+				<factorByDifficulty>true</factorByDifficulty>
+				<consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+				<fuelIconPath>UI/Overlays/Barrel</fuelIconPath>
+			</li>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTrader</compClass>
+				<shortCircuitInRain>false</shortCircuitInRain>
+				<basePowerConsumption>2000</basePowerConsumption>
+			</li>
+			<li>
+				<compClass>FS_SSR.TC_SolarFlareLocalShield</compClass>
+			</li>
+		</comps>
+		<passability>PassThroughOnly</passability>
+		<pathCost>50</pathCost>
+		<fillPercent>0.4</fillPercent>
+		<hasTooltip>true</hasTooltip>
+		<stuffCategories>
+			<li>Metallic</li>
+		</stuffCategories>
+		<costStuffCount>30</costStuffCount>
+		<costList>
+			<SSR_SpecialSteel>350</SSR_SpecialSteel>
+			<SSR_StrongElectromagnet>20</SSR_StrongElectromagnet>
+			<SSR_SuperconductingMaterial>10</SSR_SuperconductingMaterial>
+			<ComponentIndustrial>45</ComponentIndustrial>
+		</costList>
+		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+		<designationCategory>SSR_DesignationCategory</designationCategory>
+		<constructionSkillPrerequisite>5</constructionSkillPrerequisite>
+		<building>
+			<combatPower>45</combatPower><!-- same as a scavenger -->
+			<ai_combatDangerous>true</ai_combatDangerous>
+			<turretGunDef>SSR_Gun_RailCIWS</turretGunDef>
+			<turretBurstWarmupTime>0.01</turretBurstWarmupTime>
+			<turretBurstCooldownTime>0</turretBurstCooldownTime>
+			<turretTopDrawSize>3.7</turretTopDrawSize>
+		</building>
+		<placeWorkers>
+			<li>PlaceWorker_TurretTop</li>
+			<li>PlaceWorker_ShowTurretRadius</li>
+		</placeWorkers>
+		<designationHotKey>Misc2</designationHotKey>
+		<researchPrerequisites>
+			<li>SSR_Research_BasicTurret</li>
+		</researchPrerequisites>
+		<modExtensions>
+			<li Class="SolarSystemRepublicFramework.DefModExtension_TurretMannable">
+			</li>
+			<li Class="FS_SSR.UI.Ext_DesignationCategoryInner">
+				<!-- SSR_DesignationCategory分类的必须带此ext注明子分类 -->
+				<innerCategory>SSR_DesignationInnerCategory_Security</innerCategory>
+			</li>
+		</modExtensions>
+	</ThingDef>
+
+	<ThingDef ParentName="BaseWeaponTurret">
+		<defName>SSR_Gun_RailCIWS</defName>
+		<label>电磁近防炮</label>
+		<description>电磁近防炮。</description>
+		<graphicData>
+			<texPath>Things/Building/Security/RailCIWS_Top</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<statBases>
+			<AccuracyTouch>1.00</AccuracyTouch>
+			<AccuracyShort>0.72</AccuracyShort>
+			<AccuracyMedium>0.66</AccuracyMedium>
+			<AccuracyLong>0.50</AccuracyLong>
+			<RangedWeapon_Cooldown>0</RangedWeapon_Cooldown>
+			<DeteriorationRate>0</DeteriorationRate>
+			<Mass>5</Mass>
+			<Flammability>0</Flammability>
+		</statBases>
+		<verbs>
+			<li>
+				<verbClass>Verb_Shoot</verbClass>
+				<defaultProjectile>SSR_Bullet_RailCIWS</defaultProjectile>
+				<warmupTime>0</warmupTime>
+				<range>50</range>
+				<ticksBetweenBurstShots>1</ticksBetweenBurstShots>
+				<burstShotCount>50</burstShotCount>
+				<soundCast>SSR_Sound_Electromagnetic_CIWS</soundCast>
+				<soundCastTail>GunTail_Medium</soundCastTail>
+				<muzzleFlashScale>9</muzzleFlashScale>
+				<consumeFuelPerShot>1</consumeFuelPerShot>
+				<requireLineOfSight>false</requireLineOfSight>
+			</li>
+		</verbs>
+	</ThingDef>
+
+	<ThingDef ParentName="BaseBullet">
+		<defName>SSR_Bullet_RailCIWS</defName>
+		<label>电磁近防炮子弹</label>
+		<graphicData>
+			<texPath>Things/Projectile/Electromagnetic_AR_rt</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<thingClass>HJ_SSR.Weapons.PenetratingBullet</thingClass>
+		<projectile>
+			<damageDef>Bullet</damageDef>
+			<speed>500</speed>
+			<damageAmountBase>20</damageAmountBase>
+			<stoppingPower>2.5</stoppingPower>
+		</projectile>
+
+		<modExtensions>
+			<li Class="HJ_SSR.Weapons.ModExtension_PenetratingProjectile">
+			<!-- 穿透造成的伤害系数 即 Damage = 基础伤害 * 0.5 -->
+			<overpenDamageMulti>0.5</overpenDamageMulti>
+			
+			<!-- 子弹终止时的伤害系数 即 Damage = 基础伤害 * 1 -->
+			<stopperDamageMulti>1.0</stopperDamageMulti>
+			
+			<!-- 穿透伤害下限百分比 (至少为原伤害的 20%) -->
+			<PenetrationFloorPercentage>0.2</PenetrationFloorPercentage>
+			
+			<!-- 穿透潜力倍率  初始穿透力 = 基础穿透力 * 1.0 -->
+			<penetrationPotentialMultiplier>1.0</penetrationPotentialMultiplier>
+			
+			<!-- 穿透后弹道偏移角度 (0 度) 穿透时如果具有子弹偏转，偏转角度的范围 0~x° -->
+			<postPenetrationDeviationAngle>0.0</postPenetrationDeviationAngle>
+			
+			<!-- 目标搜索半径范围 ，穿透时如果具有子弹偏转，控制偏转扇形区的范围-->
+			<minSearchRadius>1.0</minSearchRadius>
+			<maxSearchRadius>1.0</maxSearchRadius>
+			
+			<!-- 额外射程加成 -->
+			<extraRange>1.0</extraRange>
+			
+			<!-- 不同物体对于子弹穿透力的消耗程度，正相关 -->
+			<!-- 消耗值 = 建筑生命值 × buildingEquivalentMulti -->
+			<buildingEquivalentMulti>0.005</buildingEquivalentMulti>
+			<!-- 消耗值 = (生物护甲值 × 2 × armorEquivalentMulti)-->
+			<armorEquivalentMulti>1.0</armorEquivalentMulti>
+			<!-- 消耗值 = 体型) × bodysizeEquivalentMulti -->
+			<bodysizeEquivalentMulti>0.1</bodysizeEquivalentMulti>
+			<!-- 消耗值 = 树木固定 0.1 -->
+			<treeEquivalent>0.1</treeEquivalent>
+			<!-- 消耗值 = 碎石固定 0.1 -->
+			<chunkEquivalent>0.25</chunkEquivalent>
+			<!-- 弹跳衰减系数 -->
+			<bounceEquivalent>0.2</bounceEquivalent>
+
+			<!-- 开启后停用 穿透后偏移角度、目标搜索内容，默认弹道为射线无偏转 -->
+			<straightPassThrough>true</straightPassThrough>
+
+			<!-- 可穿透物体的计数 ，正数为穿透计数停止，负数为已穿透伤害衰减至0为停止条件-->
+			<maxPenetratingCount>10</maxPenetratingCount>
+			</li>
+		</modExtensions>
+	</ThingDef>
+
+</Defs>

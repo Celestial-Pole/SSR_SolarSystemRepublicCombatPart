@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <Mech_Military.label>military machinery</Mech_Military.label>
+  <Mech_Military.corePart.parts.0.parts.0.parts.1.customLabel>left military hearing sensor</Mech_Military.corePart.parts.0.parts.0.parts.1.customLabel>
+  <Mech_Military.corePart.parts.0.parts.0.parts.2.customLabel>right military hearing sensor</Mech_Military.corePart.parts.0.parts.0.parts.2.customLabel>
+  <Mech_Military.corePart.parts.1.customLabel>left military mechanical shoulder</Mech_Military.corePart.parts.1.customLabel>
+  <Mech_Military.corePart.parts.1.parts.0.customLabel>left military mechanical arm</Mech_Military.corePart.parts.1.parts.0.customLabel>
+  <Mech_Military.corePart.parts.1.parts.0.parts.0.customLabel>left military mechanical hand</Mech_Military.corePart.parts.1.parts.0.parts.0.customLabel>
+  <Mech_Military.corePart.parts.1.parts.0.parts.0.parts.0.customLabel>left little finger</Mech_Military.corePart.parts.1.parts.0.parts.0.parts.0.customLabel>
+  <Mech_Military.corePart.parts.1.parts.0.parts.0.parts.1.customLabel>left ring finger</Mech_Military.corePart.parts.1.parts.0.parts.0.parts.1.customLabel>
+  <Mech_Military.corePart.parts.1.parts.0.parts.0.parts.2.customLabel>left middle finger</Mech_Military.corePart.parts.1.parts.0.parts.0.parts.2.customLabel>
+  <Mech_Military.corePart.parts.1.parts.0.parts.0.parts.3.customLabel>left index finger</Mech_Military.corePart.parts.1.parts.0.parts.0.parts.3.customLabel>
+  <Mech_Military.corePart.parts.1.parts.0.parts.0.parts.4.customLabel>left thumb</Mech_Military.corePart.parts.1.parts.0.parts.0.parts.4.customLabel>
+  <Mech_Military.corePart.parts.2.customLabel>right military mechanical shoulder</Mech_Military.corePart.parts.2.customLabel>
+  <Mech_Military.corePart.parts.2.parts.0.customLabel>right military mechanical arm</Mech_Military.corePart.parts.2.parts.0.customLabel>
+  <Mech_Military.corePart.parts.2.parts.0.parts.0.customLabel>right military mechanical hand</Mech_Military.corePart.parts.2.parts.0.parts.0.customLabel>
+  <Mech_Military.corePart.parts.2.parts.0.parts.0.parts.0.customLabel>right little finger</Mech_Military.corePart.parts.2.parts.0.parts.0.parts.0.customLabel>
+  <Mech_Military.corePart.parts.2.parts.0.parts.0.parts.1.customLabel>right ring finger</Mech_Military.corePart.parts.2.parts.0.parts.0.parts.1.customLabel>
+  <Mech_Military.corePart.parts.2.parts.0.parts.0.parts.2.customLabel>right middle finger</Mech_Military.corePart.parts.2.parts.0.parts.0.parts.2.customLabel>
+  <Mech_Military.corePart.parts.2.parts.0.parts.0.parts.3.customLabel>right index finger</Mech_Military.corePart.parts.2.parts.0.parts.0.parts.3.customLabel>
+  <Mech_Military.corePart.parts.2.parts.0.parts.0.parts.4.customLabel>right thumb</Mech_Military.corePart.parts.2.parts.0.parts.0.parts.4.customLabel>
+  <Mech_Military.corePart.parts.3.customLabel>left military mechanical leg</Mech_Military.corePart.parts.3.customLabel>
+  <Mech_Military.corePart.parts.3.parts.0.customLabel>left military mechanical foot</Mech_Military.corePart.parts.3.parts.0.customLabel>
+  <Mech_Military.corePart.parts.4.customLabel>right military mechanical leg</Mech_Military.corePart.parts.4.customLabel>
+  <Mech_Military.corePart.parts.4.parts.0.customLabel>right military mechanical foot</Mech_Military.corePart.parts.4.parts.0.customLabel>
+
+
+</LanguageData>

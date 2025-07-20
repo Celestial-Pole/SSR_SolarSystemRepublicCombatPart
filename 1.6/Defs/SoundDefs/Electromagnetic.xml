@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Defs>
+
+    <SoundDef>
+        <defName>SSR_Sound_Electromagnetic_AR</defName>  
+        <context>MapOnly</context>
+        <subSounds>
+            <li>
+                <grains>
+                    <li Class="AudioGrain_Clip">
+                        <clipPath>SSR_Sound_Electromagnetic_AR</clipPath>
+                    </li>
+                </grains>
+                <volumeRange>25~25</volumeRange>
+            </li>
+        </subSounds>
+    </SoundDef>
+
+	<SoundDef>
+		<defName>SSR_Sound_Electromagnetic_SMG</defName>
+		<context>MapOnly</context>
+		<subSounds>
+			<li>
+				<grains>
+					<li Class="AudioGrain_Clip">
+						<clipPath>SSR_Sound_Electromagnetic_SMG</clipPath>
+					</li>
+				</grains>
+				<volumeRange>25~25</volumeRange>
+			</li>
+		</subSounds>
+	</SoundDef>
+
+	<SoundDef>
+		<defName>SSR_Sound_Electromagnetic_HG</defName>
+		<context>MapOnly</context>
+		<subSounds>
+			<li>
+				<grains>
+					<li Class="AudioGrain_Clip">
+						<clipPath>SSR_Sound_Electromagnetic_HG</clipPath>
+					</li>
+				</grains>
+				<volumeRange>25~25</volumeRange>
+			</li>
+		</subSounds>
+	</SoundDef>
+
+	<SoundDef>
+		<defName>SSR_Sound_Electromagnetic_SG</defName>
+		<context>MapOnly</context>
+		<subSounds>
+			<li>
+				<grains>
+					<li Class="AudioGrain_Clip">
+						<clipPath>SSR_Sound_Electromagnetic_SG</clipPath>
+					</li>
+				</grains>
+				<volumeRange>25~25</volumeRange>
+			</li>
+		</subSounds>
+	</SoundDef>
+
+	<SoundDef>
+		<defName>SSR_Sound_Electromagnetic_SR</defName>
+		<context>MapOnly</context>
+		<subSounds>
+			<li>
+				<grains>
+					<li Class="AudioGrain_Clip">
+						<clipPath>SSR_Sound_Electromagnetic_SR</clipPath>
+					</li>
+				</grains>
+				<volumeRange>75~75</volumeRange>
+			</li>
+		</subSounds>
+	</SoundDef>
+
+	<SoundDef>
+		<defName>SSR_Sound_Electromagnetic_MG</defName>
+		<context>MapOnly</context>
+		<subSounds>
+			<li>
+				<grains>
+					<li Class="AudioGrain_Clip">
+						<clipPath>SSR_Sound_Electromagnetic_MG</clipPath>
+					</li>
+				</grains>
+				<volumeRange>75~75</volumeRange>
+			</li>
+		</subSounds>
+	</SoundDef>
+
+	<SoundDef>
+		<defName>SSR_Sound_Electromagnetic_AMR</defName>
+		<context>MapOnly</context>
+		<subSounds>
+			<li>
+				<grains>
+					<li Class="AudioGrain_Clip">
+						<clipPath>SSR_Sound_Electromagnetic_AMR</clipPath>
+					</li>
+				</grains>
+				<volumeRange>75~75</volumeRange>
+			</li>
+		</subSounds>
+	</SoundDef>
+
+	<SoundDef>
+		<defName>SSR_Sound_Electromagnetic_CIWS</defName>
+		<context>MapOnly</context>
+		<subSounds>
+			<li>
+				<grains>
+					<li Class="AudioGrain_Clip">
+						<clipPath>SSR_Sound_Electromagnetic_CIWS</clipPath>
+					</li>
+				</grains>
+				<volumeRange>75~75</volumeRange>
+			</li>
+		</subSounds>
+	</SoundDef>
+
+	<SoundDef>
+		<defName>ElectromagneticMd</defName>
+		<context>MapOnly</context>
+		<subSounds>
+			<li>
+				<grains>
+					<li Class="AudioGrain_Clip">
+						<clipPath>ElectromagneticMd</clipPath>
+					</li>
+				</grains>
+				<volumeRange>100~100</volumeRange>
+			</li>
+		</subSounds>
+	</SoundDef>
+
+	<SoundDef>
+		<defName>ElectromagneticMdII</defName>
+		<context>MapOnly</context>
+		<subSounds>
+			<li>
+				<grains>
+					<li Class="AudioGrain_Clip">
+						<clipPath>ElectromagneticMd</clipPath>
+					</li>
+				</grains>
+				<volumeRange>50~50</volumeRange>
+			</li>
+		</subSounds>
+	</SoundDef>
+
+	<SoundDef>
+		<defName>ElectromagneticHv</defName>
+		<context>MapOnly</context>
+		<subSounds>
+			<li>
+				<grains>
+					<li Class="AudioGrain_Clip">
+						<clipPath>ElectromagneticHv</clipPath>
+					</li>
+				</grains>
+				<volumeRange>350~350</volumeRange>
+			</li>
+		</subSounds>
+	</SoundDef>
+  
+</Defs>

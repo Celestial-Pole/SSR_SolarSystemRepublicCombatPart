@@ -1,0 +1,896 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ThingDef ParentName="SSR_Weapons_Spacer">
+		<defName>SSR_AdvancedElectromagnetic_AR</defName>
+		<label>高级电磁步枪</label>
+		<description>。</description>
+		<graphicData>
+			<texPath>Things/Weapons/AdvancedElectromagneticWeapon/AdvancedElectromagnetic_AR</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<soundInteract>Interact_ChargeRifle</soundInteract>
+		<statBases>
+			<WorkToMake>65000</WorkToMake>
+			<Mass>2.75</Mass>
+			<AccuracyTouch>1.00</AccuracyTouch>
+			<AccuracyShort>1.00</AccuracyShort>
+			<AccuracyMedium>1.00</AccuracyMedium>
+			<AccuracyLong>1.00</AccuracyLong>
+			<RangedWeapon_Cooldown>1</RangedWeapon_Cooldown>
+		</statBases>
+		<recipeMaker>
+			<researchPrerequisite>SSR_Research_AdvancedElectromagneticWeapon</researchPrerequisite>
+		</recipeMaker>
+		<costList>
+			<SSR_NanoandMicroMechanicalComposite>480</SSR_NanoandMicroMechanicalComposite>
+			<SSR_StrongElectromagnet>15</SSR_StrongElectromagnet>
+			<SSR_SuperconductingMaterial>5</SSR_SuperconductingMaterial>
+			<SSR_HighDensityBattery>1</SSR_HighDensityBattery>
+			<ComponentSpacer>10</ComponentSpacer>
+		
+	</costList>
+		<verbs>
+			<li>
+				<verbClass>HJ_SSR.Weapons.Verb_ShootAllowAllCast</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>SSR_AdvancedElectromagnetic_AR_rt</defaultProjectile>
+				<warmupTime>0.4</warmupTime>
+				<range>50</range>
+				<ticksBetweenBurstShots>7</ticksBetweenBurstShots>
+				<burstShotCount>5</burstShotCount>
+				<soundCast>SSR_Sound_Electromagnetic_AR</soundCast>
+				<soundCastTail>GunTail_Medium</soundCastTail>
+				<muzzleFlashScale>9</muzzleFlashScale>
+			</li>
+		</verbs>
+		<tools>
+			<li>
+				<label>stock</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>9</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+			<li>
+				<label>barrel</label>
+				<capacities>
+					<li>Blunt</li>
+					<li>Poke</li>
+				</capacities>
+				<power>9</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+		</tools>
+	</ThingDef>
+
+	<ThingDef ParentName="BaseBullet">
+		<defName>SSR_AdvancedElectromagnetic_AR_rt</defName>
+		<label>高级电磁步枪子弹</label>
+		<graphicData>
+			<texPath>Things/Projectile/Electromagnetic_AR_rt</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<thingClass>HJ_SSR.Weapons.PenetratingBullet</thingClass>
+		<projectile>
+			<damageDef>Bullet</damageDef>
+			<damageAmountBase>25</damageAmountBase>
+			<armorPenetrationBase>0.5</armorPenetrationBase>
+			<speed>120</speed>
+		</projectile>
+		<modExtensions>
+			<li Class="HJ_SSR.Weapons.ModExtension_PenetratingProjectile">
+				<!-- 穿透造成的伤害系数 即 Damage = 基础伤害 * 0.75 -->
+				<overpenDamageMulti>0.75</overpenDamageMulti>
+
+				<!-- 子弹终止时的伤害系数 即 Damage = 基础伤害 * 1 -->
+				<stopperDamageMulti>1.0</stopperDamageMulti>
+
+				<!-- 穿透伤害下限百分比 (至少为原伤害的 20%) -->
+				<PenetrationFloorPercentage>0.2</PenetrationFloorPercentage>
+
+				<!-- 穿透潜力倍率  初始穿透力 = 基础穿透力 * 1.0 -->
+				<penetrationPotentialMultiplier>1.0</penetrationPotentialMultiplier>
+
+				<!-- 穿透后弹道偏移角度 (0 度) 穿透时如果具有子弹偏转，偏转角度的范围 0~x° -->
+				<postPenetrationDeviationAngle>0.0</postPenetrationDeviationAngle>
+
+				<!-- 目标搜索半径范围 ，穿透时如果具有子弹偏转，控制偏转扇形区的范围-->
+				<minSearchRadius>1.0</minSearchRadius>
+				<maxSearchRadius>1.0</maxSearchRadius>
+
+				<!-- 额外射程加成 -->
+				<extraRange>1.0</extraRange>
+
+				<!-- 不同物体对于子弹穿透力的消耗程度，正相关 -->
+				<!-- 消耗值 = 建筑生命值 × buildingEquivalentMulti -->
+				<buildingEquivalentMulti>0.005</buildingEquivalentMulti>
+				<!-- 消耗值 = (生物护甲值 × 2 × armorEquivalentMulti)-->
+				<armorEquivalentMulti>1.0</armorEquivalentMulti>
+				<!-- 消耗值 = 体型) × bodysizeEquivalentMulti -->
+				<bodysizeEquivalentMulti>0.1</bodysizeEquivalentMulti>
+				<!-- 消耗值 = 树木固定 0.1 -->
+				<treeEquivalent>0.1</treeEquivalent>
+				<!-- 消耗值 = 碎石固定 0.1 -->
+				<chunkEquivalent>0.1</chunkEquivalent>
+				<!-- 弹跳衰减系数 -->
+				<bounceEquivalent>0.2</bounceEquivalent>
+
+				<!-- 开启后停用 穿透后偏移角度、目标搜索内容，默认弹道为射线无偏转 -->
+				<straightPassThrough>true</straightPassThrough>
+
+				<!-- 可穿透物体的计数 ，正数为穿透计数停止，负数为已穿透伤害衰减至0为停止条件-->
+				<maxPenetratingCount>5</maxPenetratingCount>
+			</li>
+		</modExtensions>
+	</ThingDef>
+
+	<ThingDef ParentName="SSR_Weapons_Spacer">
+		<defName>SSR_AdvancedElectromagnetic_SMG</defName>
+		<label>高级电磁冲锋枪</label>
+		<description>。</description>
+		<graphicData>
+			<texPath>Things/Weapons/AdvancedElectromagneticWeapon/AdvancedElectromagnetic_SMG</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<soundInteract>Interact_ChargeRifle</soundInteract>
+		<statBases>
+			<WorkToMake>50000</WorkToMake>
+			<Mass>1.5</Mass>
+			<AccuracyTouch>1.00</AccuracyTouch>
+			<AccuracyShort>1.00</AccuracyShort>
+			<AccuracyMedium>0.95</AccuracyMedium>
+			<AccuracyLong>0.80</AccuracyLong>
+			<RangedWeapon_Cooldown>0.85</RangedWeapon_Cooldown>
+		</statBases>
+		<recipeMaker>
+			<researchPrerequisite>SSR_Research_AdvancedElectromagneticWeapon</researchPrerequisite>
+		</recipeMaker>
+		<costList>
+			<SSR_NanoandMicroMechanicalComposite>400</SSR_NanoandMicroMechanicalComposite>
+			<SSR_StrongElectromagnet>10</SSR_StrongElectromagnet>
+			<SSR_SuperconductingMaterial>5</SSR_SuperconductingMaterial>
+			<SSR_HighDensityBattery>1</SSR_HighDensityBattery>
+			<ComponentSpacer>10</ComponentSpacer>
+		</costList>
+		<verbs>
+			<li>
+				<verbClass>HJ_SSR.Weapons.Verb_ShootAllowAllCast</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>SSR_AdvancedElectromagnetic_SMG_rt</defaultProjectile>
+				<warmupTime>0.35</warmupTime>
+				<range>30</range>
+				<ticksBetweenBurstShots>5</ticksBetweenBurstShots>
+				<burstShotCount>8</burstShotCount>
+				<soundCast>SSR_Sound_Electromagnetic_SMG</soundCast>
+				<soundCastTail>GunTail_Medium</soundCastTail>
+				<muzzleFlashScale>9</muzzleFlashScale>
+			</li>
+		</verbs>
+		<tools>
+			<li>
+				<label>stock</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>7</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+			<li>
+				<label>barrel</label>
+				<capacities>
+					<li>Blunt</li>
+					<li>Poke</li>
+				</capacities>
+				<power>7</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+		</tools>
+	</ThingDef>
+	<ThingDef ParentName="BaseBullet">
+		<defName>SSR_AdvancedElectromagnetic_SMG_rt</defName>
+		<label>高级电磁冲锋枪子弹</label>
+		<graphicData>
+			<texPath>Things/Projectile/Electromagnetic_SMG_rt</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<thingClass>HJ_SSR.Weapons.PenetratingBullet</thingClass>
+		<projectile>
+			<damageDef>Bullet</damageDef>
+			<damageAmountBase>20</damageAmountBase>
+			<armorPenetrationBase>0.45</armorPenetrationBase>
+			<speed>100</speed>
+		</projectile>
+		<modExtensions>
+			<li Class="HJ_SSR.Weapons.ModExtension_PenetratingProjectile">
+				<!-- 穿透造成的伤害系数 即 Damage = 基础伤害 * 0.75 -->
+				<overpenDamageMulti>0.75</overpenDamageMulti>
+
+				<!-- 子弹终止时的伤害系数 即 Damage = 基础伤害 * 1 -->
+				<stopperDamageMulti>1.0</stopperDamageMulti>
+
+				<!-- 穿透伤害下限百分比 (至少为原伤害的 20%) -->
+				<PenetrationFloorPercentage>0.2</PenetrationFloorPercentage>
+
+				<!-- 穿透潜力倍率  初始穿透力 = 基础穿透力 * 1.0 -->
+				<penetrationPotentialMultiplier>1.0</penetrationPotentialMultiplier>
+
+				<!-- 穿透后弹道偏移角度 (0 度) 穿透时如果具有子弹偏转，偏转角度的范围 0~x° -->
+				<postPenetrationDeviationAngle>0.0</postPenetrationDeviationAngle>
+
+				<!-- 目标搜索半径范围 ，穿透时如果具有子弹偏转，控制偏转扇形区的范围-->
+				<minSearchRadius>1.0</minSearchRadius>
+				<maxSearchRadius>1.0</maxSearchRadius>
+
+				<!-- 额外射程加成 -->
+				<extraRange>1.0</extraRange>
+
+				<!-- 不同物体对于子弹穿透力的消耗程度，正相关 -->
+				<!-- 消耗值 = 建筑生命值 × buildingEquivalentMulti -->
+				<buildingEquivalentMulti>0.005</buildingEquivalentMulti>
+				<!-- 消耗值 = (生物护甲值 × 2 × armorEquivalentMulti)-->
+				<armorEquivalentMulti>1.0</armorEquivalentMulti>
+				<!-- 消耗值 = 体型) × bodysizeEquivalentMulti -->
+				<bodysizeEquivalentMulti>0.1</bodysizeEquivalentMulti>
+				<!-- 消耗值 = 树木固定 0.1 -->
+				<treeEquivalent>0.1</treeEquivalent>
+				<!-- 消耗值 = 碎石固定 0.1 -->
+				<chunkEquivalent>0.1</chunkEquivalent>
+				<!-- 弹跳衰减系数 -->
+				<bounceEquivalent>0.2</bounceEquivalent>
+
+				<!-- 开启后停用 穿透后偏移角度、目标搜索内容，默认弹道为射线无偏转 -->
+				<straightPassThrough>true</straightPassThrough>
+
+				<!-- 可穿透物体的计数 ，正数为穿透计数停止，负数为已穿透伤害衰减至0为停止条件-->
+				<maxPenetratingCount>4</maxPenetratingCount>
+			</li>
+		</modExtensions>
+	</ThingDef>
+
+	<ThingDef ParentName="SSR_Weapons_Spacer">
+		<defName>SSR_AdvancedElectromagnetic_HG</defName>
+		<label>高级电磁手枪</label>
+		<description>。</description>
+		<graphicData>
+			<texPath>Things/Weapons/AdvancedElectromagneticWeapon/AdvancedElectromagnetic_HG</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<soundInteract>Interact_ChargeRifle</soundInteract>
+		<statBases>
+			<WorkToMake>45000</WorkToMake>
+			<Mass>0.25</Mass>
+			<AccuracyTouch>1.00</AccuracyTouch>
+			<AccuracyShort>1.00</AccuracyShort>
+			<AccuracyMedium>0.85</AccuracyMedium>
+			<AccuracyLong>0.75</AccuracyLong>
+			<RangedWeapon_Cooldown>0.85</RangedWeapon_Cooldown>
+		</statBases>
+		<recipeMaker>
+			<researchPrerequisite>SSR_Research_AdvancedElectromagneticWeapon</researchPrerequisite>
+		</recipeMaker>
+		<costList>
+			<SSR_NanoandMicroMechanicalComposite>320</SSR_NanoandMicroMechanicalComposite>
+			<SSR_StrongElectromagnet>5</SSR_StrongElectromagnet>
+			<SSR_SuperconductingMaterial>5</SSR_SuperconductingMaterial>
+			<SSR_HighDensityBattery>1</SSR_HighDensityBattery>
+			<ComponentSpacer>10</ComponentSpacer>
+		</costList>
+		<verbs>
+			<li>
+				<verbClass>HJ_SSR.Weapons.Verb_ShootAllowAllCast</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>SSR_AdvancedElectromagnetic_HG_rt</defaultProjectile>
+				<warmupTime>0.35</warmupTime>
+				<range>25</range>
+				<ticksBetweenBurstShots>10</ticksBetweenBurstShots>
+				<burstShotCount>3</burstShotCount>
+				<soundCast>SSR_Sound_Electromagnetic_HG</soundCast>
+				<soundCastTail>GunTail_Medium</soundCastTail>
+				<muzzleFlashScale>9</muzzleFlashScale>
+			</li>
+		</verbs>
+		<tools>
+			<li>
+				<label>stock</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>5</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+			<li>
+				<label>barrel</label>
+				<capacities>
+					<li>Blunt</li>
+					<li>Poke</li>
+				</capacities>
+				<power>5</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+		</tools>
+	</ThingDef>
+
+	<ThingDef ParentName="BaseBullet">
+		<defName>SSR_AdvancedElectromagnetic_HG_rt</defName>
+		<label>高级电磁手枪子弹</label>
+		<graphicData>
+			<texPath>Things/Projectile/Electromagnetic_HG_rt</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<thingClass>HJ_SSR.Weapons.PenetratingBullet</thingClass>
+		<projectile>
+			<damageDef>Bullet</damageDef>
+			<damageAmountBase>20</damageAmountBase>
+			<armorPenetrationBase>0.45</armorPenetrationBase>
+			<speed>90</speed>
+		</projectile>
+		<modExtensions>
+			<li Class="HJ_SSR.Weapons.ModExtension_PenetratingProjectile">
+				<!-- 穿透造成的伤害系数 即 Damage = 基础伤害 * 0.75 -->
+				<overpenDamageMulti>0.75</overpenDamageMulti>
+
+				<!-- 子弹终止时的伤害系数 即 Damage = 基础伤害 * 1 -->
+				<stopperDamageMulti>1.0</stopperDamageMulti>
+
+				<!-- 穿透伤害下限百分比 (至少为原伤害的 20%) -->
+				<PenetrationFloorPercentage>0.2</PenetrationFloorPercentage>
+
+				<!-- 穿透潜力倍率  初始穿透力 = 基础穿透力 * 1.0 -->
+				<penetrationPotentialMultiplier>1.0</penetrationPotentialMultiplier>
+
+				<!-- 穿透后弹道偏移角度 (0 度) 穿透时如果具有子弹偏转，偏转角度的范围 0~x° -->
+				<postPenetrationDeviationAngle>0.0</postPenetrationDeviationAngle>
+
+				<!-- 目标搜索半径范围 ，穿透时如果具有子弹偏转，控制偏转扇形区的范围-->
+				<minSearchRadius>1.0</minSearchRadius>
+				<maxSearchRadius>1.0</maxSearchRadius>
+
+				<!-- 额外射程加成 -->
+				<extraRange>1.0</extraRange>
+
+				<!-- 不同物体对于子弹穿透力的消耗程度，正相关 -->
+				<!-- 消耗值 = 建筑生命值 × buildingEquivalentMulti -->
+				<buildingEquivalentMulti>0.005</buildingEquivalentMulti>
+				<!-- 消耗值 = (生物护甲值 × 2 × armorEquivalentMulti)-->
+				<armorEquivalentMulti>1.0</armorEquivalentMulti>
+				<!-- 消耗值 = 体型) × bodysizeEquivalentMulti -->
+				<bodysizeEquivalentMulti>0.1</bodysizeEquivalentMulti>
+				<!-- 消耗值 = 树木固定 0.1 -->
+				<treeEquivalent>0.1</treeEquivalent>
+				<!-- 消耗值 = 碎石固定 0.1 -->
+				<chunkEquivalent>0.1</chunkEquivalent>
+				<!-- 弹跳衰减系数 -->
+				<bounceEquivalent>0.2</bounceEquivalent>
+
+				<!-- 开启后停用 穿透后偏移角度、目标搜索内容，默认弹道为射线无偏转 -->
+				<straightPassThrough>true</straightPassThrough>
+
+				<!-- 可穿透物体的计数 ，正数为穿透计数停止，负数为已穿透伤害衰减至0为停止条件-->
+				<maxPenetratingCount>3</maxPenetratingCount>
+			</li>
+		</modExtensions>
+	</ThingDef>
+
+	<ThingDef ParentName="SSR_Weapons_Spacer">
+		<defName>SSR_AdvancedElectromagnetic_SG</defName>
+		<label>高级电磁霰弹枪</label>
+		<description>。</description>
+		<graphicData>
+			<texPath>Things/Weapons/AdvancedElectromagneticWeapon/AdvancedElectromagnetic_SG</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<soundInteract>Interact_ChargeRifle</soundInteract>
+		<statBases>
+			<WorkToMake>43000</WorkToMake>
+			<Mass>2.75</Mass>
+			<AccuracyTouch>1.00</AccuracyTouch>
+			<AccuracyShort>1.00</AccuracyShort>
+			<AccuracyMedium>0.9</AccuracyMedium>
+			<AccuracyLong>0.85</AccuracyLong>
+			<RangedWeapon_Cooldown>1.50</RangedWeapon_Cooldown>
+		</statBases>
+		<recipeMaker>
+			<researchPrerequisite>SSR_Research_AdvancedElectromagneticWeapon</researchPrerequisite>
+			<recipeUsers>
+				<li>SSR_NumericalControlledMachineTool</li>
+			</recipeUsers>
+			<skillRequirements>
+				<Crafting>7</Crafting>
+			</skillRequirements>
+		</recipeMaker>
+		<costList>
+			<SSR_NanoandMicroMechanicalComposite>450</SSR_NanoandMicroMechanicalComposite>
+			<SSR_StrongElectromagnet>5</SSR_StrongElectromagnet>
+			<SSR_SuperconductingMaterial>5</SSR_SuperconductingMaterial>
+			<SSR_HighDensityBattery>1</SSR_HighDensityBattery>
+			<ComponentSpacer>10</ComponentSpacer>
+		</costList>
+		<verbs>
+			<li>
+				<verbClass>HJ_SSR.Weapons.Verb_ShootCustom</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>SSR_AdvancedElectromagnetic_SG_rt</defaultProjectile>
+				<warmupTime>0.5</warmupTime>
+				<range>25</range>
+				<ticksBetweenBurstShots>10</ticksBetweenBurstShots>
+				<burstShotCount>1</burstShotCount>
+				<soundCast>SSR_Sound_Electromagnetic_SG</soundCast>
+				<soundCastTail>GunTail_Medium</soundCastTail>
+				<muzzleFlashScale>9</muzzleFlashScale>
+				<canGoWild>false</canGoWild>
+			</li>
+		</verbs>
+		<tools>
+			<li>
+				<label>stock</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>9</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+			<li>
+				<label>barrel</label>
+				<capacities>
+					<li>Blunt</li>
+					<li>Poke</li>
+				</capacities>
+				<power>9</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+		</tools>
+		<!-- 霰弹枪效果扩展 -->
+		<modExtensions>
+			<li Class="HJ_SSR.Weapons.ModExtension_Verb_Shotgun">
+				<ShotgunPellets>5</ShotgunPellets>
+				<!-- 每次射击发射x颗弹丸  ,穿透子弹搞太多会叠在一起 -->
+				<!-- <extraProjectile>Bullet_Slug</extraProjectile>    发射独头弹  -->
+				<!-- <extraProjectileCount>1</extraProjectileCount>     射击发射1颗独头弹 -->
+				<spreadAngle>15</spreadAngle>
+				<!-- 散射角 ，需要小于180 大于0-->
+			</li>
+		</modExtensions>
+	</ThingDef>
+
+	<ThingDef ParentName="BaseBullet">
+		<defName>SSR_AdvancedElectromagnetic_SG_rt</defName>
+		<label>高级电磁霰弹枪子弹</label>
+		<graphicData>
+			<texPath>Things/Projectile/Electromagnetic_SG_rt</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<thingClass>HJ_SSR.Weapons.PenetratingBullet</thingClass>
+		<projectile>
+			<damageDef>Bullet</damageDef>
+			<damageAmountBase>10</damageAmountBase>
+			<armorPenetrationBase>0.75</armorPenetrationBase>
+			<speed>120</speed>
+		</projectile>
+		<modExtensions>
+			<li Class="HJ_SSR.Weapons.ModExtension_PenetratingProjectile">
+				<!-- 穿透造成的伤害系数 即 Damage = 基础伤害 * 0.75 -->
+				<overpenDamageMulti>0.75</overpenDamageMulti>
+
+				<!-- 子弹终止时的伤害系数 即 Damage = 基础伤害 * 1 -->
+				<stopperDamageMulti>1.0</stopperDamageMulti>
+
+				<!-- 穿透伤害下限百分比 (至少为原伤害的 20%) -->
+				<PenetrationFloorPercentage>0.2</PenetrationFloorPercentage>
+
+				<!-- 穿透潜力倍率  初始穿透力 = 基础穿透力 * 1.0 -->
+				<penetrationPotentialMultiplier>1.0</penetrationPotentialMultiplier>
+
+				<!-- 穿透后弹道偏移角度 (0 度) 穿透时如果具有子弹偏转，偏转角度的范围 0~x° -->
+				<postPenetrationDeviationAngle>0.0</postPenetrationDeviationAngle>
+
+				<!-- 目标搜索半径范围 ，穿透时如果具有子弹偏转，控制偏转扇形区的范围-->
+				<minSearchRadius>1.0</minSearchRadius>
+				<maxSearchRadius>1.0</maxSearchRadius>
+
+				<!-- 额外射程加成 -->
+				<extraRange>1.0</extraRange>
+
+				<!-- 不同物体对于子弹穿透力的消耗程度，正相关 -->
+				<!-- 消耗值 = 建筑生命值 × buildingEquivalentMulti -->
+				<buildingEquivalentMulti>0.005</buildingEquivalentMulti>
+				<!-- 消耗值 = (生物护甲值 × 2 × armorEquivalentMulti)-->
+				<armorEquivalentMulti>1.0</armorEquivalentMulti>
+				<!-- 消耗值 = 体型) × bodysizeEquivalentMulti -->
+				<bodysizeEquivalentMulti>0.1</bodysizeEquivalentMulti>
+				<!-- 消耗值 = 树木固定 0.1 -->
+				<treeEquivalent>0.1</treeEquivalent>
+				<!-- 消耗值 = 碎石固定 0.1 -->
+				<chunkEquivalent>0.1</chunkEquivalent>
+				<!-- 弹跳衰减系数 -->
+				<bounceEquivalent>0.2</bounceEquivalent>
+
+				<!-- 开启后停用 穿透后偏移角度、目标搜索内容，默认弹道为射线无偏转 -->
+				<straightPassThrough>true</straightPassThrough>
+
+				<!-- 可穿透物体的计数 ，正数为穿透计数停止，负数为已穿透伤害衰减至0为停止条件-->
+				<maxPenetratingCount>4</maxPenetratingCount>
+			</li>
+		</modExtensions>
+	</ThingDef>
+	
+	<ThingDef ParentName="SSR_Weapons_Spacer">
+		<defName>SSR_AdvancedElectromagnetic_SR</defName>
+		<label>高级电磁狙击枪</label>
+		<description>。</description>
+		<graphicData>
+			<texPath>Things/Weapons/AdvancedElectromagneticWeapon/AdvancedElectromagnetic_SR</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>1.25</drawSize>
+		</graphicData>
+		<soundInteract>Interact_ChargeRifle</soundInteract>
+		<statBases>
+			<WorkToMake>90000</WorkToMake>
+			<Mass>3</Mass>
+			<AccuracyTouch>0.95</AccuracyTouch>
+			<AccuracyShort>1.00</AccuracyShort>
+			<AccuracyMedium>2.00</AccuracyMedium>
+			<AccuracyLong>2.00</AccuracyLong>
+			<RangedWeapon_Cooldown>1.25</RangedWeapon_Cooldown>
+		</statBases>
+		<recipeMaker>
+			<researchPrerequisite>SSR_Research_AdvancedElectromagneticWeapon</researchPrerequisite>
+		</recipeMaker>
+		<costList>
+			<SSR_NanoandMicroMechanicalComposite>560</SSR_NanoandMicroMechanicalComposite>
+			<SSR_StrongElectromagnet>15</SSR_StrongElectromagnet>
+			<SSR_SuperconductingMaterial>5</SSR_SuperconductingMaterial>
+			<SSR_HighDensityBattery>1</SSR_HighDensityBattery>
+			<ComponentSpacer>20</ComponentSpacer>
+		</costList>
+		<verbs>
+			<li>
+				<verbClass>HJ_SSR.Weapons.Verb_ShootAllowAllCast</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>SSR_AdvancedElectromagnetic_SR_rt</defaultProjectile>
+				<warmupTime>1.25</warmupTime>
+				<range>60</range>
+				<ticksBetweenBurstShots>10</ticksBetweenBurstShots>
+				<burstShotCount>1</burstShotCount>
+				<soundCast>SSR_Sound_Electromagnetic_SR</soundCast>
+				<soundCastTail>GunTail_Medium</soundCastTail>
+				<muzzleFlashScale>9</muzzleFlashScale>
+			</li>
+		</verbs>
+		<tools>
+			<li>
+				<label>stock</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>11</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+			<li>
+				<label>barrel</label>
+				<capacities>
+					<li>Blunt</li>
+					<li>Poke</li>
+				</capacities>
+				<power>11</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+		</tools>
+	</ThingDef>
+
+	<ThingDef ParentName="BaseBullet">
+		<defName>SSR_AdvancedElectromagnetic_SR_rt</defName>
+		<label>高级电磁狙击枪子弹</label>
+		<graphicData>
+			<texPath>Things/Projectile/Electromagnetic_SR_rt</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<thingClass>HJ_SSR.Weapons.PenetratingBullet</thingClass>
+		<projectile>
+			<damageDef>Bullet</damageDef>
+			<damageAmountBase>40</damageAmountBase>
+			<armorPenetrationBase>0.6</armorPenetrationBase>
+			<stoppingPower>1.5</stoppingPower>
+			<speed>150</speed>
+		</projectile>
+		<modExtensions>
+			<li Class="HJ_SSR.Weapons.ModExtension_PenetratingProjectile">
+				<!-- 穿透造成的伤害系数 即 Damage = 基础伤害 * 0.75 -->
+				<overpenDamageMulti>0.75</overpenDamageMulti>
+
+				<!-- 子弹终止时的伤害系数 即 Damage = 基础伤害 * 1 -->
+				<stopperDamageMulti>1.0</stopperDamageMulti>
+
+				<!-- 穿透伤害下限百分比 (至少为原伤害的 20%) -->
+				<PenetrationFloorPercentage>0.2</PenetrationFloorPercentage>
+
+				<!-- 穿透潜力倍率  初始穿透力 = 基础穿透力 * 1.0 -->
+				<penetrationPotentialMultiplier>1.0</penetrationPotentialMultiplier>
+
+				<!-- 穿透后弹道偏移角度 (0 度) 穿透时如果具有子弹偏转，偏转角度的范围 0~x° -->
+				<postPenetrationDeviationAngle>0.0</postPenetrationDeviationAngle>
+
+				<!-- 目标搜索半径范围 ，穿透时如果具有子弹偏转，控制偏转扇形区的范围-->
+				<minSearchRadius>1.0</minSearchRadius>
+				<maxSearchRadius>1.0</maxSearchRadius>
+
+				<!-- 额外射程加成 -->
+				<extraRange>1.0</extraRange>
+
+				<!-- 不同物体对于子弹穿透力的消耗程度，正相关 -->
+				<!-- 消耗值 = 建筑生命值 × buildingEquivalentMulti -->
+				<buildingEquivalentMulti>0.005</buildingEquivalentMulti>
+				<!-- 消耗值 = (生物护甲值 × 2 × armorEquivalentMulti)-->
+				<armorEquivalentMulti>1.0</armorEquivalentMulti>
+				<!-- 消耗值 = 体型) × bodysizeEquivalentMulti -->
+				<bodysizeEquivalentMulti>0.1</bodysizeEquivalentMulti>
+				<!-- 消耗值 = 树木固定 0.1 -->
+				<treeEquivalent>0.1</treeEquivalent>
+				<!-- 消耗值 = 碎石固定 0.1 -->
+				<chunkEquivalent>0.1</chunkEquivalent>
+				<!-- 弹跳衰减系数 -->
+				<bounceEquivalent>0.2</bounceEquivalent>
+
+				<!-- 开启后停用 穿透后偏移角度、目标搜索内容，默认弹道为射线无偏转 -->
+				<straightPassThrough>true</straightPassThrough>
+
+				<!-- 可穿透物体的计数 ，正数为穿透计数停止，负数为已穿透伤害衰减至0为停止条件-->
+				<maxPenetratingCount>6</maxPenetratingCount>
+			</li>
+		</modExtensions>
+	</ThingDef>
+
+	<ThingDef ParentName="SSR_Weapons_Spacer">
+		<defName>SSR_AdvancedElectromagnetic_MG</defName>
+		<label>高级电磁机枪</label>
+		<description>。</description>
+		<graphicData>
+			<texPath>Things/Weapons/AdvancedElectromagneticWeapon/AdvancedElectromagnetic_MG</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>1.25</drawSize>
+		</graphicData>
+		<soundInteract>Interact_ChargeRifle</soundInteract>
+		<statBases>
+			<WorkToMake>75000</WorkToMake>
+			<Mass>3.25</Mass>
+			<AccuracyTouch>0.85</AccuracyTouch>
+			<AccuracyShort>0.95</AccuracyShort>
+			<AccuracyMedium>1.00</AccuracyMedium>
+			<AccuracyLong>0.85</AccuracyLong>
+			<RangedWeapon_Cooldown>2.25</RangedWeapon_Cooldown>
+		</statBases>
+		<recipeMaker>
+			<researchPrerequisite>SSR_Research_AdvancedElectromagneticWeapon</researchPrerequisite>
+		</recipeMaker>
+		<costList>
+			<SSR_NanoandMicroMechanicalComposite>1120</SSR_NanoandMicroMechanicalComposite>
+			<SSR_StrongElectromagnet>30</SSR_StrongElectromagnet>
+			<SSR_SuperconductingMaterial>15</SSR_SuperconductingMaterial>
+			<SSR_HighDensityBattery>1</SSR_HighDensityBattery>
+			<ComponentSpacer>20</ComponentSpacer>
+		</costList>
+		<verbs>
+			<li>
+				<verbClass>HJ_SSR.Weapons.Verb_ShootAllowAllCast</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>SSR_AdvancedElectromagnetic_MG_rt</defaultProjectile>
+				<warmupTime>1.75</warmupTime>
+				<range>50</range>
+				<ticksBetweenBurstShots>3</ticksBetweenBurstShots>
+				<burstShotCount>15</burstShotCount>
+				<soundCast>SSR_Sound_Electromagnetic_MG</soundCast>
+				<soundCastTail>GunTail_Medium</soundCastTail>
+				<muzzleFlashScale>9</muzzleFlashScale>
+			</li>
+		</verbs>
+		<tools>
+			<li>
+				<label>stock</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>13</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+			<li>
+				<label>barrel</label>
+				<capacities>
+					<li>Blunt</li>
+					<li>Poke</li>
+				</capacities>
+				<power>13</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+		</tools>
+	</ThingDef>
+
+	<ThingDef ParentName="BaseBullet">
+		<defName>SSR_AdvancedElectromagnetic_MG_rt</defName>
+		<label>高级电磁机枪子弹</label>
+		<graphicData>
+			<texPath>Things/Projectile/Electromagnetic_MG_rt</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<thingClass>HJ_SSR.Weapons.PenetratingBullet</thingClass>
+		<projectile>
+			<damageDef>Bullet</damageDef>
+			<damageAmountBase>25</damageAmountBase>
+			<armorPenetrationBase>0.5</armorPenetrationBase>
+			<stoppingPower>0.75</stoppingPower>
+			<speed>150</speed>
+		</projectile>
+		<modExtensions>
+			<li Class="HJ_SSR.Weapons.ModExtension_PenetratingProjectile">
+				<!-- 穿透造成的伤害系数 即 Damage = 基础伤害 * 0.75 -->
+				<overpenDamageMulti>0.75</overpenDamageMulti>
+
+				<!-- 子弹终止时的伤害系数 即 Damage = 基础伤害 * 1 -->
+				<stopperDamageMulti>1.0</stopperDamageMulti>
+
+				<!-- 穿透伤害下限百分比 (至少为原伤害的 20%) -->
+				<PenetrationFloorPercentage>0.2</PenetrationFloorPercentage>
+
+				<!-- 穿透潜力倍率  初始穿透力 = 基础穿透力 * 1.0 -->
+				<penetrationPotentialMultiplier>1.0</penetrationPotentialMultiplier>
+
+				<!-- 穿透后弹道偏移角度 (0 度) 穿透时如果具有子弹偏转，偏转角度的范围 0~x° -->
+				<postPenetrationDeviationAngle>0.0</postPenetrationDeviationAngle>
+
+				<!-- 目标搜索半径范围 ，穿透时如果具有子弹偏转，控制偏转扇形区的范围-->
+				<minSearchRadius>1.0</minSearchRadius>
+				<maxSearchRadius>1.0</maxSearchRadius>
+
+				<!-- 额外射程加成 -->
+				<extraRange>1.0</extraRange>
+
+				<!-- 不同物体对于子弹穿透力的消耗程度，正相关 -->
+				<!-- 消耗值 = 建筑生命值 × buildingEquivalentMulti -->
+				<buildingEquivalentMulti>0.005</buildingEquivalentMulti>
+				<!-- 消耗值 = (生物护甲值 × 2 × armorEquivalentMulti)-->
+				<armorEquivalentMulti>1.0</armorEquivalentMulti>
+				<!-- 消耗值 = 体型) × bodysizeEquivalentMulti -->
+				<bodysizeEquivalentMulti>0.1</bodysizeEquivalentMulti>
+				<!-- 消耗值 = 树木固定 0.1 -->
+				<treeEquivalent>0.1</treeEquivalent>
+				<!-- 消耗值 = 碎石固定 0.1 -->
+				<chunkEquivalent>0.1</chunkEquivalent>
+				<!-- 弹跳衰减系数 -->
+				<bounceEquivalent>0.2</bounceEquivalent>
+
+				<!-- 开启后停用 穿透后偏移角度、目标搜索内容，默认弹道为射线无偏转 -->
+				<straightPassThrough>true</straightPassThrough>
+
+				<!-- 可穿透物体的计数 ，正数为穿透计数停止，负数为已穿透伤害衰减至0为停止条件-->
+				<maxPenetratingCount>5</maxPenetratingCount>
+			</li>
+		</modExtensions>
+	</ThingDef>
+
+	<ThingDef ParentName="SSR_Weapons_Spacer">
+		<defName>SSR_AdvancedElectromagnetic_AMR</defName>
+		<label>高级反载具电磁炮</label>
+		<description>。</description>
+		<graphicData>
+			<texPath>Things/Weapons/AdvancedElectromagneticWeapon/AdvancedElectromagnetic_AMR</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>1.75</drawSize>
+		</graphicData>
+		<soundInteract>Interact_ChargeRifle</soundInteract>
+		<statBases>
+			<WorkToMake>85000</WorkToMake>
+			<Mass>20</Mass>
+			<AccuracyTouch>0.90</AccuracyTouch>
+			<AccuracyShort>0.95</AccuracyShort>
+			<AccuracyMedium>2.00</AccuracyMedium>
+			<AccuracyLong>2.00</AccuracyLong>
+			<RangedWeapon_Cooldown>1.50</RangedWeapon_Cooldown>
+		</statBases>
+		<recipeMaker>
+			<researchPrerequisite>SSR_Research_AdvancedElectromagneticWeapon</researchPrerequisite>
+		</recipeMaker>
+		<costList>
+			<SSR_NanoandMicroMechanicalComposite>880</SSR_NanoandMicroMechanicalComposite>
+			<SSR_StrongElectromagnet>25</SSR_StrongElectromagnet>
+			<SSR_SuperconductingMaterial>10</SSR_SuperconductingMaterial>
+			<SSR_HighDensityBattery>1</SSR_HighDensityBattery>
+			<ComponentSpacer>20</ComponentSpacer>
+		</costList>
+		<verbs>
+			<li>
+				<verbClass>HJ_SSR.Weapons.Verb_ShootAllowAllCast</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>SSR_AdvancedElectromagnetic_AMR_rt</defaultProjectile>
+				<warmupTime>2.0</warmupTime>
+				<range>70</range>
+				<ticksBetweenBurstShots>10</ticksBetweenBurstShots>
+				<burstShotCount>1</burstShotCount>
+				<soundCast>SSR_Sound_Electromagnetic_AMR</soundCast>
+				<soundCastTail>GunTail_Medium</soundCastTail>
+				<muzzleFlashScale>9</muzzleFlashScale>
+			</li>
+		</verbs>
+		<tools>
+			<li>
+				<label>stock</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>13</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+			<li>
+				<label>barrel</label>
+				<capacities>
+					<li>Blunt</li>
+					<li>Poke</li>
+				</capacities>
+				<power>13</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+		</tools>
+	</ThingDef>
+
+	<ThingDef ParentName="BaseBullet">
+		<defName>SSR_AdvancedElectromagnetic_AMR_rt</defName>
+		<label>高级反载具电磁炮炮弹</label>
+		<graphicData>
+			<texPath>Things/Projectile/Electromagnetic_AMR_rt</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<thingClass>HJ_SSR.Weapons.PenetratingBullet</thingClass>
+		<projectile>
+			<damageDef>Bullet</damageDef>
+			<damageAmountBase>50</damageAmountBase>
+			<armorPenetrationBase>1</armorPenetrationBase>
+			<stoppingPower>3</stoppingPower>
+			<speed>200</speed>
+		</projectile>
+		<modExtensions>
+			<li Class="HJ_SSR.Weapons.ModExtension_PenetratingProjectile">
+				<!-- 穿透造成的伤害系数 即 Damage = 基础伤害 * 0.75 -->
+				<overpenDamageMulti>0.75</overpenDamageMulti>
+
+				<!-- 子弹终止时的伤害系数 即 Damage = 基础伤害 * 1 -->
+				<stopperDamageMulti>1.0</stopperDamageMulti>
+
+				<!-- 穿透伤害下限百分比 (至少为原伤害的 20%) -->
+				<PenetrationFloorPercentage>0.2</PenetrationFloorPercentage>
+
+				<!-- 穿透潜力倍率  初始穿透力 = 基础穿透力 * 1.0 -->
+				<penetrationPotentialMultiplier>1.0</penetrationPotentialMultiplier>
+
+				<!-- 穿透后弹道偏移角度 (0 度) 穿透时如果具有子弹偏转，偏转角度的范围 0~x° -->
+				<postPenetrationDeviationAngle>0.0</postPenetrationDeviationAngle>
+
+				<!-- 目标搜索半径范围 ，穿透时如果具有子弹偏转，控制偏转扇形区的范围-->
+				<minSearchRadius>1.0</minSearchRadius>
+				<maxSearchRadius>1.0</maxSearchRadius>
+
+				<!-- 额外射程加成 -->
+				<extraRange>1.0</extraRange>
+
+				<!-- 不同物体对于子弹穿透力的消耗程度，正相关 -->
+				<!-- 消耗值 = 建筑生命值 × buildingEquivalentMulti -->
+				<buildingEquivalentMulti>0.005</buildingEquivalentMulti>
+				<!-- 消耗值 = (生物护甲值 × 2 × armorEquivalentMulti)-->
+				<armorEquivalentMulti>1.0</armorEquivalentMulti>
+				<!-- 消耗值 = 体型) × bodysizeEquivalentMulti -->
+				<bodysizeEquivalentMulti>0.1</bodysizeEquivalentMulti>
+				<!-- 消耗值 = 树木固定 0.1 -->
+				<treeEquivalent>0.1</treeEquivalent>
+				<!-- 消耗值 = 碎石固定 0.1 -->
+				<chunkEquivalent>0.1</chunkEquivalent>
+				<!-- 弹跳衰减系数 -->
+				<bounceEquivalent>0.2</bounceEquivalent>
+
+				<!-- 开启后停用 穿透后偏移角度、目标搜索内容，默认弹道为射线无偏转 -->
+				<straightPassThrough>true</straightPassThrough>
+
+				<!-- 可穿透物体的计数 ，正数为穿透计数停止，负数为已穿透伤害衰减至0为停止条件-->
+				<maxPenetratingCount>7</maxPenetratingCount>
+			</li>
+		</modExtensions>
+	</ThingDef>
+
+</Defs>

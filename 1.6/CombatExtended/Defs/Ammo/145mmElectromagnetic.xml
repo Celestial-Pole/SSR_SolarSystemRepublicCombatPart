@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<ThingCategoryDef>
+    <defName>Ammo145mmElectromagnetic</defName>
+    <label>145mm electromagnetic cartridge</label>
+    <parent>AmmoAdvanced</parent>
+    <iconPath>UI/Icons/ThingCategories/CaliberCharge</iconPath>
+  </ThingCategoryDef>
+
+	<!-- === Ammo Sets === -->
+
+	<CombatExtended.AmmoSetDef>
+		<defName>AmmoSet_145mmElectromagnetic</defName>
+		<label>145mm电磁炮炮弹</label>
+		<ammoTypes>
+			<Shell_AntigrainWarhead>Bullet_145mmElectromagnetic</Shell_AntigrainWarhead>
+		</ammoTypes>
+	</CombatExtended.AmmoSetDef>
+
+
+	<!-- === Projectiles === -->
+
+	<ThingDef ParentName="BaseExplosiveBullet">
+		<defName>Bullet_145mmElectromagnetic</defName>
+		<label>145mm电磁炮炮弹</label>
+		<thingClass>BillDoorsFramework.PenetratingBulletCE</thingClass>
+		<graphicData>
+			<texPath>Things/Projectile/Electromagnetic_MG_rt</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>TransparentPostLight</shaderType>
+		</graphicData>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+			<damageDef>Bullet</damageDef>
+			<damageAmountBase>1000</damageAmountBase>
+			<armorPenetrationSharp>3000</armorPenetrationSharp>
+			<armorPenetrationBlunt>3000</armorPenetrationBlunt>
+			<speed>1000</speed>
+		</projectile>
+		<comps>
+			<li Class="CombatExtended.CompProperties_ExplosiveCE">
+				<explosiveDamageType>BombSuper</explosiveDamageType>
+				<damageAmountBase>700</damageAmountBase>
+				<explosiveRadius>3.9</explosiveRadius>
+				<explosionSound>MortarBomb_Explode</explosionSound>
+				<applyDamageToExplosionCellsNeighbors>true</applyDamageToExplosionCellsNeighbors>
+			
+		</li>
+		</comps>
+		<modExtensions>
+		  <li Class="BillDoorsFramework.ModExtension_PenetratingProjectile">
+			  <overpenDamageMulti>1.5</overpenDamageMulti>
+			  <stopperDamageMulti>2.25</stopperDamageMulti>
+			  <penetrationPotentialMultiplier>12</penetrationPotentialMultiplier>
+		  </li>
+	  </modExtensions>
+	</ThingDef>
+
+	<!-- ==================== Ammo ========================== -->
+
+	<ThingDef Class="CombatExtended.AmmoDef" Name="145mmElectromagneticBase" ParentName="HeavyAmmoBase" Abstract="True">
+		<description>Large cannon shells, typically used by 145mm electromagnetic tank guns.</description>
+		<thingCategories>
+			<li>Ammo145mmElectromagnetic</li>
+		</thingCategories>
+		<stackLimit>30</stackLimit>
+		<tradeTags>
+			<li>CE_AutoEnableTrade</li>
+			<li>CE_AutoEnableCrafting_TableMachining</li>
+		</tradeTags>
+		<statBases>
+			<MaxHitPoints>500</MaxHitPoints>
+			<Mass>22.3</Mass>
+			<Bulk>66.09</Bulk>
+		</statBases>
+		<cookOffFlashScale>35</cookOffFlashScale>
+		<cookOffSound>MortarBomb_Explode</cookOffSound>
+	</ThingDef>
+
+	<ThingDef Class="CombatExtended.AmmoDef" ParentName="145mmElectromagneticBase">
+		<defName>Ammo_145mmElectromagnetic</defName>
+		<label>145mm electromagnetic shell</label>
+		<graphicData>
+			<texPath>Things/Ammo/Cannon/Tank/AP</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<statBases>
+			<MarketValue>350</MarketValue>
+		</statBases>
+		<ammoClass>RocketHEAT</ammoClass>
+		<detonateProjectile>Bullet_145mmElectromagnetic</detonateProjectile>
+	</ThingDef>
+
+	<!-- ==================== Recipes ========================== -->
+
+	<RecipeDef ParentName="ChargeAmmoRecipeBase">
+    <defName>MakeAmmo_145mmElectromagnetic</defName>
+    <label>make 145mm electromagnetic cartridge x30</label>
+    <description>Craft 30 145mm Charged cartridges.</description>
+    <jobString>Making 145mm electromagnetic cartridges.</jobString>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Plasteel</li>
+          </thingDefs>
+        </filter>
+        <count>10</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>8</count>
+      </li>	  
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentIndustrial</li>
+          </thingDefs>
+        </filter>
+        <count>10</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>Plasteel</li>
+        <li>Steel</li>		
+        <li>ComponentIndustrial</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <Ammo_145mmElectromagnetic>30</Ammo_145mmElectromagnetic>
+    </products>
+    <workAmount>9000</workAmount>		
+  </RecipeDef>
+
+</Defs>

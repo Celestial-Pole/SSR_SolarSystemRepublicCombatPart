@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ThingDef ParentName="SSR_Weapons_Industrial_Anti-vehicle">
+		<defName>SSR_T1Anti-tankRocketLauncher</defName>
+		<label>反坦克火箭筒</label>
+		<description>反坦克火箭筒这一古老武器直到地球联邦时代仍在使用，这种一次性反装甲武器简单便携，能够有效对付多种装甲目标。</description>
+		<tickerType>Normal</tickerType>
+		<smeltable>false</smeltable>
+		<graphicData>
+			<texPath>Things/Weapons/Anti-vehicleWeapon/T1Anti-tankRocketLauncher</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>1.5</drawSize>
+		</graphicData>
+		<statBases>
+			<MarketValue>1000</MarketValue>
+			<Mass>3.7</Mass>
+			<RangedWeapon_Cooldown>3</RangedWeapon_Cooldown>
+		</statBases>
+		<recipeMaker>
+			<researchPrerequisite>SSR_Research_Anti-vehicleWeapon</researchPrerequisite>
+		</recipeMaker>
+		<costList>
+			<SSR_SpecialSteel>45</SSR_SpecialSteel>
+			<SSR_SuperconductingMaterial>5</SSR_SuperconductingMaterial>
+			<ComponentIndustrial>5</ComponentIndustrial>
+		</costList>
+		<verbs>
+			<li>
+				<verbClass>Verb_ShootOneUse</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>SSR_T1Anti-tankRocketLauncher_rt</defaultProjectile>
+				<forcedMissRadius>0.01</forcedMissRadius>
+				<warmupTime>4.5</warmupTime>
+				<ai_AvoidFriendlyFireRadius>8</ai_AvoidFriendlyFireRadius>
+				<range>50</range>
+				<burstShotCount>1</burstShotCount>
+				<soundCast>SSR_Sound_T1Anti-tankRocketLauncher</soundCast>
+				<soundCastTail>GunTail_Heavy</soundCastTail>
+				<targetParams>
+					<canTargetLocations>true</canTargetLocations>
+				</targetParams>
+				<muzzleFlashScale>14</muzzleFlashScale>
+			</li>
+		</verbs>
+		<tools>
+			<li>
+				<label>barrel</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>11.7</power>
+				<cooldownTime>2.6</cooldownTime>
+			</li>
+		</tools>
+		<comps>
+			<li Class="CompProperties_Explosive">
+				<explosiveRadius>7.8</explosiveRadius>
+				<explosiveDamageType>SSR_Bomb</explosiveDamageType>
+				<requiredDamageTypeToExplode>Flame</requiredDamageTypeToExplode>
+			</li>
+			<li Class="CompProperties_Biocodable"/>
+		</comps>
+		<equippedStatOffsets>
+			<ShootingAccuracyPawn>30</ShootingAccuracyPawn>
+		</equippedStatOffsets>
+	</ThingDef>
+	
+	<ThingDef ParentName="BaseBullet">
+		<defName>SSR_T1Anti-tankRocketLauncher_rt</defName>
+		<label>反坦克火箭弹</label>
+		<graphicData>
+			<texPath>Things/Projectile/Rocket_Big</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>TransparentPostLight</shaderType>
+		</graphicData>
+		<thingClass>Projectile_Explosive</thingClass>
+		<projectile>
+			<damageDef>SSR_BombAnti-vehicle_Industrial</damageDef>
+			<!-- Use default damage from explosion def -->
+			<explosionRadius>1</explosionRadius>
+			<speed>200</speed>
+		</projectile>
+	</ThingDef>
+
+</Defs>

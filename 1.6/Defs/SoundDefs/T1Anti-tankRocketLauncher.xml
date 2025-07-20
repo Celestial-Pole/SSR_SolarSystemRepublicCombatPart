@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Defs>
+
+	<SoundDef>
+		<defName>SSR_Sound_T1Anti-tankRocketLauncher</defName>
+		<context>MapOnly</context>
+		<subSounds>
+			<li>
+				<grains>
+					<li Class="AudioGrain_Clip">
+						<clipPath>SSR_Sound_T1Anti-tankRocketLauncher</clipPath>
+					</li>
+				</grains>
+				<volumeRange>75~75</volumeRange>
+			</li>
+		</subSounds>
+	</SoundDef>
+  
+</Defs>

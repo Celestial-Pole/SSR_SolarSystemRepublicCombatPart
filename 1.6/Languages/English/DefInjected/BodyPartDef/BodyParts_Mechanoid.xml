@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <MilitaryMechanicalHead.label>military mechanical head</MilitaryMechanicalHead.label>
+  <MilitaryArtificialBrain.label>military artificial brain</MilitaryArtificialBrain.label>
+  <MilitarySightSensor.label>military sight sensor</MilitarySightSensor.label>
+  <MilitaryHearingSensor.label>military hearing sensor</MilitaryHearingSensor.label>
+  <MilitarySmellSensor.label>military smell sensor</MilitarySmellSensor.label>
+  <MilitaryMechanicalNeck.label>military mechanical neck</MilitaryMechanicalNeck.label>
+  <MilitaryMechanicalThorax.label>military mechanical thorax</MilitaryMechanicalThorax.label>
+  <MilitaryMechanicalShoulder.label>military mechanical shoulder</MilitaryMechanicalShoulder.label>
+  <MilitaryMechanicalArm.label>military mechanical arm</MilitaryMechanicalArm.label>
+  <MilitaryMechanicalHand.label>military mechanical hand</MilitaryMechanicalHand.label>
+  <MilitaryMechanicalFinger.label>military mechanical finger</MilitaryMechanicalFinger.label>
+  <MilitaryMechanicalLeg.label>military mechanical leg</MilitaryMechanicalLeg.label>
+  <MilitaryMechanicalFoot.label>military mechanical foot</MilitaryMechanicalFoot.label>
+  <MilitaryReactor.label>military reactor</MilitaryReactor.label>
+  <MilitaryFluidReprocessor.label>military fluid reprocessor</MilitaryFluidReprocessor.label>
+
+
+</LanguageData>

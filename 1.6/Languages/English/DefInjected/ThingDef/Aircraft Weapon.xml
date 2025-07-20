@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <Empty.label>Empty</Empty.label>
+  <Empty.description>Empty</Empty.description>
+  <Empty.tools.0.label>stock</Empty.tools.0.label>
+  <Empty.tools.1.label>barrel</Empty.tools.1.label>
+
+  <Empty_rt.label>Empty</Empty_rt.label>
+
+
+  <!-- 武器·机枪 -->
+
+  <SSR_Aircraft_MachineGun.label>Machine gun</SSR_Aircraft_MachineGun.label>
+  <SSR_Aircraft_MachineGun.description>Machine gun</SSR_Aircraft_MachineGun.description>
+
+  <SSR_Aircraft_MachineGun_Weapon.label>Machine gun</SSR_Aircraft_MachineGun_Weapon.label>
+  <SSR_Aircraft_MachineGun_Weapon.description>machine gun</SSR_Aircraft_MachineGun_Weapon.description>
+
+  <SSR_Aircraft_MachineGun_Weapon_Projectile.label>Machine gun projectile</SSR_Aircraft_MachineGun_Weapon_Projectile.label>
+
+
+  <!-- 武器·火箭巢 -->
+
+  <SSR_Aircraft_Rocket.label>Rocket launcher</SSR_Aircraft_Rocket.label>
+  <SSR_Aircraft_Rocket.description>Rocket launcher</SSR_Aircraft_Rocket.description>
+
+  <SSR_Aircraft_Rocket_Weapon.label>Rocket launcher</SSR_Aircraft_Rocket_Weapon.label>
+  <SSR_Aircraft_Rocket_Weapon.description>Rocket launcher</SSR_Aircraft_Rocket_Weapon.description>
+
+  <SSR_Aircraft_Rocket_Weapon_Projectile.label>Rocket</SSR_Aircraft_Rocket_Weapon_Projectile.label>
+
+
+</LanguageData>

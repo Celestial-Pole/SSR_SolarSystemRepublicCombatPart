@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Defs>
+
+  <SoundDef>
+    <defName>Laser1s</defName>  
+    <context>MapOnly</context>  
+	  <maxVoices>4</maxVoices>   
+    <maxSimultaneous>1</maxSimultaneous>  
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Laser1s</clipPath>
+          </li>
+        </grains>      
+		    <sustainLoop>false</sustainLoop>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>Laser2s</defName>  
+    <context>MapOnly</context>  
+	  <maxVoices>4</maxVoices>   
+    <maxSimultaneous>1</maxSimultaneous>  
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Laser2s</clipPath>
+          </li>
+        </grains>      
+		    <sustainLoop>false</sustainLoop>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>Laser3s</defName>  
+    <context>MapOnly</context>  
+	  <maxVoices>4</maxVoices>   
+    <maxSimultaneous>1</maxSimultaneous>  
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Laser3s</clipPath>
+          </li>
+        </grains>      
+		    <sustainLoop>false</sustainLoop>
+      </li>
+    </subSounds>
+  </SoundDef>
+  
+</Defs>
