@@ -1,5 +1,8 @@
 is_global = true
 build_property.RootNamespace = SSRCP_Libs
-build_property.ProjectDir = C:\Users\28264\Desktop\ssr\SSR_SolarSystemRepublicCombatPart\1.4\.vscode\
+build_property.ProjectDir = F:\CSharp\SSR_SolarSystemRepublicCombatPart\1.4\.vscode\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.CsWinRTUseWindowsUIXamlProjections = false
+build_property.EffectiveAnalysisLevelStyle = 
+build_property.EnableCodeStyleSeverity = 

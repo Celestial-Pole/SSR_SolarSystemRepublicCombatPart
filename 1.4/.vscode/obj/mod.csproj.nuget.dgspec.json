@@ -1,25 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "E:\\SteamLibrary\\steamapps\\common\\RimWorld\\Mods\\SolarSystemRepublicCombatPart\\.vscode\\mod.csproj": {}
+    "F:\\CSharp\\SSR_SolarSystemRepublicCombatPart\\1.4\\.vscode\\mod.csproj": {}
   },
   "projects": {
-    "E:\\SteamLibrary\\steamapps\\common\\RimWorld\\Mods\\SolarSystemRepublicCombatPart\\.vscode\\mod.csproj": {
+    "F:\\CSharp\\SSR_SolarSystemRepublicCombatPart\\1.4\\.vscode\\mod.csproj": {
       "version": "0.1.0",
       "restore": {
-        "projectUniqueName": "E:\\SteamLibrary\\steamapps\\common\\RimWorld\\Mods\\SolarSystemRepublicCombatPart\\.vscode\\mod.csproj",
+        "projectUniqueName": "F:\\CSharp\\SSR_SolarSystemRepublicCombatPart\\1.4\\.vscode\\mod.csproj",
         "projectName": "SSRCP_Libs",
-        "projectPath": "E:\\SteamLibrary\\steamapps\\common\\RimWorld\\Mods\\SolarSystemRepublicCombatPart\\.vscode\\mod.csproj",
-        "packagesPath": "C:\\Users\\q2437\\.nuget\\packages\\",
-        "outputPath": "E:\\SteamLibrary\\steamapps\\common\\RimWorld\\Mods\\SolarSystemRepublicCombatPart\\.vscode\\obj\\",
+        "projectPath": "F:\\CSharp\\SSR_SolarSystemRepublicCombatPart\\1.4\\.vscode\\mod.csproj",
+        "packagesPath": "F:\\ProgramData\\nuget\\packages",
+        "outputPath": "F:\\CSharp\\SSR_SolarSystemRepublicCombatPart\\1.4\\.vscode\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Users\\q2437\\AppData\\Roaming\\Godot\\mono\\GodotNuGetFallbackFolder",
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "C:\\Users\\16096\\AppData\\Roaming\\Godot\\mono\\GodotNuGetFallbackFolder",
+          "F:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\q2437\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Users\\q2437\\AppData\\Roaming\\NuGet\\config\\Godot.Offline.Config",
+          "C:\\Users\\16096\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\16096\\AppData\\Roaming\\NuGet\\config\\Godot.Offline.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -40,12 +40,18 @@
           "warnAsError": [
             "NU1605"
           ]
-        }
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
         "net48": {
           "targetAlias": "net480",
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304\\RuntimeIdentifierGraph.json"
         }
       }
     }
