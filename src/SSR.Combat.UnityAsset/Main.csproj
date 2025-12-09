@@ -42,10 +42,12 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\Editor\AssetBundles.cs" />
+     <Compile Include="Assets\Script\ScreenShootHelper.cs" />
      <Folder Include="Assets" />
      <None Include="Assets\Main.asmdef" />
      <Folder Include="Assets\Scenes" />
      <Folder Include="Assets\Editor" />
+     <Folder Include="Assets\Script" />
      <Reference Include="UnityEngine">
      <HintPath>E:\UnityEngine\2020.3.48f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
      </Reference>
@@ -290,16 +292,16 @@
      <HintPath>E:\UnityEngine\2020.3.48f1\Editor\Data\PlaybackEngines\LinuxStandaloneSupport\UnityEditor.LinuxStandalone.Extensions.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Plastic.Newtonsoft.Json">
-     <HintPath>F:\CSharp\SSR_SolarSystemRepublicCombatPart\UnityAssets\SSR.Combat.UnityAsset\Library\PackageCache\com.unity.collab-proxy@2.0.4\Lib\Editor\PlasticSCM\Unity.Plastic.Newtonsoft.Json.dll</HintPath>
+     <HintPath>F:\CSharp\SSR_SolarSystemRepublicCombatPart\src\SSR.Combat.UnityAsset\Library\PackageCache\com.unity.collab-proxy@2.0.4\Lib\Editor\PlasticSCM\Unity.Plastic.Newtonsoft.Json.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Plastic.Antlr3.Runtime">
-     <HintPath>F:\CSharp\SSR_SolarSystemRepublicCombatPart\UnityAssets\SSR.Combat.UnityAsset\Library\PackageCache\com.unity.collab-proxy@2.0.4\Lib\Editor\PlasticSCM\Unity.Plastic.Antlr3.Runtime.dll</HintPath>
+     <HintPath>F:\CSharp\SSR_SolarSystemRepublicCombatPart\src\SSR.Combat.UnityAsset\Library\PackageCache\com.unity.collab-proxy@2.0.4\Lib\Editor\PlasticSCM\Unity.Plastic.Antlr3.Runtime.dll</HintPath>
      </Reference>
      <Reference Include="unityplastic">
-     <HintPath>F:\CSharp\SSR_SolarSystemRepublicCombatPart\UnityAssets\SSR.Combat.UnityAsset\Library\PackageCache\com.unity.collab-proxy@2.0.4\Lib\Editor\PlasticSCM\unityplastic.dll</HintPath>
+     <HintPath>F:\CSharp\SSR_SolarSystemRepublicCombatPart\src\SSR.Combat.UnityAsset\Library\PackageCache\com.unity.collab-proxy@2.0.4\Lib\Editor\PlasticSCM\unityplastic.dll</HintPath>
      </Reference>
      <Reference Include="log4netPlastic">
-     <HintPath>F:\CSharp\SSR_SolarSystemRepublicCombatPart\UnityAssets\SSR.Combat.UnityAsset\Library\PackageCache\com.unity.collab-proxy@2.0.4\Lib\Editor\PlasticSCM\log4netPlastic.dll</HintPath>
+     <HintPath>F:\CSharp\SSR_SolarSystemRepublicCombatPart\src\SSR.Combat.UnityAsset\Library\PackageCache\com.unity.collab-proxy@2.0.4\Lib\Editor\PlasticSCM\log4netPlastic.dll</HintPath>
      </Reference>
      <Reference Include="netstandard">
      <HintPath>E:\UnityEngine\2020.3.48f1\Editor\Data\NetStandard\ref\2.0.0\netstandard.dll</HintPath>
@@ -646,11 +648,11 @@
      <Reference Include="System.Xml.Serialization">
      <HintPath>E:\UnityEngine\2020.3.48f1\Editor\Data\NetStandard\compat\2.0.0\shims\netfx\System.Xml.Serialization.dll</HintPath>
      </Reference>
-     <Reference Include="UnityEditor.UI">
-     <HintPath>F:\CSharp\SSR_SolarSystemRepublicCombatPart\UnityAssets\SSR.Combat.UnityAsset\Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
-     </Reference>
      <Reference Include="UnityEngine.UI">
-     <HintPath>F:\CSharp\SSR_SolarSystemRepublicCombatPart\UnityAssets\SSR.Combat.UnityAsset\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
+     <HintPath>F:\CSharp\SSR_SolarSystemRepublicCombatPart\src\SSR.Combat.UnityAsset\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEditor.UI">
+     <HintPath>F:\CSharp\SSR_SolarSystemRepublicCombatPart\src\SSR.Combat.UnityAsset\Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
      </Reference>
   </ItemGroup>
   <ItemGroup>
