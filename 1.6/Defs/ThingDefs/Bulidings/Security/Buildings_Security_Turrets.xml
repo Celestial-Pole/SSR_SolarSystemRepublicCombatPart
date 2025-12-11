@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-	<AK_DLL.AssetDef>
+	<!-- <AK_DLL.AssetDef>
 		<defName>SSR_Animate_Prefab_Linux_Combat</defName>
 		<label>Animate Prefab</label>
 		<modID>SSR.Combat</modID>
@@ -20,7 +20,7 @@
 		<label>Animate Prefab</label>
 		<modID>SSR.Combat</modID>
 		<assetBundle>Windows/ssr_windows</assetBundle>
-	</AK_DLL.AssetDef>
+	</AK_DLL.AssetDef> -->
 
 	<!--=============== 哨戒机枪 ===============-->
 
