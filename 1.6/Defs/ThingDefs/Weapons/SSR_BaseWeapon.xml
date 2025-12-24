@@ -37,7 +37,7 @@
 			<effectWorking>Smith</effectWorking>
 			<soundWorking>Recipe_Machining</soundWorking>
 			<recipeUsers>
-				<li>SSR_NumericalControlledMachineTool</li>
+				<li>SSR_Building_NumericalControlledMachineTool</li>
 			</recipeUsers>
 			<unfinishedThingDef>UnfinishedGun</unfinishedThingDef>
 		</recipeMaker>

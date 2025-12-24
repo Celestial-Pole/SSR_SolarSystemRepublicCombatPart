@@ -2,7 +2,7 @@
 <Defs>
 
 	<ThingDef ParentName="SSR_Weapons_Industrial">
-		<defName>SSR_Electromagnetic_AR</defName>
+		<defName>SSR_Weapon_Electromagnetic_AR</defName>
 		<label>电磁步枪</label>
 		<description>地球联邦时代早期的制式突击步枪，相比于传统的火药步枪，使用电磁轨道加速弹丸的电磁步枪拥有更远的射程，也能对目标造成更大的伤害。</description>
 		<graphicData>
@@ -23,9 +23,9 @@
 			<researchPrerequisite>SSR_Research_ElectromagneticWeapon</researchPrerequisite>
 		</recipeMaker>
 		<costList>
-			<SSR_SpecialSteel>30</SSR_SpecialSteel>
-			<SSR_StrongElectromagnet>9</SSR_StrongElectromagnet>
-			<SSR_SuperconductingMaterial>3</SSR_SuperconductingMaterial>
+			<SSR_Item_SpecialSteel>30</SSR_Item_SpecialSteel>
+			<SSR_Item_StrongElectromagnet>9</SSR_Item_StrongElectromagnet>
+			<SSR_Item_SuperconductingMaterial>3</SSR_Item_SuperconductingMaterial>
 			<ComponentIndustrial>10</ComponentIndustrial>
 		</costList>
 		<verbs>
@@ -125,7 +125,7 @@
 	</ThingDef>
 
 	<ThingDef ParentName="SSR_Weapons_Industrial">
-		<defName>SSR_Electromagnetic_SMG</defName>
+		<defName>SSR_Weapon_Electromagnetic_SMG</defName>
 		<label>电磁冲锋枪</label>
 		<description>地球联邦时代早期的通用冲锋枪，高射速的电磁冲锋枪在近距离战斗中有着不俗的压制力，虽然穿透力相对于突击步枪有所衰减，但是在近距离战斗中已经足够了，并且降低了误伤的可能性。</description>
 		<graphicData>
@@ -146,9 +146,9 @@
 			<researchPrerequisite>SSR_Research_ElectromagneticWeapon</researchPrerequisite>
 		</recipeMaker>
 		<costList>
-			<SSR_SpecialSteel>25</SSR_SpecialSteel>
-			<SSR_StrongElectromagnet>6</SSR_StrongElectromagnet>
-			<SSR_SuperconductingMaterial>3</SSR_SuperconductingMaterial>
+			<SSR_Item_SpecialSteel>25</SSR_Item_SpecialSteel>
+			<SSR_Item_StrongElectromagnet>6</SSR_Item_StrongElectromagnet>
+			<SSR_Item_SuperconductingMaterial>3</SSR_Item_SuperconductingMaterial>
 			<ComponentIndustrial>10</ComponentIndustrial>
 		</costList>
 		<verbs>
@@ -247,7 +247,7 @@
 	</ThingDef>
 
 	<ThingDef ParentName="SSR_Weapons_Industrial">
-		<defName>SSR_Electromagnetic_HG</defName>
+		<defName>SSR_Weapon_Electromagnetic_HG</defName>
 		<label>电磁手枪</label>
 		<description>电磁手枪一般作为地球联邦时代早期的军官配枪或者士兵的副武器，主要为紧急情况下的防身之用。</description>
 		<graphicData>
@@ -268,9 +268,9 @@
 			<researchPrerequisite>SSR_Research_ElectromagneticWeapon</researchPrerequisite>
 		</recipeMaker>
 		<costList>
-			<SSR_SpecialSteel>20</SSR_SpecialSteel>
-			<SSR_StrongElectromagnet>3</SSR_StrongElectromagnet>
-			<SSR_SuperconductingMaterial>3</SSR_SuperconductingMaterial>
+			<SSR_Item_SpecialSteel>20</SSR_Item_SpecialSteel>
+			<SSR_Item_StrongElectromagnet>3</SSR_Item_StrongElectromagnet>
+			<SSR_Item_SuperconductingMaterial>3</SSR_Item_SuperconductingMaterial>
 			<ComponentIndustrial>10</ComponentIndustrial>
 		</costList>
 		<verbs>
@@ -370,7 +370,7 @@
 	</ThingDef>
 
 	<ThingDef ParentName="SSR_Weapons_Industrial">
-		<defName>SSR_Electromagnetic_SG</defName>
+		<defName>SSR_Weapon_Electromagnetic_SG</defName>
 		<label>电磁霰弹枪</label>
 		<description>地球联邦时代早期列装的霰弹枪，在巷战与室内战斗中展现的性能广受军警好评，电磁轨道强化了霰弹枪子弹的穿透效果，使其在面对防弹衣等轻型护甲的时候也能有效造成杀伤。</description>
 		<graphicData>
@@ -391,9 +391,9 @@
 			<researchPrerequisite>SSR_Research_ElectromagneticWeapon</researchPrerequisite>
 		</recipeMaker>
 		<costList>
-			<SSR_SpecialSteel>11</SSR_SpecialSteel>
-			<SSR_StrongElectromagnet>3</SSR_StrongElectromagnet>
-			<SSR_SuperconductingMaterial>1</SSR_SuperconductingMaterial>
+			<SSR_Item_SpecialSteel>11</SSR_Item_SpecialSteel>
+			<SSR_Item_StrongElectromagnet>3</SSR_Item_StrongElectromagnet>
+			<SSR_Item_SuperconductingMaterial>1</SSR_Item_SuperconductingMaterial>
 			<ComponentIndustrial>10</ComponentIndustrial>
 		</costList>
 		<verbs>
@@ -505,7 +505,7 @@
 	</ThingDef>
 	
 	<ThingDef ParentName="SSR_Weapons_Industrial">
-		<defName>SSR_Electromagnetic_SR</defName>
+		<defName>SSR_Weapon_Electromagnetic_SR</defName>
 		<label>电磁狙击枪</label>
 		<description>长磁轨加上先进的智能瞄具让这款狙击枪的使用者不需要观察手配合就能在远距离上精确命中目标，高弹速带来的高穿透力让电磁狙击枪可以较为轻松地击穿不厚重的护甲。</description>
 		<graphicData>
@@ -527,9 +527,9 @@
 			<researchPrerequisite>SSR_Research_ElectromagneticWeapon</researchPrerequisite>
 		</recipeMaker>
 		<costList>
-			<SSR_SpecialSteel>35</SSR_SpecialSteel>
-			<SSR_StrongElectromagnet>12</SSR_StrongElectromagnet>
-			<SSR_SuperconductingMaterial>3</SSR_SuperconductingMaterial>
+			<SSR_Item_SpecialSteel>35</SSR_Item_SpecialSteel>
+			<SSR_Item_StrongElectromagnet>12</SSR_Item_StrongElectromagnet>
+			<SSR_Item_SuperconductingMaterial>3</SSR_Item_SuperconductingMaterial>
 			<ComponentIndustrial>20</ComponentIndustrial>
 		</costList>
 		<verbs>
@@ -630,7 +630,7 @@
 	</ThingDef>
 
 	<ThingDef ParentName="SSR_Weapons_Industrial">
-		<defName>SSR_Electromagnetic_MG</defName>
+		<defName>SSR_Weapon_Electromagnetic_MG</defName>
 		<label>电磁机枪</label>
 		<description>地球联邦时代早期列装的轻机枪，电磁化带来的子弹重量降低与智能瞄具的普及使其在拥有较为轻便的携行重量的同时还拥有卓越的精度和火力持续性。</description>
 		<graphicData>
@@ -652,9 +652,9 @@
 			<researchPrerequisite>SSR_Research_ElectromagneticWeapon</researchPrerequisite>
 		</recipeMaker>
 		<costList>
-			<SSR_SpecialSteel>70</SSR_SpecialSteel>
-			<SSR_StrongElectromagnet>30</SSR_StrongElectromagnet>
-			<SSR_SuperconductingMaterial>15</SSR_SuperconductingMaterial>
+			<SSR_Item_SpecialSteel>70</SSR_Item_SpecialSteel>
+			<SSR_Item_StrongElectromagnet>30</SSR_Item_StrongElectromagnet>
+			<SSR_Item_SuperconductingMaterial>15</SSR_Item_SuperconductingMaterial>
 			<ComponentIndustrial>20</ComponentIndustrial>
 		</costList>
 		<verbs>
@@ -755,7 +755,7 @@
 	</ThingDef>
 
 	<ThingDef ParentName="SSR_Weapons_Industrial">
-		<defName>SSR_Electromagnetic_AMR</defName>
+		<defName>SSR_Weapon_Electromagnetic_AMR</defName>
 		<label>反载具电磁炮</label>
 		<description>这种武器在诞生之初的目标就是为了突破主动防御系统，击穿载具厚重的装甲，更长的磁轨和更大的口径都是为了达成这一目标而做出的设计。虽然被算作单兵武器，但是反载具电磁炮往往需要装备外骨骼或者AST装甲才能正常使用。</description>
 		<graphicData>
@@ -777,9 +777,9 @@
 			<researchPrerequisite>SSR_Research_ElectromagneticWeapon</researchPrerequisite>
 		</recipeMaker>
 		<costList>
-			<SSR_SpecialSteel>55</SSR_SpecialSteel>
-			<SSR_StrongElectromagnet>21</SSR_StrongElectromagnet>
-			<SSR_SuperconductingMaterial>6</SSR_SuperconductingMaterial>
+			<SSR_Item_SpecialSteel>55</SSR_Item_SpecialSteel>
+			<SSR_Item_StrongElectromagnet>21</SSR_Item_StrongElectromagnet>
+			<SSR_Item_SuperconductingMaterial>6</SSR_Item_SuperconductingMaterial>
 			<ComponentIndustrial>20</ComponentIndustrial>
 		</costList>
 		<verbs>

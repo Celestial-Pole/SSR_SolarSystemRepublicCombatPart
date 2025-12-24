@@ -2,7 +2,7 @@
 <Defs>
 
 	<ThingDef ParentName="SSR_Weapons_Spacer">
-		<defName>SSR_AdvancedElectromagnetic_AR</defName>
+		<defName>SSR_Weapon_AdvancedElectromagnetic_AR</defName>
 		<label>高级电磁步枪</label>
 		<description>。</description>
 		<graphicData>
@@ -23,10 +23,10 @@
 			<researchPrerequisite>SSR_Research_AdvancedElectromagneticWeapon</researchPrerequisite>
 		</recipeMaker>
 		<costList>
-			<SSR_NanoandMicroMechanicalComposite>480</SSR_NanoandMicroMechanicalComposite>
-			<SSR_StrongElectromagnet>15</SSR_StrongElectromagnet>
-			<SSR_SuperconductingMaterial>5</SSR_SuperconductingMaterial>
-			<SSR_HighDensityBattery>1</SSR_HighDensityBattery>
+			<SSR_Item_NanoandMicroMechanicalComposite>480</SSR_Item_NanoandMicroMechanicalComposite>
+			<SSR_Item_StrongElectromagnet>15</SSR_Item_StrongElectromagnet>
+			<SSR_Item_SuperconductingMaterial>5</SSR_Item_SuperconductingMaterial>
+			<SSR_Item_HighDensityBattery>1</SSR_Item_HighDensityBattery>
 			<ComponentSpacer>10</ComponentSpacer>
 		
 	</costList>
@@ -127,7 +127,7 @@
 	</ThingDef>
 
 	<ThingDef ParentName="SSR_Weapons_Spacer">
-		<defName>SSR_AdvancedElectromagnetic_SMG</defName>
+		<defName>SSR_Weapon_AdvancedElectromagnetic_SMG</defName>
 		<label>高级电磁冲锋枪</label>
 		<description>。</description>
 		<graphicData>
@@ -148,10 +148,10 @@
 			<researchPrerequisite>SSR_Research_AdvancedElectromagneticWeapon</researchPrerequisite>
 		</recipeMaker>
 		<costList>
-			<SSR_NanoandMicroMechanicalComposite>400</SSR_NanoandMicroMechanicalComposite>
-			<SSR_StrongElectromagnet>10</SSR_StrongElectromagnet>
-			<SSR_SuperconductingMaterial>5</SSR_SuperconductingMaterial>
-			<SSR_HighDensityBattery>1</SSR_HighDensityBattery>
+			<SSR_Item_NanoandMicroMechanicalComposite>400</SSR_Item_NanoandMicroMechanicalComposite>
+			<SSR_Item_StrongElectromagnet>10</SSR_Item_StrongElectromagnet>
+			<SSR_Item_SuperconductingMaterial>5</SSR_Item_SuperconductingMaterial>
+			<SSR_Item_HighDensityBattery>1</SSR_Item_HighDensityBattery>
 			<ComponentSpacer>10</ComponentSpacer>
 		</costList>
 		<verbs>
@@ -250,7 +250,7 @@
 	</ThingDef>
 
 	<ThingDef ParentName="SSR_Weapons_Spacer">
-		<defName>SSR_AdvancedElectromagnetic_HG</defName>
+		<defName>SSR_Weapon_AdvancedElectromagnetic_HG</defName>
 		<label>高级电磁手枪</label>
 		<description>。</description>
 		<graphicData>
@@ -271,10 +271,10 @@
 			<researchPrerequisite>SSR_Research_AdvancedElectromagneticWeapon</researchPrerequisite>
 		</recipeMaker>
 		<costList>
-			<SSR_NanoandMicroMechanicalComposite>320</SSR_NanoandMicroMechanicalComposite>
-			<SSR_StrongElectromagnet>5</SSR_StrongElectromagnet>
-			<SSR_SuperconductingMaterial>5</SSR_SuperconductingMaterial>
-			<SSR_HighDensityBattery>1</SSR_HighDensityBattery>
+			<SSR_Item_NanoandMicroMechanicalComposite>320</SSR_Item_NanoandMicroMechanicalComposite>
+			<SSR_Item_StrongElectromagnet>5</SSR_Item_StrongElectromagnet>
+			<SSR_Item_SuperconductingMaterial>5</SSR_Item_SuperconductingMaterial>
+			<SSR_Item_HighDensityBattery>1</SSR_Item_HighDensityBattery>
 			<ComponentSpacer>10</ComponentSpacer>
 		</costList>
 		<verbs>
@@ -374,7 +374,7 @@
 	</ThingDef>
 
 	<ThingDef ParentName="SSR_Weapons_Spacer">
-		<defName>SSR_AdvancedElectromagnetic_SG</defName>
+		<defName>SSR_Weapon_AdvancedElectromagnetic_SG</defName>
 		<label>高级电磁霰弹枪</label>
 		<description>。</description>
 		<graphicData>
@@ -391,20 +391,11 @@
 			<AccuracyLong>0.85</AccuracyLong>
 			<RangedWeapon_Cooldown>1.50</RangedWeapon_Cooldown>
 		</statBases>
-		<recipeMaker>
-			<researchPrerequisite>SSR_Research_AdvancedElectromagneticWeapon</researchPrerequisite>
-			<recipeUsers>
-				<li>SSR_NumericalControlledMachineTool</li>
-			</recipeUsers>
-			<skillRequirements>
-				<Crafting>7</Crafting>
-			</skillRequirements>
-		</recipeMaker>
 		<costList>
-			<SSR_NanoandMicroMechanicalComposite>450</SSR_NanoandMicroMechanicalComposite>
-			<SSR_StrongElectromagnet>5</SSR_StrongElectromagnet>
-			<SSR_SuperconductingMaterial>5</SSR_SuperconductingMaterial>
-			<SSR_HighDensityBattery>1</SSR_HighDensityBattery>
+			<SSR_Item_NanoandMicroMechanicalComposite>450</SSR_Item_NanoandMicroMechanicalComposite>
+			<SSR_Item_StrongElectromagnet>5</SSR_Item_StrongElectromagnet>
+			<SSR_Item_SuperconductingMaterial>5</SSR_Item_SuperconductingMaterial>
+			<SSR_Item_HighDensityBattery>1</SSR_Item_HighDensityBattery>
 			<ComponentSpacer>10</ComponentSpacer>
 		</costList>
 		<verbs>
@@ -516,7 +507,7 @@
 	</ThingDef>
 	
 	<ThingDef ParentName="SSR_Weapons_Spacer">
-		<defName>SSR_AdvancedElectromagnetic_SR</defName>
+		<defName>SSR_Weapon_AdvancedElectromagnetic_SR</defName>
 		<label>高级电磁狙击枪</label>
 		<description>。</description>
 		<graphicData>
@@ -538,10 +529,10 @@
 			<researchPrerequisite>SSR_Research_AdvancedElectromagneticWeapon</researchPrerequisite>
 		</recipeMaker>
 		<costList>
-			<SSR_NanoandMicroMechanicalComposite>560</SSR_NanoandMicroMechanicalComposite>
-			<SSR_StrongElectromagnet>15</SSR_StrongElectromagnet>
-			<SSR_SuperconductingMaterial>5</SSR_SuperconductingMaterial>
-			<SSR_HighDensityBattery>1</SSR_HighDensityBattery>
+			<SSR_Item_NanoandMicroMechanicalComposite>560</SSR_Item_NanoandMicroMechanicalComposite>
+			<SSR_Item_StrongElectromagnet>15</SSR_Item_StrongElectromagnet>
+			<SSR_Item_SuperconductingMaterial>5</SSR_Item_SuperconductingMaterial>
+			<SSR_Item_HighDensityBattery>1</SSR_Item_HighDensityBattery>
 			<ComponentSpacer>20</ComponentSpacer>
 		</costList>
 		<verbs>
@@ -642,7 +633,7 @@
 	</ThingDef>
 
 	<ThingDef ParentName="SSR_Weapons_Spacer">
-		<defName>SSR_AdvancedElectromagnetic_MG</defName>
+		<defName>SSR_Weapon_AdvancedElectromagnetic_MG</defName>
 		<label>高级电磁机枪</label>
 		<description>。</description>
 		<graphicData>
@@ -664,10 +655,10 @@
 			<researchPrerequisite>SSR_Research_AdvancedElectromagneticWeapon</researchPrerequisite>
 		</recipeMaker>
 		<costList>
-			<SSR_NanoandMicroMechanicalComposite>1120</SSR_NanoandMicroMechanicalComposite>
-			<SSR_StrongElectromagnet>30</SSR_StrongElectromagnet>
-			<SSR_SuperconductingMaterial>15</SSR_SuperconductingMaterial>
-			<SSR_HighDensityBattery>1</SSR_HighDensityBattery>
+			<SSR_Item_NanoandMicroMechanicalComposite>1120</SSR_Item_NanoandMicroMechanicalComposite>
+			<SSR_Item_StrongElectromagnet>30</SSR_Item_StrongElectromagnet>
+			<SSR_Item_SuperconductingMaterial>15</SSR_Item_SuperconductingMaterial>
+			<SSR_Item_HighDensityBattery>1</SSR_Item_HighDensityBattery>
 			<ComponentSpacer>20</ComponentSpacer>
 		</costList>
 		<verbs>
@@ -768,7 +759,7 @@
 	</ThingDef>
 
 	<ThingDef ParentName="SSR_Weapons_Spacer">
-		<defName>SSR_AdvancedElectromagnetic_AMR</defName>
+		<defName>SSR_Weapon_AdvancedElectromagnetic_AMR</defName>
 		<label>高级反载具电磁炮</label>
 		<description>。</description>
 		<graphicData>
@@ -790,10 +781,10 @@
 			<researchPrerequisite>SSR_Research_AdvancedElectromagneticWeapon</researchPrerequisite>
 		</recipeMaker>
 		<costList>
-			<SSR_NanoandMicroMechanicalComposite>880</SSR_NanoandMicroMechanicalComposite>
-			<SSR_StrongElectromagnet>25</SSR_StrongElectromagnet>
-			<SSR_SuperconductingMaterial>10</SSR_SuperconductingMaterial>
-			<SSR_HighDensityBattery>1</SSR_HighDensityBattery>
+			<SSR_Item_NanoandMicroMechanicalComposite>880</SSR_Item_NanoandMicroMechanicalComposite>
+			<SSR_Item_StrongElectromagnet>25</SSR_Item_StrongElectromagnet>
+			<SSR_Item_SuperconductingMaterial>10</SSR_Item_SuperconductingMaterial>
+			<SSR_Item_HighDensityBattery>1</SSR_Item_HighDensityBattery>
 			<ComponentSpacer>20</ComponentSpacer>
 		</costList>
 		<verbs>

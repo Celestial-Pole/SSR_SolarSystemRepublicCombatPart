@@ -7,7 +7,7 @@
 		<description>这些拥有悠久服役历史的或直射或制导的单兵反装甲武器在地球联邦时代依旧在战场上发光发热。</description>
 		<requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
 		<requiredResearchFacilities>
-			<li>SSR_DataTerminal</li>
+			<li>SSR_Building_DataTerminal</li>
 		</requiredResearchFacilities>
 		<prerequisites>
 			<li>SSR_Research_BasicManufacturingTechnology</li>
@@ -23,7 +23,7 @@
         <description>第三次世界大战之前就已经在各国列装的武器类型，完全取代了传统的火药武器与过度时期所使用的电热化学武器，该类型武器在地球联邦时代同样被列装于军队并被进一步改进。</description>
 		<requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
         <requiredResearchFacilities>
-			<li>SSR_DataTerminal</li>
+			<li>SSR_Building_DataTerminal</li>
 		</requiredResearchFacilities>
 		<prerequisites>
 			<li>SSR_Research_PrecisionMagneticFieldControl</li>
@@ -40,7 +40,7 @@
 		<description>基础防御结构。</description>
 		<requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
 		<requiredResearchFacilities>
-			<li>SSR_DataTerminal</li>
+			<li>SSR_Building_DataTerminal</li>
 		</requiredResearchFacilities>
 		<prerequisites>
 			<li>SSR_Research_BasicManufacturingTechnology</li>
@@ -56,7 +56,7 @@
 		<description>基础装甲安全门。</description>
 		<requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
 		<requiredResearchFacilities>
-			<li>SSR_DataTerminal</li>
+			<li>SSR_Building_DataTerminal</li>
 		</requiredResearchFacilities>
 		<prerequisites>
 			<li>SSR_Research_BasicDefenseStructure</li>
@@ -73,7 +73,7 @@
         <description>基础自动装弹机。</description>
 		<requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
         <requiredResearchFacilities>
-			<li>SSR_DataTerminal</li>
+			<li>SSR_Building_DataTerminal</li>
 		</requiredResearchFacilities>
 		<prerequisites>
             <li>SSR_Research_BasicPowerTechnology</li>
@@ -89,7 +89,7 @@
         <description>基础防御设施。</description>
 		<requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
         <requiredResearchFacilities>
-			<li>SSR_DataTerminal</li>
+			<li>SSR_Building_DataTerminal</li>
 		</requiredResearchFacilities>
 		<prerequisites>
 			<li>SSR_Research_ElectromagneticWeapon</li>
@@ -106,7 +106,7 @@
         <description>激光武器。</description>
 		<requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
         <requiredResearchFacilities>
-			<li>SSR_DataTerminal</li>
+			<li>SSR_Building_DataTerminal</li>
 		</requiredResearchFacilities>
 		<prerequisites>
 			<li>SSR_Research_HighEnergyLaserArray</li>
@@ -122,7 +122,7 @@
         <description>高级电磁武器。</description>
 		<requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
         <requiredResearchFacilities>
-			<li>SSR_DataTerminal</li>
+			<li>SSR_Building_DataTerminal</li>
 		</requiredResearchFacilities>
 		<prerequisites>
 			<li>SSR_Research_HighDensityBattery</li>
@@ -139,7 +139,7 @@
         <description>智能子弹。</description>
 		<requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
         <requiredResearchFacilities>
-			<li>SSR_DataTerminal</li>
+			<li>SSR_Building_DataTerminal</li>
 		</requiredResearchFacilities>
 		<prerequisites>
 			<li>SSR_Research_StandardizedArtificialIntelligence</li>
@@ -155,7 +155,7 @@
 		<description>中级防御结构。</description>
 		<requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
 		<requiredResearchFacilities>
-			<li>SSR_DataTerminal</li>
+			<li>SSR_Building_DataTerminal</li>
 		</requiredResearchFacilities>
 		<prerequisites>
 			<li>SSR_Research_Medium-levelManufacturingTechnology</li>
@@ -172,7 +172,7 @@
 		<description>中级装甲安全门。</description>
 		<requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
 		<requiredResearchFacilities>
-			<li>SSR_DataTerminal</li>
+			<li>SSR_Building_DataTerminal</li>
 		</requiredResearchFacilities>
 		<prerequisites>
 			<li>SSR_Research_Medium-levelPowerTechnology</li>
@@ -191,7 +191,7 @@
         <description>中级自动装弹机。</description>
 		<requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
         <requiredResearchFacilities>
-			<li>SSR_DataTerminal</li>
+			<li>SSR_Building_DataTerminal</li>
 		</requiredResearchFacilities>
 		<prerequisites>
             <li>SSR_Research_BasicAutomaticGunCharger</li>
@@ -220,7 +220,7 @@
         <description>中级激光防御设施。</description>
 		<requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
         <requiredResearchFacilities>
-			<li>SSR_DataTerminal</li>
+			<li>SSR_Building_DataTerminal</li>
 		</requiredResearchFacilities>
 		<prerequisites>
 			<li>SSR_Research_LaserWeapon</li>
@@ -238,7 +238,7 @@
         <description>中级电磁防御设施。</description>
 		<requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
         <requiredResearchFacilities>
-			<li>SSR_DataTerminal</li>
+			<li>SSR_Building_DataTerminal</li>
 		</requiredResearchFacilities>
 		<prerequisites>
 			<li>SSR_Research_AdvancedElectromagneticWeapon</li>
@@ -256,7 +256,7 @@
         <description>基础动力装甲。</description>
 		<requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
         <requiredResearchFacilities>
-			<li>SSR_DataTerminal</li>
+			<li>SSR_Building_DataTerminal</li>
 		</requiredResearchFacilities>
 		<prerequisites>
 			<li>SSR_Research_Medium-levelSpecialGarments</li>
@@ -273,7 +273,7 @@
         <description>高能激光武器。</description>
 		<requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
         <requiredResearchFacilities>
-			<li>SSR_DataTerminal</li>
+			<li>SSR_Building_DataTerminal</li>
 		</requiredResearchFacilities>
 		<prerequisites>
 			<li>SSR_Research_AdvancedEnergyTechnology</li>
@@ -290,7 +290,7 @@
 		<description>球形闪电武器。</description>
 		<requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
 		<requiredResearchFacilities>
-			<li>SSR_DataTerminal</li>
+			<li>SSR_Building_DataTerminal</li>
 		</requiredResearchFacilities>
 		<prerequisites>
 			<li>SSR_Research_AdvancedEnergyTechnology</li>
@@ -306,7 +306,7 @@
         <description>粒子束武器。</description>
 		<requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
         <requiredResearchFacilities>
-			<li>SSR_DataTerminal</li>
+			<li>SSR_Building_DataTerminal</li>
 		</requiredResearchFacilities>
 		<prerequisites>
 			<li>SSR_Research_ParticleConfinementTechnology</li>
@@ -322,7 +322,7 @@
 		<description>高级防御结构。</description>
 		<requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
 		<requiredResearchFacilities>
-			<li>SSR_DataTerminal</li>
+			<li>SSR_Building_DataTerminal</li>
 		</requiredResearchFacilities>
 		<prerequisites>
 			<li>SSR_Research_AdvancedMaterialsScience</li>
@@ -339,7 +339,7 @@
 		<description>高级装甲安全门。</description>
 		<requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
 		<requiredResearchFacilities>
-			<li>SSR_DataTerminal</li>
+			<li>SSR_Building_DataTerminal</li>
 		</requiredResearchFacilities>
 		<prerequisites>
 			<li>SSR_Research_AdvancedEnergyTechnology</li>
@@ -358,7 +358,7 @@
         <description>高级自动装弹机。</description>
 		<requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
         <requiredResearchFacilities>
-			<li>SSR_DataTerminal</li>
+			<li>SSR_Building_DataTerminal</li>
 		</requiredResearchFacilities>
 		<prerequisites>
             <li>SSR_Research_Medium-levelAutomaticGunCharger</li>
@@ -375,7 +375,7 @@
         <description>高级激光防御设施。</description>
 		<requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
         <requiredResearchFacilities>
-			<li>SSR_DataTerminal</li>
+			<li>SSR_Building_DataTerminal</li>
 		</requiredResearchFacilities>
 		<prerequisites>
 			<li>SSR_Research_HighEnergyLaserWeapon</li>
@@ -392,7 +392,7 @@
         <description>高级粒子束防御设施。</description>
 		<requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
         <requiredResearchFacilities>
-			<li>SSR_DataTerminal</li>
+			<li>SSR_Building_DataTerminal</li>
 		</requiredResearchFacilities>
 		<prerequisites>
 			<li>SSR_Research_ParticleBeamWeapon</li>
@@ -409,7 +409,7 @@
         <description>高级球闪防御设施。</description>
 		<requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
         <requiredResearchFacilities>
-			<li>SSR_DataTerminal</li>
+			<li>SSR_Building_DataTerminal</li>
 		</requiredResearchFacilities>
 		<prerequisites>
 			<li>SSR_Research_BallLightningWeapon</li>
@@ -426,7 +426,7 @@
         <description>高级动力装甲。</description>
 		<requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
         <requiredResearchFacilities>
-			<li>SSR_DataTerminal</li>
+			<li>SSR_Building_DataTerminal</li>
 		</requiredResearchFacilities>
 		<prerequisites>
             <li>SSR_Research_AdvancedEnergyTechnology</li>

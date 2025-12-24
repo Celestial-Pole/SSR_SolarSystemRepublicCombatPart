@@ -67,7 +67,7 @@
 				<outOfFuelMessage>需要重新装填</outOfFuelMessage>
 				<fuelFilter>
 					<thingDefs>
-						<li>SSR_SpecialSteel</li>
+						<li>SSR_Item_SpecialSteel</li>
 					</thingDefs>
 				</fuelFilter>
 				<fuelCapacity>720</fuelCapacity><!-- 30 bursts -->
@@ -90,9 +90,9 @@
 		</stuffCategories>
 		<costStuffCount>30</costStuffCount>
 		<costList>
-			<SSR_SpecialSteel>120</SSR_SpecialSteel>
-			<SSR_StrongElectromagnet>10</SSR_StrongElectromagnet>
-			<SSR_SuperconductingMaterial>5</SSR_SuperconductingMaterial>
+			<SSR_Item_SpecialSteel>120</SSR_Item_SpecialSteel>
+			<SSR_Item_StrongElectromagnet>10</SSR_Item_StrongElectromagnet>
+			<SSR_Item_SuperconductingMaterial>5</SSR_Item_SuperconductingMaterial>
 			<ComponentIndustrial>25</ComponentIndustrial>
 		</costList>
 		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
@@ -170,7 +170,7 @@
 				<outOfFuelMessage>需要重新装填</outOfFuelMessage>
 				<fuelFilter>
 					<thingDefs>
-						<li>SSR_SpecialSteel</li>
+						<li>SSR_Item_SpecialSteel</li>
 					</thingDefs>
 				</fuelFilter>
 				<fuelCapacity>360</fuelCapacity>
@@ -195,9 +195,9 @@
 		</stuffCategories>
 		<costStuffCount>30</costStuffCount>
 		<costList>
-			<SSR_SpecialSteel>90</SSR_SpecialSteel>
-			<SSR_StrongElectromagnet>10</SSR_StrongElectromagnet>
-			<SSR_SuperconductingMaterial>5</SSR_SuperconductingMaterial>
+			<SSR_Item_SpecialSteel>90</SSR_Item_SpecialSteel>
+			<SSR_Item_StrongElectromagnet>10</SSR_Item_StrongElectromagnet>
+			<SSR_Item_SuperconductingMaterial>5</SSR_Item_SuperconductingMaterial>
 			<ComponentIndustrial>20</ComponentIndustrial>
 		</costList>
 		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
@@ -323,7 +323,7 @@
 				<outOfFuelMessage>需要重新装填</outOfFuelMessage>
 				<fuelFilter>
 					<thingDefs>
-						<li>SSR_SpecialSteel</li>
+						<li>SSR_Item_SpecialSteel</li>
 					</thingDefs>
 				</fuelFilter>
 				<fuelCapacity>1200</fuelCapacity>
@@ -356,9 +356,9 @@
 		</stuffCategories>
 		<costStuffCount>30</costStuffCount>
 		<costList>
-			<SSR_SpecialSteel>350</SSR_SpecialSteel>
-			<SSR_StrongElectromagnet>20</SSR_StrongElectromagnet>
-			<SSR_SuperconductingMaterial>10</SSR_SuperconductingMaterial>
+			<SSR_Item_SpecialSteel>350</SSR_Item_SpecialSteel>
+			<SSR_Item_StrongElectromagnet>20</SSR_Item_StrongElectromagnet>
+			<SSR_Item_SuperconductingMaterial>10</SSR_Item_SuperconductingMaterial>
 			<ComponentIndustrial>45</ComponentIndustrial>
 		</costList>
 		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
