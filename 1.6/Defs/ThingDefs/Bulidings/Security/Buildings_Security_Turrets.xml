@@ -24,7 +24,7 @@
 
 	<!--=============== 哨戒机枪 ===============-->
 
-	<ThingDef ParentName="BuildingBase">
+	<ThingDef ParentName="SSR_BuildingBase_Security">
 		<defName>SSR_Turret_SentryGun</defName>
 		<label>哨戒机枪</label>
 		<description>哨戒机枪是一种高效的防御设施，固定的底座使其更加坚固的同时拥有了更多的备弹量。</description>
@@ -45,7 +45,6 @@
 		</graphicData>
 		<uiIconPath>Things/Building/Security/SentryGun_MenuIcon</uiIconPath>
 		<uiIconScale>0.90</uiIconScale>
-		<altitudeLayer>Building</altitudeLayer>
 		<stealable>false</stealable>
 		<rotatable>false</rotatable>
 		<statBases>
@@ -81,9 +80,6 @@
 				<fuelIconPath>UI/Overlays/Barrel</fuelIconPath>
 			</li>
 		</comps>
-		<passability>PassThroughOnly</passability>
-		<pathCost>50</pathCost>
-		<fillPercent>0.4</fillPercent>
 		<hasTooltip>true</hasTooltip>
 		<stuffCategories>
 			<li>Metallic</li>
@@ -96,7 +92,6 @@
 			<ComponentIndustrial>25</ComponentIndustrial>
 		</costList>
 		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
-		<designationCategory>SSR_DesignationCategory</designationCategory>
 		<constructionSkillPrerequisite>5</constructionSkillPrerequisite>
 		<building>
 			<combatPower>45</combatPower><!-- same as a scavenger -->
@@ -113,17 +108,9 @@
 		<researchPrerequisites>
 			<li>SSR_Research_BasicTurret</li>
 		</researchPrerequisites>
-		<modExtensions>
-			<li Class="SolarSystemRepublicFramework.DefModExtension_TurretMannable">
-			</li>
-			<li Class="FS_SSR.UI.Ext_DesignationCategoryInner">
-				<!-- SSR_DesignationCategory分类的必须带此ext注明子分类 -->
-				<innerCategory>SSR_DesignationInnerCategory_Security</innerCategory>
-			</li>
-		</modExtensions>
 	</ThingDef>
 
-	<ThingDef ParentName="BuildingBase">
+	<ThingDef ParentName="SSR_BuildingBase_Security">
 		<defName>SSR_Turret_PortableSentryGun</defName>
 		<label>便携式哨戒机枪</label>
 		<description>便携式哨戒机枪是一种轻便高效的防御设施，可卸载的底座使其能够被快速拆解和安装在必要的位置，不过便携的特性让哨戒机枪无法拥有充沛的备弹量。</description>
@@ -145,7 +132,6 @@
 		<uiIconPath>Things/Building/Security/PortableSentryGun_MenuIcon</uiIconPath>
 		<uiIconScale>0.90</uiIconScale>
 		<minifiedDef>MinifiedThing</minifiedDef>
-		<altitudeLayer>Building</altitudeLayer>
 		<stealable>false</stealable>
 		<rotatable>false</rotatable>
 		<thingCategories>
@@ -186,9 +172,6 @@
 				<fuelIconPath>UI/Overlays/Barrel</fuelIconPath>
 			</li>
 		</comps>
-		<passability>PassThroughOnly</passability>
-		<pathCost>50</pathCost>
-		<fillPercent>0.4</fillPercent>
 		<hasTooltip>true</hasTooltip>
 		<stuffCategories>
 			<li>Metallic</li>
@@ -201,7 +184,6 @@
 			<ComponentIndustrial>20</ComponentIndustrial>
 		</costList>
 		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
-		<designationCategory>SSR_DesignationCategory</designationCategory>
 		<constructionSkillPrerequisite>5</constructionSkillPrerequisite>
 		<building>
 			<combatPower>45</combatPower><!-- same as a scavenger -->
@@ -218,14 +200,6 @@
 		<researchPrerequisites>
 			<li>SSR_Research_BasicTurret</li>
 		</researchPrerequisites>
-		<modExtensions>
-			<li Class="SolarSystemRepublicFramework.DefModExtension_TurretMannable">
-			</li>
-			<li Class="FS_SSR.UI.Ext_DesignationCategoryInner">
-				<!-- SSR_DesignationCategory分类的必须带此ext注明子分类 -->
-				<innerCategory>SSR_DesignationInnerCategory_Security</innerCategory>
-			</li>
-		</modExtensions>
 	</ThingDef>
 	
 	<ThingDef ParentName="BaseWeaponTurret">
@@ -279,7 +253,7 @@
 
 	<!--=============== 电磁近防炮 ===============-->
 
-	<ThingDef ParentName="BuildingBase">
+	<ThingDef ParentName="SSR_BuildingBase_Security">
 		<defName>SSR_Turret_RailCIWS</defName>
 		<label>电磁近防炮</label>
 		<description>电磁近防炮是一款地球联邦时代早期近防炮系统，曾被广泛用在海军和太空军舰艇以及地面军事设施上。</description>
@@ -300,7 +274,6 @@
 		</graphicData>
 		<uiIconPath>Things/Building/Security/RailCIWS_MenuIcon</uiIconPath>
 		<uiIconScale>0.90</uiIconScale>
-		<altitudeLayer>Building</altitudeLayer>
 		<stealable>false</stealable>
 		<rotatable>false</rotatable>
 		<statBases>
@@ -362,7 +335,6 @@
 			<ComponentIndustrial>45</ComponentIndustrial>
 		</costList>
 		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
-		<designationCategory>SSR_DesignationCategory</designationCategory>
 		<constructionSkillPrerequisite>5</constructionSkillPrerequisite>
 		<building>
 			<combatPower>45</combatPower><!-- same as a scavenger -->
@@ -380,14 +352,6 @@
 		<researchPrerequisites>
 			<li>SSR_Research_BasicTurret</li>
 		</researchPrerequisites>
-		<modExtensions>
-			<li Class="SolarSystemRepublicFramework.DefModExtension_TurretMannable">
-			</li>
-			<li Class="FS_SSR.UI.Ext_DesignationCategoryInner">
-				<!-- SSR_DesignationCategory分类的必须带此ext注明子分类 -->
-				<innerCategory>SSR_DesignationInnerCategory_Security</innerCategory>
-			</li>
-		</modExtensions>
 	</ThingDef>
 
 	<ThingDef ParentName="BaseWeaponTurret">
@@ -489,7 +453,7 @@
 
 	<!--=============== 3X3 ===============-->
 
-	<ThingDef ParentName="BuildingBase">
+	<ThingDef ParentName="SSR_BuildingBase_Security">
 		<defName>SSR_TurretT1_3X</defName>
 		<label>turret T1 3x3</label>
 		<description>Object for test 3D turret</description>
@@ -512,52 +476,16 @@
 		</graphicData>
 		<uiIconPath>Things/Building/Turret/TurretT1_3x3_UI</uiIconPath>
 		<uiIconScale>2.333333</uiIconScale>
-		<minifiedDef>MinifiedThing</minifiedDef>
-		<altitudeLayer>Building</altitudeLayer>
 		<stealable>false</stealable>
 		<rotatable>false</rotatable>
-		<thingCategories>
-			<li>BuildingsSecurity</li>
-		</thingCategories>
 		<statBases>
 			<MaxHitPoints>500</MaxHitPoints>
 			<Flammability>0.7</Flammability>
 			<WorkToBuild>1800</WorkToBuild>
-			<Mass>8</Mass>
 			<Beauty>-20</Beauty>
 			<ShootingAccuracyTurret>1</ShootingAccuracyTurret>
 		</statBases>
 		<tickerType>Normal</tickerType>
-		<comps>
-			<li Class="CompProperties_Explosive">
-				<wickTicks>240</wickTicks>
-				<explosiveRadius>3.9</explosiveRadius>
-				<explosiveDamageType>Bomb</explosiveDamageType>
-				<chanceNeverExplodeFromDamage>0.5</chanceNeverExplodeFromDamage>
-			</li>
-			<li Class="CompProperties_Forbiddable"/>
-			<li Class="CompProperties_Power">
-				<compClass>CompPowerTrader</compClass>
-				<basePowerConsumption>80</basePowerConsumption>
-			</li>
-			<li Class="CompProperties_Stunnable">
-				<affectedDamageDefs>
-				<li>Stun</li>
-				<li>EMP</li>
-				</affectedDamageDefs>
-			</li>
-			<li Class="FS_SSR.TCP_SinglePrefabDrawer">
-				<shaderForTestAssetBundle>Assets/SSR/Add.shader</shaderForTestAssetBundle>
-				<assetDefs>
-					<li>SSR_Animate_Prefab_Linux_Combat</li>
-					<li>SSR_Animate_Prefab_MacOS_Combat</li>
-					<li>SSR_Animate_Prefab_Windows_Combat</li>
-				</assetDefs>
-				<leveledPrefabPaths>
-			<li>Assets/SSR/Prefab/TurretT1_3X.prefab</li>
-				</leveledPrefabPaths>
-			</li>
-		</comps>
 		<passability>PassThroughOnly</passability>
 		<pathCost>50</pathCost>
 		<fillPercent>0.4</fillPercent>
@@ -566,8 +494,6 @@
 			<Steel>70</Steel>
 			<ComponentIndustrial>3</ComponentIndustrial>
 		</costList>
-		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
-		<designationCategory>Security</designationCategory>
 		<constructionSkillPrerequisite>5</constructionSkillPrerequisite>
 		<building>
 			<combatPower>45</combatPower>
@@ -584,6 +510,36 @@
 		<researchPrerequisites>
 			<li>GunTurrets</li>
 		</researchPrerequisites>
+		<comps>
+			<li Class="CompProperties_Explosive">
+				<wickTicks>240</wickTicks>
+				<explosiveRadius>3.9</explosiveRadius>
+				<explosiveDamageType>Bomb</explosiveDamageType>
+				<chanceNeverExplodeFromDamage>0.5</chanceNeverExplodeFromDamage>
+			</li>
+			<li Class="CompProperties_Forbiddable"/>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTrader</compClass>
+				<basePowerConsumption>80</basePowerConsumption>
+			</li>
+			<li Class="CompProperties_Stunnable">
+				<affectedDamageDefs>
+					<li>Stun</li>
+					<li>EMP</li>
+				</affectedDamageDefs>
+			</li>
+			<li Class="FS_SSR.TCP_SinglePrefabDrawer">
+				<shaderForTestAssetBundle>Assets/SSR/Add.shader</shaderForTestAssetBundle>
+				<assetDefs>
+					<li>SSR_Animate_Prefab_Linux_Combat</li>
+					<li>SSR_Animate_Prefab_MacOS_Combat</li>
+					<li>SSR_Animate_Prefab_Windows_Combat</li>
+				</assetDefs>
+				<leveledPrefabPaths>
+					<li>Assets/SSR/Prefab/TurretT1_3X.prefab</li>
+				</leveledPrefabPaths>
+			</li>
+		</comps>
 		<modExtensions>
 		<li Class="FS_SSR.Incidents.DefExt_SSRTurretInfo">
 			<rotationSpeed>20</rotationSpeed>
@@ -650,7 +606,7 @@
 
 	<!--=============== 5X5 ===============-->
 
-	<ThingDef ParentName="BuildingBase">
+	<ThingDef ParentName="SSR_BuildingBase_Security">
 		<defName>SSR_TurretT1_5X</defName>
 		<label>turret T1 5x5</label>
 		<description>Object for test 3D turret</description>
@@ -673,22 +629,40 @@
 		</graphicData>
 		<uiIconPath>Things/Building/Turret/TurretT1_5x5_UI</uiIconPath>
 		<uiIconScale>2.2</uiIconScale>
-		<minifiedDef>MinifiedThing</minifiedDef>
-		<altitudeLayer>Building</altitudeLayer>
 		<stealable>false</stealable>
 		<rotatable>false</rotatable>
-		<thingCategories>
-			<li>BuildingsSecurity</li>
-		</thingCategories>
 		<statBases>
 			<MaxHitPoints>1000</MaxHitPoints>
 			<Flammability>0.7</Flammability>
 			<WorkToBuild>1800</WorkToBuild>
-			<Mass>8</Mass>
 			<Beauty>-20</Beauty>
 			<ShootingAccuracyTurret>1</ShootingAccuracyTurret>
 		</statBases>
 		<tickerType>Normal</tickerType>
+		<passability>PassThroughOnly</passability>
+		<pathCost>50</pathCost>
+		<fillPercent>0.4</fillPercent>
+		<hasTooltip>true</hasTooltip>
+		<costList>
+			<Steel>70</Steel>
+			<ComponentIndustrial>3</ComponentIndustrial>
+		</costList>
+		<constructionSkillPrerequisite>5</constructionSkillPrerequisite>
+		<building>
+			<combatPower>45</combatPower>
+			<ai_combatDangerous>true</ai_combatDangerous>
+			<turretGunDef>Gun_SSRTurretT1_5X</turretGunDef>
+			<turretTopDrawSize>0</turretTopDrawSize>
+			<turretBurstCooldownTime>4.8</turretBurstCooldownTime>
+		</building>
+		<placeWorkers>
+			<li>PlaceWorker_TurretTop</li>
+			<li>PlaceWorker_ShowTurretRadius</li>
+		</placeWorkers>
+		<designationHotKey>Misc2</designationHotKey>
+		<researchPrerequisites>
+			<li>GunTurrets</li>
+		</researchPrerequisites>
 		<comps>
 			<li Class="CompProperties_Explosive">
 				<wickTicks>240</wickTicks>
@@ -719,32 +693,6 @@
 				</leveledPrefabPaths>
 			</li>
 		</comps>
-		<passability>PassThroughOnly</passability>
-		<pathCost>50</pathCost>
-		<fillPercent>0.4</fillPercent>
-		<hasTooltip>true</hasTooltip>
-		<costList>
-			<Steel>70</Steel>
-			<ComponentIndustrial>3</ComponentIndustrial>
-		</costList>
-		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
-		<designationCategory>Security</designationCategory>
-		<constructionSkillPrerequisite>5</constructionSkillPrerequisite>
-		<building>
-			<combatPower>45</combatPower>
-			<ai_combatDangerous>true</ai_combatDangerous>
-			<turretGunDef>Gun_SSRTurretT1_5X</turretGunDef>
-			<turretTopDrawSize>0</turretTopDrawSize>
-			<turretBurstCooldownTime>4.8</turretBurstCooldownTime>
-		</building>
-		<placeWorkers>
-			<li>PlaceWorker_TurretTop</li>
-			<li>PlaceWorker_ShowTurretRadius</li>
-		</placeWorkers>
-		<designationHotKey>Misc2</designationHotKey>
-		<researchPrerequisites>
-			<li>GunTurrets</li>
-		</researchPrerequisites>
 		<modExtensions>
 		<li Class="FS_SSR.Incidents.DefExt_SSRTurretInfo">
 			<rotationSpeed>15</rotationSpeed>
@@ -811,7 +759,7 @@
 
 	<!--=============== 5X5 ===============-->
 
-	<ThingDef ParentName="BuildingBase">
+	<ThingDef ParentName="SSR_BuildingBase_Security">
 		<defName>SSR_TurretT1_7X</defName>
 		<label>turret T1 7x7</label>
 		<description>Object for test 3D turret</description>
@@ -834,52 +782,16 @@
 		</graphicData>
 		<uiIconPath>Things/Building/Turret/TurretT1_7x7_UI</uiIconPath>
 		<uiIconScale>3</uiIconScale>
-		<minifiedDef>MinifiedThing</minifiedDef>
-		<altitudeLayer>Building</altitudeLayer>
 		<stealable>false</stealable>
 		<rotatable>false</rotatable>
-		<thingCategories>
-			<li>BuildingsSecurity</li>
-		</thingCategories>
 		<statBases>
 			<MaxHitPoints>2000</MaxHitPoints>
 			<Flammability>0.7</Flammability>
 			<WorkToBuild>1800</WorkToBuild>
-			<Mass>8</Mass>
 			<Beauty>-20</Beauty>
 			<ShootingAccuracyTurret>1</ShootingAccuracyTurret>
 		</statBases>
 		<tickerType>Normal</tickerType>
-		<comps>
-			<li Class="CompProperties_Explosive">
-				<wickTicks>240</wickTicks>
-				<explosiveRadius>3.9</explosiveRadius>
-				<explosiveDamageType>Bomb</explosiveDamageType>
-				<chanceNeverExplodeFromDamage>0.5</chanceNeverExplodeFromDamage>
-			</li>
-			<li Class="CompProperties_Forbiddable"/>
-			<li Class="CompProperties_Power">
-				<compClass>CompPowerTrader</compClass>
-				<basePowerConsumption>80</basePowerConsumption>
-			</li>
-			<li Class="CompProperties_Stunnable">
-				<affectedDamageDefs>
-				<li>Stun</li>
-				<li>EMP</li>
-				</affectedDamageDefs>
-			</li>
-			<li Class="FS_SSR.TCP_SinglePrefabDrawer">
-				<shaderForTestAssetBundle>Assets/SSR/Add.shader</shaderForTestAssetBundle>
-				<assetDefs>
-					<li>SSR_Animate_Prefab_Linux_Combat</li>
-					<li>SSR_Animate_Prefab_MacOS_Combat</li>
-					<li>SSR_Animate_Prefab_Windows_Combat</li>
-				</assetDefs>
-				<leveledPrefabPaths>
-					<li>Assets/SSR/Prefab/TurretT1_7X.prefab</li>
-				</leveledPrefabPaths>
-			</li>
-		</comps>
 		<passability>PassThroughOnly</passability>
 		<pathCost>50</pathCost>
 		<fillPercent>0.4</fillPercent>
@@ -888,8 +800,7 @@
 			<Steel>70</Steel>
 			<ComponentIndustrial>3</ComponentIndustrial>
 		</costList>
-		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
-		<designationCategory>Security</designationCategory>
+		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
 		<constructionSkillPrerequisite>5</constructionSkillPrerequisite>
 		<building>
 			<combatPower>45</combatPower>
@@ -906,6 +817,36 @@
 		<researchPrerequisites>
 			<li>GunTurrets</li>
 		</researchPrerequisites>
+		<comps>
+			<li Class="CompProperties_Explosive">
+				<wickTicks>240</wickTicks>
+				<explosiveRadius>3.9</explosiveRadius>
+				<explosiveDamageType>Bomb</explosiveDamageType>
+				<chanceNeverExplodeFromDamage>0.5</chanceNeverExplodeFromDamage>
+			</li>
+			<li Class="CompProperties_Forbiddable"/>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTrader</compClass>
+				<basePowerConsumption>80</basePowerConsumption>
+			</li>
+			<li Class="CompProperties_Stunnable">
+				<affectedDamageDefs>
+					<li>Stun</li>
+					<li>EMP</li>
+				</affectedDamageDefs>
+			</li>
+			<li Class="FS_SSR.TCP_SinglePrefabDrawer">
+				<shaderForTestAssetBundle>Assets/SSR/Add.shader</shaderForTestAssetBundle>
+				<assetDefs>
+					<li>SSR_Animate_Prefab_Linux_Combat</li>
+					<li>SSR_Animate_Prefab_MacOS_Combat</li>
+					<li>SSR_Animate_Prefab_Windows_Combat</li>
+				</assetDefs>
+				<leveledPrefabPaths>
+					<li>Assets/SSR/Prefab/TurretT1_7X.prefab</li>
+				</leveledPrefabPaths>
+			</li>
+		</comps>
 		<modExtensions>
 			<li Class="FS_SSR.Incidents.DefExt_SSRTurretInfo">
 				<rotationSpeed>10</rotationSpeed>
