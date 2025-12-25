@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <LangVersion>8.0</LangVersion>
+    <LangVersion>9.0</LangVersion>
     <_TargetFrameworkDirectories>non_empty_path_generated_by_unity.rider.package</_TargetFrameworkDirectories>
     <_FullFrameworkReferenceAssemblyPaths>non_empty_path_generated_by_unity.rider.package</_FullFrameworkReferenceAssemblyPaths>
     <DisableHandlePackageFileConflicts>true</DisableHandlePackageFileConflicts>
@@ -41,34 +41,27 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Folder Include="Assets\SSR\Texture" />
-     <None Include="Assets\SSR\DepthMaskNormal.shader" />
-     <Folder Include="Assets\SSR\Animate" />
-     <None Include="Assets\SSR\Wireframe.shader" />
-     <None Include="Assets\SSR\WormHole.shader" />
-     <Folder Include="Assets\SSR\Mesh" />
-     <None Include="Assets\SSR\DepthMaskGreater.shader" />
-     <Folder Include="Assets\SSR" />
-     <None Include="Assets\SSR\JetFlow.shader" />
-     <None Include="Assets\SSR\DepthMaskForce.shader" />
-     <None Include="Assets\SSR\SSR.Combat.UnityAsset.asmdef" />
-     <None Include="Assets\SSR\Add.shader" />
-     <None Include="Assets\SSR\CutOut.shader" />
-     <Folder Include="Assets\SSR\Prefab" />
-     <Folder Include="Assets\SSR\Material" />
-     <None Include="Assets\SSR\Fade.shader" />
-     <None Include="Assets\SSR\ColorOnly.shader" />
-     <None Include="Assets\SSR\ColorOnlyWorldSpaceLight.shader" />
-     <Folder Include="Assets\SSR\Material\TurretT1" />
-     <Reference Include="UnityEngine">
-     <HintPath>E:\UnityEngine\2020.3.48f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
-     </Reference>
-     <Reference Include="UnityEngine.CoreModule">
-     <HintPath>E:\UnityEngine\2020.3.48f1\Editor\Data\Managed\UnityEngine\UnityEngine.CoreModule.dll</HintPath>
-     </Reference>
-     <Reference Include="UnityEditor">
-     <HintPath>E:\UnityEngine\2020.3.48f1\Editor\Data\Managed\UnityEngine\UnityEditor.dll</HintPath>
-     </Reference>
+    <None Include="Assets\SSR\DepthMaskNormal.shader" />
+    <None Include="Assets\SSR\Wireframe.shader" />
+    <None Include="Assets\SSR\WormHole.shader" />
+    <None Include="Assets\SSR\DepthMaskGreater.shader" />
+    <None Include="Assets\SSR\JetFlow.shader" />
+    <None Include="Assets\SSR\DepthMaskForce.shader" />
+    <None Include="Assets\SSR\SSR.Combat.UnityAsset.asmdef" />
+    <None Include="Assets\SSR\Add.shader" />
+    <None Include="Assets\SSR\CutOut.shader" />
+    <None Include="Assets\SSR\Fade.shader" />
+    <None Include="Assets\SSR\ColorOnly.shader" />
+    <None Include="Assets\SSR\ColorOnlyWorldSpaceLight.shader" />
+    <Reference Include="UnityEngine">
+      <HintPath>E:\UnityEngine\2022.3.35f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>E:\UnityEngine\2022.3.35f1\Editor\Data\Managed\UnityEngine\UnityEngine.CoreModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor">
+      <HintPath>E:\UnityEngine\2022.3.35f1\Editor\Data\Managed\UnityEngine\UnityEditor.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

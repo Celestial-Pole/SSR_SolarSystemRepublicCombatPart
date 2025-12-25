@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-	<!-- <AK_DLL.AssetDef>
+	<AK_DLL.AssetDef>
 		<defName>SSR_Animate_Prefab_Linux_Combat</defName>
 		<label>Animate Prefab</label>
 		<modID>SSR.Combat</modID>
@@ -20,7 +20,7 @@
 		<label>Animate Prefab</label>
 		<modID>SSR.Combat</modID>
 		<assetBundle>Windows/ssr_windows</assetBundle>
-	</AK_DLL.AssetDef> -->
+	</AK_DLL.AssetDef>
 
 	<!--=============== 哨戒机枪 ===============-->
 
@@ -489,7 +489,7 @@
 
 	<!--=============== 3X3 ===============-->
 
-	<!-- <ThingDef ParentName="BuildingBase">
+	<ThingDef ParentName="BuildingBase">
 		<defName>SSR_TurretT1_3X</defName>
 		<label>turret T1 3x3</label>
 		<description>Object for test 3D turret</description>
@@ -646,11 +646,11 @@
 				<forcedMissRadius>0</forcedMissRadius>
 			</li>
 		</verbs>
-	</ThingDef> -->
+	</ThingDef>
 
 	<!--=============== 5X5 ===============-->
 
-	<!-- <ThingDef ParentName="BuildingBase">
+	<ThingDef ParentName="BuildingBase">
 		<defName>SSR_TurretT1_5X5</defName>
 		<label>turret T1 5x5</label>
 		<description>Object for test 3D turret</description>
@@ -807,11 +807,11 @@
 			<forcedMissRadius>0</forcedMissRadius>
 		</li>
 		</verbs>
-	</ThingDef> -->
+	</ThingDef>
 
 	<!--=============== 5X5 ===============-->
 
-	<!-- <ThingDef ParentName="BuildingBase">
+	<ThingDef ParentName="BuildingBase">
 		<defName>SSR_TurretT1_7X7</defName>
 		<label>turret T1 7x7</label>
 		<description>Object for test 3D turret</description>
@@ -968,6 +968,6 @@
 				<forcedMissRadius>0</forcedMissRadius>
 			</li>
 		</verbs>
-	</ThingDef> -->
+	</ThingDef>
 	
 </Defs>
