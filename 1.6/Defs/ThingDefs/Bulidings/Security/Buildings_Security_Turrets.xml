@@ -651,7 +651,7 @@
 	<!--=============== 5X5 ===============-->
 
 	<ThingDef ParentName="BuildingBase">
-		<defName>SSR_TurretT1_5X5</defName>
+		<defName>SSR_TurretT1_5X</defName>
 		<label>turret T1 5x5</label>
 		<description>Object for test 3D turret</description>
 		<thingClass>FS_SSR.Defense.Turret_SSR</thingClass>
@@ -812,7 +812,7 @@
 	<!--=============== 5X5 ===============-->
 
 	<ThingDef ParentName="BuildingBase">
-		<defName>SSR_TurretT1_7X7</defName>
+		<defName>SSR_TurretT1_7X</defName>
 		<label>turret T1 7x7</label>
 		<description>Object for test 3D turret</description>
 		<thingClass>FS_SSR.Defense.Turret_SSR</thingClass>
