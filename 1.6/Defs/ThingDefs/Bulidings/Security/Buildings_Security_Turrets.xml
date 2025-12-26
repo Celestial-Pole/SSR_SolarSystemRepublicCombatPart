@@ -159,10 +159,8 @@
 						<li>SSR_Item_SpecialSteel</li>
 					</thingDefs>
 				</fuelFilter>
-				<fuelCapacity>360</fuelCapacity>
-				<!-- 30 bursts -->
-				<fuelMultiplier>4</fuelMultiplier>
-				<!-- 1.333 steel per burst, 80 per full rearm -->
+				<fuelCapacity>360</fuelCapacity><!-- 30 bursts -->
+				<fuelMultiplier>4</fuelMultiplier><!-- 1.333 steel per burst, 80 per full rearm -->
 				<initialFuelPercent>1</initialFuelPercent>
 				<autoRefuelPercent>1</autoRefuelPercent>
 				<showFuelGizmo>true</showFuelGizmo>
@@ -201,7 +199,7 @@
 			<li>SSR_Research_BasicTurret</li>
 		</researchPrerequisites>
 	</ThingDef>
-	
+
 	<ThingDef ParentName="BaseWeaponTurret">
 		<defName>SSR_Gun_SentryGun</defName>
 		<label>哨戒机枪</label>
@@ -299,10 +297,8 @@
 						<li>SSR_Item_SpecialSteel</li>
 					</thingDefs>
 				</fuelFilter>
-				<fuelCapacity>1200</fuelCapacity>
-				<!-- 30 bursts -->
-				<fuelMultiplier>5</fuelMultiplier>
-				<!-- 1.333 steel per burst, 80 per full rearm -->
+				<fuelCapacity>1200</fuelCapacity><!-- 30 bursts -->
+				<fuelMultiplier>5</fuelMultiplier><!-- 1.333 steel per burst, 80 per full rearm -->
 				<initialFuelPercent>1</initialFuelPercent>
 				<autoRefuelPercent>1</autoRefuelPercent>
 				<showFuelGizmo>true</showFuelGizmo>
@@ -403,50 +399,49 @@
 			<damageAmountBase>20</damageAmountBase>
 			<stoppingPower>2.5</stoppingPower>
 		</projectile>
-
 		<modExtensions>
 			<li Class="HJ_SSR.Weapons.ModExtension_PenetratingProjectile">
-			<!-- 穿透造成的伤害系数 即 Damage = 基础伤害 * 0.5 -->
-			<overpenDamageMulti>0.5</overpenDamageMulti>
-			
-			<!-- 子弹终止时的伤害系数 即 Damage = 基础伤害 * 1 -->
-			<stopperDamageMulti>1.0</stopperDamageMulti>
-			
-			<!-- 穿透伤害下限百分比 (至少为原伤害的 20%) -->
-			<PenetrationFloorPercentage>0.2</PenetrationFloorPercentage>
-			
-			<!-- 穿透潜力倍率  初始穿透力 = 基础穿透力 * 1.0 -->
-			<penetrationPotentialMultiplier>1.0</penetrationPotentialMultiplier>
-			
-			<!-- 穿透后弹道偏移角度 (0 度) 穿透时如果具有子弹偏转，偏转角度的范围 0~x° -->
-			<postPenetrationDeviationAngle>0.0</postPenetrationDeviationAngle>
-			
-			<!-- 目标搜索半径范围 ，穿透时如果具有子弹偏转，控制偏转扇形区的范围-->
-			<minSearchRadius>1.0</minSearchRadius>
-			<maxSearchRadius>1.0</maxSearchRadius>
-			
-			<!-- 额外射程加成 -->
-			<extraRange>1.0</extraRange>
-			
-			<!-- 不同物体对于子弹穿透力的消耗程度，正相关 -->
-			<!-- 消耗值 = 建筑生命值 × buildingEquivalentMulti -->
-			<buildingEquivalentMulti>0.005</buildingEquivalentMulti>
-			<!-- 消耗值 = (生物护甲值 × 2 × armorEquivalentMulti)-->
-			<armorEquivalentMulti>1.0</armorEquivalentMulti>
-			<!-- 消耗值 = 体型) × bodysizeEquivalentMulti -->
-			<bodysizeEquivalentMulti>0.1</bodysizeEquivalentMulti>
-			<!-- 消耗值 = 树木固定 0.1 -->
-			<treeEquivalent>0.1</treeEquivalent>
-			<!-- 消耗值 = 碎石固定 0.1 -->
-			<chunkEquivalent>0.25</chunkEquivalent>
-			<!-- 弹跳衰减系数 -->
-			<bounceEquivalent>0.2</bounceEquivalent>
+				<!-- 穿透造成的伤害系数 即 Damage = 基础伤害 * 0.5 -->
+				<overpenDamageMulti>0.5</overpenDamageMulti>
 
-			<!-- 开启后停用 穿透后偏移角度、目标搜索内容，默认弹道为射线无偏转 -->
-			<straightPassThrough>true</straightPassThrough>
+				<!-- 子弹终止时的伤害系数 即 Damage = 基础伤害 * 1 -->
+				<stopperDamageMulti>1.0</stopperDamageMulti>
 
-			<!-- 可穿透物体的计数 ，正数为穿透计数停止，负数为已穿透伤害衰减至0为停止条件-->
-			<maxPenetratingCount>10</maxPenetratingCount>
+				<!-- 穿透伤害下限百分比 (至少为原伤害的 20%) -->
+				<PenetrationFloorPercentage>0.2</PenetrationFloorPercentage>
+
+				<!-- 穿透潜力倍率  初始穿透力 = 基础穿透力 * 1.0 -->
+				<penetrationPotentialMultiplier>1.0</penetrationPotentialMultiplier>
+
+				<!-- 穿透后弹道偏移角度 (0 度) 穿透时如果具有子弹偏转，偏转角度的范围 0~x° -->
+				<postPenetrationDeviationAngle>0.0</postPenetrationDeviationAngle>
+
+				<!-- 目标搜索半径范围 ，穿透时如果具有子弹偏转，控制偏转扇形区的范围-->
+				<minSearchRadius>1.0</minSearchRadius>
+				<maxSearchRadius>1.0</maxSearchRadius>
+
+				<!-- 额外射程加成 -->
+				<extraRange>1.0</extraRange>
+
+				<!-- 不同物体对于子弹穿透力的消耗程度，正相关 -->
+				<!-- 消耗值 = 建筑生命值 × buildingEquivalentMulti -->
+				<buildingEquivalentMulti>0.005</buildingEquivalentMulti>
+				<!-- 消耗值 = (生物护甲值 × 2 × armorEquivalentMulti)-->
+				<armorEquivalentMulti>1.0</armorEquivalentMulti>
+				<!-- 消耗值 = 体型) × bodysizeEquivalentMulti -->
+				<bodysizeEquivalentMulti>0.1</bodysizeEquivalentMulti>
+				<!-- 消耗值 = 树木固定 0.1 -->
+				<treeEquivalent>0.1</treeEquivalent>
+				<!-- 消耗值 = 碎石固定 0.1 -->
+				<chunkEquivalent>0.25</chunkEquivalent>
+				<!-- 弹跳衰减系数 -->
+				<bounceEquivalent>0.2</bounceEquivalent>
+
+				<!-- 开启后停用 穿透后偏移角度、目标搜索内容，默认弹道为射线无偏转 -->
+				<straightPassThrough>true</straightPassThrough>
+
+				<!-- 可穿透物体的计数 ，正数为穿透计数停止，负数为已穿透伤害衰减至0为停止条件-->
+				<maxPenetratingCount>10</maxPenetratingCount>
 			</li>
 		</modExtensions>
 	</ThingDef>
@@ -458,7 +453,7 @@
 		<label>turret T1 3x3</label>
 		<description>Object for test 3D turret</description>
 		<thingClass>FS_SSR.Defense.Turret_SSR</thingClass>
-			<drawerType>RealtimeOnly</drawerType>
+		<drawerType>RealtimeOnly</drawerType>
 		<drawHighlight>true</drawHighlight>
 		<drawHighlightOnlyForHostile>true</drawHighlightOnlyForHostile>
 		<size>(3,3)</size>
@@ -522,12 +517,6 @@
 				<compClass>CompPowerTrader</compClass>
 				<basePowerConsumption>80</basePowerConsumption>
 			</li>
-			<li Class="CompProperties_Stunnable">
-				<affectedDamageDefs>
-					<li>Stun</li>
-					<li>EMP</li>
-				</affectedDamageDefs>
-			</li>
 			<li Class="FS_SSR.TCP_SinglePrefabDrawer">
 				<shaderForTestAssetBundle>Assets/SSR/Add.shader</shaderForTestAssetBundle>
 				<assetDefs>
@@ -541,34 +530,17 @@
 			</li>
 		</comps>
 		<modExtensions>
-		<li Class="FS_SSR.Defense.DefExt_SSRTurretInfo">
-			<rotationSpeed>20</rotationSpeed>
-			<shootingOrigine>Transform_X/Transform_Z/TurretTop/炮管-内部/GameObject</shootingOrigine>
-			<rotationTransformPath>
-				<li>
-					<key>Transform_X/Transform_Z/TurretTop</key>
-					<value>(0, 0, 1)</value>
-				</li>
-			</rotationTransformPath>
-		</li>
+			<li Class="FS_SSR.Defense.DefExt_SSRTurretInfo">
+				<rotationSpeed>20</rotationSpeed>
+				<shootingOrigine>Transform_X/Transform_Z/TurretTop/炮管-内部/GameObject</shootingOrigine>
+				<rotationTransformPath>
+					<li>
+						<key>Transform_X/Transform_Z/TurretTop</key>
+						<value>(0, 0, 1)</value>
+					</li>
+				</rotationTransformPath>
+			</li>
 		</modExtensions>
-	</ThingDef>
-
-	<ThingDef ParentName="BaseBullet">
-		<defName>Bullet_SSRTurretT1_3X</defName>
-		<label>turret T1 3x3 bullet</label>
-		<graphicData>
-			<texPath>Things/Projectile/Bullet_Big</texPath>
-			<graphicClass>Graphic_Single</graphicClass>
-			<drawSize>1.5</drawSize>
-		</graphicData>
-		<thingClass>Projectile_Explosive</thingClass>
-		<projectile>
-			<damageDef>BombSuper</damageDef>
-			<damageAmountBase>400</damageAmountBase>
-			<explosionRadius>0.9</explosionRadius>
-			<speed>800</speed>
-		</projectile>
 	</ThingDef>
 
 	<ThingDef ParentName="BaseWeaponTurret">
@@ -603,6 +575,68 @@
 				<forcedMissRadius>0</forcedMissRadius>
 			</li>
 		</verbs>
+	</ThingDef>
+
+	<ThingDef ParentName="BaseBullet">
+		<defName>Bullet_SSRTurretT1_3X</defName>
+		<label>turret T1 3x3 bullet</label>
+		<graphicData>
+			<texPath>Things/Projectile/Bullet_Big</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>1.5</drawSize>
+		</graphicData>
+		<thingClass>HJ_SSR.Weapons.PenetratingBullet</thingClass>
+		<projectile>
+			<damageDef>BombSuper</damageDef>
+			<damageAmountBase>400</damageAmountBase>
+			<explosionRadius>0.9</explosionRadius>
+			<speed>800</speed>
+		</projectile>
+		<modExtensions>
+			<li Class="HJ_SSR.Weapons.ModExtension_PenetratingProjectile">
+				<!-- 穿透造成的伤害系数 即 Damage = 基础伤害 * 0.5 -->
+				<overpenDamageMulti>0.5</overpenDamageMulti>
+
+				<!-- 子弹终止时的伤害系数 即 Damage = 基础伤害 * 1 -->
+				<stopperDamageMulti>1.0</stopperDamageMulti>
+
+				<!-- 穿透伤害下限百分比 (至少为原伤害的 20%) -->
+				<PenetrationFloorPercentage>0.2</PenetrationFloorPercentage>
+
+				<!-- 穿透潜力倍率  初始穿透力 = 基础穿透力 * 1.0 -->
+				<penetrationPotentialMultiplier>1.0</penetrationPotentialMultiplier>
+
+				<!-- 穿透后弹道偏移角度 (0 度) 穿透时如果具有子弹偏转，偏转角度的范围 0~x° -->
+				<postPenetrationDeviationAngle>0.0</postPenetrationDeviationAngle>
+
+				<!-- 目标搜索半径范围 ，穿透时如果具有子弹偏转，控制偏转扇形区的范围-->
+				<minSearchRadius>1.0</minSearchRadius>
+				<maxSearchRadius>1.0</maxSearchRadius>
+
+				<!-- 额外射程加成 -->
+				<extraRange>1.0</extraRange>
+
+				<!-- 不同物体对于子弹穿透力的消耗程度，正相关 -->
+				<!-- 消耗值 = 建筑生命值 × buildingEquivalentMulti -->
+				<buildingEquivalentMulti>0.005</buildingEquivalentMulti>
+				<!-- 消耗值 = (生物护甲值 × 2 × armorEquivalentMulti)-->
+				<armorEquivalentMulti>1.0</armorEquivalentMulti>
+				<!-- 消耗值 = 体型) × bodysizeEquivalentMulti -->
+				<bodysizeEquivalentMulti>0.1</bodysizeEquivalentMulti>
+				<!-- 消耗值 = 树木固定 0.1 -->
+				<treeEquivalent>0.1</treeEquivalent>
+				<!-- 消耗值 = 碎石固定 0.1 -->
+				<chunkEquivalent>0.25</chunkEquivalent>
+				<!-- 弹跳衰减系数 -->
+				<bounceEquivalent>0.2</bounceEquivalent>
+
+				<!-- 开启后停用 穿透后偏移角度、目标搜索内容，默认弹道为射线无偏转 -->
+				<straightPassThrough>true</straightPassThrough>
+
+				<!-- 可穿透物体的计数 ，正数为穿透计数停止，负数为已穿透伤害衰减至0为停止条件-->
+				<maxPenetratingCount>10</maxPenetratingCount>
+			</li>
+		</modExtensions>
 	</ThingDef>
 
 	<!--=============== 5X5 ===============-->
@@ -676,12 +710,6 @@
 				<compClass>CompPowerTrader</compClass>
 				<basePowerConsumption>80</basePowerConsumption>
 			</li>
-			<li Class="CompProperties_Stunnable">
-				<affectedDamageDefs>
-					<li>Stun</li>
-					<li>EMP</li>
-				</affectedDamageDefs>
-			</li>
 			<li Class="FS_SSR.TCP_SinglePrefabDrawer">
 				<shaderForTestAssetBundle>Assets/SSR/Add.shader</shaderForTestAssetBundle>
 				<assetDefs>
@@ -695,34 +723,17 @@
 			</li>
 		</comps>
 		<modExtensions>
-		<li Class="FS_SSR.Defense.DefExt_SSRTurretInfo">
-			<rotationSpeed>15</rotationSpeed>
-			<shootingOrigine>Transform_X/Transform_Z/TurretTop/炮管-外部/炮管-内部/GameObject</shootingOrigine>
-			<rotationTransformPath>
-				<li>
-					<key>Transform_X/Transform_Z/TurretTop</key>
-					<value>(0, 0, 1)</value>
-				</li>
-			</rotationTransformPath>
-		</li>
+			<li Class="FS_SSR.Defense.DefExt_SSRTurretInfo">
+				<rotationSpeed>15</rotationSpeed>
+				<shootingOrigine>Transform_X/Transform_Z/TurretTop/炮管-外部/炮管-内部/GameObject</shootingOrigine>
+				<rotationTransformPath>
+					<li>
+						<key>Transform_X/Transform_Z/TurretTop</key>
+						<value>(0, 0, 1)</value>
+					</li>
+				</rotationTransformPath>
+			</li>
 		</modExtensions>
-	</ThingDef>
-
-	<ThingDef ParentName="BaseBullet">
-		<defName>Bullet_SSRTurretT1_5X</defName>
-		<label>turret T1 5x5 bullet</label>
-		<thingClass>Projectile_Explosive</thingClass>
-		<graphicData>
-			<texPath>Things/Projectile/Bullet_Big</texPath>
-			<graphicClass>Graphic_Single</graphicClass>
-			<drawSize>2.5</drawSize>
-		</graphicData>
-		<projectile>
-			<damageDef>BombSuper</damageDef>
-			<damageAmountBase>800</damageAmountBase>
-			<explosionRadius>1.8</explosionRadius>
-			<speed>400</speed>
-		</projectile>
 	</ThingDef>
 
 	<ThingDef ParentName="BaseWeaponTurret">
@@ -744,19 +755,36 @@
 			<Flammability>0</Flammability>
 		</statBases>
 		<verbs>
-		<li>
-			<verbClass>Verb_Shoot</verbClass>
-			<defaultProjectile>Bullet_SSRTurretT1_5X</defaultProjectile>
-			<warmupTime>0</warmupTime>
-			<range>64.9</range>
-			<burstShotCount>1</burstShotCount>
-			<soundCast>Shot_TurretSniper</soundCast>
-			<soundCastTail>GunTail_Heavy</soundCastTail>
-			<muzzleFlashScale>9</muzzleFlashScale>
-			<consumeFuelPerShot>1</consumeFuelPerShot>
-			<forcedMissRadius>0</forcedMissRadius>
-		</li>
+			<li>
+				<verbClass>Verb_Shoot</verbClass>
+				<defaultProjectile>Bullet_SSRTurretT1_5X</defaultProjectile>
+				<warmupTime>0</warmupTime>
+				<range>64.9</range>
+				<burstShotCount>1</burstShotCount>
+				<soundCast>Shot_TurretSniper</soundCast>
+				<soundCastTail>GunTail_Heavy</soundCastTail>
+				<muzzleFlashScale>9</muzzleFlashScale>
+				<consumeFuelPerShot>1</consumeFuelPerShot>
+				<forcedMissRadius>0</forcedMissRadius>
+			</li>
 		</verbs>
+	</ThingDef>
+
+	<ThingDef ParentName="BaseBullet">
+		<defName>Bullet_SSRTurretT1_5X</defName>
+		<label>turret T1 5x5 bullet</label>
+		<thingClass>Projectile_Explosive</thingClass>
+		<graphicData>
+			<texPath>Things/Projectile/Bullet_Big</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>2.5</drawSize>
+		</graphicData>
+		<projectile>
+			<damageDef>BombSuper</damageDef>
+			<damageAmountBase>800</damageAmountBase>
+			<explosionRadius>1.8</explosionRadius>
+			<speed>400</speed>
+		</projectile>
 	</ThingDef>
 
 	<!--=============== 7X7 ===============-->
@@ -766,7 +794,7 @@
 		<label>turret T1 7x7</label>
 		<description>Object for test 3D turret</description>
 		<thingClass>FS_SSR.Defense.Turret_SSR</thingClass>
-			<drawerType>RealtimeOnly</drawerType>
+		<drawerType>RealtimeOnly</drawerType>
 		<drawHighlight>true</drawHighlight>
 		<drawHighlightOnlyForHostile>true</drawHighlightOnlyForHostile>
 		<size>(7,7)</size>
@@ -831,12 +859,6 @@
 				<compClass>CompPowerTrader</compClass>
 				<basePowerConsumption>80</basePowerConsumption>
 			</li>
-			<li Class="CompProperties_Stunnable">
-				<affectedDamageDefs>
-					<li>Stun</li>
-					<li>EMP</li>
-				</affectedDamageDefs>
-			</li>
 			<li Class="FS_SSR.TCP_SinglePrefabDrawer">
 				<shaderForTestAssetBundle>Assets/SSR/Add.shader</shaderForTestAssetBundle>
 				<assetDefs>
@@ -861,23 +883,6 @@
 				</rotationTransformPath>
 			</li>
 		</modExtensions>
-	</ThingDef>
-
-	<ThingDef ParentName="BaseBullet">
-		<defName>Bullet_SSRTurretT1_7X</defName>
-		<label>turret T1 7x57 bullet</label>
-		<thingClass>Projectile_Explosive</thingClass>
-		<graphicData>
-			<texPath>Things/Projectile/Bullet_Big</texPath>
-			<graphicClass>Graphic_Single</graphicClass>
-			<drawSize>3.5</drawSize>
-		</graphicData>
-		<projectile>
-			<damageDef>BombSuper</damageDef>
-			<damageAmountBase>1600</damageAmountBase>
-			<explosionRadius>3.6</explosionRadius>
-			<speed>200</speed>
-		</projectile>
 	</ThingDef>
 
 	<ThingDef ParentName="BaseWeaponTurret">
@@ -913,5 +918,22 @@
 			</li>
 		</verbs>
 	</ThingDef>
-	
+
+	<ThingDef ParentName="BaseBullet">
+		<defName>Bullet_SSRTurretT1_7X</defName>
+		<label>turret T1 7x57 bullet</label>
+		<thingClass>Projectile_Explosive</thingClass>
+		<graphicData>
+			<texPath>Things/Projectile/Bullet_Big</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>3.5</drawSize>
+		</graphicData>
+		<projectile>
+			<damageDef>BombSuper</damageDef>
+			<damageAmountBase>1600</damageAmountBase>
+			<explosionRadius>3.6</explosionRadius>
+			<speed>200</speed>
+		</projectile>
+	</ThingDef>
+
 </Defs>
