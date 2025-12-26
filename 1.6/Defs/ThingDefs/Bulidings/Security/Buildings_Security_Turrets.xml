@@ -541,13 +541,14 @@
 			</li>
 		</comps>
 		<modExtensions>
-		<li Class="FS_SSR.Incidents.DefExt_SSRTurretInfo">
+		<li Class="FS_SSR.Defense.DefExt_SSRTurretInfo">
 			<rotationSpeed>20</rotationSpeed>
+			<shootingOrinine>Transform_X/Transform_Z/TurretTop/炮管-内部/GameObject</shootingOrinine>
 			<rotationTransformPath>
-			<li>
-				<key>Transform_X/Transform_Z/TurretTop</key>
-				<value>(0, 0, 1)</value>
-			</li>
+				<li>
+					<key>Transform_X/Transform_Z/TurretTop</key>
+					<value>(0, 0, 1)</value>
+				</li>
 			</rotationTransformPath>
 		</li>
 		</modExtensions>
@@ -694,8 +695,9 @@
 			</li>
 		</comps>
 		<modExtensions>
-		<li Class="FS_SSR.Incidents.DefExt_SSRTurretInfo">
+		<li Class="FS_SSR.Defense.DefExt_SSRTurretInfo">
 			<rotationSpeed>15</rotationSpeed>
+			<shootingOrinine>Transform_X/Transform_Z/TurretTop/炮管-外部/炮管-内部/GameObject</shootingOrinine>
 			<rotationTransformPath>
 				<li>
 					<key>Transform_X/Transform_Z/TurretTop</key>
@@ -757,7 +759,7 @@
 		</verbs>
 	</ThingDef>
 
-	<!--=============== 5X5 ===============-->
+	<!--=============== 7X7 ===============-->
 
 	<ThingDef ParentName="SSR_BuildingBase_Security">
 		<defName>SSR_TurretT1_7X</defName>
@@ -848,13 +850,14 @@
 			</li>
 		</comps>
 		<modExtensions>
-			<li Class="FS_SSR.Incidents.DefExt_SSRTurretInfo">
+			<li Class="FS_SSR.Defense.DefExt_SSRTurretInfo">
 				<rotationSpeed>10</rotationSpeed>
+				<shootingOrinine>Transform_X/Transform_Z/TurretTop/立方体.003/GameObject</shootingOrinine>
 				<rotationTransformPath>
-				<li>
-					<key>Transform_X/Transform_Z/TurretTop</key>
-					<value>(0, 0, 1)</value>
-				</li>
+					<li>
+						<key>Transform_X/Transform_Z/TurretTop</key>
+						<value>(0, 0, 1)</value>
+					</li>
 				</rotationTransformPath>
 			</li>
 		</modExtensions>
