@@ -1,15 +1,15 @@
 ManifestFileVersion: 0
-CRC: 1873337017
+CRC: 2152015641
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 5ade1a902a6ca41fa99e191dff200f87
+    Hash: b5410379be1da150ff655fa88c5cde4d
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 0f9fba26cbb38215f317d1fd6b1954a0
+    Hash: d27d605e56b00c7d193d3604b99a7461
   IncrementalBuildHash:
     serializedVersion: 2
-    Hash: 5ade1a902a6ca41fa99e191dff200f87
+    Hash: b5410379be1da150ff655fa88c5cde4d
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -20,6 +20,8 @@ ClassTypes:
   Script: {instanceID: 0}
 - Class: 23
   Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
 - Class: 33
   Script: {instanceID: 0}
 - Class: 43
@@ -28,40 +30,50 @@ ClassTypes:
   Script: {instanceID: 0}
 SerializeReferenceClassIdentifiers: []
 Assets:
-- Assets/SSR/Fade.shader
-- Assets/SSR/Material/TurretT1/BaseColor4.mat
-- "Assets/SSR/Mesh/t1\u7535\u78C1\u70AE-2.blend"
-- "Assets/SSR/Mesh/t1\u7535\u78C1\u70AE-0.blend"
-- "Assets/SSR/Mesh/t1\u7535\u78C1\u70AE-1x1\u8F6C\u8F6E\u673A\u67AA-\u7535\u78C1.blend"
 - Assets/SSR/Material/TurretT1/TurretColor2.mat
-- Assets/SSR/Wireframe.shader
+- Assets/SSR/Texture/Glowing.png
 - Assets/SSR/Material/TurretT1/Wireframe2.mat
+- Assets/SSR/Texture/TestMatTex1.png
 - Assets/SSR/WormHole.shader
+- Assets/SSR/Texture/TestMatTex4.png
+- "Assets/SSR/Mesh/t1\u8FEB\u51FB\u70AE1x1.blend"
 - Assets/SSR/ColorOnly.shader
 - Assets/SSR/Prefab/TurretT1_5X.prefab
-- Assets/SSR/Material/TurretT1/TurretColor1.mat
 - Assets/SSR/Material/TurretT1/UpBuildingColor4.mat
+- "Assets/SSR/Mesh/t1\u7535\u78C1\u70AE-\u673A\u5173\u70AE.blend"
 - "Assets/SSR/Mesh/\u7535\u78C1\u70AE-\u673A\u5173\u70AE.blend"
-- Assets/SSR/Material/TurretT1/LenceColor1.mat
-- "Assets/SSR/Mesh/\u7535\u78C1\u70AEt1.blend"
-- "Assets/SSR/Mesh/t1\u7535\u78C1\u70AE-1x1\u8F6C\u8F6E\u673A\u67AA.blend"
 - Assets/SSR/Material/TurretT1/UpBuildingColor2.mat
+- "Assets/SSR/Mesh/t1\u7535\u78C1\u8FD1\u9632\u70AE.blend"
+- "Assets/SSR/Mesh/t1\u7535\u78C1\u70AE-3.blend"
+- Assets/SSR/Prefab/TurretT1_7X.prefab
+- Assets/SSR/Texture/TestMatTex2.png
+- Assets/SSR/CutOut.shader
+- "Assets/SSR/Mesh/t1\u7535\u78C1\u70AE-0.blend"
+- "Assets/SSR/Mesh/t1\u7535\u78C1\u70AE-1x1\u8F6C\u8F6E\u673A\u67AA-\u7535\u78C1.blend"
+- Assets/SSR/Material/TurretT1/BaseColor1.mat
+- "Assets/SSR/Mesh/t1\u5F39\u70AE\u5408\u4E00\u9632\u7A7A\u6B66\u5668\u7CFB\u7EDF.blend"
+- Assets/SSR/Material/TurretT1/Wireframe0.mat
+- Assets/SSR/Fade.shader
+- Assets/SSR/Material/TurretT1/BaseColor4.mat
+- Assets/SSR/Wireframe.shader
+- Assets/SSR/Material/TurretT1/TurretColor4.mat
+- Assets/SSR/Material/TurretT1/TurretColor1.mat
+- Assets/SSR/Material/TurretT1/LenceColor1.mat
+- Assets/SSR/Texture/TestMatTex0.png
+- "Assets/SSR/Mesh/t1\u7535\u78C1\u70AE-1x1\u8F6C\u8F6E\u673A\u67AA.blend"
 - Assets/SSR/Prefab/TurretT1_3X.prefab
 - Assets/SSR/JetFlow.shader
 - Assets/SSR/Material/TurretT1/UpBuildingColor3.mat
 - Assets/SSR/DepthMaskNormal.shader
 - Assets/SSR/Material/TurretT1/TurretColor3.mat
-- "Assets/SSR/Mesh/t1\u7535\u78C1\u70AE-3.blend"
-- Assets/SSR/Prefab/TurretT1_7X.prefab
+- Assets/SSR/Texture/TestMatTex3.png
 - Assets/SSR/DepthMaskForce.shader
 - Assets/SSR/Material/TurretT1/Wireframe1.mat
-- Assets/SSR/CutOut.shader
-- Assets/SSR/ColorOnlyWorldSpaceLight.shader
-- "Assets/SSR/Mesh/t1\u7535\u78C1\u70AE-1.blend"
 - Assets/SSR/Material/TurretT1/BaseColor2.mat
+- "Assets/SSR/Mesh/t1\u7535\u78C1\u70AE-1.blend"
+- "Assets/SSR/Mesh/t1\u7535\u78C1\u70AE-2.blend"
 - Assets/SSR/DepthMaskGreater.shader
-- Assets/SSR/Material/TurretT1/BaseColor1.mat
+- "Assets/SSR/Mesh/t1\u8FDC\u7A0B\u706B\u7BAD\u70AE.blend"
 - Assets/SSR/Add.shader
-- Assets/SSR/Material/TurretT1/TurretColor4.mat
-- Assets/SSR/Material/TurretT1/Wireframe0.mat
+- "Assets/SSR/Mesh/t1\u5BFC\u5F39\u4E95.blend"
 Dependencies: []

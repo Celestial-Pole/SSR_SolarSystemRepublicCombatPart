@@ -10,7 +10,7 @@
         LOD 100
         Cull Off
         ZWrite Off
-        // ZTest Always
+        ZTest Less
         Pass
         {
             CGPROGRAM

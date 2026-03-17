@@ -2,9 +2,8 @@
 {
     Properties
     {
-        [Toggle(ENABLE_REL2ANIM)] _Rel2Anim ("Rel to Anim", Float) = 1
-        _Color ("Color", Color) = (1,1,1,1) 
-        _LightInModedlSpace ("Light In Model Space", Vector) = (0,0,0,0) 
+        _Color ("Color", Color) = (1,1,1,1)
+        _MatTex ("Material Texture", 2D) = "gray" {}
     }
     SubShader
     {
@@ -18,7 +17,6 @@
             #pragma vertex vert
             #pragma fragment frag
             #pragma multi_compile_instancing
-            #pragma shader_feature ENABLE_REL2ANIM
             #include "UnityCG.cginc"
 
             struct appdata
@@ -30,42 +28,50 @@
 
             struct v2f
             {
-                float3 normal : TEXCOORD1;
+                float3 normal : TEXCOORD0;
+                float3 viewDir : TEXCOORD1;
                 float4 vertex : SV_POSITION;
                 UNITY_VERTEX_INPUT_INSTANCE_ID
             };
 
             float4 _Color;
-            float3 _LightInModedlSpace;
+            sampler2D _MatTex;
+            float4 _MatTex_ST;
 
-            float Rel2AnimShadow(float rel)
+            float3 GetViewDir(float3 viewPos, out float4 clipPos)
             {
-                rel = clamp(rel, 0.0, 1.0);
-                #ifdef ENABLE_REL2ANIM
-                return ceil(rel * 1.5) * 0.25 + 0.5;
-                #else
-                return rel * 0.5 + 0.5;
-                #endif
+                clipPos = UnityViewToClipPos(viewPos);
+                float3 near = viewPos;
+                near.z = sign(near.z) * _ProjectionParams.y;
+                near.xy *= UnityViewToClipPos(float3(0,0,near.z)).w / clipPos.w;
+                float3 far = viewPos;
+                far.z = sign(far.z) * _ProjectionParams.z;
+                far.xy *= UnityViewToClipPos(float3(0,0,far.z)).w / clipPos.w;
+                return far - near;
             }
 
-            float3 LightInModedlSpace()
+            float4 ShadingByMatTex(float3 normal, float3 viewDir)
             {
-                float l = length(_LightInModedlSpace);
-                if(l < 0.001) return float3(0,0,1);
-                else return _LightInModedlSpace / l;
+                float3 reflectDir = normalize(reflect(viewDir, normal));
+                float d = length(reflectDir.xy);
+                reflectDir.xy *= (1 + d - reflectDir.z) / (2 * d * sqrt(1 + d));
+                // reflectDir.xy = -2 * reflectDir.xy * reflectDir.z;
+                return tex2D(_MatTex, TRANSFORM_TEX((reflectDir.xy * 0.5 + 0.5), _MatTex));
+                // return float4(reflectDir.xy, 0, 1);
+                // return float4(normal.xy, 0, 1);
             }
-
 
             v2f vert (appdata v)
             {
                 v2f o;
                 UNITY_SETUP_INSTANCE_ID(v);
                 UNITY_TRANSFER_INSTANCE_ID(v, o);
-                o.vertex = UnityObjectToClipPos(v.vertex);
-                float l = length(v.normal);
-                if(l < 0.001) v.normal = LightInModedlSpace();
-                else v.normal /= l;
-                o.normal = v.normal;
+                o.viewDir = GetViewDir(UnityObjectToViewPos(v.vertex), o.vertex);
+                o.normal = UnityObjectToWorldNormal(v.normal);
+                o.normal = mul(UNITY_MATRIX_V, float4(o.normal, 0.0)).xyz;
+                float l = length(o.normal);
+                if(l < 0.001) o.normal = float3(0,0,1);
+                else o.normal /= l;
                 return o;
             }
 
@@ -74,7 +80,7 @@
                 // sample the texture
                 UNITY_SETUP_INSTANCE_ID(i);
 
-                float4 outColor = float4(_Color.rgb * Rel2AnimShadow(dot(i.normal, LightInModedlSpace())), _Color.a);
+                float4 outColor = float4(_Color.rgb * ShadingByMatTex(i.normal, i.viewDir).rgb, _Color.a);
                 // apply fog
                 return outColor;
             }
