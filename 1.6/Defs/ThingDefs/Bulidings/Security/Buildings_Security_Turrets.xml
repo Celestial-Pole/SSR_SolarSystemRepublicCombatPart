@@ -533,12 +533,8 @@
 			<li Class="FS_SSR.Defense.DefExt_SSRTurretInfo">
 				<rotationSpeed>20</rotationSpeed>
 				<shootingOrigine>Transform_X/Transform_Z/TurretTop/炮管-内部/GameObject</shootingOrigine>
-				<rotationTransformPath>
-					<li>
-						<key>Transform_X/Transform_Z/TurretTop</key>
-						<value>(0, 0, 1)</value>
-					</li>
-				</rotationTransformPath>
+				<yawPath>Transform_X/Transform_Z/TurretTop</yawPath>
+				<yawRotationAixe>(0, 0, 1)</yawRotationAixe>
 			</li>
 		</modExtensions>
 	</ThingDef>
@@ -726,12 +722,8 @@
 			<li Class="FS_SSR.Defense.DefExt_SSRTurretInfo">
 				<rotationSpeed>15</rotationSpeed>
 				<shootingOrigine>Transform_X/Transform_Z/TurretTop/炮管-外部/炮管-内部/GameObject</shootingOrigine>
-				<rotationTransformPath>
-					<li>
-						<key>Transform_X/Transform_Z/TurretTop</key>
-						<value>(0, 0, 1)</value>
-					</li>
-				</rotationTransformPath>
+				<yawPath>Transform_X/Transform_Z/TurretTop</yawPath>
+				<yawRotationAixe>(0, 0, 1)</yawRotationAixe>
 			</li>
 		</modExtensions>
 	</ThingDef>
@@ -875,12 +867,8 @@
 			<li Class="FS_SSR.Defense.DefExt_SSRTurretInfo">
 				<rotationSpeed>10</rotationSpeed>
 				<shootingOrigine>Transform_X/Transform_Z/TurretTop/立方体.003/GameObject</shootingOrigine>
-				<rotationTransformPath>
-					<li>
-						<key>Transform_X/Transform_Z/TurretTop</key>
-						<value>(0, 0, 1)</value>
-					</li>
-				</rotationTransformPath>
+				<yawPath>Transform_X/Transform_Z/TurretTop</yawPath>
+				<yawRotationAixe>(0, 0, 1)</yawRotationAixe>
 			</li>
 		</modExtensions>
 	</ThingDef>

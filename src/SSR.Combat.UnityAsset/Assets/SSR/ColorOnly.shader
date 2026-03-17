@@ -24,23 +24,18 @@
             struct appdata
             {
                 float4 vertex : POSITION;
-                float2 uv : TEXCOORD0;
                 float3 normal : NORMAL;
                 UNITY_VERTEX_INPUT_INSTANCE_ID
             };
 
             struct v2f
             {
-                float2 uv : TEXCOORD0;
-                float4 model : TEXCOORD1;
-                float3 normal : TEXCOORD2;
+                float3 normal : TEXCOORD1;
                 float4 vertex : SV_POSITION;
                 UNITY_VERTEX_INPUT_INSTANCE_ID
             };
 
             float4 _Color;
-            sampler2D _DepthTex;
-            float4 _DepthTex_ST;
             float3 _LightInModedlSpace;
 
             float Rel2AnimShadow(float rel)
@@ -67,8 +62,6 @@
                 UNITY_SETUP_INSTANCE_ID(v);
                 UNITY_TRANSFER_INSTANCE_ID(v, o);
                 o.vertex = UnityObjectToClipPos(v.vertex);
-                o.uv = TRANSFORM_TEX(v.uv, _DepthTex);
-                o.model = v.vertex;
                 float l = length(v.normal);
                 if(l < 0.001) v.normal = LightInModedlSpace();
                 else v.normal /= l;
@@ -76,13 +69,10 @@
                 return o;
             }
 
-            fixed4 frag (v2f i, out float depth : SV_DEPTH) : SV_Target
+            fixed4 frag (v2f i) : SV_Target
             {
                 // sample the texture
                 UNITY_SETUP_INSTANCE_ID(i);
-                i.model.y -= tex2D(_DepthTex, i.uv).x - 0.5;
-                i.model = UnityObjectToClipPos(i.model);
-                depth = i.model.z / i.model.w;
 
                 float4 outColor = float4(_Color.rgb * Rel2AnimShadow(dot(i.normal, LightInModedlSpace())), _Color.a);
                 // apply fog
