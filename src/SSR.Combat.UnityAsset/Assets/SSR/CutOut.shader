@@ -2,14 +2,14 @@
 {
     Properties
     {
-        [Toggle(ENABLE_REL2ANIM)] _Rel2Anim ("Rel to Anim", Float) = 1
         _MainTex ("Texture", 2D) = "white" {}
-        _MatTex ("Material Texture", 2D) = "gray" {}
+        _MatTex ("Material Texture", 2D) = "white" {}
         _DepthTex ("Depth Texture", 2D) = "gray" {}
+        _DepthFactor ("Depth Factor", Float) = 1
     }
     SubShader
     {
-        Tags { "RenderType"="Opaque" "Queue"="Transparent-100"}
+        Tags { "RenderType"="Opaque" "Queue"="Transparent"}
         LOD 100
         Cull Off
         Pass
@@ -18,7 +18,6 @@
             #pragma vertex vert
             #pragma fragment frag
             #pragma multi_compile_instancing
-            #pragma shader_feature ENABLE_REL2ANIM
             #include "UnityCG.cginc"
 
             struct appdata
@@ -46,6 +45,7 @@
             float4 _DepthTex_ST;
             sampler2D _MatTex;
             float4 _MatTex_ST;
+            float _DepthFactor;
 
             float3 GetViewDir(float3 viewPos, out float4 clipPos)
             {
@@ -94,7 +94,7 @@
                 UNITY_SETUP_INSTANCE_ID(i);
                 float4 col = tex2D(_MainTex, i.uv);
                 if(col.a < 0.5) discard;
-                i.viewPos.y -= tex2D(_DepthTex, i.uvDepth).x - 0.5;
+                i.viewPos.z -= (tex2D(_DepthTex, i.uvDepth).x - 0.5) * _DepthFactor;
                 i.vertex = UnityViewToClipPos(i.viewPos);
                 depth = i.vertex.z / i.vertex.w;
 

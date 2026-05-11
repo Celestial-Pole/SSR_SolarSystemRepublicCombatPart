@@ -3,11 +3,11 @@
     Properties
     {
         _Color ("Color", Color) = (1,1,1,1)
-        _MatTex ("Material Texture", 2D) = "gray" {}
+        _MatTex ("Material Texture", 2D) = "white" {}
     }
     SubShader
     {
-        Tags { "RenderType"="Opaque" "Queue"="Transparent-100"}
+        Tags { "RenderType"="Opaque" "Queue"="Transparent"}
         LOD 100
         Cull Off
 

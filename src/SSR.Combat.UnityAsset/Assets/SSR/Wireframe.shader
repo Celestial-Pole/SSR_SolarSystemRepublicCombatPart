@@ -2,6 +2,7 @@
 {
     Properties
     {
+        [Toggle(ENABLE_EWS)] _EqualWidthStroke ("Equal width stroke", Float) = 0
         _OutlineWidth ("Outline Width", Float) = 0.015625
     }
     SubShader
@@ -10,7 +11,7 @@
         LOD 100
         Cull Off
         ZWrite Off
-        ZTest Less
+        // ZTest Less
         Pass
         {
             CGPROGRAM
@@ -18,6 +19,7 @@
             #pragma geometry geom
             #pragma fragment frag
             #pragma multi_compile_instancing
+            #pragma shader_feature ENABLE_EWS
             #include "UnityCG.cginc"
 
             struct appdata
@@ -32,7 +34,6 @@
                 float4 vertex : SV_POSITION;
                 float3 orginalVert : TEXCOORD0;
                 float3 transposVert : TEXCOORD1;
-                float4 clipPos : TEXCOORD2;
                 UNITY_VERTEX_INPUT_INSTANCE_ID
             };
 
@@ -47,11 +48,10 @@
                 UNITY_TRANSFER_INSTANCE_ID(v, o);
                 o.vertex = float4(UnityObjectToViewPos(v.vertex),1);
                 // float w = UnityViewToClipPos(o.vertex).w;
-                // o.vertex.z += .1 * sign(o.vertex.z);
+                // o.vertex.z += _OutlineWidth * sign(o.vertex.z);
                 o.orginalVert = o.vertex.xyz;
                 o.transposVert = o.vertex.xyz;
                 o.vertex = UnityViewToClipPos(o.vertex.xyz);
-                o.clipPos = o.vertex;
                 // w = o.vertex.w / w;
                 // o.vertex.xy *= w;
                 // o.orginalVert.xy *= w;
@@ -78,6 +78,8 @@
                 dirL.y *= _ProjectionParams.x;
                 float2 dirT = float2(-dirL.y, dirL.x);
 
+
+
                 v2f toSpotT = to;
                 v2f toSpotL = to;
 
@@ -87,6 +89,20 @@
                 v2f fromSpotB = from;
                 v2f fromSpotL = from;
 
+                #ifdef ENABLE_EWS
+                float wFrom = abs(from.vertex.w);
+                float wTo = abs(to.vertex.w);
+
+                toSpotT.vertex = UnityViewToClipPos(toSpotT.transposVert + float3(dirT * 1.5 * wTo, 0));
+                toSpotL.vertex = UnityViewToClipPos(toSpotL.transposVert + float3(dirL * 1.5 * wTo, 0));
+
+                lineTL.vertex = UnityViewToClipPos(lineTL.transposVert + float3(dirL * wTo, 0));
+                lineBL.vertex = UnityViewToClipPos(lineBL.transposVert + float3(dirL * wFrom, 0));
+
+                fromSpotB.vertex = UnityViewToClipPos(fromSpotB.transposVert - float3(dirT * 1.5 * wFrom, 0));
+                fromSpotL.vertex = UnityViewToClipPos(fromSpotL.transposVert + float3(dirL * 1.5 * wFrom, 0));
+                #endif
+
                 toSpotT.transposVert.xy += dirT * 1.5;
                 toSpotL.transposVert.xy += dirL * 1.5;
 
@@ -95,30 +111,33 @@
 
                 fromSpotB.transposVert.xy -= dirT * 1.5;
                 fromSpotL.transposVert.xy += dirL * 1.5;
-
+                
+                #ifndef ENABLE_EWS
                 toSpotT.vertex = UnityViewToClipPos(toSpotT.transposVert);
                 toSpotL.vertex = UnityViewToClipPos(toSpotL.transposVert);
+
                 lineTL.vertex = UnityViewToClipPos(lineTL.transposVert);
                 lineBL.vertex = UnityViewToClipPos(lineBL.transposVert);
+
                 fromSpotB.vertex = UnityViewToClipPos(fromSpotB.transposVert);
                 fromSpotL.vertex = UnityViewToClipPos(fromSpotL.transposVert);
+                #endif
 
-                
-                toSpotT.clipPos = toSpotT.vertex;
-                toSpotL.clipPos = toSpotL.vertex;
-                lineTL.clipPos = lineTL.vertex;
-                lineBL.clipPos = lineBL.vertex;
-                fromSpotB.clipPos = fromSpotB.vertex;
-                fromSpotL.clipPos = fromSpotL.vertex;
 
                 // _ZBufferParams
                 
-                //toSpot
                 if (drawSpot)
                 {
+                    //toSpot
                     outStream.Append(toSpotT);
                     outStream.Append(toSpotL);
                     outStream.Append(to);
+                    outStream.RestartStrip();
+                    
+                    //fromSpot
+                    outStream.Append(fromSpotB);
+                    outStream.Append(fromSpotL);
+                    outStream.Append(from);
                     outStream.RestartStrip();
                 }
 
@@ -131,15 +150,6 @@
                 outStream.Append(lineTL);
                 outStream.Append(to);
                 outStream.RestartStrip();
-
-                //fromSpot
-                if (drawSpot)
-                {
-                    outStream.Append(fromSpotB);
-                    outStream.Append(fromSpotL);
-                    outStream.Append(from);
-                    outStream.RestartStrip();
-                }
             } 
 
             [maxvertexcount(36)] 
@@ -170,7 +180,8 @@
                 float outlineWidthSq = _OutlineWidth * _OutlineWidth;
                 if(outlineWidthSq <= disSq) discard;
 
-                float2 deeperVert = UnityViewToClipPos(i.transposVert + float3(0,0,10 * sqrt(disSq) * sign(i.transposVert.z))).zw;
+                float2 deeperVert = UnityViewToClipPos(float3(0,0,i.transposVert.z + 10 * sqrt(disSq) * sign(i.transposVert.z))).zw;
+                // float2 deeperVert = UnityViewToClipPos(float3(0,0,i.transposVert.z + (10 * sqrt(disSq) + _OutlineWidth) * sign(i.transposVert.z))).zw;
                 // float2 deeperVert = UnityViewToClipPos(i.transposVert + float3(0,0,10 * (_OutlineWidth - sqrt(outlineWidthSq - disSq)) * sign(i.transposVert.z))).zw;
                 depth = deeperVert.x / deeperVert.y;
 

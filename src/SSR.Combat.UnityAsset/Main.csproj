@@ -321,6 +321,9 @@
     <Reference Include="log4netPlastic">
       <HintPath>F:\CSharp\SSR_SolarSystemRepublicCombatPart\src\SSR.Combat.UnityAsset\Library\PackageCache\com.unity.collab-proxy@2.3.1\Lib\Editor\PlasticSCM\log4netPlastic.dll</HintPath>
     </Reference>
+    <Reference Include="FS_SSR.Unity">
+      <HintPath>F:\CSharp\SSR_SolarSystemRepublicCombatPart\src\SSR.Combat.UnityAsset\Assets\Pulgins\FS_SSR.Unity.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEditor.iOS.Extensions.Xcode">
       <HintPath>E:\UnityEngine\2022.3.35f1\Editor\Data\PlaybackEngines\MacStandaloneSupport\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
     </Reference>

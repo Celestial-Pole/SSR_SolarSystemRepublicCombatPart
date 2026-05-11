@@ -6,7 +6,7 @@
     }
     SubShader
     {
-        Tags { "RenderType"="Opaque" "Queue"="Transparent-99"}
+        Tags { "RenderType"="Opaque" "Queue"="Transparent"}
         LOD 100
         Blend Zero One
         ZTest Always
