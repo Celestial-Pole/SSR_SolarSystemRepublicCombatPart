@@ -1,25 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "F:\\CSharp\\SSR_SolarSystemRepublicCombatPart\\1.4\\.vscode\\mod.csproj": {}
+    "D:\\CSharp\\SSR_SolarSystemRepublicCombatPart\\1.4\\.vscode\\mod.csproj": {}
   },
   "projects": {
-    "F:\\CSharp\\SSR_SolarSystemRepublicCombatPart\\1.4\\.vscode\\mod.csproj": {
+    "D:\\CSharp\\SSR_SolarSystemRepublicCombatPart\\1.4\\.vscode\\mod.csproj": {
       "version": "0.1.0",
       "restore": {
-        "projectUniqueName": "F:\\CSharp\\SSR_SolarSystemRepublicCombatPart\\1.4\\.vscode\\mod.csproj",
+        "projectUniqueName": "D:\\CSharp\\SSR_SolarSystemRepublicCombatPart\\1.4\\.vscode\\mod.csproj",
         "projectName": "SSRCP_Libs",
-        "projectPath": "F:\\CSharp\\SSR_SolarSystemRepublicCombatPart\\1.4\\.vscode\\mod.csproj",
-        "packagesPath": "F:\\ProgramData\\nuget\\packages",
-        "outputPath": "F:\\CSharp\\SSR_SolarSystemRepublicCombatPart\\1.4\\.vscode\\obj\\",
+        "projectPath": "D:\\CSharp\\SSR_SolarSystemRepublicCombatPart\\1.4\\.vscode\\mod.csproj",
+        "packagesPath": "C:\\Users\\TD\\.nuget\\packages\\",
+        "outputPath": "D:\\CSharp\\SSR_SolarSystemRepublicCombatPart\\1.4\\.vscode\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Users\\16096\\AppData\\Roaming\\Godot\\mono\\GodotNuGetFallbackFolder",
-          "F:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\16096\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Users\\16096\\AppData\\Roaming\\NuGet\\config\\Godot.Offline.Config",
+          "C:\\Users\\TD\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -51,7 +49,7 @@
       "frameworks": {
         "net48": {
           "targetAlias": "net480",
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     }
