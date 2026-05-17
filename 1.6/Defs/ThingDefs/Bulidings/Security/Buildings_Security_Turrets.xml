@@ -5,21 +5,21 @@
 		<defName>SSR_Animate_Prefab_Linux_Combat</defName>
 		<label>Animate Prefab</label>
 		<modID>SSR.Combat</modID>
-		<assetBundle>Linux/ssr_linux</assetBundle>
+		<assetBundle>Linux/ssr_combat_linux</assetBundle>
 	</AK_DLL.AssetDef>
 
 	<AK_DLL.AssetDef>
 		<defName>SSR_Animate_Prefab_MacOS_Combat</defName>
 		<label>Animate Prefab</label>
 		<modID>SSR.Combat</modID>
-		<assetBundle>MacOS/ssr_macos</assetBundle>
+		<assetBundle>MacOS/ssr_combat_macos</assetBundle>
 	</AK_DLL.AssetDef>
 
 	<AK_DLL.AssetDef>
 		<defName>SSR_Animate_Prefab_Windows_Combat</defName>
 		<label>Animate Prefab</label>
 		<modID>SSR.Combat</modID>
-		<assetBundle>Windows/ssr_windows</assetBundle>
+		<assetBundle>Windows/ssr_combat_windows</assetBundle>
 	</AK_DLL.AssetDef>
 
 	<!--=============== 哨戒机枪 ===============-->
