@@ -532,9 +532,10 @@
 		<modExtensions>
 			<li Class="FS_SSR.Defense.DefExt_SSRTurretInfo">
 				<yawRotationSpeed>20</yawRotationSpeed>
-				<shootingOrigine>Transform_X/Transform_Z/TurretTop/炮管-内部/GameObject</shootingOrigine>
-				<rootTransform>Transform_X/Transform_Z</rootTransform>
-				<yawPath>Transform_X/Transform_Z/TurretTop</yawPath>
+				<shootingAnimate>Transform_Y/Transform_X/Transform_Z/TurretTop/MainGun</shootingAnimate>
+				<shootingOrigine>Transform_Y/Transform_X/Transform_Z/TurretTop/MainGun/FirePoint</shootingOrigine>
+				<rootTransform>Transform_Y/Transform_X/Transform_Z</rootTransform>
+				<yawPath>Transform_Y/Transform_X/Transform_Z/TurretTop</yawPath>
 				<yawRotationAixe>(0, 0, 1)</yawRotationAixe>
 			</li>
 		</modExtensions>
@@ -722,9 +723,10 @@
 		<modExtensions>
 			<li Class="FS_SSR.Defense.DefExt_SSRTurretInfo">
 				<yawRotationSpeed>15</yawRotationSpeed>
-				<shootingOrigine>Transform_X/Transform_Z/TurretTop/炮管-外部/炮管-内部/GameObject</shootingOrigine>
-				<rootTransform>Transform_X/Transform_Z</rootTransform>
-				<yawPath>Transform_X/Transform_Z/TurretTop</yawPath>
+				<shootingAnimate>Transform_Y/Transform_X/Transform_Z/TurretTop/MainGun</shootingAnimate>
+				<shootingOrigine>Transform_Y/Transform_X/Transform_Z/TurretTop/MainGun/FirePoint</shootingOrigine>
+				<rootTransform>Transform_Y/Transform_X/Transform_Z</rootTransform>
+				<yawPath>Transform_Y/Transform_X/Transform_Z/TurretTop</yawPath>
 				<yawRotationAixe>(0, 0, 1)</yawRotationAixe>
 			</li>
 		</modExtensions>
@@ -868,9 +870,10 @@
 		<modExtensions>
 			<li Class="FS_SSR.Defense.DefExt_SSRTurretInfo">
 				<yawRotationSpeed>10</yawRotationSpeed>
-				<shootingOrigine>Transform_X/Transform_Z/TurretTop/立方体.003/GameObject</shootingOrigine>
-				<rootTransform>Transform_X/Transform_Z</rootTransform>
-				<yawPath>Transform_X/Transform_Z/TurretTop</yawPath>
+				<shootingOrigine>Transform_Y/Transform_X/Transform_Z/TurretTop/MainGun/FirePoint</shootingOrigine>
+				<shootingAnimate>Transform_Y/Transform_X/Transform_Z/TurretTop/MainGun</shootingAnimate>
+				<rootTransform>Transform_Y/Transform_X/Transform_Z</rootTransform>
+				<yawPath>Transform_Y/Transform_X/Transform_Z/TurretTop</yawPath>
 				<yawRotationAixe>(0, 0, 1)</yawRotationAixe>
 			</li>
 		</modExtensions>
