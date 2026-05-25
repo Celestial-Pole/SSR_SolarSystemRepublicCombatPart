@@ -538,7 +538,10 @@
 				<yawPath>Transform_Y/Transform_X/Transform_Z/TurretTop</yawPath>
 				<yawRotationAixe>(0, 0, 1)</yawRotationAixe>
 				<yawForwardDirection>(1, 0, 0)</yawForwardDirection>
+				<pitchRotationAixe>(0, 1, 0)</pitchRotationAixe>
+				<pitchForwardDirection>(1, 0, 0)</pitchForwardDirection>
 				<rootYawRotationAixe>(0, 0, 1)</rootYawRotationAixe>
+				<rootPitchRotationAixe>(0, 1, 0)</rootPitchRotationAixe>
 				<rootForwardDirection>(1, 0, 0)</rootForwardDirection>
 			</li>
 		</modExtensions>
@@ -732,7 +735,10 @@
 				<yawPath>Transform_Y/Transform_X/Transform_Z/TurretTop</yawPath>
 				<yawRotationAixe>(0, 0, 1)</yawRotationAixe>
 				<yawForwardDirection>(1, 0, 0)</yawForwardDirection>
+				<pitchRotationAixe>(0, 1, 0)</pitchRotationAixe>
+				<pitchForwardDirection>(1, 0, 0)</pitchForwardDirection>
 				<rootYawRotationAixe>(0, 0, 1)</rootYawRotationAixe>
+				<rootPitchRotationAixe>(0, 1, 0)</rootPitchRotationAixe>
 				<rootForwardDirection>(1, 0, 0)</rootForwardDirection>
 			</li>
 		</modExtensions>
@@ -882,7 +888,10 @@
 				<yawPath>Transform_Y/Transform_X/Transform_Z/TurretTop</yawPath>
 				<yawRotationAixe>(0, 0, 1)</yawRotationAixe>
 				<yawForwardDirection>(1, 0, 0)</yawForwardDirection>
+				<pitchRotationAixe>(0, 1, 0)</pitchRotationAixe>
+				<pitchForwardDirection>(1, 0, 0)</pitchForwardDirection>
 				<rootYawRotationAixe>(0, 0, 1)</rootYawRotationAixe>
+				<rootPitchRotationAixe>(0, 1, 0)</rootPitchRotationAixe>
 				<rootForwardDirection>(1, 0, 0)</rootForwardDirection>
 			</li>
 		</modExtensions>
