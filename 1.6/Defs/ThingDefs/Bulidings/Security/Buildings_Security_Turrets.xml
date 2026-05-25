@@ -537,6 +537,9 @@
 				<rootTransform>Transform_Y/Transform_X/Transform_Z</rootTransform>
 				<yawPath>Transform_Y/Transform_X/Transform_Z/TurretTop</yawPath>
 				<yawRotationAixe>(0, 0, 1)</yawRotationAixe>
+				<yawForwardDirection>(1, 0, 0)</yawForwardDirection>
+				<rootYawRotationAixe>(0, 0, 1)</rootYawRotationAixe>
+				<rootYawForwardDirection>(1, 0, 0)</rootYawForwardDirection>
 			</li>
 		</modExtensions>
 	</ThingDef>
@@ -728,6 +731,9 @@
 				<rootTransform>Transform_Y/Transform_X/Transform_Z</rootTransform>
 				<yawPath>Transform_Y/Transform_X/Transform_Z/TurretTop</yawPath>
 				<yawRotationAixe>(0, 0, 1)</yawRotationAixe>
+				<yawForwardDirection>(1, 0, 0)</yawForwardDirection>
+				<rootYawRotationAixe>(0, 0, 1)</rootYawRotationAixe>
+				<rootYawForwardDirection>(1, 0, 0)</rootYawForwardDirection>
 			</li>
 		</modExtensions>
 	</ThingDef>
@@ -875,6 +881,9 @@
 				<rootTransform>Transform_Y/Transform_X/Transform_Z</rootTransform>
 				<yawPath>Transform_Y/Transform_X/Transform_Z/TurretTop</yawPath>
 				<yawRotationAixe>(0, 0, 1)</yawRotationAixe>
+				<yawForwardDirection>(1, 0, 0)</yawForwardDirection>
+				<rootYawRotationAixe>(0, 0, 1)</rootYawRotationAixe>
+				<rootYawForwardDirection>(1, 0, 0)</rootYawForwardDirection>
 			</li>
 		</modExtensions>
 	</ThingDef>
