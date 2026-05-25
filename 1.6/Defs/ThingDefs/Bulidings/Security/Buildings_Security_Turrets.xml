@@ -539,7 +539,7 @@
 				<yawRotationAixe>(0, 0, 1)</yawRotationAixe>
 				<yawForwardDirection>(1, 0, 0)</yawForwardDirection>
 				<rootYawRotationAixe>(0, 0, 1)</rootYawRotationAixe>
-				<rootYawForwardDirection>(1, 0, 0)</rootYawForwardDirection>
+				<rootForwardDirection>(1, 0, 0)</rootForwardDirection>
 			</li>
 		</modExtensions>
 	</ThingDef>
@@ -733,7 +733,7 @@
 				<yawRotationAixe>(0, 0, 1)</yawRotationAixe>
 				<yawForwardDirection>(1, 0, 0)</yawForwardDirection>
 				<rootYawRotationAixe>(0, 0, 1)</rootYawRotationAixe>
-				<rootYawForwardDirection>(1, 0, 0)</rootYawForwardDirection>
+				<rootForwardDirection>(1, 0, 0)</rootForwardDirection>
 			</li>
 		</modExtensions>
 	</ThingDef>
@@ -883,7 +883,7 @@
 				<yawRotationAixe>(0, 0, 1)</yawRotationAixe>
 				<yawForwardDirection>(1, 0, 0)</yawForwardDirection>
 				<rootYawRotationAixe>(0, 0, 1)</rootYawRotationAixe>
-				<rootYawForwardDirection>(1, 0, 0)</rootYawForwardDirection>
+				<rootForwardDirection>(1, 0, 0)</rootForwardDirection>
 			</li>
 		</modExtensions>
 	</ThingDef>
