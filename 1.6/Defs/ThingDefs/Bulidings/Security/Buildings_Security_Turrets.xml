@@ -255,7 +255,7 @@
 		<defName>SSR_Turret_RailCIWS</defName>
 		<label>电磁近防炮</label>
 		<description>电磁近防炮是一款地球联邦时代早期近防炮系统，曾被广泛用在海军和太空军舰艇以及地面军事设施上。</description>
-		<thingClass>Building_TurretGun</thingClass>
+		<thingClass>FS_SSR.Defense.Turret_SSR</thingClass>
 		<drawerType>MapMeshAndRealTime</drawerType>
 		<graphicData>
 			<texPath>Things/Building/Security/2x2_Base</texPath>
@@ -271,7 +271,7 @@
 			</shadowData>
 		</graphicData>
 		<uiIconPath>Things/Building/Security/RailCIWS_MenuIcon</uiIconPath>
-		<uiIconScale>0.90</uiIconScale>
+		<uiIconScale>2.5</uiIconScale>
 		<stealable>false</stealable>
 		<rotatable>false</rotatable>
 		<statBases>
@@ -312,10 +312,37 @@
 				<shortCircuitInRain>false</shortCircuitInRain>
 				<basePowerConsumption>2000</basePowerConsumption>
 			</li>
+			<li Class="FS_SSR.TCP_SinglePrefabDrawer">
+				<shaderForTestAssetBundle>Assets/SSR/Add.shader</shaderForTestAssetBundle>
+				<assetDefs>
+					<li>SSR_Animate_Prefab_Linux_Combat</li>
+					<li>SSR_Animate_Prefab_MacOS_Combat</li>
+					<li>SSR_Animate_Prefab_Windows_Combat</li>
+				</assetDefs>
+				<leveledPrefabPaths>
+					<li>Assets/SSR/Prefab/TurretT1_ECIWS_2X.prefab</li>
+				</leveledPrefabPaths>
+			</li>
 			<li>
 				<compClass>FS_SSR.TC_SolarFlareLocalShield</compClass>
 			</li>
 		</comps>
+		<modExtensions>
+			<li Class="FS_SSR.Defense.DefExt_SSRTurretInfo">
+				<yawRotationSpeed>40</yawRotationSpeed>
+				<shootingAnimate>Transform_Y/Transform_X/Transform_Z/TurretTop/MainGun</shootingAnimate>
+				<shootingOrigine>Transform_Y/Transform_X/Transform_Z/TurretTop/MainGun/FirePoint</shootingOrigine>
+				<rootTransform>Transform_Y/Transform_X/Transform_Z</rootTransform>
+				<yawPath>Transform_Y/Transform_X/Transform_Z/TurretTop</yawPath>
+				<yawRotationAixe>(0, 0, 1)</yawRotationAixe>
+				<yawForwardDirection>(1, 0, 0)</yawForwardDirection>
+				<pitchRotationAixe>(0, 1, 0)</pitchRotationAixe>
+				<pitchForwardDirection>(1, 0, 0)</pitchForwardDirection>
+				<rootYawRotationAixe>(0, 0, 1)</rootYawRotationAixe>
+				<rootPitchRotationAixe>(0, 1, 0)</rootPitchRotationAixe>
+				<rootForwardDirection>(1, 0, 0)</rootForwardDirection>
+			</li>
+		</modExtensions>
 		<passability>PassThroughOnly</passability>
 		<pathCost>50</pathCost>
 		<fillPercent>0.4</fillPercent>
@@ -458,7 +485,7 @@
 		<drawHighlightOnlyForHostile>true</drawHighlightOnlyForHostile>
 		<size>(3,3)</size>
 		<graphicData>
-			<texPath>Things/Building/Turret/TurretT1_3x3</texPath>
+			<texPath>Things/Building/Security/TurretT1_3x3</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 			<drawSize>(3,3)</drawSize>
 			<damageData>
@@ -469,7 +496,7 @@
 				<offset>(0,0,0)</offset>
 			</shadowData>
 		</graphicData>
-		<uiIconPath>Things/Building/Turret/TurretT1_3x3_UI</uiIconPath>
+		<uiIconPath>Things/Building/Security/TurretT1_3x3_UI</uiIconPath>
 		<uiIconScale>2.333333</uiIconScale>
 		<stealable>false</stealable>
 		<rotatable>false</rotatable>
@@ -655,7 +682,7 @@
 		<drawHighlightOnlyForHostile>true</drawHighlightOnlyForHostile>
 		<size>(5,5)</size>
 		<graphicData>
-			<texPath>Things/Building/Turret/TurretT1_5x5</texPath>
+			<texPath>Things/Building/Security/TurretT1_5x5</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 			<drawSize>(5,5)</drawSize>
 			<damageData>
@@ -666,7 +693,7 @@
 				<offset>(0,0,0)</offset>
 			</shadowData>
 		</graphicData>
-		<uiIconPath>Things/Building/Turret/TurretT1_5x5_UI</uiIconPath>
+		<uiIconPath>Things/Building/Security/TurretT1_5x5_UI</uiIconPath>
 		<uiIconScale>2.2</uiIconScale>
 		<stealable>false</stealable>
 		<rotatable>false</rotatable>
@@ -807,7 +834,7 @@
 		<drawHighlightOnlyForHostile>true</drawHighlightOnlyForHostile>
 		<size>(7,7)</size>
 		<graphicData>
-			<texPath>Things/Building/Turret/TurretT1_7x7</texPath>
+			<texPath>Things/Building/Security/TurretT1_7x7</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 			<drawSize>(7,7)</drawSize>
 			<damageData>
@@ -818,7 +845,7 @@
 				<offset>(0,0,0)</offset>
 			</shadowData>
 		</graphicData>
-		<uiIconPath>Things/Building/Turret/TurretT1_7x7_UI</uiIconPath>
+		<uiIconPath>Things/Building/Security/TurretT1_7x7_UI</uiIconPath>
 		<uiIconScale>3</uiIconScale>
 		<stealable>false</stealable>
 		<rotatable>false</rotatable>
