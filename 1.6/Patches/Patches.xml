@@ -8,7 +8,11 @@
 		</value>
 	</Operation>
 
-	<Operation Class="PatchOperationRemove">
-		<xpath>Defs/ThingDef[translate(projectile/flyOverhead,"true","TRUE")="TRUE"]/useHitPoints</xpath>
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[translate(projectile/flyOverhead,"true","TRUE")="TRUE"]</xpath>
+		<value>
+			<useHitPoints>True</useHitPoints>
+		</value>
+        <!-- <order>Prepend</order> -->
 	</Operation>
 </Patch>
