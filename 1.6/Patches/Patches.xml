@@ -20,7 +20,7 @@
 		<xpath>Defs/ThingDef[translate(projectile/flyOverhead,"true","TRUE")="TRUE"]</xpath>
 		<value>
             <statBases>
-                <MaxHitPoints>100</MaxHitPoints>
+                <MaxHitPoints>10</MaxHitPoints>
             </statBases>
 		</value>
 	</Operation>
