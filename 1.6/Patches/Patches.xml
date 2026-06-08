@@ -15,4 +15,13 @@
 		</value>
         <!-- <order>Prepend</order> -->
 	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[translate(projectile/flyOverhead,"true","TRUE")="TRUE"]</xpath>
+		<value>
+            <stateBase>
+                <MaxHitPoints>100</MaxHitPoints>
+            </stateBase>
+		</value>
+	</Operation>
 </Patch>
