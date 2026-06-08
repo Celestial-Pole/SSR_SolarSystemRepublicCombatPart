@@ -1,4 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Patch>
 
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[category="Projectile" and projectile/flyOverhead="true"]</xpath>
+		<value>
+			<fillPercent>0.0625</fillPercent>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationRemove">
+		<xpath>Defs/ThingDef[category="Projectile" and projectile/flyOverhead="true"]/useHitPoints</xpath>
+	</Operation>
 </Patch>
