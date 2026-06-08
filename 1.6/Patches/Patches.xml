@@ -19,9 +19,9 @@
 	<Operation Class="PatchOperationAdd">
 		<xpath>Defs/ThingDef[translate(projectile/flyOverhead,"true","TRUE")="TRUE"]</xpath>
 		<value>
-            <stateBases>
+            <statBases>
                 <MaxHitPoints>100</MaxHitPoints>
-            </stateBases>
+            </statBases>
 		</value>
 	</Operation>
 </Patch>
