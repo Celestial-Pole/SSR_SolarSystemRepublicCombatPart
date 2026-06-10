@@ -145,6 +145,7 @@
 		<context>MapOnly</context>  
 		<eventNames />  
 		<maxSimultaneous>2</maxSimultaneous>
+        <priorityMode>PrioritizeNearest</priorityMode>
 		<sustainStartSound>SSR_Sound_Electromagnetic_CIWS_End</sustainStartSound>
 		<sustainStopSound>SSR_Sound_Electromagnetic_CIWS_End</sustainStopSound>
 		<subSounds>
