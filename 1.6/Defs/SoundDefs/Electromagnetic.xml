@@ -124,7 +124,6 @@
 	
 	<SoundDef>
 		<defName>SSR_Sound_Electromagnetic_CIWS_End</defName>  
-		<sustain>true</sustain> 
 		<context>MapOnly</context>  
 		<eventNames />  
 		<maxSimultaneous>2</maxSimultaneous>
@@ -143,6 +142,7 @@
 	
 	<SoundDef>
 		<defName>SSR_Sound_Electromagnetic_CIWS</defName>  
+		<sustain>true</sustain> 
 		<context>MapOnly</context>  
 		<eventNames />  
 		<maxSimultaneous>2</maxSimultaneous>
