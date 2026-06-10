@@ -329,8 +329,8 @@
 		</comps>
 		<modExtensions>
 			<li Class="FS_SSR.Defense.DefExt_SSRTurretInfo">
-				<yawRotationSpeed>90</yawRotationSpeed>
-				<pitchRotationSpeed>60</pitchRotationSpeed>
+				<yawRotationSpeed>180</yawRotationSpeed>
+				<pitchRotationSpeed>120</pitchRotationSpeed>
 				<shootingAnimate>Transform_Y/Root/Transform_X/Transform_Z/TurretTop/MainGun</shootingAnimate>
 				<shootingOrigine>Transform_Y/Root/Transform_X/Transform_Z/TurretTop/MainGun/FirePoint</shootingOrigine>
 				<rootTransform>Transform_Y/Root</rootTransform>
@@ -340,6 +340,7 @@
 				<pitchRotationAixe>(0, 1, 0)</pitchRotationAixe>
 				<pitchRotationRange>(350, 85)</pitchRotationRange>
 				<shootingOrigineForward>(1, 0, 0)</shootingOrigineForward>
+				<shootingSoundDef>SSR_Sound_Electromagnetic_CIWS</shootingSoundDef>
 			</li>
 		</modExtensions>
 		<passability>PassThroughOnly</passability>
@@ -402,7 +403,6 @@
 				<range>50</range>
 				<ticksBetweenBurstShots>1</ticksBetweenBurstShots>
 				<burstShotCount>1200</burstShotCount>
-				<soundCast>SSR_Sound_Electromagnetic_CIWS</soundCast>
 				<soundCastTail>GunTail_Medium</soundCastTail>
 				<muzzleFlashScale>9</muzzleFlashScale>
 				<consumeFuelPerShot>1</consumeFuelPerShot>
