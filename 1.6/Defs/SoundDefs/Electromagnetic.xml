@@ -109,7 +109,7 @@
 		<defName>SSR_Sound_Electromagnetic_CIWS_Start</defName>  
 		<context>MapOnly</context>  
 		<eventNames />  
-		<maxSimultaneous>2</maxSimultaneous>  
+		<maxSimultaneous>1</maxSimultaneous>  
 		<subSounds>
 		<li>
 			<tempoAffectedByGameSpeed>true</tempoAffectedByGameSpeed>
@@ -127,7 +127,7 @@
 		<defName>SSR_Sound_Electromagnetic_CIWS_End</defName>  
 		<context>MapOnly</context>  
 		<eventNames />  
-		<maxSimultaneous>2</maxSimultaneous>  
+		<maxSimultaneous>1</maxSimultaneous>  
 		<subSounds>
 			<li>
 				<tempoAffectedByGameSpeed>true</tempoAffectedByGameSpeed>
@@ -146,7 +146,7 @@
 		<sustain>true</sustain> 
 		<context>MapOnly</context>  
 		<eventNames />  
-		<maxSimultaneous>2</maxSimultaneous>
+		<maxSimultaneous>4</maxSimultaneous>
         <priorityMode>PrioritizeNearest</priorityMode>
 		<sustainStartSound>SSR_Sound_Electromagnetic_CIWS_Start</sustainStartSound>
 		<sustainStopSound>SSR_Sound_Electromagnetic_CIWS_End</sustainStopSound>
