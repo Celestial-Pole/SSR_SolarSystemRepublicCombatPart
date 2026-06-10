@@ -117,6 +117,7 @@
 				<li Class="AudioGrain_Clip">
 					<clipPath>SSR_Sound_Electromagnetic_CIWS_Start</clipPath>
 				</li>
+                    <volumeRange>200~200</volumeRange>
 			</grains>
 		</li>
 		</subSounds>
@@ -134,6 +135,7 @@
 					<li Class="AudioGrain_Clip">
 						<clipPath>SSR_Sound_Electromagnetic_CIWS_End</clipPath>
 					</li>
+                    <volumeRange>200~200</volumeRange>
 				</grains>      
 			</li>
 		</subSounds>
@@ -155,7 +157,8 @@
 				<grains>
 					<li Class="AudioGrain_Clip">
 						<clipPath>SSR_Sound_Electromagnetic_CIWS_Loop</clipPath>
-					</li>
+                    </li>
+                    <volumeRange>200~200</volumeRange>
 				</grains>
 			</li>
 		</subSounds>
