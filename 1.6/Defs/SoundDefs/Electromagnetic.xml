@@ -126,8 +126,7 @@
 		<defName>SSR_Sound_Electromagnetic_CIWS_End</defName>  
 		<context>MapOnly</context>  
 		<eventNames />  
-		<maxSimultaneous>2</maxSimultaneous>
-		<priorityMode>PrioritizeNearest</priorityMode>  
+		<maxSimultaneous>2</maxSimultaneous>  
 		<subSounds>
 			<li>
 				<tempoAffectedByGameSpeed>true</tempoAffectedByGameSpeed>
