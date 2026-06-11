@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SSRCP_Libs")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("0.1.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("0.1.0.0+5440c92cd80adac578cb7f04e30e85a69a6e0431")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("0.1.0.0+1652a1e6c2dd0793aa55b5430034282212576002")]
 [assembly: System.Reflection.AssemblyProductAttribute("SSRCP_Libs")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SSRCP_Libs")]
 [assembly: System.Reflection.AssemblyVersionAttribute("0.1.0.0")]

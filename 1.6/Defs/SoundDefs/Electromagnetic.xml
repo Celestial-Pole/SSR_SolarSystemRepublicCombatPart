@@ -131,6 +131,7 @@
 		<subSounds>
 			<li>
 				<tempoAffectedByGameSpeed>true</tempoAffectedByGameSpeed>
+                <sustainLoop>false</sustainLoop>
 				<grains>
 					<li Class="AudioGrain_Clip">
 						<clipPath>SSR_Sound_Electromagnetic_CIWS_End</clipPath>
