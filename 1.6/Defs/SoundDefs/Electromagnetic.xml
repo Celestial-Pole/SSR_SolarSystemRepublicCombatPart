@@ -155,7 +155,7 @@
 		<subSounds>
 			<li>
 				<tempoAffectedByGameSpeed>true</tempoAffectedByGameSpeed>
-				<startDelayRange>0.624970~0.624970</startDelayRange>
+				<startDelayRange>0.4916~0.4916</startDelayRange>
 				<grains>
 					<li Class="AudioGrain_Clip">
 						<clipPath>SSR_Sound_Electromagnetic_CIWS_Loop</clipPath>

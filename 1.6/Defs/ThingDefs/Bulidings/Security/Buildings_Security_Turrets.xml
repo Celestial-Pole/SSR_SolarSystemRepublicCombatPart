@@ -87,6 +87,7 @@
 					<li>SSR_Animate_Prefab_MacOS_Combat</li>
 					<li>SSR_Animate_Prefab_Windows_Combat</li>
 				</assetDefs>
+				<!-- 炮塔预制体位置 -->
 				<leveledPrefabPaths>
 					<li>Assets/SSR/Prefab/TurretT1_STG_1X.prefab</li>
 				</leveledPrefabPaths>
@@ -94,17 +95,29 @@
 		</comps>
 		<modExtensions>
 			<li Class="FS_SSR.Defense.DefExt_SSRTurretInfo">
+				<!-- 偏航轴转速（D/s） -->
 				<yawRotationSpeed>180</yawRotationSpeed>
+				<!-- 俯仰角转速（D/s） -->
 				<pitchRotationSpeed>120</pitchRotationSpeed>
+				<!-- 射击动画控制器路径（相对于预制体根） -->
 				<shootingAnimate>Transform_Y/Root/Transform_X/Transform_Z/TurretTop/MainGun</shootingAnimate>
+				<!-- 射击位置物体路径（相对于预制体根） -->
 				<shootingOrigine>Transform_Y/Root/Transform_X/Transform_Z/TurretTop/MainGun/FirePoint</shootingOrigine>
+				<!-- IK根节点、相对位置参考系变换对象路径（相对于预制体根） -->
 				<rootTransform>Transform_Y/Root</rootTransform>
+				<!-- 偏航转轴对象路径（相对于预制体根） -->
 				<yawPath>Transform_Y/Root/Transform_X/Transform_Z/TurretTop</yawPath>
+				<!-- 俯仰转轴对象路径（相对于预制体根） -->
 				<pitchPath>Transform_Y/Root/Transform_X/Transform_Z/TurretTop/MainGun</pitchPath>
+				<!-- 偏航旋转平面法向量 -->
 				<yawRotationAixe>(0, 0, 1)</yawRotationAixe>
+				<!-- 俯仰旋转平面法向量 -->
 				<pitchRotationAixe>(0, 1, 0)</pitchRotationAixe>
+				<!-- 偏航旋转角度范围[0, 360) -->
 				<pitchRotationRange>(350, 85)</pitchRotationRange>
+				<!-- 发射源的发射方向 -->
 				<shootingOrigineForward>(1, 0, 0)</shootingOrigineForward>
+				<!-- 炮塔开火循环音效 -->
 				<shootingSoundDef>SSR_Sound_Electromagnetic_CIWS</shootingSoundDef>
 			</li>
 		</modExtensions>
