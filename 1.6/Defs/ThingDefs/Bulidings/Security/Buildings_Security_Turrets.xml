@@ -602,8 +602,7 @@
 			<li Class="FS_SSR.Defense.DefExt_SSRTurretInfo">
 				<yawRotationSpeed>20</yawRotationSpeed>
 				<shootingAnimate>Transform_Y/Root/Transform_X/Transform_Z/TurretTop/MainGun</shootingAnimate>
-				<shootingOrigine>
-					Transform_Y/Root/Transform_X/Transform_Z/TurretTop/MainGun/FirePoint</shootingOrigine>
+				<shootingOrigine>Transform_Y/Root/Transform_X/Transform_Z/TurretTop/MainGun/FirePoint</shootingOrigine>
 				<rootTransform>Transform_Y/Root</rootTransform>
 				<yawPath>Transform_Y/Root/Transform_X/Transform_Z/TurretTop</yawPath>
 				<pitchPath>Transform_Y/Root/Transform_X/Transform_Z/TurretTop/MainGun</pitchPath>
@@ -799,8 +798,7 @@
 			<li Class="FS_SSR.Defense.DefExt_SSRTurretInfo">
 				<yawRotationSpeed>15</yawRotationSpeed>
 				<shootingAnimate>Transform_Y/Root/Transform_X/Transform_Z/TurretTop/MainGun</shootingAnimate>
-				<shootingOrigine>
-					Transform_Y/Root/Transform_X/Transform_Z/TurretTop/MainGun/FirePoint</shootingOrigine>
+				<shootingOrigine>Transform_Y/Root/Transform_X/Transform_Z/TurretTop/MainGun/FirePoint</shootingOrigine>
 				<rootTransform>Transform_Y/Root</rootTransform>
 				<yawPath>Transform_Y/Root/Transform_X/Transform_Z/TurretTop</yawPath>
 				<pitchPath>Transform_Y/Root/Transform_X/Transform_Z/TurretTop/MainGun</pitchPath>
@@ -952,8 +950,7 @@
 			<li Class="FS_SSR.Defense.DefExt_SSRTurretInfo">
 				<yawRotationSpeed>10</yawRotationSpeed>
 				<shootingAnimate>Transform_Y/Root/Transform_X/Transform_Z/TurretTop/MainGun</shootingAnimate>
-				<shootingOrigine>
-					Transform_Y/Root/Transform_X/Transform_Z/TurretTop/MainGun/FirePoint</shootingOrigine>
+				<shootingOrigine>Transform_Y/Root/Transform_X/Transform_Z/TurretTop/MainGun/FirePoint</shootingOrigine>
 				<rootTransform>Transform_Y/Root</rootTransform>
 				<yawPath>Transform_Y/Root/Transform_X/Transform_Z/TurretTop</yawPath>
 				<pitchPath>Transform_Y/Root/Transform_X/Transform_Z/TurretTop/MainGun</pitchPath>
