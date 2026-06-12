@@ -1,19 +1,20 @@
-﻿<?xml version="1.0" encoding="utf-8"?><Defs>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
 
-    <SoundDef>
-        <defName>SSR_Sound_Electromagnetic_AR</defName>  
-        <context>MapOnly</context>
-        <subSounds>
-            <li>
-                <grains>
-                    <li Class="AudioGrain_Clip">
-                        <clipPath>SSR_Sound_Electromagnetic_AR</clipPath>
-                    </li>
-                </grains>
-                <volumeRange>25~25</volumeRange>
-            </li>
-        </subSounds>
-    </SoundDef>
+	<SoundDef>
+		<defName>SSR_Sound_Electromagnetic_AR</defName>
+		<context>MapOnly</context>
+		<subSounds>
+			<li>
+				<grains>
+					<li Class="AudioGrain_Clip">
+						<clipPath>SSR_Sound_Electromagnetic_AR</clipPath>
+					</li>
+				</grains>
+				<volumeRange>25~25</volumeRange>
+			</li>
+		</subSounds>
+	</SoundDef>
 
 	<SoundDef>
 		<defName>SSR_Sound_Electromagnetic_SMG</defName>
@@ -106,49 +107,49 @@
 	</SoundDef>
 
 	<SoundDef>
-		<defName>SSR_Sound_Electromagnetic_CIWS_Start</defName>  
-		<context>MapOnly</context>  
-		<eventNames />  
-		<maxSimultaneous>1</maxSimultaneous>  
-		<subSounds>
-		<li>
-			<tempoAffectedByGameSpeed>true</tempoAffectedByGameSpeed>
-			<grains>
-				<li Class="AudioGrain_Clip">
-					<clipPath>SSR_Sound_Electromagnetic_CIWS_Start</clipPath>
-				</li>
-                    <volumeRange>200~200</volumeRange>
-			</grains>
-		</li>
-		</subSounds>
-	</SoundDef>
-	
-	<SoundDef>
-		<defName>SSR_Sound_Electromagnetic_CIWS_End</defName>  
-		<context>MapOnly</context>  
-		<eventNames />  
-		<maxSimultaneous>1</maxSimultaneous>  
+		<defName>SSR_Sound_Electromagnetic_CIWS_Start</defName>
+		<context>MapOnly</context>
+		<eventNames />
+		<maxSimultaneous>1</maxSimultaneous>
 		<subSounds>
 			<li>
 				<tempoAffectedByGameSpeed>true</tempoAffectedByGameSpeed>
-                <sustainLoop>false</sustainLoop>
+				<grains>
+					<li Class="AudioGrain_Clip">
+						<clipPath>SSR_Sound_Electromagnetic_CIWS_Start</clipPath>
+					</li>
+					<volumeRange>200~200</volumeRange>
+				</grains>
+			</li>
+		</subSounds>
+	</SoundDef>
+
+	<SoundDef>
+		<defName>SSR_Sound_Electromagnetic_CIWS_End</defName>
+		<context>MapOnly</context>
+		<eventNames />
+		<maxSimultaneous>1</maxSimultaneous>
+		<subSounds>
+			<li>
+				<tempoAffectedByGameSpeed>true</tempoAffectedByGameSpeed>
+				<sustainLoop>false</sustainLoop>
 				<grains>
 					<li Class="AudioGrain_Clip">
 						<clipPath>SSR_Sound_Electromagnetic_CIWS_End</clipPath>
 					</li>
-                    <volumeRange>200~200</volumeRange>
-				</grains>      
+					<volumeRange>200~200</volumeRange>
+				</grains>
 			</li>
 		</subSounds>
 	</SoundDef>
-	
+
 	<SoundDef>
-		<defName>SSR_Sound_Electromagnetic_CIWS</defName>  
-		<sustain>true</sustain> 
-		<context>MapOnly</context>  
-		<eventNames />  
+		<defName>SSR_Sound_Electromagnetic_CIWS</defName>
+		<sustain>true</sustain>
+		<context>MapOnly</context>
+		<eventNames />
 		<maxSimultaneous>4</maxSimultaneous>
-        <priorityMode>PrioritizeNearest</priorityMode>
+		<priorityMode>PrioritizeNearest</priorityMode>
 		<sustainStartSound>SSR_Sound_Electromagnetic_CIWS_Start</sustainStartSound>
 		<sustainStopSound>SSR_Sound_Electromagnetic_CIWS_End</sustainStopSound>
 		<subSounds>
@@ -158,8 +159,8 @@
 				<grains>
 					<li Class="AudioGrain_Clip">
 						<clipPath>SSR_Sound_Electromagnetic_CIWS_Loop</clipPath>
-                    </li>
-                    <volumeRange>200~200</volumeRange>
+					</li>
+					<volumeRange>200~200</volumeRange>
 				</grains>
 			</li>
 		</subSounds>
@@ -209,5 +210,5 @@
 			</li>
 		</subSounds>
 	</SoundDef>
-  
+
 </Defs>

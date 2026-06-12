@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
 	<AK_DLL.AssetDef>
@@ -22,13 +22,14 @@
 		<assetBundle>Windows/ssr_combat_windows</assetBundle>
 	</AK_DLL.AssetDef>
 
-	<!--=============== 哨戒机枪 ===============-->
+	<!--===============
+	哨戒机枪 ===============-->
 
 	<ThingDef ParentName="SSR_BuildingBase_Security">
 		<defName>SSR_Turret_SentryGun</defName>
 		<label>哨戒机枪</label>
 		<description>哨戒机枪是一种高效的防御设施，固定的底座使其更加坚固的同时拥有了更多的备弹量。</description>
-		<thingClass>Building_TurretGun</thingClass>
+		<thingClass>FS_SSR.Defense.ThingClass_CIWSTurret</thingClass>
 		<drawerType>MapMeshAndRealTime</drawerType>
 		<graphicData>
 			<texPath>Things/Building/Security/SentryGun_Base</texPath>
@@ -57,9 +58,9 @@
 		</statBases>
 		<tickerType>Normal</tickerType>
 		<comps>
-			<li Class="CompProperties_Forbiddable"/>
-			<li Class="CompProperties_Flickable"/>
-			<li Class="CompProperties_Breakdownable"/>
+			<li Class="CompProperties_Forbiddable" />
+			<li Class="CompProperties_Flickable" />
+			<li Class="CompProperties_Breakdownable" />
 			<li Class="CompProperties_Refuelable">
 				<fuelLabel>射击直到弹药耗尽</fuelLabel>
 				<fuelGizmoLabel>剩余弹药量</fuelGizmoLabel>
@@ -79,7 +80,34 @@
 				<consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
 				<fuelIconPath>UI/Overlays/Barrel</fuelIconPath>
 			</li>
+			<li Class="FS_SSR.TCP_SinglePrefabDrawer">
+				<shaderForTestAssetBundle>Assets/SSR/Add.shader</shaderForTestAssetBundle>
+				<assetDefs>
+					<li>SSR_Animate_Prefab_Linux_Combat</li>
+					<li>SSR_Animate_Prefab_MacOS_Combat</li>
+					<li>SSR_Animate_Prefab_Windows_Combat</li>
+				</assetDefs>
+				<leveledPrefabPaths>
+					<li>Assets/SSR/Prefab/TurretT1_STG_1X.prefab</li>
+				</leveledPrefabPaths>
+			</li>
 		</comps>
+		<modExtensions>
+			<li Class="FS_SSR.Defense.DefExt_SSRTurretInfo">
+				<yawRotationSpeed>180</yawRotationSpeed>
+				<pitchRotationSpeed>120</pitchRotationSpeed>
+				<shootingAnimate>Transform_Y/Root/Transform_X/Transform_Z/TurretTop/MainGun</shootingAnimate>
+				<shootingOrigine>Transform_Y/Root/Transform_X/Transform_Z/TurretTop/MainGun/FirePoint</shootingOrigine>
+				<rootTransform>Transform_Y/Root</rootTransform>
+				<yawPath>Transform_Y/Root/Transform_X/Transform_Z/TurretTop</yawPath>
+				<pitchPath>Transform_Y/Root/Transform_X/Transform_Z/TurretTop/MainGun</pitchPath>
+				<yawRotationAixe>(0, 0, 1)</yawRotationAixe>
+				<pitchRotationAixe>(0, 1, 0)</pitchRotationAixe>
+				<pitchRotationRange>(350, 85)</pitchRotationRange>
+				<shootingOrigineForward>(1, 0, 0)</shootingOrigineForward>
+				<shootingSoundDef>SSR_Sound_Electromagnetic_CIWS</shootingSoundDef>
+			</li>
+		</modExtensions>
 		<hasTooltip>true</hasTooltip>
 		<stuffCategories>
 			<li>Metallic</li>
@@ -147,9 +175,9 @@
 		</statBases>
 		<tickerType>Normal</tickerType>
 		<comps>
-			<li Class="CompProperties_Forbiddable"/>
-			<li Class="CompProperties_Flickable"/>
-			<li Class="CompProperties_Breakdownable"/>
+			<li Class="CompProperties_Forbiddable" />
+			<li Class="CompProperties_Flickable" />
+			<li Class="CompProperties_Breakdownable" />
 			<li Class="CompProperties_Refuelable">
 				<fuelLabel>射击直到弹药耗尽</fuelLabel>
 				<fuelGizmoLabel>剩余弹药量</fuelGizmoLabel>
@@ -226,7 +254,7 @@
 				<range>38.9</range>
 				<ticksBetweenBurstShots>5</ticksBetweenBurstShots>
 				<burstShotCount>12</burstShotCount>
-				<soundCast>GunShotA</soundCast>
+				<!-- <soundCast>GunShotA</soundCast> -->
 				<soundCastTail>GunTail_Light</soundCastTail>
 				<muzzleFlashScale>9</muzzleFlashScale>
 				<consumeFuelPerShot>1</consumeFuelPerShot>
@@ -249,7 +277,8 @@
 		</projectile>
 	</ThingDef>
 
-	<!--=============== 电磁近防炮 ===============-->
+	<!--===============
+	电磁近防炮 ===============-->
 
 	<ThingDef ParentName="SSR_BuildingBase_Security">
 		<defName>SSR_Turret_RailCIWS</defName>
@@ -285,9 +314,9 @@
 		<size>(2,2)</size>
 		<tickerType>Normal</tickerType>
 		<comps>
-			<li Class="CompProperties_Forbiddable"/>
-			<li Class="CompProperties_Flickable"/>
-			<li Class="CompProperties_Breakdownable"/>
+			<li Class="CompProperties_Forbiddable" />
+			<li Class="CompProperties_Flickable" />
+			<li Class="CompProperties_Breakdownable" />
 			<li Class="CompProperties_Refuelable">
 				<fuelLabel>射击直到弹药耗尽</fuelLabel>
 				<fuelGizmoLabel>剩余弹药量</fuelGizmoLabel>
@@ -472,7 +501,8 @@
 		</modExtensions>
 	</ThingDef>
 
-	<!--=============== 3X3 ===============-->
+	<!--===============
+	3X3 ===============-->
 
 	<ThingDef ParentName="SSR_BuildingBase_Security">
 		<defName>SSR_TurretT1_3X</defName>
@@ -538,7 +568,7 @@
 				<explosiveDamageType>Bomb</explosiveDamageType>
 				<chanceNeverExplodeFromDamage>0.5</chanceNeverExplodeFromDamage>
 			</li>
-			<li Class="CompProperties_Forbiddable"/>
+			<li Class="CompProperties_Forbiddable" />
 			<li Class="CompProperties_Power">
 				<compClass>CompPowerTrader</compClass>
 				<basePowerConsumption>80</basePowerConsumption>
@@ -559,7 +589,8 @@
 			<li Class="FS_SSR.Defense.DefExt_SSRTurretInfo">
 				<yawRotationSpeed>20</yawRotationSpeed>
 				<shootingAnimate>Transform_Y/Root/Transform_X/Transform_Z/TurretTop/MainGun</shootingAnimate>
-				<shootingOrigine>Transform_Y/Root/Transform_X/Transform_Z/TurretTop/MainGun/FirePoint</shootingOrigine>
+				<shootingOrigine>
+					Transform_Y/Root/Transform_X/Transform_Z/TurretTop/MainGun/FirePoint</shootingOrigine>
 				<rootTransform>Transform_Y/Root</rootTransform>
 				<yawPath>Transform_Y/Root/Transform_X/Transform_Z/TurretTop</yawPath>
 				<pitchPath>Transform_Y/Root/Transform_X/Transform_Z/TurretTop/MainGun</pitchPath>
@@ -667,7 +698,8 @@
 		</modExtensions>
 	</ThingDef>
 
-	<!--=============== 5X5 ===============-->
+	<!--===============
+	5X5 ===============-->
 
 	<ThingDef ParentName="SSR_BuildingBase_Security">
 		<defName>SSR_TurretT1_5X</defName>
@@ -733,7 +765,7 @@
 				<explosiveDamageType>Bomb</explosiveDamageType>
 				<chanceNeverExplodeFromDamage>0.5</chanceNeverExplodeFromDamage>
 			</li>
-			<li Class="CompProperties_Forbiddable"/>
+			<li Class="CompProperties_Forbiddable" />
 			<li Class="CompProperties_Power">
 				<compClass>CompPowerTrader</compClass>
 				<basePowerConsumption>80</basePowerConsumption>
@@ -754,7 +786,8 @@
 			<li Class="FS_SSR.Defense.DefExt_SSRTurretInfo">
 				<yawRotationSpeed>15</yawRotationSpeed>
 				<shootingAnimate>Transform_Y/Root/Transform_X/Transform_Z/TurretTop/MainGun</shootingAnimate>
-				<shootingOrigine>Transform_Y/Root/Transform_X/Transform_Z/TurretTop/MainGun/FirePoint</shootingOrigine>
+				<shootingOrigine>
+					Transform_Y/Root/Transform_X/Transform_Z/TurretTop/MainGun/FirePoint</shootingOrigine>
 				<rootTransform>Transform_Y/Root</rootTransform>
 				<yawPath>Transform_Y/Root/Transform_X/Transform_Z/TurretTop</yawPath>
 				<pitchPath>Transform_Y/Root/Transform_X/Transform_Z/TurretTop/MainGun</pitchPath>
@@ -817,7 +850,8 @@
 		</projectile>
 	</ThingDef>
 
-	<!--=============== 7X7 ===============-->
+	<!--===============
+	7X7 ===============-->
 
 	<ThingDef ParentName="SSR_BuildingBase_Security">
 		<defName>SSR_TurretT1_7X</defName>
@@ -884,7 +918,7 @@
 				<explosiveDamageType>Bomb</explosiveDamageType>
 				<chanceNeverExplodeFromDamage>0.5</chanceNeverExplodeFromDamage>
 			</li>
-			<li Class="CompProperties_Forbiddable"/>
+			<li Class="CompProperties_Forbiddable" />
 			<li Class="CompProperties_Power">
 				<compClass>CompPowerTrader</compClass>
 				<basePowerConsumption>80</basePowerConsumption>
@@ -905,7 +939,8 @@
 			<li Class="FS_SSR.Defense.DefExt_SSRTurretInfo">
 				<yawRotationSpeed>10</yawRotationSpeed>
 				<shootingAnimate>Transform_Y/Root/Transform_X/Transform_Z/TurretTop/MainGun</shootingAnimate>
-				<shootingOrigine>Transform_Y/Root/Transform_X/Transform_Z/TurretTop/MainGun/FirePoint</shootingOrigine>
+				<shootingOrigine>
+					Transform_Y/Root/Transform_X/Transform_Z/TurretTop/MainGun/FirePoint</shootingOrigine>
 				<rootTransform>Transform_Y/Root</rootTransform>
 				<yawPath>Transform_Y/Root/Transform_X/Transform_Z/TurretTop</yawPath>
 				<pitchPath>Transform_Y/Root/Transform_X/Transform_Z/TurretTop/MainGun</pitchPath>
