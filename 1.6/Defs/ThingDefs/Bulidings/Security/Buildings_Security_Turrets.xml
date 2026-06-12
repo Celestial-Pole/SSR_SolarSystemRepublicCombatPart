@@ -100,15 +100,15 @@
 				<!-- 俯仰角转速（D/s） -->
 				<pitchRotationSpeed>120</pitchRotationSpeed>
 				<!-- 射击动画控制器路径（相对于预制体根） -->
-				<shootingAnimate>Transform_Y/Root/Transform_X/Transform_Z/TurretTop/MainGun</shootingAnimate>
+				<shootingAnimate>Root/Transform_X/Transform_Z/TurretTop/MainGun</shootingAnimate>
 				<!-- 射击位置物体路径（相对于预制体根） -->
-				<shootingOrigine>Transform_Y/Root/Transform_X/Transform_Z/TurretTop/MainGun/FirePoint</shootingOrigine>
+				<shootingOrigine>Root/Transform_X/Transform_Z/TurretTop/MainGun/FirePoint</shootingOrigine>
 				<!-- IK根节点、相对位置参考系变换对象路径（相对于预制体根） -->
-				<rootTransform>Transform_Y/Root</rootTransform>
+				<rootTransform>Root</rootTransform>
 				<!-- 偏航转轴对象路径（相对于预制体根） -->
-				<yawPath>Transform_Y/Root/Transform_X/Transform_Z/TurretTop</yawPath>
+				<yawPath>Root/Transform_X/Transform_Z/TurretTop</yawPath>
 				<!-- 俯仰转轴对象路径（相对于预制体根） -->
-				<pitchPath>Transform_Y/Root/Transform_X/Transform_Z/TurretTop/MainGun</pitchPath>
+				<pitchPath>Root/Transform_X/Transform_Z/TurretTop/MainGun</pitchPath>
 				<!-- 偏航旋转平面法向量 -->
 				<yawRotationAixe>(0, 0, 1)</yawRotationAixe>
 				<!-- 俯仰旋转平面法向量 -->
