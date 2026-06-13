@@ -302,6 +302,7 @@
 		<verbs>
 			<li>
 				<verbClass>Verb_Shoot</verbClass>
+                <hasStandardCommand>true</hasStandardCommand>
 				<defaultProjectile>SSR_Bullet_SentryGun</defaultProjectile>
 				<warmupTime>0</warmupTime>
 				<range>38.9</range>
@@ -479,6 +480,7 @@
 		<verbs>
 			<li>
 				<verbClass>Verb_Shoot</verbClass>
+                <hasStandardCommand>true</hasStandardCommand>
 				<defaultProjectile>SSR_Bullet_RailCIWS</defaultProjectile>
 				<warmupTime>0</warmupTime>
 				<range>50</range>
@@ -673,6 +675,7 @@
 		<verbs>
 			<li>
 				<verbClass>Verb_Shoot</verbClass>
+                <hasStandardCommand>true</hasStandardCommand>
 				<defaultProjectile>Bullet_SSRTurretT1_3X</defaultProjectile>
 				<warmupTime>0</warmupTime>
 				<range>64.9</range>
@@ -868,6 +871,7 @@
 		<verbs>
 			<li>
 				<verbClass>Verb_Shoot</verbClass>
+                <hasStandardCommand>true</hasStandardCommand>
 				<defaultProjectile>Bullet_SSRTurretT1_5X</defaultProjectile>
 				<warmupTime>0</warmupTime>
 				<range>64.9</range>
@@ -877,6 +881,9 @@
 				<muzzleFlashScale>9</muzzleFlashScale>
 				<consumeFuelPerShot>1</consumeFuelPerShot>
 				<forcedMissRadius>0</forcedMissRadius>
+                <targetParams>
+                    <canTargetLocations>true</canTargetLocations>
+                </targetParams>
 			</li>
 		</verbs>
 	</ThingDef>
@@ -1019,6 +1026,7 @@
 		<verbs>
 			<li>
 				<verbClass>Verb_Shoot</verbClass>
+                <hasStandardCommand>true</hasStandardCommand>
 				<defaultProjectile>Bullet_SSRTurretT1_7X</defaultProjectile>
 				<warmupTime>0</warmupTime>
 				<range>131.9</range>
@@ -1028,6 +1036,9 @@
 				<muzzleFlashScale>9</muzzleFlashScale>
 				<consumeFuelPerShot>1</consumeFuelPerShot>
 				<forcedMissRadius>0</forcedMissRadius>
+                <targetParams>
+                    <canTargetLocations>true</canTargetLocations>
+                </targetParams>
 			</li>
 		</verbs>
 	</ThingDef>
