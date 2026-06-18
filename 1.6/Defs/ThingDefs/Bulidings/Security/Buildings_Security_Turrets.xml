@@ -219,7 +219,7 @@
 				</assetDefs>
 				<!-- 炮塔预制体位置 -->
 				<leveledPrefabPaths>
-					<li>Assets/SSR/Prefab/TurretT1_ESTG_1X.prefab</li>
+					<li>Assets/SSR/Prefab/TurretT1_STGP_1X.prefab</li>
 				</leveledPrefabPaths>
 			</li>
 		</comps>
