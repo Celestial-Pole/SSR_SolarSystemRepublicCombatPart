@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "PMCPphgXM5g=",
+  "dgSpecHash": "+bp91NpyzdQ=",
   "success": true,
-  "projectFilePath": "D:\\CSharp\\SSR_SolarSystemRepublicCombatPart\\1.4\\.vscode\\mod.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "/storage/Data/CSharp/SSR_SolarSystemRepublicCombatPart/1.4/.vscode/mod.csproj",
+  "expectedPackageFiles": [
+    "/home/the_M00N/.nuget/packages/microsoft.netframework.referenceassemblies/1.0.3/microsoft.netframework.referenceassemblies.1.0.3.nupkg.sha512",
+    "/home/the_M00N/.nuget/packages/microsoft.netframework.referenceassemblies.net48/1.0.3/microsoft.netframework.referenceassemblies.net48.1.0.3.nupkg.sha512"
+  ],
   "logs": []
 }

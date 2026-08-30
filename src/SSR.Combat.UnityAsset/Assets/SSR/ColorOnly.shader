@@ -23,6 +23,7 @@
             {
                 float4 vertex : POSITION;
                 float3 normal : NORMAL;
+                float4 color : COLOR;
                 UNITY_VERTEX_INPUT_INSTANCE_ID
             };
 
@@ -30,6 +31,7 @@
             {
                 float3 normal : TEXCOORD0;
                 float3 viewDir : TEXCOORD1;
+                float4 color : TEXCOORD2;
                 float4 vertex : SV_POSITION;
                 UNITY_VERTEX_INPUT_INSTANCE_ID
             };
@@ -69,6 +71,7 @@
                 o.viewDir = GetViewDir(UnityObjectToViewPos(v.vertex), o.vertex);
                 o.normal = UnityObjectToWorldNormal(v.normal);
                 o.normal = mul(UNITY_MATRIX_V, float4(o.normal, 0.0)).xyz;
+                o.color = v.color;
                 float l = length(o.normal);
                 if(l < 0.001) o.normal = float3(0,0,1);
                 else o.normal /= l;
@@ -81,6 +84,7 @@
                 UNITY_SETUP_INSTANCE_ID(i);
 
                 float4 outColor = float4(_Color.rgb * ShadingByMatTex(i.normal, i.viewDir).rgb, _Color.a);
+                outColor *= i.color;
                 // apply fog
                 return outColor;
             }
