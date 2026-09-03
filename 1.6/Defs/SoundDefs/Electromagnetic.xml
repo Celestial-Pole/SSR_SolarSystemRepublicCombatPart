@@ -92,13 +92,13 @@
 	</SoundDef>
 
 	<SoundDef>
-		<defName>SSR_Sound_Electromagnetic_AMR</defName>
+		<defName>SSR_Sound_Electromagnetic_Cannon</defName>
 		<context>MapOnly</context>
 		<subSounds>
 			<li>
 				<grains>
 					<li Class="AudioGrain_Clip">
-						<clipPath>SSR_Sound_Electromagnetic_AMR</clipPath>
+						<clipPath>SSR_Sound_Electromagnetic_Cannon</clipPath>
 					</li>
 				</grains>
 				<volumeRange>75~75</volumeRange>

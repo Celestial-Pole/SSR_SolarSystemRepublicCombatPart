@@ -4,7 +4,7 @@
 	<ThingDef ParentName="SSR_Weapons_Industrial">
 		<defName>SSR_Weapon_Electromagnetic_AR</defName>
 		<label>电磁步枪</label>
-		<description>地球联邦时代早期的制式突击步枪，相比于传统的火药步枪，使用电磁轨道加速弹丸的电磁步枪拥有更远的射程，也能对目标造成更大的伤害。</description>
+		<description>地球联邦时代早期的制式突击步枪，相比于传统的火药步枪，使用电磁轨道加速弹丸的电磁步枪拥有更远的射程，更大的口径弥补了高穿透性造成的后效不足问题。</description>
 		<graphicData>
 			<texPath>Things/Weapons/ElectromagneticWeapon/Electromagnetic_AR</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -755,11 +755,11 @@
 	</ThingDef>
 
 	<ThingDef ParentName="SSR_Weapons_Industrial">
-		<defName>SSR_Weapon_Electromagnetic_AMR</defName>
-		<label>反载具电磁炮</label>
-		<description>这种武器在诞生之初的目标就是为了突破主动防御系统，击穿载具厚重的装甲，更长的磁轨和更大的口径都是为了达成这一目标而做出的设计。虽然被算作单兵武器，但是反载具电磁炮往往需要装备外骨骼或者AST装甲才能正常使用。</description>
+		<defName>SSR_Weapon_Electromagnetic_Cannon</defName>
+		<label>电磁机炮</label>
+		<description>这种武器在诞生之初的目标就是为了突破主动防御系统，击穿载具厚重的装甲，更长的磁轨和更大的口径都是为了达成这一目标而做出的设计。虽然被算作单兵武器，但是电磁机炮往往需要装备外骨骼或者AST装甲才能正常使用。</description>
 		<graphicData>
-			<texPath>Things/Weapons/ElectromagneticWeapon/Electromagnetic_AMR</texPath>
+			<texPath>Things/Weapons/ElectromagneticWeapon/Electromagnetic_Cannon</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 			<drawSize>1.75</drawSize>
 		</graphicData>
@@ -786,12 +786,12 @@
 			<li>
 				<verbClass>HJ_SSR.Weapons.Verb_ShootAllowAllCast</verbClass>
 				<hasStandardCommand>true</hasStandardCommand>
-				<defaultProjectile>SSR_Electromagnetic_AMR_rt</defaultProjectile>
+				<defaultProjectile>SSR_Electromagnetic_Cannon_rt</defaultProjectile>
 				<warmupTime>2.0</warmupTime>
 				<range>65</range>
 				<ticksBetweenBurstShots>10</ticksBetweenBurstShots>
 				<burstShotCount>1</burstShotCount>
-				<soundCast>SSR_Sound_Electromagnetic_AMR</soundCast>
+				<soundCast>SSR_Sound_Electromagnetic_Cannon</soundCast>
 				<soundCastTail>GunTail_Medium</soundCastTail>
 				<muzzleFlashScale>9</muzzleFlashScale>
 			</li>
@@ -818,10 +818,10 @@
 	</ThingDef>
 
 	<ThingDef ParentName="BaseBullet">
-		<defName>SSR_Electromagnetic_AMR_rt</defName>
+		<defName>SSR_Electromagnetic_Cannon_rt</defName>
 		<label>反载具电磁炮炮弹</label>
 		<graphicData>
-			<texPath>Things/Projectile/Electromagnetic_AMR_rt</texPath>
+			<texPath>Things/Projectile/Electromagnetic_Cannon_rt</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
 		<thingClass>HJ_SSR.Weapons.PenetratingBullet</thingClass>
