@@ -69,7 +69,7 @@
 
   <ThingDef Name="Base20x105mmElectromagneticBullet" ParentName="BaseBulletCE" Abstract="true">
     <graphicData>
-      <texPath>Things/Projectile/Electromagnetic_AMR_rt</texPath>
+      <texPath>Things/Projectile/Electromagnetic_Cannon_rt</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <projectile Class="CombatExtended.ProjectilePropertiesCE">

@@ -759,11 +759,11 @@
 	</ThingDef>
 
 	<ThingDef ParentName="SSR_Weapons_Spacer">
-		<defName>SSR_Weapon_AdvancedElectromagnetic_AMR</defName>
+		<defName>SSR_Weapon_AdvancedElectromagnetic_Cannon</defName>
 		<label>高级反载具电磁炮</label>
 		<description>。</description>
 		<graphicData>
-			<texPath>Things/Weapons/AdvancedElectromagneticWeapon/AdvancedElectromagnetic_AMR</texPath>
+			<texPath>Things/Weapons/AdvancedElectromagneticWeapon/AdvancedElectromagnetic_Cannon</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 			<drawSize>1.75</drawSize>
 		</graphicData>
@@ -791,12 +791,12 @@
 			<li>
 				<verbClass>HJ_SSR.Weapons.Verb_ShootAllowAllCast</verbClass>
 				<hasStandardCommand>true</hasStandardCommand>
-				<defaultProjectile>SSR_AdvancedElectromagnetic_AMR_rt</defaultProjectile>
+				<defaultProjectile>SSR_AdvancedElectromagnetic_Cannon_rt</defaultProjectile>
 				<warmupTime>2.0</warmupTime>
 				<range>70</range>
 				<ticksBetweenBurstShots>10</ticksBetweenBurstShots>
 				<burstShotCount>1</burstShotCount>
-				<soundCast>SSR_Sound_Electromagnetic_AMR</soundCast>
+				<soundCast>SSR_Sound_Electromagnetic_Cannon</soundCast>
 				<soundCastTail>GunTail_Medium</soundCastTail>
 				<muzzleFlashScale>9</muzzleFlashScale>
 			</li>
@@ -823,10 +823,10 @@
 	</ThingDef>
 
 	<ThingDef ParentName="BaseBullet">
-		<defName>SSR_AdvancedElectromagnetic_AMR_rt</defName>
+		<defName>SSR_AdvancedElectromagnetic_Cannon_rt</defName>
 		<label>高级反载具电磁炮炮弹</label>
 		<graphicData>
-			<texPath>Things/Projectile/Electromagnetic_AMR_rt</texPath>
+			<texPath>Things/Projectile/Electromagnetic_Cannon_rt</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
 		<thingClass>HJ_SSR.Weapons.PenetratingBullet</thingClass>
