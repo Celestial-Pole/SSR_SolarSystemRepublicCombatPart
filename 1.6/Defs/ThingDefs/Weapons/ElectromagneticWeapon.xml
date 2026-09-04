@@ -9,6 +9,7 @@
 			<texPath>Things/Weapons/ElectromagneticWeapon/Electromagnetic_AR</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
+		<equippedAngleOffset>45</equippedAngleOffset>
 		<soundInteract>Interact_ChargeRifle</soundInteract>
 		<statBases>
 			<WorkToMake>45000</WorkToMake>
@@ -132,6 +133,7 @@
 			<texPath>Things/Weapons/ElectromagneticWeapon/Electromagnetic_SMG</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
+		<equippedAngleOffset>45</equippedAngleOffset>
 		<soundInteract>Interact_ChargeRifle</soundInteract>
 		<statBases>
 			<WorkToMake>30000</WorkToMake>
@@ -254,6 +256,7 @@
 			<texPath>Things/Weapons/ElectromagneticWeapon/Electromagnetic_HG</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
+		<equippedAngleOffset>45</equippedAngleOffset>
 		<soundInteract>Interact_ChargeRifle</soundInteract>
 		<statBases>
 			<WorkToMake>25000</WorkToMake>
@@ -377,6 +380,7 @@
 			<texPath>Things/Weapons/ElectromagneticWeapon/Electromagnetic_SG</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
+		<equippedAngleOffset>45</equippedAngleOffset>
 		<soundInteract>Interact_ChargeRifle</soundInteract>
 		<statBases>
 			<WorkToMake>43000</WorkToMake>
@@ -513,6 +517,7 @@
 			<graphicClass>Graphic_Single</graphicClass>
 			<drawSize>1.25</drawSize>
 		</graphicData>
+		<equippedAngleOffset>45</equippedAngleOffset>
 		<soundInteract>Interact_ChargeRifle</soundInteract>
 		<statBases>
 			<WorkToMake>70000</WorkToMake>
@@ -638,6 +643,7 @@
 			<graphicClass>Graphic_Single</graphicClass>
 			<drawSize>1.25</drawSize>
 		</graphicData>
+		<equippedAngleOffset>45</equippedAngleOffset>
 		<soundInteract>Interact_ChargeRifle</soundInteract>
 		<statBases>
 			<WorkToMake>75000</WorkToMake>
@@ -763,6 +769,7 @@
 			<graphicClass>Graphic_Single</graphicClass>
 			<drawSize>1.75</drawSize>
 		</graphicData>
+		<equippedAngleOffset>45</equippedAngleOffset>
 		<soundInteract>Interact_ChargeRifle</soundInteract>
 		<statBases>
 			<WorkToMake>85000</WorkToMake>
@@ -819,7 +826,7 @@
 
 	<ThingDef ParentName="BaseBullet">
 		<defName>SSR_Electromagnetic_Cannon_rt</defName>
-		<label>反载具电磁炮炮弹</label>
+		<label>电磁机炮炮弹</label>
 		<graphicData>
 			<texPath>Things/Projectile/Electromagnetic_Cannon_rt</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
