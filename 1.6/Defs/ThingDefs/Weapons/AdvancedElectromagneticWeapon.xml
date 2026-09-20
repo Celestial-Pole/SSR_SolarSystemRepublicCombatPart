@@ -4,7 +4,7 @@
 	<ThingDef ParentName="SSR_Weapons_Spacer">
 		<defName>SSR_Weapon_AdvancedElectromagnetic_AR</defName>
 		<label>高级电磁步枪</label>
-		<description>。</description>
+		<description>高级电磁步枪</description>
 		<graphicData>
 			<texPath>Things/Weapons/AdvancedElectromagneticWeapon/AdvancedElectromagnetic_AR</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -34,7 +34,7 @@
 			<li>
 				<verbClass>HJ_SSR.Weapons.Verb_ShootAllowAllCast</verbClass>
 				<hasStandardCommand>true</hasStandardCommand>
-				<defaultProjectile>SSR_AdvancedElectromagnetic_AR_rt</defaultProjectile>
+				<defaultProjectile>SSR_Bullet_AdvancedElectromagnetic_AR</defaultProjectile>
 				<warmupTime>0.4</warmupTime>
 				<range>50</range>
 				<ticksBetweenBurstShots>7</ticksBetweenBurstShots>
@@ -66,7 +66,7 @@
 	</ThingDef>
 
 	<ThingDef ParentName="BaseBullet">
-		<defName>SSR_AdvancedElectromagnetic_AR_rt</defName>
+		<defName>SSR_Bullet_AdvancedElectromagnetic_AR</defName>
 		<label>高级电磁步枪子弹</label>
 		<graphicData>
 			<texPath>Things/Projectile/Electromagnetic_AR_rt</texPath>
@@ -129,7 +129,7 @@
 	<ThingDef ParentName="SSR_Weapons_Spacer">
 		<defName>SSR_Weapon_AdvancedElectromagnetic_SMG</defName>
 		<label>高级电磁冲锋枪</label>
-		<description>。</description>
+		<description>高级电磁冲锋枪</description>
 		<graphicData>
 			<texPath>Things/Weapons/AdvancedElectromagneticWeapon/AdvancedElectromagnetic_SMG</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -158,7 +158,7 @@
 			<li>
 				<verbClass>HJ_SSR.Weapons.Verb_ShootAllowAllCast</verbClass>
 				<hasStandardCommand>true</hasStandardCommand>
-				<defaultProjectile>SSR_AdvancedElectromagnetic_SMG_rt</defaultProjectile>
+				<defaultProjectile>SSR_Bullet_AdvancedElectromagnetic_SMG</defaultProjectile>
 				<warmupTime>0.35</warmupTime>
 				<range>30</range>
 				<ticksBetweenBurstShots>5</ticksBetweenBurstShots>
@@ -189,7 +189,7 @@
 		</tools>
 	</ThingDef>
 	<ThingDef ParentName="BaseBullet">
-		<defName>SSR_AdvancedElectromagnetic_SMG_rt</defName>
+		<defName>SSR_Bullet_AdvancedElectromagnetic_SMG</defName>
 		<label>高级电磁冲锋枪子弹</label>
 		<graphicData>
 			<texPath>Things/Projectile/Electromagnetic_SMG_rt</texPath>
@@ -252,7 +252,7 @@
 	<ThingDef ParentName="SSR_Weapons_Spacer">
 		<defName>SSR_Weapon_AdvancedElectromagnetic_HG</defName>
 		<label>高级电磁手枪</label>
-		<description>。</description>
+		<description>高级电磁手枪</description>
 		<graphicData>
 			<texPath>Things/Weapons/AdvancedElectromagneticWeapon/AdvancedElectromagnetic_HG</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -281,7 +281,7 @@
 			<li>
 				<verbClass>HJ_SSR.Weapons.Verb_ShootAllowAllCast</verbClass>
 				<hasStandardCommand>true</hasStandardCommand>
-				<defaultProjectile>SSR_AdvancedElectromagnetic_HG_rt</defaultProjectile>
+				<defaultProjectile>SSR_Bullet_AdvancedElectromagnetic_HG</defaultProjectile>
 				<warmupTime>0.35</warmupTime>
 				<range>25</range>
 				<ticksBetweenBurstShots>10</ticksBetweenBurstShots>
@@ -313,7 +313,7 @@
 	</ThingDef>
 
 	<ThingDef ParentName="BaseBullet">
-		<defName>SSR_AdvancedElectromagnetic_HG_rt</defName>
+		<defName>SSR_Bullet_AdvancedElectromagnetic_HG</defName>
 		<label>高级电磁手枪子弹</label>
 		<graphicData>
 			<texPath>Things/Projectile/Electromagnetic_HG_rt</texPath>
@@ -376,7 +376,7 @@
 	<ThingDef ParentName="SSR_Weapons_Spacer">
 		<defName>SSR_Weapon_AdvancedElectromagnetic_SG</defName>
 		<label>高级电磁霰弹枪</label>
-		<description>。</description>
+		<description>高级电磁霰弹枪</description>
 		<graphicData>
 			<texPath>Things/Weapons/AdvancedElectromagneticWeapon/AdvancedElectromagnetic_SG</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -391,6 +391,9 @@
 			<AccuracyLong>0.85</AccuracyLong>
 			<RangedWeapon_Cooldown>1.50</RangedWeapon_Cooldown>
 		</statBases>
+		<recipeMaker>
+			<researchPrerequisite>SSR_Research_AdvancedElectromagneticWeapon</researchPrerequisite>
+		</recipeMaker>
 		<costList>
 			<SSR_Item_NanoandMicroMechanicalComposite>450</SSR_Item_NanoandMicroMechanicalComposite>
 			<SSR_Item_StrongElectromagnet>5</SSR_Item_StrongElectromagnet>
@@ -402,7 +405,7 @@
 			<li>
 				<verbClass>HJ_SSR.Weapons.Verb_ShootCustom</verbClass>
 				<hasStandardCommand>true</hasStandardCommand>
-				<defaultProjectile>SSR_AdvancedElectromagnetic_SG_rt</defaultProjectile>
+				<defaultProjectile>SSR_Bullet_AdvancedElectromagnetic_SG</defaultProjectile>
 				<warmupTime>0.5</warmupTime>
 				<range>25</range>
 				<ticksBetweenBurstShots>10</ticksBetweenBurstShots>
@@ -446,7 +449,7 @@
 	</ThingDef>
 
 	<ThingDef ParentName="BaseBullet">
-		<defName>SSR_AdvancedElectromagnetic_SG_rt</defName>
+		<defName>SSR_Bullet_AdvancedElectromagnetic_SG</defName>
 		<label>高级电磁霰弹枪子弹</label>
 		<graphicData>
 			<texPath>Things/Projectile/Electromagnetic_SG_rt</texPath>
@@ -509,7 +512,7 @@
 	<ThingDef ParentName="SSR_Weapons_Spacer">
 		<defName>SSR_Weapon_AdvancedElectromagnetic_SR</defName>
 		<label>高级电磁狙击枪</label>
-		<description>。</description>
+		<description>高级电磁狙击枪</description>
 		<graphicData>
 			<texPath>Things/Weapons/AdvancedElectromagneticWeapon/AdvancedElectromagnetic_SR</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -539,7 +542,7 @@
 			<li>
 				<verbClass>HJ_SSR.Weapons.Verb_ShootAllowAllCast</verbClass>
 				<hasStandardCommand>true</hasStandardCommand>
-				<defaultProjectile>SSR_AdvancedElectromagnetic_SR_rt</defaultProjectile>
+				<defaultProjectile>SSR_Bullet_AdvancedElectromagnetic_SR</defaultProjectile>
 				<warmupTime>1.25</warmupTime>
 				<range>60</range>
 				<ticksBetweenBurstShots>10</ticksBetweenBurstShots>
@@ -571,7 +574,7 @@
 	</ThingDef>
 
 	<ThingDef ParentName="BaseBullet">
-		<defName>SSR_AdvancedElectromagnetic_SR_rt</defName>
+		<defName>SSR_Bullet_AdvancedElectromagnetic_SR</defName>
 		<label>高级电磁狙击枪子弹</label>
 		<graphicData>
 			<texPath>Things/Projectile/Electromagnetic_SR_rt</texPath>
@@ -635,7 +638,7 @@
 	<ThingDef ParentName="SSR_Weapons_Spacer">
 		<defName>SSR_Weapon_AdvancedElectromagnetic_MG</defName>
 		<label>高级电磁机枪</label>
-		<description>。</description>
+		<description>高级电磁机枪</description>
 		<graphicData>
 			<texPath>Things/Weapons/AdvancedElectromagneticWeapon/AdvancedElectromagnetic_MG</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -665,7 +668,7 @@
 			<li>
 				<verbClass>HJ_SSR.Weapons.Verb_ShootAllowAllCast</verbClass>
 				<hasStandardCommand>true</hasStandardCommand>
-				<defaultProjectile>SSR_AdvancedElectromagnetic_MG_rt</defaultProjectile>
+				<defaultProjectile>SSR_Bullet_AdvancedElectromagnetic_MG</defaultProjectile>
 				<warmupTime>1.75</warmupTime>
 				<range>50</range>
 				<ticksBetweenBurstShots>3</ticksBetweenBurstShots>
@@ -697,7 +700,7 @@
 	</ThingDef>
 
 	<ThingDef ParentName="BaseBullet">
-		<defName>SSR_AdvancedElectromagnetic_MG_rt</defName>
+		<defName>SSR_Bullet_AdvancedElectromagnetic_MG</defName>
 		<label>高级电磁机枪子弹</label>
 		<graphicData>
 			<texPath>Things/Projectile/Electromagnetic_MG_rt</texPath>
@@ -760,8 +763,8 @@
 
 	<ThingDef ParentName="SSR_Weapons_Spacer">
 		<defName>SSR_Weapon_AdvancedElectromagnetic_Cannon</defName>
-		<label>高级反载具电磁炮</label>
-		<description>。</description>
+		<label>高级电磁机炮</label>
+		<description>高级电磁机炮</description>
 		<graphicData>
 			<texPath>Things/Weapons/AdvancedElectromagneticWeapon/AdvancedElectromagnetic_Cannon</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -791,11 +794,11 @@
 			<li>
 				<verbClass>HJ_SSR.Weapons.Verb_ShootAllowAllCast</verbClass>
 				<hasStandardCommand>true</hasStandardCommand>
-				<defaultProjectile>SSR_AdvancedElectromagnetic_Cannon_rt</defaultProjectile>
+				<defaultProjectile>SSR_Bullet_AdvancedElectromagnetic_Cannon</defaultProjectile>
 				<warmupTime>2.0</warmupTime>
 				<range>70</range>
 				<ticksBetweenBurstShots>10</ticksBetweenBurstShots>
-				<burstShotCount>1</burstShotCount>
+				<burstShotCount>3</burstShotCount>
 				<soundCast>SSR_Sound_Electromagnetic_Cannon</soundCast>
 				<soundCastTail>GunTail_Medium</soundCastTail>
 				<muzzleFlashScale>9</muzzleFlashScale>
@@ -823,8 +826,8 @@
 	</ThingDef>
 
 	<ThingDef ParentName="BaseBullet">
-		<defName>SSR_AdvancedElectromagnetic_Cannon_rt</defName>
-		<label>高级反载具电磁炮炮弹</label>
+		<defName>SSR_Bullet_AdvancedElectromagnetic_Cannon</defName>
+		<label>高级电磁机炮炮弹</label>
 		<graphicData>
 			<texPath>Things/Projectile/Electromagnetic_Cannon_rt</texPath>
 			<graphicClass>Graphic_Single</graphicClass>

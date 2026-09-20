@@ -33,7 +33,7 @@
 			<li>
 				<verbClass>HJ_SSR.Weapons.Verb_ShootAllowAllCast</verbClass>
 				<hasStandardCommand>true</hasStandardCommand>
-				<defaultProjectile>SSR_Electromagnetic_AR_rt</defaultProjectile>
+				<defaultProjectile>SSR_Bullet_Electromagnetic_AR</defaultProjectile>
 				<warmupTime>0.4</warmupTime>
 				<range>45</range>
 				<ticksBetweenBurstShots>7</ticksBetweenBurstShots>
@@ -65,7 +65,7 @@
 	</ThingDef>
 
 	<ThingDef ParentName="BaseBullet">
-		<defName>SSR_Electromagnetic_AR_rt</defName>
+		<defName>SSR_Bullet_Electromagnetic_AR</defName>
 		<label>电磁步枪子弹</label>
 		<graphicData>
 			<texPath>Things/Projectile/Electromagnetic_AR_rt</texPath>
@@ -157,7 +157,7 @@
 			<li>
 				<verbClass>HJ_SSR.Weapons.Verb_ShootAllowAllCast</verbClass>
 				<hasStandardCommand>true</hasStandardCommand>
-				<defaultProjectile>SSR_Electromagnetic_SMG_rt</defaultProjectile>
+				<defaultProjectile>SSR_Bullet_Electromagnetic_SMG</defaultProjectile>
 				<warmupTime>0.35</warmupTime>
 				<range>25</range>
 				<ticksBetweenBurstShots>5</ticksBetweenBurstShots>
@@ -188,7 +188,7 @@
 		</tools>
 	</ThingDef>
 	<ThingDef ParentName="BaseBullet">
-		<defName>SSR_Electromagnetic_SMG_rt</defName>
+		<defName>SSR_Bullet_Electromagnetic_SMG</defName>
 		<label>电磁冲锋枪子弹</label>
 		<graphicData>
 			<texPath>Things/Projectile/Electromagnetic_SMG_rt</texPath>
@@ -280,7 +280,7 @@
 			<li>
 				<verbClass>HJ_SSR.Weapons.Verb_ShootAllowAllCast</verbClass>
 				<hasStandardCommand>true</hasStandardCommand>
-				<defaultProjectile>SSR_Electromagnetic_HG_rt</defaultProjectile>
+				<defaultProjectile>SSR_Bullet_Electromagnetic_HG</defaultProjectile>
 				<warmupTime>0.35</warmupTime>
 				<range>20</range>
 				<ticksBetweenBurstShots>10</ticksBetweenBurstShots>
@@ -312,7 +312,7 @@
 	</ThingDef>
 
 	<ThingDef ParentName="BaseBullet">
-		<defName>SSR_Electromagnetic_HG_rt</defName>
+		<defName>SSR_Bullet_Electromagnetic_HG</defName>
 		<label>电磁手枪子弹</label>
 		<graphicData>
 			<texPath>Things/Projectile/Electromagnetic_HG_rt</texPath>
@@ -404,7 +404,7 @@
 			<li>
 				<verbClass>HJ_SSR.Weapons.Verb_ShootCustom</verbClass>
 				<hasStandardCommand>true</hasStandardCommand>
-				<defaultProjectile>SSR_Electromagnetic_SG_rt</defaultProjectile>
+				<defaultProjectile>SSR_Bullet_Electromagnetic_SG</defaultProjectile>
 				<warmupTime>0.5</warmupTime>
 				<range>20</range>
 				<ticksBetweenBurstShots>10</ticksBetweenBurstShots>
@@ -448,7 +448,7 @@
 	</ThingDef>
 
 	<ThingDef ParentName="BaseBullet">
-		<defName>SSR_Electromagnetic_SG_rt</defName>
+		<defName>SSR_Bullet_Electromagnetic_SG</defName>
 		<label>电磁霰弹枪子弹</label>
 		<graphicData>
 			<texPath>Things/Projectile/Electromagnetic_SG_rt</texPath>
@@ -541,7 +541,7 @@
 			<li>
 				<verbClass>HJ_SSR.Weapons.Verb_ShootAllowAllCast</verbClass>
 				<hasStandardCommand>true</hasStandardCommand>
-				<defaultProjectile>SSR_Electromagnetic_SR_rt</defaultProjectile>
+				<defaultProjectile>SSR_Bullet_Electromagnetic_SR</defaultProjectile>
 				<warmupTime>1.25</warmupTime>
 				<range>55</range>
 				<ticksBetweenBurstShots>10</ticksBetweenBurstShots>
@@ -573,7 +573,7 @@
 	</ThingDef>
 
 	<ThingDef ParentName="BaseBullet">
-		<defName>SSR_Electromagnetic_SR_rt</defName>
+		<defName>SSR_Bullet_Electromagnetic_SR</defName>
 		<label>电磁狙击枪子弹</label>
 		<graphicData>
 			<texPath>Things/Projectile/Electromagnetic_SR_rt</texPath>
@@ -667,7 +667,7 @@
 			<li>
 				<verbClass>HJ_SSR.Weapons.Verb_ShootAllowAllCast</verbClass>
 				<hasStandardCommand>true</hasStandardCommand>
-				<defaultProjectile>SSR_Electromagnetic_MG_rt</defaultProjectile>
+				<defaultProjectile>SSR_Bullet_Electromagnetic_MG</defaultProjectile>
 				<warmupTime>1.75</warmupTime>
 				<range>45</range>
 				<ticksBetweenBurstShots>3</ticksBetweenBurstShots>
@@ -699,7 +699,7 @@
 	</ThingDef>
 
 	<ThingDef ParentName="BaseBullet">
-		<defName>SSR_Electromagnetic_MG_rt</defName>
+		<defName>SSR_Bullet_Electromagnetic_MG</defName>
 		<label>电磁机枪子弹</label>
 		<graphicData>
 			<texPath>Things/Projectile/Electromagnetic_MG_rt</texPath>
@@ -793,11 +793,11 @@
 			<li>
 				<verbClass>HJ_SSR.Weapons.Verb_ShootAllowAllCast</verbClass>
 				<hasStandardCommand>true</hasStandardCommand>
-				<defaultProjectile>SSR_Electromagnetic_Cannon_rt</defaultProjectile>
+				<defaultProjectile>SSR_Bullet_Electromagnetic_Cannon</defaultProjectile>
 				<warmupTime>2.0</warmupTime>
 				<range>65</range>
 				<ticksBetweenBurstShots>10</ticksBetweenBurstShots>
-				<burstShotCount>1</burstShotCount>
+				<burstShotCount>3</burstShotCount>
 				<soundCast>SSR_Sound_Electromagnetic_Cannon</soundCast>
 				<soundCastTail>GunTail_Medium</soundCastTail>
 				<muzzleFlashScale>9</muzzleFlashScale>
@@ -825,7 +825,7 @@
 	</ThingDef>
 
 	<ThingDef ParentName="BaseBullet">
-		<defName>SSR_Electromagnetic_Cannon_rt</defName>
+		<defName>SSR_Bullet_Electromagnetic_Cannon</defName>
 		<label>电磁机炮炮弹</label>
 		<graphicData>
 			<texPath>Things/Projectile/Electromagnetic_Cannon_rt</texPath>

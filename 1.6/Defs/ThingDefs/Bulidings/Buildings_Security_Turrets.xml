@@ -22,8 +22,7 @@
 		<assetBundle>Windows/ssr_combat_windows</assetBundle>
 	</AK_DLL.AssetDef>
 
-	<!--===============
-	哨戒机枪 ===============-->
+	<!--=============== 哨戒机枪 ===============-->
 
 	<ThingDef ParentName="SSR_BuildingBase_Security">
 		<defName>SSR_Turret_SentryGun</defName>
@@ -137,7 +136,7 @@
 		<building>
 			<combatPower>45</combatPower><!-- same as a scavenger -->
 			<ai_combatDangerous>true</ai_combatDangerous>
-			<turretGunDef>SSR_Gun_SentryGun</turretGunDef>
+			<turretGunDef>SSR_TurretGun_SentryGun</turretGunDef>
 			<turretBurstWarmupTime>0.01</turretBurstWarmupTime>
 			<turretBurstCooldownTime>0</turretBurstCooldownTime>
 		</building>
@@ -267,7 +266,7 @@
 		<building>
 			<combatPower>45</combatPower><!-- same as a scavenger -->
 			<ai_combatDangerous>true</ai_combatDangerous>
-			<turretGunDef>SSR_Gun_SentryGun</turretGunDef>
+			<turretGunDef>SSR_TurretGun_SentryGun</turretGunDef>
 			<turretBurstWarmupTime>0.01</turretBurstWarmupTime>
 			<turretBurstCooldownTime>0</turretBurstCooldownTime>
 		</building>
@@ -282,7 +281,7 @@
 	</ThingDef>
 
 	<ThingDef ParentName="BaseWeaponTurret">
-		<defName>SSR_Gun_SentryGun</defName>
+		<defName>SSR_TurretGun_SentryGun</defName>
 		<label>哨戒机枪</label>
 		<description>哨戒机枪。</description>
 		<graphicData>
@@ -334,7 +333,7 @@
 	<!--=============== 电磁近防炮 ===============-->
 
 	<ThingDef ParentName="SSR_BuildingBase_Security">
-		<defName>SSR_Turret_RailCIWS</defName>
+		<defName>SSR_Turret_Electromagnetic_CIWS</defName>
 		<label>电磁近防炮</label>
 		<description>电磁近防炮是一款地球联邦时代早期近防炮系统，曾被广泛用在海军和太空军舰艇以及地面军事设施上。</description>
 		<thingClass>FS_SSR.Defense.ThingClass_CIWSTurret</thingClass>
@@ -352,7 +351,7 @@
 				<offset>(0,0,0)</offset>
 			</shadowData>
 		</graphicData>
-		<uiIconPath>Things/Building/Security/RailCIWS_MenuIcon</uiIconPath>
+		<uiIconPath>Things/Building/Security/Electromagnetic_CIWS_MenuIcon</uiIconPath>
 		<uiIconScale>2.5</uiIconScale>
 		<stealable>false</stealable>
 		<rotatable>false</rotatable>
@@ -444,7 +443,7 @@
 		<building>
 			<combatPower>45</combatPower><!-- same as a scavenger -->
 			<ai_combatDangerous>true</ai_combatDangerous>
-			<turretGunDef>SSR_Gun_RailCIWS</turretGunDef>
+			<turretGunDef>SSR_TurretGun_Electromagnetic_CIWS</turretGunDef>
 			<turretBurstWarmupTime>0.01</turretBurstWarmupTime>
 			<turretBurstCooldownTime>0</turretBurstCooldownTime>
 			<turretTopDrawSize>3.7</turretTopDrawSize>
@@ -460,7 +459,7 @@
 	</ThingDef>
 
 	<ThingDef ParentName="BaseWeaponTurret">
-		<defName>SSR_Gun_RailCIWS</defName>
+		<defName>SSR_TurretGun_Electromagnetic_CIWS</defName>
 		<label>电磁近防炮</label>
 		<description>电磁近防炮。</description>
 		<graphicData>
@@ -481,7 +480,7 @@
 			<li>
 				<verbClass>Verb_Shoot</verbClass>
                 <hasStandardCommand>true</hasStandardCommand>
-				<defaultProjectile>SSR_Bullet_RailCIWS</defaultProjectile>
+				<defaultProjectile>SSR_Bullet_Electromagnetic_CIWS</defaultProjectile>
 				<warmupTime>0</warmupTime>
 				<range>50</range>
 				<ticksBetweenBurstShots>1</ticksBetweenBurstShots>
@@ -495,7 +494,7 @@
 	</ThingDef>
 
 	<ThingDef ParentName="BaseBullet">
-		<defName>SSR_Bullet_RailCIWS</defName>
+		<defName>SSR_Bullet_Electromagnetic_CIWS</defName>
 		<label>电磁近防炮子弹</label>
 		<graphicData>
 			<texPath>Things/Projectile/Electromagnetic_AR_rt</texPath>
@@ -558,7 +557,7 @@
 	<!--=============== 3X3 ===============-->
 
 	<ThingDef ParentName="SSR_BuildingBase_Security">
-		<defName>SSR_TurretT1_3X</defName>
+		<defName>SSR_Turret_3X</defName>
 		<label>turret T1 3x3</label>
 		<description>Object for test 3D turret</description>
 		<thingClass>FS_SSR.Defense.Turret_SSR</thingClass>
