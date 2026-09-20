@@ -4,7 +4,7 @@
 	<ThingDef ParentName="SSR_Weapons_Spacer">
 		<defName>SSR_Weapon_AdvancedElectromagnetic_AR</defName>
 		<label>高级电磁步枪</label>
-		<description>高级电磁步枪</description>
+		<description>高级电磁步枪。</description>
 		<graphicData>
 			<texPath>Things/Weapons/AdvancedElectromagneticWeapon/AdvancedElectromagnetic_AR</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -129,7 +129,7 @@
 	<ThingDef ParentName="SSR_Weapons_Spacer">
 		<defName>SSR_Weapon_AdvancedElectromagnetic_SMG</defName>
 		<label>高级电磁冲锋枪</label>
-		<description>高级电磁冲锋枪</description>
+		<description>高级电磁冲锋枪。</description>
 		<graphicData>
 			<texPath>Things/Weapons/AdvancedElectromagneticWeapon/AdvancedElectromagnetic_SMG</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -252,7 +252,7 @@
 	<ThingDef ParentName="SSR_Weapons_Spacer">
 		<defName>SSR_Weapon_AdvancedElectromagnetic_HG</defName>
 		<label>高级电磁手枪</label>
-		<description>高级电磁手枪</description>
+		<description>高级电磁手枪。</description>
 		<graphicData>
 			<texPath>Things/Weapons/AdvancedElectromagneticWeapon/AdvancedElectromagnetic_HG</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -376,7 +376,7 @@
 	<ThingDef ParentName="SSR_Weapons_Spacer">
 		<defName>SSR_Weapon_AdvancedElectromagnetic_SG</defName>
 		<label>高级电磁霰弹枪</label>
-		<description>高级电磁霰弹枪</description>
+		<description>高级电磁霰弹枪。</description>
 		<graphicData>
 			<texPath>Things/Weapons/AdvancedElectromagneticWeapon/AdvancedElectromagnetic_SG</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -512,7 +512,7 @@
 	<ThingDef ParentName="SSR_Weapons_Spacer">
 		<defName>SSR_Weapon_AdvancedElectromagnetic_SR</defName>
 		<label>高级电磁狙击枪</label>
-		<description>高级电磁狙击枪</description>
+		<description>高级电磁狙击枪。</description>
 		<graphicData>
 			<texPath>Things/Weapons/AdvancedElectromagneticWeapon/AdvancedElectromagnetic_SR</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -638,7 +638,7 @@
 	<ThingDef ParentName="SSR_Weapons_Spacer">
 		<defName>SSR_Weapon_AdvancedElectromagnetic_MG</defName>
 		<label>高级电磁机枪</label>
-		<description>高级电磁机枪</description>
+		<description>高级电磁机枪。</description>
 		<graphicData>
 			<texPath>Things/Weapons/AdvancedElectromagneticWeapon/AdvancedElectromagnetic_MG</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -764,7 +764,7 @@
 	<ThingDef ParentName="SSR_Weapons_Spacer">
 		<defName>SSR_Weapon_AdvancedElectromagnetic_Cannon</defName>
 		<label>高级电磁机炮</label>
-		<description>高级电磁机炮</description>
+		<description>高级电磁机炮。</description>
 		<graphicData>
 			<texPath>Things/Weapons/AdvancedElectromagneticWeapon/AdvancedElectromagnetic_Cannon</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
