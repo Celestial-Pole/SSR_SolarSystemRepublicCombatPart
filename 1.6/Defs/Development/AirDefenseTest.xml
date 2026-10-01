@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!--开发工具生成的靶标不进入建造菜单，真实高度由目标接口提供。-->
+  <ThingDef>
+    <defName>SSR_AirDefenseTestTarget</defName>
+    <label>防空俯仰测试靶标</label>
+    <description>选择靶标切换高度和航迹，检查近防炮的目标准入、机械范围与实际俯仰。靶标吸收伤害，供连续观察。</description>
+    <thingClass>SSR.Combat.Offscreen.AirDefenseTestTarget</thingClass>
+    <category>Building</category>
+    <tickerType>Normal</tickerType>
+    <drawerType>RealtimeOnly</drawerType>
+    <altitudeLayer>Skyfaller</altitudeLayer>
+    <selectable>true</selectable>
+    <uiIconPath>Things/Building/Security/ElectromagneticCIWS/ElectromagneticCIWS_MenuIcon</uiIconPath>
+    <useHitPoints>true</useHitPoints>
+    <passability>Standable</passability>
+    <building><isEdifice>false</isEdifice><deconstructible>false</deconstructible></building>
+    <statBases><MaxHitPoints>100000</MaxHitPoints><Flammability>0</Flammability></statBases>
+  </ThingDef>
+  <!--独立测试供电通过普通电网连接，发电设备不进入建造菜单。-->
+  <ThingDef>
+    <defName>SSR_AirDefenseTestPower</defName>
+    <label>防空测试电源</label>
+    <description>为开发者创建的炮塔场地持续提供电力。</description>
+    <thingClass>Building</thingClass>
+    <category>Building</category>
+    <tickerType>Normal</tickerType>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>Standable</passability>
+    <selectable>true</selectable>
+    <useHitPoints>true</useHitPoints>
+    <graphicData>
+      <texPath>Things/Item/Resource/ComponentIndustrial</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+      <shaderType>Cutout</shaderType>
+      <drawSize>(1,1)</drawSize>
+    </graphicData>
+    <statBases><MaxHitPoints>100000</MaxHitPoints><Flammability>0</Flammability></statBases>
+    <building />
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerPlant</compClass>
+        <basePowerConsumption>-20000</basePowerConsumption>
+        <transmitsPower>true</transmitsPower>
+      </li>
+    </comps>
+  </ThingDef>
+</Defs>

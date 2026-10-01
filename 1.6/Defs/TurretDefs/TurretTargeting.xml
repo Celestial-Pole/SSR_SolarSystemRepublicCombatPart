@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!--目标位置单位为格，高度使用真实离地高度，时间按游戏秒计算。-->
+  <SSR.Combat.Offscreen.TurretTargetingDef Name="SSR_TurretTargeting_Base" Abstract="True">
+    <targetGround>true</targetGround>
+    <targetOverheadProjectiles>false</targetOverheadProjectiles>
+    <targetSkyfallers>false</targetSkyfallers>
+    <targetSpatialTargets>false</targetSpatialTargets>
+    <targetNeutralAir>false</targetNeutralAir>
+    <targetFriendlyAir>false</targetFriendlyAir>
+    <requireGroundLineOfSight>true</requireGroundLineOfSight>
+    <requireAirLineOfSight>false</requireAirLineOfSight>
+    <useThreeDimensionalRange>false</useThreeDimensionalRange>
+    <minTargetHeight>0</minTargetHeight>
+    <maxTargetHeight>120</maxTargetHeight>
+    <groundAimHeight>0</groundAimHeight>
+    <!--提前量只调整炮口指向；默认零，弹丸仍由现有武器逻辑结算。-->
+    <leadTimeSeconds>0</leadTimeSeconds>
+    <groundPriority>0</groundPriority>
+    <projectilePriority>200</projectilePriority>
+    <skyfallerPriority>100</skyfallerPriority>
+    <spatialPriority>200</spatialPriority>
+    <airScanIntervalTicks>15</airScanIntervalTicks>
+  </SSR.Combat.Offscreen.TurretTargetingDef>
+  <SSR.Combat.Offscreen.TurretTargetingDef ParentName="SSR_TurretTargeting_Base">
+    <defName>SSR_TurretTargeting_Ground</defName>
+    <label>对地炮塔目标策略</label>
+  </SSR.Combat.Offscreen.TurretTargetingDef>
+  <SSR.Combat.Offscreen.TurretTargetingDef ParentName="SSR_TurretTargeting_Base">
+    <defName>SSR_TurretTargeting_PointDefense</defName>
+    <label>近程防空目标策略</label>
+    <!--近防炮可索敌的真实离地高度上限，单位为格。-->
+    <maxTargetHeight>240</maxTargetHeight>
+    <targetOverheadProjectiles>true</targetOverheadProjectiles>
+    <targetSkyfallers>true</targetSkyfallers>
+    <targetSpatialTargets>true</targetSpatialTargets>
+  </SSR.Combat.Offscreen.TurretTargetingDef>
+</Defs>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!--专用生成器只铺设统一平地，不继承自然地形、植被、动物和废墟步骤。-->
+  <MapGeneratorDef>
+    <defName>SSR_AirDefenseTestMap</defName>
+    <genSteps><li>SSR_AirDefenseTestTerrain</li></genSteps>
+  </MapGeneratorDef>
+  <!--普通地图绑定有效世界地块，为温度、地理和地图初始化组件提供一致坐标。-->
+  <WorldObjectDef>
+    <defName>SSR_AirDefenseTestWorldObject</defName>
+    <label>防空测试地图</label>
+    <worldObjectClass>MapParent</worldObjectClass>
+    <texture>World/WorldObjects/Ambush</texture>
+    <mapGenerator>SSR_AirDefenseTestMap</mapGenerator>
+  </WorldObjectDef>
+  <GenStepDef>
+    <defName>SSR_AirDefenseTestTerrain</defName>
+    <order>210</order>
+    <genStep Class="SSR.Combat.Offscreen.GenStep_AirDefenseTestTerrain" />
+  </GenStepDef>
+</Defs>

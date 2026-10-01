@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net48</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <OutputPath>../../Assemblies</OutputPath>
+    <GameManaged>E:\steam\steamapps\common\RimWorld\RimWorldWin64_Data\Managed</GameManaged>
+    <CoreRoot>E:\ModdevMics\References\SSR\SSR_SolarSystemRepublicCore</CoreRoot>
+    <HarmonyPath>E:\steam\steamapps\workshop\content\294100\2009463077\Current\Assemblies\0Harmony.dll</HarmonyPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Assembly-CSharp"><HintPath>$(GameManaged)\Assembly-CSharp.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine"><HintPath>$(GameManaged)\UnityEngine.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.CoreModule"><HintPath>$(GameManaged)\UnityEngine.CoreModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.AssetBundleModule"><HintPath>$(GameManaged)\UnityEngine.AssetBundleModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.AnimationModule"><HintPath>$(GameManaged)\UnityEngine.AnimationModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="FS_SSR"><HintPath>$(CoreRoot)\1.6\Assemblies\FS_SSR.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="1AK_TypeDef"><HintPath>$(CoreRoot)\SoftRely\1.6\AKFrameNotActive\Assemblies\1AK_TypeDef.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="FS_SSR_Combat"><HintPath>../../Assemblies/FS_SSR_Combat.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="0Harmony"><HintPath>$(HarmonyPath)</HintPath><Private>false</Private></Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="../../../src/SSR.Combat.UnityAsset/Assets/SSR/Missiles/Runtime/*.cs" Link="Missiles/Configuration/%(Filename)%(Extension)" />
+    <Compile Include="../../../src/SSR.Combat.UnityAsset/Assets/SSR/Outline/Runtime/OutlineBuffers.cs" Link="Rendering/OutlineBuffers.cs" />
+    <Compile Include="../../../src/SSR.Combat.UnityAsset/Assets/SSR/Outline/Runtime/OutlineColorBlit.cs" Link="Rendering/OutlineColorBlit.cs" />
+    <Compile Include="../../../src/SSR.Combat.UnityAsset/Assets/SSR/Outline/Runtime/TurretSurfaceLighting.cs" Link="Rendering/TurretSurfaceLighting.cs" />
+  </ItemGroup>
+</Project>

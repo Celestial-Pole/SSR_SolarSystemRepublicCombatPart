@@ -1,0 +1,4 @@
+{
+    "name": "SSR.CombinedDefense.Editor",
+    "includePlatforms": ["Editor"]
+}

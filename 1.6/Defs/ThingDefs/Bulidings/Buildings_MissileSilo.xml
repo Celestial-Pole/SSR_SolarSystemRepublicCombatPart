@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="SSR_BuildingBase_Security">
+    <defName>SSR_Turret_MissileSilo</defName>
+    <label>九联装导弹井</label>
+    <description>九舱冷发射系统。逐舱开盖，每扇盖子打开后立即弹出对应导弹。每轮九枚导弹攻击开盖前锁定的同一个点：冷弹射后在空中点火，竖直抬升，再一次转向并俯冲命中。目标移动不改变本轮落点。闭盖冷却后自动补弹。停火会取消剩余发射，已升空的导弹继续飞行。</description>
+    <thingClass>SSR.Combat.Offscreen.Building_MissileSilo</thingClass>
+    <drawerType>RealtimeOnly</drawerType>
+    <tickerType>Normal</tickerType>
+    <size>(3,3)</size>
+    <rotatable>true</rotatable>
+    <defaultPlacingRot>North</defaultPlacingRot>
+    <graphicData>
+      <texPath>Things/Building/Security/MissileSilo/MissileSilo_MenuIcon</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(3,3)</drawSize>
+    </graphicData>
+    <useBlueprintGraphicAsGhost>true</useBlueprintGraphicAsGhost>
+    <uiIconPath>Things/Building/Security/MissileSilo/MissileSilo_MenuIcon</uiIconPath>
+    <uiOrder>2300</uiOrder>
+    <statBases>
+      <MaxHitPoints>800</MaxHitPoints>
+      <Flammability>0</Flammability>
+      <WorkToBuild>1800</WorkToBuild>
+      <Mass>8</Mass>
+      <Beauty>0</Beauty>
+      <ShootingAccuracyTurret>1</ShootingAccuracyTurret>
+    </statBases>
+    <costList>
+      <Steel>30</Steel>
+      <SSR_Item_SpecialSteel>120</SSR_Item_SpecialSteel>
+      <SSR_Item_StrongElectromagnet>10</SSR_Item_StrongElectromagnet>
+      <SSR_Item_SuperconductingMaterial>5</SSR_Item_SuperconductingMaterial>
+      <ComponentIndustrial>25</ComponentIndustrial>
+    </costList>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <constructionSkillPrerequisite>5</constructionSkillPrerequisite>
+    <researchPrerequisites><li>SSR_Research_BasicTurret</li></researchPrerequisites>
+    <building>
+      <blueprintGraphicData>
+        <texPath>Things/Building/Security/MissileSilo/MissileSilo_MenuIcon</texPath>
+        <graphicClass>Graphic_Single</graphicClass>
+        <shaderType>EdgeDetect</shaderType>
+        <drawSize>(3,3)</drawSize>
+      </blueprintGraphicData>
+      <combatPower>100</combatPower>
+      <ai_combatDangerous>true</ai_combatDangerous>
+      <turretGunDef>SSR_TurretGun_MissileSilo</turretGunDef>
+      <turretBurstWarmupTime>0</turretBurstWarmupTime>
+      <turretBurstCooldownTime>0</turretBurstCooldownTime>
+      <turretTopDrawSize>0</turretTopDrawSize>
+    </building>
+    <placeWorkers><li>SSR.Combat.Offscreen.PlaceWorker_OffscreenTurretRadius</li></placeWorkers>
+    <comps><li Class="CompProperties_Flickable" /></comps>
+    <modExtensions Inherit="False">
+      <li Class="FS_SSR.UI.Ext_DesignationCategoryInner">
+        <innerCategory>SSR_DesignationInnerCategory_Security</innerCategory>
+        <designatorClass>SSR.Combat.Offscreen.Designator_BuildMissileSilo</designatorClass>
+      </li>
+      <li Class="SSR.Combat.Offscreen.SiloSettings">
+        <prefabPath>Assets/SSR/Missiles/Game/MissileSiloGame.prefab</prefabPath>
+        <missilePath>Assets/SSR/Turrets/T1/Prefabs/T1Missile.prefab</missilePath>
+        <layoutPath>Assets/SSR/Missiles/Game/SiloLayout.json</layoutPath>
+        <flamePath>Assets/SSR/Missiles/Game/MissileFlame.prefab</flamePath>
+        <smokePath>Assets/SSR/Missiles/Game/MissileSmoke.prefab</smokePath>
+        <!--按舱盖编号的文字方向校正模型正面，建筑仍使用原版四向旋转。-->
+        <modelYawOffset>90</modelYawOffset>
+        <launchInterval>0.5</launchInterval>
+        <cooldownSeconds>6</cooldownSeconds>
+        <!--导向行程内加速至弹射速度，弹尾完全离井后按重力滑行；点火前不喷尾焰。-->
+        <ejectionSpeed>14</ejectionSpeed>
+        <ejectionClearance>0.12</ejectionClearance>
+        <ejectionGravity>26</ejectionGravity>
+        <ignitionDelay>0.93</ignitionDelay>
+        <!--离井气流产生短时侧向及旋转冲量，速度范围使用原版 FloatRange 格式。-->
+        <ejectionDisturbanceSeconds>0.08</ejectionDisturbanceSeconds>
+        <coldLateralSpeedRange>0.12~0.35</coldLateralSpeedRange>
+        <!--推力在 0.06 秒内建立至指定净加速度，抬升耗时由运动公式求得。-->
+        <ignitionAcceleration>72</ignitionAcceleration>
+        <ignitionRampSeconds>0.06</ignitionRampSeconds>
+        <ascentHeight>20</ascentHeight>
+        <flameWidth>1</flameWidth>
+        <flameLength>1.1</flameLength>
+        <flameBrightness>1.35</flameBrightness>
+        <ignitionFlareMultiplier>2</ignitionFlareMultiplier>
+        <ignitionFlareSeconds>0.22</ignitionFlareSeconds>
+        <!--短喷焰连接历史喷口形成的热尾流，长度和扰动使用格，寿命使用秒。-->
+        <flameTrailSeconds>0.18</flameTrailSeconds>
+        <flameTrailLength>4.6</flameTrailLength>
+        <flameGasSpeed>5</flameGasSpeed>
+        <flameTurbulence>0.13</flameTurbulence>
+        <!--烟团按飞行距离补点，速度增加时仍保持连续，逐渐扩散消散。-->
+        <smokeSpacing>0.4</smokeSpacing>
+        <smokeLifetime>1.5</smokeLifetime>
+        <smokeStartSize>0.65</smokeStartSize>
+        <smokeEndSize>1.8</smokeEndSize>
+        <smokeOpacity>0.2</smokeOpacity>
+        <!--全程继承上升出口速度，沿转向及俯冲路径持续加速，不使用转弯限速。-->
+        <flightAcceleration>7</flightAcceleration>
+        <turnRadiusFraction>0.46</turnRadiusFraction>
+        <!--近距离时半径限制在水平航程的 48% 内，保持朝锁定点单向转弯。-->
+        <minimumTurnRadius>18</minimumTurnRadius>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseWeaponTurret">
+    <defName>SSR_TurretGun_MissileSilo</defName>
+    <label>九联装垂发控制器</label>
+    <description>导弹井的目标指定和发射接口。</description>
+    <graphicData><texPath>Things/Projectile/Missile</texPath><graphicClass>Graphic_Single</graphicClass></graphicData>
+    <statBases><RangedWeapon_Cooldown>0</RangedWeapon_Cooldown></statBases>
+    <verbs>
+      <li>
+        <verbClass>SSR.Combat.Offscreen.Verb_MissileSilo</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>SSR_Projectile_VerticalMissile</defaultProjectile>
+        <warmupTime>0</warmupTime>
+        <minRange>8</minRange>
+        <range>60</range>
+        <burstShotCount>1</burstShotCount>
+        <!--原版爆炸动词要求此值为正；专用发射控制器不使用该散布值，只攻击本轮锁定点。-->
+        <forcedMissRadius>0.01</forcedMissRadius>
+        <requireLineOfSight>false</requireLineOfSight>
+        <stopBurstWithoutLos>false</stopBurstWithoutLos>
+        <muzzleFlashScale>0</muzzleFlashScale>
+        <targetParams>
+          <canTargetPawns>true</canTargetPawns>
+          <canTargetBuildings>true</canTargetBuildings>
+          <canTargetLocations>true</canTargetLocations>
+        </targetParams>
+      </li>
+    </verbs>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseBullet">
+    <defName>SSR_Projectile_VerticalMissile</defName>
+    <label>垂发导弹</label>
+    <thingClass>SSR.Combat.Offscreen.Projectile_VerticalMissile</thingClass>
+    <graphicData><texPath>Things/Projectile/Missile</texPath><graphicClass>Graphic_Single</graphicClass></graphicData>
+    <projectile>
+      <damageDef>Bomb</damageDef>
+      <damageAmountBase>60</damageAmountBase>
+      <explosionRadius>2.5</explosionRadius>
+      <explosionDelay>0</explosionDelay>
+      <speed>18</speed>
+      <flyOverhead>true</flyOverhead>
+      <soundExplode>Explosion_Rocket</soundExplode>
+    </projectile>
+  </ThingDef>
+</Defs>

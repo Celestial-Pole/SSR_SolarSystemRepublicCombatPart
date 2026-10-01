@@ -1,0 +1,13 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Railgun300Recoil
+  m_Controller: {fileID: 9100000, guid: dd36f17a29187f04999ddf79826a9b75, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 59be30db8f8981f4983e70dd9be25320, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 4be8b3a88e6d95541b69eed572d9c7e7, type: 2}

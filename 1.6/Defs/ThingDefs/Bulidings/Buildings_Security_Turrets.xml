@@ -28,13 +28,13 @@
 		<defName>SSR_Turret_SentryGun</defName>
 		<label>哨戒机枪</label>
 		<description>哨戒机枪是一种高效的防御设施，固定的底座使其更加坚固的同时拥有了更多的备弹量。</description>
-		<thingClass>FS_SSR.Defense.Turret_SSR</thingClass>
+		<thingClass>SSR.Combat.Offscreen.Building_ConfigurableTurret</thingClass>
 		<drawerType>MapMeshAndRealTime</drawerType>
 		<graphicData>
-			<texPath>Things/Building/Security/SentryGun/SentryGun_Base</texPath>
+			<texPath>Things/Building/Security/SentryGun/SentryGun_MenuIcon</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 			<drawSize>(1,1)</drawSize>
-			<shaderType>CutoutComplex</shaderType>
+			<shaderType>Cutout</shaderType>
 			<damageData>
 				<rect>(0.2,0.2,0.6,0.6)</rect>
 			</damageData>
@@ -43,8 +43,9 @@
 				<offset>(0,0,0)</offset>
 			</shadowData>
 		</graphicData>
+		<useBlueprintGraphicAsGhost>true</useBlueprintGraphicAsGhost>
 		<uiIconPath>Things/Building/Security/SentryGun/SentryGun_MenuIcon</uiIconPath>
-		<uiIconScale>0.90</uiIconScale>
+		<uiIconScale>1</uiIconScale>
 		<stealable>false</stealable>
 		<rotatable>false</rotatable>
 		<statBases>
@@ -58,11 +59,8 @@
 		<tickerType>Normal</tickerType>
 		
 		<hasTooltip>true</hasTooltip>
-		<stuffCategories>
-			<li>Metallic</li>
-		</stuffCategories>
-		<costStuffCount>30</costStuffCount>
 		<costList>
+			<Steel>30</Steel>
 			<SSR_Item_SpecialSteel>120</SSR_Item_SpecialSteel>
 			<SSR_Item_StrongElectromagnet>10</SSR_Item_StrongElectromagnet>
 			<SSR_Item_SuperconductingMaterial>5</SSR_Item_SuperconductingMaterial>
@@ -71,15 +69,20 @@
 		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
 		<constructionSkillPrerequisite>5</constructionSkillPrerequisite>
 		<building>
-			<combatPower>45</combatPower><!-- same as a scavenger -->
+			<blueprintGraphicData>
+				<texPath>Things/Building/Security/SentryGun/SentryGun_MenuIcon</texPath>
+				<graphicClass>Graphic_Single</graphicClass>
+				<shaderType>EdgeDetect</shaderType>
+				<drawSize>(1,1)</drawSize>
+			</blueprintGraphicData>
+			<combatPower>45</combatPower><!-- 战斗力与拾荒者相同 -->
 			<ai_combatDangerous>true</ai_combatDangerous>
 			<turretGunDef>SSR_TurretGun_SentryGun</turretGunDef>
 			<turretBurstWarmupTime>0.01</turretBurstWarmupTime>
 			<turretBurstCooldownTime>0</turretBurstCooldownTime>
 		</building>
 		<placeWorkers>
-			<li>PlaceWorker_TurretTop</li>
-			<li>PlaceWorker_ShowTurretRadius</li>
+			<li>SSR.Combat.Offscreen.PlaceWorker_OffscreenTurretRadius</li>
 		</placeWorkers>
 		<designationHotKey>Misc2</designationHotKey>
 		<researchPrerequisites>
@@ -99,9 +102,9 @@
 					</thingDefs>
 				</fuelFilter>
 				<fuelCapacity>720</fuelCapacity>
-				<!-- 30 bursts -->
+				<!-- 可进行三十次连发 -->
 				<fuelMultiplier>4</fuelMultiplier>
-				<!-- 1.333 steel per burst, 80 per full rearm -->
+				<!-- 每次连发消耗 1.333 钢铁，完整补充消耗 80 钢铁 -->
 				<initialFuelPercent>1</initialFuelPercent>
 				<autoRefuelPercent>1</autoRefuelPercent>
 				<showFuelGizmo>true</showFuelGizmo>
@@ -110,27 +113,40 @@
 				<consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
 				<fuelIconPath>UI/Overlays/Barrel</fuelIconPath>
 			</li>
-			<li Class="FS_SSR.TCP_SinglePrefabDrawer">
+			<li Class="SSR.Combat.Offscreen.OffscreenPrefabProperties">
 				<shaderForTestAssetBundle>Assets/SSR/Add.shader</shaderForTestAssetBundle>
 				<assetDefs>
-					<li>SSR_Animate_Prefab_Linux_Combat</li>
-					<li>SSR_Animate_Prefab_MacOS_Combat</li>
 					<li>SSR_Animate_Prefab_Windows_Combat</li>
 				</assetDefs>
 				<!-- 炮塔预制体位置 -->
 				<leveledPrefabPaths>
 					<li>Assets/SSR/Prefab/TurretT1_STG_1X.prefab</li>
 				</leveledPrefabPaths>
+				<modelRootPath>Root</modelRootPath>
+				<barrelSpinTransformPath>Root/Transform_X/Transform_Z/TurretTop/MainGun/柱体.007</barrelSpinTransformPath>
+				<barrelSpinDegreesPerSecond>6000</barrelSpinDegreesPerSecond>
 			</li>
 		</comps>
 		<modExtensions>
-			<li Class="FS_SSR.Defense.DefExt_SSRTurretInfo">
+			<li Class="SSR.Combat.Offscreen.TurretAimSettings">
+                <!--角速度为度每秒，角加速度为度每平方秒；零加速度表示立即达到设定转速。-->
+                <yawAcceleration>720</yawAcceleration>
+                <pitchAcceleration>480</pitchAcceleration>
+                <yawAimTolerance>1</yawAimTolerance>
+                <pitchAimTolerance>1</pitchAimTolerance>
+                <aimConeTolerance>1.5</aimConeTolerance>
+                <solverIterations>12</solverIterations>
+                <allowManualTarget>true</allowManualTarget>
+                <returnToIdle>true</returnToIdle>
+                <idleDelayTicks>180</idleDelayTicks>
+                <idleYaw>0</idleYaw>
+                <idlePitch>0</idlePitch>
+                <targeting>SSR_TurretTargeting_Ground</targeting>
 				<!-- 偏航轴转速（D/s） -->
 				<yawRotationSpeed>180</yawRotationSpeed>
 				<!-- 俯仰角转速（D/s） -->
 				<pitchRotationSpeed>120</pitchRotationSpeed>
-				<!-- 射击动画控制器路径（相对于预制体根） -->
-				<shootingAnimate>Root/Transform_X/Transform_Z/TurretTop/MainGun</shootingAnimate>
+				<!-- 转管由离屏组件按实际连发状态连续驱动 -->
 				<!-- 射击位置物体路径（相对于预制体根） -->
 				<shootingOrigine>Root/Transform_X/Transform_Z/TurretTop/MainGun/FirePoint</shootingOrigine>
 				<!-- IK根节点、相对位置参考系变换对象路径（相对于预制体根） -->
@@ -157,13 +173,13 @@
 		<defName>SSR_Turret_PortableSentryGun</defName>
 		<label>便携式哨戒机枪</label>
 		<description>便携式哨戒机枪是一种轻便高效的防御设施，可卸载的底座使其能够被快速拆解和安装在必要的位置，不过便携的特性让哨戒机枪无法拥有充沛的备弹量。</description>
-		<thingClass>FS_SSR.Defense.Turret_SSR</thingClass>
+		<thingClass>SSR.Combat.Offscreen.Building_ConfigurableTurret</thingClass>
 		<drawerType>MapMeshAndRealTime</drawerType>
 		<graphicData>
-			<texPath>Things/Building/Security/SentryGun/PortableSentryGun_Base</texPath>
+			<texPath>Things/Building/Security/SentryGun/PortableSentryGun_MenuIcon</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 			<drawSize>(1.5,1.5)</drawSize>
-			<shaderType>CutoutComplex</shaderType>
+			<shaderType>Cutout</shaderType>
 			<damageData>
 				<rect>(0.2,0.2,0.6,0.6)</rect>
 			</damageData>
@@ -172,8 +188,9 @@
 				<offset>(0,0,0)</offset>
 			</shadowData>
 		</graphicData>
+		<useBlueprintGraphicAsGhost>true</useBlueprintGraphicAsGhost>
 		<uiIconPath>Things/Building/Security/SentryGun/PortableSentryGun_MenuIcon</uiIconPath>
-		<uiIconScale>0.90</uiIconScale>
+		<uiIconScale>1</uiIconScale>
 		<minifiedDef>MinifiedThing</minifiedDef>
 		<stealable>false</stealable>
 		<rotatable>false</rotatable>
@@ -190,11 +207,8 @@
 		</statBases>
 		<tickerType>Normal</tickerType>
 		<hasTooltip>true</hasTooltip>
-		<stuffCategories>
-			<li>Metallic</li>
-		</stuffCategories>
-		<costStuffCount>30</costStuffCount>
 		<costList>
+			<Steel>30</Steel>
 			<SSR_Item_SpecialSteel>90</SSR_Item_SpecialSteel>
 			<SSR_Item_StrongElectromagnet>10</SSR_Item_StrongElectromagnet>
 			<SSR_Item_SuperconductingMaterial>5</SSR_Item_SuperconductingMaterial>
@@ -203,15 +217,20 @@
 		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
 		<constructionSkillPrerequisite>5</constructionSkillPrerequisite>
 		<building>
-			<combatPower>45</combatPower><!-- same as a scavenger -->
+			<blueprintGraphicData>
+				<texPath>Things/Building/Security/SentryGun/PortableSentryGun_MenuIcon</texPath>
+				<graphicClass>Graphic_Single</graphicClass>
+				<shaderType>EdgeDetect</shaderType>
+				<drawSize>(1.5,1.5)</drawSize>
+			</blueprintGraphicData>
+			<combatPower>45</combatPower><!-- 战斗力与拾荒者相同 -->
 			<ai_combatDangerous>true</ai_combatDangerous>
 			<turretGunDef>SSR_TurretGun_SentryGun</turretGunDef>
 			<turretBurstWarmupTime>0.01</turretBurstWarmupTime>
 			<turretBurstCooldownTime>0</turretBurstCooldownTime>
 		</building>
 		<placeWorkers>
-			<li>PlaceWorker_TurretTop</li>
-			<li>PlaceWorker_ShowTurretRadius</li>
+			<li>SSR.Combat.Offscreen.PlaceWorker_OffscreenTurretRadius</li>
 		</placeWorkers>
 		<designationHotKey>Misc2</designationHotKey>
 		<researchPrerequisites>
@@ -231,9 +250,9 @@
 					</thingDefs>
 				</fuelFilter>
 				<fuelCapacity>360</fuelCapacity>
-				<!-- 30 bursts -->
+				<!-- 可进行三十次连发 -->
 				<fuelMultiplier>4</fuelMultiplier>
-				<!-- 1.333 steel per burst, 80 per full rearm -->
+				<!-- 每次连发消耗 1.333 钢铁，完整补充消耗 80 钢铁 -->
 				<initialFuelPercent>1</initialFuelPercent>
 				<autoRefuelPercent>1</autoRefuelPercent>
 				<showFuelGizmo>true</showFuelGizmo>
@@ -242,27 +261,40 @@
 				<consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
 				<fuelIconPath>UI/Overlays/Barrel</fuelIconPath>
 			</li>
-			<li Class="FS_SSR.TCP_SinglePrefabDrawer">
+			<li Class="SSR.Combat.Offscreen.OffscreenPrefabProperties">
 				<shaderForTestAssetBundle>Assets/SSR/Add.shader</shaderForTestAssetBundle>
 				<assetDefs>
-					<li>SSR_Animate_Prefab_Linux_Combat</li>
-					<li>SSR_Animate_Prefab_MacOS_Combat</li>
 					<li>SSR_Animate_Prefab_Windows_Combat</li>
 				</assetDefs>
 				<!-- 炮塔预制体位置 -->
 				<leveledPrefabPaths>
 					<li>Assets/SSR/Prefab/TurretT1_STGP_1X.prefab</li>
 				</leveledPrefabPaths>
+				<modelRootPath>Root</modelRootPath>
+				<barrelSpinTransformPath>Root/Transform_X/Transform_Z/TurretTop/MainGun/柱体.007</barrelSpinTransformPath>
+				<barrelSpinDegreesPerSecond>6000</barrelSpinDegreesPerSecond>
 			</li>
 		</comps>
 		<modExtensions>
-			<li Class="FS_SSR.Defense.DefExt_SSRTurretInfo">
+			<li Class="SSR.Combat.Offscreen.TurretAimSettings">
+                <!--角速度为度每秒，角加速度为度每平方秒；零加速度表示立即达到设定转速。-->
+                <yawAcceleration>720</yawAcceleration>
+                <pitchAcceleration>480</pitchAcceleration>
+                <yawAimTolerance>1</yawAimTolerance>
+                <pitchAimTolerance>1</pitchAimTolerance>
+                <aimConeTolerance>1.5</aimConeTolerance>
+                <solverIterations>12</solverIterations>
+                <allowManualTarget>true</allowManualTarget>
+                <returnToIdle>true</returnToIdle>
+                <idleDelayTicks>180</idleDelayTicks>
+                <idleYaw>0</idleYaw>
+                <idlePitch>0</idlePitch>
+                <targeting>SSR_TurretTargeting_Ground</targeting>
 				<!-- 偏航轴转速（D/s） -->
 				<yawRotationSpeed>180</yawRotationSpeed>
 				<!-- 俯仰角转速（D/s） -->
 				<pitchRotationSpeed>120</pitchRotationSpeed>
-				<!-- 射击动画控制器路径（相对于预制体根） -->
-				<shootingAnimate>Root/Transform_X/Transform_Z/TurretTop/MainGun</shootingAnimate>
+				<!-- 转管由离屏组件按实际连发状态连续驱动 -->
 				<!-- 射击位置物体路径（相对于预制体根） -->
 				<shootingOrigine>Root/Transform_X/Transform_Z/TurretTop/MainGun/FirePoint</shootingOrigine>
 				<!-- IK根节点、相对位置参考系变换对象路径（相对于预制体根） -->
@@ -305,7 +337,7 @@
 		</statBases>
 		<verbs>
 			<li>
-				<verbClass>Verb_Shoot</verbClass>
+				<verbClass>SSR.Combat.Offscreen.TurretRecoilVerb</verbClass>
                 <hasStandardCommand>true</hasStandardCommand>
 				<defaultProjectile>SSR_Bullet_SentryGun</defaultProjectile>
 				<warmupTime>0</warmupTime>
@@ -341,13 +373,13 @@
 		<defName>SSR_Turret_Electromagnetic_CIWS</defName>
 		<label>电磁近防炮</label>
 		<description>电磁近防炮是一款地球联邦时代早期近防炮系统，曾被广泛用在海军和太空军舰艇以及地面军事设施上。</description>
-		<thingClass>FS_SSR.Defense.ThingClass_CIWSTurret</thingClass>
+		<thingClass>SSR.Combat.Offscreen.Building_ConfigurableTurret</thingClass>
 		<drawerType>MapMeshAndRealTime</drawerType>
 		<graphicData>
-			<texPath>Things/Building/Security/ElectromagneticCIWS/ElectromagneticCIWS_Base</texPath>
+			<texPath>Things/Building/Security/ElectromagneticCIWS/ElectromagneticCIWS_MenuIcon</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 			<drawSize>(2,2)</drawSize>
-			<shaderType>CutoutComplex</shaderType>
+			<shaderType>Cutout</shaderType>
 			<damageData>
 				<rect>(0.2,0.2,0.6,0.6)</rect>
 			</damageData>
@@ -356,8 +388,9 @@
 				<offset>(0,0,0)</offset>
 			</shadowData>
 		</graphicData>
+		<useBlueprintGraphicAsGhost>true</useBlueprintGraphicAsGhost>
 		<uiIconPath>Things/Building/Security/ElectromagneticCIWS/ElectromagneticCIWS_MenuIcon</uiIconPath>
-		<uiIconScale>2.5</uiIconScale>
+		<uiIconScale>1</uiIconScale>
 		<stealable>false</stealable>
 		<rotatable>false</rotatable>
 		<statBases>
@@ -374,11 +407,8 @@
 		<pathCost>50</pathCost>
 		<fillPercent>0.4</fillPercent>
 		<hasTooltip>true</hasTooltip>
-		<stuffCategories>
-			<li>Metallic</li>
-		</stuffCategories>
-		<costStuffCount>30</costStuffCount>
 		<costList>
+			<Steel>30</Steel>
 			<SSR_Item_SpecialSteel>150</SSR_Item_SpecialSteel>
 			<SSR_Item_StrongElectromagnet>20</SSR_Item_StrongElectromagnet>
 			<SSR_Item_SuperconductingMaterial>10</SSR_Item_SuperconductingMaterial>
@@ -387,7 +417,13 @@
 		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
 		<constructionSkillPrerequisite>5</constructionSkillPrerequisite>
 		<building>
-			<combatPower>45</combatPower><!-- same as a scavenger -->
+			<blueprintGraphicData>
+				<texPath>Things/Building/Security/ElectromagneticCIWS/ElectromagneticCIWS_MenuIcon</texPath>
+				<graphicClass>Graphic_Single</graphicClass>
+				<shaderType>EdgeDetect</shaderType>
+				<drawSize>(2,2)</drawSize>
+			</blueprintGraphicData>
+			<combatPower>45</combatPower><!-- 战斗力与拾荒者相同 -->
 			<ai_combatDangerous>true</ai_combatDangerous>
 			<turretGunDef>SSR_TurretGun_Electromagnetic_CIWS</turretGunDef>
 			<turretBurstWarmupTime>0.01</turretBurstWarmupTime>
@@ -395,8 +431,7 @@
 			<turretTopDrawSize>3.7</turretTopDrawSize>
 		</building>
 		<placeWorkers>
-			<li>PlaceWorker_TurretTop</li>
-			<li>PlaceWorker_ShowTurretRadius</li>
+			<li>SSR.Combat.Offscreen.PlaceWorker_OffscreenTurretRadius</li>
 		</placeWorkers>
 		<designationHotKey>Misc2</designationHotKey>
 		<researchPrerequisites>
@@ -416,9 +451,9 @@
 					</thingDefs>
 				</fuelFilter>
 				<fuelCapacity>1200</fuelCapacity>
-				<!-- 30 bursts -->
+				<!-- 可进行三十次连发 -->
 				<fuelMultiplier>5</fuelMultiplier>
-				<!-- 1.333 steel per burst, 80 per full rearm -->
+				<!-- 每次连发消耗 1.333 钢铁，完整补充消耗 80 钢铁 -->
 				<initialFuelPercent>1</initialFuelPercent>
 				<autoRefuelPercent>1</autoRefuelPercent>
 				<showFuelGizmo>true</showFuelGizmo>
@@ -432,32 +467,45 @@
 				<shortCircuitInRain>false</shortCircuitInRain>
 				<basePowerConsumption>2000</basePowerConsumption>
 			</li>
-			<li Class="FS_SSR.TCP_SinglePrefabDrawer">
+			<li Class="SSR.Combat.Offscreen.OffscreenPrefabProperties">
 				<shaderForTestAssetBundle>Assets/SSR/Add.shader</shaderForTestAssetBundle>
 				<assetDefs>
-					<li>SSR_Animate_Prefab_Linux_Combat</li>
-					<li>SSR_Animate_Prefab_MacOS_Combat</li>
 					<li>SSR_Animate_Prefab_Windows_Combat</li>
 				</assetDefs>
 				<leveledPrefabPaths>
 					<li>Assets/SSR/Prefab/TurretT1_ECIWS_2X.prefab</li>
 				</leveledPrefabPaths>
+				<modelRootPath>Transform_Y/Root</modelRootPath>
+				<barrelSpinTransformPath>Transform_Y/Root/Transform_X/Transform_Z/TurretTop/MainGun/立方体.011</barrelSpinTransformPath>
 			</li>
 			<li>
 				<compClass>FS_SSR.TC_SolarFlareLocalShield</compClass>
 			</li>
 		</comps>
 		<modExtensions>
-			<li Class="FS_SSR.Defense.DefExt_SSRTurretInfo">
+			<li Class="SSR.Combat.Offscreen.TurretAimSettings">
+                <!--角速度为度每秒，角加速度为度每平方秒；零加速度表示立即达到设定转速。-->
+                <yawAcceleration>1440</yawAcceleration>
+                <pitchAcceleration>480</pitchAcceleration>
+                <yawAimTolerance>1</yawAimTolerance>
+                <pitchAimTolerance>1</pitchAimTolerance>
+                <aimConeTolerance>1.5</aimConeTolerance>
+                <solverIterations>12</solverIterations>
+                <allowManualTarget>true</allowManualTarget>
+                <returnToIdle>true</returnToIdle>
+                <idleDelayTicks>180</idleDelayTicks>
+                <idleYaw>0</idleYaw>
+                <idlePitch>0</idlePitch>
+                <targeting>SSR_TurretTargeting_PointDefense</targeting>
 				<yawRotationSpeed>360</yawRotationSpeed>
 				<pitchRotationSpeed>120</pitchRotationSpeed>
-				<shootingAnimate>Transform_Y/Root/Transform_X/Transform_Z/TurretTop/MainGun</shootingAnimate>
 				<shootingOrigine>Transform_Y/Root/Transform_X/Transform_Z/TurretTop/MainGun/FirePoint</shootingOrigine>
 				<rootTransform>Transform_Y/Root</rootTransform>
 				<yawPath>Transform_Y/Root/Transform_X/Transform_Z/TurretTop</yawPath>
 				<pitchPath>Transform_Y/Root/Transform_X/Transform_Z/TurretTop/MainGun</pitchPath>
 				<yawRotationAixe>(0, 0, 1)</yawRotationAixe>
-				<pitchRotationAixe>(0, 1, 0)</pitchRotationAixe>
+				<!--局部负 Y 轴使正俯仰角抬升炮口，限位允许下俯 10 度至上仰 85 度。-->
+				<pitchRotationAixe>(0, -1, 0)</pitchRotationAixe>
 				<pitchRotationRange>(350, 85)</pitchRotationRange>
 				<shootingOrigineForward>(1, 0, 0)</shootingOrigineForward>
 				<shootingSoundDef>SSR_Sound_Electromagnetic_CIWS</shootingSoundDef>
@@ -485,7 +533,7 @@
 		</statBases>
 		<verbs>
 			<li>
-				<verbClass>Verb_Shoot</verbClass>
+				<verbClass>SSR.Combat.Offscreen.TurretRecoilVerb</verbClass>
                 <hasStandardCommand>true</hasStandardCommand>
 				<defaultProjectile>SSR_Bullet_Electromagnetic_CIWS</defaultProjectile>
 				<warmupTime>0</warmupTime>
@@ -493,7 +541,7 @@
 				<ticksBetweenBurstShots>1</ticksBetweenBurstShots>
 				<burstShotCount>1200</burstShotCount>
 				<soundCastTail>GunTail_Medium</soundCastTail>
-				<muzzleFlashScale>9</muzzleFlashScale>
+				<muzzleFlashScale>0</muzzleFlashScale>
 				<consumeFuelPerShot>1</consumeFuelPerShot>
 				<requireLineOfSight>false</requireLineOfSight>
 			</li>
@@ -567,13 +615,13 @@
 		<defName>SSR_Turret_Electromagnetic_145mmLtGun</defName>
 		<label>145mm轻型电磁炮</label>
 		<description>145mm轻型电磁炮。</description>
-		<thingClass>FS_SSR.Defense.Turret_SSR</thingClass>
+		<thingClass>SSR.Combat.Offscreen.Building_ConfigurableTurret</thingClass>
 		<drawerType>RealtimeOnly</drawerType>
 		<drawHighlight>true</drawHighlight>
 		<drawHighlightOnlyForHostile>true</drawHighlightOnlyForHostile>
 		<size>(3,3)</size>
 		<graphicData>
-			<texPath>Things/Building/Security/145mmLtElectromagneticGun/145mmLtElectromagneticGun_Base</texPath>
+			<texPath>Things/Building/Security/145mmLtElectromagneticGun/145mmLtElectromagneticGun_MenuIcon</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 			<drawSize>(3,3)</drawSize>
 			<damageData>
@@ -584,8 +632,9 @@
 				<offset>(0,0,0)</offset>
 			</shadowData>
 		</graphicData>
+		<useBlueprintGraphicAsGhost>true</useBlueprintGraphicAsGhost>
 		<uiIconPath>Things/Building/Security/145mmLtElectromagneticGun/145mmLtElectromagneticGun_MenuIcon</uiIconPath>
-		<uiIconScale>2.333333</uiIconScale>
+		<uiIconScale>1</uiIconScale>
 		<stealable>false</stealable>
 		<rotatable>false</rotatable>
 		<statBases>
@@ -608,6 +657,12 @@
 		</costList>
 		<constructionSkillPrerequisite>5</constructionSkillPrerequisite>
 		<building>
+			<blueprintGraphicData>
+				<texPath>Things/Building/Security/145mmLtElectromagneticGun/145mmLtElectromagneticGun_MenuIcon</texPath>
+				<graphicClass>Graphic_Single</graphicClass>
+				<shaderType>EdgeDetect</shaderType>
+				<drawSize>(3,3)</drawSize>
+			</blueprintGraphicData>
 			<combatPower>45</combatPower>
 			<ai_combatDangerous>true</ai_combatDangerous>
 			<turretGunDef>SSR_TurretGun_Electromagnetic_145mmLtGun</turretGunDef>
@@ -615,8 +670,7 @@
 			<turretBurstCooldownTime>4.8</turretBurstCooldownTime>
 		</building>
 		<placeWorkers>
-			<li>PlaceWorker_TurretTop</li>
-			<li>PlaceWorker_ShowTurretRadius</li>
+			<li>SSR.Combat.Offscreen.PlaceWorker_OffscreenTurretRadius</li>
 		</placeWorkers>
 		<designationHotKey>Misc2</designationHotKey>
 		<researchPrerequisites>
@@ -634,22 +688,36 @@
 				<compClass>CompPowerTrader</compClass>
 				<basePowerConsumption>80</basePowerConsumption>
 			</li>
-			<li Class="FS_SSR.TCP_SinglePrefabDrawer">
+			<li Class="SSR.Combat.Offscreen.OffscreenPrefabProperties">
 				<shaderForTestAssetBundle>Assets/SSR/Add.shader</shaderForTestAssetBundle>
 				<assetDefs>
-					<li>SSR_Animate_Prefab_Linux_Combat</li>
-					<li>SSR_Animate_Prefab_MacOS_Combat</li>
 					<li>SSR_Animate_Prefab_Windows_Combat</li>
 				</assetDefs>
 				<leveledPrefabPaths>
 					<li>Assets/SSR/Prefab/TurretT1_3X.prefab</li>
 				</leveledPrefabPaths>
+				<modelRootPath>Transform_Y/Root</modelRootPath>
+				<recoilTransformPath>Transform_Y/Root/Transform_X/Transform_Z/TurretTop/MainGun</recoilTransformPath>
+				<recoilClipName>Railgun145Recoil</recoilClipName>
 			</li>
 		</comps>
 		<modExtensions>
-			<li Class="FS_SSR.Defense.DefExt_SSRTurretInfo">
+			<li Class="SSR.Combat.Offscreen.TurretAimSettings">
+                <!--角速度为度每秒，角加速度为度每平方秒；零加速度表示立即达到设定转速。-->
+                <yawAcceleration>80</yawAcceleration>
+                <pitchAcceleration>20</pitchAcceleration>
+                <yawAimTolerance>1</yawAimTolerance>
+                <pitchAimTolerance>1</pitchAimTolerance>
+                <aimConeTolerance>1.5</aimConeTolerance>
+                <solverIterations>12</solverIterations>
+                <allowManualTarget>true</allowManualTarget>
+                <returnToIdle>true</returnToIdle>
+                <idleDelayTicks>180</idleDelayTicks>
+                <idleYaw>0</idleYaw>
+                <idlePitch>0</idlePitch>
+                <targeting>SSR_TurretTargeting_Ground</targeting>
 				<yawRotationSpeed>20</yawRotationSpeed>
-				<shootingAnimate>Transform_Y/Root/Transform_X/Transform_Z/TurretTop/MainGun</shootingAnimate>
+				<pitchRotationSpeed>5</pitchRotationSpeed>
 				<shootingOrigine>Transform_Y/Root/Transform_X/Transform_Z/TurretTop/MainGun/FirePoint</shootingOrigine>
 				<rootTransform>Transform_Y/Root</rootTransform>
 				<yawPath>Transform_Y/Root/Transform_X/Transform_Z/TurretTop</yawPath>
@@ -682,7 +750,7 @@
 		</statBases>
 		<verbs>
 			<li>
-				<verbClass>Verb_Shoot</verbClass>
+				<verbClass>SSR.Combat.Offscreen.TurretRecoilVerb</verbClass>
                 <hasStandardCommand>true</hasStandardCommand>
 				<defaultProjectile>SSR_Bullet_Electromagnetic_145mmLtGun</defaultProjectile>
 				<warmupTime>0</warmupTime>
@@ -690,7 +758,7 @@
 				<burstShotCount>1</burstShotCount>
 				<soundCast>Shot_TurretSniper</soundCast>
 				<soundCastTail>GunTail_Heavy</soundCastTail>
-				<muzzleFlashScale>9</muzzleFlashScale>
+				<muzzleFlashScale>0</muzzleFlashScale>
 				<consumeFuelPerShot>1</consumeFuelPerShot>
 				<forcedMissRadius>0</forcedMissRadius>
 			</li>
@@ -765,13 +833,13 @@
 		<defName>SSR_Turret_Electromagnetic_300mmMdGun</defName>
 		<label>300mm中型电磁炮</label>
 		<description>300mm中型电磁炮。</description>
-		<thingClass>FS_SSR.Defense.Turret_SSR</thingClass>
+		<thingClass>SSR.Combat.Offscreen.Building_ConfigurableTurret</thingClass>
 		<drawerType>RealtimeOnly</drawerType>
 		<drawHighlight>true</drawHighlight>
 		<drawHighlightOnlyForHostile>true</drawHighlightOnlyForHostile>
 		<size>(5,5)</size>
 		<graphicData>
-			<texPath>Things/Building/Security/300mmMdElectromagneticGun/300mmMdElectromagneticGun_Base</texPath>
+			<texPath>Things/Building/Security/300mmMdElectromagneticGun/300mmMdElectromagneticGun_MenuIcon</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 			<drawSize>(5,5)</drawSize>
 			<damageData>
@@ -782,8 +850,9 @@
 				<offset>(0,0,0)</offset>
 			</shadowData>
 		</graphicData>
+		<useBlueprintGraphicAsGhost>true</useBlueprintGraphicAsGhost>
 		<uiIconPath>Things/Building/Security/300mmMdElectromagneticGun/300mmMdElectromagneticGun_MenuIcon</uiIconPath>
-		<uiIconScale>2.2</uiIconScale>
+		<uiIconScale>1</uiIconScale>
 		<stealable>false</stealable>
 		<rotatable>false</rotatable>
 		<statBases>
@@ -806,6 +875,12 @@
 		</costList>
 		<constructionSkillPrerequisite>5</constructionSkillPrerequisite>
 		<building>
+			<blueprintGraphicData>
+				<texPath>Things/Building/Security/300mmMdElectromagneticGun/300mmMdElectromagneticGun_MenuIcon</texPath>
+				<graphicClass>Graphic_Single</graphicClass>
+				<shaderType>EdgeDetect</shaderType>
+				<drawSize>(5,5)</drawSize>
+			</blueprintGraphicData>
 			<combatPower>45</combatPower>
 			<ai_combatDangerous>true</ai_combatDangerous>
 			<turretGunDef>SSR_TurretGun_Electromagnetic_300mmMdGun</turretGunDef>
@@ -813,8 +888,7 @@
 			<turretBurstCooldownTime>4.8</turretBurstCooldownTime>
 		</building>
 		<placeWorkers>
-			<li>PlaceWorker_TurretTop</li>
-			<li>PlaceWorker_ShowTurretRadius</li>
+			<li>SSR.Combat.Offscreen.PlaceWorker_OffscreenTurretRadius</li>
 		</placeWorkers>
 		<designationHotKey>Misc2</designationHotKey>
 		<researchPrerequisites>
@@ -832,22 +906,36 @@
 				<compClass>CompPowerTrader</compClass>
 				<basePowerConsumption>80</basePowerConsumption>
 			</li>
-			<li Class="FS_SSR.TCP_SinglePrefabDrawer">
+			<li Class="SSR.Combat.Offscreen.OffscreenPrefabProperties">
 				<shaderForTestAssetBundle>Assets/SSR/Add.shader</shaderForTestAssetBundle>
 				<assetDefs>
-					<li>SSR_Animate_Prefab_Linux_Combat</li>
-					<li>SSR_Animate_Prefab_MacOS_Combat</li>
 					<li>SSR_Animate_Prefab_Windows_Combat</li>
 				</assetDefs>
 				<leveledPrefabPaths>
 					<li>Assets/SSR/Prefab/TurretT1_5X.prefab</li>
 				</leveledPrefabPaths>
+				<modelRootPath>Transform_Y/Root</modelRootPath>
+				<recoilTransformPath>Transform_Y/Root/Transform_X/Transform_Z/TurretTop/MainGun</recoilTransformPath>
+				<recoilClipName>Railgun300Recoil</recoilClipName>
 			</li>
 		</comps>
 		<modExtensions>
-			<li Class="FS_SSR.Defense.DefExt_SSRTurretInfo">
+			<li Class="SSR.Combat.Offscreen.TurretAimSettings">
+                <!--角速度为度每秒，角加速度为度每平方秒；零加速度表示立即达到设定转速。-->
+                <yawAcceleration>60</yawAcceleration>
+                <pitchAcceleration>20</pitchAcceleration>
+                <yawAimTolerance>1</yawAimTolerance>
+                <pitchAimTolerance>1</pitchAimTolerance>
+                <aimConeTolerance>1.5</aimConeTolerance>
+                <solverIterations>12</solverIterations>
+                <allowManualTarget>true</allowManualTarget>
+                <returnToIdle>true</returnToIdle>
+                <idleDelayTicks>180</idleDelayTicks>
+                <idleYaw>0</idleYaw>
+                <idlePitch>0</idlePitch>
+                <targeting>SSR_TurretTargeting_Ground</targeting>
 				<yawRotationSpeed>15</yawRotationSpeed>
-				<shootingAnimate>Transform_Y/Root/Transform_X/Transform_Z/TurretTop/MainGun</shootingAnimate>
+				<pitchRotationSpeed>5</pitchRotationSpeed>
 				<shootingOrigine>Transform_Y/Root/Transform_X/Transform_Z/TurretTop/MainGun/FirePoint</shootingOrigine>
 				<rootTransform>Transform_Y/Root</rootTransform>
 				<yawPath>Transform_Y/Root/Transform_X/Transform_Z/TurretTop</yawPath>
@@ -880,7 +968,7 @@
 		</statBases>
 		<verbs>
 			<li>
-				<verbClass>Verb_Shoot</verbClass>
+				<verbClass>SSR.Combat.Offscreen.TurretRecoilVerb</verbClass>
                 <hasStandardCommand>true</hasStandardCommand>
 				<defaultProjectile>SSR_Bullet_Electromagnetic_300mmMdGun</defaultProjectile>
 				<warmupTime>0</warmupTime>
@@ -888,9 +976,10 @@
 				<burstShotCount>1</burstShotCount>
 				<soundCast>Shot_TurretSniper</soundCast>
 				<soundCastTail>GunTail_Heavy</soundCastTail>
-				<muzzleFlashScale>9</muzzleFlashScale>
+				<muzzleFlashScale>0</muzzleFlashScale>
 				<consumeFuelPerShot>1</consumeFuelPerShot>
-				<forcedMissRadius>0</forcedMissRadius>
+				<!-- 半格及以下不触发原版额外强制散布，仍按直瞄命中流程发射爆炸弹。 -->
+				<forcedMissRadius>0.5</forcedMissRadius>
                 <targetParams>
                     <canTargetLocations>true</canTargetLocations>
                 </targetParams>
@@ -966,13 +1055,13 @@
 		<defName>SSR_Turret_Electromagnetic_500mmHvGun</defName>
 		<label>500mm重型电磁炮</label>
 		<description>500mm重型电磁炮。</description>
-		<thingClass>FS_SSR.Defense.Turret_SSR</thingClass>
+		<thingClass>SSR.Combat.Offscreen.Building_ConfigurableTurret</thingClass>
 		<drawerType>RealtimeOnly</drawerType>
 		<drawHighlight>true</drawHighlight>
 		<drawHighlightOnlyForHostile>true</drawHighlightOnlyForHostile>
 		<size>(7,7)</size>
 		<graphicData>
-			<texPath>Things/Building/Security/500mmHvElectromagneticGun/500mmHvElectromagneticGun_Base</texPath>
+			<texPath>Things/Building/Security/500mmHvElectromagneticGun/500mmHvElectromagneticGun_MenuIcon</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 			<drawSize>(7,7)</drawSize>
 			<damageData>
@@ -983,8 +1072,9 @@
 				<offset>(0,0,0)</offset>
 			</shadowData>
 		</graphicData>
+		<useBlueprintGraphicAsGhost>true</useBlueprintGraphicAsGhost>
 		<uiIconPath>Things/Building/Security/500mmHvElectromagneticGun/500mmHvElectromagneticGun_MenuIcon</uiIconPath>
-		<uiIconScale>3</uiIconScale>
+		<uiIconScale>1</uiIconScale>
 		<stealable>false</stealable>
 		<rotatable>false</rotatable>
 		<statBases>
@@ -1008,6 +1098,12 @@
 		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
 		<constructionSkillPrerequisite>5</constructionSkillPrerequisite>
 		<building>
+			<blueprintGraphicData>
+				<texPath>Things/Building/Security/500mmHvElectromagneticGun/500mmHvElectromagneticGun_MenuIcon</texPath>
+				<graphicClass>Graphic_Single</graphicClass>
+				<shaderType>EdgeDetect</shaderType>
+				<drawSize>(7,7)</drawSize>
+			</blueprintGraphicData>
 			<combatPower>45</combatPower>
 			<ai_combatDangerous>true</ai_combatDangerous>
 			<turretGunDef>SSR_TurretGun_Electromagnetic_500mmHvGun</turretGunDef>
@@ -1015,8 +1111,7 @@
 			<turretBurstCooldownTime>4.8</turretBurstCooldownTime>
 		</building>
 		<placeWorkers>
-			<li>PlaceWorker_TurretTop</li>
-			<li>PlaceWorker_ShowTurretRadius</li>
+			<li>SSR.Combat.Offscreen.PlaceWorker_OffscreenTurretRadius</li>
 		</placeWorkers>
 		<designationHotKey>Misc2</designationHotKey>
 		<researchPrerequisites>
@@ -1034,30 +1129,44 @@
 				<compClass>CompPowerTrader</compClass>
 				<basePowerConsumption>80</basePowerConsumption>
 			</li>
-			<li Class="FS_SSR.TCP_SinglePrefabDrawer">
+			<li Class="SSR.Combat.Offscreen.OffscreenPrefabProperties">
 				<shaderForTestAssetBundle>Assets/SSR/Add.shader</shaderForTestAssetBundle>
 				<assetDefs>
-					<li>SSR_Animate_Prefab_Linux_Combat</li>
-					<li>SSR_Animate_Prefab_MacOS_Combat</li>
 					<li>SSR_Animate_Prefab_Windows_Combat</li>
 				</assetDefs>
 				<leveledPrefabPaths>
-					<li>Assets/SSR/Prefab/TurretT1_7X.prefab</li>
+					<li>Assets/SSR/Prefab/Turret500mmPaletteGame.prefab</li>
 				</leveledPrefabPaths>
+				<modelRootPath>Transform_Y/Root</modelRootPath>
+				<recoilTransformPath>Transform_Y/Root/Yaw/Pitch/Recoil</recoilTransformPath>
+				<recoilClipName>500mmRecoil</recoilClipName>
 			</li>
 		</comps>
 		<modExtensions>
-			<li Class="FS_SSR.Defense.DefExt_SSRTurretInfo">
+			<li Class="SSR.Combat.Offscreen.TurretAimSettings">
+                <!--角速度为度每秒，角加速度为度每平方秒；零加速度表示立即达到设定转速。-->
+                <yawAcceleration>40</yawAcceleration>
+                <pitchAcceleration>20</pitchAcceleration>
+                <yawAimTolerance>1</yawAimTolerance>
+                <pitchAimTolerance>1</pitchAimTolerance>
+                <aimConeTolerance>1.5</aimConeTolerance>
+                <solverIterations>12</solverIterations>
+                <allowManualTarget>true</allowManualTarget>
+                <returnToIdle>true</returnToIdle>
+                <idleDelayTicks>180</idleDelayTicks>
+                <idleYaw>0</idleYaw>
+                <idlePitch>0</idlePitch>
+                <targeting>SSR_TurretTargeting_Ground</targeting>
 				<yawRotationSpeed>10</yawRotationSpeed>
-				<shootingAnimate>Transform_Y/Root/Transform_X/Transform_Z/TurretTop/MainGun</shootingAnimate>
-				<shootingOrigine>Transform_Y/Root/Transform_X/Transform_Z/TurretTop/MainGun/FirePoint</shootingOrigine>
+				<pitchRotationSpeed>5</pitchRotationSpeed>
+				<shootingOrigine>Transform_Y/Root/Yaw/Pitch/Recoil/FirePoint</shootingOrigine>
 				<rootTransform>Transform_Y/Root</rootTransform>
-				<yawPath>Transform_Y/Root/Transform_X/Transform_Z/TurretTop</yawPath>
-				<pitchPath>Transform_Y/Root/Transform_X/Transform_Z/TurretTop/MainGun</pitchPath>
-				<yawRotationAixe>(0, 0, 1)</yawRotationAixe>
-				<pitchRotationAixe>(0, 1, 0)</pitchRotationAixe>
+				<yawPath>Transform_Y/Root/Yaw</yawPath>
+				<pitchPath>Transform_Y/Root/Yaw/Pitch</pitchPath>
+				<yawRotationAixe>(0, 1, 0)</yawRotationAixe>
+				<pitchRotationAixe>(1, 0, 0)</pitchRotationAixe>
 				<pitchRotationRange>(350, 30)</pitchRotationRange>
-				<shootingOrigineForward>(1, 0, 0)</shootingOrigineForward>
+				<shootingOrigineForward>(0, 0, 1)</shootingOrigineForward>
 			</li>
 		</modExtensions>
 	</ThingDef>
@@ -1082,7 +1191,7 @@
 		</statBases>
 		<verbs>
 			<li>
-				<verbClass>Verb_Shoot</verbClass>
+				<verbClass>SSR.Combat.Offscreen.TurretRecoilVerb</verbClass>
                 <hasStandardCommand>true</hasStandardCommand>
 				<defaultProjectile>SSR_Bullet_Electromagnetic_500mmHvGun</defaultProjectile>
 				<warmupTime>0</warmupTime>
@@ -1090,9 +1199,10 @@
 				<burstShotCount>1</burstShotCount>
 				<soundCast>Shot_TurretSniper</soundCast>
 				<soundCastTail>GunTail_Heavy</soundCastTail>
-				<muzzleFlashScale>9</muzzleFlashScale>
+				<muzzleFlashScale>0</muzzleFlashScale>
 				<consumeFuelPerShot>1</consumeFuelPerShot>
-				<forcedMissRadius>0</forcedMissRadius>
+				<!-- 半格及以下不触发原版额外强制散布，仍按直瞄命中流程发射爆炸弹。 -->
+				<forcedMissRadius>0.5</forcedMissRadius>
                 <targetParams>
                     <canTargetLocations>true</canTargetLocations>
                 </targetParams>

@@ -31,7 +31,7 @@
 /src/SSR.Combat.UnityAsset/*.sln
 /src/SSR.Combat.UnityAsset/*.slnx
 
-#测试截图、审阅交付图、本地文档及导入过程报告，正式贴图不受这些规则影响。
+#开发截图、本地文档及导入报告。
 **/[Ss]creenshots/
 **/[Dd]ocumentation/
 **/[Rr]eview/
