@@ -1,14 +1,63 @@
 
-*.lnk
+#保留源码、模组配置与正式素材，以及 Unity 的 Assets、Packages、ProjectSettings 和美术源文件。
+#Unity Assets/Plugins 中的依赖 DLL 属于工程输入，不按编译输出排除。
+
+#编译产物与资源包输出。
+/Asset/
+**/Assemblies/
+**/[Bb]in/
+**/[Oo]bj/
+**/[Bb]uild/
+**/[Bb]uilds/
 **/BUILD/
 **/BUILD.*/
 **/BUILD_*/
-**/obj/
-**/Temp/
-# **/AB_Pack/
-**/Library/
+**/AB_Pack/
+**/[Oo]utput/
+**/[Oo]utputs/
+*.pdb
+*.mdb
+
+#Unity 自动生成的缓存、日志、本机布局和 IDE 工程文件。
+**/[Ll]ibrary/
+**/[Tt]emp/
+**/[Ll]og/
+**/[Ll]ogs/
+**/UserSettings/
+**/MemoryCaptures/
+**/Recordings/
+*.log
+/src/SSR.Combat.UnityAsset/*.csproj
+/src/SSR.Combat.UnityAsset/*.sln
+/src/SSR.Combat.UnityAsset/*.slnx
+
+#测试截图、审阅交付图、本地文档及导入过程报告，正式贴图不受这些规则影响。
+**/[Ss]creenshots/
+**/[Dd]ocumentation/
+**/[Rr]eview/
+/src/SSR.Combat.UnityAsset/ArtSource/**/*.md
+/src/SSR.Combat.UnityAsset/ArtSource/T1Turrets/inventory.json
+/src/SSR.Combat.UnityAsset/ArtSource/T1Turrets/removed-assets.json
+
+#本机配置与编辑器临时文件；1.4/.vscode 中的源码、项目文件及构建脚本仍保留。
+/.local/
+/build.bat
+/deploy_modSelf.bat
+/LOCAL_DEV.md
 **/.vs/
-**/log/
-# **/*_UnitTest/
-# *.pdb
-**/*.log
+**/.idea/
+**/.vscode/*.json
+**/.vscode/.run/
+*.suo
+*.user
+*.userprefs
+*.pidb
+*.opendb
+*.VC.db
+*.lnk
+**/__pycache__/
+*.py[cod]
+*.blend[0-9]*
+*.blend[0-9]*.meta
+*~
+*~.meta
