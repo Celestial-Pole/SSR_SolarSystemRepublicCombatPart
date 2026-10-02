@@ -1,0 +1,207 @@
+ManifestFileVersion: 0
+CRC: 3490630045
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 5c249cd5a92984e049ae4af88ca93f57
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: bcf9607181d6cb6c422f8cbb32618ae5
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 5c249cd5a92984e049ae4af88ca93f57
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 23
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 33
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 49
+  Script: {instanceID: 0}
+- Class: 54
+  Script: {instanceID: 0}
+- Class: 74
+  Script: {instanceID: 0}
+- Class: 84
+  Script: {instanceID: 0}
+- Class: 91
+  Script: {instanceID: 0}
+- Class: 95
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 1401191688, guid: 7ebd2918ad86f9b4ab223690eee20221, type: 3}
+- Class: 114
+  Script: {fileID: 280761815, guid: 7ebd2918ad86f9b4ab223690eee20221, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 221
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/SSR/Turrets/T1/Animations/Source/VerticalLauncherSource.anim
+- Assets/SSR/ColorReference/D7F156BC98489261B847D26E0E8ADBF8.png
+- Assets/SSR/Outline/Shaders/TurretGeometry.shader
+- Assets/SSR/Animate/TurretT1_ECIWS_2X/MainGun_Fire.anim
+- Assets/SSR/Turrets/T1/Animations/Source/VerticalLauncherSource.controller
+- Assets/SSR/ColorReference/7F1607C165DC92D3E669DFA6E16194E9.png
+- Assets/SSR/Animate/TurretT1_MGAA_2X/MainGun.controller
+- Assets/SSR/Prefab/Turret500mmPalette.prefab
+- Assets/SSR/Missiles/Game/MissileSiloGame.prefab
+- Assets/SSR/Animate/TurretT1_ESTG_1X/MainGun_coldDown.anim
+- Assets/SSR/Turrets/T1/Models/Railgun145.fbx
+- Assets/SSR/Missiles/Game/SiloOpening03.anim
+- Assets/SSR/Turrets/T1/Materials/T1_6E6F70FF.mat
+- Assets/SSR/ColorOnly.shader
+- Assets/SSR/Animate/TurretT1_EMG_2X/MainGun.controller
+- Assets/SSR/Turrets/T1/Materials/T1_979899FF.mat
+- Assets/SSR/Texture/TestMatTex1.png
+- Assets/SSR/Turrets/T1/Models/CombinedAirDefense.fbx
+- Assets/SSR/WormHole.shader
+- Assets/SSR/Animate/TurretT1_3X/MainGun_Fire.anim
+- Assets/SSR/Animate/TurretT1_MGAA_2X/MainGun_Idel.anim
+- Assets/SSR/Prefab/TurretT1_EMG_2X.prefab
+- Assets/SSR/Turrets/T1/Prefabs/EMAutocannon.prefab
+- Assets/SSR/Turrets/T1/Prefabs/PortableEMSentry.prefab
+- Assets/SSR/Animate/TurretT1_EMG_2X/MainGun_Fire.anim
+- Assets/SSR/Turrets/T1/Rigs/PortableSentry.prefab
+- Assets/SSR/Animate/TurretT1_5X/MainGun_Fire.anim
+- Assets/SSR/Turrets/T1/Prefabs/EMCIWS.prefab
+- Assets/SSR/Turrets/T1/Models/T1Missile.fbx
+- Assets/SSR/Turrets/T1/Prefabs/VerticalLauncher.prefab
+- Assets/SSR/Missiles/Game/MissileSmoke.mat
+- Assets/SSR/Turrets/T1/Animations/Source/MissileBoxSource.controller
+- Assets/SSR/Turrets/T1/Animations/Railgun145Recoil.anim
+- Assets/SSR/Prefab/TurretT1_7X.prefab
+- Assets/SSR/Turrets/T1/Models/MissileBox.fbx
+- Assets/SSR/Animate/TurretT1_ECIWS_2X/MainGun.controller
+- Assets/SSR/Texture/TestMatTex2.png
+- Assets/SSR/Outline/Textures/TurretOutline.renderTexture
+- Assets/SSR/Animate/TurretT1_ECIWS_2X/MainGun_coldDown.anim
+- Assets/SSR/Turrets/T1/Prefabs/Railgun300.prefab
+- Assets/SSR/Outline/Shaders/MissileExhaust.shader
+- Assets/SSR/Turrets/T1/Rigs/Railgun145.prefab
+- Assets/SSR/ColorReference/AF03D40D9CF8FE210186567C2D3A0385.png
+- Assets/SSR/Animate/TurretT1_MGAA_2X/MainGun_Warmup.anim
+- Assets/SSR/Turrets/T1/Rigs/Sentry.prefab
+- Assets/SSR/Missiles/Game/SiloOpening08.anim
+- Assets/SSR/Turrets/T1/Models/PortableEMSentry.fbx
+- Assets/SSR/Prefab/TurretT1_ESTGP_1X.prefab
+- Assets/SSR/ColorReference/A33B2DABAA1DDC23AA148535F7BDC78E.png
+- Assets/SSR/Outline/Materials/OutlineDisplay.mat
+- Assets/SSR/Turrets/T1/Rigs/Railgun500.prefab
+- Assets/SSR/Animate/TurretT1_3X/MainGun_Idel.anim
+- Assets/SSR/Turrets/T1/Prefabs/Railgun145.prefab
+- Assets/SSR/Prefab/Turret500mmPaletteGame.prefab
+- Assets/SSR/Prefab/TurretT1_ECIWS_2X.prefab
+- Assets/SSR/Animate/TurretT1_MGAA_2X/MainGun_coldDown.anim
+- Assets/SSR/ColorReference/C456DE23E91E1EF09A94BE0A4334F12B.png
+- Assets/SSR/CombinedDefense/Game/MGAAMissile.asset
+- Assets/SSR/Turrets/T1/Models/EMSentry.fbx
+- Assets/SSR/Turrets/T1/Rigs/Railgun300.prefab
+- Assets/SSR/Turrets/T1/Materials/T1_DE5163FF.mat
+- Assets/SSR/Texture/TestMatTex0.png
+- Assets/SSR/Turrets/T1/Animations/Source/MissileBoxSource.anim
+- Assets/SSR/Turrets/T1/Models/Railgun300.fbx
+- Assets/SSR/Missiles/Game/SiloLayout.json
+- Assets/SSR/Turrets/T1/Prefabs/Sentry.prefab
+- Assets/SSR/Animate/TurretT1_5X/MainGun.controller
+- Assets/SSR/Turrets/T1/Animations/Source/VerticalLauncherSourceIdle.anim
+- Assets/SSR/Missiles/Game/SiloOpening09.anim
+- Assets/SSR/Turrets/T1/Animations/Railgun300Recoil.overrideController
+- Assets/SSR/Missiles/Game/SiloOpening06.anim
+- Assets/SSR/Turrets/T1/Models/Sentry.fbx
+- Assets/SSR/DepthMaskNormal.shader
+- Assets/SSR/Texture/TestMatTex3.png
+- Assets/SSR/ColorReference/3A1DC1A309F96955B680BCC6D218A669.png
+- Assets/SSR/Outline/GameAnimation/500mmRecoil.anim
+- Assets/SSR/Prefab/TurretT1_Mortar_1X.prefab
+- Assets/SSR/Turrets/T1/Models/EMCIWS.fbx
+- Assets/SSR/Turrets/T1/Prefabs/CombinedAirDefense.prefab
+- Assets/SSR/Material/TurretT1/BaseColor2.mat
+- Assets/SSR/ColorReference/7609013BBF0DE974BD3E380181C5C039.png
+- Assets/SSR/Add.shader
+- Assets/SSR/Missiles/Game/SiloOpening04.anim
+- Assets/SSR/Turrets/T1/Models/EMAutocannon.fbx
+- Assets/SSR/Turrets/T1/Materials/T1_B8CDF4FF.mat
+- Assets/SSR/Mesh/Mesh_Plane.asset
+- Assets/SSR/Animate/TurretT1_STG_1X/MainGun_Idel.anim
+- Assets/SSR/Texture/Glowing.png
+- Assets/SSR/Turrets/T1/Animations/Railgun300Recoil.anim
+- Assets/SSR/ColorReference/123B50B81FBAB4DEBA73093513FB9020.png
+- Assets/SSR/Material/TurretT1/Wireframe2.mat
+- Assets/SSR/Texture/TestMatTex4.png
+- Assets/SSR/Animate/TurretT1_ECIWS_2X/MainGun_Warmup.anim
+- "Assets/SSR/Mesh/t1\u8FEB\u51FB\u70AE1x1.blend"
+- Assets/SSR/CombinedDefense/Game/MGAAMissile.prefab
+- Assets/SSR/Missiles/Game/ExhaustQuad.asset
+- Assets/SSR/Missiles/Game/MissileFlame.mat
+- Assets/SSR/Missiles/Game/SiloOpening02.anim
+- Assets/SSR/Prefab/TurretT1_5X.prefab
+- Assets/SSR/Missiles/Game/SiloOpening05.anim
+- Assets/SSR/Animate/TurretT1_ESTG_1X/MainGun_Idel.anim
+- Assets/SSR/Animate/TurretT1_STG_1X/MainGun.controller
+- Assets/SSR/Turrets/T1/Materials/T1_F5F5F5FF.mat
+- Assets/SSR/Animate/TurretT1_5X/MainGun_Idel.anim
+- Assets/SSR/Material/TurretT1/ExampleMat.mat
+- Assets/SSR/ColorReference/274603A85168834EAA56DDAFE7ADDB3B.png
+- Assets/SSR/Missiles/Game/SiloOpening01.anim
+- Assets/SSR/Turrets/T1/Materials/T1_44588AFF.mat
+- Assets/SSR/Animate/TurretT1_STG_1X/MainGun_Warmup.anim
+- Assets/SSR/Missiles/Game/MissileFlame.prefab
+- Assets/SSR/CutOut.shader
+- Assets/SSR/Prefab/TurretT1_MGAA_2X.prefab
+- Assets/SSR/Animate/TurretT1_STG_1X/MainGun_Fire.anim
+- Assets/SSR/ColorReference/14476B5BC0F6E72F5D94AD7BB6F00588.png
+- Assets/SSR/Material/TurretT1/Wireframe0.mat
+- Assets/SSR/Fade.shader
+- Assets/SSR/Prefab/MissileSilo.prefab
+- Assets/SSR/Missiles/Game/MissileSmoke.prefab
+- Assets/SSR/Outline/Shaders/MissileOccluder.shader
+- Assets/SSR/Outline/Shaders/TurretOutline.shader
+- Assets/SSR/Turrets/T1/Models/VerticalLauncher.fbx
+- Assets/SSR/Turrets/T1/Animations/Railgun145Recoil.overrideController
+- Assets/SSR/Turrets/T1/Prefabs/PortableSentry.prefab
+- Assets/SSR/Prefab/TurretT1_STGP_1X.prefab
+- Assets/SSR/Turrets/T1/Prefabs/T1Missile.prefab
+- Assets/SSR/Wireframe.shader
+- Assets/SSR/Turrets/T1/Prefabs/RocketArtillery.prefab
+- Assets/SSR/Animate/TurretT1_3X/MainGun.controller
+- Assets/SSR/Turrets/T1/Prefabs/EMSentry.prefab
+- Assets/SSR/Prefab/TurretT1_STG_1X.prefab
+- Assets/SSR/Turrets/T1/Prefabs/MissileBox.prefab
+- Assets/SSR/Animate/TurretT1_ESTG_1X/MainGun_Fire.anim
+- Assets/SSR/Prefab/TurretT1_ESTG_1X.prefab
+- Assets/SSR/Prefab/TurretT1_3X.prefab
+- Assets/SSR/Turrets/T1/Models/Railgun500.fbx
+- Assets/SSR/Animate/TurretT1_STG_1X/MainGun_ColdDown.anim
+- Assets/SSR/Animate/TurretT1_MGAA_2X/MainGun_Fire.anim
+- Assets/SSR/Outline/Shaders/TurretMapPlane.shader
+- Assets/SSR/Turrets/T1/Models/RocketArtillery.fbx
+- Assets/SSR/Turrets/T1/Rigs/EMCIWS.prefab
+- Assets/SSR/Animate/TurretT1_EMG_2X/MainGun_Idel.anim
+- Assets/SSR/JetFlow.shader
+- Assets/SSR/Turrets/T1/Animations/Source/MissileBoxSourceIdle.anim
+- Assets/SSR/Missiles/Game/SiloOpening07.anim
+- Assets/SSR/Turrets/T1/Materials/T1_4E5153FF.mat
+- Assets/SSR/Turrets/T1/Models/PortableSentry.fbx
+- Assets/SSR/Turrets/T1/Prefabs/Railgun500.prefab
+- Assets/SSR/DepthMaskForce.shader
+- Assets/SSR/ColorReference/BD89EF4BEE6B2C592CDE2688839D35A8.png
+- Assets/SSR/Animate/TurretT1_ECIWS_2X/MainGun_Idel.anim
+- Assets/SSR/DepthMaskGreater.shader
+- Assets/SSR/Animate/TurretT1_ESTG_1X/MainGun_Warmup.anim
+- Assets/SSR/Outline/GameAnimation/500mmRecoil.controller
+- Assets/SSR/Animate/TurretT1_ESTG_1X/MainGun.controller
+Dependencies: []
