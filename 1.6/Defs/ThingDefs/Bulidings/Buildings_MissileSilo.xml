@@ -117,7 +117,7 @@
         <defaultProjectile>SSR_Projectile_VerticalMissile</defaultProjectile>
         <warmupTime>0</warmupTime>
         <minRange>8</minRange>
-        <range>60</range>
+        <range>131.9</range>
         <burstShotCount>1</burstShotCount>
         <!--原版爆炸动词要求此值为正；专用发射控制器不使用该散布值，只攻击本轮锁定点。-->
         <forcedMissRadius>0.01</forcedMissRadius>
