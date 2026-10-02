@@ -2,9 +2,14 @@
 #保留源码、模组配置与正式素材，以及 Unity 的 Assets、Packages、ProjectSettings 和美术源文件。
 #Unity Assets/Plugins 中的依赖 DLL 属于工程输入，不按编译输出排除。
 
-#编译产物与资源包输出。
+#编译缓存与资源包输出；版本加载目录中的运行 DLL 随仓库维护。
 /Asset/
-**/Assemblies/
+**/Assemblies/*
+!/1.4/Assemblies/*.dll
+!/1.4/CombatExtended/Assemblies/*.dll
+!/1.5/Assemblies/*.dll
+!/1.5/CombatExtended/Assemblies/*.dll
+!/1.6/Assemblies/*.dll
 **/[Bb]in/
 **/[Oo]bj/
 **/[Bb]uild/
