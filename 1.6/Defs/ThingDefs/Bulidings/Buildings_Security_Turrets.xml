@@ -198,7 +198,7 @@
 			<li>BuildingsSecurity</li>
 		</thingCategories>
 		<statBases>
-			<MaxHitPoints>300</MaxHitPoints>
+			<MaxHitPoints>500</MaxHitPoints>
 			<Flammability>0</Flammability>
 			<WorkToBuild>1800</WorkToBuild>
 			<Mass>8</Mass>
@@ -339,7 +339,7 @@
 			<li>
 				<verbClass>SSR.Combat.Offscreen.TurretRecoilVerb</verbClass>
                 <hasStandardCommand>true</hasStandardCommand>
-				<defaultProjectile>SSR_Bullet_SentryGun</defaultProjectile>
+				<defaultProjectile>SSR_Projectile_SentryGun</defaultProjectile>
 				<warmupTime>0</warmupTime>
 				<range>38.9</range>
 				<ticksBetweenBurstShots>5</ticksBetweenBurstShots>
@@ -353,7 +353,7 @@
 	</ThingDef>
 
 	<ThingDef ParentName="BaseBullet">
-		<defName>SSR_Bullet_SentryGun</defName>
+		<defName>SSR_Projectile_SentryGun</defName>
 		<label>哨戒机枪子弹</label>
 		<graphicData>
 			<texPath>Things/Projectile/Bullet_Small</texPath>
@@ -394,7 +394,7 @@
 		<stealable>false</stealable>
 		<rotatable>false</rotatable>
 		<statBases>
-			<MaxHitPoints>800</MaxHitPoints>
+			<MaxHitPoints>1500</MaxHitPoints>
 			<Flammability>0</Flammability>
 			<WorkToBuild>1800</WorkToBuild>
 			<Mass>8</Mass>
@@ -535,7 +535,7 @@
 			<li>
 				<verbClass>SSR.Combat.Offscreen.TurretRecoilVerb</verbClass>
                 <hasStandardCommand>true</hasStandardCommand>
-				<defaultProjectile>SSR_Bullet_Electromagnetic_CIWS</defaultProjectile>
+				<defaultProjectile>SSR_Projectile_Electromagnetic_CIWS</defaultProjectile>
 				<warmupTime>0</warmupTime>
 				<range>50</range>
 				<ticksBetweenBurstShots>1</ticksBetweenBurstShots>
@@ -549,7 +549,7 @@
 	</ThingDef>
 
 	<ThingDef ParentName="BaseBullet">
-		<defName>SSR_Bullet_Electromagnetic_CIWS</defName>
+		<defName>SSR_Projectile_Electromagnetic_CIWS</defName>
 		<label>电磁近防炮子弹</label>
 		<graphicData>
 			<texPath>Things/Projectile/Electromagnetic_AR_rt</texPath>
@@ -638,7 +638,7 @@
 		<stealable>false</stealable>
 		<rotatable>false</rotatable>
 		<statBases>
-			<MaxHitPoints>700</MaxHitPoints>
+			<MaxHitPoints>2300</MaxHitPoints>
 			<Flammability>0</Flammability>
 			<WorkToBuild>1800</WorkToBuild>
 			<Beauty>7</Beauty>
@@ -752,7 +752,7 @@
 			<li>
 				<verbClass>SSR.Combat.Offscreen.TurretRecoilVerb</verbClass>
                 <hasStandardCommand>true</hasStandardCommand>
-				<defaultProjectile>SSR_Bullet_Electromagnetic_145mmLtGun</defaultProjectile>
+				<defaultProjectile>SSR_Projectile_Electromagnetic_145mmLtGun</defaultProjectile>
 				<warmupTime>0</warmupTime>
 				<range>64.9</range>
 				<burstShotCount>1</burstShotCount>
@@ -766,7 +766,7 @@
 	</ThingDef>
 
 	<ThingDef ParentName="BaseBullet">
-		<defName>SSR_Bullet_Electromagnetic_145mmLtGun</defName>
+		<defName>SSR_Projectile_Electromagnetic_145mmLtGun</defName>
 		<label>145mm轻型电磁炮炮弹</label>
 		<graphicData>
 			<texPath>Things/Projectile/Bullet_Big</texPath>
@@ -856,7 +856,7 @@
 		<stealable>false</stealable>
 		<rotatable>false</rotatable>
 		<statBases>
-			<MaxHitPoints>1200</MaxHitPoints>
+			<MaxHitPoints>3500</MaxHitPoints>
 			<Flammability>0</Flammability>
 			<WorkToBuild>1800</WorkToBuild>
 			<Beauty>7</Beauty>
@@ -970,7 +970,7 @@
 			<li>
 				<verbClass>SSR.Combat.Offscreen.TurretRecoilVerb</verbClass>
                 <hasStandardCommand>true</hasStandardCommand>
-				<defaultProjectile>SSR_Bullet_Electromagnetic_300mmMdGun</defaultProjectile>
+				<defaultProjectile>SSR_Projectile_Electromagnetic_300mmMdGun</defaultProjectile>
 				<warmupTime>0</warmupTime>
 				<range>64.9</range>
 				<burstShotCount>1</burstShotCount>
@@ -988,7 +988,7 @@
 	</ThingDef>
 
 	<ThingDef ParentName="BaseBullet">
-		<defName>SSR_Bullet_Electromagnetic_300mmMdGun</defName>
+		<defName>SSR_Projectile_Electromagnetic_300mmMdGun</defName>
 		<label>300mm中型电磁炮炮弹</label>
 		<thingClass>Projectile_Explosive</thingClass>
 		<graphicData>
@@ -1078,7 +1078,7 @@
 		<stealable>false</stealable>
 		<rotatable>false</rotatable>
 		<statBases>
-			<MaxHitPoints>2000</MaxHitPoints>
+			<MaxHitPoints>8000</MaxHitPoints>
 			<Flammability>0.7</Flammability>
 			<WorkToBuild>1800</WorkToBuild>
 			<Beauty>-20</Beauty>
@@ -1193,7 +1193,7 @@
 			<li>
 				<verbClass>SSR.Combat.Offscreen.TurretRecoilVerb</verbClass>
                 <hasStandardCommand>true</hasStandardCommand>
-				<defaultProjectile>SSR_Bullet_Electromagnetic_500mmHvGun</defaultProjectile>
+				<defaultProjectile>SSR_Projectile_Electromagnetic_500mmHvGun</defaultProjectile>
 				<warmupTime>0</warmupTime>
 				<range>131.9</range>
 				<burstShotCount>1</burstShotCount>
@@ -1211,7 +1211,7 @@
 	</ThingDef>
 
 	<ThingDef ParentName="BaseBullet">
-		<defName>SSR_Bullet_Electromagnetic_500mmHvGun</defName>
+		<defName>SSR_Projectile_Electromagnetic_500mmHvGun</defName>
 		<label>500mm重型电磁炮炮弹</label>
 		<thingClass>Projectile_Explosive</thingClass>
 		<graphicData>

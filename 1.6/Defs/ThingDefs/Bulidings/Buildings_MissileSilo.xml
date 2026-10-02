@@ -137,7 +137,10 @@
     <defName>SSR_Projectile_VerticalMissile</defName>
     <label>垂发导弹</label>
     <thingClass>SSR.Combat.Offscreen.Projectile_VerticalMissile</thingClass>
-    <graphicData><texPath>Things/Projectile/Missile</texPath><graphicClass>Graphic_Single</graphicClass></graphicData>
+    <graphicData>
+		<texPath>Things/Projectile/Missile</texPath>
+		<graphicClass>Graphic_Single</graphicClass>
+	</graphicData>
     <projectile>
       <damageDef>Bomb</damageDef>
       <damageAmountBase>60</damageAmountBase>
