@@ -1220,6 +1220,7 @@
 			<drawSize>3.5</drawSize>
 		</graphicData>
 		<projectile>
+			<flyOverhead>true</flyOverhead>
 			<damageDef>BombSuper</damageDef>
 			<damageAmountBase>1600</damageAmountBase>
 			<explosionRadius>5.6</explosionRadius>
