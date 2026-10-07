@@ -5,14 +5,14 @@ using UnityEngine;
 
 namespace SSR.Combat.Editor
 {
-    //按 MGAA 发射筒内部空间制作带弹头、弹身、尾翼和喷口的完整导弹资源。
+    //构建适配 MGAA 发射筒的导弹网格和挂点。
     internal static class DefenseMissileMeshBuilder
     {
         internal const string Folder = "Assets/SSR/CombinedDefense/Game";
         internal const string PrefabPath = Folder + "/MGAAMissile.prefab";
         private const int Segments = 32;
 
-        //构建长零点八二、最大直径零点零六八的弹体，并建立真实弹头和喷口挂点。
+        //构建长 0.82、最大直径 0.068 的弹体及挂点。
         internal static GameObject Build()
         {
             var vertices = new List<Vector3>();
@@ -61,7 +61,7 @@ namespace SSR.Combat.Editor
             {
                 model.AddComponent<MeshFilter>().sharedMesh = mesh;
                 model.AddComponent<MeshRenderer>().sharedMaterials = new[]
-                { Material("4E5153"), Material("44588A"), Material("6E6F70"), Material("979899") };
+                { Material("4E5153"), Material("B8CDF4"), Material("6E6F70"), Material("979899") };
                 Point(model.transform, "TipPoint", new Vector3(0, 0, 0.410f));
                 Point(model.transform, "TrailPoint", new Vector3(0, 0, -0.410f));
                 var prefab = PrefabUtility.SaveAsPrefabAsset(model, PrefabPath);
@@ -72,7 +72,7 @@ namespace SSR.Combat.Editor
             finally { UnityEngine.Object.DestroyImmediate(model); }
         }
 
-        //建立小幅外伸的四片实体尾翼，完整外径始终小于发射筒内径。
+        //按指定角度构建一片尾翼。
         private static void AddFin(List<Vector3> vertices, List<int> triangles, float angle)
         {
             int start = vertices.Count;
@@ -91,7 +91,7 @@ namespace SSR.Combat.Editor
             }
         }
 
-        //使用现有炮塔调色板材质，使装筒和飞行的弹体颜色一致。
+        //加载色卡共享材质。
         private static Material Material(string color)
         {
             string path = "Assets/SSR/Turrets/T1/Materials/T1_" + color + "FF.mat";
@@ -100,7 +100,7 @@ namespace SSR.Combat.Editor
             return material;
         }
 
-        //建立稳定的模型局部挂点，不通过渲染边界猜测喷口。
+        //创建模型局部挂点。
         private static void Point(Transform parent, string name, Vector3 position)
         {
             var point = new GameObject(name).transform;

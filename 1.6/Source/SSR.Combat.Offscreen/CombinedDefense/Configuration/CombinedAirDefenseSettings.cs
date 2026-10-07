@@ -1,37 +1,32 @@
 using System.Collections.Generic;
+using UnityEngine;
 using Verse;
 
 namespace SSR.Combat.Offscreen
 {
-    //配置弹炮合一系统的弹位、制导性能和独立雷达，不改变普通炮塔参数。
-    public sealed class CombinedAirDefenseSettings : DefModExtension
+    //配置弹炮合一的导弹、弹位和雷达。
+    public sealed class CombinedAirDefenseSettings : GuidedMissileSettings
     {
-        public string missilePrefabPath;
-        public ThingDef missileProjectile;
         public List<string> missileSlots;
         public List<RadarRotationSettings> radars;
+        public string missilePitchPath, missileAimPointPath;
+        public Vector3 missilePitchAxis = Vector3.right;
+        public Vector2 missilePitchRange = new Vector2(350, 90);
+        public float missilePitchSpeed = 60, missilePitchAcceleration = 240;
         public float missileRange = 65;
         public int launchIntervalTicks = 30, reloadTicks = 600;
-        public float ejectionSpeed = 8, ejectionClearance = 0.12f, ejectionGravity = 9.81f, ignitionDelay = 0.30f;
-        public float minimumIgnitionHeight = 0.2f;
-        public float maximumSpeed = 72, acceleration = 160;
-        public float turnDegreesPerSecond = 240, fuseRadius = 0.6f;
-        public int missileLifetimeTicks = 600;
-        public SiloSettings exhaust;
 
-        //在定义加载时报告缺失资源、挂点和无效机械参数。
+        //校验导弹挂点、俯仰和雷达参数。
         public override IEnumerable<string> ConfigErrors()
         {
-            if (string.IsNullOrEmpty(missilePrefabPath) || missileProjectile == null || exhaust == null
-                || string.IsNullOrEmpty(exhaust.flamePath) || string.IsNullOrEmpty(exhaust.smokePath))
-                yield return "弹炮合一系统缺少导弹模型、弹丸或烟焰资源。";
-            if (missileSlots == null || missileSlots.Count != 8 || radars == null || radars.Count != 2)
-                yield return "弹炮合一系统需要八个弹位和两个独立雷达。";
-            if (launchIntervalTicks < 1 || reloadTicks < 1 || missileLifetimeTicks < 1 || missileRange <= 0
-                || ejectionSpeed <= 0 || ejectionClearance < 0 || ejectionGravity < 0 || ignitionDelay < 0
-                || minimumIgnitionHeight < 0 || maximumSpeed < ejectionSpeed || acceleration < 0
-                || turnDegreesPerSecond <= 0 || fuseRadius <= 0)
-                yield return "弹炮合一系统的射程、冷却或制导参数无效。";
+            foreach (string error in base.ConfigErrors()) yield return error;
+            if (missileSlots == null || missileSlots.Count != 8 || radars == null || radars.Count != 1)
+                yield return "弹炮合一系统需要八个弹位和一个后部扫描雷达。";
+            if (string.IsNullOrEmpty(missilePitchPath) || string.IsNullOrEmpty(missileAimPointPath)
+                || missilePitchAxis.sqrMagnitude < 0.001f || missilePitchSpeed <= 0 || missilePitchAcceleration < 0)
+                yield return "弹炮合一系统的导弹独立俯仰挂点、转轴或转速无效。";
+            if (launchIntervalTicks < 1 || reloadTicks < 1 || missileRange <= 0)
+                yield return "弹炮合一系统的射程或冷却参数无效。";
             if (radars == null) yield break;
             foreach (var radar in radars)
                 if (string.IsNullOrEmpty(radar.path) || radar.axis.sqrMagnitude < 0.001f || radar.degreesPerSecond < 0)

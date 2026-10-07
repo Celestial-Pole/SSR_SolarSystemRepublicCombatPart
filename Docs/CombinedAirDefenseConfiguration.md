@@ -4,22 +4,48 @@
 
 模型：`Assets/SSR/Prefab/TurretT1_MGAA_2X.prefab`。底座尺寸保存在内部 `Root` 的三倍缩放中，建筑图形 `drawSize` 保持 `(1,1)`。建筑占地三乘三，禁止材质建造，建筑按钮在基础炮塔研究完成后显示。
 
+## 模型配色
+
+游戏炮塔、美术预制体、FBX 导入映射与完整导弹统一引用 `Assets/SSR/Turrets/T1/Materials` 的共享色卡。颜色以 `E:\模组文档\T1炮塔\参考资料\色卡与需求.jpg` 标注的 RGB 为准。材质沿用 `Unlit/ColorOnly`，表面明暗由现有离屏光照计算，不能将受光后的像素反写成另一套材质底色。
+
+| 部位 | RGB | 底色 |
+|---|---|---|
+| 白色标志 | 245, 245, 245 | `#F5F5F5` |
+| 装甲底色 | 151, 152, 153 | `#979899` |
+| 深灰部位 | 110, 111, 112 | `#6E6F70` |
+| 灰黑部位 | 78, 81, 83 | `#4E5153` |
+| 蓝色部位 | 68, 88, 138 | `#44588A` |
+| 红色灯组 | 222, 81, 99 | `#DE5163` |
+| 浅蓝灯组与装筒弹头 | 184, 205, 244 | `#B8CDF4` |
+
+完整导弹的生成工具直接引用共享材质，装筒后可见的弹头使用参考图的浅蓝色。修改材质后需要重新构建 Windows AssetBundle 并导出建筑图标，游戏中的资源包与 PNG 才会更新。
+
+雷达正面是 `立方体.009` 的第二个材质槽，沿用灰黑色 `#4E5153`；参考图中更暗的外观来自光照，材质本身不另设近黑色。
+
+全部型号的色卡数值与光照核对结果见 [T1 炮塔色卡核对](T1PaletteReview.md)。
+
 ## 机械挂点
 
 | 职责 | 模型路径 |
 |---|---|
 | 偏航 | `Root/Yaw` |
-| 俯仰 | `Root/Yaw/Pitch` |
+| 近防炮俯仰 | `Root/Yaw/Pitch` |
 | 八枪管转轮 | `Root/Yaw/Pitch/Rotor` |
 | 近防炮开火点 | `Root/Yaw/Pitch/FirePoint` |
-| 左导弹架 | `Root/Yaw/Pitch/RackLeft` |
-| 右导弹架 | `Root/Yaw/Pitch/RackRight` |
-| 左雷达 | `Root/Yaw/RadarLeft` |
-| 右雷达 | `Root/Yaw/RadarRight` |
+| 导弹独立俯仰 | `Root/Yaw/MissilePitch` |
+| 导弹瞄准中心 | `Root/Yaw/MissilePitch/AimPoint` |
+| 左导弹架 | `Root/Yaw/MissilePitch/RackLeft` |
+| 右导弹架 | `Root/Yaw/MissilePitch/RackRight` |
+| 后部扁平扫描雷达 | `Root/Yaw/RadarRear` |
+| 前方两个固定部件 | `Root/Yaw/SensorLeft`、`Root/Yaw/SensorRight` |
 
 奇数弹位在左侧，偶数弹位在右侧。每个 `Slot01` 至 `Slot08` 内有 `FirePoint` 和完整 `Missile`。发射只隐藏该弹位的导弹，发射筒保留；冷却完成后恢复。炮口沿自身正 Z 朝向，预制体中已旋转为炮塔局部负 Z。
 
-俯仰绕局部正 X 轴，范围为下俯 10 度至上仰 90 度；偏航绕局部正 Y 轴。两个圆形屋顶装置独立扫描，后部矩形天线随炮塔偏航，不参与俯仰。
+近防炮与两侧导弹架分别绕独立的局部正 X 轴俯仰，范围均为下俯 10 度至上仰 90 度；整座炮塔仍共用局部正 Y 轴偏航。导弹按自身瞄准中心求解俯仰、检查发射锥角，不依赖近防炮是否完成俯仰。两侧导弹架彼此同步，角度、角速度与回正计时单独保存。
+
+后部扁平雷达连同支杆绕固定底座上方的轴心旋转，包含 `立方体.006` 至 `立方体.010`；`立方体.004` 底座保留固定。前方两个小部件随炮塔偏航，不独立旋转。
+
+Unity 菜单 `SSR/炮塔资源/预览弹炮合一独立机构` 可按需导出近防炮、导弹架独立俯仰和雷达方位的静态预览。
 
 ## 武器参数
 
@@ -32,6 +58,9 @@
 | `missileRange` | 65 | 最大水平射程，单位格 |
 | `launchIntervalTicks` | 30 | 两枚导弹之间的发射间隔 |
 | `reloadTicks` | 600 | 单个弹位的补充冷却 |
+| `missilePitchSpeed` | 60 | 导弹架最大俯仰速度，度每秒 |
+| `missilePitchAcceleration` | 240 | 导弹架俯仰角加速度，度每平方秒 |
+| `missilePitchRange` | (350,90) | 导弹架俯仰范围，下俯 10 度至上仰 90 度 |
 | `ejectionSpeed` | 8 | 冷弹射出口速度，格每秒 |
 | `ejectionClearance` | 0.12 | 弹尾离筒后的额外净空，格 |
 | `ejectionGravity` | 9.81 | 离筒滑行的重力，格每平方秒 |
@@ -43,7 +72,7 @@
 | `fuseRadius` | 0.6 | 三维接近引信半径，格 |
 | `missileLifetimeTicks` | 600 | 飞行寿命 |
 
-各弹位供电时持续冷却，停火仍允许补充；断电或被眩晕时停止推进。雷达转速在 `radars/li/degreesPerSecond`，默认左侧 60、右侧 90 度每秒。
+各弹位供电时持续冷却，停火仍允许补充；断电或被眩晕时停止推进。后部雷达转速在 `radars/li/degreesPerSecond`，默认 60 度每秒。导弹架失去目标后沿用炮塔回正延迟，独立返回水平位置。
 
 目标策略 `SSR_TurretTargeting_CombinedAirDefense` 允许地面、抛射弹丸、空投物和 SSR 空间目标，最大真实离地高度为 240 格。自动锁定优先拦截空中威胁，手动锁定覆盖自动选择；两种武器共用目标，分别检查自身射程、弹药和冷却。近防炮射程为 50 格，50 至 65 格之间由导弹射击。
 
@@ -57,7 +86,7 @@
 
 喷焰、烟雾使用导弹井的 `MissileFlame.prefab`、`MissileSmoke.prefab`，尺寸和采样参数在 `exhaust` 内独立配置。尾迹记录真实喷口经过的位置，导弹转弯后旧烟迹保留原曲线并自行消散。导弹飞行与引信在三维空间计算，空中爆炸只影响三维半径内的空中实体。
 
-编辑器建模工具在 `Assets/SSR/CombinedDefense/Editor`。导弹网格可以重新生成；炮塔分组工具只接受尚未分组的原始预制体，避免重复改变关节。PNG 使用现有“导出当前炮塔图标”工具，更新后应将图标取景报告的 `drawSize` 和 `drawOffset` 同步到蓝图配置。
+编辑器建模工具在 `Assets/SSR/CombinedDefense/Editor`。导弹网格可以重新生成；炮塔分组工具只接受尚未分组的原始预制体，避免重复改变关节。PNG 使用现有“导出当前炮塔图标”工具：建筑按钮使用 `_MenuIcon_Isometric` 斜视图，相机俯角和方位角均为 55°，炮口朝画面右下；蓝图保留 `_MenuIcon` 正面图。图标取景报告的 `drawSize` 和 `drawOffset` 对应正面蓝图，模型尺寸改变时应同步到蓝图配置。
 
 ## 游戏内测试地图
 

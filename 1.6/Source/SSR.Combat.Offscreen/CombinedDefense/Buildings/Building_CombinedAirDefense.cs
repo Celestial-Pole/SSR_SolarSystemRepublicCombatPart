@@ -6,30 +6,42 @@ using RimWorld;
 
 namespace SSR.Combat.Offscreen
 {
-    //协调共享锁敌、原版近防炮连发、独立导弹补充和两个持续扫描雷达。
-    public sealed class Building_CombinedAirDefense : Building_ConfigurableTurret
+    //协调弹炮共享目标、独立俯仰和雷达扫描。
+    public sealed class Building_CombinedAirDefense : Building_ConfigurableTurret, IGuidedMissileLauncher
     {
         private static readonly AccessTools.FieldRef<Building_TurretGun, bool> ReadHoldFire
             = AccessTools.FieldRefAccess<Building_TurretGun, bool>("holdFire");
         private LocalTargetInfo sharedTarget = LocalTargetInfo.Invalid;
         private CombinedMissileLauncher missiles;
         private CombinedDefenseRig rig;
-        private List<float> radarAngles = new List<float> { 0, 0 };
+        private List<float> radarAngles = new List<float> { 0 };
         internal CombinedAirDefenseSettings CombinedSettings => def.GetModExtension<CombinedAirDefenseSettings>();
         public override LocalTargetInfo CurrentTarget => sharedTarget;
 
-        //模型重建时重新绑定预制体挂点，逻辑冷却和雷达相位保持不变。
+        //返回当前导弹发射挂点。
+        public Transform GetMissileFirePoint(int slot)
+        {
+            Aim.Prepare();
+            return Rig.FirePoints[slot];
+        }
+
+        //模型重建后重新绑定机械挂点。
         internal CombinedDefenseRig Rig
         {
             get
             {
                 var model = GetComp<OffscreenTurretComp>().CurrentUnityObject.ownGameObject;
-                if (rig == null || rig.Model != model) rig = new CombinedDefenseRig(model, CombinedSettings);
+                if (rig == null || rig.Model != model)
+                {
+                    rig = new CombinedDefenseRig(model, CombinedSettings);
+                    missiles?.Prepare(rig);
+                    rig.TickRadars(radarAngles, false);
+                }
                 return rig;
             }
         }
 
-        //在近防炮连发之前确定共同目标，随后推进导弹库存和雷达。
+        //更新共享目标、近防炮、导弹和雷达。
         protected override void Tick()
         {
             bool powered = Active && !IsStunned;
@@ -41,7 +53,7 @@ namespace SSR.Combat.Offscreen
             missiles.Tick(powered, firing);
         }
 
-        //保留有效锁定，定期让更高优先级的空中威胁抢占地面目标，两种武器同时切换。
+        //维持共享锁定，定期检查更高优先级的空中目标。
         private void UpdateSharedTarget(bool firing)
         {
             LocalTargetInfo next = sharedTarget;
@@ -60,7 +72,7 @@ namespace SSR.Combat.Offscreen
             sharedTarget = currentTargetInt = next;
         }
 
-        //远于近防炮射程的手动锁定使用导弹射程，近距离和取消命令沿用原版处理。
+        //处理导弹射程内的远距离手动锁定。
         public override void OrderAttack(LocalTargetInfo target)
         {
             if (!target.IsValid)
@@ -85,26 +97,26 @@ namespace SSR.Combat.Offscreen
                 this, MessageTypeDefOf.RejectInput, false);
         }
 
-        //按两种武器的联合射程索敌，近防炮弹药不足不会阻止导弹锁定。
+        //按两种武器的联合射程搜索目标。
         public override LocalTargetInfo TryFindNewTarget()
         {
             return TurretTargetSelector.Find(this, Mathf.Max(AttackVerb.EffectiveRange, CombinedSettings.missileRange));
         }
 
-        //共同目标使用联合射程，敌我、高度和视线仍经过共享防空策略。
+        //按联合射程和防空策略校验目标。
         public override bool TryReadTarget(LocalTargetInfo target, out TurretTargetState state)
         {
             return TurretTargetPolicy.TryRead(this, target, out state,
                 Mathf.Max(AttackVerb.EffectiveRange, CombinedSettings.missileRange));
         }
 
-        //近防炮只在自身射程内开火，远处锁定交给导弹独立处理。
+        //检查近防炮的开火条件。
         public override bool CanFireAt(LocalTargetInfo target)
         {
             return TurretTargetPolicy.TryRead(this, target, out var state) && Aim.Aligned(state);
         }
 
-        //远处目标维持等待，不让失败的近防炮尝试取消共享导弹目标。
+        //目标超出近防炮射程时保留共享锁定。
         protected override void BeginBurst()
         {
             if (!TurretTargetPolicy.TryRead(this, CurrentTarget, out _))
@@ -112,7 +124,7 @@ namespace SSR.Combat.Offscreen
             base.BeginBurst();
         }
 
-        //保存共享锁定、导弹补充和雷达相位，已发射导弹自行保存飞行状态。
+        //读写共享目标、导弹库存和雷达相位。
         public override void ExposeData()
         {
             base.ExposeData();
@@ -121,7 +133,7 @@ namespace SSR.Combat.Offscreen
             Scribe_Collections.Look(ref radarAngles, "radarAngles", LookMode.Value);
         }
 
-        //在原有建筑状态下显示实际可发射导弹数量。
+        //显示待发导弹数量。
         public override string GetInspectString()
         {
             return base.GetInspectString() + "\n待发导弹：" + (missiles?.ReadyCount ?? 8) + " / 8（冷却自动补充）";

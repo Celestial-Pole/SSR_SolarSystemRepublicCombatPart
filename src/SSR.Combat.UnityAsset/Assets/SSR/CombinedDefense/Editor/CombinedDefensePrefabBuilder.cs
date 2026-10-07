@@ -6,12 +6,12 @@ using UnityEngine;
 
 namespace SSR.Combat.Editor
 {
-    //为静态 MGAA 网格建立真实机械层级和八枚筒射导弹，预制体负责尺寸与枢轴。
+    //构建弹炮合一的机械层级和筒内导弹。
     internal static class CombinedDefensePrefabBuilder
     {
         private const string Path = "Assets/SSR/Prefab/TurretT1_MGAA_2X.prefab";
 
-        //构建完整导弹和炮塔关节，整个过程在编辑器内执行，不进入播放模式。
+        //构建导弹资源和弹炮合一预制体。
         [MenuItem("SSR/炮塔资源/整理弹炮合一炮塔")]
         internal static string Build()
         {
@@ -29,13 +29,16 @@ namespace SSR.Combat.Editor
                 var yaw = Group(root, prefab.transform, "Yaw", new Vector3(0, 0.155f, 0.003f));
                 var pitch = Group(yaw, prefab.transform, "Pitch", new Vector3(0, 0.31137f, 0.00573f));
                 var rotor = Group(pitch, prefab.transform, "Rotor", new Vector3(0.000014f, 0.31137f, -0.535f));
-                var left = Group(pitch, prefab.transform, "RackLeft", new Vector3(-0.394f, 0.326f, 0));
-                var right = Group(pitch, prefab.transform, "RackRight", new Vector3(0.395f, 0.326f, 0));
-                var radarLeft = Group(yaw, prefab.transform, "RadarLeft", new Vector3(-0.169f, 0.397f, 0.168f));
-                var radarRight = Group(yaw, prefab.transform, "RadarRight", new Vector3(0.173f, 0.397f, 0.132f));
+                var missilePitch = Group(yaw, prefab.transform, "MissilePitch", new Vector3(0, 0.326f, 0));
+                var left = Group(missilePitch, prefab.transform, "RackLeft", new Vector3(-0.394f, 0.326f, 0));
+                var right = Group(missilePitch, prefab.transform, "RackRight", new Vector3(0.395f, 0.326f, 0));
+                var sensorLeft = Group(yaw, prefab.transform, "SensorLeft", new Vector3(-0.169f, 0.397f, 0.168f));
+                var sensorRight = Group(yaw, prefab.transform, "SensorRight", new Vector3(0.173f, 0.397f, 0.132f));
+                var radar = Group(yaw, prefab.transform, "RadarRear", new Vector3(0, 0.42808f, 0.38262f));
                 var rotorNames = new HashSet<string> { "柱体.010", "Slice.007", "柱体.004", "柱体.006", "柱体.007" };
-                var radarLeftNames = new HashSet<string> { "柱体.054", "柱体.056", "立方体.024", "立方体.025" };
-                var radarRightNames = new HashSet<string> { "柱体.050", "柱体.052", "立方体.012", "立方体.023" };
+                var sensorLeftNames = new HashSet<string> { "柱体.054", "柱体.056", "立方体.024", "立方体.025" };
+                var sensorRightNames = new HashSet<string> { "柱体.050", "柱体.052", "立方体.012", "立方体.023" };
+                var radarNames = new HashSet<string> { "立方体.006", "立方体.007", "立方体.008", "立方体.009", "立方体.010" };
                 var gunNames = new HashSet<string> { "柱体.009", "立方体.015", "立方体.018", "立方体.027" };
                 foreach (var filter in meshes)
                 {
@@ -44,14 +47,16 @@ namespace SSR.Combat.Editor
                     { UnityEngine.Object.DestroyImmediate(filter.gameObject); continue; }
                     Transform parent = bounds.center.y < 0.16f ? root : yaw;
                     if (rotorNames.Contains(filter.name)) parent = rotor;
-                    else if (radarLeftNames.Contains(filter.name)) parent = radarLeft;
-                    else if (radarRightNames.Contains(filter.name)) parent = radarRight;
+                    else if (sensorLeftNames.Contains(filter.name)) parent = sensorLeft;
+                    else if (sensorRightNames.Contains(filter.name)) parent = sensorRight;
+                    else if (radarNames.Contains(filter.name)) parent = radar;
                     else if (gunNames.Contains(filter.name)) parent = pitch;
                     else if (bounds.center.x < -0.30f && bounds.center.y > 0.17f) parent = left;
                     else if (bounds.center.x > 0.30f && bounds.center.y > 0.17f) parent = right;
                     filter.transform.SetParent(parent, true);
                 }
                 FirePoint(pitch, prefab.transform, "FirePoint", new Vector3(0.000014f, 0.33907f, -0.84120f));
+                FirePoint(missilePitch, prefab.transform, "AimPoint", new Vector3(0, 0.326f, -0.510f));
                 var positions = new[] {
                     new Vector3(-0.350f,0.380f,-0.510f), new Vector3(0.351f,0.380f,-0.510f),
                     new Vector3(-0.438f,0.380f,-0.510f), new Vector3(0.439f,0.380f,-0.510f),
@@ -69,7 +74,7 @@ namespace SSR.Combat.Editor
                     payload.transform.localPosition = new Vector3(0, 0, 0.410f);
                 }
                 UnityEngine.Object.DestroyImmediate(old.gameObject);
-                //外层实例比例由建筑图形管理，三格模型尺寸保存在预制体内部。
+                //三格模型尺寸保存在根节点，外层缩放由建筑配置控制。
                 prefab.transform.localScale = Vector3.one;
                 root.localScale = Vector3.one * 3;
                 bool saved;
@@ -77,12 +82,12 @@ namespace SSR.Combat.Editor
                 if (!saved) throw new InvalidOperationException("MGAA 炮塔预制体保存失败。");
                 AssetImporter.GetAtPath(Path).SetAssetBundleNameAndVariant("ssr_combat_windows", "");
                 AssetDatabase.SaveAssets();
-                return "MGAA 已建立偏航、俯仰、八枪管、八个完整导弹和两个独立雷达；底座三乘三。";
+                return "MGAA 已建立共用偏航、炮弹独立俯仰、八枪管、八枚导弹和后部扫描雷达；底座三乘三。";
             }
             finally { PrefabUtility.UnloadPrefabContents(prefab); }
         }
 
-        //在原模型坐标中建立关节，子网格换组时保持世界姿态。
+        //在原模型坐标中建立关节。
         private static Transform Group(Transform parent, Transform reference, string name, Vector3 point)
         {
             var transform = new GameObject(name).transform;
@@ -92,14 +97,14 @@ namespace SSR.Combat.Editor
             return transform;
         }
 
-        //建立朝向负 Z 的真实炮口，使导弹和电磁弹沿模型枪管方向离开。
+        //建立朝向模型负 Z 轴的发射挂点。
         private static void FirePoint(Transform parent, Transform reference, string name, Vector3 point)
         {
             var fire = Group(parent, reference, name, point);
             fire.rotation = reference.rotation * Quaternion.Euler(0, 180, 0);
         }
 
-        //从实际网格求模型坐标范围，为导弹架分组提供稳定几何依据。
+        //计算网格在模型坐标中的范围。
         private static Bounds LocalBounds(Transform reference, MeshFilter filter)
         {
             var vertices = filter.sharedMesh.vertices;
@@ -108,7 +113,7 @@ namespace SSR.Combat.Editor
             return bounds;
         }
 
-        //建立项目内的资源目录，供 Unity 维护 GUID 和导入信息。
+        //通过 AssetDatabase 创建资源目录。
         private static void EnsureFolder(string parent, string name)
         {
             if (!AssetDatabase.IsValidFolder(parent + "/" + name)) AssetDatabase.CreateFolder(parent, name);

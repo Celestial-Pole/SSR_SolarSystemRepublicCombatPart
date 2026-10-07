@@ -1,4 +1,5 @@
 {
     "name": "SSR.CombinedDefense.Editor",
+    "references": ["SSR.Combat.UnityAsset"],
     "includePlatforms": ["Editor"]
 }

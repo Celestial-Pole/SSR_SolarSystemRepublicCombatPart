@@ -1,0 +1,5 @@
+{
+    "name": "SSR.T1.Editor",
+    "references": ["SSR.Combat.UnityAsset"],
+    "includePlatforms": ["Editor"]
+}

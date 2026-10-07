@@ -4,7 +4,7 @@ using Verse;
 
 namespace SSR.Combat.Offscreen
 {
-    //管理每座炮塔的逻辑角度、伺服速度和回正状态，完全按游戏刻运行并保存。
+    //管理炮塔瞄准角度、转速和回正状态。
     internal sealed class TurretAimController : IExposable
     {
         private readonly Building_ConfigurableTurret owner;
@@ -14,10 +14,10 @@ namespace SSR.Combat.Offscreen
         internal float Yaw => yaw;
         internal float Pitch => Mathf.DeltaAngle(0, pitch);
 
-        //绑定建筑，使存档中的角度与运行时模型实例分离。
+        //绑定所属建筑。
         public TurretAimController(Building_ConfigurableTurret owner) { this.owner = owner; }
 
-        //按当前目标求解并推进转轴，丢失目标后按配置延迟回正。
+        //更新瞄准转轴，失去目标后延迟回正。
         internal void Tick(bool powered)
         {
             Prepare();
@@ -38,14 +38,14 @@ namespace SSR.Combat.Offscreen
             rig.Apply(yaw, pitch);
         }
 
-        //按机械范围判断目标能否被炮口指向，供搜索器排除无法瞄准的目标。
+        //判断机械转角范围能否覆盖目标。
         internal bool CanReach(TurretTargetState state)
         {
             Prepare();
             return TurretAimSolver.Solve(rig, owner.Settings, rig.TargetPoint(state), yaw, pitch, out _, out _);
         }
 
-        //同时检查两轴误差与炮口锥角，连续射击期间也采用同一开火条件。
+        //检查两轴角度误差和炮口锥角。
         internal bool Aligned(TurretTargetState state)
         {
             Prepare();
@@ -57,10 +57,17 @@ namespace SSR.Combat.Offscreen
                 && Vector3.Angle(rig.Forward, point - rig.Muzzle.position) <= settings.aimConeTolerance;
         }
 
-        //取得已经过地图投影的炮口出生位置。
+        //返回炮口的地图投影位置。
         internal Vector3 MuzzleMapPosition { get { Prepare(); return rig.MuzzleMapPosition; } }
 
-        //读取当前实际炮口姿态和目标高度，供弹丸建立独立三维航迹。
+        //返回目标在模型采集空间中的坐标。
+        internal Vector3 TargetPoint(TurretTargetState target)
+        {
+            Prepare();
+            return rig.TargetPoint(target);
+        }
+
+        //采集炮口姿态和目标高度。
         internal TurretShotPose CaptureShot(LocalTargetInfo target)
         {
             Prepare();
@@ -69,7 +76,7 @@ namespace SSR.Combat.Offscreen
             return rig.CaptureShot(state);
         }
 
-        //实例更换后重新绑定挂点，每次使用都同步逻辑姿态，避免镜头可见性控制瞄准。
+        //绑定当前模型并同步瞄准姿态。
         internal void Prepare()
         {
             var comp = owner.GetComp<OffscreenTurretComp>();
@@ -82,7 +89,7 @@ namespace SSR.Combat.Offscreen
             rig.Apply(yaw, pitch);
         }
 
-        //保存转角、转速和回正计时，读档保持暂停前的转动阶段。
+        //读写转角、转速和回正计时。
         public void ExposeData()
         {
             Scribe_Values.Look(ref yaw, "yaw");

@@ -1,0 +1,13 @@
+CombinedAirDefense：实体网格=119，缺少法线=0
+EMAutocannon：实体网格=47，缺少法线=0
+EMSentry：实体网格=22，缺少法线=0
+MissileBox：实体网格=59，缺少法线=0
+MissileSilo：实体网格=56，缺少法线=0
+PortableEMSentry：实体网格=29，缺少法线=0
+RocketArtillery：实体网格=79，缺少法线=0
+SentryGun：实体网格=23，缺少法线=0
+PortableSentryGun：实体网格=30，缺少法线=0
+Electromagnetic_CIWS：实体网格=21，缺少法线=0
+Electromagnetic_145mmLtGun：实体网格=80，缺少法线=0
+Electromagnetic_300mmMdGun：实体网格=86，缺少法线=0
+Electromagnetic_500mmHvGun：实体网格=36，缺少法线=0

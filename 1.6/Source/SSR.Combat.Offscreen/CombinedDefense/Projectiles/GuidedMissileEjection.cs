@@ -3,7 +3,7 @@ using Verse;
 
 namespace SSR.Combat.Offscreen
 {
-    //计算沿发射筒瞄准轴的冷弹射和离筒滑行，提供实际离筒及点火时刻。
+    //计算筒内弹射、离筒滑行和点火时刻。
     internal sealed class GuidedMissileEjection : IExposable
     {
         private float stroke, missileLength, releaseSpeed, gravity, releaseSeconds, ignitionSeconds;
@@ -11,11 +11,11 @@ namespace SSR.Combat.Offscreen
         internal float ReleaseSeconds => releaseSeconds;
         internal float IgnitionSeconds => ignitionSeconds;
 
-        //为深度存档提供独立的弹射参数实例。
+        //供存档系统创建弹射状态。
         public GuidedMissileEjection() { }
 
-        //按完整弹体长度和额外净空计算导向行程，从静止加速到配置的离筒速度。
-        internal void Initialize(CombinedAirDefenseSettings settings, CombinedDefenseAssets assets, Vector3 scale)
+        //按弹体长度和额外净空计算弹射行程与离筒时间。
+        internal void Initialize(GuidedMissileSettings settings, CombinedDefenseAssets assets, Vector3 scale)
         {
             missileLength = (assets.Tip.z - assets.Trail.z) * scale.z;
             stroke = missileLength + settings.ejectionClearance;
@@ -26,7 +26,7 @@ namespace SSR.Combat.Offscreen
             minimumIgnitionHeight = settings.minimumIgnitionHeight;
         }
 
-        //以离筒后的最低弹体端点限制滑行时间，在接近地面前点火并留出恢复航向的余量。
+        //根据离筒高度和方向限制点火延迟。
         internal void AlignIgnition(Vector3 muzzle, Quaternion rotation, float groundHeight)
         {
             Vector3 forward = rotation * Vector3.forward;
@@ -46,7 +46,7 @@ namespace SSR.Combat.Offscreen
             ignitionSeconds = releaseSeconds + coast;
         }
 
-        //筒内位置沿当前炮口轴计算，离筒后按出口方向、惯性和重力计算无动力滑行。
+        //计算筒内加速或离筒抛体运动的位置和速度。
         internal void Evaluate(float seconds, Vector3 muzzle, Quaternion rotation, out Vector3 tip, out Vector3 velocity)
         {
             Vector3 forward = rotation * Vector3.forward;
@@ -63,7 +63,7 @@ namespace SSR.Combat.Offscreen
             velocity = forward * releaseSpeed - Vector3.up * (gravity * coast);
         }
 
-        //保存发射时确定的弹射行程、出口速度和点火时刻。
+        //读写弹射和点火参数。
         public void ExposeData()
         {
             Scribe_Values.Look(ref stroke, "stroke");

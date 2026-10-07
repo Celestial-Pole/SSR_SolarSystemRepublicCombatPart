@@ -16,7 +16,7 @@
       <drawSize>(3,3)</drawSize>
     </graphicData>
     <useBlueprintGraphicAsGhost>true</useBlueprintGraphicAsGhost>
-    <uiIconPath>Things/Building/Security/MissileSilo/MissileSilo_MenuIcon</uiIconPath>
+    <uiIconPath>Things/Building/Security/MissileSilo/MissileSilo_MenuIcon_Isometric</uiIconPath>
     <uiOrder>2300</uiOrder>
     <statBases>
       <MaxHitPoints>800</MaxHitPoints>
@@ -38,10 +38,15 @@
     <researchPrerequisites><li>SSR_Research_BasicTurret</li></researchPrerequisites>
     <building>
       <blueprintGraphicData>
-        <texPath>Things/Building/Security/MissileSilo/MissileSilo_MenuIcon</texPath>
-        <graphicClass>Graphic_Single</graphicClass>
+        <texPath>Things/Building/Security/MissileSilo/MissileSilo_Blueprint</texPath>
+        <graphicClass>Graphic_Multi</graphicClass>
         <shaderType>EdgeDetect</shaderType>
-        <drawSize>(3,3)</drawSize>
+        <drawSize>(4.762733,4.762733)</drawSize>
+        <drawRotated>false</drawRotated>
+        <drawOffsetNorth>(0,0,0.072127)</drawOffsetNorth>
+        <drawOffsetEast>(0,0,0.072127)</drawOffsetEast>
+        <drawOffsetSouth>(0,0,0.072127)</drawOffsetSouth>
+        <drawOffsetWest>(0,0,0.072127)</drawOffsetWest>
       </blueprintGraphicData>
       <combatPower>100</combatPower>
       <ai_combatDangerous>true</ai_combatDangerous>

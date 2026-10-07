@@ -5,35 +5,59 @@ using Verse;
 
 namespace SSR.Combat.Offscreen
 {
-    //维护逐弹位的自动补充和左右交替发射，不与近防炮的弹药或连发计时耦合。
+    //管理导弹装填、交替发射和独立俯仰。
     internal sealed class CombinedMissileLauncher : IExposable
     {
         private readonly Building_CombinedAirDefense owner;
         private List<int> cooldowns;
-        private int nextSlot, interval;
+        private int nextSlot, interval, idleTicks;
+        private float pitch, pitchVelocity;
         internal int ReadyCount => cooldowns.Count(value => value == 0);
 
-        //按实际弹位数量初始化独立库存，读档时由深度存档恢复冷却。
+        //按配置弹位数初始化库存。
         public CombinedMissileLauncher(Building_CombinedAirDefense owner)
         {
             this.owner = owner;
             cooldowns = Enumerable.Repeat(0, owner.CombinedSettings.missileSlots.Count).ToList();
         }
 
-        //供电时推进各弹位冷却，瞄准完成后从下一个可用弹位发射。
+        //推进装填和瞄准，依次使用就绪弹位。
         internal void Tick(bool powered, bool firing)
         {
+            owner.Aim.Prepare();
+            var rig = owner.Rig;
+            Prepare(rig);
+            bool hasTarget = owner.TryReadTarget(owner.CurrentTarget, out var target);
+            Vector3 point = hasTarget ? owner.Aim.TargetPoint(target) : Vector3.zero;
             if (powered)
             {
+                float desired = pitch;
+                if (hasTarget)
+                {
+                    idleTicks = 0;
+                    desired = rig.SolveMissilePitch(point, pitch, owner.Settings.solverIterations);
+                }
+                else if (owner.Settings.returnToIdle && ++idleTicks >= owner.Settings.idleDelayTicks) desired = 0;
+                var settings = owner.CombinedSettings;
+                pitch = TurretAngleLimits.Advance(pitch, desired, ref pitchVelocity, settings.missilePitchSpeed,
+                    settings.missilePitchAcceleration, settings.missilePitchRange);
+                rig.ApplyMissilePitch(pitch);
                 if (interval > 0) interval--;
                 for (int i = 0; i < cooldowns.Count; i++) if (cooldowns[i] > 0) cooldowns[i]--;
-                if (firing && interval == 0 && owner.TryReadTarget(owner.CurrentTarget, out var target)
-                    && owner.Aim.Aligned(target)) TryLaunch(target);
+                if (firing && interval == 0 && hasTarget && rig.MissilesAligned(point, owner.Settings.aimConeTolerance)) TryLaunch(target);
             }
-            owner.Rig.ShowPayloads(cooldowns);
+            else pitchVelocity = 0;
+            rig.ShowPayloads(cooldowns);
         }
 
-        //同步当前瞄准姿态，用实际弹位炮口建立冷发射弹丸，生成后消耗该弹位。
+        //同步导弹架俯仰和库存显示。
+        internal void Prepare(CombinedDefenseRig rig)
+        {
+            rig.ApplyMissilePitch(pitch);
+            rig.ShowPayloads(cooldowns);
+        }
+
+        //从指定弹位创建导弹并扣除库存。
         private void TryLaunch(TurretTargetState target)
         {
             var settings = owner.CombinedSettings;
@@ -57,12 +81,15 @@ namespace SSR.Combat.Offscreen
             }
         }
 
-        //保存八个弹位和逐枚发射间隔，读档不重复补充或发射。
+        //读写库存、发射间隔和俯仰状态。
         public void ExposeData()
         {
             Scribe_Collections.Look(ref cooldowns, "cooldowns", LookMode.Value);
             Scribe_Values.Look(ref nextSlot, "nextSlot");
             Scribe_Values.Look(ref interval, "interval");
+            Scribe_Values.Look(ref pitch, "pitch");
+            Scribe_Values.Look(ref pitchVelocity, "pitchVelocity");
+            Scribe_Values.Look(ref idleTicks, "idleTicks");
         }
     }
 }

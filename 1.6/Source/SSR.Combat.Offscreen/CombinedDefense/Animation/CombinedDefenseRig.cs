@@ -4,20 +4,25 @@ using UnityEngine;
 
 namespace SSR.Combat.Offscreen
 {
-    //绑定八个导弹库存、各自炮口和独立雷达，保留预制体中的真实机械位置。
+    //绑定导弹俯仰、弹位和雷达节点。
     internal sealed class CombinedDefenseRig
     {
         internal readonly GameObject Model;
         internal readonly Transform[] Payloads, FirePoints;
         private readonly Transform[] radars;
         private readonly Quaternion[] radarRest;
+        private readonly Transform missilePitch, missileAimPoint;
+        private readonly Quaternion missilePitchRest;
         private readonly CombinedAirDefenseSettings settings;
 
-        //按 XML 挂点绑定整座武器，不在游戏中生成轴承或改变模型尺寸。
+        //按 XML 路径绑定机械挂点。
         internal CombinedDefenseRig(GameObject model, CombinedAirDefenseSettings settings)
         {
             Model = model;
             this.settings = settings;
+            missilePitch = Require(settings.missilePitchPath);
+            missileAimPoint = Require(settings.missileAimPointPath);
+            missilePitchRest = missilePitch.localRotation;
             Payloads = new Transform[settings.missileSlots.Count];
             FirePoints = new Transform[Payloads.Length];
             for (int i = 0; i < Payloads.Length; i++)
@@ -34,7 +39,41 @@ namespace SSR.Combat.Offscreen
             }
         }
 
-        //按逻辑刻旋转雷达，独立角度不受武器俯仰或转管动画覆盖。
+        //设置导弹架俯仰。
+        internal void ApplyMissilePitch(float pitch)
+        {
+            missilePitch.localRotation = missilePitchRest * Quaternion.AngleAxis(pitch, settings.missilePitchAxis.normalized);
+        }
+
+        //求解当前底座方位下的导弹俯仰。
+        internal float SolveMissilePitch(Vector3 target, float current, int iterations)
+        {
+            float pitch = current;
+            try
+            {
+                for (int i = 0; i < iterations; i++)
+                {
+                    ApplyMissilePitch(pitch);
+                    Vector3 axis = missilePitch.TransformDirection(settings.missilePitchAxis).normalized;
+                    Vector3 forward = Vector3.ProjectOnPlane(missileAimPoint.forward, axis);
+                    Vector3 desired = Vector3.ProjectOnPlane(target - missileAimPoint.position, axis);
+                    if (desired.sqrMagnitude < 0.000001f) break;
+                    float delta = Vector3.SignedAngle(forward, desired, axis);
+                    pitch = TurretAngleLimits.Clamp(pitch + delta, settings.missilePitchRange);
+                    if (Mathf.Abs(delta) <= 0.05f) break;
+                }
+                return pitch;
+            }
+            finally { ApplyMissilePitch(current); }
+        }
+
+        //检查目标是否进入导弹发射锥。
+        internal bool MissilesAligned(Vector3 target, float tolerance)
+        {
+            return Vector3.Angle(missileAimPoint.forward, target - missileAimPoint.position) <= tolerance;
+        }
+
+        //按逻辑刻更新雷达旋转。
         internal void TickRadars(List<float> angles, bool powered)
         {
             for (int i = 0; i < radars.Length; i++)
@@ -44,13 +83,13 @@ namespace SSR.Combat.Offscreen
             }
         }
 
-        //隐藏已经发射的弹体，冷却完成后恢复原弹位，不隐藏发射筒。
+        //按库存设置各弹位的弹体可见性。
         internal void ShowPayloads(List<int> cooldowns)
         {
             for (int i = 0; i < Payloads.Length; i++) Payloads[i].gameObject.SetActive(cooldowns[i] == 0);
         }
 
-        //读取必需挂点，路径错误直接报告，不回退到模型中心。
+        //查找挂点，缺失时报告路径。
         private Transform Require(string path)
         {
             var result = Model.transform.Find(path);

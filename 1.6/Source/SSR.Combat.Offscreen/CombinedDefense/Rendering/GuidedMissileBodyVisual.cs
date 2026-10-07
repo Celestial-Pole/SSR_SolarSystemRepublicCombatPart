@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace SSR.Combat.Offscreen
 {
-    //显示完整制导弹体，以弹头参考和实际尺寸同步姿态，不把烟迹计入弹体取景。
+    //同步制导弹体模型并维护离屏绘制缓存。
     internal sealed class GuidedMissileBodyVisual : IDisposable
     {
         internal readonly Projectile_GuidedDefenseMissile Owner;
@@ -13,7 +13,7 @@ namespace SSR.Combat.Offscreen
         private readonly float diameter;
         internal Bounds Bounds => new Bounds(root.transform.TransformPoint(center), Vector3.one * diameter);
 
-        //实例化重新建模的完整导弹，模型矩阵与库存弹体的出生矩阵相同。
+        //实例化弹体并建立取景范围和网格缓存。
         internal GuidedMissileBodyVisual(Projectile_GuidedDefenseMissile owner)
         {
             Owner = owner;
@@ -28,7 +28,7 @@ namespace SSR.Combat.Offscreen
             Submission = new TurretMeshSubmission(root) { ClipGround = true };
         }
 
-        //使用弹头和尾喷口偏移还原弹体根节点，转向时模型与引信位置一致。
+        //按飞行状态同步模型姿态和尺寸。
         internal void Update()
         {
             Owner.Flight.Pose(1, Owner.Assets, out var position, out var rotation, out _);
@@ -36,7 +36,7 @@ namespace SSR.Combat.Offscreen
             root.transform.localScale = Owner.Flight.Scale;
         }
 
-        //释放单枚导弹的离屏缓存与模型，保留共享网格和材质资源。
+        //释放弹体模型和网格提交缓存。
         public void Dispose()
         {
             Submission.Dispose();

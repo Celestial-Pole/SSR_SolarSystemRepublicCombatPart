@@ -44,7 +44,7 @@
 			</shadowData>
 		</graphicData>
 		<useBlueprintGraphicAsGhost>true</useBlueprintGraphicAsGhost>
-		<uiIconPath>Things/Building/Security/SentryGun/SentryGun_MenuIcon</uiIconPath>
+		<uiIconPath>Things/Building/Security/SentryGun/SentryGun_MenuIcon_Isometric</uiIconPath>
 		<uiIconScale>1</uiIconScale>
 		<stealable>false</stealable>
 		<rotatable>false</rotatable>
@@ -73,7 +73,8 @@
 				<texPath>Things/Building/Security/SentryGun/SentryGun_MenuIcon</texPath>
 				<graphicClass>Graphic_Single</graphicClass>
 				<shaderType>EdgeDetect</shaderType>
-				<drawSize>(1,1)</drawSize>
+				<drawSize>(1.933478,1.933478)</drawSize>
+				<drawOffset>(0,0,0.332613)</drawOffset>
 			</blueprintGraphicData>
 			<combatPower>45</combatPower><!-- 战斗力与拾荒者相同 -->
 			<ai_combatDangerous>true</ai_combatDangerous>
@@ -189,7 +190,7 @@
 			</shadowData>
 		</graphicData>
 		<useBlueprintGraphicAsGhost>true</useBlueprintGraphicAsGhost>
-		<uiIconPath>Things/Building/Security/SentryGun/PortableSentryGun_MenuIcon</uiIconPath>
+		<uiIconPath>Things/Building/Security/SentryGun/PortableSentryGun_MenuIcon_Isometric</uiIconPath>
 		<uiIconScale>1</uiIconScale>
 		<minifiedDef>MinifiedThing</minifiedDef>
 		<stealable>false</stealable>
@@ -221,7 +222,8 @@
 				<texPath>Things/Building/Security/SentryGun/PortableSentryGun_MenuIcon</texPath>
 				<graphicClass>Graphic_Single</graphicClass>
 				<shaderType>EdgeDetect</shaderType>
-				<drawSize>(1.5,1.5)</drawSize>
+				<drawSize>(1.512171,1.512171)</drawSize>
+				<drawOffset>(0,0,0.119697)</drawOffset>
 			</blueprintGraphicData>
 			<combatPower>45</combatPower><!-- 战斗力与拾荒者相同 -->
 			<ai_combatDangerous>true</ai_combatDangerous>
@@ -389,7 +391,7 @@
 			</shadowData>
 		</graphicData>
 		<useBlueprintGraphicAsGhost>true</useBlueprintGraphicAsGhost>
-		<uiIconPath>Things/Building/Security/ElectromagneticCIWS/ElectromagneticCIWS_MenuIcon</uiIconPath>
+		<uiIconPath>Things/Building/Security/ElectromagneticCIWS/ElectromagneticCIWS_MenuIcon_Isometric</uiIconPath>
 		<uiIconScale>1</uiIconScale>
 		<stealable>false</stealable>
 		<rotatable>false</rotatable>
@@ -421,7 +423,8 @@
 				<texPath>Things/Building/Security/ElectromagneticCIWS/ElectromagneticCIWS_MenuIcon</texPath>
 				<graphicClass>Graphic_Single</graphicClass>
 				<shaderType>EdgeDetect</shaderType>
-				<drawSize>(2,2)</drawSize>
+				<drawSize>(4.196917,4.196917)</drawSize>
+				<drawOffset>(0,0,0.958524)</drawOffset>
 			</blueprintGraphicData>
 			<combatPower>45</combatPower><!-- 战斗力与拾荒者相同 -->
 			<ai_combatDangerous>true</ai_combatDangerous>
@@ -633,7 +636,7 @@
 			</shadowData>
 		</graphicData>
 		<useBlueprintGraphicAsGhost>true</useBlueprintGraphicAsGhost>
-		<uiIconPath>Things/Building/Security/145mmLtElectromagneticGun/145mmLtElectromagneticGun_MenuIcon</uiIconPath>
+		<uiIconPath>Things/Building/Security/145mmLtElectromagneticGun/145mmLtElectromagneticGun_MenuIcon_Isometric</uiIconPath>
 		<uiIconScale>1</uiIconScale>
 		<stealable>false</stealable>
 		<rotatable>false</rotatable>
@@ -661,7 +664,8 @@
 				<texPath>Things/Building/Security/145mmLtElectromagneticGun/145mmLtElectromagneticGun_MenuIcon</texPath>
 				<graphicClass>Graphic_Single</graphicClass>
 				<shaderType>EdgeDetect</shaderType>
-				<drawSize>(3,3)</drawSize>
+				<drawSize>(6.127889,6.127889)</drawSize>
+				<drawOffset>(0,0,0.913953)</drawOffset>
 			</blueprintGraphicData>
 			<combatPower>45</combatPower>
 			<ai_combatDangerous>true</ai_combatDangerous>
@@ -851,7 +855,7 @@
 			</shadowData>
 		</graphicData>
 		<useBlueprintGraphicAsGhost>true</useBlueprintGraphicAsGhost>
-		<uiIconPath>Things/Building/Security/300mmMdElectromagneticGun/300mmMdElectromagneticGun_MenuIcon</uiIconPath>
+		<uiIconPath>Things/Building/Security/300mmMdElectromagneticGun/300mmMdElectromagneticGun_MenuIcon_Isometric</uiIconPath>
 		<uiIconScale>1</uiIconScale>
 		<stealable>false</stealable>
 		<rotatable>false</rotatable>
@@ -879,7 +883,8 @@
 				<texPath>Things/Building/Security/300mmMdElectromagneticGun/300mmMdElectromagneticGun_MenuIcon</texPath>
 				<graphicClass>Graphic_Single</graphicClass>
 				<shaderType>EdgeDetect</shaderType>
-				<drawSize>(5,5)</drawSize>
+				<drawSize>(10.15609,10.15609)</drawSize>
+				<drawOffset>(0,0,1.523254)</drawOffset>
 			</blueprintGraphicData>
 			<combatPower>45</combatPower>
 			<ai_combatDangerous>true</ai_combatDangerous>
@@ -1073,7 +1078,7 @@
 			</shadowData>
 		</graphicData>
 		<useBlueprintGraphicAsGhost>true</useBlueprintGraphicAsGhost>
-		<uiIconPath>Things/Building/Security/500mmHvElectromagneticGun/500mmHvElectromagneticGun_MenuIcon</uiIconPath>
+		<uiIconPath>Things/Building/Security/500mmHvElectromagneticGun/500mmHvElectromagneticGun_MenuIcon_Isometric</uiIconPath>
 		<uiIconScale>1</uiIconScale>
 		<stealable>false</stealable>
 		<rotatable>false</rotatable>
@@ -1102,7 +1107,8 @@
 				<texPath>Things/Building/Security/500mmHvElectromagneticGun/500mmHvElectromagneticGun_MenuIcon</texPath>
 				<graphicClass>Graphic_Single</graphicClass>
 				<shaderType>EdgeDetect</shaderType>
-				<drawSize>(7,7)</drawSize>
+				<drawSize>(16.49912,16.49912)</drawSize>
+				<drawOffset>(0,0,2.948051)</drawOffset>
 			</blueprintGraphicData>
 			<combatPower>45</combatPower>
 			<ai_combatDangerous>true</ai_combatDangerous>

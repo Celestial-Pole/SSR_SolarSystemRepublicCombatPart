@@ -6,12 +6,15 @@ using UnityEngine;
 
 namespace SSR.UnityComponent.Outline.Editor
 {
-    //按现有资源标签构建单个 Windows 战斗资源包，不改动其他平台或用户场景。
+    //按资源标签构建 Windows 战斗资源包。
     internal static class CombatWindowsBundleBuilder
     {
-        //编译明确登记的资源及 Shader，并将构建错误交给调用者。
+        //收集运行资源并构建资源包。
         internal static string Build()
         {
+            //底色材质不读取法线，但运行时的几何采集和光照需要完整法线数据。
+            if (PlayerSettings.stripUnusedMeshComponents)
+                throw new InvalidOperationException("战斗资源不能剔除网格法线，请关闭 Player Settings 的 Optimize Mesh Data。");
             const string bundle = "ssr_combat_windows";
             string output = Path.GetFullPath(Path.Combine(Application.dataPath, "../../../Asset/Windows"));
             //父目录的标签会被脚本继承，构建清单只接收运行资源。

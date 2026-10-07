@@ -36,6 +36,7 @@
 /src/SSR.Combat.UnityAsset/*.slnx
 
 #开发截图、本地文档及导入报告。
+/Docs/Previews/**/*.png
 **/[Ss]creenshots/
 **/[Dd]ocumentation/
 **/[Rr]eview/

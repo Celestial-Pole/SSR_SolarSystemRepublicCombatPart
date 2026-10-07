@@ -4,16 +4,16 @@ using UnityEngine;
 
 namespace SSR.Combat.Offscreen
 {
-    //缓存制导弹体和导弹井共用的烟焰资源，校验弹头与尾喷口挂点。
+    //缓存制导弹体和烟焰资源。
     internal sealed class CombinedDefenseAssets
     {
-        private static readonly Dictionary<CombinedAirDefenseSettings, CombinedDefenseAssets> cache
-            = new Dictionary<CombinedAirDefenseSettings, CombinedDefenseAssets>();
+        private static readonly Dictionary<GuidedMissileSettings, CombinedDefenseAssets> cache
+            = new Dictionary<GuidedMissileSettings, CombinedDefenseAssets>();
         internal readonly GameObject Missile, Flame, Smoke;
         internal readonly Vector3 Tip, Trail;
 
-        //读取完整弹体及真实喷口，不从筒口或模型中心猜测尾迹起点。
-        private CombinedDefenseAssets(CombinedAirDefenseSettings settings)
+        //加载弹体资源并校验弹头、尾喷口挂点。
+        private CombinedDefenseAssets(GuidedMissileSettings settings)
         {
             var bundle = CombatAssetBundle.Require();
             Missile = Require(bundle, settings.missilePrefabPath);
@@ -26,18 +26,18 @@ namespace SSR.Combat.Offscreen
             Trail = Missile.transform.InverseTransformPoint(trail.position);
         }
 
-        //按只读定义复用资源，不保存地图或预制体实例。
-        internal static CombinedDefenseAssets Get(CombinedAirDefenseSettings settings)
+        //按配置缓存资源。
+        internal static CombinedDefenseAssets Get(GuidedMissileSettings settings)
         {
             if (!cache.TryGetValue(settings, out var assets)) cache.Add(settings, assets = new CombinedDefenseAssets(settings));
             return assets;
         }
 
-        //装载指定预制体，资源错误直接报告路径。
+        //加载预制体，缺失时报告路径。
         private static GameObject Require(AssetBundle bundle, string path)
         {
             var result = bundle.LoadAsset<GameObject>(path);
-            if (!result) throw new InvalidOperationException("弹炮合一系统缺少资源：" + path);
+            if (!result) throw new InvalidOperationException("实体导弹缺少资源：" + path);
             return result;
         }
     }
