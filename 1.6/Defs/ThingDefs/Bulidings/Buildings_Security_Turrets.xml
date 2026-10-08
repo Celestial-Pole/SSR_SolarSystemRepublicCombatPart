@@ -1185,7 +1185,8 @@
 				<pitchPath>Transform_Y/Root/Yaw/Pitch</pitchPath>
 				<yawRotationAixe>(0, 1, 0)</yawRotationAixe>
 				<pitchRotationAixe>(1, 0, 0)</pitchRotationAixe>
-				<pitchRotationRange>(350, 30)</pitchRotationRange>
+				<!--局部负角为上仰，允许上仰 85 度、下俯 3 度。-->
+				<pitchRotationRange>(275, 3)</pitchRotationRange>
 				<shootingOrigineForward>(0, 0, 1)</shootingOrigineForward>
 			</li>
 		</modExtensions>

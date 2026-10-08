@@ -182,7 +182,7 @@ namespace SSR.Combat.Offscreen
                 if (clipGround)
                 {
                     //井内合并采集与离井独立采集采用相同世界线宽和遮蔽半径。
-                    compositeMaterial.SetFloat("_SilhouetteWidth", 0.012f * size / frame.MapSize);
+                    compositeMaterial.SetFloat("_SilhouetteWidth", TurretCaptureProfile.MissileOutlineWidth * size / frame.MapSize);
                     compositeMaterial.SetFloat("_SurfaceContactRadius", 0.07f);
                 }
                 TurretSurfaceLighting.RenderContact(buffers, compositeMaterial);

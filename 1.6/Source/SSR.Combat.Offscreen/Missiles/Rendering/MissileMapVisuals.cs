@@ -61,7 +61,7 @@ namespace SSR.Combat.Offscreen
             }
         }
 
-        //准备本帧显示，未离井弹体与井体共用深度、光影和外轮廓采集。
+        //准备本帧显示，投影重叠的弹体与井体共用深度、光影和外轮廓采集。
         internal void Draw(OffscreenTurretRenderer renderer, Camera camera)
         {
             if (renderFailed) return;
@@ -78,18 +78,31 @@ namespace SSR.Combat.Offscreen
         {
             var usedSilos = new HashSet<Building_MissileSilo>();
             var usedBodies = new HashSet<Projectile_VerticalMissile>();
+            var combined = new HashSet<Projectile_VerticalMissile>();
             foreach (var silo in silos)
             {
                 var bounds = silo.CaptureBounds;
                 if (!Visible(camera, bounds, silo.GroundOrigin)) continue;
                 var view = GetSilo(silo, usedSilos);
-                var attached = missiles.Keys.Where(m => !m.ClearOfSilo && m.SourceSilo == silo)
-                    .Select(m => GetBody(m, usedBodies)).ToArray();
-                renderer.DrawSilo(camera, view, attached);
+                var attached = new List<MissileBodyVisual>();
+                foreach (var missile in missiles.Keys)
+                {
+                    if (missile.SourceSilo != silo || missile.FlightSeconds > missile.Trajectory.AscentSeconds) continue;
+                    if (missile.ClearOfSilo)
+                    {
+                        missile.Trajectory.Evaluate(missile.FlightSeconds, out var tip, out _);
+                        if (!Visible(camera, new Bounds(tip, Vector3.one * 3), missile.Trajectory.Anchor)) continue;
+                    }
+                    var body = GetBody(missile, usedBodies);
+                    if (missile.ClearOfSilo && !view.Overlaps(body)) continue;
+                    attached.Add(body);
+                    combined.Add(missile);
+                }
+                renderer.DrawSilo(camera, view, attached.ToArray());
             }
             foreach (var missile in missiles.Keys)
             {
-                if (!missile.ClearOfSilo) continue;
+                if (!missile.ClearOfSilo || combined.Contains(missile)) continue;
                 missile.Trajectory.Evaluate(missile.FlightSeconds, out var tip, out _);
                 if (!Visible(camera, new Bounds(tip, Vector3.one * 3), missile.Trajectory.Anchor)) continue;
                 renderer.DrawMissile(camera, GetBody(missile, usedBodies));

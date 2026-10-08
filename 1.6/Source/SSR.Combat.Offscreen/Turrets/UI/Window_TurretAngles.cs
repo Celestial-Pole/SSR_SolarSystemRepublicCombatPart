@@ -8,17 +8,15 @@ namespace SSR.Combat.Offscreen
     {
         private const string Hint = "拖动滑条可直接观察地图上的炮塔。预览时暂停，关闭后恢复原姿态。角度以各型号的机械零位为基准。";
         private readonly Building_ConfigurableTurret turret;
-        private readonly Building_CombinedAirDefense combined;
-        private float originalYaw, originalPitch, originalMissilePitch;
-        private float yaw, pitch, missilePitch;
+        private float originalYaw, originalPitch;
+        private float yaw, pitch;
         private Vector2 scrollPosition;
-        public override Vector2 InitialSize => new Vector2(440, Mathf.Min(UI.screenHeight - 60, combined == null ? 400 : 480));
+        public override Vector2 InitialSize => new Vector2(440, Mathf.Min(UI.screenHeight - 60, 400));
 
         //允许移动镜头和窗口，暂停期间禁止把预览角度写进存档。
         internal Window_TurretAngles(Building_ConfigurableTurret turret)
         {
             this.turret = turret;
-            combined = turret as Building_CombinedAirDefense;
             optionalTitle = "炮塔角度预览";
             doCloseX = doCloseButton = draggable = forcePause = preventSave = true;
             preventCameraMotion = false;
@@ -31,7 +29,6 @@ namespace SSR.Combat.Offscreen
             base.PreOpen();
             originalYaw = turret.Aim.Yaw;
             originalPitch = turret.Aim.Pitch;
-            if (combined != null) originalMissilePitch = combined.Missiles.Pitch;
             ResetSliders();
         }
 
@@ -54,7 +51,6 @@ namespace SSR.Combat.Offscreen
         public override void PostClose()
         {
             turret.Aim.SetPreviewAngles(originalYaw, originalPitch);
-            combined?.Missiles.SetPreviewPitch(originalMissilePitch);
             base.PostClose();
         }
 
@@ -76,7 +72,7 @@ namespace SSR.Combat.Offscreen
                 float headingHeight = Text.CalcHeight(turret.LabelCap, width);
                 float hintHeight = Text.CalcHeight(Hint, width);
                 float axisHeight = Text.LineHeight + 40;
-                float height = headingHeight + hintHeight + 24 + axisHeight * (combined == null ? 2 : 3) + 44;
+                float height = headingHeight + hintHeight + 24 + axisHeight * 2 + 44;
                 Widgets.BeginScrollView(body, ref scrollPosition, new Rect(0, 0, width, Mathf.Max(body.height, height)));
                 try
                 {
@@ -84,16 +80,13 @@ namespace SSR.Combat.Offscreen
                     float y = headingHeight + 8;
                     Widgets.Label(new Rect(0, y, width, hintHeight), Hint);
                     y += hintHeight + 16;
-                    float oldYaw = yaw, oldPitch = pitch, oldMissilePitch = missilePitch;
+                    float oldYaw = yaw, oldPitch = pitch;
                     yaw = DrawAngle(width, ref y, "水平旋转", yaw, turret.Settings.yawRotationRange);
                     pitch = DrawAngle(width, ref y, "炮管俯仰", pitch, turret.Settings.pitchRotationRange);
-                    if (combined != null)
-                        missilePitch = DrawAngle(width, ref y, "导弹架俯仰", missilePitch, combined.CombinedSettings.missilePitchRange);
                     if (Widgets.ButtonText(new Rect(0, y, width, 36), "恢复原姿态")) ResetSliders();
-                    if (yaw != oldYaw || pitch != oldPitch || missilePitch != oldMissilePitch)
+                    if (yaw != oldYaw || pitch != oldPitch)
                     {
                         turret.Aim.SetPreviewAngles(yaw, pitch);
-                        combined?.Missiles.SetPreviewPitch(missilePitch);
                     }
                 }
                 finally { Widgets.EndScrollView(); }
@@ -140,7 +133,6 @@ namespace SSR.Combat.Offscreen
         {
             yaw = SliderAngle(originalYaw, turret.Settings.yawRotationRange);
             pitch = SliderAngle(originalPitch, turret.Settings.pitchRotationRange);
-            if (combined != null) missilePitch = SliderAngle(originalMissilePitch, combined.CombinedSettings.missilePitchRange);
         }
     }
 }

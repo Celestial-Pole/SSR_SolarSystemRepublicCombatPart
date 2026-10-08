@@ -29,9 +29,9 @@ namespace SSR.Combat.Editor
                 var yaw = Group(root, prefab.transform, "Yaw", new Vector3(0, 0.155f, 0.003f));
                 var pitch = Group(yaw, prefab.transform, "Pitch", new Vector3(0, 0.31137f, 0.00573f));
                 var rotor = Group(pitch, prefab.transform, "Rotor", new Vector3(0.000014f, 0.31137f, -0.535f));
-                var missilePitch = Group(yaw, prefab.transform, "MissilePitch", new Vector3(0, 0.326f, 0.405f));
-                var left = Group(missilePitch, prefab.transform, "RackLeft", new Vector3(-0.394f, 0.326f, 0));
-                var right = Group(missilePitch, prefab.transform, "RackRight", new Vector3(0.395f, 0.326f, 0));
+                var missileRack = Group(yaw, prefab.transform, "MissileRack", new Vector3(0, 0.326f, 0.405f));
+                var left = Group(missileRack, prefab.transform, "RackLeft", new Vector3(-0.394f, 0.326f, 0));
+                var right = Group(missileRack, prefab.transform, "RackRight", new Vector3(0.395f, 0.326f, 0));
                 var sensorLeft = Group(yaw, prefab.transform, "SensorLeft", new Vector3(-0.169f, 0.397f, 0.168f));
                 var sensorRight = Group(yaw, prefab.transform, "SensorRight", new Vector3(0.173f, 0.397f, 0.132f));
                 var radar = Group(yaw, prefab.transform, "RadarRear", new Vector3(0, 0.42808f, 0.38262f));
@@ -51,13 +51,13 @@ namespace SSR.Combat.Editor
                     else if (sensorRightNames.Contains(filter.name)) parent = sensorRight;
                     else if (radarNames.Contains(filter.name)) parent = radar;
                     else if (gunNames.Contains(filter.name)) parent = pitch;
-                    else if (filter.name == "立方体.014") parent = missilePitch;
+                    else if (filter.name == "立方体.014") parent = missileRack;
                     else if (bounds.center.x < -0.30f && bounds.center.y > 0.17f) parent = left;
                     else if (bounds.center.x > 0.30f && bounds.center.y > 0.17f) parent = right;
                     filter.transform.SetParent(parent, true);
                 }
                 FirePoint(pitch, prefab.transform, "FirePoint", new Vector3(0.000014f, 0.33907f, -0.84120f));
-                FirePoint(missilePitch, prefab.transform, "AimPoint", new Vector3(0, 0.326f, -0.510f));
+                FirePoint(missileRack, prefab.transform, "AimPoint", new Vector3(0, 0.326f, -0.510f));
                 var positions = new[] {
                     new Vector3(-0.350f,0.380f,-0.510f), new Vector3(0.351f,0.380f,-0.510f),
                     new Vector3(-0.438f,0.380f,-0.510f), new Vector3(0.439f,0.380f,-0.510f),
@@ -83,7 +83,7 @@ namespace SSR.Combat.Editor
                 if (!saved) throw new InvalidOperationException("MGAA 炮塔预制体保存失败。");
                 AssetImporter.GetAtPath(Path).SetAssetBundleNameAndVariant("ssr_combat_windows", "");
                 AssetDatabase.SaveAssets();
-                return "MGAA 已建立共用偏航、炮弹独立俯仰、八枪管、八枚导弹和后部扫描雷达；底座三乘三。";
+                return "MGAA 已建立共用偏航、近防炮俯仰、固定导弹筒、八枪管、八枚导弹和后部扫描雷达；底座三乘三。";
             }
             finally { PrefabUtility.UnloadPrefabContents(prefab); }
         }

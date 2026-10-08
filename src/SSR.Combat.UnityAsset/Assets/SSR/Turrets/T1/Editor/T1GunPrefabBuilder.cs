@@ -38,7 +38,7 @@ namespace SSR.Combat.Editor
                 var pitch = T1ModelTools.Joint(yaw, reference, "Pitch", pitchPoint);
                 var recoil = T1ModelTools.Joint(pitch, reference, "Recoil", pitchPoint);
                 var movable = autocannon
-                    ? new HashSet<string> { "Slice.003", "Slice.004", "Slice.005", "立方体.001", "立方体.004" }
+                    ? new HashSet<string> { "Slice.003", "立方体.001", "立方体.004" }
                     : new HashSet<string> { "Slice.003", "Slice.005", "柱体.001", "柱体.002", "柱体.003", "柱体.004", "立方体.004", "立方体.006", "立方体.011" };
                 foreach (var mesh in meshes)
                 {
@@ -48,6 +48,7 @@ namespace SSR.Combat.Editor
                     mesh.transform.SetParent(parent, true);
                 }
                 T1ModelTools.Joint(recoil, reference, "FirePoint", new Vector3(gunBounds.center.x, gunBounds.center.y, gunBounds.max.z));
+                if (autocannon) AddAutocannonRadar(yaw, reference);
                 UnityEngine.Object.DestroyImmediate(old.gameObject);
                 T1ModelTools.AddRecoil(recoil, name, autocannon ? 0.045f : 0.025f);
                 root.localScale = Vector3.one * scale;
@@ -55,6 +56,15 @@ namespace SSR.Combat.Editor
                 T1ModelTools.Save(model, "Assets/SSR/Prefab/" + output + ".prefab");
             }
             finally { UnityEngine.Object.DestroyImmediate(model); }
+        }
+
+        //将机关炮雷达盘和背板挂到独立俯仰轴，支架留在炮塔上。
+        internal static void AddAutocannonRadar(Transform yaw, Transform reference)
+        {
+            var disk = yaw.Find("柱体.009").GetComponent<MeshFilter>();
+            var pivot = T1ModelTools.Joint(yaw, reference, "RadarPitch", T1ModelTools.Bounds(reference, disk).center);
+            foreach (string part in new[] { "柱体.009", "立方体.007", "立方体.008" })
+                yaw.Find(part).SetParent(pivot, true);
         }
     }
 }

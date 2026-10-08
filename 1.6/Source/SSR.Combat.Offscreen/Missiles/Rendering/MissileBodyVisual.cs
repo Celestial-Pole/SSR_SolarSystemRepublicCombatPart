@@ -9,9 +9,21 @@ namespace SSR.Combat.Offscreen
         internal readonly Projectile_VerticalMissile Owner;
         internal readonly TurretMeshSubmission Submission;
         private readonly GameObject root;
+        private readonly Renderer[] renderers;
         private readonly Vector3 localCenter;
         private readonly float diameter;
         internal Bounds Bounds => new Bounds(root.transform.TransformPoint(localCenter), Vector3.one * diameter / Mathf.Sqrt(3));
+
+        //按当前姿态取得实体范围，用于判断弹体与井体的投影是否仍有重叠。
+        internal Bounds SurfaceBounds
+        {
+            get
+            {
+                var bounds = renderers[0].bounds;
+                foreach (var renderer in renderers) bounds.Encapsulate(renderer.bounds);
+                return bounds;
+            }
+        }
 
         //在真实库存位置实例化飞行模型，缩放和旋转均取自构建布局。
         internal MissileBodyVisual(Projectile_VerticalMissile owner)
@@ -20,9 +32,8 @@ namespace SSR.Combat.Offscreen
             root = UnityEngine.Object.Instantiate(owner.Assets.Missile);
             root.name = "SSR飞行导弹_" + owner.thingIDNumber;
             Update();
-            var renderers = root.GetComponentsInChildren<Renderer>();
-            var bounds = renderers[0].bounds;
-            foreach (var renderer in renderers) bounds.Encapsulate(renderer.bounds);
+            renderers = root.GetComponentsInChildren<Renderer>();
+            var bounds = SurfaceBounds;
             localCenter = root.transform.InverseTransformPoint(bounds.center);
             diameter = bounds.size.magnitude;
             Submission = new TurretMeshSubmission(root) { ClipGround = true };

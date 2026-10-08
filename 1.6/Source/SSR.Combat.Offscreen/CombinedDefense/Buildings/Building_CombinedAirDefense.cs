@@ -6,7 +6,7 @@ using RimWorld;
 
 namespace SSR.Combat.Offscreen
 {
-    //协调弹炮共享目标、独立俯仰和雷达扫描。
+    //协调近防炮俯仰、固定筒导弹发射和雷达扫描。
     public sealed class Building_CombinedAirDefense : Building_ConfigurableTurret, IGuidedMissileLauncher
     {
         private static readonly AccessTools.FieldRef<Building_TurretGun, bool> ReadHoldFire
@@ -85,7 +85,7 @@ namespace SSR.Combat.Offscreen
             }
             if ((target.Cell - Position).LengthHorizontal <= AttackVerb.EffectiveRange)
             { base.OrderAttack(target); return; }
-            if (!TryReadTarget(target, out var state) || !Aim.CanReach(state))
+            if (!TryReadTarget(target, out var state) || !CanReachTarget(state))
             {
                 Messages.Message("目标超出弹炮合一系统的射程、高度或机械瞄准范围。", this,
                     MessageTypeDefOf.RejectInput, false);
@@ -108,6 +108,13 @@ namespace SSR.Combat.Offscreen
         {
             return TurretTargetPolicy.TryRead(this, target, out state,
                 Mathf.Max(AttackVerb.EffectiveRange, CombinedSettings.missileRange));
+        }
+
+        //导弹可在离筒后转向，不受近防炮俯仰限位约束。
+        internal override bool CanReachTarget(TurretTargetState state)
+        {
+            return (state.GroundPosition - MapDrawPosition).MagnitudeHorizontalSquared()
+                <= CombinedSettings.missileRange * CombinedSettings.missileRange || base.CanReachTarget(state);
         }
 
         //检查近防炮的开火条件。

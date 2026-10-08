@@ -8,6 +8,7 @@ namespace SSR.Combat.Offscreen
         private const int ReferenceResolution = 512;
         internal const float ViewElevation = 60f;
         internal const float FramingMargin = 1.12f;
+        internal const float MissileOutlineWidth = 0.012f;
         internal static readonly Quaternion Direction = Quaternion.Euler(ViewElevation, 0, 0);
 
         //近景直接保留原生采集精度，中远景用两倍采样处理亚像素轮廓。

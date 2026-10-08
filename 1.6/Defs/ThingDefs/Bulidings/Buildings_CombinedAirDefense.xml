@@ -13,7 +13,7 @@
   <ThingDef ParentName="SSR_BuildingBase_Security">
     <defName>SSR_Turret_CombinedAirDefense</defName>
     <label>弹炮合一防空武器系统</label>
-    <description>三乘三弹炮合一防空武器系统。八管近防炮与八枚筒射制导导弹共享锁定目标、独立俯仰，优先拦截空中威胁，也能打击地面敌人。导弹沿发射器当前瞄准轴冷弹射出筒，弹尾完全离筒后短暂惯性滑行，再点火持续追踪目标；各弹位独立冷却自动补充。近防炮使用特种钢补充弹药，后部平板雷达持续扫描。</description>
+    <description>三乘三弹炮合一防空武器系统。八管近防炮与八枚筒射制导导弹共享锁定目标，优先拦截空中威胁，也能打击地面敌人。近防炮独立俯仰，两侧导弹筒固定在炮塔上。导弹沿筒口冷弹射，弹尾完全离筒后点火转向目标，可爬升拦截高处威胁；各弹位独立冷却自动补充。近防炮使用特种钢补充弹药，后部平板雷达持续扫描。</description>
     <thingClass>SSR.Combat.Offscreen.Building_CombinedAirDefense</thingClass>
     <drawerType>MapMeshAndRealTime</drawerType>
     <graphicData>
@@ -165,20 +165,15 @@
         <missileRange>65</missileRange>
         <launchIntervalTicks>30</launchIntervalTicks>
         <reloadTicks>600</reloadTicks>
-        <!--两侧导弹架共用独立俯仰轴，不继承近防炮俯仰；偏航仍随整座炮塔。-->
-        <missilePitchPath>Root/Yaw/MissilePitch</missilePitchPath>
-        <missileAimPointPath>Root/Yaw/MissilePitch/AimPoint</missileAimPointPath>
-        <missilePitchAxis>(1,0,0)</missilePitchAxis>
-        <missilePitchRange>(357,90)</missilePitchRange>
-        <missilePitchSpeed>60</missilePitchSpeed>
-        <missilePitchAcceleration>240</missilePitchAcceleration>
-        <!--冷弹射沿发射筒的当前瞄准轴从静止加速；离筒净空为格，重力为格每平方秒。-->
+        <!--导弹筒只随炮塔偏航，发射前仅检查水平方位。-->
+        <missileAimPointPath>Root/Yaw/MissileRack/AimPoint</missileAimPointPath>
+        <!--冷弹射沿固定筒口方向从静止加速；离筒净空为格，重力为格每平方秒。-->
         <ejectionSpeed>8</ejectionSpeed>
         <ejectionClearance>0.12</ejectionClearance>
         <ejectionGravity>9.81</ejectionGravity>
-        <!--弹尾完全离筒并达到净空后无动力滑行的秒数，此前没有尾焰或制导转向。-->
-        <ignitionDelay>0.30</ignitionDelay>
-        <!--低俯角时按最低弹体端点的高度限制滑行时间，在落地前留出制导恢复距离。-->
+        <!--弹尾完全离筒并达到净空后立即点火，按目标高度转向爬升。-->
+        <ignitionDelay>0</ignitionDelay>
+        <!--滑行阶段允许的最低弹体端点高度，单位格。-->
         <minimumIgnitionHeight>0.2</minimumIgnitionHeight>
         <maximumSpeed>72</maximumSpeed>
         <acceleration>160</acceleration>
@@ -186,14 +181,14 @@
         <fuseRadius>0.6</fuseRadius>
         <missileLifetimeTicks>600</missileLifetimeTicks>
         <missileSlots>
-          <li>Root/Yaw/MissilePitch/RackLeft/Slot01</li>
-          <li>Root/Yaw/MissilePitch/RackRight/Slot02</li>
-          <li>Root/Yaw/MissilePitch/RackLeft/Slot03</li>
-          <li>Root/Yaw/MissilePitch/RackRight/Slot04</li>
-          <li>Root/Yaw/MissilePitch/RackLeft/Slot05</li>
-          <li>Root/Yaw/MissilePitch/RackRight/Slot06</li>
-          <li>Root/Yaw/MissilePitch/RackLeft/Slot07</li>
-          <li>Root/Yaw/MissilePitch/RackRight/Slot08</li>
+          <li>Root/Yaw/MissileRack/RackLeft/Slot01</li>
+          <li>Root/Yaw/MissileRack/RackRight/Slot02</li>
+          <li>Root/Yaw/MissileRack/RackLeft/Slot03</li>
+          <li>Root/Yaw/MissileRack/RackRight/Slot04</li>
+          <li>Root/Yaw/MissileRack/RackLeft/Slot05</li>
+          <li>Root/Yaw/MissileRack/RackRight/Slot06</li>
+          <li>Root/Yaw/MissileRack/RackLeft/Slot07</li>
+          <li>Root/Yaw/MissileRack/RackRight/Slot08</li>
         </missileSlots>
         <radars>
           <li>

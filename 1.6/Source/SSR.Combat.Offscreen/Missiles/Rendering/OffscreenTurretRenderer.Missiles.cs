@@ -10,7 +10,7 @@ namespace SSR.Combat.Offscreen
     {
         private Material missileOccluder;
 
-        //合并未离井的飞行弹体与井体，颜色、法线和描边始终服从同一遮挡关系。
+        //合并投影仍重叠的弹体与井体，让颜色、法线和描边共用遮挡关系。
         internal void DrawSilo(Camera camera, SiloVisual silo, MissileBodyVisual[] attached)
         {
             colorCommands.Clear();
@@ -24,7 +24,7 @@ namespace SSR.Combat.Offscreen
             plane.Draw(camera, frame);
         }
 
-        //离井后使用紧凑的弹体范围采集，保留原材质、光影和外轮廓。
+        //投影分离后使用紧凑的弹体范围采集，保留原材质、光影和外轮廓。
         internal void DrawMissile(Camera camera, MissileBodyVisual missile)
         {
             colorCommands.Clear();

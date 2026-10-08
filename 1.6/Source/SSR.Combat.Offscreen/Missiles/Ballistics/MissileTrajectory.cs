@@ -13,6 +13,7 @@ namespace SSR.Combat.Offscreen
         private MissileTurnArc turn;
         private float tailZ;
         internal float Duration => ascent.Duration + turn.Duration;
+        internal float AscentSeconds => ascent.Duration;
         internal float IgnitionSeconds => ascent.IgnitionDelay;
         internal static float GroundProjection => (TurretCaptureProfile.Direction * Vector3.up).z;
 

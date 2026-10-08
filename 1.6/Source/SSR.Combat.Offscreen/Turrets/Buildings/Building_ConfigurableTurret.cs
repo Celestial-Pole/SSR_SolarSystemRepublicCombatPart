@@ -50,6 +50,9 @@ namespace SSR.Combat.Offscreen
             return TurretTargetPolicy.TryRead(this, target, out state);
         }
 
+        //判断武器能否覆盖已通过类型、射程和高度检查的目标。
+        internal virtual bool CanReachTarget(TurretTargetState state) => Aim.CanReach(state);
+
         //每次开火检查目标有效性与炮口角度，而非只在连发开始时检查一次。
         public virtual bool CanFireAt(LocalTargetInfo target)
         {

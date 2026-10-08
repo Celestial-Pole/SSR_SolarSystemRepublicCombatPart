@@ -1,19 +1,16 @@
 using System.Collections.Generic;
 using System.Linq;
-using UnityEngine;
 using Verse;
 
 namespace SSR.Combat.Offscreen
 {
-    //管理导弹装填、交替发射和独立俯仰。
+    //管理固定发射筒的装填和交替发射。
     internal sealed class CombinedMissileLauncher : IExposable
     {
         private readonly Building_CombinedAirDefense owner;
         private List<int> cooldowns;
-        private int nextSlot, interval, idleTicks;
-        private float pitch, pitchVelocity;
+        private int nextSlot, interval;
         internal int ReadyCount => cooldowns.Count(value => value == 0);
-        internal float Pitch => Mathf.DeltaAngle(0, pitch);
 
         //按配置弹位数初始化库存。
         public CombinedMissileLauncher(Building_CombinedAirDefense owner)
@@ -22,52 +19,28 @@ namespace SSR.Combat.Offscreen
             cooldowns = Enumerable.Repeat(0, owner.CombinedSettings.missileSlots.Count).ToList();
         }
 
-        //在暂停预览时单独调整导弹架，保留原有伺服速度。
-        internal void SetPreviewPitch(float angle)
-        {
-            pitch = TurretAngleLimits.Clamp(angle, owner.CombinedSettings.missilePitchRange);
-            if (!owner.Spawned) return;
-            owner.Aim.Prepare();
-            Prepare(owner.Rig);
-        }
-
-        //推进装填，仅在导弹具备发射条件时驱动导弹架瞄准。
+        //推进装填，炮塔水平方位对准目标后沿固定筒口发射。
         internal void Tick(bool powered, bool firing)
         {
             owner.Aim.Prepare();
             var rig = owner.Rig;
-            Prepare(rig);
             if (powered)
             {
                 var settings = owner.CombinedSettings;
                 if (interval > 0) interval--;
                 for (int i = 0; i < cooldowns.Count; i++) if (cooldowns[i] > 0) cooldowns[i]--;
-                TurretTargetState target = default;
-                bool aiming = firing && interval == 0 && ReadyCount > 0
-                    && owner.TryReadTarget(owner.CurrentTarget, out target)
+                if (firing && interval == 0 && ReadyCount > 0
+                    && owner.TryReadTarget(owner.CurrentTarget, out var target)
                     && (target.GroundPosition - owner.MapDrawPosition).MagnitudeHorizontalSquared()
-                        <= settings.missileRange * settings.missileRange;
-                Vector3 point = aiming ? owner.Aim.TargetPoint(target) : Vector3.zero;
-                float desired = pitch;
-                if (aiming)
-                {
-                    idleTicks = 0;
-                    desired = rig.SolveMissilePitch(point, pitch, owner.Settings.solverIterations);
-                }
-                else if (owner.Settings.returnToIdle && ++idleTicks >= owner.Settings.idleDelayTicks) desired = 0;
-                pitch = TurretAngleLimits.Advance(pitch, desired, ref pitchVelocity, settings.missilePitchSpeed,
-                    settings.missilePitchAcceleration, settings.missilePitchRange);
-                rig.ApplyMissilePitch(pitch);
-                if (aiming && rig.MissilesAligned(point, owner.Settings.aimConeTolerance)) TryLaunch();
+                        <= settings.missileRange * settings.missileRange
+                    && rig.MissilesAligned(owner.Aim.TargetPoint(target), owner.Settings.yawAimTolerance)) TryLaunch();
             }
-            else pitchVelocity = 0;
             rig.ShowPayloads(cooldowns);
         }
 
-        //同步导弹架俯仰和库存显示。
+        //同步模型重建后的导弹库存显示。
         internal void Prepare(CombinedDefenseRig rig)
         {
-            rig.ApplyMissilePitch(pitch);
             rig.ShowPayloads(cooldowns);
         }
 
@@ -94,15 +67,12 @@ namespace SSR.Combat.Offscreen
             }
         }
 
-        //读写库存、发射间隔和俯仰状态。
+        //读写库存和发射间隔。
         public void ExposeData()
         {
             Scribe_Collections.Look(ref cooldowns, "cooldowns", LookMode.Value);
             Scribe_Values.Look(ref nextSlot, "nextSlot");
             Scribe_Values.Look(ref interval, "interval");
-            Scribe_Values.Look(ref pitch, "pitch");
-            Scribe_Values.Look(ref pitchVelocity, "pitchVelocity");
-            Scribe_Values.Look(ref idleTicks, "idleTicks");
         }
     }
 }

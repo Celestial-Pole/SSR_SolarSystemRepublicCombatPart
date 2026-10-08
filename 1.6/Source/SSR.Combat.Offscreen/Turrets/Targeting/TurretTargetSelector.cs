@@ -36,7 +36,7 @@ namespace SSR.Combat.Offscreen
                 int candidatePriority = settings.Priority(state.Kind);
                 float candidateDistance = (state.GroundPosition - owner.MapDrawPosition).MagnitudeHorizontalSquared();
                 if (candidatePriority < priority || candidatePriority == priority && candidateDistance >= distance) continue;
-                if (!owner.Aim.CanReach(state)) continue;
+                if (!owner.CanReachTarget(state)) continue;
                 best = target;
                 priority = candidatePriority;
                 distance = candidateDistance;

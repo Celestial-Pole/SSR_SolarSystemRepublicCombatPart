@@ -55,7 +55,7 @@ namespace SSR.Combat.Offscreen
                 if (owner.Faction == Faction.OfPlayer && pawn.IsPrisoner) return false;
                 if (GenAI.MachinesLike(owner.Faction, pawn)) return false;
             }
-            return owner.TryReadTarget(target, out var state) && state.Kind == TurretTargetKind.Ground && owner.Aim.CanReach(state);
+            return owner.TryReadTarget(target, out var state) && state.Kind == TurretTargetKind.Ground && owner.CanReachTarget(state);
         }
     }
 }

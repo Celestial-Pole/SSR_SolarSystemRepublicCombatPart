@@ -28,6 +28,8 @@
 
 电磁炮结构为 `Root/Yaw/Pitch/Recoil/FirePoint`，底座固定、炮身偏航、炮管独立俯仰。后坐片段只移动 `Recoil`，通过 `OffscreenPrefabProperties.recoilTransformPath/recoilClipName` 绑定，不覆盖偏航或俯仰。发射器使用 `Root/Yaw/Pitch/FirePoint` 作为整架瞄准参考；每枚导弹使用自身弹位挂点出筒。
 
+电磁机关炮的炮管两侧装饰块 `Slice.004` 和枪座后方装饰条 `Slice.005` 固定在 `Root/Yaw`，不参与俯仰和后坐；后方圆形雷达通过 `Root/Yaw/RadarPitch` 绕自身转轴跟随炮口指向。
+
 游戏图形 `drawSize` 保持 `(1,1)`，模型比例保存在 `Root` 内，避免只放大水平而压扁高度。菜单使用 `_MenuIcon_Isometric.png`，蓝图使用独立正面 PNG 及 Unity 导出的取景尺寸、偏移。
 
 全部 13 种炮塔的放置预览现直接从已构建资源包导出，同时写回 `building/blueprintGraphicData` 的尺寸和底座偏移。原有六种炮塔曾沿用模型缩放值作为 PNG 的绘制尺寸，导致蓝图过小且底座错位；这两种尺寸现在分别维护。九联装导弹井使用实际闭舱模型、90° 正面修正和地下裁剪，分别采集四个方向，蓝图通过 `Graphic_Multi` 选择对应图片，不再旋转单张俯视图。

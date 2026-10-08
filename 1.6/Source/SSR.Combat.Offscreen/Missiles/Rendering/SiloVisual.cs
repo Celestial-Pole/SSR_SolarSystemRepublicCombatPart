@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace SSR.Combat.Offscreen
 {
-    //同步库存和九组独立舱盖动画，并为尚未离井的弹体提供同一深度采集空间。
+    //同步库存和九组独立舱盖动画，与投影仍重叠的弹体共用深度采集空间。
     internal sealed class SiloVisual : IDisposable
     {
         internal readonly Building_MissileSilo Owner;
@@ -34,6 +34,22 @@ namespace SSR.Combat.Offscreen
                 Owner.Assets.Openings[i].SampleAnimation(animationRoot, Owner.Controller.LidTime(i));
                 stored[i].SetActive(Owner.Controller.IsLoaded(i));
             }
+        }
+
+        //斜俯视下弹尾离井后仍可能覆盖井体，轮廓分离前保持合并描边。
+        internal bool Overlaps(MissileBodyVisual missile)
+        {
+            var bounds = Bounds;
+            bounds.SetMinMax(new Vector3(bounds.min.x, Owner.GroundOrigin.y, bounds.min.z),
+                new Vector3(bounds.max.x, Owner.GroundOrigin.y + Owner.Assets.Layout.clearanceHeight, bounds.max.z));
+            var body = missile.SurfaceBounds;
+            Vector3 delta = body.center - bounds.center;
+            Vector3 extents = body.extents + bounds.extents;
+            Vector3 up = TurretCaptureProfile.Direction * Vector3.up;
+            float projectedExtent = Mathf.Abs(up.y) * extents.y + Mathf.Abs(up.z) * extents.z;
+            float margin = TurretCaptureProfile.MissileOutlineWidth * 2;
+            return Mathf.Abs(delta.x) <= extents.x + margin
+                && Mathf.Abs(Vector3.Dot(delta, up)) <= projectedExtent + margin;
         }
 
         //释放地图实例和输出纹理，资源包内的原始预制体保持不变。
