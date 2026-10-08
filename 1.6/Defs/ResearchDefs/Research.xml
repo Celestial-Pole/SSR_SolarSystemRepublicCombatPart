@@ -65,6 +65,13 @@
 		<baseCost>700</baseCost>
 		<researchViewX>4</researchViewX>
 		<researchViewY>1.5</researchViewY>
+		<modExtensions>
+			<li Class="FS_SSR.Research.Ext_PRE_UnlockResearchs">
+				<unlockResearchs>
+					<li>SecurityDoor</li><!-- 安全大门 -->
+				</unlockResearchs>
+			</li>
+		</modExtensions>
 	</ResearchProjectDef>
 
 	<!--<ResearchProjectDef ParentName="SSR_ResearchProjectIndustrial">
@@ -98,6 +105,16 @@
         <baseCost>5000</baseCost>
         <researchViewX>5</researchViewX>
         <researchViewY>1.5</researchViewY>
+		<modExtensions>
+			<li Class="FS_SSR.Research.Ext_PRE_UnlockResearchs">
+				<unlockResearchs>
+					<li>GunTurrets</li><!-- 自动机枪塔 -->
+					<li>HeavyTurrets</li><!-- 自动加农炮塔 -->
+					<li>SniperTurret</li><!-- 铀弹加农炮塔 -->
+					<li>RocketswarmLauncher</li><!-- 集群火箭发射器 -->
+				</unlockResearchs>
+			</li>
+		</modExtensions>
     </ResearchProjectDef>
 
 	<!--<ResearchProjectDef ParentName="SSR_ResearchProjectSpacer">
