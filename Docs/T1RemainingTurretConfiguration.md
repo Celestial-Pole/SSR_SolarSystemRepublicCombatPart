@@ -20,10 +20,11 @@
 
 - `rootTransform`、`yawPath`、`pitchPath`、`shootingOrigine`：真实模型挂点。
 - `yawRotationAixe`、`pitchRotationAixe`、`shootingOrigineForward`：关节局部轴和炮口方向。
-- `pitchRotationRange`：默认 `(350,85)`，表示俯角 -10° 至仰角 85°；`yawRotationRange` 默认零向量表示水平整圈。
+- `pitchRotationRange`：默认 `(350,85)`，表示关节局部转角 -10° 至 85°；实际抬升方向由 `pitchRotationAixe` 和模型轴向决定。`yawRotationRange` 默认零向量表示水平整圈。
+- `radarPaths`：随炮口指向转动的雷达节点列表。节点局部 Z 轴朝向盘面正前方，放在偏航节点下，绕自身轴承俯仰，与主炮俯仰节点分离。
 - `yawRotationSpeed`、`pitchRotationSpeed`、对应 `Acceleration`：角速度和角加速度。
 - `yawAimTolerance`、`pitchAimTolerance`、`aimConeTolerance`：允许开火的瞄准误差。
-- `targeting`、`allowManualTarget`、`returnToIdle`、`idleDelayTicks`：目标策略、手动集火与回正。
+- `targeting`、`allowManualTarget`、`returnToIdle`、`idleDelayTicks`：目标策略、手动集火与回正。`returnToIdle` 默认关闭，当前各型号均保持最后的偏航和俯仰角，不自动回正。
 
 电磁炮结构为 `Root/Yaw/Pitch/Recoil/FirePoint`，底座固定、炮身偏航、炮管独立俯仰。后坐片段只移动 `Recoil`，通过 `OffscreenPrefabProperties.recoilTransformPath/recoilClipName` 绑定，不覆盖偏航或俯仰。发射器使用 `Root/Yaw/Pitch/FirePoint` 作为整架瞄准参考；每枚导弹使用自身弹位挂点出筒。
 
@@ -44,12 +45,12 @@
 
 每个 `missileSlots` 条目指向 `Root/Yaw/Pitch/Slots/SlotXX`，包含 `Missile` 与 `FirePoint`。`FirePoint` 与库存弹头 `TipPoint` 的位置和姿态一致，飞行实体使用该弹体的实际尺寸；`TrailPoint` 决定弹尾位置。发射成功后只隐藏相应库存弹体，生成具有独立位置、伤害和存档状态的真实弹丸。筒内运动随当前发射架姿态，弹尾完全离筒后离开发射架，滑行后点火制导。
 
-发射器等待整组补满后开始下一轮，避免最先装好的一枚立即单独发射。首发仍需完成瞄准与开盖；一轮开始后，保持目标准入检查和制导，不因逐发的炮口角度误差中断。满弹时火箭炮发射 10 枚、导弹箱发射 4 枚，各筒依次发射一枚。停火或目标失效会结束剩余发射，断电或眩晕沿用原版暂停连发的行为。
+发射器等待整组补满后开始下一轮，避免最先装好的一枚立即单独发射。火箭炮和导弹箱均先完成偏航与俯仰瞄准，再开盖，完全打开后开始首发；一轮开始后，保持目标准入检查和制导，不因逐发的炮口角度误差中断。满弹时火箭炮发射 10 枚、导弹箱发射 4 枚，各筒依次发射一枚。停火或目标失效会结束剩余发射，断电或眩晕沿用原版暂停连发的行为。
 
 主要配置：
 
 - `missilePrefabPath`、`missileProjectile`、`missileSlots`：完整弹体资源、弹丸 Def 与逐枚库存。
-- `doors`：每扇盖板的 `path`、`axis`、`openAngle`；`openingTicks` 默认 24 刻。锁定后开盖，完全打开且瞄准完成才发射，弹尾未离筒时保持开盖。
+- `doors`：每扇盖板的 `path`、`axis`、`openAngle`；`openingTicks` 默认 24 刻。完成瞄准后开盖，完全打开才发射，齐射期间及弹尾未离筒时保持开盖。
 - `reloadTicks`：各弹位独立自动补充；停电或眩晕暂停机械与补充，停火阻止继续发射。
 - `ejectionSpeed`、`ejectionClearance`、`ejectionGravity`、`ignitionDelay`、`minimumIgnitionHeight`：冷弹射和点火时机。
 - `maximumSpeed`、`acceleration`、`turnDegreesPerSecond`、`fuseRadius`、`missileLifetimeTicks`：三维飞行与引信。

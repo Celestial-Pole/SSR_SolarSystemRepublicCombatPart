@@ -141,7 +141,7 @@
         <aimConeTolerance>1.5</aimConeTolerance>
         <solverIterations>12</solverIterations>
         <allowManualTarget>true</allowManualTarget>
-        <returnToIdle>true</returnToIdle>
+        <returnToIdle>false</returnToIdle>
         <idleDelayTicks>180</idleDelayTicks>
         <idleYaw>0</idleYaw>
         <idlePitch>0</idlePitch>
@@ -154,7 +154,7 @@
         <pitchPath>Root/Yaw/Pitch</pitchPath>
         <yawRotationAixe>(0,1,0)</yawRotationAixe>
         <pitchRotationAixe>(1,0,0)</pitchRotationAixe>
-        <pitchRotationRange>(350,90)</pitchRotationRange>
+        <pitchRotationRange>(355,90)</pitchRotationRange>
         <shootingOrigineForward>(0,0,1)</shootingOrigineForward>
         <shootingSoundDef>SSR_Sound_Electromagnetic_CIWS</shootingSoundDef>
       </li>
@@ -169,7 +169,7 @@
         <missilePitchPath>Root/Yaw/MissilePitch</missilePitchPath>
         <missileAimPointPath>Root/Yaw/MissilePitch/AimPoint</missileAimPointPath>
         <missilePitchAxis>(1,0,0)</missilePitchAxis>
-        <missilePitchRange>(350,90)</missilePitchRange>
+        <missilePitchRange>(357,90)</missilePitchRange>
         <missilePitchSpeed>60</missilePitchSpeed>
         <missilePitchAcceleration>240</missilePitchAcceleration>
         <!--冷弹射沿发射筒的当前瞄准轴从静止加速；离筒净空为格，重力为格每平方秒。-->

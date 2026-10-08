@@ -18,6 +18,7 @@ namespace SSR.Combat.Offscreen
         {
             Material = new Material(shader) { name = "SSR炮塔地图面片" };
             Material.renderQueue = Math.Min(ShaderDatabase.Cutout.renderQueue, MatBases.LightOverlay.renderQueue - 1);
+            Material.SetFloat("_SurfaceDepthRange", (AltitudeLayer.Item.AltitudeFor() - Height) * 0.5f);
             mesh = new Mesh { name = "SSR炮塔单位面片" };
             mesh.vertices = new[] { new Vector3(-0.5f, 0, -0.5f), new Vector3(0.5f, 0, -0.5f),
                 new Vector3(0.5f, 0, 0.5f), new Vector3(-0.5f, 0, 0.5f) };
@@ -28,10 +29,11 @@ namespace SSR.Combat.Offscreen
                 + "，面片队列=" + Material.renderQueue + "，光照队列=" + MatBases.LightOverlay.renderQueue);
         }
 
-        //每次绘制使用独立纹理参数和变换，玩家相机仅决定面片最终的屏幕大小。
+        //实体使用表面高度参与遮挡，透明烟焰保持原有平面深度。
         internal void Draw(Camera camera, TurretCaptureFrame frame)
         {
             properties.SetTexture("_MainTex", frame.Output);
+            properties.SetTexture("_SurfaceHeightTex", frame.SurfaceHeight ? (Texture)frame.SurfaceHeight : Texture2D.blackTexture);
             var matrix = Matrix4x4.TRS(frame.MapCenter, Quaternion.identity, new Vector3(frame.MapSize, 1, frame.MapSize));
             Graphics.DrawMesh(mesh, matrix, Material, 0, camera, 0, properties,
                 ShadowCastingMode.Off, false, null, LightProbeUsage.Off);

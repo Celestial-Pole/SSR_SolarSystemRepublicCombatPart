@@ -4,7 +4,7 @@
   <ThingDef ParentName="SSR_BuildingBase_Security">
     <defName>SSR_Turret_RocketArtillery</defName>
     <label>远程多管火箭炮</label>
-    <description>十管远程火箭炮。发射架可偏航和俯仰，开盖并瞄准后每隔 12 刻发射一枚筒内实体火箭，一轮齐射 10 枚，离筒后点火制导。整组补满后开始下一轮，停电暂停补充。</description>
+    <description>十管远程火箭炮。发射架先旋转并俯仰瞄准目标，再开盖；完全打开后每隔 12 刻发射一枚筒内实体火箭，一轮齐射 10 枚，离筒后点火制导。整组补满后开始下一轮，停电暂停补充。</description>
     <thingClass>SSR.Combat.Offscreen.Building_TubeMissileTurret</thingClass>
     <drawerType>MapMeshAndRealTime</drawerType>
     <graphicData>
@@ -106,7 +106,7 @@
         <aimConeTolerance>1.5</aimConeTolerance>
         <solverIterations>12</solverIterations>
         <allowManualTarget>true</allowManualTarget>
-        <returnToIdle>true</returnToIdle>
+        <returnToIdle>false</returnToIdle>
         <idleDelayTicks>180</idleDelayTicks>
         <idleYaw>0</idleYaw>
         <idlePitch>0</idlePitch>
@@ -228,7 +228,7 @@
   <ThingDef ParentName="BaseWeaponTurret">
     <defName>SSR_TurretGun_RocketArtillery</defName>
     <label>远程多管火箭炮</label>
-    <description>十管远程火箭炮。发射架可偏航和俯仰，开盖并瞄准后每隔 12 刻发射一枚筒内实体火箭，一轮齐射 10 枚，离筒后点火制导。整组补满后开始下一轮，停电暂停补充。</description>
+    <description>十管远程火箭炮。发射架先旋转并俯仰瞄准目标，再开盖；完全打开后每隔 12 刻发射一枚筒内实体火箭，一轮齐射 10 枚，离筒后点火制导。整组补满后开始下一轮，停电暂停补充。</description>
     <graphicData>
       <texPath>Things/Building/Security/TurretMini_Top</texPath>
       <graphicClass>Graphic_Single</graphicClass>

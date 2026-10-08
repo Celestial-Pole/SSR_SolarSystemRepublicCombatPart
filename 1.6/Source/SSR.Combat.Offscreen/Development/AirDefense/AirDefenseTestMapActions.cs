@@ -50,7 +50,7 @@ namespace SSR.Combat.Offscreen
             Find.World.renderer.wantedMode = WorldRenderMode.None;
             map.fogGrid.ClearAllFog();
             AirDefenseTestFieldBuilder.Build(map, map.Center);
-            Find.CameraDriver.SetRootPosAndSize(map.Center.ToVector3Shifted() + Vector3.forward * 4, 40);
+            Find.CameraDriver.SetRootPosAndSize(map.Center.ToVector3Shifted() - Vector3.forward * 12, 40);
         }
     }
 }

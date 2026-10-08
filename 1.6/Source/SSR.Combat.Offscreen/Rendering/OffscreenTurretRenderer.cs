@@ -159,9 +159,10 @@ namespace SSR.Combat.Offscreen
             return shader;
         }
 
-        //按游戏采集参数生成单座炮塔影像，保持预乘颜色和缩小时的连续过滤。
+        //采集单座炮塔的影像与表面高度，供地图按像素判断遮挡。
         private void Render(TurretCaptureFrame frame, bool clipGround = false, TurretBarrelSpin rotor = null)
         {
+            frame.EnsureSurfaceHeight();
             int size = frame.Output.width * TurretCaptureProfile.SupersamplingFor(frame.Output.width);
             var buffers = bufferPool.Get(size);
             var previous = RenderTexture.active;
@@ -173,6 +174,7 @@ namespace SSR.Combat.Offscreen
                 compositeMaterial.SetTexture("_GeometryTex", buffers.Geometry);
                 compositeMaterial.SetFloat("_ClipOutlineGround", clipGround ? 1 : 0);
                 compositeMaterial.SetMatrix("_CaptureToWorld", capture.cameraToWorldMatrix);
+                compositeMaterial.SetFloat("_GroundHeight", frame.GroundHeight);
                 compositeMaterial.SetFloat("_CaptureWorldHeight", capture.orthographicSize * 2 * capture.transform.up.y);
                 TurretCaptureProfile.Apply(compositeMaterial, frame.Diameter, frame.Output.width);
                 TurretSurfaceLighting.Apply(compositeMaterial, capture, frame.Diameter);
@@ -186,6 +188,7 @@ namespace SSR.Combat.Offscreen
                 TurretSurfaceLighting.RenderContact(buffers, compositeMaterial);
                 OutlineColorBlit.Draw(buffers.Color, buffers.Composite, compositeMaterial, 0);
                 OutlineColorBlit.Draw(buffers.Composite, frame.Output, compositeMaterial, 1);
+                OutlineColorBlit.Draw(buffers.Color, frame.SurfaceHeight, compositeMaterial, 4);
             }
             finally { capture.targetTexture = null; RenderTexture.active = previous; GL.sRGBWrite = previousColorWrite; }
         }

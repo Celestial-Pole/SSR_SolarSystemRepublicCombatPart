@@ -28,9 +28,11 @@ namespace SSR.Combat.Editor
                 var sensorRight = Require(yaw, "RadarRight");
                 string[] radarNames = { "立方体.006", "立方体.007", "立方体.008", "立方体.009", "立方体.010" };
                 var radarMeshes = radarNames.Select(name => Require(yaw, name)).ToArray();
-                var missilePitch = Joint(yaw, root, "MissilePitch", new Vector3(0, 0.326f, 0));
+                var missilePitch = Joint(yaw, root, "MissilePitch", new Vector3(0, 0.326f, 0.405f));
                 left.SetParent(missilePitch, true);
                 right.SetParent(missilePitch, true);
+                Require(yaw, "立方体.014").SetParent(missilePitch, true);
+                Require(yaw, "Pitch/立方体.027").SetParent(yaw, true);
                 var aimPoint = Joint(missilePitch, root, "AimPoint", new Vector3(0, 0.326f, -0.510f));
                 aimPoint.rotation = root.rotation * Quaternion.Euler(0, 180, 0);
                 sensorLeft.name = "SensorLeft";

@@ -29,7 +29,7 @@ namespace SSR.Combat.Editor
                 var yaw = Group(root, prefab.transform, "Yaw", new Vector3(0, 0.155f, 0.003f));
                 var pitch = Group(yaw, prefab.transform, "Pitch", new Vector3(0, 0.31137f, 0.00573f));
                 var rotor = Group(pitch, prefab.transform, "Rotor", new Vector3(0.000014f, 0.31137f, -0.535f));
-                var missilePitch = Group(yaw, prefab.transform, "MissilePitch", new Vector3(0, 0.326f, 0));
+                var missilePitch = Group(yaw, prefab.transform, "MissilePitch", new Vector3(0, 0.326f, 0.405f));
                 var left = Group(missilePitch, prefab.transform, "RackLeft", new Vector3(-0.394f, 0.326f, 0));
                 var right = Group(missilePitch, prefab.transform, "RackRight", new Vector3(0.395f, 0.326f, 0));
                 var sensorLeft = Group(yaw, prefab.transform, "SensorLeft", new Vector3(-0.169f, 0.397f, 0.168f));
@@ -39,7 +39,7 @@ namespace SSR.Combat.Editor
                 var sensorLeftNames = new HashSet<string> { "柱体.054", "柱体.056", "立方体.024", "立方体.025" };
                 var sensorRightNames = new HashSet<string> { "柱体.050", "柱体.052", "立方体.012", "立方体.023" };
                 var radarNames = new HashSet<string> { "立方体.006", "立方体.007", "立方体.008", "立方体.009", "立方体.010" };
-                var gunNames = new HashSet<string> { "柱体.009", "立方体.015", "立方体.018", "立方体.027" };
+                var gunNames = new HashSet<string> { "柱体.009", "立方体.015", "立方体.018" };
                 foreach (var filter in meshes)
                 {
                     var bounds = LocalBounds(prefab.transform, filter);
@@ -51,6 +51,7 @@ namespace SSR.Combat.Editor
                     else if (sensorRightNames.Contains(filter.name)) parent = sensorRight;
                     else if (radarNames.Contains(filter.name)) parent = radar;
                     else if (gunNames.Contains(filter.name)) parent = pitch;
+                    else if (filter.name == "立方体.014") parent = missilePitch;
                     else if (bounds.center.x < -0.30f && bounds.center.y > 0.17f) parent = left;
                     else if (bounds.center.x > 0.30f && bounds.center.y > 0.17f) parent = right;
                     filter.transform.SetParent(parent, true);

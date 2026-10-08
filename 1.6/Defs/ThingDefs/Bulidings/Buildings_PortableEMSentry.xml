@@ -122,7 +122,7 @@
         <aimConeTolerance>1.5</aimConeTolerance>
         <solverIterations>12</solverIterations>
         <allowManualTarget>true</allowManualTarget>
-        <returnToIdle>true</returnToIdle>
+        <returnToIdle>false</returnToIdle>
         <idleDelayTicks>180</idleDelayTicks>
         <idleYaw>0</idleYaw>
         <idlePitch>0</idlePitch>

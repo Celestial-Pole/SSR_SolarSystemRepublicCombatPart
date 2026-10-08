@@ -33,7 +33,7 @@ namespace SSR.UnityComponent.Outline.Editor
             }
         }
 
-        //按游戏已有外层比例测量，只在预制体内部保存统一缩放和地面位置。
+        //在预制体内部等比缩放到单格范围，并对齐地面位置。
         private static string Resize()
         {
             var prefab = PrefabUtility.LoadPrefabContents(PrefabPath);
@@ -41,9 +41,7 @@ namespace SSR.UnityComponent.Outline.Editor
             {
                 var root = prefab.transform.Find("Root");
                 if (!root) throw new InvalidOperationException("便携式哨戒机枪缺少 Root 节点。");
-                //外层比例仅用于测量，保存前恢复原值，游戏逻辑不承担尺寸修正。
-                var originalScale = prefab.transform.localScale;
-                prefab.transform.localScale = new Vector3(1.5f, 1, 1.5f);
+                prefab.transform.localScale = Vector3.one;
                 var before = Measure(prefab);
                 float factor = 0.9f / Mathf.Max(before.size.x, before.size.z);
                 root.localScale *= factor;
@@ -52,7 +50,6 @@ namespace SSR.UnityComponent.Outline.Editor
                 root.position -= new Vector3(after.center.x, after.min.y, after.center.z);
                 after = Measure(prefab);
                 var savedScale = root.localScale;
-                prefab.transform.localScale = originalScale;
                 PrefabUtility.SaveAsPrefabAsset(prefab, PrefabPath);
                 AssetDatabase.SaveAssets();
                 return $"便携式哨戒机枪：原尺寸={before.size}；单格尺寸={after.size}；Root 缩放={savedScale}";

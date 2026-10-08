@@ -33,6 +33,15 @@ namespace SSR.UnityComponent.Outline.Editor
                     || definition.Element("thingClass")?.Value == "SSR.Combat.Offscreen.Building_CombinedAirDefense"
                     || definition.Element("thingClass")?.Value == "SSR.Combat.Offscreen.Building_TubeMissileTurret"
                     || definition.Element("thingClass")?.Value == "SSR.Combat.Offscreen.Building_MissileSilo");
+            var arguments = Environment.GetCommandLineArgs();
+            int filterIndex = Array.IndexOf(arguments, "-turretDef");
+            if (filterIndex >= 0)
+            {
+                if (filterIndex + 1 >= arguments.Length) throw new ArgumentException("-turretDef 缺少炮塔 defName。");
+                string name = arguments[filterIndex + 1];
+                definitions = definitions.Where(definition => definition.Element("defName").Value == name);
+                if (!definitions.Any()) throw new ArgumentException("未找到可导出图标的炮塔：" + name);
+            }
             var report = new StringBuilder();
             var framing = new XElement("TurretIconFraming");
             var bundle = AssetBundle.LoadFromFile(Path.Combine(projectRoot, "Asset/Windows/ssr_combat_windows"));

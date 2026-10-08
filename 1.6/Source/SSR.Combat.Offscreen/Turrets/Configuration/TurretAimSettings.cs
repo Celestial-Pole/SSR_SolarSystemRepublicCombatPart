@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using Verse;
 
@@ -8,6 +9,7 @@ namespace SSR.Combat.Offscreen
     public sealed class TurretAimSettings : DefModExtension
     {
         public string rootTransform, yawPath, pitchPath, shootingOrigine;
+        public List<string> radarPaths = new List<string>();
         public Vector3 yawRotationAixe = Vector3.up, pitchRotationAixe = Vector3.right;
         public Vector3 shootingOrigineForward = Vector3.forward;
         public Vector2 yawRotationRange = Vector2.zero;
@@ -16,7 +18,7 @@ namespace SSR.Combat.Offscreen
         public float yawAcceleration, pitchAcceleration;
         public float yawAimTolerance = 1, pitchAimTolerance = 1, aimConeTolerance = 1.5f;
         public int solverIterations = 12;
-        public bool returnToIdle = true, allowManualTarget = true;
+        public bool returnToIdle, allowManualTarget = true;
         public int idleDelayTicks = 180;
         public float idleYaw, idlePitch;
         public SoundDef shootingSoundDef;
@@ -29,6 +31,8 @@ namespace SSR.Combat.Offscreen
                 || string.IsNullOrWhiteSpace(pitchPath) || string.IsNullOrWhiteSpace(shootingOrigine))
                 yield return "炮塔必须配置根节点、旋转节点、俯仰节点和炮口路径。";
             if (targeting == null) yield return "炮塔必须指定 targeting 目标配置。";
+            if (radarPaths.Any(string.IsNullOrWhiteSpace) || radarPaths.Distinct().Count() != radarPaths.Count)
+                yield return "跟随炮口的雷达路径不能为空或重复，节点局部 Z 轴须朝向雷达正面。";
             if (yawRotationAixe.sqrMagnitude < 0.001f || pitchRotationAixe.sqrMagnitude < 0.001f
                 || shootingOrigineForward.sqrMagnitude < 0.001f) yield return "炮塔转轴和炮口前向不能为零。";
             if (yawRotationSpeed < 0 || pitchRotationSpeed < 0 || yawAcceleration < 0 || pitchAcceleration < 0)

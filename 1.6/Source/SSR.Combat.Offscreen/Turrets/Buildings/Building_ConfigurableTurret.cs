@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using RimWorld;
 using UnityEngine;
@@ -97,6 +98,21 @@ namespace SSR.Combat.Offscreen
         {
             base.ExposeData();
             Scribe_Deep.Look(ref aim, "turretAim", this);
+        }
+
+        //打开暂停预览面板，直接检查地图模型的机械转角。
+        public override IEnumerable<Gizmo> GetGizmos()
+        {
+            foreach (var gizmo in base.GetGizmos()) yield return gizmo;
+            if (!Spawned) yield break;
+            yield return new Command_Action
+            {
+                defaultLabel = "角度预览",
+                defaultDesc = "拖动滑条查看旋转和俯仰。预览期间暂停，关闭后恢复原姿态。",
+                icon = def.uiIcon,
+                groupable = false,
+                action = () => Find.WindowStack.Add(new Window_TurretAngles(this))
+            };
         }
 
         //在开发者模式显示当前机械角度，便于按型号调整 XML。

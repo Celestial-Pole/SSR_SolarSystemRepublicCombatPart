@@ -13,9 +13,11 @@ namespace SSR.Combat.Offscreen
         private readonly Vector3 localFloor;
         private readonly float referenceRadius;
         internal RenderTexture Output;
+        internal RenderTexture SurfaceHeight;
         internal Vector3 MapCenter;
         internal float MapSize;
         internal float Diameter;
+        internal float GroundHeight;
         internal bool NeedsDepth;
         internal int MaximumResolution = 4096;
 
@@ -59,6 +61,7 @@ namespace SSR.Combat.Offscreen
             //以根节点所在的底面中心作为地图锚点，抵消斜视及包围盒中心造成的偏移。
             Vector3 anchor = root.position;
             anchor.y = root.TransformPoint(localFloor).y;
+            GroundHeight = anchor.y;
             Vector3 relativeAnchor = anchor - center;
             float projectedX = Vector3.Dot(relativeAnchor, camera.transform.right);
             float projectedY = Vector3.Dot(relativeAnchor, camera.transform.up);
@@ -70,6 +73,7 @@ namespace SSR.Combat.Offscreen
         //使用统一的导弹井坐标原点投影独立弹丸和烟迹，拆分采集时不改变屏幕位置。
         internal void ConfigureWorld(Camera camera, Camera mapCamera, Bounds bounds, Vector3 anchor, float altitude)
         {
+            GroundHeight = anchor.y;
             float radius = Mathf.Max(bounds.extents.magnitude, 0.05f);
             Diameter = radius * 2;
             camera.orthographic = true;
@@ -104,11 +108,30 @@ namespace SSR.Combat.Offscreen
             if (!Output.Create()) throw new InvalidOperationException("无法创建炮塔影像纹理。");
         }
 
-        //释放当前炮塔的最终纹理，中间采集缓冲由共享渲染器管理。
+        //保留实体表面高度，避免共享几何缓冲被下一座炮塔覆盖。
+        internal void EnsureSurfaceHeight()
+        {
+            if (SurfaceHeight && SurfaceHeight.width == Output.width) return;
+            OutlineBuffers.Release(SurfaceHeight);
+            SurfaceHeight = new RenderTexture(Output.width, Output.height, 0,
+                RenderTextureFormat.RFloat, RenderTextureReadWrite.Linear)
+            {
+                name = "SSR炮塔表面高度",
+                wrapMode = TextureWrapMode.Clamp,
+                filterMode = FilterMode.Point,
+                useMipMap = false,
+                autoGenerateMips = false
+            };
+            if (!SurfaceHeight.Create()) throw new InvalidOperationException("无法创建炮塔表面高度纹理。");
+        }
+
+        //释放当前炮塔的影像和表面高度，中间采集缓冲由共享渲染器管理。
         public void Dispose()
         {
             OutlineBuffers.Release(Output);
+            OutlineBuffers.Release(SurfaceHeight);
             Output = null;
+            SurfaceHeight = null;
         }
     }
 }

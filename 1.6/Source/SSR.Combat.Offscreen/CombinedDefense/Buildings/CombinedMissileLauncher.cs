@@ -13,6 +13,7 @@ namespace SSR.Combat.Offscreen
         private int nextSlot, interval, idleTicks;
         private float pitch, pitchVelocity;
         internal int ReadyCount => cooldowns.Count(value => value == 0);
+        internal float Pitch => Mathf.DeltaAngle(0, pitch);
 
         //按配置弹位数初始化库存。
         public CombinedMissileLauncher(Building_CombinedAirDefense owner)
@@ -21,30 +22,43 @@ namespace SSR.Combat.Offscreen
             cooldowns = Enumerable.Repeat(0, owner.CombinedSettings.missileSlots.Count).ToList();
         }
 
-        //推进装填和瞄准，依次使用就绪弹位。
+        //在暂停预览时单独调整导弹架，保留原有伺服速度。
+        internal void SetPreviewPitch(float angle)
+        {
+            pitch = TurretAngleLimits.Clamp(angle, owner.CombinedSettings.missilePitchRange);
+            if (!owner.Spawned) return;
+            owner.Aim.Prepare();
+            Prepare(owner.Rig);
+        }
+
+        //推进装填，仅在导弹具备发射条件时驱动导弹架瞄准。
         internal void Tick(bool powered, bool firing)
         {
             owner.Aim.Prepare();
             var rig = owner.Rig;
             Prepare(rig);
-            bool hasTarget = owner.TryReadTarget(owner.CurrentTarget, out var target);
-            Vector3 point = hasTarget ? owner.Aim.TargetPoint(target) : Vector3.zero;
             if (powered)
             {
+                var settings = owner.CombinedSettings;
+                if (interval > 0) interval--;
+                for (int i = 0; i < cooldowns.Count; i++) if (cooldowns[i] > 0) cooldowns[i]--;
+                TurretTargetState target = default;
+                bool aiming = firing && interval == 0 && ReadyCount > 0
+                    && owner.TryReadTarget(owner.CurrentTarget, out target)
+                    && (target.GroundPosition - owner.MapDrawPosition).MagnitudeHorizontalSquared()
+                        <= settings.missileRange * settings.missileRange;
+                Vector3 point = aiming ? owner.Aim.TargetPoint(target) : Vector3.zero;
                 float desired = pitch;
-                if (hasTarget)
+                if (aiming)
                 {
                     idleTicks = 0;
                     desired = rig.SolveMissilePitch(point, pitch, owner.Settings.solverIterations);
                 }
                 else if (owner.Settings.returnToIdle && ++idleTicks >= owner.Settings.idleDelayTicks) desired = 0;
-                var settings = owner.CombinedSettings;
                 pitch = TurretAngleLimits.Advance(pitch, desired, ref pitchVelocity, settings.missilePitchSpeed,
                     settings.missilePitchAcceleration, settings.missilePitchRange);
                 rig.ApplyMissilePitch(pitch);
-                if (interval > 0) interval--;
-                for (int i = 0; i < cooldowns.Count; i++) if (cooldowns[i] > 0) cooldowns[i]--;
-                if (firing && interval == 0 && hasTarget && rig.MissilesAligned(point, owner.Settings.aimConeTolerance)) TryLaunch(target);
+                if (aiming && rig.MissilesAligned(point, owner.Settings.aimConeTolerance)) TryLaunch();
             }
             else pitchVelocity = 0;
             rig.ShowPayloads(cooldowns);
@@ -58,10 +72,9 @@ namespace SSR.Combat.Offscreen
         }
 
         //从指定弹位创建导弹并扣除库存。
-        private void TryLaunch(TurretTargetState target)
+        private void TryLaunch()
         {
             var settings = owner.CombinedSettings;
-            if ((target.GroundPosition - owner.MapDrawPosition).MagnitudeHorizontalSquared() > settings.missileRange * settings.missileRange) return;
             owner.Aim.Prepare();
             for (int offset = 0; offset < cooldowns.Count; offset++)
             {

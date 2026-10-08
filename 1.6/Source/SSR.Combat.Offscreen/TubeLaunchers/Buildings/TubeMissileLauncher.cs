@@ -33,7 +33,7 @@ namespace SSR.Combat.Offscreen
             return rig;
         }
 
-        //供电时推进装填和舱盖运动。
+        //供电时推进装填，对准目标后开盖，齐射期间保持打开。
         internal void Tick()
         {
             if (owner.MechanismsActive)
@@ -41,7 +41,8 @@ namespace SSR.Combat.Offscreen
                 if (holdOpenTicks > 0) holdOpenTicks--;
                 for (int i = 0; i < cooldowns.Count; i++) if (cooldowns[i] > 0) cooldowns[i]--;
                 bool open = holdOpenTicks > 0 || owner.CanContinue && ReadyCount > 0
-                    && owner.TryReadTarget(owner.CurrentTarget, out _);
+                    && owner.TryReadTarget(owner.CurrentTarget, out var target)
+                    && (owner.AttackVerb.state == VerbState.Bursting || owner.Aim.Aligned(target));
                 opening = Mathf.MoveTowards(opening, open ? 1 : 0, 1f / owner.LauncherSettings.openingTicks);
             }
             Prepare();

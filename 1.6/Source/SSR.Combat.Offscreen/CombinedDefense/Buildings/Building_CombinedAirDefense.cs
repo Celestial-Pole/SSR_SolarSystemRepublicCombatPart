@@ -16,6 +16,7 @@ namespace SSR.Combat.Offscreen
         private CombinedDefenseRig rig;
         private List<float> radarAngles = new List<float> { 0 };
         internal CombinedAirDefenseSettings CombinedSettings => def.GetModExtension<CombinedAirDefenseSettings>();
+        internal CombinedMissileLauncher Missiles => missiles ?? (missiles = new CombinedMissileLauncher(this));
         public override LocalTargetInfo CurrentTarget => sharedTarget;
 
         //返回当前导弹发射挂点。
@@ -49,8 +50,7 @@ namespace SSR.Combat.Offscreen
             UpdateSharedTarget(firing);
             base.Tick();
             Rig.TickRadars(radarAngles, powered);
-            if (missiles == null) missiles = new CombinedMissileLauncher(this);
-            missiles.Tick(powered, firing);
+            Missiles.Tick(powered, firing);
         }
 
         //维持共享锁定，定期检查更高优先级的空中目标。

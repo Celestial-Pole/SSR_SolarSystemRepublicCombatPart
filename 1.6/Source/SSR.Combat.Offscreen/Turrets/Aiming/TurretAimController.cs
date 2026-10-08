@@ -17,6 +17,14 @@ namespace SSR.Combat.Offscreen
         //绑定所属建筑。
         public TurretAimController(Building_ConfigurableTurret owner) { this.owner = owner; }
 
+        //在暂停预览时设置机械角度，保留伺服速度供关闭面板后恢复。
+        internal void SetPreviewAngles(float yaw, float pitch)
+        {
+            this.yaw = TurretAngleLimits.Clamp(yaw, owner.Settings.yawRotationRange);
+            this.pitch = TurretAngleLimits.Clamp(pitch, owner.Settings.pitchRotationRange);
+            if (owner.Spawned) Prepare();
+        }
+
         //更新瞄准转轴，失去目标后延迟回正。
         internal void Tick(bool powered)
         {

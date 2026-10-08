@@ -29,11 +29,12 @@ namespace SSR.Combat.Offscreen
             return CanContinue && Launcher.ReadyCount > 0 && Launcher.DoorsOpen && TryReadTarget(target, out _);
         }
 
-        //等待舱盖打开后开始连发。
+        //等待舱盖打开后开始连发，无效或无法瞄准的目标交还原有处理。
         protected override void BeginBurst()
         {
             if (!CanContinue || Launcher.ReadyCount == 0) { burstWarmupTicksLeft = 0; return; }
-            if (!Launcher.DoorsOpen) { burstWarmupTicksLeft = 1; return; }
+            if (!Launcher.DoorsOpen && TryReadTarget(CurrentTarget, out var state) && Aim.CanReach(state))
+            { burstWarmupTicksLeft = 1; return; }
             base.BeginBurst();
         }
 

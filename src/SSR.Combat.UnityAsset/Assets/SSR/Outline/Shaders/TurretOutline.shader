@@ -15,6 +15,7 @@ Shader "SSR/Outline/Composite"
         float _SilhouetteWidth, _StructureWidth, _NormalThreshold, _DepthThreshold, _Supersampling;
         float _OutputPremultiplied;
         float _ClipOutlineGround, _CaptureWorldHeight;
+        float _GroundHeight;
         float _RotorLightingBlend;
         float3 _RotorAxisDirection;
         float4x4 _CaptureToWorld;
@@ -130,6 +131,38 @@ Shader "SSR/Outline/Composite"
                 value.rgb = value.a > 0.00001 ? value.rgb / value.a : 0;
             return value;
         }
+
+        //轮廓沿用邻近实体的高度，空白背景保持零值。
+        float SurfaceHeightAt(float2 uv)
+        {
+            float4 surface = Geometry(uv);
+            if (surface.a != 0)
+                return max(0, mul(_CaptureToWorld, float4(surface.xyz, 1)).y - _GroundHeight);
+            float height = 0;
+            const float2 directions[8] = {
+                float2(1,0), float2(-1,0), float2(0,1), float2(0,-1),
+                float2(0.7071,0.7071), float2(-0.7071,0.7071),
+                float2(0.7071,-0.7071), float2(-0.7071,-0.7071)
+            };
+            [unroll] for (int index = 0; index < 8; index++)
+            {
+                float2 neighborUV = uv + directions[index] * abs(_GeometryTex_TexelSize.xy) * _SilhouetteWidth;
+                float4 neighbor = Geometry(neighborUV);
+                if (neighbor.a != 0)
+                    height = max(height, mul(_CaptureToWorld, float4(neighbor.xyz, 1)).y - _GroundHeight);
+            }
+            return height;
+        }
+
+        //与颜色使用相同的超采样位置，边缘保留最近实体的高度。
+        float ResolveSurfaceHeight(v2f_img input) : SV_Target
+        {
+            if (_Supersampling <= 1.5) return SurfaceHeightAt(input.uv);
+            float2 offset = abs(_GeometryTex_TexelSize.xy) * 0.5;
+            return max(max(SurfaceHeightAt(input.uv + offset), SurfaceHeightAt(input.uv - offset)),
+                max(SurfaceHeightAt(input.uv + float2(offset.x, -offset.y)),
+                    SurfaceHeightAt(input.uv + float2(-offset.x, offset.y))));
+        }
         ENDCG
         Pass
         {
@@ -161,6 +194,14 @@ Shader "SSR/Outline/Composite"
             #pragma target 3.0
             #pragma vertex vert_img
             #pragma fragment FilterTurretContact
+            ENDCG
+        }
+        Pass
+        {
+            CGPROGRAM
+            #pragma target 3.0
+            #pragma vertex vert_img
+            #pragma fragment ResolveSurfaceHeight
             ENDCG
         }
     }

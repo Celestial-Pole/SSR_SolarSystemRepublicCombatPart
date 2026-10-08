@@ -10,6 +10,8 @@ namespace SSR.Combat.Offscreen
         private readonly OffscreenTurretComp comp;
         private readonly TurretAimSettings settings;
         private readonly Quaternion yawRest, pitchRest;
+        private readonly Transform[] radars;
+        private readonly Quaternion[] radarRest;
         internal readonly GameObject Model;
         internal readonly Transform Yaw, Pitch, Muzzle;
 
@@ -28,6 +30,15 @@ namespace SSR.Combat.Offscreen
                 throw new InvalidOperationException("炮塔必须使用根节点→旋转→俯仰→炮口的独立层级：" + owner.def.defName);
             yawRest = Yaw.localRotation;
             pitchRest = Pitch.localRotation;
+            radars = new Transform[settings.radarPaths.Count];
+            radarRest = new Quaternion[radars.Length];
+            for (int i = 0; i < radars.Length; i++)
+            {
+                radars[i] = Require(settings.radarPaths[i]);
+                if (!radars[i].IsChildOf(Yaw) || radars[i].IsChildOf(Pitch))
+                    throw new InvalidOperationException("雷达须位于偏航节点下，并使用独立于炮管的俯仰转轴：" + settings.radarPaths[i]);
+                radarRest[i] = radars[i].localRotation;
+            }
         }
 
         //在逻辑刻中同步模型位置，瞄准无需等待摄像机看见炮塔。
@@ -39,11 +50,16 @@ namespace SSR.Combat.Offscreen
             Model.transform.localScale = new Vector3(graphic.drawSize.x, 1, graphic.drawSize.y);
         }
 
-        //按保存的角度写入旋转和俯仰轴，保留导入时的基础轴变换。
+        //更新炮管姿态，并让雷达绕自身转轴跟随炮口方向。
         internal void Apply(float yaw, float pitch)
         {
             Yaw.localRotation = yawRest * Quaternion.AngleAxis(yaw, settings.yawRotationAixe.normalized);
             Pitch.localRotation = pitchRest * Quaternion.AngleAxis(pitch, settings.pitchRotationAixe.normalized);
+            for (int i = 0; i < radars.Length; i++)
+            {
+                Vector3 direction = radars[i].parent.InverseTransformVector(Forward).normalized;
+                radars[i].localRotation = Quaternion.FromToRotation(radarRest[i] * Vector3.forward, direction) * radarRest[i];
+            }
         }
 
         //将统一目标坐标转换为与炮塔网格一致的采集空间，可选提前量只影响瞄准。

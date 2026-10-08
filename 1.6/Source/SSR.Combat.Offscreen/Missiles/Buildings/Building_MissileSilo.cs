@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using HarmonyLib;
 using RimWorld;
 using UnityEngine;
@@ -79,6 +80,21 @@ namespace SSR.Combat.Offscreen
         public override string GetInspectString()
         {
             return base.GetInspectString() + "\n导弹井：" + Controller.Status + "\n舱内导弹：" + Controller.LoadedCount + " / 9";
+        }
+
+        //固定垂直发射井没有可供预览的旋转和俯仰转轴。
+        public override IEnumerable<Gizmo> GetGizmos()
+        {
+            foreach (var gizmo in base.GetGizmos()) yield return gizmo;
+            var command = new Command_Action
+            {
+                defaultLabel = "角度预览",
+                defaultDesc = "固定垂直发射井，没有旋转或俯仰机构。",
+                icon = def.uiIcon,
+                groupable = false
+            };
+            command.Disable("固定垂直发射井，没有旋转或俯仰机构。");
+            yield return command;
         }
     }
 }

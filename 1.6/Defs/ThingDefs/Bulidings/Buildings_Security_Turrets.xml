@@ -138,7 +138,7 @@
                 <aimConeTolerance>1.5</aimConeTolerance>
                 <solverIterations>12</solverIterations>
                 <allowManualTarget>true</allowManualTarget>
-                <returnToIdle>true</returnToIdle>
+                <returnToIdle>false</returnToIdle>
                 <idleDelayTicks>180</idleDelayTicks>
                 <idleYaw>0</idleYaw>
                 <idlePitch>0</idlePitch>
@@ -179,7 +179,7 @@
 		<graphicData>
 			<texPath>Things/Building/Security/SentryGun/PortableSentryGun_MenuIcon</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
-			<drawSize>(1.5,1.5)</drawSize>
+			<drawSize>(1,1)</drawSize>
 			<shaderType>Cutout</shaderType>
 			<damageData>
 				<rect>(0.2,0.2,0.6,0.6)</rect>
@@ -222,8 +222,8 @@
 				<texPath>Things/Building/Security/SentryGun/PortableSentryGun_MenuIcon</texPath>
 				<graphicClass>Graphic_Single</graphicClass>
 				<shaderType>EdgeDetect</shaderType>
-				<drawSize>(1.512171,1.512171)</drawSize>
-				<drawOffset>(0,0,0.119697)</drawOffset>
+				<drawSize>(1.626686,1.626686)</drawSize>
+				<drawOffset>(0,0,0.179545)</drawOffset>
 			</blueprintGraphicData>
 			<combatPower>45</combatPower><!-- 战斗力与拾荒者相同 -->
 			<ai_combatDangerous>true</ai_combatDangerous>
@@ -287,7 +287,7 @@
                 <aimConeTolerance>1.5</aimConeTolerance>
                 <solverIterations>12</solverIterations>
                 <allowManualTarget>true</allowManualTarget>
-                <returnToIdle>true</returnToIdle>
+                <returnToIdle>false</returnToIdle>
                 <idleDelayTicks>180</idleDelayTicks>
                 <idleYaw>0</idleYaw>
                 <idlePitch>0</idlePitch>
@@ -423,8 +423,8 @@
 				<texPath>Things/Building/Security/ElectromagneticCIWS/ElectromagneticCIWS_MenuIcon</texPath>
 				<graphicClass>Graphic_Single</graphicClass>
 				<shaderType>EdgeDetect</shaderType>
-				<drawSize>(4.196917,4.196917)</drawSize>
-				<drawOffset>(0,0,0.958524)</drawOffset>
+				<drawSize>(4.198739,4.198739)</drawSize>
+				<drawOffset>(0,0,0.959404)</drawOffset>
 			</blueprintGraphicData>
 			<combatPower>45</combatPower><!-- 战斗力与拾荒者相同 -->
 			<ai_combatDangerous>true</ai_combatDangerous>
@@ -495,11 +495,14 @@
                 <aimConeTolerance>1.5</aimConeTolerance>
                 <solverIterations>12</solverIterations>
                 <allowManualTarget>true</allowManualTarget>
-                <returnToIdle>true</returnToIdle>
+                <returnToIdle>false</returnToIdle>
                 <idleDelayTicks>180</idleDelayTicks>
                 <idleYaw>0</idleYaw>
                 <idlePitch>0</idlePitch>
                 <targeting>SSR_TurretTargeting_PointDefense</targeting>
+				<radarPaths>
+					<li>Transform_Y/Root/Transform_X/Transform_Z/TurretTop/RadarPitch</li>
+				</radarPaths>
 				<yawRotationSpeed>360</yawRotationSpeed>
 				<pitchRotationSpeed>120</pitchRotationSpeed>
 				<shootingOrigine>Transform_Y/Root/Transform_X/Transform_Z/TurretTop/MainGun/FirePoint</shootingOrigine>
@@ -715,11 +718,14 @@
                 <aimConeTolerance>1.5</aimConeTolerance>
                 <solverIterations>12</solverIterations>
                 <allowManualTarget>true</allowManualTarget>
-                <returnToIdle>true</returnToIdle>
+                <returnToIdle>false</returnToIdle>
                 <idleDelayTicks>180</idleDelayTicks>
                 <idleYaw>0</idleYaw>
                 <idlePitch>0</idlePitch>
                 <targeting>SSR_TurretTargeting_Ground</targeting>
+				<radarPaths>
+					<li>Transform_Y/Root/Transform_X/Transform_Z/TurretTop/RadarPitch</li>
+				</radarPaths>
 				<yawRotationSpeed>20</yawRotationSpeed>
 				<pitchRotationSpeed>5</pitchRotationSpeed>
 				<shootingOrigine>Transform_Y/Root/Transform_X/Transform_Z/TurretTop/MainGun/FirePoint</shootingOrigine>
@@ -728,7 +734,8 @@
 				<pitchPath>Transform_Y/Root/Transform_X/Transform_Z/TurretTop/MainGun</pitchPath>
 				<yawRotationAixe>(0, 0, 1)</yawRotationAixe>
 				<pitchRotationAixe>(0, 1, 0)</pitchRotationAixe>
-				<pitchRotationRange>(350, 30)</pitchRotationRange>
+				<!--局部正角为下俯，限制为 5 度以避开前部装甲。-->
+				<pitchRotationRange>(350, 5)</pitchRotationRange>
 				<shootingOrigineForward>(1, 0, 0)</shootingOrigineForward>
 			</li>
 		</modExtensions>
@@ -934,11 +941,14 @@
                 <aimConeTolerance>1.5</aimConeTolerance>
                 <solverIterations>12</solverIterations>
                 <allowManualTarget>true</allowManualTarget>
-                <returnToIdle>true</returnToIdle>
+                <returnToIdle>false</returnToIdle>
                 <idleDelayTicks>180</idleDelayTicks>
                 <idleYaw>0</idleYaw>
                 <idlePitch>0</idlePitch>
                 <targeting>SSR_TurretTargeting_Ground</targeting>
+				<radarPaths>
+					<li>Transform_Y/Root/Transform_X/Transform_Z/TurretTop/RadarPitch</li>
+				</radarPaths>
 				<yawRotationSpeed>15</yawRotationSpeed>
 				<pitchRotationSpeed>5</pitchRotationSpeed>
 				<shootingOrigine>Transform_Y/Root/Transform_X/Transform_Z/TurretTop/MainGun/FirePoint</shootingOrigine>
@@ -947,7 +957,8 @@
 				<pitchPath>Transform_Y/Root/Transform_X/Transform_Z/TurretTop/MainGun</pitchPath>
 				<yawRotationAixe>(0, 0, 1)</yawRotationAixe>
 				<pitchRotationAixe>(0, 1, 0)</pitchRotationAixe>
-				<pitchRotationRange>(350, 30)</pitchRotationRange>
+				<!--局部正角为下俯，限制为 5 度以避开前部装甲。-->
+				<pitchRotationRange>(350, 5)</pitchRotationRange>
 				<shootingOrigineForward>(1, 0, 0)</shootingOrigineForward>
 			</li>
 		</modExtensions>
@@ -1107,8 +1118,8 @@
 				<texPath>Things/Building/Security/500mmHvElectromagneticGun/500mmHvElectromagneticGun_MenuIcon</texPath>
 				<graphicClass>Graphic_Single</graphicClass>
 				<shaderType>EdgeDetect</shaderType>
-				<drawSize>(16.49912,16.49912)</drawSize>
-				<drawOffset>(0,0,2.948051)</drawOffset>
+				<drawSize>(16.52957,16.52957)</drawSize>
+				<drawOffset>(0,0,2.972677)</drawOffset>
 			</blueprintGraphicData>
 			<combatPower>45</combatPower>
 			<ai_combatDangerous>true</ai_combatDangerous>
@@ -1158,11 +1169,14 @@
                 <aimConeTolerance>1.5</aimConeTolerance>
                 <solverIterations>12</solverIterations>
                 <allowManualTarget>true</allowManualTarget>
-                <returnToIdle>true</returnToIdle>
+                <returnToIdle>false</returnToIdle>
                 <idleDelayTicks>180</idleDelayTicks>
                 <idleYaw>0</idleYaw>
                 <idlePitch>0</idlePitch>
                 <targeting>SSR_TurretTargeting_Ground</targeting>
+				<radarPaths>
+					<li>Transform_Y/Root/Yaw/RadarPitch</li>
+				</radarPaths>
 				<yawRotationSpeed>10</yawRotationSpeed>
 				<pitchRotationSpeed>5</pitchRotationSpeed>
 				<shootingOrigine>Transform_Y/Root/Yaw/Pitch/Recoil/FirePoint</shootingOrigine>
