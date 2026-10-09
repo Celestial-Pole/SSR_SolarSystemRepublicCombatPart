@@ -6,18 +6,23 @@
 		<passability>PassThroughOnly</passability>
 		<terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
 		<designationCategory>SSR_DesignationCategory</designationCategory>
-		<modExtensions>
-			<li Class="FS_SSR.UI.Ext_DesignationCategoryInner">
-				<!-- SSR_DesignationCategory分类的必须带此ext注明子分类 -->
-				<innerCategory>SSR_DesignationInnerCategory_Security</innerCategory>
-			</li>
-		</modExtensions>
 		<altitudeLayer>Building</altitudeLayer>
 		<fillPercent>0.4</fillPercent>
 		<useHitPoints>True</useHitPoints>
 		<pathCost>50</pathCost>
 		<hasInteractionCell>false</hasInteractionCell>
 		<preventSkyfallersLandingOn>true</preventSkyfallersLandingOn>
+		<comps>
+			<li>
+				<compClass>FS_SSR.TC_SolarFlareLocalShield</compClass>
+			</li>
+		</comps>
+		<modExtensions>
+			<li Class="FS_SSR.UI.Ext_DesignationCategoryInner">
+				<!-- SSR_DesignationCategory分类的必须带此ext注明子分类 -->
+				<innerCategory>SSR_DesignationInnerCategory_Security</innerCategory>
+			</li>
+		</modExtensions>
 	</ThingDef>
 
 </Defs>

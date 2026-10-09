@@ -84,7 +84,7 @@ namespace SSR.Combat.Offscreen
                 {
                     defaultLabel = Modes[index],
                     defaultDesc = "切换真实高度或航迹，保留炮塔原有索敌、俯仰限制和射击条件。",
-                    icon = ContentFinder<Texture2D>.Get("Things/Building/Security/ElectromagneticCIWS/ElectromagneticCIWS_MenuIcon"),
+                    icon = ContentFinder<Texture2D>.Get("Things/Building/Security/30mmElectromagneticCIWS/ElectromagneticCIWS_MenuIcon"),
                     action = () => { mode = selected; startTick = Find.TickManager.TicksGame; UpdateFlight(); }
                 };
             }

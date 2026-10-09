@@ -76,7 +76,7 @@
 			<damageDef>Bullet</damageDef>
 			<damageAmountBase>18</damageAmountBase>
 			<armorPenetrationBase>0.4</armorPenetrationBase>
-			<speed>120</speed>
+			<speed>180</speed>
 		</projectile>
 		<modExtensions>
 			<li Class="HJ_SSR.Weapons.ModExtension_PenetratingProjectile">
@@ -199,7 +199,7 @@
 			<damageDef>Bullet</damageDef>
 			<damageAmountBase>10</damageAmountBase>
 			<armorPenetrationBase>0.35</armorPenetrationBase>
-			<speed>100</speed>
+			<speed>150</speed>
 		</projectile>
 		<modExtensions>
 			<li Class="HJ_SSR.Weapons.ModExtension_PenetratingProjectile">
@@ -323,7 +323,7 @@
 			<damageDef>Bullet</damageDef>
 			<damageAmountBase>10</damageAmountBase>
 			<armorPenetrationBase>0.35</armorPenetrationBase>
-			<speed>90</speed>
+			<speed>150</speed>
 		</projectile>
 		<modExtensions>
 			<li Class="HJ_SSR.Weapons.ModExtension_PenetratingProjectile">
@@ -459,7 +459,7 @@
 			<damageDef>Bullet</damageDef>
 			<damageAmountBase>5</damageAmountBase>
 			<armorPenetrationBase>0.55</armorPenetrationBase>
-			<speed>120</speed>
+			<speed>150</speed>
 		</projectile>
 		<modExtensions>
 			<li Class="HJ_SSR.Weapons.ModExtension_PenetratingProjectile">
@@ -585,7 +585,7 @@
 			<damageAmountBase>25</damageAmountBase>
 			<armorPenetrationBase>0.55</armorPenetrationBase>
 			<stoppingPower>1.5</stoppingPower>
-			<speed>150</speed>
+			<speed>200</speed>
 		</projectile>
 		<modExtensions>
 			<li Class="HJ_SSR.Weapons.ModExtension_PenetratingProjectile">
@@ -711,7 +711,7 @@
 			<damageAmountBase>18</damageAmountBase>
 			<armorPenetrationBase>0.4</armorPenetrationBase>
 			<stoppingPower>0.55</stoppingPower>
-			<speed>150</speed>
+			<speed>175</speed>
 		</projectile>
 		<modExtensions>
 			<li Class="HJ_SSR.Weapons.ModExtension_PenetratingProjectile">
@@ -837,7 +837,7 @@
 			<damageAmountBase>40</damageAmountBase>
 			<armorPenetrationBase>0.9</armorPenetrationBase>
 			<stoppingPower>3</stoppingPower>
-			<speed>200</speed>
+			<speed>300</speed>
 		</projectile>
 		<modExtensions>
 			<li Class="HJ_SSR.Weapons.ModExtension_PenetratingProjectile">

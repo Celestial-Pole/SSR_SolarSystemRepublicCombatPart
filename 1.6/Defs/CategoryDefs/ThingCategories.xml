@@ -2,6 +2,12 @@
 <Defs>
 
 	<ThingCategoryDef>
+		<defName>SSR_Turrets</defName>
+		<label>炮塔</label>
+		<parent>SSR</parent>
+	</ThingCategoryDef>
+
+	<ThingCategoryDef>
 		<defName>SSR_Weapons</defName>
 		<label>武器</label>
 		<parent>SSR</parent>
