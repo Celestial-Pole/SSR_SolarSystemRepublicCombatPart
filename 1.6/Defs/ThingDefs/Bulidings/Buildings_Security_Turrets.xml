@@ -2815,7 +2815,6 @@
 			<ShootingAccuracyTurret>1</ShootingAccuracyTurret>
 		</statBases>
 		<costList>
-			<Steel>30</Steel>
 			<SSR_Item_SpecialSteel>120</SSR_Item_SpecialSteel>
 			<SSR_Item_StrongElectromagnet>10</SSR_Item_StrongElectromagnet>
 			<SSR_Item_SuperconductingMaterial>5</SSR_Item_SuperconductingMaterial>
