@@ -27,6 +27,11 @@
     <label>对地炮塔目标策略</label>
   </SSR.Combat.Offscreen.TurretTargetingDef>
   <SSR.Combat.Offscreen.TurretTargetingDef ParentName="SSR_TurretTargeting_Base">
+    <defName>SSR_TurretTargeting_IndirectGround</defName>
+    <label>越墙对地炮塔目标策略</label>
+    <requireGroundLineOfSight>false</requireGroundLineOfSight>
+  </SSR.Combat.Offscreen.TurretTargetingDef>
+  <SSR.Combat.Offscreen.TurretTargetingDef ParentName="SSR_TurretTargeting_Base">
     <defName>SSR_TurretTargeting_PointDefense</defName>
     <label>近程防空目标策略</label>
     <!--近防炮可索敌的真实离地高度上限，单位为格。-->

@@ -21,11 +21,12 @@ namespace SSR.Combat.Offscreen
             return (from + segment * fraction).sqrMagnitude <= radius * radius;
         }
 
-        //低于地面或跨过实际建筑高度时触发碰撞，发射建筑本身不阻挡出筒。
+        //越墙弹丸保留落地碰撞，其余导弹按建筑高度检测沿途障碍。
         internal static bool GroundCollision(Projectile_GuidedDefenseMissile missile)
         {
             var flight = missile.Flight;
             if (flight.Tip.y <= flight.Anchor.y) return true;
+            if (missile.def.projectile.flyOverhead && !missile.Targeting.requireGroundLineOfSight) return false;
             var from = flight.Ground(flight.PreviousTip);
             var to = flight.Ground(flight.Tip);
             foreach (var cell in GenSight.PointsOnLineOfSight(from.ToIntVec3(), to.ToIntVec3()))

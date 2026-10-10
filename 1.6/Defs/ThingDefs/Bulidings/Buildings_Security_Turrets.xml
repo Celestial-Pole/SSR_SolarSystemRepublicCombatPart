@@ -1913,7 +1913,7 @@
                 <idleDelayTicks>180</idleDelayTicks>
                 <idleYaw>0</idleYaw>
                 <idlePitch>0</idlePitch>
-                <targeting>SSR_TurretTargeting_Ground</targeting>
+                <targeting>SSR_TurretTargeting_IndirectGround</targeting>
 				<radarPaths>
 					<li>Transform_Y/Root/Transform_X/Transform_Z/TurretTop/RadarPitch</li>
 				</radarPaths>
@@ -1955,6 +1955,8 @@
 				<verbClass>SSR.Combat.Offscreen.TurretRecoilVerb</verbClass>
                 <hasStandardCommand>true</hasStandardCommand>
 				<defaultProjectile>SSR_Projectile_Electromagnetic_300mmMdGun</defaultProjectile>
+				<requireLineOfSight>false</requireLineOfSight>
+				<stopBurstWithoutLos>false</stopBurstWithoutLos>
 				<warmupTime>0</warmupTime>
 				<range>999</range>
 				<burstShotCount>1</burstShotCount>
@@ -1981,6 +1983,7 @@
 			<drawSize>2.5</drawSize>
 		</graphicData>
 		<projectile>
+			<flyOverhead>true</flyOverhead>
 			<damageDef>BombSuper</damageDef>
 			<damageAmountBase>800</damageAmountBase>
 			<explosionRadius>1.8</explosionRadius>
@@ -2141,7 +2144,7 @@
                 <idleDelayTicks>180</idleDelayTicks>
                 <idleYaw>0</idleYaw>
                 <idlePitch>0</idlePitch>
-                <targeting>SSR_TurretTargeting_Ground</targeting>
+                <targeting>SSR_TurretTargeting_IndirectGround</targeting>
 				<radarPaths>
 					<li>Transform_Y/Root/Yaw/RadarPitch</li>
 				</radarPaths>
@@ -2183,6 +2186,8 @@
 				<verbClass>SSR.Combat.Offscreen.TurretRecoilVerb</verbClass>
                 <hasStandardCommand>true</hasStandardCommand>
 				<defaultProjectile>SSR_Projectile_Electromagnetic_500mmHvGun</defaultProjectile>
+				<requireLineOfSight>false</requireLineOfSight>
+				<stopBurstWithoutLos>false</stopBurstWithoutLos>
 				<warmupTime>0</warmupTime>
 				<range>999</range>
 				<burstShotCount>1</burstShotCount>
@@ -2369,7 +2374,7 @@
 				<idleDelayTicks>180</idleDelayTicks>
 				<idleYaw>0</idleYaw>
 				<idlePitch>0</idlePitch>
-				<targeting>SSR_TurretTargeting_Ground</targeting>
+				<targeting>SSR_TurretTargeting_IndirectGround</targeting>
 				<yawRotationSpeed>60</yawRotationSpeed>
 				<pitchRotationSpeed>45</pitchRotationSpeed>
 				<shootingOrigine>Root/Yaw/Pitch/FirePoint</shootingOrigine>

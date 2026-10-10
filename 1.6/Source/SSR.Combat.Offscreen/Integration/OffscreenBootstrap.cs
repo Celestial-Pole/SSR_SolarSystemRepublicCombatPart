@@ -1,14 +1,15 @@
 using FS_SSR;
 using HarmonyLib;
 using Verse;
+using Verse.AI;
 
 namespace SSR.Combat.Offscreen
 {
-    //接入核心包的模型创建入口，在相机渲染前接管目标炮塔的网格。
+    //注册离屏炮塔的模型、射击和原版接口适配。
     [StaticConstructorOnStartup]
     internal static class OffscreenBootstrap
     {
-        //安装限定于离屏组件的模型创建回调。
+        //安装模型回调及炮塔专用补丁。
         static OffscreenBootstrap()
         {
             var harmony = new Harmony("SSR.Combat.Offscreen");
@@ -20,6 +21,8 @@ namespace SSR.Combat.Offscreen
                 prefix: new HarmonyMethod(typeof(TurretShootLine), nameof(TurretShootLine.Find)));
             harmony.Patch(AccessTools.Method(typeof(Projectile), "CanHit"),
                 prefix: new HarmonyMethod(typeof(TurretProjectileCollision), nameof(TurretProjectileCollision.CanHit)));
+            harmony.Patch(AccessTools.Method(typeof(AvoidGrid), "PrintAvoidGridAroundTurret"),
+                prefix: new HarmonyMethod(typeof(TurretAvoidGrid), nameof(TurretAvoidGrid.PrintLargeRange)));
         }
 
         //捕获新模型，其他模组或核心包的普通预制体不受影响。
