@@ -1,3 +1,4 @@
+using System;
 using RimWorld;
 using UnityEngine;
 using Verse;
@@ -27,7 +28,16 @@ namespace SSR.Combat.Offscreen
             bool air = state.Kind != TurretTargetKind.Ground;
             if (air && !AirRelationAllowed(owner, target.Thing, settings)) return false;
             bool needsSight = air ? settings.requireAirLineOfSight : settings.requireGroundLineOfSight;
-            return !needsSight || GenSight.LineOfSight(owner.Position, target.Cell, owner.Map, true);
+            return !needsSight || HasLineOfSight(owner, target);
+        }
+
+        //忽略发射建筑和目标自身的占地，检查两者之间的遮挡。
+        private static bool HasLineOfSight(Building_ConfigurableTurret owner, LocalTargetInfo target,
+            Func<IntVec3, bool> validator = null)
+        {
+            CellRect targetRect = target.HasThing ? target.Thing.OccupiedRect() : CellRect.SingleCell(target.Cell);
+            return GenSight.LineOfSight(owner.Position, target.Cell, owner.Map,
+                owner.OccupiedRect(), targetRect, validator);
         }
 
         //识别弹丸发射者及空投舱载员的阵营，默认不攻击友军和中立空投物。
@@ -47,7 +57,7 @@ namespace SSR.Combat.Offscreen
             return friendly ? settings.targetFriendlyAir : settings.targetNeutralAir;
         }
 
-        //保留原版对囚犯和同阵营机械的自动目标排除条件。
+        //保留原版自动目标排除和烟雾规则，视线检查使用建筑占地。
         internal static bool GroundAutoTargetAllowed(Building_ConfigurableTurret owner, Thing target)
         {
             if (target is Pawn pawn)
@@ -55,7 +65,14 @@ namespace SSR.Combat.Offscreen
                 if (owner.Faction == Faction.OfPlayer && pawn.IsPrisoner) return false;
                 if (GenAI.MachinesLike(owner.Faction, pawn)) return false;
             }
-            return owner.TryReadTarget(target, out var state) && state.Kind == TurretTargetKind.Ground && owner.CanReachTarget(state);
+            if (!owner.TryReadTarget(target, out var state) || state.Kind != TurretTargetKind.Ground
+                || !owner.CanReachTarget(state)) return false;
+            if (!owner.Settings.targeting.requireGroundLineOfSight) return true;
+            var weapon = owner.AttackVerb.EquipmentSource?.TryGetComp<CompUniqueWeapon>();
+            if (weapon?.IgnoreAccuracyMaluses == true) return true;
+            return !owner.Position.AnyGas(owner.Map, GasType.BlindSmoke)
+                && !target.Position.AnyGas(owner.Map, GasType.BlindSmoke)
+                && HasLineOfSight(owner, target, cell => !cell.AnyGas(owner.Map, GasType.BlindSmoke));
         }
     }
 }

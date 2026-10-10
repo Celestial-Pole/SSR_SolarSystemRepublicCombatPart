@@ -10,6 +10,8 @@ namespace SSR.Combat.Offscreen
         private Building_ConfigurableTurret source;
         private GuidedMissileFlight flight = new GuidedMissileFlight();
         private int ageTicks, launchSlot;
+        private Vector3 lastGroundTarget;
+        private bool hasGroundTarget;
         internal GuidedMissileFlight Flight => flight;
         internal Building_ConfigurableTurret Source => source;
         internal GuidedMissileSettings Settings => sourceDef.GetModExtension<GuidedMissileSettings>();
@@ -48,6 +50,7 @@ namespace SSR.Combat.Offscreen
         {
             base.Launch(launcher, origin, usedTarget, intendedTarget, hitFlags, preventFriendlyFire, equipment, targetCoverDef);
             ticksToImpact = lifetime = Settings.missileLifetimeTicks;
+            ReadGuidanceTarget();
         }
 
         //向地图登记弹体和烟焰显示。
@@ -67,9 +70,7 @@ namespace SSR.Combat.Offscreen
                     var muzzle = ((IGuidedMissileLauncher)source).GetMissileFirePoint(launchSlot);
                     flight.AlignEjection(muzzle.position, muzzle.rotation);
                 }
-                TurretTargetState? target = TurretTargetResolver.TryRead(intendedTarget,
-                    Targeting.groundAimHeight,
-                    out var state) ? state : (TurretTargetState?)null;
+                TurretTargetState? target = ReadGuidanceTarget();
                 flight.Tick(Settings, target, (ageTicks + 1) / 60f);
                 ageTicks++;
                 var cell = ExactPosition.ToIntVec3();
@@ -80,6 +81,20 @@ namespace SSR.Combat.Offscreen
                 if (GuidedMissileImpact.GroundCollision(this))
                 { Detonate(flight.Tip.y - flight.Anchor.y > 2); return; }
             }
+        }
+
+        //跟踪地面目标的位置，目标失效后继续攻击其最后位置。
+        private TurretTargetState? ReadGuidanceTarget()
+        {
+            if (TurretTargetResolver.TryRead(intendedTarget, Targeting.groundAimHeight, out var state))
+            {
+                hasGroundTarget = state.Kind == TurretTargetKind.Ground;
+                if (hasGroundTarget) lastGroundTarget = state.GroundPosition;
+                return state;
+            }
+            return hasGroundTarget
+                ? new TurretTargetState(TurretTargetKind.Ground, lastGroundTarget, Targeting.groundAimHeight, Vector3.zero)
+                : (TurretTargetState?)null;
         }
 
         //空爆结算空中伤害，地面命中交给原版爆炸流程。
@@ -115,7 +130,7 @@ namespace SSR.Combat.Offscreen
             base.DeSpawn(mode);
         }
 
-        //读写来源弹位、弹龄和飞行状态。
+        //读写来源弹位、弹龄、飞行状态和最后的地面目标位置。
         public override void ExposeData()
         {
             base.ExposeData();
@@ -124,6 +139,8 @@ namespace SSR.Combat.Offscreen
             Scribe_Deep.Look(ref flight, "guidedFlight");
             Scribe_Values.Look(ref ageTicks, "ageTicks");
             Scribe_Values.Look(ref launchSlot, "launchSlot");
+            Scribe_Values.Look(ref lastGroundTarget, "lastGroundTarget");
+            Scribe_Values.Look(ref hasGroundTarget, "hasGroundTarget");
         }
     }
 }

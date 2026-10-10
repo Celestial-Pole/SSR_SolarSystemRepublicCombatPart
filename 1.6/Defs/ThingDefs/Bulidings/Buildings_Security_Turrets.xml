@@ -1752,7 +1752,7 @@
 			<graphicClass>Graphic_Single</graphicClass>
 			<drawSize>1.5</drawSize>
 		</graphicData>
-		<thingClass>HJ_SSR.Weapons.PenetratingBullet</thingClass>
+		<thingClass>SSR.Combat.Offscreen.Projectile_RailgunPenetrating</thingClass>
 		<projectile>
 			<damageDef>BombSuper</damageDef>
 			<damageAmountBase>400</damageAmountBase>
@@ -2508,6 +2508,9 @@
 				<verbClass>SSR.Combat.Offscreen.Verb_TubeMissile</verbClass>
 				<hasStandardCommand>true</hasStandardCommand>
 				<defaultProjectile>SSR_Projectile_RocketArtillery</defaultProjectile>
+				<targetParams>
+					<canTargetLocations>true</canTargetLocations>
+				</targetParams>
 				<!--原版要求爆炸弹丸配置正数偏移半径；实体导弹由专用发射器制导，不使用原版随机散布。-->
 				<forcedMissRadius>0.1</forcedMissRadius>
 				<warmupTime>0</warmupTime>
@@ -2752,6 +2755,9 @@
 				<verbClass>SSR.Combat.Offscreen.Verb_TubeMissile</verbClass>
 				<hasStandardCommand>true</hasStandardCommand>
 				<defaultProjectile>SSR_Projectile_Box-typeMissileLauncher</defaultProjectile>
+				<targetParams>
+					<canTargetLocations>true</canTargetLocations>
+				</targetParams>
 				<!--原版要求爆炸弹丸配置正数偏移半径；实体导弹由专用发射器制导，不使用原版随机散布。-->
 				<forcedMissRadius>0.1</forcedMissRadius>
 				<warmupTime>0</warmupTime>

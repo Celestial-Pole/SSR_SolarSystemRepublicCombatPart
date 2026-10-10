@@ -16,7 +16,7 @@ namespace SSR.Combat.Offscreen
             if (settings.targetGround)
             {
                 var flags = TargetScanFlags.NeedThreat | TargetScanFlags.NeedAutoTargetable;
-                if (settings.requireGroundLineOfSight) flags |= TargetScanFlags.NeedLOSToAll | TargetScanFlags.LOSBlockableByGas;
+                //视线与烟雾由目标策略检查，原版中心格检查会被大型炮塔自身遮挡。
                 var ground = range > 0
                     ? AttackTargetFinder.BestAttackTarget(owner, flags,
                         target => TurretTargetPolicy.GroundAutoTargetAllowed(owner, target), maxDist: range)
