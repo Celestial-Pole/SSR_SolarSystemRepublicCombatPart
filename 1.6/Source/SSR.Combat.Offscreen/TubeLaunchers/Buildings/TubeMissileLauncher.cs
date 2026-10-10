@@ -13,7 +13,10 @@ namespace SSR.Combat.Offscreen
         private List<int> cooldowns;
         private int nextSlot, holdOpenTicks;
         private float opening;
+        private bool reloadingAfterEmpty;
         internal int ReadyCount => cooldowns.Count(value => value == 0);
+        internal bool CanStartBurst => !reloadingAfterEmpty && (owner.LauncherSettings.allowPartialSalvo
+            ? ReadyCount > 0 : ReadyCount == cooldowns.Count);
         internal bool DoorsOpen => owner.LauncherSettings.doors.Count == 0 || opening >= 1;
 
         //按配置弹位数初始化库存。
@@ -40,6 +43,7 @@ namespace SSR.Combat.Offscreen
             {
                 if (holdOpenTicks > 0) holdOpenTicks--;
                 for (int i = 0; i < cooldowns.Count; i++) if (cooldowns[i] > 0) cooldowns[i]--;
+                if (reloadingAfterEmpty && ReadyCount == cooldowns.Count) reloadingAfterEmpty = false;
                 bool open = holdOpenTicks > 0 || owner.CanContinue && ReadyCount > 0
                     && owner.TryReadTarget(owner.CurrentTarget, out var target)
                     && (owner.AttackVerb.state == VerbState.Bursting || owner.Aim.Aligned(target));
@@ -65,6 +69,7 @@ namespace SSR.Combat.Offscreen
                 GenSpawn.Spawn(missile, owner.Position, owner.Map);
                 missile.Launch(owner, owner.DrawPos, target, target, ProjectileHitFlags.IntendedTarget, true, owner.gun);
                 cooldowns[slot] = settings.reloadTicks;
+                reloadingAfterEmpty = ReadyCount == 0;
                 nextSlot = (slot + 1) % cooldowns.Count;
                 var assets = CombinedDefenseAssets.Get(settings);
                 float stroke = (assets.Tip.z - assets.Trail.z) * scale.z + settings.ejectionClearance;
@@ -82,6 +87,7 @@ namespace SSR.Combat.Offscreen
             Scribe_Values.Look(ref nextSlot, "nextSlot");
             Scribe_Values.Look(ref holdOpenTicks, "holdOpenTicks");
             Scribe_Values.Look(ref opening, "opening");
+            Scribe_Values.Look(ref reloadingAfterEmpty, "reloadingAfterEmpty");
         }
     }
 }

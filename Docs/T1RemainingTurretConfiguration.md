@@ -1,16 +1,16 @@
 # T1 五种炮塔接入与配置
 
-五种已涂色模型均已接入 RimWorld 1.6，T1 的 13 种模型现在都有对应游戏建筑。所有新增定义位于 `1.6/Defs/ThingDefs/Bulidings/Buildings_<型号>.xml`，每份文件包含建筑、武器和弹丸。
+T1 的 13 种模型均有对应游戏建筑。建筑、武器和弹丸定义集中在 `1.6/Defs/ThingDefs/Bulidings/Buildings_Security_Turrets.xml`。
 
 ## 型号与默认参数
 
 | 型号 | 建筑 Def | 占地 | 射程 | 连发 | 默认目标 |
 |---|---|---|---|---|---|
-| 电磁哨戒机枪 | `SSR_Turret_EMSentry` | 1×1 | 45 | 12 发，间隔 5 刻 | 地面 |
-| 便携电磁哨戒机枪 | `SSR_Turret_PortableEMSentry` | 1×1 | 40 | 8 发，间隔 6 刻 | 地面 |
-| 电磁机关炮 | `SSR_Turret_EMAutocannon` | 2×2 | 55 | 8 发，间隔 6 刻 | 地面 |
+| 电磁哨戒机枪 | `SSR_Turret_Electromagnetic_SentryGun` | 1×1 | 45 | 12 发，间隔 5 刻 | 地面 |
+| 便携电磁哨戒机枪 | `SSR_Turret_Electromagnetic_PortableSentryGun` | 1×1 | 40 | 8 发，间隔 6 刻 | 地面 |
+| 电磁机关炮 | `SSR_Turret_Electromagnetic_Autocannon` | 2×2 | 55 | 8 发，间隔 6 刻 | 地面 |
 | 远程多管火箭炮 | `SSR_Turret_RocketArtillery` | 2×2 | 90，最小 10 | 10 发，间隔 12 刻 | 地面 |
-| 导弹发射箱 | `SSR_Turret_MissileBox` | 2×2 | 100，最小 10 | 4 发，间隔 30 刻 | 地面、空中 |
+| 导弹发射箱 | `SSR_Turret_Box-typeMissileLauncher` | 2×2 | 100，最小 10 | 4 发，间隔 30 刻 | 地面、空中 |
 
 数值是当前接入默认值，均可在对应 XML 调整；尚未进行游戏内平衡测试。沿用基础炮塔研究与 SSR 防御建筑分类。三种电磁炮使用特种钢补充弹药；便携型号支持拆卸搬运，不依赖电网，其余型号配置了电力组件。
 
@@ -28,11 +28,17 @@
 
 电磁炮结构为 `Root/Yaw/Pitch/Recoil/FirePoint`，底座固定、炮身偏航、炮管独立俯仰。后坐片段只移动 `Recoil`，通过 `OffscreenPrefabProperties.recoilTransformPath/recoilClipName` 绑定，不覆盖偏航或俯仰。发射器使用 `Root/Yaw/Pitch/FirePoint` 作为整架瞄准参考；每枚导弹使用自身弹位挂点出筒。
 
+普通、电磁及两种便携哨戒机枪的最大仰角均为 60°。普通哨戒使用局部负角上仰，范围为 `(300,85)`；电磁哨戒使用局部正角上仰，范围为 `(350,60)`。145mm 与 300mm 电磁炮使用 `(315,5)`，即上仰 45°、下俯 5°；500mm 仍为上仰 85°、下俯 3°。自动瞄准和角度预览滑条共用这些范围。
+
 电磁机关炮的炮管两侧装饰块 `Slice.004` 和枪座后方装饰条 `Slice.005` 固定在 `Root/Yaw`，不参与俯仰和后坐；后方圆形雷达通过 `Root/Yaw/RadarPitch` 绕自身转轴跟随炮口指向。
 
 游戏图形 `drawSize` 保持 `(1,1)`，模型比例保存在 `Root` 内，避免只放大水平而压扁高度。菜单使用 `_MenuIcon_Isometric.png`，蓝图使用独立正面 PNG 及 Unity 导出的取景尺寸、偏移。
 
-全部 13 种炮塔的放置预览现直接从已构建资源包导出，同时写回 `building/blueprintGraphicData` 的尺寸和底座偏移。原有六种炮塔曾沿用模型缩放值作为 PNG 的绘制尺寸，导致蓝图过小且底座错位；这两种尺寸现在分别维护。九联装导弹井使用实际闭舱模型、90° 正面修正和地下裁剪，分别采集四个方向，蓝图通过 `Graphic_Multi` 选择对应图片，不再旋转单张俯视图。
+炮塔与导弹井的重叠区域按建筑 `size` 的占地面积排序：大炮塔覆盖小炮塔，同占地面积时南侧覆盖北侧。整座建筑的炮身与描边共用遮挡层次，旋转和俯仰不会改变排序；独立飞行的导弹继续使用弹丸层。
+
+地图黑边统一为 `0.05` 格，参照核心包数控加工中心的原图（1536×1024、绘制尺寸 3×2 格，直边黑线约 25 像素）。采集时按 `0.05 × 采集分辨率 ÷ 地图取景宽度` 换算，不随炮塔尺寸增粗；镜头缩放时与同系列贴图建筑等比例变化。导弹井、出筒合并采集和独立飞行弹体使用同一宽度，轮廓重叠判断也沿用该宽度。
+
+全部 13 种炮塔的放置预览从已构建资源包导出，同时写回 `building/blueprintGraphicData` 的尺寸和底座偏移。模型缩放与蓝图绘制尺寸分别维护。九联装导弹井使用实际闭舱模型、90° 正面修正和地下裁剪，分别采集四个方向，蓝图通过 `Graphic_Multi` 选择对应图片。
 
 ## 筒内库存与实体导弹
 
@@ -47,26 +53,21 @@
 
 每个 `missileSlots` 条目指向 `Root/Yaw/Pitch/Slots/SlotXX`，包含 `Missile` 与 `FirePoint`。`FirePoint` 与库存弹头 `TipPoint` 的位置和姿态一致，飞行实体使用该弹体的实际尺寸；`TrailPoint` 决定弹尾位置。发射成功后只隐藏相应库存弹体，生成具有独立位置、伤害和存档状态的真实弹丸。筒内运动随当前发射架姿态，弹尾完全离筒后离开发射架，滑行后点火制导。
 
-发射器等待整组补满后开始下一轮，避免最先装好的一枚立即单独发射。火箭炮和导弹箱均先完成偏航与俯仰瞄准，再开盖，完全打开后开始首发；一轮开始后，保持目标准入检查和制导，不因逐发的炮口角度误差中断。满弹时火箭炮发射 10 枚、导弹箱发射 4 枚，各筒依次发射一枚。停火或目标失效会结束剩余发射，断电或眩晕沿用原版暂停连发的行为。
+火箭炮允许用余弹开始下一轮：目标被摧毁或失效后，经过正常射击冷却和重新瞄准即可攻击下一个目标，不必等待十管全部补满；每轮最多发射起射时的待发数量，上限 10 枚。打空后等待整组补满，避免最先装好的一枚立即单独发射。导弹箱仍要求四管满装后起射。两者均先完成偏航与俯仰瞄准，再开盖，完全打开后开始首发；一轮开始后，保持目标准入检查和制导，不因逐发的炮口角度误差中断。停火或目标失效会结束剩余发射，断电或眩晕沿用原版暂停连发的行为。
 
 主要配置：
 
 - `missilePrefabPath`、`missileProjectile`、`missileSlots`：完整弹体资源、弹丸 Def 与逐枚库存。
 - `doors`：每扇盖板的 `path`、`axis`、`openAngle`；`openingTicks` 默认 24 刻。完成瞄准后开盖，完全打开才发射，齐射期间及弹尾未离筒时保持开盖。
 - `reloadTicks`：各弹位独立自动补充；停电或眩晕暂停机械与补充，停火阻止继续发射。
+- `allowPartialSalvo`：默认 `false`，要求满装起射；火箭炮设为 `true`，允许使用余弹开始下一轮，打空后仍等待整组补满。
 - `ejectionSpeed`、`ejectionClearance`、`ejectionGravity`、`ignitionDelay`、`minimumIgnitionHeight`：冷弹射和点火时机。
 - `maximumSpeed`、`acceleration`、`turnDegreesPerSecond`、`fuseRadius`、`missileLifetimeTicks`：三维飞行与引信。
 - `exhaust`：与现有导弹共用的尾焰、喷口历史和烟迹参数。
 - 武器 `verbs/li` 的 `range`、`minRange`、`burstShotCount`、`ticksBetweenBurstShots`：射程和逐发时序；弹丸的 `projectile` 节点设置伤害与爆炸范围。
 
-## 构建与预览
+## 构建与图标
 
-Unity 工程：`src/SSR.Combat.UnityAsset`。编辑器菜单 `SSR/炮塔资源` 中的“构建剩余五种炮塔”整理机械关节与弹体，“预览剩余五种炮塔”按实际 XML 输出抬升 35°、开盖和离筒姿态。模型修改并重新打包后，“同步蓝图与实际模型”从构建产物生成蓝图并更新 XML；“导出当前炮塔图标”同时更新斜视按钮图标。采集尺寸记录保存在 `.local/build-requests/turret-icons.xml`。
+Unity 工程：`src/SSR.Combat.UnityAsset`。编辑器菜单 `SSR/炮塔资源` 中的“构建剩余五种炮塔”根据源模型生成机械关节与弹体。日常调整直接维护现有游戏预制体，重新生成会覆盖其中的手工调整。
 
-机构预览按需生成到 `Docs/Previews/T1Integration`，生成的 PNG 不纳入版本控制。
-
-运行 DLL 已通过 Release 编译，零警告、零错误。Windows 资源包已重新构建，登记 166 项运行资源；五种建筑的武器/弹丸引用、唯一 Def 名、菜单/蓝图图片及预制体资源包登记已核对。Unity 编辑器按实际挂点检查了五种炮塔的俯仰方向，以及两种发射器的弹头位置、库存网格和飞行网格一致性。预览是编辑器静态机械姿态，未启动 RimWorld，未执行游戏内战斗测试。
-
-2026-10-07 已将核心包和战斗包部署至 `E:\steam\steamapps\common\RimWorld\Mods` 对应目录，并在 `ModsConfig.xml` 中启用 `brrainz.harmony` → `ssr.core` → `ssr.combat`，保留原有 27 个模组及其顺序。部署后的 DLL、Windows 资源包、新增定义和斜视图标与项目文件哈希一致。启用列表备份：`E:\ModdevMics\Backups\SSR_Combat\20261007-105126\ModsConfig.xml`。
-
-蓝图与齐射修正已同步到 Steam 模组和发布输出目录：运行 DLL、8 份建筑定义、16 张蓝图贴图共 25 个文件均通过 SHA-256 核对。13 种建筑的蓝图尺寸及偏移与资源包采集记录一致；两个筒式发射器的连发数分别等于 10、4 个实际弹位。运行 DLL Release 编译零警告、零错误。本次未启动游戏或执行战斗测试。
+Windows 资源包入口为 `SSR.UnityComponent.Outline.Editor.CombatWindowsBundleBuilder.Build`。重新打包后，“同步蓝图与实际模型”从资源包生成蓝图并更新 XML；“导出当前炮塔图标”同时更新斜视按钮图标。

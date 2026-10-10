@@ -47,7 +47,7 @@ namespace SSR.Combat.Offscreen
             Vector3 extents = body.extents + bounds.extents;
             Vector3 up = TurretCaptureProfile.Direction * Vector3.up;
             float projectedExtent = Mathf.Abs(up.y) * extents.y + Mathf.Abs(up.z) * extents.z;
-            float margin = TurretCaptureProfile.MissileOutlineWidth * 2;
+            float margin = TurretCaptureProfile.OutlineWidth * 2;
             return Mathf.Abs(delta.x) <= extents.x + margin
                 && Mathf.Abs(Vector3.Dot(delta, up)) <= projectedExtent + margin;
         }

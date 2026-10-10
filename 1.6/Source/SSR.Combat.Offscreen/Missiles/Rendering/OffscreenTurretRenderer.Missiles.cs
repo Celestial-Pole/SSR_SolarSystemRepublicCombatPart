@@ -21,7 +21,7 @@ namespace SSR.Combat.Offscreen
             var frame = silo.Submission.Frame;
             frame.ConfigureWorld(capture, camera, silo.Bounds, silo.Owner.GroundOrigin, MapProjectionPlane.Height);
             Render(frame, true);
-            plane.Draw(camera, frame);
+            plane.QueueTurret(silo.Owner, frame);
         }
 
         //投影分离后使用紧凑的弹体范围采集，保留原材质、光影和外轮廓。

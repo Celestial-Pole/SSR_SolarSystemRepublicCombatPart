@@ -1,3 +1,4 @@
+using System;
 using Verse;
 
 namespace SSR.Combat.Offscreen
@@ -5,12 +6,15 @@ namespace SSR.Combat.Offscreen
     //按原版连发计时调用筒式发射器。
     public sealed class Verb_TubeMissile : TurretRecoilVerb
     {
-        //满装后开始齐射，连发期间只要求尚有余弹。
+        //本轮发射数量不超过起射时的待发库存。
+        protected override int ShotsPerBurst => Math.Min(base.ShotsPerBurst, ((Building_TubeMissileTurret)caster).Launcher.ReadyCount);
+
+        //按配置决定起射库存条件，连发期间只要求尚有余弹。
         public override bool Available()
         {
             var turret = (Building_TubeMissileTurret)caster;
             return base.Available() && (state == VerbState.Bursting ? turret.Launcher.ReadyCount > 0
-                : turret.Launcher.ReadyCount == turret.LauncherSettings.missileSlots.Count);
+                : turret.Launcher.CanStartBurst);
         }
 
         //按炮塔索敌策略校验目标。

@@ -9,12 +9,12 @@ namespace SSR.Combat.Offscreen
     {
         private static readonly string[] Turrets =
         {
-            "SSR_Turret_MissileBox", "SSR_Turret_Electromagnetic_CIWS",
-            "SSR_Turret_CombinedAirDefense", "SSR_Turret_RocketArtillery",
+            "SSR_Turret_Box-typeMissileLauncher", "SSR_Turret_Electromagnetic_CIWS",
+            "SSR_Turret_Electromagnetic_Gun-missileIntegratedAirDefenseWeaponSystem", "SSR_Turret_RocketArtillery",
             "SSR_Turret_SentryGun", "SSR_Turret_PortableSentryGun",
-            "SSR_Turret_EMSentry", "SSR_Turret_PortableEMSentry", "SSR_Turret_EMAutocannon",
+            "SSR_Turret_Electromagnetic_SentryGun", "SSR_Turret_Electromagnetic_PortableSentryGun", "SSR_Turret_Electromagnetic_Autocannon",
             "SSR_Turret_Electromagnetic_145mmLtGun", "SSR_Turret_Electromagnetic_300mmMdGun",
-            "SSR_Turret_Electromagnetic_500mmHvGun", "SSR_Turret_MissileSilo"
+            "SSR_Turret_Electromagnetic_500mmHvGun", "SSR_Turret_VerticalMissileLaunchingSystem"
         };
 
         //在平地地图布置全部型号和空中靶标。

@@ -1,6 +1,6 @@
 # 弹炮合一防空系统
 
-建筑定义：`SSR_Turret_CombinedAirDefense`。配置集中在 `1.6/Defs/ThingDefs/Bulidings/Buildings_CombinedAirDefense.xml`，不与普通近防炮共用可变参数。
+建筑定义：`SSR_Turret_Electromagnetic_Gun-missileIntegratedAirDefenseWeaponSystem`。配置位于 `1.6/Defs/ThingDefs/Bulidings/Buildings_Security_Turrets.xml` 的对应建筑节点。
 
 模型：`Assets/SSR/Prefab/TurretT1_MGAA_2X.prefab`。底座尺寸保存在内部 `Root` 的三倍缩放中，建筑图形 `drawSize` 保持 `(1,1)`。建筑占地三乘三，禁止材质建造，建筑按钮在基础炮塔研究完成后显示。
 
@@ -22,7 +22,7 @@
 
 雷达正面是 `立方体.009` 的第二个材质槽，沿用灰黑色 `#4E5153`；参考图中更暗的外观来自光照，材质本身不另设近黑色。
 
-全部型号的色卡数值与光照核对结果见 [T1 炮塔色卡核对](T1PaletteReview.md)。
+Windows 资源包必须保留网格法线，Unity 的 Optimize Mesh Data 应关闭。底色材质不读取法线，但离屏采集与表面光照需要这些数据；构建入口和图标导出会检查这一条件。
 
 ## 机械挂点
 
@@ -43,13 +43,13 @@
 
 近防炮绕局部正 X 轴俯仰，范围为下俯 5 度至上仰 90 度。两侧导弹筒为固定结构，只随整座炮塔绕局部正 Y 轴偏航，不继承近防炮俯仰，也没有独立的俯仰机构。
 
+近防炮转管使用电磁近防炮 `TurretT1_ECIWS_2X` 的八根棱形枪管和三道固定环，共享原网格与色卡材质。部件放在 `Root/Yaw/Pitch/Rotor/ElectromagneticBarrel` 下，按机匣空间等比缩放，沿用转管轴与逐发相位；`FirePoint` 对齐顶部枪管的端面。
+
 两侧支撑板 `立方体.014` 与导弹筒一起固定在 `MissileRack` 下。炮塔前部的两根细条共用网格 `立方体.027`，固定在 `Yaw` 下，不随机枪俯仰。
 
 允许开火、有待发导弹、发射间隔结束且目标位于导弹射程内时，检查导弹筒与目标的水平方位误差，使用 `yawAimTolerance` 作为容差。目标高度不参与出筒前的准直判定，也不受近防炮俯仰限位约束；离筒后由三维制导修正航向。近防炮继续使用自身的瞄准状态。
 
 后部扁平雷达连同支杆绕固定底座上方的轴心旋转，包含 `立方体.006` 至 `立方体.010`；`立方体.004` 底座保留固定。前方两个小部件随炮塔偏航，不独立旋转。
-
-Unity 菜单 `SSR/炮塔资源/预览弹炮合一机构` 可按需导出近防炮水平、上仰时的静态预览，两侧导弹筒保持固定。
 
 ## 武器参数
 
@@ -87,7 +87,7 @@ Unity 菜单 `SSR/炮塔资源/预览弹炮合一机构` 可按需导出近防�
 
 喷焰、烟雾使用导弹井的 `MissileFlame.prefab`、`MissileSmoke.prefab`，尺寸和采样参数在 `exhaust` 内独立配置。尾迹记录真实喷口经过的位置，导弹转弯后旧烟迹保留原曲线并自行消散。导弹飞行与引信在三维空间计算，空中爆炸只影响三维半径内的空中实体。
 
-编辑器建模工具在 `Assets/SSR/CombinedDefense/Editor`。导弹网格可以重新生成；炮塔分组工具只接受尚未分组的原始预制体，避免重复改变关节。PNG 使用现有“导出当前炮塔图标”工具：建筑按钮使用 `_MenuIcon_Isometric` 斜视图，相机俯角和方位角均为 55°，炮口朝画面右下；蓝图保留 `_MenuIcon` 正面图。图标取景报告的 `drawSize` 和 `drawOffset` 对应正面蓝图，模型尺寸改变时应同步到蓝图配置。
+Unity 菜单 `SSR/炮塔资源/构建弹炮合一导弹网格` 可重新生成导弹网格与挂点。“导出当前炮塔图标”生成 `_MenuIcon_Isometric` 斜视按钮图和 `_MenuIcon` 正面蓝图，并将蓝图尺寸与偏移写回 XML。斜视图相机俯角和方位角均为 55°，炮口朝画面右下。
 
 ## 游戏内测试地图
 

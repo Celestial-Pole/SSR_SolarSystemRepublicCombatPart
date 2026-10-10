@@ -13,7 +13,8 @@ namespace SSR.Combat.Editor
         private const int Segments = 32;
 
         //构建长 0.82、最大直径 0.068 的弹体及挂点。
-        internal static GameObject Build()
+        [MenuItem("SSR/炮塔资源/构建弹炮合一导弹网格")]
+        public static void Build()
         {
             var vertices = new List<Vector3>();
             var triangles = new List<int>[] { new List<int>(), new List<int>(), new List<int>(), new List<int>() };
@@ -67,7 +68,7 @@ namespace SSR.Combat.Editor
                 var prefab = PrefabUtility.SaveAsPrefabAsset(model, PrefabPath);
                 if (!prefab) throw new InvalidOperationException("MGAA 完整导弹预制体保存失败。");
                 AssetImporter.GetAtPath(PrefabPath).SetAssetBundleNameAndVariant("ssr_combat_windows", "");
-                return prefab;
+                AssetDatabase.SaveAssets();
             }
             finally { UnityEngine.Object.DestroyImmediate(model); }
         }

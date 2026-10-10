@@ -10,6 +10,7 @@ namespace SSR.Combat.Offscreen
         public List<string> missileSlots;
         public List<TubeDoorSettings> doors = new List<TubeDoorSettings>();
         public int reloadTicks = 600, openingTicks = 24;
+        public bool allowPartialSalvo;
 
         //校验弹位、舱盖和装填参数。
         public override IEnumerable<string> ConfigErrors()

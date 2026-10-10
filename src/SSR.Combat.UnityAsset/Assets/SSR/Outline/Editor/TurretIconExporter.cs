@@ -43,14 +43,13 @@ namespace SSR.UnityComponent.Outline.Editor
                 if (!definitions.Any()) throw new ArgumentException("未找到可导出图标的炮塔：" + name);
             }
             var report = new StringBuilder();
-            var framing = new XElement("TurretIconFraming");
             var bundle = AssetBundle.LoadFromFile(Path.Combine(projectRoot, "Asset/Windows/ssr_combat_windows"));
             if (!bundle) throw new InvalidOperationException("无法读取已构建的 Windows 战斗资源包。");
             try
             {
                 foreach (var definition in definitions)
                 {
-                    framing.Add(Capture(definition, projectRoot, bundle, exportMenu));
+                    Capture(definition, projectRoot, bundle, exportMenu);
                     report.AppendLine(definition.Element("defName").Value + "：蓝图 PNG 与 XML 尺寸已同步。");
                 }
             }
@@ -58,15 +57,11 @@ namespace SSR.UnityComponent.Outline.Editor
             foreach (var document in documents.Where(source => source.Document.Root.Elements("ThingDef").Any(definitions.Contains)))
                 File.WriteAllText(document.Path, document.Document.Declaration + Environment.NewLine
                     + document.Document.ToString(SaveOptions.DisableFormatting).TrimStart('\r', '\n'), new UTF8Encoding(false));
-            string reportPath = Path.Combine(projectRoot, ".local/build-requests/turret-icons.txt");
-            Directory.CreateDirectory(Path.GetDirectoryName(reportPath));
-            File.WriteAllText(reportPath, report.ToString(), new UTF8Encoding(false));
-            new XDocument(framing).Save(Path.ChangeExtension(reportPath, ".xml"));
             Debug.Log(report.ToString());
         }
 
         //按建筑配置采集蓝图和斜视图标。
-        private static XElement Capture(XElement definition, string projectRoot, AssetBundle bundle, bool exportMenu)
+        private static void Capture(XElement definition, string projectRoot, AssetBundle bundle, bool exportMenu)
         {
             bool silo = definition.Element("thingClass").Value == "SSR.Combat.Offscreen.Building_MissileSilo";
             var prefabSettings = silo ? null : definition.Element("comps").Elements("li")
@@ -126,7 +121,6 @@ namespace SSR.UnityComponent.Outline.Editor
                 capture.surfaceLighting = true;
                 texture = new Texture2D(512, 512, TextureFormat.RGBA32, false);
                 var camera = cameraObject.GetComponent<Camera>();
-                var framing = new XElement("Turret", new XAttribute("defName", definition.Element("defName").Value));
                 var blueprint = definition.Element("building").Element("blueprintGraphicData");
                 string texturePath = blueprint.Element("texPath").Value;
                 if (silo)
@@ -154,10 +148,8 @@ namespace SSR.UnityComponent.Outline.Editor
                         + Number(Vector3.Dot(delta, camera.transform.up)) + ")";
                     SetValue(blueprint, "drawSize", sizeValue);
                     SetValue(blueprint, offsetField, offsetValue);
-                    framing.Add(new XElement("View", new XAttribute("direction", directions[direction]),
-                        new XElement("drawSize", sizeValue), new XElement("drawOffset", offsetValue)));
                 }
-                if (!exportMenu) return framing;
+                if (!exportMenu) return;
                 if (!silo)
                 {
                     var muzzle = model.transform.Find(aimSettings.Element("shootingOrigine").Value);
@@ -171,7 +163,6 @@ namespace SSR.UnityComponent.Outline.Editor
                 capture.FrameTarget();
                 camera.orthographicSize *= 0.92f;
                 SaveImage(capture, texture, projectRoot, definition.Element("uiIconPath").Value);
-                return framing;
             }
             finally
             {

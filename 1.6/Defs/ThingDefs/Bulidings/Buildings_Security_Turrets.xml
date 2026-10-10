@@ -168,8 +168,8 @@
 				<yawRotationAixe>(0, 0, 1)</yawRotationAixe>
 				<!-- 俯仰旋转平面法向量 -->
 				<pitchRotationAixe>(0, 1, 0)</pitchRotationAixe>
-				<!-- 偏航旋转角度范围[0, 360) -->
-				<pitchRotationRange>(350, 85)</pitchRotationRange>
+				<!--局部负角为上仰，最大仰角 60 度。-->
+				<pitchRotationRange>(300, 85)</pitchRotationRange>
 				<!-- 发射源的发射方向 -->
 				<shootingOrigineForward>(1, 0, 0)</shootingOrigineForward>
 				<!-- 炮塔开火循环音效 -->
@@ -315,8 +315,8 @@
 				<yawRotationAixe>(0, 0, 1)</yawRotationAixe>
 				<!-- 俯仰旋转平面法向量 -->
 				<pitchRotationAixe>(0, 1, 0)</pitchRotationAixe>
-				<!-- 偏航旋转角度范围[0, 360) -->
-				<pitchRotationRange>(350, 85)</pitchRotationRange>
+				<!--局部负角为上仰，最大仰角 60 度。-->
+				<pitchRotationRange>(300, 85)</pitchRotationRange>
 				<!-- 发射源的发射方向 -->
 				<shootingOrigineForward>(1, 0, 0)</shootingOrigineForward>
 				<!-- 炮塔开火循环音效 -->
@@ -513,7 +513,8 @@
 				<pitchPath>Root/Yaw/Pitch</pitchPath>
 				<yawRotationAixe>(0,1,0)</yawRotationAixe>
 				<pitchRotationAixe>(-1,0,0)</pitchRotationAixe>
-				<pitchRotationRange>(350,85)</pitchRotationRange>
+				<!--局部正角为上仰，最大仰角 60 度。-->
+				<pitchRotationRange>(350,60)</pitchRotationRange>
 				<shootingOrigineForward>(0,0,1)</shootingOrigineForward>
 				<shootingSoundDef>SSR_Sound_Electromagnetic_CIWS</shootingSoundDef>
 			</li>
@@ -656,7 +657,8 @@
 				<pitchPath>Root/Yaw/Pitch</pitchPath>
 				<yawRotationAixe>(0,1,0)</yawRotationAixe>
 				<pitchRotationAixe>(-1,0,0)</pitchRotationAixe>
-				<pitchRotationRange>(350,85)</pitchRotationRange>
+				<!--局部正角为上仰，最大仰角 60 度。-->
+				<pitchRotationRange>(350,60)</pitchRotationRange>
 				<shootingOrigineForward>(0,0,1)</shootingOrigineForward>
 				<shootingSoundDef>SSR_Sound_Electromagnetic_CIWS</shootingSoundDef>
 			</li>
@@ -1700,8 +1702,8 @@
 				<pitchPath>Transform_Y/Root/Transform_X/Transform_Z/TurretTop/MainGun</pitchPath>
 				<yawRotationAixe>(0, 0, 1)</yawRotationAixe>
 				<pitchRotationAixe>(0, 1, 0)</pitchRotationAixe>
-				<!--局部正角为下俯，限制为 5 度以避开前部装甲。-->
-				<pitchRotationRange>(350, 5)</pitchRotationRange>
+				<!--局部负角为上仰，最大仰角 45 度；下俯限制为 5 度。-->
+				<pitchRotationRange>(315, 5)</pitchRotationRange>
 				<shootingOrigineForward>(1, 0, 0)</shootingOrigineForward>
 			</li>
 		</modExtensions>
@@ -1923,8 +1925,8 @@
 				<pitchPath>Transform_Y/Root/Transform_X/Transform_Z/TurretTop/MainGun</pitchPath>
 				<yawRotationAixe>(0, 0, 1)</yawRotationAixe>
 				<pitchRotationAixe>(0, 1, 0)</pitchRotationAixe>
-				<!--局部正角为下俯，限制为 5 度以避开前部装甲。-->
-				<pitchRotationRange>(350, 5)</pitchRotationRange>
+				<!--局部负角为上仰，最大仰角 45 度；下俯限制为 5 度。-->
+				<pitchRotationRange>(315, 5)</pitchRotationRange>
 				<shootingOrigineForward>(1, 0, 0)</shootingOrigineForward>
 			</li>
 		</modExtensions>
@@ -2266,7 +2268,7 @@
 	<ThingDef ParentName="SSR_BuildingBase_Security">
 		<defName>SSR_Turret_RocketArtillery</defName>
 		<label>远程多管火箭炮</label>
-		<description>十管远程火箭炮。发射架先旋转并俯仰瞄准目标，再开盖；完全打开后每隔 12 刻发射一枚筒内实体火箭，一轮齐射 10 枚，离筒后点火制导。整组补满后开始下一轮，停电暂停补充。</description>
+		<description>十管远程火箭炮。发射架先旋转并俯仰瞄准目标，再开盖；完全打开后每隔 12 刻发射一枚筒内实体火箭，每轮最多发射 10 枚，离筒后点火制导。目标失效后可用余弹攻击下一目标；弹药耗尽后等待整组补满，停电暂停补充。</description>
 		<thingClass>SSR.Combat.Offscreen.Building_TubeMissileTurret</thingClass>
 		<drawerType>MapMeshAndRealTime</drawerType>
 		<graphicData>
@@ -2383,6 +2385,7 @@
 				<missilePrefabPath>Assets/SSR/Turrets/T1/Game/RocketPayload.prefab</missilePrefabPath>
 				<missileProjectile>SSR_Projectile_RocketArtillery</missileProjectile>
 				<reloadTicks>900</reloadTicks>
+				<allowPartialSalvo>true</allowPartialSalvo>
 				<ejectionSpeed>12</ejectionSpeed>
 				<ejectionClearance>0.12</ejectionClearance>
 				<ejectionGravity>9.81</ejectionGravity>
@@ -2485,7 +2488,7 @@
 	<ThingDef ParentName="BaseWeaponTurret">
 		<defName>SSR_TurretGun_RocketArtillery</defName>
 		<label>远程多管火箭炮</label>
-		<description>十管远程火箭炮。发射架先旋转并俯仰瞄准目标，再开盖；完全打开后每隔 12 刻发射一枚筒内实体火箭，一轮齐射 10 枚，离筒后点火制导。整组补满后开始下一轮，停电暂停补充。</description>
+		<description>十管远程火箭炮。发射架先旋转并俯仰瞄准目标，再开盖；完全打开后每隔 12 刻发射一枚筒内实体火箭，每轮最多发射 10 枚，离筒后点火制导。目标失效后可用余弹攻击下一目标；弹药耗尽后等待整组补满，停电暂停补充。</description>
 		<graphicData>
 			<texPath>Things/Building/Security/TurretMini_Top</texPath>
 			<graphicClass>Graphic_Single</graphicClass>

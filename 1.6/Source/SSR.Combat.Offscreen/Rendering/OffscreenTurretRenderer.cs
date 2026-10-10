@@ -116,7 +116,7 @@ namespace SSR.Combat.Offscreen
                         submission.Frame.GroundAnchor, MapProjectionPlane.Height);
                     else submission.Frame.Configure(capture, camera, bounds.center, Offset);
                     Render(submission.Frame, rotor: turret.BarrelSpin);
-                    plane.Draw(camera, submission.Frame);
+                    plane.QueueTurret(turret.parent, submission.Frame);
                 }
                 catch (Exception exception)
                 {
@@ -126,6 +126,7 @@ namespace SSR.Combat.Offscreen
             }
             missiles.Draw(this, camera);
             guided.Draw(this, camera);
+            plane.DrawTurrets(camera);
         }
 
         //通过核心框架确保战斗资源包已装载，取得 Shader 并建立唯一的采集相机。
@@ -159,7 +160,7 @@ namespace SSR.Combat.Offscreen
             return shader;
         }
 
-        //采集单座炮塔的影像与表面高度，供地图按像素判断遮挡。
+        //采集实体的颜色、描边和表面高度。
         private void Render(TurretCaptureFrame frame, bool clipGround = false, TurretBarrelSpin rotor = null)
         {
             frame.EnsureSurfaceHeight();
@@ -176,15 +177,10 @@ namespace SSR.Combat.Offscreen
                 compositeMaterial.SetMatrix("_CaptureToWorld", capture.cameraToWorldMatrix);
                 compositeMaterial.SetFloat("_GroundHeight", frame.GroundHeight);
                 compositeMaterial.SetFloat("_CaptureWorldHeight", capture.orthographicSize * 2 * capture.transform.up.y);
-                TurretCaptureProfile.Apply(compositeMaterial, frame.Diameter, frame.Output.width);
+                TurretCaptureProfile.Apply(compositeMaterial, frame.Diameter, frame.Output.width, frame.MapSize);
                 TurretSurfaceLighting.Apply(compositeMaterial, capture, frame.Diameter);
                 TurretRotorLighting.Apply(compositeMaterial, capture, rotor);
-                if (clipGround)
-                {
-                    //井内合并采集与离井独立采集采用相同世界线宽和遮蔽半径。
-                    compositeMaterial.SetFloat("_SilhouetteWidth", TurretCaptureProfile.MissileOutlineWidth * size / frame.MapSize);
-                    compositeMaterial.SetFloat("_SurfaceContactRadius", 0.07f);
-                }
+                if (clipGround) compositeMaterial.SetFloat("_SurfaceContactRadius", 0.07f);
                 TurretSurfaceLighting.RenderContact(buffers, compositeMaterial);
                 OutlineColorBlit.Draw(buffers.Color, buffers.Composite, compositeMaterial, 0);
                 OutlineColorBlit.Draw(buffers.Composite, frame.Output, compositeMaterial, 1);
