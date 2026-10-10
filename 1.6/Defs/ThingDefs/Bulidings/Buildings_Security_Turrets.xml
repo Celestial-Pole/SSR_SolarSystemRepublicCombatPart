@@ -2857,7 +2857,7 @@
 				<designatorClass>SSR.Combat.Offscreen.Designator_BuildMissileSilo</designatorClass>
 			</li>
 			<li Class="SSR.Combat.Offscreen.SiloSettings">
-				<prefabPath>Assets/SSR/Missiles/Game/MissileSilo.prefab</prefabPath>
+				<prefabPath>Assets/SSR/Missiles/Game/MissileSiloGame.prefab</prefabPath>
 				<missilePath>Assets/SSR/Turrets/T1/Prefabs/T1Missile.prefab</missilePath>
 				<layoutPath>Assets/SSR/Missiles/Game/SiloLayout.json</layoutPath>
 				<flamePath>Assets/SSR/Missiles/Game/MissileFlame.prefab</flamePath>

@@ -23,6 +23,7 @@ namespace SSR.Combat.Offscreen
                         canTargetLocations = true, mapObjectTargetsMustBeAutoAttackable = false,
                         validator = target => turret.TryReadTarget(target.HasThing ? new LocalTargetInfo(target.Thing)
                             : new LocalTargetInfo(target.Cell), out var state)
+                            && turret.CanReachTarget(state)
                             && (state.Kind != TurretTargetKind.Ground || original.CanTarget(target))
                     };
                 }
@@ -30,12 +31,12 @@ namespace SSR.Combat.Offscreen
             }
         }
 
-        //校验空中目标；地面目标同时经过原版射击检查。
+        //检查机械范围；地面目标同时经过原版射击检查。
         public override bool CanHitTargetFrom(IntVec3 root, LocalTargetInfo target)
         {
             if (Caster is Building_ConfigurableTurret turret)
             {
-                if (!turret.TryReadTarget(target, out var state)) return false;
+                if (!turret.TryReadTarget(target, out var state) || !turret.CanReachTarget(state)) return false;
                 if (state.Kind != TurretTargetKind.Ground || turret is Building_CombinedAirDefense) return true;
             }
             return base.CanHitTargetFrom(root, target);

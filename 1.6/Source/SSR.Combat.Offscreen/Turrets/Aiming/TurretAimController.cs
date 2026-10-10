@@ -25,7 +25,7 @@ namespace SSR.Combat.Offscreen
             if (owner.Spawned) Prepare();
         }
 
-        //更新瞄准转轴，失去目标后延迟回正。
+        //地面目标保持零俯仰，空中目标按高度瞄准；失去目标后按配置决定是否回正。
         internal void Tick(bool powered)
         {
             Prepare();
@@ -35,7 +35,7 @@ namespace SSR.Combat.Offscreen
             if (owner.TryReadTarget(owner.CurrentTarget, out var state))
             {
                 idleTicks = 0;
-                TurretAimSolver.Solve(rig, settings, rig.TargetPoint(state), yaw, pitch, out desiredYaw, out desiredPitch);
+                TurretAimSolver.Solve(rig, settings, state, yaw, pitch, out desiredYaw, out desiredPitch);
             }
             else if (settings.returnToIdle && ++idleTicks >= settings.idleDelayTicks)
             { desiredYaw = settings.idleYaw; desiredPitch = settings.idlePitch; }
@@ -50,19 +50,19 @@ namespace SSR.Combat.Offscreen
         internal bool CanReach(TurretTargetState state)
         {
             Prepare();
-            return TurretAimSolver.Solve(rig, owner.Settings, rig.TargetPoint(state), yaw, pitch, out _, out _);
+            return TurretAimSolver.Solve(rig, owner.Settings, state, yaw, pitch, out _, out _);
         }
 
-        //检查两轴角度误差和炮口锥角。
+        //检查转轴误差，对地不检查炮口与目标之间的高度夹角。
         internal bool Aligned(TurretTargetState state)
         {
             Prepare();
             var settings = owner.Settings;
             Vector3 point = rig.TargetPoint(state);
-            if (!TurretAimSolver.Solve(rig, settings, point, yaw, pitch, out float wantedYaw, out float wantedPitch)) return false;
+            if (!TurretAimSolver.Solve(rig, settings, state, yaw, pitch, out float wantedYaw, out float wantedPitch)) return false;
             return Mathf.Abs(TurretAngleLimits.Delta(yaw, wantedYaw, settings.yawRotationRange)) <= settings.yawAimTolerance
                 && Mathf.Abs(TurretAngleLimits.Delta(pitch, wantedPitch, settings.pitchRotationRange)) <= settings.pitchAimTolerance
-                && Vector3.Angle(rig.Forward, point - rig.Muzzle.position) <= settings.aimConeTolerance;
+                && TurretAimSolver.AimError(rig, point, state.Kind == TurretTargetKind.Ground) <= settings.aimConeTolerance;
         }
 
         //返回炮口的地图投影位置。

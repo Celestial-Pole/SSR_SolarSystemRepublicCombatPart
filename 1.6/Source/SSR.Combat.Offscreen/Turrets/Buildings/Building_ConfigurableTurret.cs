@@ -53,6 +53,18 @@ namespace SSR.Combat.Offscreen
         //判断武器能否覆盖已通过类型、射程和高度检查的目标。
         internal virtual bool CanReachTarget(TurretTargetState state) => Aim.CanReach(state);
 
+        //接收强制攻击前检查射程和机械范围，不要求炮口已经转到目标方向。
+        public override void OrderAttack(LocalTargetInfo target)
+        {
+            if (target.IsValid && (!TryReadTarget(target, out var state) || !CanReachTarget(state)))
+            {
+                Messages.Message("目标超出炮塔的射程、高度、视线或机械瞄准范围。", this,
+                    MessageTypeDefOf.RejectInput, false);
+                return;
+            }
+            base.OrderAttack(target);
+        }
+
         //每次开火检查目标有效性与炮口角度，而非只在连发开始时检查一次。
         public virtual bool CanFireAt(LocalTargetInfo target)
         {
@@ -62,8 +74,18 @@ namespace SSR.Combat.Offscreen
         //等待瞄准完成和转轮进入开火位后调用原版连发入口，无效目标交还下一次索敌。
         protected override void BeginBurst()
         {
-            if (!TryReadTarget(CurrentTarget, out var state) || !Aim.CanReach(state))
-            { currentTargetInt = LocalTargetInfo.Invalid; burstWarmupTicksLeft = 0; return; }
+            if (!TryReadTarget(CurrentTarget, out var state) || !CanReachTarget(state))
+            {
+                if (forcedTarget.IsValid && forcedTarget == CurrentTarget)
+                {
+                    forcedTarget = LocalTargetInfo.Invalid;
+                    Messages.Message("目标已离开炮塔的可攻击范围，已取消强制攻击。", this,
+                        MessageTypeDefOf.RejectInput, false);
+                }
+                currentTargetInt = LocalTargetInfo.Invalid;
+                burstWarmupTicksLeft = 0;
+                return;
+            }
             if (!Aim.Aligned(state)) { burstWarmupTicksLeft = 1; return; }
             if (GetComp<OffscreenTurretComp>()?.PrepareBarrelShot() == false)
             { burstWarmupTicksLeft = 1; return; }
