@@ -680,7 +680,7 @@
 			<AccuracyShort>1</AccuracyShort>
 			<AccuracyMedium>1</AccuracyMedium>
 			<AccuracyLong>1</AccuracyLong>
-			<RangedWeapon_Cooldown>0</RangedWeapon_Cooldown>
+			<RangedWeapon_Cooldown>1</RangedWeapon_Cooldown>
 			<DeteriorationRate>0</DeteriorationRate>
 			<Mass>5</Mass>
 			<Flammability>0</Flammability>
