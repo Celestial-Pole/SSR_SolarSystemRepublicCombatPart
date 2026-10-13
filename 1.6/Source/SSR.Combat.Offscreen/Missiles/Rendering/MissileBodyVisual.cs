@@ -19,8 +19,8 @@ namespace SSR.Combat.Offscreen
         {
             get
             {
-                var bounds = renderers[0].bounds;
-                foreach (var renderer in renderers) bounds.Encapsulate(renderer.bounds);
+                var bounds = renderers[0].WorldBounds();
+                foreach (var renderer in renderers) bounds.Encapsulate(renderer.WorldBounds());
                 return bounds;
             }
         }

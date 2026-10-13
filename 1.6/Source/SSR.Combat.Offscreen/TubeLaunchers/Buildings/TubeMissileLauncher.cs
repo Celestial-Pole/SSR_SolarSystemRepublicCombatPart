@@ -63,7 +63,7 @@ namespace SSR.Combat.Offscreen
                 int slot = (nextSlot + offset) % cooldowns.Count;
                 if (cooldowns[slot] != 0) continue;
                 var fire = current.FirePoints[slot];
-                var scale = current.Payloads[slot].lossyScale;
+                var scale = current.Payloads[slot].WorldScale();
                 var missile = (Projectile_GuidedDefenseMissile)ThingMaker.MakeThing(settings.missileProjectile);
                 missile.Initialize(owner, slot, fire.position, fire.rotation, scale);
                 GenSpawn.Spawn(missile, owner.Position, owner.Map);

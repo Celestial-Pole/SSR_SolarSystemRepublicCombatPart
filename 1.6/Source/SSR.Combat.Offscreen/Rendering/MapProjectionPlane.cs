@@ -68,6 +68,14 @@ namespace SSR.Combat.Offscreen
         //按指定平面与表面深度提交面片，透明背景不写入深度。
         private void Draw(Camera camera, TurretCaptureFrame frame, Vector3 center, float surfaceDepthRange)
         {
+#if RW_1_7
+            if (frame.Live != null)
+            {
+                SsrLiveRenderer.Submit(camera, frame.Live, mesh, center, surfaceDepthRange, Material.renderQueue);
+                return;
+            }
+            properties.SetMatrix(Shader.PropertyToID("_SSRMapViewProjection"), camera.projectionMatrix * camera.worldToCameraMatrix);
+#endif
             properties.SetTexture("_MainTex", frame.Output);
             properties.SetTexture("_SurfaceHeightTex", frame.SurfaceHeight ? (Texture)frame.SurfaceHeight : Texture2D.blackTexture);
             properties.SetFloat("_SurfaceDepthRange", surfaceDepthRange);

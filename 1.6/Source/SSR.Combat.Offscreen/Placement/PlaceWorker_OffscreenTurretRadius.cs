@@ -17,10 +17,10 @@ namespace SSR.Combat.Offscreen
                 || typeof(Verb_Spray).IsAssignableFrom(value.verbClass));
             if (verb == null)
                 throw new InvalidOperationException("炮塔武器没有可显示射程的射击动作：" + turret.defName);
-            if (verb.range > 0) GenDraw.DrawRadiusRing(loc, verb.range);
+            if (verb.range > 0) TurretRangeRing.Draw(loc, verb.range);
             var combined = turret.GetModExtension<CombinedAirDefenseSettings>();
-            if (combined != null && combined.missileRange > verb.range) GenDraw.DrawRadiusRing(loc, combined.missileRange);
-            if (verb.minRange > 0) GenDraw.DrawRadiusRing(loc, verb.minRange);
+            if (combined != null && combined.missileRange > verb.range) TurretRangeRing.Draw(loc, combined.missileRange);
+            if (verb.minRange > 0) TurretRangeRing.Draw(loc, verb.minRange);
             return true;
         }
     }

@@ -9,6 +9,7 @@
 !/1.5/Assemblies/*.dll
 !/1.5/CombatExtended/Assemblies/*.dll
 !/1.6/Assemblies/*.dll
+!/1.7/Assemblies/*.dll
 **/[Bb]in/
 **/[Oo]bj/
 **/[Bb]uild/

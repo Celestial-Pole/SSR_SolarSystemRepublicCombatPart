@@ -19,8 +19,8 @@ namespace SSR.Combat.Offscreen
             Missile = Require(bundle, settings.missilePrefabPath);
             Flame = Require(bundle, settings.exhaust.flamePath);
             Smoke = Require(bundle, settings.exhaust.smokePath);
-            var tip = Missile.transform.Find("TipPoint");
-            var trail = Missile.transform.Find("TrailPoint");
+            var tip = Missile.transform.FindModelNode("TipPoint");
+            var trail = Missile.transform.FindModelNode("TrailPoint");
             if (!tip || !trail) throw new InvalidOperationException("制导弹体缺少 TipPoint 或 TrailPoint：" + settings.missilePrefabPath);
             Tip = Missile.transform.InverseTransformPoint(tip.position);
             Trail = Missile.transform.InverseTransformPoint(trail.position);

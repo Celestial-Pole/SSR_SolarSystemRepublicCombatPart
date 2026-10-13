@@ -56,7 +56,7 @@ namespace SSR.Combat.Offscreen
                 var payload = owner.Rig.Payloads[slot];
                 var fire = owner.Rig.FirePoints[slot];
                 var missile = (Projectile_GuidedDefenseMissile)ThingMaker.MakeThing(settings.missileProjectile);
-                missile.Initialize(owner, slot, fire.position, fire.rotation, payload.lossyScale);
+                missile.Initialize(owner, slot, fire.position, fire.rotation, payload.WorldScale());
                 GenSpawn.Spawn(missile, owner.Position, owner.Map);
                 missile.Launch(owner, owner.DrawPos, owner.CurrentTarget, owner.CurrentTarget,
                     ProjectileHitFlags.IntendedTarget, true, owner.gun);

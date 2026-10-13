@@ -19,8 +19,8 @@ namespace SSR.Combat.Offscreen
             root = UnityEngine.Object.Instantiate(owner.Assets.Prefab);
             root.name = "SSR导弹井显示_" + owner.thingIDNumber;
             foreach (var animator in root.GetComponentsInChildren<Animator>(true)) animator.enabled = false;
-            animationRoot = root.transform.Find(owner.Assets.Layout.animatorPath).gameObject;
-            for (int i = 0; i < 9; i++) stored[i] = root.transform.Find(owner.Assets.Layout.slots[i].path).gameObject;
+            animationRoot = root.transform.FindModelNode(owner.Assets.Layout.animatorPath).gameObject;
+            for (int i = 0; i < 9; i++) stored[i] = root.transform.FindModelNode(owner.Assets.Layout.slots[i].path).gameObject;
             Submission = new TurretMeshSubmission(root) { ClipGround = true };
             Update();
         }

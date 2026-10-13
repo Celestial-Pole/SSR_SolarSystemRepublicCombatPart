@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!--战斗包的配件属性由 AttachmentStatDefOf 绑定，不能只保留 C# 字段。-->
+  <FS_SSR_Combat.Attachments.AttachmentStatDef>
+    <defName>MaxHP</defName>
+    <label>配件耐久上限</label>
+  </FS_SSR_Combat.Attachments.AttachmentStatDef>
+  <FS_SSR_Combat.Attachments.AttachmentStatDef>
+    <defName>ResourceCapacity</defName>
+    <label>配件资源容量</label>
+  </FS_SSR_Combat.Attachments.AttachmentStatDef>
+</Defs>

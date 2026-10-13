@@ -11,6 +11,7 @@ namespace SSR.UnityComponent.Outline
         internal RenderTexture Composite;
         internal RenderTexture Contact;
         internal RenderTexture ContactScratch;
+        private const RenderTextureFormat ContactFormat = RenderTextureFormat.RHalf;
 
         //根据输出分辨率和超采样倍率创建中间缓冲。
         internal void Ensure(int width, int height)
@@ -19,21 +20,27 @@ namespace SSR.UnityComponent.Outline
             Dispose();
             if (!SystemInfo.SupportsRenderTextureFormat(RenderTextureFormat.ARGBFloat))
                 throw new NotSupportedException("当前显卡不支持描边所需的 ARGBFloat 几何缓冲。");
-            if (!SystemInfo.SupportsRenderTextureFormat(RenderTextureFormat.RHalf))
-                throw new NotSupportedException("当前显卡不支持接触阴影所需的 RHalf 缓冲。");
+#if !RW_1_7
+            if (!SystemInfo.SupportsRenderTextureFormat(ContactFormat))
+                throw new NotSupportedException("当前显卡不支持接触阴影缓冲：" + ContactFormat);
+#endif
             Color = Create("炮塔颜色", width, height, 24, RenderTextureFormat.ARGB32, RenderTextureReadWrite.Default);
             Geometry = Create("炮塔表面位置与编码法线", width, height, 24, RenderTextureFormat.ARGBFloat, RenderTextureReadWrite.Linear);
             Geometry.filterMode = FilterMode.Point;
             Composite = Create("炮塔描边合成", width, height, 0, RenderTextureFormat.ARGB32, RenderTextureReadWrite.Default);
-            Contact = Create("炮塔接触阴影", width, height, 0, RenderTextureFormat.RHalf, RenderTextureReadWrite.Linear);
-            ContactScratch = Create("炮塔阴影滤波", width, height, 0, RenderTextureFormat.RHalf, RenderTextureReadWrite.Linear);
+            Contact = Create("炮塔接触阴影", width, height, 0, ContactFormat, RenderTextureReadWrite.Linear);
+            ContactScratch = Create("炮塔阴影滤波", width, height, 0, ContactFormat, RenderTextureReadWrite.Linear);
         }
 
         //创建禁止重复寻址的临时渲染纹理。
         private static RenderTexture Create(string label, int width, int height, int depth,
             RenderTextureFormat format, RenderTextureReadWrite readWrite)
         {
+#if RW_1_7
+            var texture = new SSR.Combat.Offscreen.SsrRenderTexture(width, height, depth, format, readWrite, label)
+#else
             var texture = new RenderTexture(width, height, depth, format, readWrite)
+#endif
             {
                 name = label,
                 hideFlags = HideFlags.HideAndDontSave,

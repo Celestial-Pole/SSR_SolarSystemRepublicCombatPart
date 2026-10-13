@@ -22,14 +22,18 @@ namespace SSR.Combat.Offscreen
             Flame = Require<GameObject>(bundle, settings.flamePath);
             Smoke = Require<GameObject>(bundle, settings.smokePath);
             Layout = SiloLayoutReader.Read(Require<TextAsset>(bundle, settings.layoutPath).text, settings.layoutPath);
-            if (!Prefab.transform.Find(Layout.animatorPath))
+            if (!Prefab.transform.FindModelNode(Layout.animatorPath))
                 throw new InvalidOperationException("导弹井动画根节点不存在：" + Layout.animatorPath);
             for (int i = 0; i < Layout.slots.Length; i++)
             {
                 var slot = Layout.slots[i];
-                if (!Prefab.transform.Find(slot.path))
+                if (!Prefab.transform.FindModelNode(slot.path))
                     throw new InvalidOperationException("导弹井库存节点不存在：" + slot.path);
+#if RW_1_7
+                Openings[i] = SsrAnimationClip.Load(slot.openingPath);
+#else
                 Openings[i] = Require<AnimationClip>(bundle, slot.openingPath);
+#endif
                 if (Mathf.Abs(slot.openingSeconds - Openings[i].length) > 0.001f)
                     throw new InvalidOperationException("舱盖布局时长与独立动画不一致：" + slot.path);
             }

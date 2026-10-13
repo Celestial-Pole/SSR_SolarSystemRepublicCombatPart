@@ -1,5 +1,7 @@
 using System;
+#if !RW_1_7
 using FS_SSR;
+#endif
 using RimWorld;
 using UnityEngine;
 using Verse;
@@ -44,7 +46,7 @@ namespace SSR.Combat.Offscreen
         {
             if (string.IsNullOrEmpty(settings.modelRootPath))
                 throw new InvalidOperationException("炮塔未配置模型姿态根节点：" + parent.def.defName);
-            var modelRoot = observed.transform.Find(settings.modelRootPath);
+            var modelRoot = observed.transform.FindModelNode(settings.modelRootPath);
             if (!modelRoot)
                 throw new InvalidOperationException("炮塔模型姿态根节点不存在：" + parent.def.defName + " / " + settings.modelRootPath);
             modelRoot.localRotation = Quaternion.identity;
@@ -106,6 +108,9 @@ namespace SSR.Combat.Offscreen
             barrelSpin = null;
             if (observed) UnityEngine.Object.Destroy(observed);
             observed = null;
+#if RW_1_7
+            ReleasePrefabHandle();
+#endif
             LastDrawFrame = -1;
         }
     }

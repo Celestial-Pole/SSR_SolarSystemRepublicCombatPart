@@ -1,0 +1,38 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup><AllowUnsafeBlocks>true</AllowUnsafeBlocks></PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Brutal.Core.Common"><HintPath>$(GameRoot)/Brutal.Core.Common.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="Brutal.Core.Numerics"><HintPath>$(GameRoot)/Brutal.Core.Numerics.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="Brutal.Vulkan"><HintPath>$(GameRoot)/Brutal.Vulkan.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="Brutal.Vulkan.Abstractions"><HintPath>$(GameRoot)/Brutal.Vulkan.Abstractions.dll</HintPath><Private>false</Private></Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Remove="AssetsTools.NET" />
+    <ProjectReference Include="../FS_SSR_Combat/FS_SSR_Combat.csproj" />
+    <Compile Include="../../../1.6/Source/SSR.Combat.Offscreen/**/*.cs"
+      Exclude="../../../1.6/Source/SSR.Combat.Offscreen/obj/**;
+        ../../../1.6/Source/SSR.Combat.Offscreen/bin/**;
+        ../../../1.6/Source/SSR.Combat.Offscreen/Resources/CombatAssetBundle.cs;
+        ../../../1.6/Source/SSR.Combat.Offscreen/Integration/OffscreenTurretComp.cs;
+        ../../../1.6/Source/SSR.Combat.Offscreen/Resources/TurretTransform.cs;
+        ../../../1.6/Source/SSR.Combat.Offscreen/Missiles/Configuration/SiloAssets.cs;
+        ../../../1.6/Source/SSR.Combat.Offscreen/CombinedDefense/Configuration/CombinedDefenseAssets.cs;
+        ../../../1.6/Source/SSR.Combat.Offscreen/Missiles/Rendering/SiloVisual.cs;
+        ../../../1.6/Source/SSR.Combat.Offscreen/Missiles/Rendering/MissileBodyVisual.cs;
+        ../../../1.6/Source/SSR.Combat.Offscreen/CombinedDefense/Rendering/GuidedMissileBodyVisual.cs;
+        ../../../1.6/Source/SSR.Combat.Offscreen/Rendering/TurretCaptureFrame.cs;
+        ../../../1.6/Source/SSR.Combat.Offscreen/Rendering/TurretCaptureProfile.cs;
+        ../../../1.6/Source/SSR.Combat.Offscreen/Rendering/Rotary/TurretRotorLighting.cs;
+        ../../../1.6/Source/SSR.Combat.Offscreen/Missiles/Effects/MissileExhaust.cs;
+        ../../../1.6/Source/SSR.Combat.Offscreen/Missiles/Effects/MissileFlameTrail.cs;
+        ../../../1.6/Source/SSR.Combat.Offscreen/Missiles/Effects/MissileSmokeTrail.cs;
+        ../../../1.6/Source/SSR.Combat.Offscreen/Missiles/Effects/MissileEffectMesh.cs;
+        ../../../1.6/Source/SSR.Combat.Offscreen/Rendering/OffscreenTurretRenderer.cs;
+        ../../../1.6/Source/SSR.Combat.Offscreen/Missiles/Rendering/OffscreenTurretRenderer.Missiles.cs;
+        ../../../1.6/Source/SSR.Combat.Offscreen/CombinedDefense/Rendering/OffscreenTurretRenderer.GuidedMissiles.cs;
+        ../../../1.6/Source/SSR.Combat.Offscreen/Rendering/TurretMeshSubmission.cs;
+        ../../../1.6/Source/SSR.Combat.Offscreen/Rendering/MapProjectionPlane.cs;
+        ../../../1.6/Source/SSR.Combat.Offscreen/Rendering/TurretBufferPool.cs;
+        ../../../1.6/Source/SSR.Combat.Offscreen/Animation/TurretBarrelSpin.cs" />
+  </ItemGroup>
+</Project>

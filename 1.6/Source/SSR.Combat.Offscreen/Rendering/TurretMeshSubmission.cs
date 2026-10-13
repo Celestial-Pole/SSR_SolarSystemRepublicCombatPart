@@ -21,6 +21,13 @@ namespace SSR.Combat.Offscreen
             internal SkinnedMeshRenderer Skin;
             internal Material[] Materials;
             internal bool RotatingSurface;
+
+            //1.7 禁用自动渲染后，节点显隐仍由 GameObject 的活动状态决定。
+            internal bool Visible => Renderer && Renderer.gameObject.activeInHierarchy
+#if !RW_1_7
+                && Renderer.enabled
+#endif
+                ;
         }
 
         //屏蔽模型的自动渲染，只收集原先启用且不属于旧描边的网格。
@@ -28,8 +35,14 @@ namespace SSR.Combat.Offscreen
         {
             foreach (var renderer in root.GetComponentsInChildren<Renderer>(true))
             {
+#if RW_1_7
+                bool enabled = renderer.enabled;
+                renderer.enabled = false;
+                if (!enabled) continue;
+#else
                 renderer.forceRenderingOff = true;
                 if (!renderer.enabled) continue;
+#endif
                 var materials = renderer.sharedMaterials;
                 if (Array.Exists(materials, m => m && m.shader && m.shader.name.Contains("Wireframe"))) continue;
                 var skin = renderer as SkinnedMeshRenderer;
@@ -43,8 +56,8 @@ namespace SSR.Combat.Offscreen
                 });
             }
             if (parts.Count == 0) throw new InvalidOperationException("炮塔预制体没有启用的实体网格：" + root.name);
-            var bounds = parts[0].Renderer.bounds;
-            foreach (var part in parts) bounds.Encapsulate(part.Renderer.bounds);
+            var bounds = parts[0].Renderer.WorldBounds();
+            foreach (var part in parts) bounds.Encapsulate(part.Renderer.WorldBounds());
             Frame = new TurretCaptureFrame(root.transform, bounds);
         }
 
@@ -56,11 +69,11 @@ namespace SSR.Combat.Offscreen
             bool found = false;
             foreach (var part in parts)
             {
-                if (!part.Renderer || !part.Renderer.enabled || !part.Renderer.gameObject.activeInHierarchy) continue;
-                if (found) bounds.Encapsulate(part.Renderer.bounds);
-                else { bounds = part.Renderer.bounds; found = true; }
+                if (!part.Visible) continue;
+                if (found) bounds.Encapsulate(part.Renderer.WorldBounds());
+                else { bounds = part.Renderer.WorldBounds(); found = true; }
                 if (part.Skin) part.Skin.BakeMesh(part.Mesh);
-                var matrix = offset * part.Renderer.localToWorldMatrix;
+                var matrix = offset * part.Renderer.transform.localToWorldMatrix;
                 //只标记转轮及其子网格，独立导弹和炮身不参与旋转照明平均。
                 properties.SetFloat("_RotatingSurface", part.RotatingSurface ? 1 : 0);
                 for (int sub = 0; sub < part.Mesh.subMeshCount; sub++)
@@ -68,7 +81,9 @@ namespace SSR.Combat.Offscreen
                     var material = part.Materials[Math.Min(sub, part.Materials.Length - 1)];
                     if (!material) continue;
                     color.DrawMesh(part.Mesh, matrix, material, sub, 0, properties);
+#if !RW_1_7
                     geometry.DrawMesh(part.Mesh, matrix, geometryMaterial, sub, 0, properties);
+#endif
                 }
             }
             return found;
@@ -80,10 +95,10 @@ namespace SSR.Combat.Offscreen
             properties.SetFloat("_ClipGround", ClipGround ? 1 : 0);
             foreach (var part in parts)
             {
-                if (!part.Renderer || !part.Renderer.enabled || !part.Renderer.gameObject.activeInHierarchy) continue;
+                if (!part.Visible) continue;
                 if (part.Skin) part.Skin.BakeMesh(part.Mesh);
                 for (int sub = 0; sub < part.Mesh.subMeshCount; sub++)
-                    commands.DrawMesh(part.Mesh, offset * part.Renderer.localToWorldMatrix, material, sub, 0, properties);
+                    commands.DrawMesh(part.Mesh, offset * part.Renderer.transform.localToWorldMatrix, material, sub, 0, properties);
             }
         }
 

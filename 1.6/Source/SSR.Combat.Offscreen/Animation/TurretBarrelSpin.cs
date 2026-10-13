@@ -35,7 +35,7 @@ namespace SSR.Combat.Offscreen
         internal void Bind(GameObject model)
         {
             string path = Settings.barrelSpinTransformPath;
-            barrel = model.transform.Find(path);
+            barrel = model.transform.FindModelNode(path);
             if (!barrel) throw new InvalidOperationException("炮塔转管挂点不存在：" + path);
             var animator = barrel.parent.GetComponent<Animator>();
             if (animator)
