@@ -2190,6 +2190,7 @@
 				<stopBurstWithoutLos>false</stopBurstWithoutLos>
 				<warmupTime>0</warmupTime>
 				<range>999</range>
+				<minRange>10</minRange>
 				<burstShotCount>1</burstShotCount>
 				<soundCast>Shot_TurretSniper</soundCast>
 				<soundCastTail>GunTail_Heavy</soundCastTail>
