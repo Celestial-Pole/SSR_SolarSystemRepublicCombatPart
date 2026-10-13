@@ -1,6 +1,4 @@
-#if !RW_1_7
 using FS_SSR;
-#endif
 using System.Collections.Generic;
 using UnityEngine;
 using Verse;

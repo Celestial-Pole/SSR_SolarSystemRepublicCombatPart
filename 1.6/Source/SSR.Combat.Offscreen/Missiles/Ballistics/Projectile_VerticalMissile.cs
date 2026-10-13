@@ -78,11 +78,14 @@ namespace SSR.Combat.Offscreen
             lifetime = ticksToImpact;
         }
 
-        //登记真实弹丸，飞行和烟迹模拟不依赖地图可见性。
+        //在主线程登记弹丸和烟焰资源，读档时等待地图加载完成。
         public override void SpawnSetup(Map map, bool respawningAfterLoad)
         {
             base.SpawnSetup(map, respawningAfterLoad);
-            map.GetComponent<MissileMapVisuals>().Add(this);
+            LongEventHandler.ExecuteWhenFinished(() =>
+            {
+                if (Spawned && Map == map) map.GetComponent<MissileMapVisuals>().Add(this);
+            });
         }
 
         //替代原版直线积分和拦截检查，终点仍交给原版屋顶与爆炸处理。

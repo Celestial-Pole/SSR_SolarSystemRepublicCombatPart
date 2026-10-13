@@ -144,17 +144,11 @@ namespace SSR.Combat.Offscreen
                 capture.clearFlags = CameraClearFlags.SolidColor;
                 capture.backgroundColor = Color.clear;
                 capture.allowHDR = capture.allowMSAA = capture.useOcclusionCulling = false;
-#if !RW_1_7
                 capture.renderingPath = RenderingPath.Forward;
-#endif
                 capture.rect = new Rect(0, 0, 1, 1);
                 colorCommands = new CommandBuffer { name = "SSR炮塔颜色" };
                 geometryCommands = new CommandBuffer { name = "SSR炮塔表面位置与法线" };
-#if RW_1_7
-                Log.Message("[SSR实时] 实体使用网格及屏幕描边；共享相机仅提供固定投影和烟焰采集。");
-#else
                 Log.Message("[SSR离屏] 屏幕像素自适应采集：256–4096，近景保留原生精度，最终纹理不使用 Mipmap，共享相机 1 台。");
-#endif
             }
         }
 
@@ -169,52 +163,35 @@ namespace SSR.Combat.Offscreen
         //采集实体的颜色、描边和表面高度。
         private void Render(TurretCaptureFrame frame, bool clipGround = false, TurretBarrelSpin rotor = null)
         {
-#if RW_1_7
-            frame.Live = new SsrLiveEntity(frame, capture, colorCommands, clipGround, rotor);
-#else
             frame.EnsureSurfaceHeight();
-            var rotorLighting = TurretRotorLighting.Parameters(capture, rotor);
             int size = frame.Output.width * TurretCaptureProfile.SupersamplingFor(frame.Output.width);
             var buffers = bufferPool.Get(size);
             var previous = RenderTexture.active;
-#if !RW_1_7
             bool previousColorWrite = GL.sRGBWrite;
-#endif
             try
             {
                 Capture(buffers.Color, colorCommands);
                 Capture(buffers.Geometry, geometryCommands);
                 compositeMaterial.SetTexture("_GeometryTex", buffers.Geometry);
                 compositeMaterial.SetFloat("_ClipOutlineGround", clipGround ? 1 : 0);
-                compositeMaterial.SetMatrix(Shader.PropertyToID("_CaptureToWorld"), capture.cameraToWorldMatrix);
+                compositeMaterial.SetMatrix("_CaptureToWorld", capture.cameraToWorldMatrix);
                 compositeMaterial.SetFloat("_GroundHeight", frame.GroundHeight);
                 compositeMaterial.SetFloat("_CaptureWorldHeight", capture.orthographicSize * 2 * capture.transform.up.y);
                 TurretCaptureProfile.Apply(compositeMaterial, frame.Diameter, frame.Output.width, frame.MapSize);
                 TurretSurfaceLighting.Apply(compositeMaterial, capture, frame.Diameter);
-                TurretRotorLighting.Apply(compositeMaterial, rotorLighting);
+                TurretRotorLighting.Apply(compositeMaterial, capture, rotor);
                 if (clipGround) compositeMaterial.SetFloat("_SurfaceContactRadius", 0.07f);
                 TurretSurfaceLighting.RenderContact(buffers, compositeMaterial);
                 OutlineColorBlit.Draw(buffers.Color, buffers.Composite, compositeMaterial, 0);
                 OutlineColorBlit.Draw(buffers.Composite, frame.Output, compositeMaterial, 1);
                 OutlineColorBlit.Draw(buffers.Color, frame.SurfaceHeight, compositeMaterial, 4);
             }
-            finally
-            {
-                capture.targetTexture = null;
-                RenderTexture.active = previous;
-#if !RW_1_7
-                GL.sRGBWrite = previousColorWrite;
-#endif
-            }
-#endif
+            finally { capture.targetTexture = null; RenderTexture.active = previous; GL.sRGBWrite = previousColorWrite; }
         }
 
         //手动执行指定通道，并移除本次采集的命令缓冲。
         private void Capture(RenderTexture texture, CommandBuffer commands)
         {
-#if RW_1_7
-            commands.Render(capture, texture);
-#else
             bool previousColorWrite = GL.sRGBWrite;
             capture.targetTexture = texture;
             GL.sRGBWrite = texture.sRGB;
@@ -225,7 +202,6 @@ namespace SSR.Combat.Offscreen
                 capture.RemoveCommandBuffer(CameraEvent.BeforeForwardOpaque, commands);
                 GL.sRGBWrite = previousColorWrite;
             }
-#endif
         }
 
         //退出游戏或销毁渲染器时释放所有 GPU 资源和相机事件。

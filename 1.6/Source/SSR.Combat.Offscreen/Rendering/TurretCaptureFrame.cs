@@ -20,11 +20,6 @@ namespace SSR.Combat.Offscreen
         internal float GroundHeight;
         internal bool NeedsDepth;
         internal int MaximumResolution = 4096;
-#if RW_1_7
-        internal SsrLiveEntity Live;
-        private int pendingResolution;
-        private float pendingResolutionSince;
-#endif
 
         //提供与离屏投影一致的默认地面锚点，供炮口和目标坐标相互转换。
         internal Vector3 GroundAnchor => new Vector3(root.position.x, root.TransformPoint(localFloor).y, root.position.z);
@@ -36,7 +31,7 @@ namespace SSR.Combat.Offscreen
         internal TurretCaptureFrame(Transform root, Bounds bounds)
         {
             this.root = root;
-            referenceScale = root.WorldScale();
+            referenceScale = root.lossyScale;
             localCenter = root.InverseTransformPoint(bounds.center);
             localFloor = root.InverseTransformPoint(new Vector3(bounds.center.x, bounds.min.y, bounds.center.z));
             referenceRadius = Mathf.Max(bounds.extents.magnitude, 0.01f);
@@ -45,7 +40,7 @@ namespace SSR.Combat.Offscreen
         //按默认包围球设置正交相机，保留高角度俯视的侧壁厚度并固定模型比例。
         internal void Configure(Camera camera, Camera mapCamera, Vector3 visibleCenter, Vector3 offset)
         {
-            Vector3 scale = root.WorldScale();
+            Vector3 scale = root.lossyScale;
             float ratio = Mathf.Max(Mathf.Abs(scale.x / referenceScale.x),
                 Mathf.Max(Mathf.Abs(scale.y / referenceScale.y), Mathf.Abs(scale.z / referenceScale.z)));
             float radius = referenceRadius * ratio;
@@ -99,30 +94,10 @@ namespace SSR.Combat.Offscreen
         //按屏幕所需精度创建独立输出，仅进行双线性采样，不混合低分辨率纹理。
         private void EnsureOutput(int resolution)
         {
-#if RW_1_7
-            //实体直接参加实时绘制，只有透明烟焰仍使用独立的颜色目标。
-            if (!NeedsDepth) return;
-            //放大立即补足精度，缩小时等待档位稳定，避免滚轮往返时反复释放和重建。
-            if (Output && resolution < Output.width)
-            {
-                if (pendingResolution != resolution)
-                {
-                    pendingResolution = resolution;
-                    pendingResolutionSince = Time.realtimeSinceStartup;
-                }
-                if (Time.realtimeSinceStartup - pendingResolutionSince < 0.25f) return;
-            }
-            pendingResolution = 0;
-#endif
             if (Output && Output.width == resolution) return;
             OutlineBuffers.Release(Output);
-#if RW_1_7
-            Output = new SsrRenderTexture(resolution, resolution, NeedsDepth ? 24 : 0,
-                RenderTextureFormat.ARGB32, RenderTextureReadWrite.Default, "SSR炮塔独立影像")
-#else
             Output = new RenderTexture(resolution, resolution, NeedsDepth ? 24 : 0,
                 RenderTextureFormat.ARGB32, RenderTextureReadWrite.Default)
-#endif
             {
                 name = "SSR炮塔独立影像",
                 wrapMode = TextureWrapMode.Clamp,
@@ -138,13 +113,8 @@ namespace SSR.Combat.Offscreen
         {
             if (SurfaceHeight && SurfaceHeight.width == Output.width) return;
             OutlineBuffers.Release(SurfaceHeight);
-#if RW_1_7
-            SurfaceHeight = new SsrRenderTexture(Output.width, Output.height, 0,
-                RenderTextureFormat.RFloat, RenderTextureReadWrite.Linear, "SSR炮塔表面高度")
-#else
             SurfaceHeight = new RenderTexture(Output.width, Output.height, 0,
                 RenderTextureFormat.RFloat, RenderTextureReadWrite.Linear)
-#endif
             {
                 name = "SSR炮塔表面高度",
                 wrapMode = TextureWrapMode.Clamp,
@@ -158,10 +128,6 @@ namespace SSR.Combat.Offscreen
         //释放当前炮塔的影像和表面高度，中间采集缓冲由共享渲染器管理。
         public void Dispose()
         {
-#if RW_1_7
-            Live = null;
-            pendingResolution = 0;
-#endif
             OutlineBuffers.Release(Output);
             OutlineBuffers.Release(SurfaceHeight);
             Output = null;

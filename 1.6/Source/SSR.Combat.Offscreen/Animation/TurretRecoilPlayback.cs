@@ -15,12 +15,9 @@ namespace SSR.Combat.Offscreen
         //从预制体取得原后坐片段，并移除会受旧状态布尔值驱动的自动 Animator。
         internal TurretRecoilPlayback(GameObject model, string transformPath, string clipName)
         {
-            var node = model.transform.FindModelNode(transformPath);
+            var node = model.transform.Find(transformPath);
             if (!node) throw new InvalidOperationException("找不到炮塔后坐节点：" + transformPath);
             target = node.gameObject;
-#if RW_1_7
-            clip = SsrAnimationClip.Load(clipName);
-#else
             var animator = target.GetComponent<Animator>();
             if (!animator || !animator.runtimeAnimatorController)
                 throw new InvalidOperationException("炮塔后坐节点缺少动画控制器：" + transformPath);
@@ -30,7 +27,6 @@ namespace SSR.Combat.Offscreen
             //只移除实例组件，资源包中的原片段继续作为逐发动画的数据来源。
             animator.enabled = false;
             UnityEngine.Object.Destroy(animator);
-#endif
             clip.SampleAnimation(target, 0);
         }
 

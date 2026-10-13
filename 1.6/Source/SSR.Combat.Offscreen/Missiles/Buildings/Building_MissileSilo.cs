@@ -37,12 +37,16 @@ namespace SSR.Combat.Offscreen
         }
         protected override bool CanSetForcedTarget => Faction == Faction.OfPlayer;
 
-        //先确保资源及布局可用，再登记建筑和显示，避免资源错误留下已登记的空模型。
+        //读档完成后在主线程加载资源和登记显示，避免加载线程触碰 Unity 图形对象。
         public override void SpawnSetup(Map map, bool respawningAfterLoad)
         {
-            _ = Assets;
             base.SpawnSetup(map, respawningAfterLoad);
-            map.GetComponent<MissileMapVisuals>().Add(this);
+            LongEventHandler.ExecuteWhenFinished(() =>
+            {
+                if (!Spawned || Map != map) return;
+                _ = Assets;
+                map.GetComponent<MissileMapVisuals>().Add(this);
+            });
         }
 
         //先推进原版索敌，再按游戏刻推进独立发射流程。

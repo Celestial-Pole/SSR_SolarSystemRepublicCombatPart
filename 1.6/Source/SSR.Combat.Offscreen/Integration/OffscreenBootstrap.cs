@@ -1,6 +1,4 @@
-#if !RW_1_7
 using FS_SSR;
-#endif
 using HarmonyLib;
 using Verse;
 using Verse.AI;
@@ -15,10 +13,8 @@ namespace SSR.Combat.Offscreen
         static OffscreenBootstrap()
         {
             var harmony = new Harmony("SSR.Combat.Offscreen");
-#if !RW_1_7
             harmony.Patch(AccessTools.PropertyGetter(typeof(TC_PrefabDrawer), "CurrentUnityObject"),
                 postfix: new HarmonyMethod(typeof(OffscreenBootstrap), nameof(ModelReady)));
-#endif
             harmony.Patch(AccessTools.Method(typeof(GenDraw), nameof(GenDraw.DrawRadiusRing), new[] { typeof(IntVec3), typeof(float) }),
                 prefix: new HarmonyMethod(typeof(TurretRangeRing), nameof(TurretRangeRing.DrawLargeRange)));
             harmony.Patch(AccessTools.Method(typeof(Verb), nameof(Verb.TryFindShootLineFromTo)),

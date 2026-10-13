@@ -53,11 +53,14 @@ namespace SSR.Combat.Offscreen
             ReadGuidanceTarget();
         }
 
-        //向地图登记弹体和烟焰显示。
+        //在主线程登记弹体和烟焰资源，读档时等待地图加载完成。
         public override void SpawnSetup(Map map, bool respawningAfterLoad)
         {
             base.SpawnSetup(map, respawningAfterLoad);
-            map.GetComponent<GuidedMissileMapVisuals>().Add(this);
+            LongEventHandler.ExecuteWhenFinished(() =>
+            {
+                if (Spawned && Map == map) map.GetComponent<GuidedMissileMapVisuals>().Add(this);
+            });
         }
 
         //逐刻更新飞行，并检查寿命、近炸和地面碰撞。

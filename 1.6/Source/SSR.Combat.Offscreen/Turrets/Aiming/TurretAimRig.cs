@@ -94,7 +94,7 @@ namespace SSR.Combat.Offscreen
         //查找配置挂点，禁止缺失节点被当作已经完成瞄准。
         private Transform Require(string path)
         {
-            var node = Model.transform.FindModelNode(path);
+            var node = Model.transform.Find(path);
             if (!node) throw new InvalidOperationException("炮塔挂点不存在：" + owner.def.defName + " / " + path);
             return node;
         }

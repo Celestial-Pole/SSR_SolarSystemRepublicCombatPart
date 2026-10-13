@@ -69,7 +69,7 @@ namespace SSR.Combat.Offscreen
                 point += new Vector3(state.Velocity.x, state.Velocity.y, state.Velocity.z / GroundProjection) * lead;
                 Vector3 desired = point - Tip;
                 if (desired.sqrMagnitude > 0.0001f)
-                    Rotation = TurretTransform.RotateTowards(Rotation, Quaternion.LookRotation(desired, Rotation * Vector3.up),
+                    Rotation = Quaternion.RotateTowards(Rotation, Quaternion.LookRotation(desired, Rotation * Vector3.up),
                         settings.turnDegreesPerSecond * seconds);
             }
             float speed = Mathf.MoveTowards(velocity.magnitude, settings.maximumSpeed, settings.acceleration * seconds);

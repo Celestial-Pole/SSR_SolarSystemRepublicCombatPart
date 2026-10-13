@@ -46,7 +46,7 @@ namespace SSR.Combat.Offscreen
         //查找挂点，缺失时报告路径。
         private Transform Require(string path)
         {
-            var result = Model.transform.FindModelNode(path);
+            var result = Model.transform.Find(path);
             if (!result) throw new InvalidOperationException("筒式发射器缺少挂点：" + path);
             return result;
         }

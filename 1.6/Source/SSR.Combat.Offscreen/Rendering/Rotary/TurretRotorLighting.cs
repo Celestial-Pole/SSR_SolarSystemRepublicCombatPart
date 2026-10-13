@@ -9,8 +9,8 @@ namespace SSR.Combat.Offscreen
         private const float AverageStartDegreesPerTick = 6f;
         private const float AverageFullDegreesPerTick = 24f;
 
-        //取得轴向和平均照明强度，暂停与游戏速度的变化也参与影像缓存判断。
-        internal static Vector4 Parameters(Camera camera, TurretBarrelSpin rotor)
+        //每次采集重设旋转照明参数，独立导弹及没有转轮的建筑使用普通照明。
+        internal static void Apply(Material material, Camera camera, TurretBarrelSpin rotor)
         {
             float blend = 0;
             Vector3 axis = Vector3.forward;
@@ -23,14 +23,8 @@ namespace SSR.Combat.Offscreen
                 blend = Mathf.SmoothStep(0, 1, Mathf.InverseLerp(
                     AverageStartDegreesPerTick, AverageFullDegreesPerTick, speed));
             }
-            return new Vector4(axis.x, axis.y, axis.z, blend);
-        }
-
-        //每次采集重设旋转照明参数，独立导弹及没有转轮的建筑使用普通照明。
-        internal static void Apply(Material material, Vector4 parameters)
-        {
-            material.SetVector("_RotorAxisDirection", new Vector4(parameters.x, parameters.y, parameters.z, 0));
-            material.SetFloat("_RotorLightingBlend", parameters.w);
+            material.SetVector("_RotorAxisDirection", axis);
+            material.SetFloat("_RotorLightingBlend", blend);
         }
     }
 }

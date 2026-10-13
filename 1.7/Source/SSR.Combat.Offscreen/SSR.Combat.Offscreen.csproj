@@ -12,6 +12,17 @@
     <Compile Include="../../../1.6/Source/SSR.Combat.Offscreen/**/*.cs"
       Exclude="../../../1.6/Source/SSR.Combat.Offscreen/obj/**;
         ../../../1.6/Source/SSR.Combat.Offscreen/bin/**;
+        ../../../1.6/Source/SSR.Combat.Offscreen/Animation/TurretRecoilPlayback.cs;
+        ../../../1.6/Source/SSR.Combat.Offscreen/CombinedDefense/Animation/CombinedDefenseRig.cs;
+        ../../../1.6/Source/SSR.Combat.Offscreen/CombinedDefense/Buildings/CombinedMissileLauncher.cs;
+        ../../../1.6/Source/SSR.Combat.Offscreen/CombinedDefense/Projectiles/GuidedMissileFlight.cs;
+        ../../../1.6/Source/SSR.Combat.Offscreen/Integration/OffscreenBootstrap.cs;
+        ../../../1.6/Source/SSR.Combat.Offscreen/Integration/OffscreenPrefabProperties.cs;
+        ../../../1.6/Source/SSR.Combat.Offscreen/Integration/TurretRangeRing.cs;
+        ../../../1.6/Source/SSR.Combat.Offscreen/Placement/PlaceWorker_OffscreenTurretRadius.cs;
+        ../../../1.6/Source/SSR.Combat.Offscreen/TubeLaunchers/Animation/TubeMissileRig.cs;
+        ../../../1.6/Source/SSR.Combat.Offscreen/TubeLaunchers/Buildings/TubeMissileLauncher.cs;
+        ../../../1.6/Source/SSR.Combat.Offscreen/Turrets/Aiming/TurretAimRig.cs;
         ../../../1.6/Source/SSR.Combat.Offscreen/Resources/CombatAssetBundle.cs;
         ../../../1.6/Source/SSR.Combat.Offscreen/Integration/OffscreenTurretComp.cs;
         ../../../1.6/Source/SSR.Combat.Offscreen/Resources/TurretTransform.cs;

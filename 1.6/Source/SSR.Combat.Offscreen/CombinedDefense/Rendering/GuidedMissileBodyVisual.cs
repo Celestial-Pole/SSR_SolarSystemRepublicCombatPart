@@ -21,8 +21,8 @@ namespace SSR.Combat.Offscreen
             root.name = "SSR制导导弹_" + owner.thingIDNumber;
             Update();
             var renderers = root.GetComponentsInChildren<Renderer>();
-            var bounds = renderers[0].WorldBounds();
-            foreach (var renderer in renderers) bounds.Encapsulate(renderer.WorldBounds());
+            var bounds = renderers[0].bounds;
+            foreach (var renderer in renderers) bounds.Encapsulate(renderer.bounds);
             center = root.transform.InverseTransformPoint(bounds.center);
             diameter = bounds.size.magnitude;
             Submission = new TurretMeshSubmission(root) { ClipGround = true };

@@ -12,6 +12,7 @@
     <li IfModActive="CETeam.CombatExtended">1.5/CombatExtended</li>
   </v1.5>
   <v1.6>
+    <!--Unity 版本只加载原版资源和 1.6 程序集。-->
     <li>/</li>
     <li>1.6</li>
   </v1.6>

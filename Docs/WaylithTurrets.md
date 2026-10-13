@@ -8,7 +8,9 @@
 
 - `1.7/Assemblies` 包含 `FS_SSR_Combat.dll`、`FS_TransWeapon.dll`、`SSR.Combat.Offscreen.dll`。
 - 1.7 按顺序加载根目录、`1.6`、`1.7`。已核对游戏的 `ModContentPack.GetAllFilesForModPreserveOrder`：同相对路径采用最后一层文件，所以三个 1.7 DLL 覆盖三个旧 DLL，资源与 Defs 继续共用。
-- 1.6 加载目录和原有三个 DLL 保留。共享源码的引擎分支由 `RW_1_7` 编译符号控制。
+- 1.6 加载根目录和 `1.6`，使用 .NET Framework 4.8、Unity AssetBundle 和离屏相机。其 Unity 实现以 `e7cdb6e` 为基线；1.7 的节点、动画和渲染差异保存在 `1.7/Source`，由工程显式排除对应的 1.6 文件。
+- 1.6 离屏程序集可执行 `dotnet build 1.6/Source/SSR.Combat.Offscreen/SSR.Combat.Offscreen.csproj -c Release`，默认引用本机 `E:\捷豹\rimworlddll`，可用 `GameManaged`、`CoreRoot`、`HarmonyPath` 覆盖。输出只写入 `1.6/Assemblies`；1.7 输出只写入 `1.7/Assemblies`。
+- 导弹井、垂发弹丸和制导弹丸在读档完成后的主线程装载模型并登记烟焰，后台 `SpawnSetup` 不创建图形资源。两版均提供 `MaxHP` 和 `ResourceCapacity` 配件属性定义；1.7 的同名 XML 覆盖 1.6 文件，不重复加载。
 - `FS_SSR_Combat` 和 `FS_TransWeapon` 源码从本项目原有 1.6 DLL 恢复。当前 Defs 没有引用的旧 `FS_SSR.Defense` Animator 炮塔类不参加 1.7 构建；在用炮塔由 `SSR.Combat.Offscreen` 提供。
 - 战斗包原来的 SSR.Core 依赖声明保留。此处引用核心库只为编译战斗包的既有公共类型，不代表核心库本身完成了 1.7 适配。
 
