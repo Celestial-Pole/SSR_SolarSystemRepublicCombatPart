@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<Patch>
-  <!--本项目的模型由 GLB 库提供，停止登记旧资源包及预制体 Shader 探测。-->
-  <Operation Class="PatchOperationRemove">
-    <xpath>Defs/AK_DLL.AssetDef[defName="SSR_Animate_Prefab_Linux_Combat" or defName="SSR_Animate_Prefab_MacOS_Combat" or defName="SSR_Animate_Prefab_Windows_Combat"] | Defs/ThingDef/comps/li[@Class="SSR.Combat.Offscreen.OffscreenPrefabProperties"]/assetDefs | Defs/ThingDef/comps/li[@Class="SSR.Combat.Offscreen.OffscreenPrefabProperties"]/shaderForTestAssetBundle</xpath>
-  </Operation>
-</Patch>

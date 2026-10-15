@@ -21,7 +21,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.6", "1.6", "{1640E604-1C9
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Source", "Source", "{C24882D8-316D-68B7-6D84-A8431DED26BA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SSR.Combat.Offscreen", "1.6\Source\SSR.Combat.Offscreen\SSR.Combat.Offscreen.csproj", "{41FE048A-CD81-44B0-BA38-8800F6B5874E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FS_SSR_Combat", "..\Solar-System-Republic-Framework\FS_SSR_Combat\FS_SSR_Combat.csproj", "{41FE048A-CD81-44B0-BA38-8800F6B5874E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
