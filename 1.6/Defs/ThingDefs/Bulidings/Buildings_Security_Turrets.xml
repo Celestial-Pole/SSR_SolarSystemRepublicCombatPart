@@ -2620,7 +2620,7 @@
 		</placeWorkers>
 		<designationHotKey>Misc2</designationHotKey>
 		<researchPrerequisites>
-			<li>SSR_Research_BasicTurret</li>
+			<li>SSR_Research_BasicMissileSystems</li>
 		</researchPrerequisites>
 		<comps>
 			<li Class="CompProperties_Forbiddable" />
@@ -2835,7 +2835,7 @@
 		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
 		<constructionSkillPrerequisite>5</constructionSkillPrerequisite>
 		<researchPrerequisites>
-			<li>SSR_Research_BasicTurret</li>
+			<li>SSR_Research_BasicMissileSystems</li>
 		</researchPrerequisites>
 		<building>
 			<blueprintGraphicData>
