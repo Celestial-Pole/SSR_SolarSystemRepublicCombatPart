@@ -100,7 +100,6 @@
 		<comps>
 			<li Class="CompProperties_Forbiddable" />
 			<li Class="CompProperties_Flickable" />
-			<li Class="CompProperties_Breakdownable" />
 			<li Class="CompProperties_Refuelable">
 				<fuelLabel>射击直到弹药耗尽</fuelLabel>
 				<fuelGizmoLabel>剩余弹药量</fuelGizmoLabel>
@@ -247,7 +246,6 @@
 		<comps>
 			<li Class="CompProperties_Forbiddable" />
 			<li Class="CompProperties_Flickable" />
-			<li Class="CompProperties_Breakdownable" />
 			<li Class="CompProperties_Refuelable">
 				<fuelLabel>射击直到弹药耗尽</fuelLabel>
 				<fuelGizmoLabel>剩余弹药量</fuelGizmoLabel>
@@ -449,7 +447,6 @@
 		<comps>
 			<li Class="CompProperties_Forbiddable" />
 			<li Class="CompProperties_Flickable" />
-			<li Class="CompProperties_Breakdownable" />
 			<li Class="CompProperties_Refuelable">
 				<fuelLabel>射击直到弹药耗尽</fuelLabel>
 				<fuelGizmoLabel>剩余弹药量</fuelGizmoLabel>
@@ -598,7 +595,6 @@
 		<comps>
 			<li Class="CompProperties_Forbiddable" />
 			<li Class="CompProperties_Flickable" />
-			<li Class="CompProperties_Breakdownable" />
 			<li Class="CompProperties_Refuelable">
 				<fuelLabel>射击直到弹药耗尽</fuelLabel>
 				<fuelGizmoLabel>剩余弹药量</fuelGizmoLabel>
@@ -837,7 +833,6 @@
 		<comps>
 			<li Class="CompProperties_Forbiddable" />
 			<li Class="CompProperties_Flickable" />
-			<li Class="CompProperties_Breakdownable" />
 			<li Class="CompProperties_Refuelable">
 				<fuelLabel>射击直到弹药耗尽</fuelLabel>
 				<fuelGizmoLabel>剩余弹药量</fuelGizmoLabel>
@@ -1080,7 +1075,6 @@
 		<comps>
 			<li Class="CompProperties_Forbiddable" />
 			<li Class="CompProperties_Flickable" />
-			<li Class="CompProperties_Breakdownable" />
 			<li Class="CompProperties_Refuelable">
 				<fuelLabel>射击直到弹药耗尽</fuelLabel>
 				<fuelGizmoLabel>剩余弹药量</fuelGizmoLabel>
@@ -1331,7 +1325,6 @@
 		<comps>
 			<li Class="CompProperties_Forbiddable" />
 			<li Class="CompProperties_Flickable" />
-			<li Class="CompProperties_Breakdownable" />
 			<li Class="CompProperties_Refuelable">
 				<fuelLabel>射击直到弹药耗尽</fuelLabel>
 				<fuelGizmoLabel>剩余弹药量</fuelGizmoLabel>
