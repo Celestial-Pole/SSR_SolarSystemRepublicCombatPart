@@ -1635,8 +1635,8 @@
 				<texPath>Things/Building/Security/145mmLtElectromagneticGun/145mmLtElectromagneticGun_MenuIcon</texPath>
 				<graphicClass>Graphic_Single</graphicClass>
 				<shaderType>EdgeDetect</shaderType>
-				<drawSize>(6.127889,6.127889)</drawSize>
-				<drawOffset>(0,0,0.913953)</drawOffset>
+				<drawSize>(6.127886,6.127886)</drawSize>
+				<drawOffset>(0,0,0.913952)</drawOffset>
 			</blueprintGraphicData>
 			<combatPower>45</combatPower>
 			<ai_combatDangerous>true</ai_combatDangerous>
@@ -1671,8 +1671,8 @@
 				<leveledPrefabPaths>
 					<li>Assets/SSR/Prefab/TurretT1_3X.prefab</li>
 				</leveledPrefabPaths>
-				<modelRootPath>Transform_Y/Root</modelRootPath>
-				<recoilTransformPath>Transform_Y/Root/Transform_X/Transform_Z/TurretTop/MainGun</recoilTransformPath>
+				<modelRootPath>Root</modelRootPath>
+				<recoilTransformPath>Root/Yaw/Pitch</recoilTransformPath>
 				<recoilClipName>Railgun145Recoil</recoilClipName>
 			</li>
 		</comps>
@@ -1692,19 +1692,19 @@
                 <idlePitch>0</idlePitch>
                 <targeting>SSR_TurretTargeting_Ground</targeting>
 				<radarPaths>
-					<li>Transform_Y/Root/Transform_X/Transform_Z/TurretTop/RadarPitch</li>
+					<li>Root/Yaw/RadarPitch</li>
 				</radarPaths>
 				<yawRotationSpeed>20</yawRotationSpeed>
 				<pitchRotationSpeed>5</pitchRotationSpeed>
-				<shootingOrigine>Transform_Y/Root/Transform_X/Transform_Z/TurretTop/MainGun/FirePoint</shootingOrigine>
-				<rootTransform>Transform_Y/Root</rootTransform>
-				<yawPath>Transform_Y/Root/Transform_X/Transform_Z/TurretTop</yawPath>
-				<pitchPath>Transform_Y/Root/Transform_X/Transform_Z/TurretTop/MainGun</pitchPath>
-				<yawRotationAixe>(0, 0, 1)</yawRotationAixe>
-				<pitchRotationAixe>(0, 1, 0)</pitchRotationAixe>
+				<shootingOrigine>Root/Yaw/Pitch/RecoilInner/FirePoint</shootingOrigine>
+				<rootTransform>Root</rootTransform>
+				<yawPath>Root/Yaw</yawPath>
+				<pitchPath>Root/Yaw/Pitch</pitchPath>
+				<yawRotationAixe>(0, 1, 0)</yawRotationAixe>
+				<pitchRotationAixe>(1, 0, 0)</pitchRotationAixe>
 				<!--局部负角为上仰，最大仰角 45 度；下俯限制为 5 度。-->
 				<pitchRotationRange>(315, 5)</pitchRotationRange>
-				<shootingOrigineForward>(1, 0, 0)</shootingOrigineForward>
+				<shootingOrigineForward>(0, 0, 1)</shootingOrigineForward>
 			</li>
 		</modExtensions>
 	</ThingDef>
@@ -2321,7 +2321,7 @@
 				<texPath>Things/Building/Security/RocketArtillery/RocketArtillery_MenuIcon</texPath>
 				<graphicClass>Graphic_Single</graphicClass>
 				<shaderType>EdgeDetect</shaderType>
-				<drawSize>(4.351972,4.351972)</drawSize>
+				<drawSize>(4.351971,4.351971)</drawSize>
 				<drawOffset>(0,0,0.068197)</drawOffset>
 			</blueprintGraphicData>
 			<combatPower>130</combatPower>
@@ -2353,7 +2353,7 @@
 					<li>SSR_Animate_Prefab_Windows_Combat</li>
 				</assetDefs>
 				<leveledPrefabPaths>
-					<li>Assets/SSR/Turrets/T1/Game/RocketArtillery.prefab</li>
+					<li>Assets/SSR/Turrets/T1/Game/RocketArtillery_Rigged.prefab</li>
 				</leveledPrefabPaths>
 				<modelRootPath>Root</modelRootPath>
 			</li>
