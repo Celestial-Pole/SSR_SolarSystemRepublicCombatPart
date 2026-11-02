@@ -1747,7 +1747,7 @@
 		</graphicData>
 		<thingClass>SSR.Combat.Offscreen.Projectile_RailgunPenetrating</thingClass>
 		<projectile>
-			<damageDef>BombSuper</damageDef>
+			<damageDef>SSR_Bomb</damageDef>
 			<damageAmountBase>200</damageAmountBase>
 			<explosionRadius>0.9</explosionRadius>
 			<speed>800</speed>
@@ -1977,7 +1977,7 @@
 		</graphicData>
 		<projectile>
 			<flyOverhead>true</flyOverhead>
-			<damageDef>BombSuper</damageDef>
+			<damageDef>SSR_Bomb</damageDef>
 			<damageAmountBase>400</damageAmountBase>
 			<explosionRadius>1.8</explosionRadius>
 			<speed>800</speed>
@@ -2209,7 +2209,7 @@
 		</graphicData>
 		<projectile>
 			<flyOverhead>true</flyOverhead>
-			<damageDef>BombSuper</damageDef>
+			<damageDef>SSR_Bomb</damageDef>
 			<damageAmountBase>800</damageAmountBase>
 			<explosionRadius>5.6</explosionRadius>
 			<speed>1200</speed>
@@ -2533,7 +2533,7 @@
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
 		<projectile>
-			<damageDef>BombSuper</damageDef>
+			<damageDef>SSR_Bomb</damageDef>
 			<damageAmountBase>100</damageAmountBase>
 			<explosionRadius>2</explosionRadius>
 			<explosionDelay>0</explosionDelay>
@@ -2780,7 +2780,7 @@
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
 		<projectile>
-			<damageDef>BombSuper</damageDef>
+			<damageDef>SSR_Bomb</damageDef>
 			<damageAmountBase>300</damageAmountBase>
 			<explosionRadius>4</explosionRadius>
 			<explosionDelay>0</explosionDelay>
@@ -2950,7 +2950,7 @@
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
 		<projectile>
-			<damageDef>BombSuper</damageDef>
+			<damageDef>SSR_Bomb</damageDef>
 			<damageAmountBase>300</damageAmountBase>
 			<explosionRadius>2.5</explosionRadius>
 			<explosionDelay>0</explosionDelay>
