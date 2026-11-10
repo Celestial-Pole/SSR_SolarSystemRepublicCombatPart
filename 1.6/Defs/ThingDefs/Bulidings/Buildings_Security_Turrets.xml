@@ -81,8 +81,8 @@
 				<texPath>Things/Building/Security/SentryGun/SentryGun_MenuIcon</texPath>
 				<graphicClass>Graphic_Single</graphicClass>
 				<shaderType>EdgeDetect</shaderType>
-				<drawSize>(1.933478,1.933478)</drawSize>
-				<drawOffset>(0,0,0.332613)</drawOffset>
+				<drawSize>(1.933551,1.933551)</drawSize>
+				<drawOffset>(0,0,0.332624)</drawOffset>
 			</blueprintGraphicData>
 			<combatPower>45</combatPower><!-- 战斗力与拾荒者相同 -->
 			<ai_combatDangerous>true</ai_combatDangerous>
@@ -227,8 +227,8 @@
 				<texPath>Things/Building/Security/SentryGun/PortableSentryGun_MenuIcon</texPath>
 				<graphicClass>Graphic_Single</graphicClass>
 				<shaderType>EdgeDetect</shaderType>
-				<drawSize>(1.626686,1.626686)</drawSize>
-				<drawOffset>(0,0,0.179545)</drawOffset>
+				<drawSize>(1.627789,1.627789)</drawSize>
+				<drawOffset>(0,0,0.180043)</drawOffset>
 			</blueprintGraphicData>
 			<combatPower>45</combatPower><!-- 战斗力与拾荒者相同 -->
 			<ai_combatDangerous>true</ai_combatDangerous>
@@ -575,8 +575,8 @@
 				<texPath>Things/Building/Security/ElectromagneticSentryGun/PortableElectromagneticSentryGun_MenuIcon</texPath>
 				<graphicClass>Graphic_Single</graphicClass>
 				<shaderType>EdgeDetect</shaderType>
-				<drawSize>(1.86395,1.86395)</drawSize>
-				<drawOffset>(0,0,0.216832)</drawOffset>
+				<drawSize>(1.863951,1.863951)</drawSize>
+				<drawOffset>(0,0,0.216831)</drawOffset>
 			</blueprintGraphicData>
 			<combatPower>60</combatPower>
 			<ai_combatDangerous>true</ai_combatDangerous>
@@ -813,8 +813,8 @@
 				<texPath>Things/Building/Security/30mmElectromagneticCIWS/ElectromagneticCIWS_MenuIcon</texPath>
 				<graphicClass>Graphic_Single</graphicClass>
 				<shaderType>EdgeDetect</shaderType>
-				<drawSize>(4.198739,4.198739)</drawSize>
-				<drawOffset>(0,0,0.959404)</drawOffset>
+				<drawSize>(4.194324,4.194324)</drawSize>
+				<drawOffset>(0,0,0.957269)</drawOffset>
 			</blueprintGraphicData>
 			<combatPower>45</combatPower><!-- 战斗力与拾荒者相同 -->
 			<ai_combatDangerous>true</ai_combatDangerous>
@@ -1305,8 +1305,8 @@
 				<texPath>Things/Building/Security/ElectromagneticGun-missileIntegratedAirDefenseWeaponSystem/Gun-missileIntegratedAirDefenseWeaponSystem_MenuIcon</texPath>
 				<graphicClass>Graphic_Single</graphicClass>
 				<shaderType>EdgeDetect</shaderType>
-				<drawSize>(6.074977,6.074977)</drawSize>
-				<drawOffset>(0,0,0.071021)</drawOffset>
+				<drawSize>(6.074978,6.074978)</drawSize>
+				<drawOffset>(0,0,0.07102)</drawOffset>
 			</blueprintGraphicData>
 			<combatPower>45</combatPower>
 			<ai_combatDangerous>true</ai_combatDangerous>
@@ -1403,8 +1403,12 @@
 				<missileRange>65</missileRange>
 				<launchIntervalTicks>30</launchIntervalTicks>
 				<reloadTicks>600</reloadTicks>
-				<!--导弹筒只随炮塔偏航，发射前仅检查水平方位。-->
+				<!--左右导弹架按目标高度同步俯仰，独立于近防炮；转速和限位沿用瞄准配置。-->
 				<missileAimPointPath>Root/Yaw/MissileRack/AimPoint</missileAimPointPath>
+				<missilePitchPaths>
+					<li>Root/Yaw/MissileRack/RackLeft</li>
+					<li>Root/Yaw/MissileRack/RackRight</li>
+				</missilePitchPaths>
 				<!--冷弹射沿固定筒口方向从静止加速；离筒净空为格，重力为格每平方秒。-->
 				<ejectionSpeed>8</ejectionSpeed>
 				<ejectionClearance>0.12</ejectionClearance>
@@ -1887,8 +1891,8 @@
 				<leveledPrefabPaths>
 					<li>Assets/SSR/Prefab/TurretT1_5X.prefab</li>
 				</leveledPrefabPaths>
-				<modelRootPath>Transform_Y/Root</modelRootPath>
-				<recoilTransformPath>Transform_Y/Root/Transform_X/Transform_Z/TurretTop/MainGun</recoilTransformPath>
+				<modelRootPath>Root</modelRootPath>
+				<recoilTransformPath>Root/Yaw/Pitch</recoilTransformPath>
 				<recoilClipName>Railgun300Recoil</recoilClipName>
 			</li>
 		</comps>
@@ -1908,19 +1912,19 @@
                 <idlePitch>0</idlePitch>
                 <targeting>SSR_TurretTargeting_IndirectGround</targeting>
 				<radarPaths>
-					<li>Transform_Y/Root/Transform_X/Transform_Z/TurretTop/RadarPitch</li>
+					<li>Root/Yaw/RadarPitch</li>
 				</radarPaths>
 				<yawRotationSpeed>15</yawRotationSpeed>
 				<pitchRotationSpeed>5</pitchRotationSpeed>
-				<shootingOrigine>Transform_Y/Root/Transform_X/Transform_Z/TurretTop/MainGun/FirePoint</shootingOrigine>
-				<rootTransform>Transform_Y/Root</rootTransform>
-				<yawPath>Transform_Y/Root/Transform_X/Transform_Z/TurretTop</yawPath>
-				<pitchPath>Transform_Y/Root/Transform_X/Transform_Z/TurretTop/MainGun</pitchPath>
-				<yawRotationAixe>(0, 0, 1)</yawRotationAixe>
-				<pitchRotationAixe>(0, 1, 0)</pitchRotationAixe>
+				<shootingOrigine>Root/Yaw/Pitch/RecoilInner/FirePoint</shootingOrigine>
+				<rootTransform>Root</rootTransform>
+				<yawPath>Root/Yaw</yawPath>
+				<pitchPath>Root/Yaw/Pitch</pitchPath>
+				<yawRotationAixe>(0, 1, 0)</yawRotationAixe>
+				<pitchRotationAixe>(1, 0, 0)</pitchRotationAixe>
 				<!--局部负角为上仰，最大仰角 45 度；下俯限制为 5 度。-->
 				<pitchRotationRange>(315, 5)</pitchRotationRange>
-				<shootingOrigineForward>(1, 0, 0)</shootingOrigineForward>
+				<shootingOrigineForward>(0, 0, 1)</shootingOrigineForward>
 			</li>
 		</modExtensions>
 	</ThingDef>
@@ -2082,8 +2086,8 @@
 				<texPath>Things/Building/Security/500mmHvElectromagneticGun/500mmHvElectromagneticGun_MenuIcon</texPath>
 				<graphicClass>Graphic_Single</graphicClass>
 				<shaderType>EdgeDetect</shaderType>
-				<drawSize>(16.52957,16.52957)</drawSize>
-				<drawOffset>(0,0,2.972677)</drawOffset>
+				<drawSize>(16.49912,16.49912)</drawSize>
+				<drawOffset>(0,0,2.948051)</drawOffset>
 			</blueprintGraphicData>
 			<combatPower>45</combatPower>
 			<ai_combatDangerous>true</ai_combatDangerous>
@@ -2267,7 +2271,7 @@
 	<ThingDef ParentName="SSR_BuildingBase_Security">
 		<defName>SSR_Turret_RocketArtillery</defName>
 		<label>远程多管火箭炮</label>
-		<description>十管远程火箭炮。发射架先旋转并俯仰瞄准目标，再开盖；完全打开后每隔 12 刻发射一枚筒内实体火箭，每轮最多发射 10 枚，离筒后点火制导。目标失效后可用余弹攻击下一目标；弹药耗尽后等待整组补满，停电暂停补充。</description>
+		<description>十管远程火箭炮。瞄准后每隔 12 刻发射一枚筒内实体火箭，每轮最多发射 10 枚，离筒后点火制导。火箭出筒时逐个顶飞筒盖，盖子翻滚落地，整组补满后自动复位。目标失效后可用余弹攻击下一目标；弹药耗尽后等待整组补满，停电暂停补充。</description>
 		<thingClass>SSR.Combat.Offscreen.Building_TubeMissileTurret</thingClass>
 		<drawerType>MapMeshAndRealTime</drawerType>
 		<graphicData>
@@ -2385,6 +2389,7 @@
 				<missileProjectile>SSR_Projectile_RocketArtillery</missileProjectile>
 				<reloadTicks>900</reloadTicks>
 				<allowPartialSalvo>true</allowPartialSalvo>
+				<ejectDoors>true</ejectDoors>
 				<ejectionSpeed>12</ejectionSpeed>
 				<ejectionClearance>0.12</ejectionClearance>
 				<ejectionGravity>9.81</ejectionGravity>
@@ -2487,7 +2492,7 @@
 	<ThingDef ParentName="BaseWeaponTurret">
 		<defName>SSR_TurretGun_RocketArtillery</defName>
 		<label>远程多管火箭炮</label>
-		<description>十管远程火箭炮。发射架先旋转并俯仰瞄准目标，再开盖；完全打开后每隔 12 刻发射一枚筒内实体火箭，每轮最多发射 10 枚，离筒后点火制导。目标失效后可用余弹攻击下一目标；弹药耗尽后等待整组补满，停电暂停补充。</description>
+		<description>十管远程火箭炮。瞄准后每隔 12 刻发射一枚筒内实体火箭，每轮最多发射 10 枚，离筒后点火制导。火箭出筒时逐个顶飞筒盖，盖子翻滚落地，整组补满后自动复位。目标失效后可用余弹攻击下一目标；弹药耗尽后等待整组补满，停电暂停补充。</description>
 		<graphicData>
 			<texPath>Things/Building/Security/TurretMini_Top</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -2598,8 +2603,8 @@
 				<texPath>Things/Building/Security/Box-typeMissileLauncher/Box-typeMissileLauncher_MenuIcon</texPath>
 				<graphicClass>Graphic_Single</graphicClass>
 				<shaderType>EdgeDetect</shaderType>
-				<drawSize>(4.961836,4.961836)</drawSize>
-				<drawOffset>(0,0,0.415875)</drawOffset>
+				<drawSize>(4.566222,4.566222)</drawSize>
+				<drawOffset>(0,0,0.268079)</drawOffset>
 			</blueprintGraphicData>
 			<combatPower>130</combatPower>
 			<ai_combatDangerous>true</ai_combatDangerous>
@@ -2835,12 +2840,12 @@
 				<texPath>Things/Building/Security/VerticalMissileLaunchingSystem/VerticalMissileLaunchingSystem_Blueprint</texPath>
 				<graphicClass>Graphic_Multi</graphicClass>
 				<shaderType>EdgeDetect</shaderType>
-				<drawSize>(4.762733,4.762733)</drawSize>
+				<drawSize>(4.892043,4.892043)</drawSize>
 				<drawRotated>false</drawRotated>
-				<drawOffsetNorth>(0,0,0.072127)</drawOffsetNorth>
-				<drawOffsetEast>(0,0,0.072127)</drawOffsetEast>
-				<drawOffsetSouth>(0,0,0.072127)</drawOffsetSouth>
-				<drawOffsetWest>(0,0,0.072127)</drawOffsetWest>
+				<drawOffsetNorth>(0,0,-0.115373)</drawOffsetNorth>
+				<drawOffsetEast>(0,0,-0.115373)</drawOffsetEast>
+				<drawOffsetSouth>(0,0,-0.115373)</drawOffsetSouth>
+				<drawOffsetWest>(0,0,-0.115374)</drawOffsetWest>
 			</blueprintGraphicData>
 			<combatPower>100</combatPower>
 			<ai_combatDangerous>true</ai_combatDangerous>

@@ -1,6 +1,24 @@
 
-#保留源码、模组配置与正式素材，以及 Unity 的 Assets、Packages、ProjectSettings 和美术源文件。
-#Unity Assets/Plugins 中的依赖 DLL 属于工程输入，不按编译输出排除。
+#仓库保留模组运行资源与必需源码；Unity、美术工程和参考文档在仓库外维护。
+#导弹配置源码同时供游戏程序集和外部 Unity 工程使用。
+/src/SSR.Combat.UnityAsset/*
+!/src/SSR.Combat.UnityAsset/Assets/
+/src/SSR.Combat.UnityAsset/Assets/*
+!/src/SSR.Combat.UnityAsset/Assets/SSR/
+/src/SSR.Combat.UnityAsset/Assets/SSR/*
+!/src/SSR.Combat.UnityAsset/Assets/SSR/Missiles/
+/src/SSR.Combat.UnityAsset/Assets/SSR/Missiles/*
+!/src/SSR.Combat.UnityAsset/Assets/SSR/Missiles/Runtime/
+/src/SSR.Combat.UnityAsset/Assets/SSR/Missiles/Runtime/*
+!/src/SSR.Combat.UnityAsset/Assets/SSR/Missiles/Runtime/*.cs
+!/src/SSR.Combat.UnityAsset/Assets/SSR/Missiles/Runtime/*.cs.meta
+/Docs/
+*.blend
+*.blend.meta
+*.fbx
+*.fbx.meta
+*.psd
+*.psd.meta
 
 #编译缓存；版本加载目录中的运行 DLL 和 Asset 中的运行资源包随仓库维护。
 **/Assemblies/*

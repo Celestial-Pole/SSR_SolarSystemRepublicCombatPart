@@ -1,5 +1,0 @@
-{
-    "name": "SSR.Outline.Editor",
-    "references": ["SSR.Combat.UnityAsset"],
-    "includePlatforms": ["Editor"]
-}
