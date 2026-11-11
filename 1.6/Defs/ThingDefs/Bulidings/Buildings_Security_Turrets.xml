@@ -1305,8 +1305,8 @@
 				<texPath>Things/Building/Security/ElectromagneticGun-missileIntegratedAirDefenseWeaponSystem/Gun-missileIntegratedAirDefenseWeaponSystem_MenuIcon</texPath>
 				<graphicClass>Graphic_Single</graphicClass>
 				<shaderType>EdgeDetect</shaderType>
-				<drawSize>(6.074978,6.074978)</drawSize>
-				<drawOffset>(0,0,0.07102)</drawOffset>
+				<drawSize>(6.14332,6.14332)</drawSize>
+				<drawOffset>(0,0,0.109994)</drawOffset>
 			</blueprintGraphicData>
 			<combatPower>45</combatPower>
 			<ai_combatDangerous>true</ai_combatDangerous>
