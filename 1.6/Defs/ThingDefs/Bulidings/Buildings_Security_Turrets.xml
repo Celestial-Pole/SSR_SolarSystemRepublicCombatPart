@@ -427,8 +427,8 @@
 				<texPath>Things/Building/Security/ElectromagneticSentryGun/ElectromagneticSentryGun_MenuIcon</texPath>
 				<graphicClass>Graphic_Single</graphicClass>
 				<shaderType>EdgeDetect</shaderType>
-				<drawSize>(2.166866,2.166866)</drawSize>
-				<drawOffset>(0,0,0.373015)</drawOffset>
+				<drawSize>(1.934013,1.934013)</drawSize>
+				<drawOffset>(0,0,0.332931)</drawOffset>
 			</blueprintGraphicData>
 			<combatPower>60</combatPower>
 			<ai_combatDangerous>true</ai_combatDangerous>
@@ -575,8 +575,8 @@
 				<texPath>Things/Building/Security/ElectromagneticSentryGun/PortableElectromagneticSentryGun_MenuIcon</texPath>
 				<graphicClass>Graphic_Single</graphicClass>
 				<shaderType>EdgeDetect</shaderType>
-				<drawSize>(1.863951,1.863951)</drawSize>
-				<drawOffset>(0,0,0.216831)</drawOffset>
+				<drawSize>(1.636453,1.636453)</drawSize>
+				<drawOffset>(0,0,0.190367)</drawOffset>
 			</blueprintGraphicData>
 			<combatPower>60</combatPower>
 			<ai_combatDangerous>true</ai_combatDangerous>
