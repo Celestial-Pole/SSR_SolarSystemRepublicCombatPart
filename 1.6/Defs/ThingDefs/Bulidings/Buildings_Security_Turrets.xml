@@ -889,7 +889,7 @@
 				<radarPaths>
 					<li>Transform_Y/Root/Transform_X/Transform_Z/TurretTop/RadarPitch</li>
 				</radarPaths>
-				<yawRotationSpeed>360</yawRotationSpeed>
+				<yawRotationSpeed>450</yawRotationSpeed>
 				<pitchRotationSpeed>120</pitchRotationSpeed>
 				<shootingOrigine>Transform_Y/Root/Transform_X/Transform_Z/TurretTop/MainGun/FirePoint</shootingOrigine>
 				<rootTransform>Transform_Y/Root</rootTransform>
@@ -1133,7 +1133,7 @@
 				<radarPaths>
 					<li>Root/Yaw/RadarPitch</li>
 				</radarPaths>
-				<yawRotationSpeed>90</yawRotationSpeed>
+				<yawRotationSpeed>120</yawRotationSpeed>
 				<pitchRotationSpeed>60</pitchRotationSpeed>
 				<shootingOrigine>Root/Yaw/Pitch/Recoil/FirePoint</shootingOrigine>
 				<rootTransform>Root</rootTransform>
@@ -1384,7 +1384,7 @@
 				<idleYaw>0</idleYaw>
 				<idlePitch>0</idlePitch>
 				<targeting>SSR_TurretTargeting_CombinedAirDefense</targeting>
-				<yawRotationSpeed>360</yawRotationSpeed>
+				<yawRotationSpeed>450</yawRotationSpeed>
 				<pitchRotationSpeed>120</pitchRotationSpeed>
 				<radarPaths>
 					<li>Root/Yaw/SensorRight</li>
@@ -1694,7 +1694,7 @@
 				<radarPaths>
 					<li>Root/Yaw/RadarPitch</li>
 				</radarPaths>
-				<yawRotationSpeed>20</yawRotationSpeed>
+				<yawRotationSpeed>60</yawRotationSpeed>
 				<pitchRotationSpeed>5</pitchRotationSpeed>
 				<shootingOrigine>Root/Yaw/Pitch/RecoilInner/FirePoint</shootingOrigine>
 				<rootTransform>Root</rootTransform>
@@ -1919,7 +1919,7 @@
 				<radarPaths>
 					<li>Root/Yaw/RadarPitch</li>
 				</radarPaths>
-				<yawRotationSpeed>15</yawRotationSpeed>
+				<yawRotationSpeed>50</yawRotationSpeed>
 				<pitchRotationSpeed>5</pitchRotationSpeed>
 				<shootingOrigine>Root/Yaw/Pitch/RecoilInner/FirePoint</shootingOrigine>
 				<rootTransform>Root</rootTransform>
@@ -2152,7 +2152,7 @@
 				<radarPaths>
 					<li>Transform_Y/Root/Yaw/RadarPitch</li>
 				</radarPaths>
-				<yawRotationSpeed>10</yawRotationSpeed>
+				<yawRotationSpeed>40</yawRotationSpeed>
 				<pitchRotationSpeed>5</pitchRotationSpeed>
 				<shootingOrigine>Transform_Y/Root/Yaw/Pitch/Recoil/FirePoint</shootingOrigine>
 				<rootTransform>Transform_Y/Root</rootTransform>
@@ -2382,7 +2382,7 @@
 				<idleYaw>0</idleYaw>
 				<idlePitch>0</idlePitch>
 				<targeting>SSR_TurretTargeting_IndirectGround</targeting>
-				<yawRotationSpeed>60</yawRotationSpeed>
+				<yawRotationSpeed>120</yawRotationSpeed>
 				<pitchRotationSpeed>45</pitchRotationSpeed>
 				<shootingOrigine>Root/Yaw/Pitch/FirePoint</shootingOrigine>
 				<rootTransform>Root</rootTransform>
@@ -2667,7 +2667,7 @@
 				<idleYaw>0</idleYaw>
 				<idlePitch>0</idlePitch>
 				<targeting>SSR_TurretTargeting_CombinedAirDefense</targeting>
-				<yawRotationSpeed>60</yawRotationSpeed>
+				<yawRotationSpeed>120</yawRotationSpeed>
 				<pitchRotationSpeed>45</pitchRotationSpeed>
 				<shootingOrigine>Root/Yaw/Pitch/FirePoint</shootingOrigine>
 				<rootTransform>Root</rootTransform>
