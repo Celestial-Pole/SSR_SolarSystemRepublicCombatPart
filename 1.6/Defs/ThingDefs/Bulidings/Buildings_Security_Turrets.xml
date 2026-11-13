@@ -1305,8 +1305,8 @@
 				<texPath>Things/Building/Security/ElectromagneticGun-missileIntegratedAirDefenseWeaponSystem/Gun-missileIntegratedAirDefenseWeaponSystem_MenuIcon</texPath>
 				<graphicClass>Graphic_Single</graphicClass>
 				<shaderType>EdgeDetect</shaderType>
-				<drawSize>(6.074978,6.074978)</drawSize>
-				<drawOffset>(0,0,0.07102)</drawOffset>
+				<drawSize>(5.967422,5.967422)</drawSize>
+				<drawOffset>(0,0,0.127496)</drawOffset>
 			</blueprintGraphicData>
 			<combatPower>45</combatPower>
 			<ai_combatDangerous>true</ai_combatDangerous>
@@ -1442,24 +1442,24 @@
 						<degreesPerSecond>60</degreesPerSecond>
 					</li>
 				</radars>
-				<!--喷焰和烟迹复用导弹井资源，按实际喷口历史生成弯曲尾迹。-->
+				<!--白热焰芯独立发光，暖灰烟迹按实际喷口历史扩散。-->
 				<exhaust>
 					<flamePath>Assets/SSR/Missiles/Game/MissileFlame.prefab</flamePath>
 					<smokePath>Assets/SSR/Missiles/Game/MissileSmoke.prefab</smokePath>
-					<flameWidth>0.35</flameWidth>
-					<flameLength>0.55</flameLength>
-					<flameBrightness>1.35</flameBrightness>
-					<ignitionFlareMultiplier>2</ignitionFlareMultiplier>
-					<ignitionFlareSeconds>0.22</ignitionFlareSeconds>
+					<flameWidth>0.34</flameWidth>
+					<flameLength>0.78</flameLength>
+					<flameBrightness>1.5</flameBrightness>
+					<ignitionFlareMultiplier>1.4</ignitionFlareMultiplier>
+					<ignitionFlareSeconds>0.14</ignitionFlareSeconds>
 					<flameTrailSeconds>0.18</flameTrailSeconds>
-					<flameTrailLength>2.3</flameTrailLength>
-					<flameGasSpeed>5</flameGasSpeed>
-					<flameTurbulence>0.065</flameTurbulence>
-					<smokeSpacing>0.2</smokeSpacing>
-					<smokeLifetime>1.5</smokeLifetime>
-					<smokeStartSize>0.3</smokeStartSize>
-					<smokeEndSize>0.9</smokeEndSize>
-					<smokeOpacity>0.2</smokeOpacity>
+					<flameTrailLength>2.7</flameTrailLength>
+					<flameGasSpeed>7</flameGasSpeed>
+					<flameTurbulence>0.035</flameTurbulence>
+					<smokeSpacing>0.22</smokeSpacing>
+					<smokeLifetime>1.9</smokeLifetime>
+					<smokeStartSize>0.24</smokeStartSize>
+					<smokeEndSize>1.15</smokeEndSize>
+					<smokeOpacity>0.36</smokeOpacity>
 				</exhaust>
 			</li>
 		</modExtensions>
@@ -1756,10 +1756,12 @@
 		<projectile>
 			<damageDef>SSR_Bomb</damageDef>
 			<damageAmountBase>200</damageAmountBase>
-			<explosionRadius>0.9</explosionRadius>
 			<speed>800</speed>
 		</projectile>
 		<modExtensions>
+			<li Class="SSR.Combat.Offscreen.RailgunShellSettings">
+				<prefabPath>Assets/SSR/Railguns/Game/RailgunShell145.prefab</prefabPath>
+			</li>
 			<li Class="HJ_SSR.Weapons.ModExtension_PenetratingProjectile">
 				<!-- 穿透造成的伤害系数 即 Damage = 基础伤害 * 0.5 -->
 				<overpenDamageMulti>0.85</overpenDamageMulti>
@@ -1964,8 +1966,8 @@
 				<soundCastTail>GunTail_Heavy</soundCastTail>
 				<muzzleFlashScale>0</muzzleFlashScale>
 				<consumeFuelPerShot>1</consumeFuelPerShot>
-				<!-- 半格及以下不触发原版额外强制散布，仍按直瞄命中流程发射爆炸弹。 -->
-				<forcedMissRadius>0.1</forcedMissRadius>
+				<!--穿透弹沿炮口方向发射，强制散布半径为零。-->
+				<forcedMissRadius>0</forcedMissRadius>
                 <targetParams>
                     <canTargetLocations>true</canTargetLocations>
                 </targetParams>
@@ -1976,20 +1978,22 @@
 	<ThingDef ParentName="BaseBullet">
 		<defName>SSR_Projectile_Electromagnetic_300mmMdGun</defName>
 		<label>300mm中型电磁炮炮弹</label>
-		<thingClass>Projectile_Explosive</thingClass>
+		<thingClass>SSR.Combat.Offscreen.Projectile_RailgunPenetrating</thingClass>
 		<graphicData>
 			<texPath>Things/Projectile/Bullet_Big</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 			<drawSize>2.5</drawSize>
 		</graphicData>
 		<projectile>
-			<flyOverhead>true</flyOverhead>
 			<damageDef>SSR_Bomb</damageDef>
 			<damageAmountBase>400</damageAmountBase>
-			<explosionRadius>1.8</explosionRadius>
+			<flyOverhead>false</flyOverhead>
 			<speed>800</speed>
 		</projectile>
 		<modExtensions>
+			<li Class="SSR.Combat.Offscreen.RailgunShellSettings">
+				<prefabPath>Assets/SSR/Railguns/Game/RailgunShell300.prefab</prefabPath>
+			</li>
 			<li Class="HJ_SSR.Weapons.ModExtension_PenetratingProjectile">
 				<!-- 穿透造成的伤害系数 即 Damage = 基础伤害 * 0.5 -->
 				<overpenDamageMulti>0.9</overpenDamageMulti>
@@ -2196,8 +2200,8 @@
 				<soundCastTail>GunTail_Heavy</soundCastTail>
 				<muzzleFlashScale>0</muzzleFlashScale>
 				<consumeFuelPerShot>1</consumeFuelPerShot>
-				<!-- 半格及以下不触发原版额外强制散布，仍按直瞄命中流程发射爆炸弹。 -->
-				<forcedMissRadius>0.1</forcedMissRadius>
+				<!--穿透弹沿炮口方向发射，强制散布半径为零。-->
+				<forcedMissRadius>0</forcedMissRadius>
                 <targetParams>
                     <canTargetLocations>true</canTargetLocations>
                 </targetParams>
@@ -2208,20 +2212,22 @@
 	<ThingDef ParentName="BaseBullet">
 		<defName>SSR_Projectile_Electromagnetic_500mmHvGun</defName>
 		<label>500mm重型电磁炮炮弹</label>
-		<thingClass>Projectile_Explosive</thingClass>
+		<thingClass>SSR.Combat.Offscreen.Projectile_RailgunPenetrating</thingClass>
 		<graphicData>
 			<texPath>Things/Projectile/Bullet_Big</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 			<drawSize>3.5</drawSize>
 		</graphicData>
 		<projectile>
-			<flyOverhead>true</flyOverhead>
 			<damageDef>SSR_Bomb</damageDef>
 			<damageAmountBase>800</damageAmountBase>
-			<explosionRadius>5.6</explosionRadius>
+			<flyOverhead>false</flyOverhead>
 			<speed>1200</speed>
 		</projectile>
 		<modExtensions>
+			<li Class="SSR.Combat.Offscreen.RailgunShellSettings">
+				<prefabPath>Assets/SSR/Railguns/Game/RailgunShell500.prefab</prefabPath>
+			</li>
 			<li Class="HJ_SSR.Weapons.ModExtension_PenetratingProjectile">
 				<!-- 穿透造成的伤害系数 即 Damage = 基础伤害 * 0.5 -->
 				<overpenDamageMulti>0.95</overpenDamageMulti>
@@ -2419,19 +2425,19 @@
 					<flamePath>Assets/SSR/Missiles/Game/MissileFlame.prefab</flamePath>
 					<smokePath>Assets/SSR/Missiles/Game/MissileSmoke.prefab</smokePath>
 					<flameWidth>0.18</flameWidth>
-					<flameLength>0.45</flameLength>
-					<flameBrightness>1.35</flameBrightness>
-					<ignitionFlareMultiplier>2</ignitionFlareMultiplier>
-					<ignitionFlareSeconds>0.22</ignitionFlareSeconds>
-					<flameTrailSeconds>0.18</flameTrailSeconds>
-					<flameTrailLength>2.3</flameTrailLength>
-					<flameGasSpeed>5</flameGasSpeed>
-					<flameTurbulence>0.065</flameTurbulence>
+					<flameLength>0.72</flameLength>
+					<flameBrightness>1.5</flameBrightness>
+					<ignitionFlareMultiplier>1.7</ignitionFlareMultiplier>
+					<ignitionFlareSeconds>0.18</ignitionFlareSeconds>
+					<flameTrailSeconds>0.20</flameTrailSeconds>
+					<flameTrailLength>2.8</flameTrailLength>
+					<flameGasSpeed>7</flameGasSpeed>
+					<flameTurbulence>0.035</flameTurbulence>
 					<smokeSpacing>0.2</smokeSpacing>
-					<smokeLifetime>1.5</smokeLifetime>
-					<smokeStartSize>0.18</smokeStartSize>
-					<smokeEndSize>0.6</smokeEndSize>
-					<smokeOpacity>0.2</smokeOpacity>
+					<smokeLifetime>1.9</smokeLifetime>
+					<smokeStartSize>0.16</smokeStartSize>
+					<smokeEndSize>0.92</smokeEndSize>
+					<smokeOpacity>0.36</smokeOpacity>
 				</exhaust>
 				<openingTicks>24</openingTicks>
 				<doors>
@@ -2870,7 +2876,8 @@
 			</li>
 			<li Class="SSR.Combat.Offscreen.SiloSettings">
 				<prefabPath>Assets/SSR/Missiles/Game/MissileSiloGame.prefab</prefabPath>
-				<missilePath>Assets/SSR/Turrets/T1/Prefabs/T1Missile.prefab</missilePath>
+				<missilePath>Assets/SSR/Missiles/Game/SiloMissile.prefab</missilePath>
+				<rearStagePath>Assets/SSR/Missiles/Game/SiloRearStage.prefab</rearStagePath>
 				<layoutPath>Assets/SSR/Missiles/Game/SiloLayout.json</layoutPath>
 				<flamePath>Assets/SSR/Missiles/Game/MissileFlame.prefab</flamePath>
 				<smokePath>Assets/SSR/Missiles/Game/MissileSmoke.prefab</smokePath>
@@ -2882,7 +2889,7 @@
 				<ejectionSpeed>14</ejectionSpeed>
 				<ejectionClearance>0.12</ejectionClearance>
 				<ejectionGravity>26</ejectionGravity>
-				<ignitionDelay>0.93</ignitionDelay>
+				<ignitionDelay>1.405714</ignitionDelay>
 				<!--离井气流产生短时侧向及旋转冲量，速度范围使用原版 FloatRange 格式。-->
 				<ejectionDisturbanceSeconds>0.08</ejectionDisturbanceSeconds>
 				<coldLateralSpeedRange>0.12~0.35</coldLateralSpeedRange>
@@ -2890,24 +2897,25 @@
 				<ignitionAcceleration>72</ignitionAcceleration>
 				<ignitionRampSeconds>0.06</ignitionRampSeconds>
 				<ascentHeight>20</ascentHeight>
-				<flameWidth>1</flameWidth>
+				<flameWidth>0.28</flameWidth>
 				<flameLength>1.1</flameLength>
-				<flameBrightness>1.35</flameBrightness>
-				<ignitionFlareMultiplier>2</ignitionFlareMultiplier>
-				<ignitionFlareSeconds>0.22</ignitionFlareSeconds>
+				<flameBrightness>1.5</flameBrightness>
+				<ignitionFlareMultiplier>1.7</ignitionFlareMultiplier>
+				<ignitionFlareSeconds>0.18</ignitionFlareSeconds>
 				<!--短喷焰连接历史喷口形成的热尾流，长度和扰动使用格，寿命使用秒。-->
-				<flameTrailSeconds>0.18</flameTrailSeconds>
-				<flameTrailLength>4.6</flameTrailLength>
-				<flameGasSpeed>5</flameGasSpeed>
-				<flameTurbulence>0.13</flameTurbulence>
+				<flameTrailSeconds>0.22</flameTrailSeconds>
+				<flameTrailLength>3.8</flameTrailLength>
+				<flameGasSpeed>10</flameGasSpeed>
+				<flameTurbulence>0.045</flameTurbulence>
 				<!--烟团按飞行距离补点，速度增加时仍保持连续，逐渐扩散消散。-->
-				<smokeSpacing>0.4</smokeSpacing>
-				<smokeLifetime>1.5</smokeLifetime>
-				<smokeStartSize>0.65</smokeStartSize>
-				<smokeEndSize>1.8</smokeEndSize>
-				<smokeOpacity>0.2</smokeOpacity>
-				<!--全程继承上升出口速度，沿转向及俯冲路径持续加速，不使用转弯限速。-->
-				<flightAcceleration>7</flightAcceleration>
+				<smokeSpacing>0.22</smokeSpacing>
+				<smokeLifetime>2.1</smokeLifetime>
+				<smokeStartSize>0.25</smokeStartSize>
+				<smokeEndSize>1.4</smokeEndSize>
+				<smokeOpacity>0.34</smokeOpacity>
+				<!--爬升结束时抛弃后段，主体保持余速前进，再从新喷口点火加速。-->
+				<stageIgnitionDelay>0.14</stageIgnitionDelay>
+				<flightAcceleration>96</flightAcceleration>
 				<turnRadiusFraction>0.46</turnRadiusFraction>
 				<!--近距离时半径限制在水平航程的 48% 内，保持朝锁定点单向转弯。-->
 				<minimumTurnRadius>18</minimumTurnRadius>
