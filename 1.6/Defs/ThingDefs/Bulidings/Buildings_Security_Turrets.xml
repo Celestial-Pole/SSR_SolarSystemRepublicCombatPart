@@ -2968,7 +2968,7 @@
 		<projectile>
 			<damageDef>SSR_Bomb</damageDef>
 			<damageAmountBase>300</damageAmountBase>
-			<explosionRadius>2.5</explosionRadius>
+			<explosionRadius>5.5</explosionRadius>
 			<explosionDelay>0</explosionDelay>
 			<speed>300</speed>
 			<flyOverhead>true</flyOverhead>
