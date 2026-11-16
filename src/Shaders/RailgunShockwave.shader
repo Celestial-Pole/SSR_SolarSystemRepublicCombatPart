@@ -100,8 +100,8 @@ Shader "SSR/Railguns/Shockwave"
                 //两侧位移始终朝外，脉冲结束后只单向松弛，不反复折返。
                 float stretch = sign(x)*(kick*(.8+cloud*.25)+heat*(.5+cloud));
                 float shear = (fine-.5)*heat*.35;
-                //折射位移与外侧柔边的覆盖宽度分开匹配。
-                float strength = clamp(halfWidth*.15,4,12)*fade*ends;
+                //折射位移随可见宽度缩放，并限制远近缩放时的强度。
+                float strength = clamp(halfWidth*.13,5.5,17)*fade*ends;
                 float2 pixel = rcp(_ScreenParams.xy);
                 float2 offset = (-across*stretch+tangent*shear)*strength*pixel;
                 float2 border = pixel*.5;
