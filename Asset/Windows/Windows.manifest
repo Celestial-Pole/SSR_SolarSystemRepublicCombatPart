@@ -1,7 +1,0 @@
-ManifestFileVersion: 0
-CRC: 3000282074
-AssetBundleManifest:
-  AssetBundleInfos:
-    Info_0:
-      Name: ssr_combat_windows
-      Dependencies: {}
