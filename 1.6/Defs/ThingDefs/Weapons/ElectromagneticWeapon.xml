@@ -322,7 +322,7 @@
 		<projectile>
 			<damageDef>Bullet</damageDef>
 			<damageAmountBase>10</damageAmountBase>
-			<armorPenetrationBase>0.35</armorPenetrationBase>
+			<armorPenetrationBase>0.3</armorPenetrationBase>
 			<speed>150</speed>
 		</projectile>
 		<modExtensions>
@@ -458,7 +458,7 @@
 		<projectile>
 			<damageDef>Bullet</damageDef>
 			<damageAmountBase>5</damageAmountBase>
-			<armorPenetrationBase>0.55</armorPenetrationBase>
+			<armorPenetrationBase>0.35</armorPenetrationBase>
 			<speed>150</speed>
 		</projectile>
 		<modExtensions>
@@ -835,7 +835,7 @@
 		<projectile>
 			<damageDef>Bullet</damageDef>
 			<damageAmountBase>40</damageAmountBase>
-			<armorPenetrationBase>0.9</armorPenetrationBase>
+			<armorPenetrationBase>0.7</armorPenetrationBase>
 			<stoppingPower>3</stoppingPower>
 			<speed>300</speed>
 		</projectile>

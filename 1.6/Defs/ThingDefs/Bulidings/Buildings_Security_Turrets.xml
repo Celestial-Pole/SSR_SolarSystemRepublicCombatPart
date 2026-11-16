@@ -81,8 +81,8 @@
 				<texPath>Things/Building/Security/SentryGun/SentryGun_MenuIcon</texPath>
 				<graphicClass>Graphic_Single</graphicClass>
 				<shaderType>EdgeDetect</shaderType>
-				<drawSize>(1.933478,1.933478)</drawSize>
-				<drawOffset>(0,0,0.332613)</drawOffset>
+				<drawSize>(1.933551,1.933551)</drawSize>
+				<drawOffset>(0,0,0.332624)</drawOffset>
 			</blueprintGraphicData>
 			<combatPower>45</combatPower><!-- 战斗力与拾荒者相同 -->
 			<ai_combatDangerous>true</ai_combatDangerous>
@@ -100,7 +100,6 @@
 		<comps>
 			<li Class="CompProperties_Forbiddable" />
 			<li Class="CompProperties_Flickable" />
-			<li Class="CompProperties_Breakdownable" />
 			<li Class="CompProperties_Refuelable">
 				<fuelLabel>射击直到弹药耗尽</fuelLabel>
 				<fuelGizmoLabel>剩余弹药量</fuelGizmoLabel>
@@ -228,8 +227,8 @@
 				<texPath>Things/Building/Security/SentryGun/PortableSentryGun_MenuIcon</texPath>
 				<graphicClass>Graphic_Single</graphicClass>
 				<shaderType>EdgeDetect</shaderType>
-				<drawSize>(1.626686,1.626686)</drawSize>
-				<drawOffset>(0,0,0.179545)</drawOffset>
+				<drawSize>(1.627789,1.627789)</drawSize>
+				<drawOffset>(0,0,0.180043)</drawOffset>
 			</blueprintGraphicData>
 			<combatPower>45</combatPower><!-- 战斗力与拾荒者相同 -->
 			<ai_combatDangerous>true</ai_combatDangerous>
@@ -247,7 +246,6 @@
 		<comps>
 			<li Class="CompProperties_Forbiddable" />
 			<li Class="CompProperties_Flickable" />
-			<li Class="CompProperties_Breakdownable" />
 			<li Class="CompProperties_Refuelable">
 				<fuelLabel>射击直到弹药耗尽</fuelLabel>
 				<fuelGizmoLabel>剩余弹药量</fuelGizmoLabel>
@@ -429,8 +427,8 @@
 				<texPath>Things/Building/Security/ElectromagneticSentryGun/ElectromagneticSentryGun_MenuIcon</texPath>
 				<graphicClass>Graphic_Single</graphicClass>
 				<shaderType>EdgeDetect</shaderType>
-				<drawSize>(2.166866,2.166866)</drawSize>
-				<drawOffset>(0,0,0.373015)</drawOffset>
+				<drawSize>(1.934013,1.934013)</drawSize>
+				<drawOffset>(0,0,0.332931)</drawOffset>
 			</blueprintGraphicData>
 			<combatPower>60</combatPower>
 			<ai_combatDangerous>true</ai_combatDangerous>
@@ -449,7 +447,6 @@
 		<comps>
 			<li Class="CompProperties_Forbiddable" />
 			<li Class="CompProperties_Flickable" />
-			<li Class="CompProperties_Breakdownable" />
 			<li Class="CompProperties_Refuelable">
 				<fuelLabel>射击直到弹药耗尽</fuelLabel>
 				<fuelGizmoLabel>剩余弹药量</fuelGizmoLabel>
@@ -578,8 +575,8 @@
 				<texPath>Things/Building/Security/ElectromagneticSentryGun/PortableElectromagneticSentryGun_MenuIcon</texPath>
 				<graphicClass>Graphic_Single</graphicClass>
 				<shaderType>EdgeDetect</shaderType>
-				<drawSize>(1.86395,1.86395)</drawSize>
-				<drawOffset>(0,0,0.216832)</drawOffset>
+				<drawSize>(1.636453,1.636453)</drawSize>
+				<drawOffset>(0,0,0.190367)</drawOffset>
 			</blueprintGraphicData>
 			<combatPower>60</combatPower>
 			<ai_combatDangerous>true</ai_combatDangerous>
@@ -598,7 +595,6 @@
 		<comps>
 			<li Class="CompProperties_Forbiddable" />
 			<li Class="CompProperties_Flickable" />
-			<li Class="CompProperties_Breakdownable" />
 			<li Class="CompProperties_Refuelable">
 				<fuelLabel>射击直到弹药耗尽</fuelLabel>
 				<fuelGizmoLabel>剩余弹药量</fuelGizmoLabel>
@@ -817,8 +813,8 @@
 				<texPath>Things/Building/Security/30mmElectromagneticCIWS/ElectromagneticCIWS_MenuIcon</texPath>
 				<graphicClass>Graphic_Single</graphicClass>
 				<shaderType>EdgeDetect</shaderType>
-				<drawSize>(4.198739,4.198739)</drawSize>
-				<drawOffset>(0,0,0.959404)</drawOffset>
+				<drawSize>(4.194324,4.194324)</drawSize>
+				<drawOffset>(0,0,0.957269)</drawOffset>
 			</blueprintGraphicData>
 			<combatPower>45</combatPower><!-- 战斗力与拾荒者相同 -->
 			<ai_combatDangerous>true</ai_combatDangerous>
@@ -837,7 +833,6 @@
 		<comps>
 			<li Class="CompProperties_Forbiddable" />
 			<li Class="CompProperties_Flickable" />
-			<li Class="CompProperties_Breakdownable" />
 			<li Class="CompProperties_Refuelable">
 				<fuelLabel>射击直到弹药耗尽</fuelLabel>
 				<fuelGizmoLabel>剩余弹药量</fuelGizmoLabel>
@@ -894,7 +889,7 @@
 				<radarPaths>
 					<li>Transform_Y/Root/Transform_X/Transform_Z/TurretTop/RadarPitch</li>
 				</radarPaths>
-				<yawRotationSpeed>360</yawRotationSpeed>
+				<yawRotationSpeed>450</yawRotationSpeed>
 				<pitchRotationSpeed>120</pitchRotationSpeed>
 				<shootingOrigine>Transform_Y/Root/Transform_X/Transform_Z/TurretTop/MainGun/FirePoint</shootingOrigine>
 				<rootTransform>Transform_Y/Root</rootTransform>
@@ -1080,7 +1075,6 @@
 		<comps>
 			<li Class="CompProperties_Forbiddable" />
 			<li Class="CompProperties_Flickable" />
-			<li Class="CompProperties_Breakdownable" />
 			<li Class="CompProperties_Refuelable">
 				<fuelLabel>射击直到弹药耗尽</fuelLabel>
 				<fuelGizmoLabel>剩余弹药量</fuelGizmoLabel>
@@ -1139,7 +1133,7 @@
 				<radarPaths>
 					<li>Root/Yaw/RadarPitch</li>
 				</radarPaths>
-				<yawRotationSpeed>90</yawRotationSpeed>
+				<yawRotationSpeed>120</yawRotationSpeed>
 				<pitchRotationSpeed>60</pitchRotationSpeed>
 				<shootingOrigine>Root/Yaw/Pitch/Recoil/FirePoint</shootingOrigine>
 				<rootTransform>Root</rootTransform>
@@ -1311,8 +1305,8 @@
 				<texPath>Things/Building/Security/ElectromagneticGun-missileIntegratedAirDefenseWeaponSystem/Gun-missileIntegratedAirDefenseWeaponSystem_MenuIcon</texPath>
 				<graphicClass>Graphic_Single</graphicClass>
 				<shaderType>EdgeDetect</shaderType>
-				<drawSize>(6.074977,6.074977)</drawSize>
-				<drawOffset>(0,0,0.071021)</drawOffset>
+				<drawSize>(5.967422,5.967422)</drawSize>
+				<drawOffset>(0,0,0.127496)</drawOffset>
 			</blueprintGraphicData>
 			<combatPower>45</combatPower>
 			<ai_combatDangerous>true</ai_combatDangerous>
@@ -1331,7 +1325,6 @@
 		<comps>
 			<li Class="CompProperties_Forbiddable" />
 			<li Class="CompProperties_Flickable" />
-			<li Class="CompProperties_Breakdownable" />
 			<li Class="CompProperties_Refuelable">
 				<fuelLabel>射击直到弹药耗尽</fuelLabel>
 				<fuelGizmoLabel>剩余弹药量</fuelGizmoLabel>
@@ -1391,8 +1384,11 @@
 				<idleYaw>0</idleYaw>
 				<idlePitch>0</idlePitch>
 				<targeting>SSR_TurretTargeting_CombinedAirDefense</targeting>
-				<yawRotationSpeed>360</yawRotationSpeed>
+				<yawRotationSpeed>450</yawRotationSpeed>
 				<pitchRotationSpeed>120</pitchRotationSpeed>
+				<radarPaths>
+					<li>Root/Yaw/SensorRight</li>
+				</radarPaths>
 				<shootingOrigine>Root/Yaw/Pitch/FirePoint</shootingOrigine>
 				<rootTransform>Root</rootTransform>
 				<yawPath>Root/Yaw</yawPath>
@@ -1410,8 +1406,12 @@
 				<missileRange>65</missileRange>
 				<launchIntervalTicks>30</launchIntervalTicks>
 				<reloadTicks>600</reloadTicks>
-				<!--导弹筒只随炮塔偏航，发射前仅检查水平方位。-->
+				<!--左右导弹架按目标高度同步俯仰，独立于近防炮；转速和限位沿用瞄准配置。-->
 				<missileAimPointPath>Root/Yaw/MissileRack/AimPoint</missileAimPointPath>
+				<missilePitchPaths>
+					<li>Root/Yaw/MissileRack/RackLeft</li>
+					<li>Root/Yaw/MissileRack/RackRight</li>
+				</missilePitchPaths>
 				<!--冷弹射沿固定筒口方向从静止加速；离筒净空为格，重力为格每平方秒。-->
 				<ejectionSpeed>8</ejectionSpeed>
 				<ejectionClearance>0.12</ejectionClearance>
@@ -1442,24 +1442,24 @@
 						<degreesPerSecond>60</degreesPerSecond>
 					</li>
 				</radars>
-				<!--喷焰和烟迹复用导弹井资源，按实际喷口历史生成弯曲尾迹。-->
+				<!--白热焰芯独立发光，暖灰烟迹按实际喷口历史扩散。-->
 				<exhaust>
 					<flamePath>Assets/SSR/Missiles/Game/MissileFlame.prefab</flamePath>
 					<smokePath>Assets/SSR/Missiles/Game/MissileSmoke.prefab</smokePath>
-					<flameWidth>0.35</flameWidth>
-					<flameLength>0.55</flameLength>
-					<flameBrightness>1.35</flameBrightness>
-					<ignitionFlareMultiplier>2</ignitionFlareMultiplier>
-					<ignitionFlareSeconds>0.22</ignitionFlareSeconds>
+					<flameWidth>0.34</flameWidth>
+					<flameLength>0.78</flameLength>
+					<flameBrightness>1.5</flameBrightness>
+					<ignitionFlareMultiplier>1.4</ignitionFlareMultiplier>
+					<ignitionFlareSeconds>0.14</ignitionFlareSeconds>
 					<flameTrailSeconds>0.18</flameTrailSeconds>
-					<flameTrailLength>2.3</flameTrailLength>
-					<flameGasSpeed>5</flameGasSpeed>
-					<flameTurbulence>0.065</flameTurbulence>
-					<smokeSpacing>0.2</smokeSpacing>
-					<smokeLifetime>1.5</smokeLifetime>
-					<smokeStartSize>0.3</smokeStartSize>
-					<smokeEndSize>0.9</smokeEndSize>
-					<smokeOpacity>0.2</smokeOpacity>
+					<flameTrailLength>2.7</flameTrailLength>
+					<flameGasSpeed>7</flameGasSpeed>
+					<flameTurbulence>0.035</flameTurbulence>
+					<smokeSpacing>0.22</smokeSpacing>
+					<smokeLifetime>1.9</smokeLifetime>
+					<smokeStartSize>0.24</smokeStartSize>
+					<smokeEndSize>1.15</smokeEndSize>
+					<smokeOpacity>0.36</smokeOpacity>
 				</exhaust>
 			</li>
 		</modExtensions>
@@ -1635,8 +1635,8 @@
 				<texPath>Things/Building/Security/145mmLtElectromagneticGun/145mmLtElectromagneticGun_MenuIcon</texPath>
 				<graphicClass>Graphic_Single</graphicClass>
 				<shaderType>EdgeDetect</shaderType>
-				<drawSize>(6.127889,6.127889)</drawSize>
-				<drawOffset>(0,0,0.913953)</drawOffset>
+				<drawSize>(6.127886,6.127886)</drawSize>
+				<drawOffset>(0,0,0.913952)</drawOffset>
 			</blueprintGraphicData>
 			<combatPower>45</combatPower>
 			<ai_combatDangerous>true</ai_combatDangerous>
@@ -1671,8 +1671,8 @@
 				<leveledPrefabPaths>
 					<li>Assets/SSR/Prefab/TurretT1_3X.prefab</li>
 				</leveledPrefabPaths>
-				<modelRootPath>Transform_Y/Root</modelRootPath>
-				<recoilTransformPath>Transform_Y/Root/Transform_X/Transform_Z/TurretTop/MainGun</recoilTransformPath>
+				<modelRootPath>Root</modelRootPath>
+				<recoilTransformPath>Root/Yaw/Pitch</recoilTransformPath>
 				<recoilClipName>Railgun145Recoil</recoilClipName>
 			</li>
 		</comps>
@@ -1692,19 +1692,19 @@
                 <idlePitch>0</idlePitch>
                 <targeting>SSR_TurretTargeting_Ground</targeting>
 				<radarPaths>
-					<li>Transform_Y/Root/Transform_X/Transform_Z/TurretTop/RadarPitch</li>
+					<li>Root/Yaw/RadarPitch</li>
 				</radarPaths>
-				<yawRotationSpeed>20</yawRotationSpeed>
+				<yawRotationSpeed>60</yawRotationSpeed>
 				<pitchRotationSpeed>5</pitchRotationSpeed>
-				<shootingOrigine>Transform_Y/Root/Transform_X/Transform_Z/TurretTop/MainGun/FirePoint</shootingOrigine>
-				<rootTransform>Transform_Y/Root</rootTransform>
-				<yawPath>Transform_Y/Root/Transform_X/Transform_Z/TurretTop</yawPath>
-				<pitchPath>Transform_Y/Root/Transform_X/Transform_Z/TurretTop/MainGun</pitchPath>
-				<yawRotationAixe>(0, 0, 1)</yawRotationAixe>
-				<pitchRotationAixe>(0, 1, 0)</pitchRotationAixe>
+				<shootingOrigine>Root/Yaw/Pitch/RecoilInner/FirePoint</shootingOrigine>
+				<rootTransform>Root</rootTransform>
+				<yawPath>Root/Yaw</yawPath>
+				<pitchPath>Root/Yaw/Pitch</pitchPath>
+				<yawRotationAixe>(0, 1, 0)</yawRotationAixe>
+				<pitchRotationAixe>(1, 0, 0)</pitchRotationAixe>
 				<!--局部负角为上仰，最大仰角 45 度；下俯限制为 5 度。-->
 				<pitchRotationRange>(315, 5)</pitchRotationRange>
-				<shootingOrigineForward>(1, 0, 0)</shootingOrigineForward>
+				<shootingOrigineForward>(0, 0, 1)</shootingOrigineForward>
 			</li>
 		</modExtensions>
 	</ThingDef>
@@ -1722,7 +1722,7 @@
 			<AccuracyShort>1</AccuracyShort>
 			<AccuracyMedium>1</AccuracyMedium>
 			<AccuracyLong>1</AccuracyLong>
-			<RangedWeapon_Cooldown>4.8</RangedWeapon_Cooldown>
+			<RangedWeapon_Cooldown>3</RangedWeapon_Cooldown>
 			<DeteriorationRate>0</DeteriorationRate>
 			<Mass>5</Mass>
 			<Flammability>0</Flammability>
@@ -1754,12 +1754,14 @@
 		</graphicData>
 		<thingClass>SSR.Combat.Offscreen.Projectile_RailgunPenetrating</thingClass>
 		<projectile>
-			<damageDef>BombSuper</damageDef>
-			<damageAmountBase>400</damageAmountBase>
-			<explosionRadius>0.9</explosionRadius>
+			<damageDef>SSR_Bomb</damageDef>
+			<damageAmountBase>200</damageAmountBase>
 			<speed>800</speed>
 		</projectile>
 		<modExtensions>
+			<li Class="SSR.Combat.Offscreen.RailgunShellSettings">
+				<prefabPath>Assets/SSR/Railguns/Game/RailgunShell145.prefab</prefabPath>
+			</li>
 			<li Class="HJ_SSR.Weapons.ModExtension_PenetratingProjectile">
 				<!-- 穿透造成的伤害系数 即 Damage = 基础伤害 * 0.5 -->
 				<overpenDamageMulti>0.85</overpenDamageMulti>
@@ -1894,8 +1896,8 @@
 				<leveledPrefabPaths>
 					<li>Assets/SSR/Prefab/TurretT1_5X.prefab</li>
 				</leveledPrefabPaths>
-				<modelRootPath>Transform_Y/Root</modelRootPath>
-				<recoilTransformPath>Transform_Y/Root/Transform_X/Transform_Z/TurretTop/MainGun</recoilTransformPath>
+				<modelRootPath>Root</modelRootPath>
+				<recoilTransformPath>Root/Yaw/Pitch</recoilTransformPath>
 				<recoilClipName>Railgun300Recoil</recoilClipName>
 			</li>
 		</comps>
@@ -1915,19 +1917,19 @@
                 <idlePitch>0</idlePitch>
                 <targeting>SSR_TurretTargeting_IndirectGround</targeting>
 				<radarPaths>
-					<li>Transform_Y/Root/Transform_X/Transform_Z/TurretTop/RadarPitch</li>
+					<li>Root/Yaw/RadarPitch</li>
 				</radarPaths>
-				<yawRotationSpeed>15</yawRotationSpeed>
+				<yawRotationSpeed>50</yawRotationSpeed>
 				<pitchRotationSpeed>5</pitchRotationSpeed>
-				<shootingOrigine>Transform_Y/Root/Transform_X/Transform_Z/TurretTop/MainGun/FirePoint</shootingOrigine>
-				<rootTransform>Transform_Y/Root</rootTransform>
-				<yawPath>Transform_Y/Root/Transform_X/Transform_Z/TurretTop</yawPath>
-				<pitchPath>Transform_Y/Root/Transform_X/Transform_Z/TurretTop/MainGun</pitchPath>
-				<yawRotationAixe>(0, 0, 1)</yawRotationAixe>
-				<pitchRotationAixe>(0, 1, 0)</pitchRotationAixe>
+				<shootingOrigine>Root/Yaw/Pitch/RecoilInner/FirePoint</shootingOrigine>
+				<rootTransform>Root</rootTransform>
+				<yawPath>Root/Yaw</yawPath>
+				<pitchPath>Root/Yaw/Pitch</pitchPath>
+				<yawRotationAixe>(0, 1, 0)</yawRotationAixe>
+				<pitchRotationAixe>(1, 0, 0)</pitchRotationAixe>
 				<!--局部负角为上仰，最大仰角 45 度；下俯限制为 5 度。-->
 				<pitchRotationRange>(315, 5)</pitchRotationRange>
-				<shootingOrigineForward>(1, 0, 0)</shootingOrigineForward>
+				<shootingOrigineForward>(0, 0, 1)</shootingOrigineForward>
 			</li>
 		</modExtensions>
 	</ThingDef>
@@ -1941,11 +1943,11 @@
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
 		<statBases>
-			<AccuracyTouch>0.2</AccuracyTouch>
-			<AccuracyShort>0.5</AccuracyShort>
-			<AccuracyMedium>0.8</AccuracyMedium>
+			<AccuracyTouch>1</AccuracyTouch>
+			<AccuracyShort>1</AccuracyShort>
+			<AccuracyMedium>1</AccuracyMedium>
 			<AccuracyLong>1</AccuracyLong>
-			<RangedWeapon_Cooldown>4.8</RangedWeapon_Cooldown>
+			<RangedWeapon_Cooldown>4</RangedWeapon_Cooldown>
 			<DeteriorationRate>0</DeteriorationRate>
 			<Mass>5</Mass>
 			<Flammability>0</Flammability>
@@ -1964,8 +1966,8 @@
 				<soundCastTail>GunTail_Heavy</soundCastTail>
 				<muzzleFlashScale>0</muzzleFlashScale>
 				<consumeFuelPerShot>1</consumeFuelPerShot>
-				<!-- 半格及以下不触发原版额外强制散布，仍按直瞄命中流程发射爆炸弹。 -->
-				<forcedMissRadius>0.1</forcedMissRadius>
+				<!--穿透弹沿炮口方向发射，强制散布半径为零。-->
+				<forcedMissRadius>0</forcedMissRadius>
                 <targetParams>
                     <canTargetLocations>true</canTargetLocations>
                 </targetParams>
@@ -1976,20 +1978,22 @@
 	<ThingDef ParentName="BaseBullet">
 		<defName>SSR_Projectile_Electromagnetic_300mmMdGun</defName>
 		<label>300mm中型电磁炮炮弹</label>
-		<thingClass>Projectile_Explosive</thingClass>
+		<thingClass>SSR.Combat.Offscreen.Projectile_RailgunPenetrating</thingClass>
 		<graphicData>
 			<texPath>Things/Projectile/Bullet_Big</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 			<drawSize>2.5</drawSize>
 		</graphicData>
 		<projectile>
-			<flyOverhead>true</flyOverhead>
-			<damageDef>BombSuper</damageDef>
-			<damageAmountBase>800</damageAmountBase>
-			<explosionRadius>1.8</explosionRadius>
+			<damageDef>SSR_Bomb</damageDef>
+			<damageAmountBase>400</damageAmountBase>
+			<flyOverhead>false</flyOverhead>
 			<speed>800</speed>
 		</projectile>
 		<modExtensions>
+			<li Class="SSR.Combat.Offscreen.RailgunShellSettings">
+				<prefabPath>Assets/SSR/Railguns/Game/RailgunShell300.prefab</prefabPath>
+			</li>
 			<li Class="HJ_SSR.Weapons.ModExtension_PenetratingProjectile">
 				<!-- 穿透造成的伤害系数 即 Damage = 基础伤害 * 0.5 -->
 				<overpenDamageMulti>0.9</overpenDamageMulti>
@@ -2089,8 +2093,8 @@
 				<texPath>Things/Building/Security/500mmHvElectromagneticGun/500mmHvElectromagneticGun_MenuIcon</texPath>
 				<graphicClass>Graphic_Single</graphicClass>
 				<shaderType>EdgeDetect</shaderType>
-				<drawSize>(16.52957,16.52957)</drawSize>
-				<drawOffset>(0,0,2.972677)</drawOffset>
+				<drawSize>(16.49912,16.49912)</drawSize>
+				<drawOffset>(0,0,2.948051)</drawOffset>
 			</blueprintGraphicData>
 			<combatPower>45</combatPower>
 			<ai_combatDangerous>true</ai_combatDangerous>
@@ -2148,7 +2152,7 @@
 				<radarPaths>
 					<li>Transform_Y/Root/Yaw/RadarPitch</li>
 				</radarPaths>
-				<yawRotationSpeed>10</yawRotationSpeed>
+				<yawRotationSpeed>40</yawRotationSpeed>
 				<pitchRotationSpeed>5</pitchRotationSpeed>
 				<shootingOrigine>Transform_Y/Root/Yaw/Pitch/Recoil/FirePoint</shootingOrigine>
 				<rootTransform>Transform_Y/Root</rootTransform>
@@ -2196,8 +2200,8 @@
 				<soundCastTail>GunTail_Heavy</soundCastTail>
 				<muzzleFlashScale>0</muzzleFlashScale>
 				<consumeFuelPerShot>1</consumeFuelPerShot>
-				<!-- 半格及以下不触发原版额外强制散布，仍按直瞄命中流程发射爆炸弹。 -->
-				<forcedMissRadius>0.1</forcedMissRadius>
+				<!--穿透弹沿炮口方向发射，强制散布半径为零。-->
+				<forcedMissRadius>0</forcedMissRadius>
                 <targetParams>
                     <canTargetLocations>true</canTargetLocations>
                 </targetParams>
@@ -2208,20 +2212,22 @@
 	<ThingDef ParentName="BaseBullet">
 		<defName>SSR_Projectile_Electromagnetic_500mmHvGun</defName>
 		<label>500mm重型电磁炮炮弹</label>
-		<thingClass>Projectile_Explosive</thingClass>
+		<thingClass>SSR.Combat.Offscreen.Projectile_RailgunPenetrating</thingClass>
 		<graphicData>
 			<texPath>Things/Projectile/Bullet_Big</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 			<drawSize>3.5</drawSize>
 		</graphicData>
 		<projectile>
-			<flyOverhead>true</flyOverhead>
-			<damageDef>BombSuper</damageDef>
-			<damageAmountBase>1600</damageAmountBase>
-			<explosionRadius>5.6</explosionRadius>
+			<damageDef>SSR_Bomb</damageDef>
+			<damageAmountBase>800</damageAmountBase>
+			<flyOverhead>false</flyOverhead>
 			<speed>1200</speed>
 		</projectile>
 		<modExtensions>
+			<li Class="SSR.Combat.Offscreen.RailgunShellSettings">
+				<prefabPath>Assets/SSR/Railguns/Game/RailgunShell500.prefab</prefabPath>
+			</li>
 			<li Class="HJ_SSR.Weapons.ModExtension_PenetratingProjectile">
 				<!-- 穿透造成的伤害系数 即 Damage = 基础伤害 * 0.5 -->
 				<overpenDamageMulti>0.95</overpenDamageMulti>
@@ -2274,7 +2280,7 @@
 	<ThingDef ParentName="SSR_BuildingBase_Security">
 		<defName>SSR_Turret_RocketArtillery</defName>
 		<label>远程多管火箭炮</label>
-		<description>十管远程火箭炮。发射架先旋转并俯仰瞄准目标，再开盖；完全打开后每隔 12 刻发射一枚筒内实体火箭，每轮最多发射 10 枚，离筒后点火制导。目标失效后可用余弹攻击下一目标；弹药耗尽后等待整组补满，停电暂停补充。</description>
+		<description>十管远程火箭炮。瞄准后每隔 12 刻发射一枚筒内实体火箭，每轮最多发射 10 枚，离筒后点火制导。火箭出筒时逐个顶飞筒盖，盖子翻滚落地，整组补满后自动复位。目标失效后可用余弹攻击下一目标；弹药耗尽后等待整组补满，停电暂停补充。</description>
 		<thingClass>SSR.Combat.Offscreen.Building_TubeMissileTurret</thingClass>
 		<drawerType>MapMeshAndRealTime</drawerType>
 		<graphicData>
@@ -2321,7 +2327,7 @@
 				<texPath>Things/Building/Security/RocketArtillery/RocketArtillery_MenuIcon</texPath>
 				<graphicClass>Graphic_Single</graphicClass>
 				<shaderType>EdgeDetect</shaderType>
-				<drawSize>(4.351972,4.351972)</drawSize>
+				<drawSize>(4.351971,4.351971)</drawSize>
 				<drawOffset>(0,0,0.068197)</drawOffset>
 			</blueprintGraphicData>
 			<combatPower>130</combatPower>
@@ -2353,7 +2359,7 @@
 					<li>SSR_Animate_Prefab_Windows_Combat</li>
 				</assetDefs>
 				<leveledPrefabPaths>
-					<li>Assets/SSR/Turrets/T1/Game/RocketArtillery.prefab</li>
+					<li>Assets/SSR/Turrets/T1/Game/RocketArtillery_Rigged.prefab</li>
 				</leveledPrefabPaths>
 				<modelRootPath>Root</modelRootPath>
 			</li>
@@ -2376,7 +2382,7 @@
 				<idleYaw>0</idleYaw>
 				<idlePitch>0</idlePitch>
 				<targeting>SSR_TurretTargeting_IndirectGround</targeting>
-				<yawRotationSpeed>60</yawRotationSpeed>
+				<yawRotationSpeed>120</yawRotationSpeed>
 				<pitchRotationSpeed>45</pitchRotationSpeed>
 				<shootingOrigine>Root/Yaw/Pitch/FirePoint</shootingOrigine>
 				<rootTransform>Root</rootTransform>
@@ -2392,6 +2398,7 @@
 				<missileProjectile>SSR_Projectile_RocketArtillery</missileProjectile>
 				<reloadTicks>900</reloadTicks>
 				<allowPartialSalvo>true</allowPartialSalvo>
+				<ejectDoors>true</ejectDoors>
 				<ejectionSpeed>12</ejectionSpeed>
 				<ejectionClearance>0.12</ejectionClearance>
 				<ejectionGravity>9.81</ejectionGravity>
@@ -2418,19 +2425,19 @@
 					<flamePath>Assets/SSR/Missiles/Game/MissileFlame.prefab</flamePath>
 					<smokePath>Assets/SSR/Missiles/Game/MissileSmoke.prefab</smokePath>
 					<flameWidth>0.18</flameWidth>
-					<flameLength>0.45</flameLength>
-					<flameBrightness>1.35</flameBrightness>
-					<ignitionFlareMultiplier>2</ignitionFlareMultiplier>
-					<ignitionFlareSeconds>0.22</ignitionFlareSeconds>
-					<flameTrailSeconds>0.18</flameTrailSeconds>
-					<flameTrailLength>2.3</flameTrailLength>
-					<flameGasSpeed>5</flameGasSpeed>
-					<flameTurbulence>0.065</flameTurbulence>
+					<flameLength>0.72</flameLength>
+					<flameBrightness>1.5</flameBrightness>
+					<ignitionFlareMultiplier>1.7</ignitionFlareMultiplier>
+					<ignitionFlareSeconds>0.18</ignitionFlareSeconds>
+					<flameTrailSeconds>0.20</flameTrailSeconds>
+					<flameTrailLength>2.8</flameTrailLength>
+					<flameGasSpeed>7</flameGasSpeed>
+					<flameTurbulence>0.035</flameTurbulence>
 					<smokeSpacing>0.2</smokeSpacing>
-					<smokeLifetime>1.5</smokeLifetime>
-					<smokeStartSize>0.18</smokeStartSize>
-					<smokeEndSize>0.6</smokeEndSize>
-					<smokeOpacity>0.2</smokeOpacity>
+					<smokeLifetime>1.9</smokeLifetime>
+					<smokeStartSize>0.16</smokeStartSize>
+					<smokeEndSize>0.92</smokeEndSize>
+					<smokeOpacity>0.36</smokeOpacity>
 				</exhaust>
 				<openingTicks>24</openingTicks>
 				<doors>
@@ -2494,7 +2501,7 @@
 	<ThingDef ParentName="BaseWeaponTurret">
 		<defName>SSR_TurretGun_RocketArtillery</defName>
 		<label>远程多管火箭炮</label>
-		<description>十管远程火箭炮。发射架先旋转并俯仰瞄准目标，再开盖；完全打开后每隔 12 刻发射一枚筒内实体火箭，每轮最多发射 10 枚，离筒后点火制导。目标失效后可用余弹攻击下一目标；弹药耗尽后等待整组补满，停电暂停补充。</description>
+		<description>十管远程火箭炮。瞄准后每隔 12 刻发射一枚筒内实体火箭，每轮最多发射 10 枚，离筒后点火制导。火箭出筒时逐个顶飞筒盖，盖子翻滚落地，整组补满后自动复位。目标失效后可用余弹攻击下一目标；弹药耗尽后等待整组补满，停电暂停补充。</description>
 		<graphicData>
 			<texPath>Things/Building/Security/TurretMini_Top</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -2540,8 +2547,8 @@
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
 		<projectile>
-			<damageDef>BombSuper</damageDef>
-			<damageAmountBase>200</damageAmountBase>
+			<damageDef>SSR_Bomb</damageDef>
+			<damageAmountBase>100</damageAmountBase>
 			<explosionRadius>2</explosionRadius>
 			<explosionDelay>0</explosionDelay>
 			<speed>300</speed>
@@ -2605,8 +2612,8 @@
 				<texPath>Things/Building/Security/Box-typeMissileLauncher/Box-typeMissileLauncher_MenuIcon</texPath>
 				<graphicClass>Graphic_Single</graphicClass>
 				<shaderType>EdgeDetect</shaderType>
-				<drawSize>(4.961836,4.961836)</drawSize>
-				<drawOffset>(0,0,0.415875)</drawOffset>
+				<drawSize>(4.566222,4.566222)</drawSize>
+				<drawOffset>(0,0,0.268079)</drawOffset>
 			</blueprintGraphicData>
 			<combatPower>130</combatPower>
 			<ai_combatDangerous>true</ai_combatDangerous>
@@ -2620,7 +2627,7 @@
 		</placeWorkers>
 		<designationHotKey>Misc2</designationHotKey>
 		<researchPrerequisites>
-			<li>SSR_Research_BasicTurret</li>
+			<li>SSR_Research_BasicMissileSystems</li>
 		</researchPrerequisites>
 		<comps>
 			<li Class="CompProperties_Forbiddable" />
@@ -2660,7 +2667,7 @@
 				<idleYaw>0</idleYaw>
 				<idlePitch>0</idlePitch>
 				<targeting>SSR_TurretTargeting_CombinedAirDefense</targeting>
-				<yawRotationSpeed>60</yawRotationSpeed>
+				<yawRotationSpeed>120</yawRotationSpeed>
 				<pitchRotationSpeed>45</pitchRotationSpeed>
 				<shootingOrigine>Root/Yaw/Pitch/FirePoint</shootingOrigine>
 				<rootTransform>Root</rootTransform>
@@ -2787,8 +2794,8 @@
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
 		<projectile>
-			<damageDef>BombSuper</damageDef>
-			<damageAmountBase>500</damageAmountBase>
+			<damageDef>SSR_Bomb</damageDef>
+			<damageAmountBase>300</damageAmountBase>
 			<explosionRadius>4</explosionRadius>
 			<explosionDelay>0</explosionDelay>
 			<speed>300</speed>
@@ -2835,19 +2842,19 @@
 		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
 		<constructionSkillPrerequisite>5</constructionSkillPrerequisite>
 		<researchPrerequisites>
-			<li>SSR_Research_BasicTurret</li>
+			<li>SSR_Research_BasicMissileSystems</li>
 		</researchPrerequisites>
 		<building>
 			<blueprintGraphicData>
 				<texPath>Things/Building/Security/VerticalMissileLaunchingSystem/VerticalMissileLaunchingSystem_Blueprint</texPath>
 				<graphicClass>Graphic_Multi</graphicClass>
 				<shaderType>EdgeDetect</shaderType>
-				<drawSize>(4.762733,4.762733)</drawSize>
+				<drawSize>(4.892043,4.892043)</drawSize>
 				<drawRotated>false</drawRotated>
-				<drawOffsetNorth>(0,0,0.072127)</drawOffsetNorth>
-				<drawOffsetEast>(0,0,0.072127)</drawOffsetEast>
-				<drawOffsetSouth>(0,0,0.072127)</drawOffsetSouth>
-				<drawOffsetWest>(0,0,0.072127)</drawOffsetWest>
+				<drawOffsetNorth>(0,0,-0.115373)</drawOffsetNorth>
+				<drawOffsetEast>(0,0,-0.115373)</drawOffsetEast>
+				<drawOffsetSouth>(0,0,-0.115373)</drawOffsetSouth>
+				<drawOffsetWest>(0,0,-0.115374)</drawOffsetWest>
 			</blueprintGraphicData>
 			<combatPower>100</combatPower>
 			<ai_combatDangerous>true</ai_combatDangerous>
@@ -2869,7 +2876,8 @@
 			</li>
 			<li Class="SSR.Combat.Offscreen.SiloSettings">
 				<prefabPath>Assets/SSR/Missiles/Game/MissileSiloGame.prefab</prefabPath>
-				<missilePath>Assets/SSR/Turrets/T1/Prefabs/T1Missile.prefab</missilePath>
+				<missilePath>Assets/SSR/Missiles/Game/SiloMissile.prefab</missilePath>
+				<rearStagePath>Assets/SSR/Missiles/Game/SiloRearStage.prefab</rearStagePath>
 				<layoutPath>Assets/SSR/Missiles/Game/SiloLayout.json</layoutPath>
 				<flamePath>Assets/SSR/Missiles/Game/MissileFlame.prefab</flamePath>
 				<smokePath>Assets/SSR/Missiles/Game/MissileSmoke.prefab</smokePath>
@@ -2881,7 +2889,7 @@
 				<ejectionSpeed>14</ejectionSpeed>
 				<ejectionClearance>0.12</ejectionClearance>
 				<ejectionGravity>26</ejectionGravity>
-				<ignitionDelay>0.93</ignitionDelay>
+				<ignitionDelay>1.405714</ignitionDelay>
 				<!--离井气流产生短时侧向及旋转冲量，速度范围使用原版 FloatRange 格式。-->
 				<ejectionDisturbanceSeconds>0.08</ejectionDisturbanceSeconds>
 				<coldLateralSpeedRange>0.12~0.35</coldLateralSpeedRange>
@@ -2889,24 +2897,25 @@
 				<ignitionAcceleration>72</ignitionAcceleration>
 				<ignitionRampSeconds>0.06</ignitionRampSeconds>
 				<ascentHeight>20</ascentHeight>
-				<flameWidth>1</flameWidth>
+				<flameWidth>0.28</flameWidth>
 				<flameLength>1.1</flameLength>
-				<flameBrightness>1.35</flameBrightness>
-				<ignitionFlareMultiplier>2</ignitionFlareMultiplier>
-				<ignitionFlareSeconds>0.22</ignitionFlareSeconds>
+				<flameBrightness>1.5</flameBrightness>
+				<ignitionFlareMultiplier>1.7</ignitionFlareMultiplier>
+				<ignitionFlareSeconds>0.18</ignitionFlareSeconds>
 				<!--短喷焰连接历史喷口形成的热尾流，长度和扰动使用格，寿命使用秒。-->
-				<flameTrailSeconds>0.18</flameTrailSeconds>
-				<flameTrailLength>4.6</flameTrailLength>
-				<flameGasSpeed>5</flameGasSpeed>
-				<flameTurbulence>0.13</flameTurbulence>
+				<flameTrailSeconds>0.22</flameTrailSeconds>
+				<flameTrailLength>3.8</flameTrailLength>
+				<flameGasSpeed>10</flameGasSpeed>
+				<flameTurbulence>0.045</flameTurbulence>
 				<!--烟团按飞行距离补点，速度增加时仍保持连续，逐渐扩散消散。-->
-				<smokeSpacing>0.4</smokeSpacing>
-				<smokeLifetime>1.5</smokeLifetime>
-				<smokeStartSize>0.65</smokeStartSize>
-				<smokeEndSize>1.8</smokeEndSize>
-				<smokeOpacity>0.2</smokeOpacity>
-				<!--全程继承上升出口速度，沿转向及俯冲路径持续加速，不使用转弯限速。-->
-				<flightAcceleration>7</flightAcceleration>
+				<smokeSpacing>0.22</smokeSpacing>
+				<smokeLifetime>2.1</smokeLifetime>
+				<smokeStartSize>0.25</smokeStartSize>
+				<smokeEndSize>1.4</smokeEndSize>
+				<smokeOpacity>0.34</smokeOpacity>
+				<!--爬升结束时抛弃后段，主体保持余速前进，再从新喷口点火加速。-->
+				<stageIgnitionDelay>0.14</stageIgnitionDelay>
+				<flightAcceleration>96</flightAcceleration>
 				<turnRadiusFraction>0.46</turnRadiusFraction>
 				<!--近距离时半径限制在水平航程的 48% 内，保持朝锁定点单向转弯。-->
 				<minimumTurnRadius>18</minimumTurnRadius>
@@ -2932,7 +2941,7 @@
 				<defaultProjectile>SSR_Projectile_VerticalMissileLaunchingSystem</defaultProjectile>
 				<warmupTime>0</warmupTime>
 				<minRange>8</minRange>
-				<range>131.9</range>
+				<range>999</range>
 				<burstShotCount>1</burstShotCount>
 				<!--原版爆炸动词要求此值为正；专用发射控制器不使用该散布值，只攻击本轮锁定点。-->
 				<forcedMissRadius>0.01</forcedMissRadius>
@@ -2957,7 +2966,7 @@
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
 		<projectile>
-			<damageDef>BombSuper</damageDef>
+			<damageDef>SSR_Bomb</damageDef>
 			<damageAmountBase>300</damageAmountBase>
 			<explosionRadius>2.5</explosionRadius>
 			<explosionDelay>0</explosionDelay>

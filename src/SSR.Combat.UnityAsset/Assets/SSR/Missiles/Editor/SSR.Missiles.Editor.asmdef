@@ -1,5 +1,0 @@
-{
-    "name": "SSR.Missiles.Editor",
-    "references": ["SSR.Combat.UnityAsset"],
-    "includePlatforms": ["Editor"]
-}
